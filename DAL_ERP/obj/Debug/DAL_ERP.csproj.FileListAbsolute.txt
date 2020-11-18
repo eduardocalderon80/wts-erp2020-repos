@@ -18,3 +18,13 @@ C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\DAL_ERP\obj\Debu
 C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\DAL_ERP\obj\Debug\DAL_ERP.csproj.CopyComplete
 C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\DAL_ERP\obj\Debug\DAL_ERP.dll
 C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\DAL_ERP\obj\Debug\DAL_ERP.pdb
+C:\EDUARDO\TODO SOBRE AZURE\xd-erpwts-github\wts-erp2020-repos\DAL_ERP\bin\Debug\DAL_ERP.dll
+C:\EDUARDO\TODO SOBRE AZURE\xd-erpwts-github\wts-erp2020-repos\DAL_ERP\bin\Debug\DAL_ERP.pdb
+C:\EDUARDO\TODO SOBRE AZURE\xd-erpwts-github\wts-erp2020-repos\DAL_ERP\bin\Debug\BE_ERP.dll
+C:\EDUARDO\TODO SOBRE AZURE\xd-erpwts-github\wts-erp2020-repos\DAL_ERP\bin\Debug\Newtonsoft.Json.dll
+C:\EDUARDO\TODO SOBRE AZURE\xd-erpwts-github\wts-erp2020-repos\DAL_ERP\bin\Debug\BE_ERP.pdb
+C:\EDUARDO\TODO SOBRE AZURE\xd-erpwts-github\wts-erp2020-repos\DAL_ERP\obj\Debug\DAL_ERP.csprojAssemblyReference.cache
+C:\EDUARDO\TODO SOBRE AZURE\xd-erpwts-github\wts-erp2020-repos\DAL_ERP\obj\Debug\DAL_ERP.csproj.CoreCompileInputs.cache
+C:\EDUARDO\TODO SOBRE AZURE\xd-erpwts-github\wts-erp2020-repos\DAL_ERP\obj\Debug\DAL_ERP.csproj.CopyComplete
+C:\EDUARDO\TODO SOBRE AZURE\xd-erpwts-github\wts-erp2020-repos\DAL_ERP\obj\Debug\DAL_ERP.dll
+C:\EDUARDO\TODO SOBRE AZURE\xd-erpwts-github\wts-erp2020-repos\DAL_ERP\obj\Debug\DAL_ERP.pdb
