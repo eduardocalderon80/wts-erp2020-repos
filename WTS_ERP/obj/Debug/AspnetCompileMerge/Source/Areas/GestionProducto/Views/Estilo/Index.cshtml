@@ -1,0 +1,117 @@
+﻿<div class="row wrapper white-bg page-heading">
+    <div id="content_header" class="ibox float-e-margins">
+        <div id="divtituloprincipal" class="col-sm-6">
+            <h2 class="font-bold">Style</h2>
+        </div>
+        <div class="col-sm-6 text-right position_right" style="vertical-align: middle;margin-top:15px;">
+            <button id="btnNew" type="button" class="btn btn-success">
+                <span class="fa fa-plus"></span>
+                New
+            </button>
+            <button id="btnUpload" type="button" class="btn btn-primary">
+                <span class="fa fa-upload"></span>
+                Upload
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="hide">
+    <input type="text" id="txtperfil" value="@ViewBag.perfil" />
+    <input type="text" id="txtRutaFileServer" value="@ViewBag.PathStyleWeb" />
+    <input type="text" id="txtpar" data-par="DATA-PARAMETRO" value="" />
+</div>
+
+<div class="row wrapper-content gray-bg animated">
+
+    <div id="content_form" class="ibox">
+        <div class="ibox-title hide">
+            <h5>
+                <span class="text-success"><b>Search Style</b></span>
+            </h5>
+        </div>
+        <div class="ibox-content">
+            <div class="form-horizontal row">
+                <div class="col-sm-4">
+                    <div class="form-group col-sm-12">
+                        <label class="control-label">Customer</label>
+                        <select class="select2_Cliente form-control" name="IdCliente" id="cboCliente" style="width:100%" data-min="1" data-required="true" data-id="IdCliente"></select>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group col-sm-12">
+                        <label class="control-label">Style</label>
+                        <input type="text" id="txtStyle" name="status" value="" placeholder="Style" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group col-sm-12">
+                        <label class="control-label">Season</label>
+                        <select class="select2_Season form-control" name="IdSeason" id="cboSeason" style="width:100%" data-min="1" data-required="true" data-id="IdSeason"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal row">
+                <div class="col-sm-4">
+                    <div class="form-group col-sm-12">
+                        <label class="control-label">Division</label>
+                        <select class="select2_Division form-control" name="IdDivision" id="cboDivision" style="width:100%" data-min="1" data-required="true" data-id="IdDivision"></select>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group col-sm-12">
+                        <label class="control-label">Status</label>
+                        <select class="select2_Status form-control" name="IdStatus" id="cboStatus" style="width:100%" data-min="1" data-required="true" data-id="IdStatus"></select>
+                    </div>
+                </div>
+                <div class="col-sm-4" style="margin-top: 20px;">
+                    <div class="form-group col-sm-12">
+                        <label class="control-label">All Client</label>
+                        <input id="chkFacturable" type="checkbox" class="js-switch" data-initial="false" />
+
+                        <button type="button" class="btn btn-success" id="btnSearch">
+                            <span class="fa fa-search"></span>
+                            Search
+                        </button>
+                        <button type="button" class="btn btn-warning" id="btnPrintHangTag">
+                            <span class="fa fa-print"></span>
+                            HangTag
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content_form" class="ibox">
+        <div class="ibox-title hide">
+            <h5>Details</h5>
+        </div>
+        <div id="divContentTBL" class="ibox-content">
+            <div id="divTblEstilo" style="max-height: 600px; overflow-y: auto;">
+                <table class="table table-bordered table-hover" id="tblestilo_index">
+                    <thead>
+                        <tr>
+                            <th class="hide"></th>
+                            <th class="col-sm-1 text-center">Sketch</th>
+                            <th class="col-sm-1 text-center">Client</th>
+                            <th class="col-sm-1 text-center">Style</th>
+                            <th class="col-sm-1 text-center">Version</th>
+                            <th class="col-sm-2 text-center">Description</th>
+                            <th class="col-sm-1 text-center">Fabric</th>
+                            <th class="col-sm-1 text-center">Season</th>
+                            <th class="col-sm-1 text-center">Division</th>
+                            <th class="col-sm-1 text-center">Status</th>
+                            <th class="col-sm-1 text-center"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody_estilo_index"></tbody>
+                    @*<tfoot id="tfoot_estilo_index"></tfoot>*@
+                </table>
+            </div>
+            <div class="text-center" id="foot_paginacion">
+
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,372 @@
+﻿<style>
+    .select2-container--open {
+        z-index: 9999999;
+    }
+
+    .has-error .select2-selection {
+        border-color: #ed5565 !important;
+    }
+
+    img, object {
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    img {
+        border: 0 none;
+        height: auto;
+        max-width: 100%;
+        vertical-align: middle;
+    }
+
+    a {
+        cursor: pointer;
+    }
+
+    .img-polaroid {
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        padding: 4px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .img-fondo {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background-color: #EEEEEE;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    .hidecombo {
+        display: none;
+    }
+
+    .hideproceso {
+        display: none;
+    }
+
+    .hideatwork {
+        display: none;
+    }
+
+    .hidetrim {
+        display: none;
+    }
+
+    .form-horizontal .control-label {
+        padding-top: 0px !important;
+        text-align: left !important;
+    }
+</style>
+
+<div id="pnl_personal_new" class="ibox float-e-margins">
+
+    <div class="hide">
+        <input type="text" id="txt_personal_new_par" value="DATA-PARAMETRO" />
+        <input type="hidden" id="hf_idpersonal" data-id="IdPersonal" data-default="0" value="0" />
+        <input type="hidden" id="hf_estado_actualizarimagen" value="0" />
+        <input type="hidden" id="txtrutafilaserver" value="@ViewBag.PathStyleWeb" />
+    </div>
+
+    <div id="pnl_personal_new_header" class="row wrapper white-bg page-heading">
+        <div class="ibox">
+            <div id="div_titulo_principal" class="col-sm-6">
+                <h2 class="font-bold">Maestro de Colaboradores</h2>
+            </div>
+            <div id="div_botones_header" class="col-sm-6 text-right">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="pnl_personal_new_body" class="row wrapper-content gray-bg animated">
+
+        <div id="pnl_destino_new_formulario" class="ibox">
+            <div class="ibox-title">
+                <div class="form-horizontal row ">
+                    <div class="col-sm-6">
+                        <h3 id="_title" class="bold" style="color:#206590;">Nuevo Personal</h3>
+                    </div>
+                    <div id="div_botones_principal" class="col-sm-6 text-right">
+                        <button id="btn_guardar" title="Guardar" type="button" class="btn btn-outline btn-primary">
+                            <span class="fa fa-save"></span>
+                            Guardar
+                        </button>
+                        <button id="btn_retornar" type="button" class="btn btn-outline btn-default">
+                            <span class="fa fa-reply-all"></span>
+                            Regresar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_personal_new_formulario" class="ibox-content">
+
+                <div class="row">
+                    <div class="col-sm-8">
+
+                        <div class="ibox">
+                            <fieldset>
+                                <legend style="color:#1c84c6; font-size:16px">Información Personal:</legend>
+
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <label class="control-label">Apellido Paterno:</label>
+                                                <input id="txt_new_apellido_paterno" type="text" class="form-control _enty input-sm m-b-xs" data-id="apellidopaterno" data-required="true">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <label class="control-label">Apellido Materno:</label>
+                                                <input id="txt_new_apellido_materno" type="text" class="form-control _enty input-sm m-b-xs" data-id="apellidomaterno" data-required="true">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <label class="control-label">Primer Nombre:</label>
+                                                <input id="txt_new_primer_nombre" type="text" class="form-control _enty input-sm m-b-xs" data-id="primernombre" data-required="true">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <label class="control-label">Segundo Nombre:</label>
+                                                <input id="txt_new_segundo_nombre" type="text" class="form-control _enty input-sm m-b-xs" data-id="segundonombre">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <label class="control-label">Nombre Preferido:</label>
+                                                <input id="txt_new_nombre_preferido" type="text" class="form-control _enty input-sm m-b-xs" data-id="nombrepreferido">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <label class="control-label">DNI:</label>
+                                                <input id="txt_new_dni" type="text" class="form-control _enty input-sm m-b-xs" data-id="dni" data-type="int" data-min="8" data-max="8" maxlength="8" data-required="true">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <label class="control-label">Fecha de Nacimiento:</label>
+                                                <div id="div_new_fecha_nacimiento">
+                                                    <div class='input-group date'>
+                                                        <input id="txt_new_fecha_nacimiento" type='text' class='form-control input-sm m-b-xs' data-id="fechanacimiento" data-type="date" data-level="true" data-min="10" data-max="10">
+                                                        <div id="div_new_calendario_fecha_nacimiento" class="input-group-addon">
+                                                            <span class="fa fa-calendar"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <label class="control-label">Género:</label>
+                                                <select id="cbo_new_genero" class="form-control _select2 _enty" data-id="genero" style="width:100%"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <label class="control-label">Correo Personal:</label>
+                                                <input id="txt_new_correo_personal" type="text" class="form-control _enty input-sm m-b-xs" data-id="correopersonal">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*<div class="col-sm-6">
+                                            <div class="form-group">
+                                                <div class="col-sm-12">
+                                                    <label class="control-label">Celular:</label>
+                                                    <input id="txt_new_celular_personal" type="text" class="form-control _enty input-sm m-b-xs" data-id="celularpersonal">
+                                                </div>
+                                            </div>
+                                        </div>*@
+                                </div>
+
+                            </fieldset>
+                        </div>
+
+                        <div class="ibox">
+
+                            <fieldset>
+                                <legend style="color:#1c84c6; font-size:16px">Información Laboral:</legend>
+
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <label class="control-label">Área:</label>
+                                                <select id="cbo_new_area" class="form-control _select2 _enty" data-id="idarea" data-required="true" style="width:100%"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <label class="control-label">Sub Área:</label>
+                                                <select id="cbo_new_sub_area" class="form-control _select2 _enty" data-id="idsubarea" style="width:100%"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <label class="control-label">Puesto de Trabajo:</label>
+                                                <select id="cbo_new_cargo" class="form-control _select2 _enty" data-id="idcargo" data-required="true" style="width:100%"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <label class="control-label">Equipo:</label>
+                                                <select id="cbo_new_equipo" class="form-control _select2 _enty" data-id="idequipo" style="width:100%"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <label class="control-label">Correo:</label>
+                                                <input id="txt_new_correo_laboral" type="text" class="form-control _enty input-sm m-b-xs" data-id="correolaboral">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <label class="control-label">Registra Marcación:</label>
+                                                <input type="checkbox" class="js-switch" checked id="lusuarioasistencia" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <label class="control-label">Fecha Incorporación:</label>
+                                                <div id="div_new_fecha_ingreso">
+                                                    <div class='input-group date'>
+                                                        <input id="txt_new_fecha_ingreso" type='text' class='form-control input-sm m-b-xs' data-id="fechaingreso" data-type="date" data-level="true" data-min="10" data-max="10">
+                                                        <div id="div_new_calendario_fecha_ingreso" class="input-group-addon">
+                                                            <span class="fa fa-calendar"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <label class="control-label">Fecha Cese:</label>
+                                                <div id="div_new_fecha_cese">
+                                                    <div class='input-group date'>
+                                                        <input id="txt_new_fecha_cese" type='text' class='form-control input-sm m-b-xs' data-type="date" data-level="true" data-id="fechacese" data-min="10" data-max="10">
+                                                        <div id="div_new_calendario_fecha_cese" class="input-group-addon">
+                                                            <span class="fa fa-calendar"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </fieldset>
+
+                        </div>
+
+                    </div>
+                    <div class="col-sm-4">
+                        @*style="overflow-x: auto; "*@
+                        <div class="ibox">
+                            <fieldset>
+                                <legend style="color:#1c84c6; font-size:16px">Imagen</legend>
+
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <left>
+                                                    <div class="img-polaroid">
+                                                        <div class="img-fondo">
+                                                            <img src="" id="imgPersonal" data-initial="" name="imgPersonal" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-group" style="width: 200px !important;">
+                                                        <span class="btn btn-success btn-sm btn-file input-group-addon" style="background-color: #0069d9; color: #fff; height: 30px;">
+                                                            <span class="fa fa-cloud-upload"></span>
+                                                            Image
+                                                            <input id="fupArchivo" type="file" />
+                                                        </span>
+                                                        <span class="btn btn-danger btn-sm btn-file input-group-addon" style="background-color: #c82333; color: #fff; height: 30px;" id="btnImagenEliminar">
+                                                            <span class="fa fa-trash-o"></span>
+                                                        </span>
+                                                        <span class="input-group-addon">
+                                                            <input type="text" class="form-control" id="pasteArea" placeholder="Paste" rows="1" onchange="LimpiarArea();" style="width:50px;height:30px" />
+                                                        </span>
+                                                    </div>
+                                                </left>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </fieldset>
+                            @*</div>*@
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

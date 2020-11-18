@@ -1,0 +1,160 @@
+﻿<style type="text/css">
+    /* 1 */
+    .row-selected {
+        background-color: #1ab394 !important;
+    }
+
+    th {
+        padding: 8px;
+        border: 1px solid #e7e7e7;
+        background-color: #F5F5F6;
+        text-align: center;
+    }
+
+    td {
+        padding: 5px;
+        border-bottom: 1px solid #e7e7e7;
+        padding-left: 20px;
+    }
+</style>
+<div class="ibox" id="panelencabezado_buscarBol">
+    <div class="row wrapper white-bg page-heading">
+        <div id="content_header" class="ibox float-e-margins">
+            <div id="divtituloprincipal" class="col-sm-6">
+                <h2 class="text-navy bold">List of BOL</h2>
+            </div>
+            @*<div  class="col-sm-4 text-right" style="vertical-align: middle;margin-top:15px;">
+        <div class="form-horizontal">
+            <div class="col-sm-4">
+                <div class="col-sm-8 col-sm-offset-4">
+                    <input type="text" class="form-control" id="txtArchivoSeleccionado" readonly="readonly" value="" />
+                    <div style="padding-top:5px;">
+                        <span class="input-group-btn">
+                            <span class="btn btn-primary btn-sm btn-file">
+                                <span class="fa fa-cloud-upload"></span> &nbsp;Upload File
+                                <input type="file" id="filearchivo" />
+                            </span>
+                            &nbsp;
+                            <button id="btneliminararchivo" class="btn btn-danger btn-sm btn-file" type="button"><span class="glyphicon glyphicon-trash"></span></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>*@
+            <div id="divBotonesPrincipal" class="col-sm-2 text-right" style="vertical-align: middle;margin-top:15px;">
+             
+            </div>
+            <div id="divBotonesPrincipal" class="col-sm-3 text-right" style="vertical-align: middle;margin-top:15px;">
+                <span class="input-group">
+                    <input type="text" class="form-control" id="txtArchivoSeleccionado" readonly="readonly" value="" />
+                    <span class="input-group-btn">
+                        <span id="btncargar" class="btn btn-success btn-sm btn-file" style="margin-bottom:0;height:100%">
+                            <span class="fa fa-upload"></span> &nbsp;Upload File
+                            <input type="file" id="filearchivo" />
+                        </span>
+                        <button id="btnGuardararchivo" class="btn btn-primary btn-sm btn-file" style="display:none;" type="button"><span class="fa fa-save"></span>&nbsp;Save file</button>
+                        <button id="btneliminararchivo" class="btn btn-danger btn-sm btn-file" style="display:none" type="button"><span class="glyphicon glyphicon-trash"></span></button>
+                    </span>
+                </span>
+
+            </div>
+            <div id="divBotonesPrincipal" class="col-sm-1 text-right" style="vertical-align: middle;margin-top:15px;">
+                @*<input type="text" class="form-control" id="txtArchivoSeleccionado" readonly="readonly" value="" />
+            <span class="btn btn-success btn-file">
+                <span id="btnUpl" class="fa fa-upload"></span> &nbsp;Upload
+                <input type="file" id="filearchivo" />
+            </span>*@
+                <button id="btnnew" type="button" class="btn btn-default">
+                    <span class="fa fa-file-o"></span>
+                    create BOL
+                </button>
+            </div>
+        </div>
+        <div id="tabledetails" class="ibox-content">
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div class="col-sm-3">
+                        <label class="control-label">Type Find</label>
+                        <select id="cboTipoDoc" class="form-control" style="width:100%" name="cboTipoDoc" data-id="control" data-required="true"></select>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label class="control-label">N° Document</label>
+                        <span class="input-group">
+                           <input type="text" id="txtnrodoc" name="txtnrodoc" value="" placeholder="Number doc" class="form-control">
+                           <span class="input-group-addon bg-primary" id="span_filtro" style="cursor:pointer;width:25%" title="Search">
+                               <span class="fa fa-search"></span>&nbsp;Search
+                           </span>
+
+                        </span>
+                    </div>
+                    <div class="col-sm-3">
+                    </div>
+                    <div class="col-sm-3">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row wrapper-content gray-bg animated">
+
+       <div class="" style="overflow-y: auto; max-height: 950px;">
+            <div class="hide">
+                <input type="text" id="txtpar_buscardesarrollo" value="DATA-PARAMETRO" />
+            </div>
+            <div class="ibox-title">
+                <div class="form-horizontal row ">
+                    <div class="col-sm-6">
+                        <h3 id="_title" class="text-navy bold">List of Document</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="table-responsive" style="max-height:850px; overflow-y:auto;">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="hide"></th>
+                                        <th style="width:5%"></th>
+                                        <th style="width:5%">Code</th>
+                                        <th style="width:10%">Creation date</th>
+                                        <th style="width:13%">Total Qty.</th>         
+                                        <th style="width:13%">Send Qty.(810)</th>
+                                        <th style="width:13%">Ok Qty.(997)</th>
+                                        <th style="width:13%">Faills Qty.(997)</th>
+                                        <th style="width:13%">Pending Qty.(997)</th>
+                                        <th style="width:15%">Expired Qty.(997)</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="hide"></th>
+                                        <th></th>
+                                        <th><input type="text" placeholder="Search" id="_txtfiltercodigo" class="form-control _clsfilter" data-field="CodigoBol" /></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody_bolList"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="ibox-footer text-center" id="foot_paginacion">
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

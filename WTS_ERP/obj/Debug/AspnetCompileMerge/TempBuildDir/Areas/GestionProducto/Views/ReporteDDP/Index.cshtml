@@ -1,0 +1,151 @@
+﻿<style>
+    .clswhite {
+        color: white;
+        background-color: white !important;
+        height: 0px !important;
+    }
+   
+</style>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Report</h2>
+            </div>
+            <div class="col-sm-6 text-right">
+                <button type="button" class="btn btn-default dim" id="btnExport">
+                    <span class="fa fa-file-o"></span>
+                    Export
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="hide">
+        <input type="text" id="txtperfil" value="@ViewBag.perfil" />        
+        <input type="text" id="txtpar" data-par="DATA-PARAMETRO" value="" />
+    </div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Customer</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control _enty" id="cboCliente" data-required="true" data-min="1" data-max="20"><option value="0">All</option></select>
+                                </div>
+                            </div>
+                            <div class="form-group" id="divPadreFechaInicio1">
+                                <label class="control-label col-sm-3">ExFtyDateIni</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control" value="" id="txtFechaInicio" />
+                                        <div class="input-group-addon">
+                                            <span class="fa fa-calendar"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label class="control-label col-sm-3">Factory</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" id="cboProveedor" data-required="true" data-min="1" data-max="20"><option value="0">All</option></select>
+                                </div>
+                                
+                            </div>
+                            <div class="form-group" id="divPadreFechaInicio2">
+                                <label class="control-label col-sm-3">ExFtyDateFin</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control" value="" id="txtFechaFin" />
+                                        <div class="input-group-addon">
+                                            <span class="fa fa-calendar"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label class="control-label col-sm-3">Season</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control _enty" id="cboclientetemporada" data-required="true" data-min="1" data-max="20"><option value="0">All</option></select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label id="lbl" class="control-label col-sm-3">Pending Units</label>
+                                <div class="col-sm-9">
+                                    <input type="checkbox" id="chk" class="js-switch" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label class="control-label col-sm-3">Division</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control _enty" id="cboclientedivision" data-required="true" data-min="1" data-max="20"><option value="0">All</option></select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label id="lbl" class="control-label col-sm-3">Status</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control clscbostatus" id="cbostatus"  multiple="multiple">
+                                       
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                           
+                    </div>
+                </div>
+                <div class="panel-footer text-right">
+                    <button type="button" class="btn btn-success" id="btnSearch">
+                        <span class="fa fa-search"></span>
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="ibox float-e-margins">
+            <div class="ibox-content" style="position:relative; width:100%;overflow-x:auto; overflow-y: auto; max-height: 500px; min-height:0px;">
+                <table class="table table-bordered table-hover" id="tbl_index">
+                    <thead>
+                        <tr>
+                            <th class="text-center">#Req</th>
+                            <th class="text-center">#Submit</th>
+                            <th class="text-center">Type</th>
+                            <th class="text-center">Team</th>
+                            <th class="text-center">Client</th>
+                            <th class="text-center">Season</th>
+                            <th class="text-center">Division</th>
+                            <th class="text-center">Style</th>
+                            <th class="text-center">Fabric 1</th>      
+                            <th class="text-center">Factory</th>                                 
+                            <th class="text-center">Color</th>
+                            <th class="text-center">Size</th>
+                            <th class="text-center">Qty</th>
+                            <th class="text-center">Counter <br /> Sample</th>
+                            <th class="text-center">Remaining <br />Qty</th>
+                            <th class="text-center">Remaining <br />Counter<br />Sample</th>
+                            <th class="text-center">Ex Factory</th>
+                            <th class="text-center">Client in house</th>  
+                            <th class="text-center">Max Ex Fty</th>  
+                            <th class="text-center">Register Date</th>  
+                            <th class="text-center">Fty Week</th>     
+                            <th class="text-center">Shipped Units</th>        
+                            <th class="text-center">Status Req</th>        
+                            <th class="text-center">Today vs Ex Fty</th>                                 
+                        </tr>
+                    </thead>
+                    <tbody id="tbody_index" style="font-size:11px;"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+ 

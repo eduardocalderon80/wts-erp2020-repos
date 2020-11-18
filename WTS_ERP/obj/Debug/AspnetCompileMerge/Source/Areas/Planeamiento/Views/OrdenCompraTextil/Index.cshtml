@@ -1,0 +1,203 @@
+﻿<style type="text/css">
+
+    .row-selected {
+        background-color: #1ab394 !important;
+    }
+
+    th {
+        padding: 5px;
+        border: 1px solid #e7e7e7;
+        background-color: #F5F5F6;
+        text-align: center;
+    }
+
+    td {
+        padding: 5px;
+        border-bottom: 1px solid #e7e7e7;
+        padding-left: 10px !important;
+    }
+
+</style>
+
+<div class="row wrapper white-bg page-heading">
+    <div id="content_header" class="ibox float-e-margins">
+        <div id="divtituloprincipal" class="col-sm-6">
+            <h2 class="font-bold">O/C Textil</h2>
+        </div>
+        <div id="divBotonesPrincipal" class="col-sm-6 text-right" style="vertical-align: middle;margin-top:15px;">
+        </div>
+    </div>
+</div>
+
+<div id="div_listado" class="row wrapper-content gray-bg animated">
+
+    <div id="content_form" class="ibox">
+
+        <div class="ibox-title">
+            <div class="form-horizontal row ">
+                <div class="col-sm-6">
+                    <h3 id="_title" class="text-navy bold">List</h3>
+                </div>
+                <div id="divbotonesprimarios" class="col-sm-6 text-right">
+                    <button id="btnsearch" title="Search" class="btn btn-info" onclick="req_data()">
+                        <span class="fa fa-search"></span>
+                        Search
+                    </button>
+                    <button id="btnsearch" title="Insert O/C" class="btn btn-success" onclick="req_new()">
+                        <span class="fa fa-file-text"></span>
+                        O/C Textil
+                    </button>
+                    <button id="btnexportexcel" title="Search" class="btn btn-primary">
+                        <span class="fa fa-file-excel-o"></span>
+                        Export
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="formbusqueda" class="ibox-content">
+
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div class="col-sm-3">
+                        <label class="control-label">Factory</label>
+                        <select id="cbofabrica" class="form-control _enty" style="width:100%" name="idfabrica" data-id="idfabrica"></select>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label class="control-label">Client</label>
+                        <select id="cbocliente" class="form-control _enty" style="width:100%" name="idcliente" data-id="idcliente"></select>
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="control-label">Start Date:</label>
+                        <div id="divfechadesde">
+                            <div class='input-group date'>
+                                <input id="txtfechadesde" type='text' class='form-control input-sm m-b-xs _enty' data-type="date" data-id="fechadesde" data-min="10" data-max="10">
+                                <div id="divcalendariodesde" class="input-group-addon">
+                                    <span class="fa fa-calendar"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="control-label">End Date:</label>
+                        <div id="divfechahasta">
+                            <div class='input-group date'>
+                                <input id="txtfechahasta" type='text' class='form-control input-sm m-b-xs _enty' data-type="date" data-id="fechahasta" data-min="10" data-max="10">
+                                <div id="divcalendariohasta" class="input-group-addon">
+                                    <span class="fa fa-calendar"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div class="col-sm-3">
+                        <input id="txtpo" type="text" class="form-control input-sm m-b-xs" placeholder="Search PO" onkeyup="event_search(event)">
+                    </div>
+                    <div class="col-sm-3">
+                        <input id="txtestilo" type="text" class="form-control input-sm m-b-xs" placeholder="Search Style" onkeyup="event_search(event)">
+                    </div>
+                    <div class="col-sm-3">
+
+                    </div>
+                    <div class="col-sm-3">
+                        <select id="cbo_oc" class="form-control _enty" style="width:100%" name="cbooc" data-id="idoc"></select>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="ibox">
+        <div class="ibox-content">
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div id="tablecontentpos" class="col-sm-12">
+
+                    </div>
+                    <div class="col-sm-12 text-center ">
+                        <label id="datos" class="hide">No hay datos</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="div_envio" class="row wrapper-content gray-bg animated hide">
+
+    <div id="content_form" class="ibox">
+
+        <div class="ibox-title">
+            <div class="form-horizontal row ">
+                <div class="col-sm-6">
+                    <h3 id="_title" class="text-navy bold">Send</h3>
+                </div>
+                <div id="divbotonesprimarios" class="col-sm-6 text-right">
+                    <button id="btnsave" type="button" class="btn btn-primary" onclick="req_insert()">
+                        <span class="fa fa-save"></span>
+                        Save
+                    </button>
+                    <button id="btnreturn" type="button" class="btn btn-default" onclick="fn_return()">
+                        <span class="fa fa-reply-all"></span>
+                        Return
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="form_insert" class="ibox-content">
+
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div class="col-sm-3">
+                        <label class="control-label">O/C Textil</label>
+                        <input id="txtoc" type="text" class="form-control input-sm m-b-xs _enty" data-id="oc" data-required="true" data-min="1" data-max="50">
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="control-label">Proveedor</label>
+                        <select id="cboproveedor" class="form-control _enty" style="width:100%" name="idproveedor" data-required="true" data-min="1"  data-id="idproveedor"></select>
+                    </div>
+                    <div class="col-sm-3 hide">
+                        <label class="control-label">Proveedor</label>
+                        <input id="txtproveedor" type="text" class="form-control input-sm m-b-xs _enty" data-id="proveedor" data-required="true" data-min="1" data-max="50">
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="control-label">Date O/C:</label>
+                        <div id="divfechaoc">
+                            <div class='input-group date'>
+                                <input id="txtfechaoc" type='text' class='form-control input-sm m-b-xs _enty' data-type="date" data-id="fechaoc" data-required="true" data-min="10" data-max="10">
+                                <div id="divcalendariooc" class="input-group-addon">
+                                    <span class="fa fa-calendar"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="ibox">
+        <div class="ibox-content">
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div id="tabledetails" class="col-sm-12">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

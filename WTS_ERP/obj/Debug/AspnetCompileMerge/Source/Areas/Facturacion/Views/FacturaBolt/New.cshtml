@@ -1,0 +1,131 @@
+﻿<style type="text/css">
+
+    #panelEncabezado_Bolt .ibox {
+        clear: both;
+        margin-bottom: 5px !important;
+        margin-top: 0;
+        padding: 0;
+    }
+
+    #panelEncabezado_Bolt .ibox-content {
+       
+        color: inherit;
+        padding: 5px 20px 5px 10px !important;
+        border-color: #e7eaec;
+        border-image: none;
+        border-style: solid solid none;
+        border-width: 1px 0;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 30% 10% 60%;
+        grid-gap: 10px;
+     
+    }
+
+
+</style>
+
+<div class="row wrapper white-bg page-heading">
+    <div id="content_header" class="ibox float-e-margins">
+        <div id="divtituloprincipal" class="col-sm-6">
+            <h2 class="font-bold">Invoice Bol</h2>
+        </div>
+    </div>
+</div>
+
+<div class="row wrapper-content gray-bg animated" id="panelEncabezado_Bolt">
+
+    <div class="ibox">
+        <div class="hide">
+            <input type="text" id="txtpar_new" value="DATA-PARAMETRO" />
+            <input type="text" id="hf_idPoBol" value="0" class="_enty_grabar" data-required="true" data-min="1" data-max="20" data-id="hf_IdPolBol" />
+        </div>
+
+        <div class="ibox-title">
+            <div class="form-horizontal row ">
+                <div class="col-sm-6">
+                    <h3 id="_title" class="text-navy bold">New</h3>
+                </div>
+                <div id="divBotonesprimarios" class="col-sm-6 text-right">
+                    <button id="btndeleteBol" type="button" class="btn btn-danger">
+                        <span class="fa fa-trash"></span>
+                        Delete
+                    </button>
+                    <button id="btndateFactor" type="button" class="btn btn-info">
+                        <span class="fa fa-calendar"></span>
+                        Date BOL
+                    </button>
+                    <button id="btnSave" type="button" class="btn btn-primary">
+                        <span class="fa fa-save"></span>
+                        Save
+                    </button>
+                    <button id="btnSend" type="button" class="btn btn-warning">
+                        <span class="fa fa-send"></span>
+                        Send
+                    </button>
+                    <button id="btnreturn" type="button" class="btn btn-default">
+                        <span class="fa fa-reply-all"></span>
+                        Return
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="tabledetails" class="ibox-content">
+            <div id="divBuscador" class="form-group">
+                <div class="form-horizontal row">
+                    <div class="col-sm-1">
+                        <label class="control-label">N° PO</label>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" id="txtnrodoc" name="status" value="" placeholder="Number PO" class="form-control" >
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="control-label">&nbsp;</label>
+                        <button class="btn btn-primary" type="button" id="btnaddPo">Add</button>
+                        @*<button type="button" title="Search" class="btn btn-outline btn-info" id="btnsearch" onclick="req_search()">
+                            <span class="fa fa-search"></span>
+                        </button>*@
+                    </div>
+
+                    <div class="col-sm-3">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ibox-content" id="div_contenidoBol">
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div class="col-sm-12 table-responsive" id="divTablaDetalle">
+                        <table id="tblPoBol" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="text-center" style="width:5%;"></th>
+                                    <th class="text-center" style="width:10%;">PO</th>
+                                    <th class="text-center" style="width:10%;">Invoice</th>
+                                    <th class="text-center" style="width:10%;">Code Bol</th>
+                                    <th class="text-center" style="width:10%;">Date Bol</th>
+                                    <th class="text-center" style="width:16%;">Send date</th>
+                                    <th class="text-center" style="width:16%;">997 date</th>
+                                    <th class="text-center" style="width:16%;">997 date Final</th>
+                                    <th class="text-center" style="width:15%;">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_PoBol"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+</div>

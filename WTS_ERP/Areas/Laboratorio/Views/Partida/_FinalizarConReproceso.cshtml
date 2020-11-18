@@ -1,0 +1,83 @@
+﻿<div class="ibox float-e-margins" id="panelEncabezado_finalizarconreproceso">
+    <div class="ibox-title">
+        <div class="ibox-tools">
+            <button id="_btn_save_finalizarrechazado_partida" class="btn btn-danger hide">
+                <span class="fa fa-thumbs-o-down"></span>
+                Accept
+            </button>
+            <button id="_btn_save_finalizaraprobado_partida" class="btn btn-primary hide">
+                <span class="fa fa-thumbs-o-up"></span>
+                Accept
+            </button>
+            <button id="_btnCancelar_reproceso_partida" class="btn btn-default" data-dismiss="modal">
+                <span class="fa"></span>
+                Cancel
+            </button>
+        </div>
+    </div>
+    <div class="ibox-content wrapper wrapper-content gray-bg" style="overflow-y: auto; max-height: 850px;">
+        <div class="hide">
+            <input type="text" id="txtpar_reprocesopartida" value="DATA-PARAMETRO" />
+        </div>
+        <div class="ibox float-e-margins" id="div_float_reprocesopartida">
+            <div class="ibox-content">
+                <div class="form-horizontal hide" id="div_finalizarconrechazo">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">State of color</label>
+                        <div class="col-sm-4" id="div_section_estadocolor">
+                            @*<strong class='text-danger' id="strong_estadocolor_finalizar"></strong>*@
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Comment color</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" style="resize: none;" rows="3" id="_txt_comentariocolor_finalizar" disabled="disabled"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Comment testing</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" style="resize:none;" rows="3" id="_txt_comentariotesting_finalizar" disabled="disabled"></textarea>
+                        </div>
+                    </div>
+                    @*<div class="form-group" id="div_grupo_combo_reproceso">
+                        <label class="control-label col-sm-2">Reproceso</label>
+                        <div class="col-sm-4">
+                            <select class="form-control _enty" id="cbo_reproceso_finalizar" data-min="1" data-max="100" data-required="true" data-level="false" data-id="tiporeproceso"></select>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="div_grupo_comentario_reprocesopartida">
+                        <label class="control-label col-sm-2">Commentary</label>
+                        <div class="col-sm-12">
+                            <textarea id="_txta_comentario_reprocesopartida" rows="2" class="form-control _enty" style="resize: none;" data-min="1" data-max="8000" data-required="true" data-level="false" data-id="comentarioreproceso"></textarea>
+                        </div>
+                    </div>*@
+                </div>
+
+                <div class="form-horizontal hide" id="div_finalizarconaprobacion">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" id="_lblestadocomercial">Commercial approval</label>
+                        <div class="col-sm-4" id="_div_estado_aprobacioncomercial">
+                            @*<label class="control-label" id="_lbl_estadocomercial_finalizar"></label>*@
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" id="_lblestadolaboratorio">Laboratory</label>
+                        <div class="col-sm-4" id="_div_section_estadopartidalaboratorio">
+                            @*<label class="control-label" id="_lbl_estadolaboratorio_finalizar"></label>*@
+                        </div>
+                    </div>
+                    <div class="form-group" id="_div_comentariofinalizarpartida">
+                        <label class="control-label col-sm-3">Comment</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control _enty" style="resize:none;" rows="3" id="_txt_comentariofinalizacion" data-required="false" data-min="1" data-max="2000" data-id="ComentarioFinalizacionPartida"></textarea>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

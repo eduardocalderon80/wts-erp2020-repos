@@ -1,0 +1,411 @@
+﻿<style>
+    img, object {
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    img {
+        border: 0 none;
+        height: auto;
+        max-width: 100%;
+        vertical-align: middle;
+    }
+
+    a {
+        cursor: pointer;
+    }
+
+    .img-polaroid {
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        padding: 4px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .img-fondo {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background-color: #EEEEEE;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    .hidecombo {
+        display: none;
+    }
+
+    .hideproceso {
+        display: none;
+    }
+
+    .hideatwork {
+        display: none;
+    }
+
+    .hidetrim {
+        display: none;
+    }
+</style>
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div id="content_header">
+        <div class="col-lg-8">
+            <h2>Creating Personal</h2>
+            <ol class="breadcrumb">
+                <li>
+                    View of Active Personal
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-4" style="text-align:right;padding:20px">
+
+            <div class="btn-group" id="btnPrint">
+                <button class="btn btn-info " type="button">
+                    <i class="fa fa-print"></i>&nbsp;&nbsp;
+                    <span class="bold">Print</span>
+                </button>
+            </div>
+            <div class="btn-group" id="btnExport">
+                <button class="btn btn-warning " type="button">
+                    <i class="fa fa-download"></i>&nbsp;&nbsp;
+                    <span class="bold">Export</span>
+                </button>
+            </div>
+            <div class="btn-group" id="btnCancel">
+                <button class="btn btn-white " type="button" onclick="ReturnForm()">
+                    <i class="fa fa-mail-reply-all"></i>&nbsp;&nbsp;
+                    <span class="bold">Return</span>
+                </button>
+            </div>
+            <div class="btn-group" id="btnNew">
+                <button class="btn btn-success " type="button" data-animation="rotateIn" id="btnNew">
+                    <i class="fa fa-plus"></i>&nbsp;&nbsp;
+                    <span class="bold">New</span>
+                </button>
+            </div>
+            <div class="btn-group" id="btnSave">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#myModal_Emergency" onclick="SavePersonal()">
+                    <i class="fa fa-save"></i>&nbsp;&nbsp;
+                    Save
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content gray-bg animated fadeInRight">
+
+    <div class="ibox" id="formMante">
+
+        <div class="ibox">
+
+            <div class="ibox-title">
+                <h5>
+                    <span class="text-success"><b>Personal Data</b></span>
+                    <label class="text-success" id="NomPersonal"></label>
+                </h5>
+            </div>
+
+            <div class="ibox-content">
+                <div id="animation_box0" class="animated bounceIn" style="background-color:white;padding-left:50px;width:100%">
+                    @*<form role="form" id="form" novalidate="novalidate" style="width:95%;">*@
+                    <input type="hidden" id="hf_IdPersonal" class="_enty" data-id="IdPersonal" data-default="0" value="0" />
+                    <input type="hidden" id="hf_estado_actualizarimagen" value="0" />
+                    <input type="hidden" id="txtRutaFileServer" value="@ViewBag.PathStyleWeb" />
+                    <div class="form-group">
+                        <div class="row">
+                            <div>
+                                <div class="form-group">
+                                    <label class="col-sm-1 control-label">First Name:</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control _enty" name="FirstName" id="txtFirstName" onkeyup="aMayusculas(this)" data-min="1" data-max="20" data-required="true" data-id="FirstName" maxlength="50">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-group">
+                                    <label class="col-sm-1 control-label">Second Name:</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control _enty" name="SecondName" id="txtSecondName" onkeyup="aMayusculas(this)" data-min="1" data-max="20" data-id="SecondName" maxlength="50">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>&nbsp;</div>
+                        <div class="row">
+                            <div>
+                                <div class="form-group">
+                                    <label class="col-sm-1 control-label">First Last Name:</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control _enty" name="FirstLN" id="txtLastName1" onkeyup="aMayusculas(this)" data-min="1" data-max="20" data-required="true" data-id="FirstLN" maxlength="50">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-group">
+                                    <label class="col-sm-1 control-label">Second Last Name:</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control _enty" name="SecondLN" id="txtLastName2" onkeyup="aMayusculas(this)" data-min="1" data-max="20" data-required="true" data-id="SecondLN" maxlength="50">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>&nbsp;</div>
+                        <div class="row">
+                            <div>
+                                <label class="col-sm-1 control-label">DNI:</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control _enty" name="dni" id="txtDNI" data-min="8" data-max="8" data-required="true" data-id="dni" data-type="int" maxlength="8">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-sm-6" style="text-align:right;">
+                                    <div class="i-checks">
+                                        <div class="i-checks" id="Estado">
+                                            @*<label class="">
+                                                    <div class="icheckbox_square-green" style="position: relative;">
+                                                        <input type="checkbox" style="position: absolute; opacity: 0;" id="chkEstado">
+                                                        <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                    </div>
+                                                    <i></i>Enable Personal
+                                                </label>*@
+                                            <div class="icheckbox_square-green" style="position: relative;">
+                                                <label class="">
+                                                    <input type="checkbox" style="position: absolute; opacity: 0;" id="chkEstado">
+                                                    <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                </label>
+                                            </div>
+                                            <label style="font-weight: bold;">Enable Personal</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div>&nbsp;</div>
+                        <div class="row">
+                            <div>
+                                <label class="col-sm-1 control-label">Image:</label>
+                            </div>
+                            <div>
+                                <div class="panel-body col-sm-5">
+                                    <div class="form-horizontal">
+                                        <div class="col-sm-5">
+                                            <center>
+                                                <div class="img-polaroid">
+                                                    <div class="img-fondo">
+                                                        <img src="" id="imgEstilo" data-initial="" name="imgEstilo" />
+                                                    </div>
+                                                </div>
+                                                <div class="input-group" style="width: 200px !important;">
+                                                    <span class="btn btn-success btn-sm btn-file input-group-addon" style="background-color: #0069d9; color: #fff; height: 30px;">
+                                                        <span class="fa fa-cloud-upload"></span>
+                                                        Image
+                                                        <input id="fupArchivo" type="file" />
+                                                    </span>
+                                                    <span class="btn btn-danger btn-sm btn-file input-group-addon" style="background-color: #c82333; color: #fff; height: 30px;" id="btnImagenEliminar">
+                                                        <span class="fa fa-trash-o"></span>
+                                                    </span>
+                                                    <span class="input-group-addon">
+                                                        <input type="text" class="form-control" id="pasteArea" placeholder="Paste" rows="1" onchange="LimpiarArea();" style="width:50px;height:30px" />
+                                                    </span>
+                                                </div>
+                                            </center>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    @*</form>*@
+                </div>
+            </div>
+        </div>
+
+        <div class="ibox">
+            <div class="ibox-title">
+                <h5>
+                    <span class="text-success"><b>Laboral Information</b></span>
+                </h5>
+            </div>
+            <div class="ibox-content">
+                <div id="animation_box" class="animated bounceIn" style="background-color:white;padding-left:50px;width:100%">
+                    @*<form role="form" id="form" novalidate="novalidate" style="width:95%;">*@
+                    <div class="form-group">
+                        <div class="row">
+                            <div>
+                                <div class="form-group">
+                                    <label class="col-sm-1 control-label">Area:</label>
+                                    <div class="col-sm-5">
+                                        <select class="select2_AreaL form-control _enty" name="IdArea" id="cboArea" style="width:100%" data-min="1" data-max="100" data-required="true" data-id="IdArea"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-group">
+                                    <label class="col-sm-1 control-label">Job Position:</label>
+                                    <div class="col-sm-5">
+                                        <select class="select2_CargoL form-control _enty" name="IdCargo" id="cboCargo" style="width:100%" data-min="1" data-max="100" data-required="true" data-id="IdCargo"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>&nbsp;</div>
+                        <div class="row">
+                            <div>
+                                <label class="col-sm-1 control-label">Email:</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control _enty" name="Email" id="txtEmail" data-min="1" data-max="100" data-id="Email" maxlength="200">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-sm-3" style="text-align:right;">
+                                    <div class="i-checks">
+                                        <div class="i-checks" id="Laptop">
+                                            <div class="icheckbox_square-green" style="position: relative;">
+                                                <label class="">
+                                                    <input type="checkbox" style="position: absolute; opacity: 0;" id="chkLaptop">
+                                                    <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                </label>
+                                            </div>
+                                            <label style="font-weight: bold;">Use Laptop</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-sm-3" style="text-align:right;">
+                                    <div class="i-checks">
+                                        <div class="i-checks" id="Celular">
+                                            @*<label class="">*@
+                                            <div class="icheckbox_square-green" style="position: relative;">
+                                                <label class="">
+                                                    <input type="checkbox" style="position: absolute; opacity: 0;" id="chkCelular">
+                                                    <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                </label>
+                                            </div>
+                                            <label style="font-weight: bold;">Use CellPhone</label>
+                                            @*</label>*@
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>&nbsp;</div>
+                        <div class="row">
+                            <div id="Cont_FechaInicio">
+                                <div class="form-group">
+                                    <label class="col-sm-1 control-label">Start Date:</label>
+                                    <div class="col-sm-5" id="div_FechaInicio">
+                                        <div class='input-group date'>
+                                            <input type='text' class='form-control _enty' id="txt_Fecha_Inicio" data-type="date" data-min="10" data-max="10" data-level="true" data-id="FechaInicio">
+                                            <div class="input-group-addon" id="div_CalendarInicio">
+                                                <span class="fa fa-calendar"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="Cont_FechaCese">
+                                <div class="form-group">
+                                    <label class="col-sm-1 control-label">Cessation Date:</label>
+                                    <div class="col-sm-5" id="div_FechaCese">
+                                        <div class='input-group date'>
+                                            <input type='text' class='form-control _enty' id="txt_Fecha_Cese" data-type="date" data-min="10" data-max="10" data-level="true" data-id="FechaCese">
+                                            <div class="input-group-addon">
+                                                <span class="fa fa-calendar"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>&nbsp;</div>
+                    </div>
+                    @*</form>*@
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="ibox" id="formList">
+        <div class="ibox-title">
+            <h5>
+                <span id="txtTituloTabla" class="text-success"><b>List Personal</b></span>
+            </h5>
+            <div style="text-align:right;">
+                <label id="NumRegistros" class="text-success"><b></b></label>
+            </div>
+        </div>
+
+        <div class="ibox-content">
+
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control input-sm m-b-xs" id="filterE"
+                               placeholder="Search in table">
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <select class="form-control _enty select2_AreaL" name="IdAreaL" id="selectArea" style="width:100%"></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <select class="form-control _enty select2_CargoL" name="IdCargoL" id="selectCargo" style="width:100%"></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-1">
+                            <select id="cboEstado" name="servicio" class="form-control" style="width:100%">
+                                <option value="0" selected>Enable</option>
+                                <option value="1">Disable</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+
+            <div class="row">
+                <div class="table-responsive">
+                    <table class="footable table table-stripped table-bordered" data-page-size="50" data-filter=#filterE>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Identity Document</th>
+                                <th>Area</th>
+                                <th>Job Position</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="contentTablePersonal"></tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="7">
+                                    <ul class="pagination pull-right"></ul>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="modales">
+        <div id="modalEmergency"></div>
+    </div>
+
+
+</div>

@@ -1,0 +1,77 @@
+﻿<style>
+    .no-sort::after {
+        display: none !important;
+    }
+
+    .no-sort {
+        pointer-events: none !important;
+        cursor: default !important;
+    }
+
+    thead input {
+        width: 100%;
+    }
+</style>
+<div class="ibox" id="panelEncabezado_inventarioEditar">
+    <div class="hide">
+        <input type="text" id="txtpar_new" value="DATA-PARAMETRO" />
+    </div>
+    <div class="ibox-title">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 id="_title" class="text-navy bold">Cerrar Periodo de Inventario</h3>
+            </div>
+            <div class="col-sm-6 text-right">
+                <button type="button" class="btn btn-primary" id="btnSave">
+                    <span class="fa fa-save"></span>
+                    Cerrar Periodo
+                </button>
+                <button type="button" class="btn btn-default" id="btnReturn">
+                    <span class="fa fa-ban"></span>
+                    Regresar
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="ibox-content wrapper wrapper-content gray-bg" style="overflow-y: auto; max-height: 850px;" id="div_cuerpoprincipal">
+        <div class="ibox">
+            <div class="hide">
+                <input type="text" id="txtpar_new" value="DATA-PARAMETRO" />
+                <input type="text" id="hf_idsolicitud" class="_enty_grabar" data-required="false" data-min="1" data-max="20" data-id="IdInventario" />
+            </div>
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <h5 class="text-navy bold">Informacion de cierre</h5>
+                </div>
+
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <!--COLUMNA 1-->
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Periodo</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control _enty_grabar" disabled data-min="1" data-max="20" data-required="true" id="_cboperiodo_colgador" data-id="periodo"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Locación</label>
+                                <div class="col-sm-4">
+                                    <select class="form-control _enty_grabar" data-min="1" data-max="20" data-required="true" id="_cbolocacion_colgador" data-id="periodo"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+                <div id="div_tbl_indexinventario" >
+
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>
+

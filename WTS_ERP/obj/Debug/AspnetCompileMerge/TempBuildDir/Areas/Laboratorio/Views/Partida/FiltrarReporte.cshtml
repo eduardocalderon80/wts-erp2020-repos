@@ -1,0 +1,62 @@
+﻿<div class="ibox float-e-margins" id="panelEncabezado_ReporteResumenLabdip">
+
+    <div class="ibox">
+        <div class="ibox-title">
+            <div class="form-horizontal row ">
+                <div class="col-sm-6 text-right " >
+                    <div id="divmes" class="col-sm-6 text-right hide">
+                        <select id="cboMes" class="form-control" style="width:100%" name="idfabrica" data-id="idcliente"></select>
+                    </div>
+                    <div  id="divanio"  class="col-sm-6 text-right hide">                        
+                        <select id="cboAnio" class="form-control" disabled style="width:100%" name="idfabrica" data-id="idcliente"></select>
+                    </div>
+                </div>
+                <div id="divbotonesprimarios" class="col-sm-6 text-right">
+                    <button id="btnaceptar" class="btn btn-success">
+                        <span class="fa fa-check"></span>
+                        Accept
+                    </button>
+                    <button id="btncancelar" class="btn btn-default" data-dismiss="modal">
+                        <span class="fa fa-reply-all"></span>
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hide">
+        <input type="text" id="txtpar_reportes" value="DATA-PARAMETRO" />
+    </div>
+
+    <div class="ibox">
+        <div class="ibox-content" style="overflow-y: auto; max-height: 350px;">
+           
+            <div id="tablatemp" class="form-group">
+                <div class='form-horizontal row'>
+                    <div class='col-sm-12'>
+                        <div class="table-responsive" id='tablechk'>
+                            <table id='tablereports' class='footable table table-stripped table-bordered'>
+                                <thead>
+                                    <tr>
+                                        <th class='text-center' style="width:10%"></th>
+                                        <th class='text-center' style="width:40%;color:#676A6C">Nombre</th>
+                                        <th class='text-center' style="width:50%;color:#676A6C">Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+

@@ -1,0 +1,73 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Add Sample for Client</h2>
+            </div>
+            <div class="col-sm-6 text-right">
+                <button type="button" class="btn btn-default dim" id="btnSave">
+                    <span class="fa fa-file-o"></span>
+                    Save
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="hide">
+            <input type="text" id="txtpar" data-par="DATA-PARAMETRO" value="" />
+            <input type="text" id="txtperfil" value="@ViewBag.perfil" />
+        </div>
+
+        <div class="form-horizontal">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="col-sm-6">
+
+                            <div class="form-group" id="div_cboTeam">
+                                <label class="control-label col-sm-2">Team:</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" id="cboTeam">
+                                        <option value="">Select</option>
+                                    </select>
+                                </div>
+                            </div>                
+
+                            <div class="form-group" id="div_cboCliente">
+                                <label class="control-label col-sm-2">Customer:</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" id="cboCliente">
+                                        <option value="">Select</option>
+                                    </select>
+                                </div>
+                            </div>
+                                                                 
+                        </div>                       
+                    </div>
+                </div>
+                <div class="panel-footer text-right">
+                    <button type="button" class="btn btn-success" id="btnSearch">
+                        <span class="fa fa-search"></span>
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="ibox float-e-margins">
+            @*<div class="ibox-title">
+                <h5> </h5>
+            </div>*@
+            <div class="ibox-content" style="position:relative; width:50%;overflow-x:auto; overflow-y: auto; max-height: 600px; min-height:0px;">
+                <table class="table table-bordered table-hover" id="tbl_sample_index">
+                    <thead>
+                        <tr>                           
+                            <th>Sample Type</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody_sample_index"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

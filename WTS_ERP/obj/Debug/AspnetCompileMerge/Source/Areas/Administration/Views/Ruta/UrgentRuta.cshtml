@@ -1,0 +1,314 @@
+﻿<div class="row wrapper border-bottom white-bg page-heading">
+    <div id="content_header">
+        <div class="col-lg-8">
+            <h2>Emergency Mobility</h2>
+            <ol class="breadcrumb">
+                <li>
+                    View of Active Shipments
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-4" style="text-align:right;">
+            <h2 class="font-bold" id="costAnnual">
+                S/. 0.00
+            </h2>
+            <ol class="breadcrumb">
+                <li>
+                    Annual Accumulated Cost
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div class="wrapper wrapper-content gray-bg animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <div>
+                        <h3 class="font-bold no-margins">
+                            Accumulated Emergency Mobility Cost on the Month
+                        </h3>
+                        <small>Accumulated Cost Per week</small>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <div>
+                        <div id="lineChart"></div>
+                    </div>
+
+                    <div class="m-t-md">
+                        <small class="pull-right">
+                            <i class="fa fa-clock-o"> </i>
+                            Update on <spam id="fechaUpdate">03/19/2018</spam>
+                        </small>
+                        <small>
+                            <strong>Analysis of cost:</strong> Cost per week for the last 3 months.
+                        </small>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="ibox float-e-margins">
+
+                <div class="ibox-title">
+                    <div class="col-md-9">
+                        <h3>
+                            Ranking Emergency Mobility On The Month
+                        </h3>
+                    </div>
+                    <div class="col-md-3" style="text-align:right">
+                        <h3><span class="text-success"><strong><span id="totalCostMes">S/. 0.00</span></strong></span></h3>
+                    </div>
+                </div>
+
+                <div class="ibox-content">
+                    <div class="table-responsive m-t">
+                        <input type="text" class="form-control input-sm m-b-xs" id="filterA"
+                               placeholder="Search in table">
+                        <table style="width:100%" height="100" class="footable table " data-page-size="7" data-filter=#filterA>
+                            <thead>
+                                <tr>
+                                    <th class="data-sort-stable:false;">Leadership</th>
+                                    <th>Without Cost</th>
+                                    <th>with Cost</th>
+                                    <th style="text-align:right">Sub Total Cost</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bodyGridCostEmergency"></tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="6">
+                                        <ul class="pagination pull-right"></ul>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="ibox" id="formulario">
+        <div class="ibox-title">
+            <h5>
+                <span class="text-success"><b>New Emergency Mobility</b></span>
+            </h5>
+            <div class="ibox-tools">
+                <a class="close-link" onclick="hideFormulario()">
+                    <i class="fa fa-times"></i>
+                </a>
+
+            </div>
+        </div>
+        <div class="ibox-content">
+            <span style="text-align:left;" id="btnSave">
+                <button class="btn btn-primary " type="button" onclick="validInsert()">
+                    <i class="fa fa-save"></i>&nbsp;&nbsp;
+                    <span class="bold">Save</span>
+                </button>
+            </span>
+            <div id="animation_box" class="animated bounceIn" style="background-color:white;padding-left:50px;width:100%">
+                <form role="form" id="form" novalidate="novalidate" style="width:95%;">
+                    <div class="form-group">
+                        <div class="row">
+                            <div>
+                                <label class="col-sm-1 control-label">Ship by:</label>
+                                <div class="col-sm-5">
+                                    <div id="txtEnvia" style="font-weight:bold" class="text-success"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="col-sm-1 control-label">Approved by:</label>
+                                <div class="col-sm-5">
+                                    <div id="txtAprueba" style="font-weight:bold" class="text-success"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>&nbsp;</div>
+                        <div class="row">
+                            <div>
+                                <label class="col-sm-1 control-label">Type Mobility:</label>
+                                <div class="col-sm-5">
+                                    <select class="select2_TypeMobility form-control" name="movilidad" id="selectMobilidad" style="width:100%">
+                                        <option></option>
+                                        
+                                        <option value="1">Ruta A</option>
+                                        <option value="2">Ruta B</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="col-sm-1 control-label">Destination:</label>
+                                <div class="col-sm-3">
+                                    <div>
+                                        <div id="selectDestino">
+                                            <select class="select2_Destination form-control" name="destino" id="cboDestino" style="width:100%"></select>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div id="txtDestino">
+                                            <input type="text" class="form-control" name="destino" id="txtInputDestino">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-sm-1" style="text-align:left;">
+                                    <div class="i-checks">
+                                        <div class="i-checks">
+                                            <label class="">
+                                                <div class="icheckbox_square-green" style="position: relative;">
+                                                    <input type="checkbox" style="position: absolute; opacity: 0;" id="chkOthers">
+                                                    <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                </div>
+                                                <i></i>Others
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                        </div>
+                        <div>&nbsp;</div>
+                        <div class="row">
+                            <label class="col-sm-1 control-label">Service:</label>
+
+                            <div class="col-sm-5">
+                                <div id="txtTipoServicio"></div>
+                                <div id="cboServicio">
+                                    <select id="select2_TypeService" class="select2_TypeService form-control" @*onchange="selectTipo()"*@ name="servicio" style="width:100%">
+                                        <option|></option|>
+                                        
+                                       <option value="1" selected>Morning</option>
+                                         <option value="2">Afternoon</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <label class="col-sm-1 control-label">Delivery Time:</label>
+                            <div class="col-sm-3">
+                                <div class="input-group clockpicker" data-autoclose="true">
+                                    <input type="text" class="form-control"  value="08:30" name="hora" id="txtHora">
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-clock-o"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-sm-2" style="text-align:left;">
+                                <div class="i-checks" id="ichkSinMovil">
+                                    <div class="i-checks">
+                                        <label class="">
+                                            <div class="icheckbox_square-green" style="position: relative;">
+                                                <input type="checkbox" style="position: absolute; opacity: 0;" id="chkSinMovil">
+                                                <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                            </div>
+                                            <i></i>Need Mobility
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>&nbsp;</div>
+                        <div id="txtAprobadoPor">
+                            <div class="row">
+                                <label class="col-sm-1 control-label">Client:</label>
+
+                                <div class="col-sm-11">
+                                    <input type="text" class="form-control" name="cliente" id="idcliente" onkeyup="aMayusculas(this)">
+                                </div>
+                            </div>
+                            <div>&nbsp;</div>
+                        </div>
+                        <div class="row">
+                            <label class="col-sm-1 control-label">Contact:</label>
+
+                            <div class="col-sm-11">
+                                <input type="text" class="form-control" name="contacto" id="txtContacto" onkeyup="aMayusculas(this)">
+                            </div>
+                        </div>
+                        <div>&nbsp;</div>
+                        <div class="row">
+                            <label class="col-sm-1 control-label">Reason:</label>
+                            <div class="col-sm-11 form-group">
+                                <textarea class="form-control message-input" name="motivo" placeholder="Enter reason text" id="txtMotivo" onkeyup="aMayusculas(this)"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label class="col-sm-1 control-label">Observations:</label>
+                            <div class="col-sm-11 form-group">
+                                <textarea class="form-control message-input" name="observacion" placeholder="Enter observations text" id="txtObservacion" onkeyup="aMayusculas(this)"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Emergency Mobility Created for Today</h5>
+                    <span style="float:right" class="text-navy"></span>
+                </div>
+                <div class="ibox-content">
+                    <div>
+                        <div>
+                            <div class="row">
+                                <div class="table-responsive">
+                                    <input type="text" class="form-control input-sm m-b-xs" id="filterE"
+                                           placeholder="Search in table">
+                                    <table style="width:100%" height="100" class="footable table table-stripped table-bordered " data-page-size="8" data-filter=#filterE>
+                                        <thead>
+                                            <tr>
+                                                <th>Destination</th>
+                                                <th>Service</th>
+                                                <th>Delivery Time</th>
+                                                <th>Ship by</th>
+                                                <th>Approved by</th>
+                                                <th>State</th>
+                                                <th>Cost</th>
+                                                <th>Type Mobility</th>
+                                                <th>Status</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="contentTableEmergency"></tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan="11">
+                                                    <ul class="pagination pull-right"></ul>
+                                                </td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <a href="#" class="btn btn-success btn-sm" id="btn_newroute"><i class="fa fa-plus"></i> Add Route</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modales">
+        <div id="modalEmergency"></div>
+    </div>
+
+</div>

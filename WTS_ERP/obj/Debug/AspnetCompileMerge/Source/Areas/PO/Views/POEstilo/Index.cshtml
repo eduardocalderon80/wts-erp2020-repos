@@ -1,0 +1,147 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Po - Style</h2>
+            </div>
+            <div class="col-sm-6 text-right">
+                <button type="button" class="btn btn-primary dim" id="btnOpenAddPo">
+                    <span class="fa fa-file-o"></span>
+                    New Po
+                </button>
+                <button type="button" class="btn btn-info dim" id="btnOpenAddBuy">
+                    <span class="fa fa-file-o"></span>
+                    New Buy
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">
+                                    Customer
+                                </label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" id="cboCliente">
+                                        <option>All</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Factory</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" id="cboFabrica">
+                                        <option>All</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Client Po Code</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="txtCodigoPoClienteIndex" value="" />
+                                </div>
+                            </div>
+                            <div class="form-group" id="divPadreFechaInicio">
+                                <label class="control-label col-sm-2">Start Arrival Po</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control" value="" id="txtFechaInicio" />
+                                        <div class="input-group-addon">
+                                            <span class="fa fa-calendar"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <label class="control-label col-sm-2">End Arrival Po</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control" value="" id="txtFechaFin" />
+                                        <div class="input-group-addon">
+                                            <span class="fa fa-calendar"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2"># Po</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" value="" id="txtNumeroPoWTS" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Style code</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" value="" id="txtCodigoProducto" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Type po</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" id="cboTipoPo_BuyIndex">
+                                        <option value="1">Buy</option>
+                                        <option value="2" selected>Po</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer text-right">
+                    <button type="button" class="btn btn-success" id="btnSearch">
+                        <span class="fa fa-search"></span>
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Details</h5>
+            </div>
+            <div class="ibox-content" style="position:relative; width:100%;overflow-x:auto; overflow-y: auto; max-height: 500px; min-height:0px;">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th class="text-center col-sm-1"></th>
+                            <th class="text-center col-sm-1">Id</th>
+                            <th class="text-center col-sm-1">PO</th>
+                            <th class="text-center col-sm-1">PoCliente</th>
+                            <th class="text-center col-sm-1">Style</th>
+                            <th class="text-center col-sm-1">Po type</th>
+                            <th class="text-center col-sm-1">Customer</th>
+                            <th class="text-center col-sm-1">Supplier</th>
+                            <th class="text-center col-sm-1">Arrival Po</th>
+                            <th class="text-center col-sm-1">Client price</th>
+                            <th class="text-center col-sm-1">Factory price</th>
+                            <th class="text-center col-sm-1">Required quantity</th>
+                            <th class="text-center col-sm-1">Amount</th>
+                            <th class="text-center col-sm-1">Cost</th>
+                            <th class="text-center col-sm-1">Margin</th>
+                            <th class="text-center col-sm-1">Factory delivery date</th>
+                            <th class="text-center col-sm-1">Client delivery date</th>
+                            <th class="text-center col-sm-1">Client in Whs date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyConsultaIndex"></tbody>
+                </table>
+            </div>
+        </div>
+        @*<div class="row" id="divTablaDetalle">
+                <div class="col-sm-12">
+
+                </div>
+            </div>*@
+    </div>
+</div>

@@ -1,0 +1,40 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="text-right">
+            <button type="button" id="btnCancelarBuscarBuy_Partial" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button id="btnAceptarBuyBuscar" class="btn btn-primary" type="button">Accept</button>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div id="divGridBuy">
+            <div id="divGridPartialBuy" style="position:relative;width:100%;overflow-x:auto;overflow-y:auto; max-height:400px; min-height: 50px;">
+                <table id="tblgridbuybuscar" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="hide"></th>
+                            <th class="k-header">Client</th>
+                            <th class="k-header"># Po Client</th>
+                            <th class="k-header">Style</th>
+                            <th class="k-header">Required  Quantity</th>
+                            <th class="k-header">Balance Quantity</th>
+                            <th class="k-header">Close</th>
+                        </tr>
+                        <tr>
+                            <th class="hide"></th>
+                            <th></th>
+                            <th><input type="text" id="txtpocliente" class="form-control filter" data-field="codigopocliente" /></th>
+                            <th><input type="text" id="txtestilo" class="form-control filter" data-field="nombreproducto" /></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodygridbuscarbuy" class="tbody"></tbody>
+                    <tfoot id="tfoot_buy"></tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,240 @@
+﻿@{
+    string _parametro = ViewBag.parametro;
+}
+<html>
+<head>
+    <title></title>
+    <style>
+        @@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);
+
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif !important;
+            font-weight: 400;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        img, object {
+            max-height: 100%;
+            max-width: 100%;
+        }
+
+        img {
+            border: 0 none;
+            height: auto;
+            max-width: 100%;
+            vertical-align: middle;
+        }
+
+        .div-tabla {
+            width: 100%;
+            display: table;
+            border: 2px solid #666666;
+        }
+
+        div-tabla-sinborde {
+            width: 100%;
+            display: table;
+            border-spacing: 5px;
+        }
+
+        .div-tabla-fila {
+            display: table-row;
+            width: auto;
+            clear: both;
+        }
+
+        .div-table-col-izq {
+            float: left;
+            display: table-column;
+            width: 350px;
+            height: 100%;
+            text-align: center;
+        }
+
+        .div-table-col-der {
+            float: left; /*fix for  buggy browsers*/
+            display: table-column;
+            width: 420px;
+            height: auto;
+        }
+
+        .div-table-col {
+            float: left; /*fix for  buggy browsers*/
+            display: table-column;
+            width: 790px;
+            height: 15px;
+            background-color: #3C8DBC !important;
+        }
+
+        .border {
+            border: 2px solid #666666;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .presentacion table {
+            border-collapse: collapse;
+        }
+
+        .presentacion table, .presentacion th, .presentacion td {
+            border: 1px solid black;
+        }
+
+        .tblDetalle {
+            border: none !important;
+        }
+
+            .tblDetalle td {
+                padding-right: 30px;
+                border: 1px !important;
+            }
+    </style>
+
+    <script src="~/Scripts/js/jquery-2.1.1.js"></script>
+    <script src="~/Scripts/kendo/2015.3.930/kendo.all.min.js"></script>
+</head>
+<body>
+    <div id="div_imprimir_solicitud">
+        @Html.Hidden("urlBase", Url.Content("~/"))
+        <div style="display:none">
+            <input type="text" id="hf_parametro" value="@_parametro" />
+        </div>
+        <div class="div-tabla-sinborde">
+            <div class="div-tabla-fila">
+                <div class="div-table-col">
+                </div>
+            </div>
+            <div class="div-tabla-fila" style="height:40px;">
+                <div class="div-table-col-izq" align="center">
+                    <img src="~/content/img/logos/WTSLogo2.png" style="height: 70px;" />
+                </div>
+                <div class="div-table-col-der" align="center" style="text-align:center;vertical-align:middle;font-size:30px;font-weight:bold; padding-top:15px;">
+                    COLGADORES
+                </div>
+            </div>
+            <div class="div-tabla-fila">
+                <div class="div-table-col">
+                </div>
+            </div>
+        </div>
+        <table cellpadding="2" cellspacing="2" class="presentacion" width="790">
+            @*<tr>
+                    <td width="350" align="right">
+                        CÓDIGO DE REQUERIMIENTO:
+                    </td>
+                    <td width="440" align="center">
+                        @Model.Codigo
+                    </td>
+                </tr>*@
+            <tr>
+                <td width="350" align="right">
+                    CÓDIGO DE SOLICITUD:
+                </td>
+                <td width="440" align="center" id="td_idsolicitud">
+                    @*@Model.IdSolicitud*@
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    DESCRIPCION DE REQUERIMIENTO:
+                </td>
+                <td align="center">
+                    Colgadores
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right">
+                    FECHA:
+                </td>
+                <td align="center" id="td_fechasolicitud">
+                    @*@Model.Fecha.ToShortDateString()*@
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    CLIENTE:
+                </td>
+                <td align="center" id="td_nombrecliente">
+                    @*@Model.Cliente*@
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    SOLICITADO POR:
+                </td>
+                <td align="center" id="td_nombre_usuario_solicitante">
+                    @*@Model.Personal*@
+                </td>
+            </tr>
+
+            @*estaba en otra tabla*@
+            <tr>
+                <td align="right">
+                    COMENTARIO:
+                </td>
+                <td align="center" id="td_comentario">
+                    @*@Model.Comentario*@
+                </td>
+            </tr>
+            <tr>
+                <td align="right">BÚSQUEDA POR CÓDIGO WTS</td>
+                <td align="center">
+                    <table class="" id="tbl_busqueda_x_codigotela">
+                        <!--tblDetalle-->
+                        @*<thead>
+                            <tr>
+                                <th>Código Tela</th>
+                                <th>Nombre Tela</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody_busqueda_x_codigotela"></tbody>*@
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">BÚSQUEDA POR DESCRIPCIÓN DE LA TELA</td>
+                <td align="center" id="td_busqueda_x_descripciontela">
+                    @*@Model.DescripcionTela*@
+                </td>
+            </tr>
+            <tr>
+                <td align="right">ARMAR COLGADOR WTS</td>
+                <td align="center">
+                    <table class="" id="tbl_armadocolgadores">
+                        <!--tblDetalle-->
+                        @*<thead>
+                            <tr>
+                                <th>Fábrica</th>
+                                <th>N° Colgadores</th>
+                                <th>Comentario</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody_armado_colgadores"></tbody>*@
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <div id="divcodigobarra_idsolicitud" style="width:200px; height:90px;"></div>
+                </td>
+            </tr>
+        </table>
+
+        <div class="div-tabla-sinborde">
+            <div class="div-tabla-fila">
+                <div class="div-table-col">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/Home/Util.js"></script>
+    <script src="~/Scripts/DesarrolloTextil/SolicitudColgador/solicitudcolgadorimprimir.js"></script>
+</body>
+</html>

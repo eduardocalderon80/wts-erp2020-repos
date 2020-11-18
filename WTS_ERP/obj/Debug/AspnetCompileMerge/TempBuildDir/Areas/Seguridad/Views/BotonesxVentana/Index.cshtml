@@ -1,0 +1,71 @@
+﻿<div class="row wrapper white-bg page-heading">
+    <div id="content_header" class="ibox float-e-margins">
+        <div id="divtituloprincipal" class="col-sm-6">
+            <h2 class="font-bold">Botones por Ventana</h2>
+        </div>
+        <div class="col-sm-6 text-right position_right" style="vertical-align: middle;margin-top:15px;">
+            <button id="btnNew" type="button" class="btn btn-default">
+                <span class="fa fa-plus"></span>
+                Nuevo
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="hide">
+    <input type="text" id="txtpar" value="DATA-PARAMETRO" />
+    <input type="hidden" id="hf_IdSolicitud" data-id="IdPersonal" data-default="0" value="0" />
+</div>
+
+<div class="row wrapper-content gray-bg animated">
+
+    <div id="content_form" class="ibox">
+        <div class="ibox-title">
+            <div class="form-horizontal row ">
+                <div class="col-sm-6">
+                    <h3 id="_title" class="text-navy bold">Lista de Botones</h3>
+                </div>
+            </div>
+        </div>
+        <div id="tabledetails" class="ibox-content">
+
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control input-sm m-b-xs" id="filter" placeholder="Search in table">
+                    </div>
+                    <div class="col-sm-2">
+                        <select id="cboEstadoSolicitud" class="form-control _enty" name="IdEstado" data-id="IdEstado" data-required="true">
+                            <option value="0">Enabled</option>
+                            <option value="1">Disabled</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="footable table table-hover table-stripped table-bordered " data-page-size="5" data-filter=#filter id="contentBotones">
+                    <thead>
+                        <tr>
+                            <th class='col-sm-1 text-center' data-sort-ignore="true">Preview</th>
+                            <th class='col-sm-1 text-center' data-sort-ignore="true">ID Boton</th>
+                            <th class='col-sm-2 text-center' data-sort-ignore="true">Agrupador</th>
+                            <th class='col-sm-1 text-center' data-sort-ignore="true">Acción</th>
+                            <th class='col-sm-2 text-center' data-sort-ignore="true">Titulo</th>
+                            <th class='col-sm-2 text-center' data-sort-ignore="true">Ventana</th>
+                            <th class='col-sm-2 text-center' data-sort-ignore="true">Función</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="9"><ul class="pagination pull-right"></ul></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</div>

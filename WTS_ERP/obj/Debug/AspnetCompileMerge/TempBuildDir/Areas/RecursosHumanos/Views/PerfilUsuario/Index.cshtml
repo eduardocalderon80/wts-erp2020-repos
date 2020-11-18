@@ -1,0 +1,856 @@
+﻿<style>
+    hr {
+        margin: 6.5px 0px 0px 0px;
+    }
+
+    .inline-flex {
+        display: flex;
+    }
+
+    .fit-image {
+        width: 100%;
+        object-fit: cover;
+        height: 300px; /* only if you want fixed height */
+    }
+
+    #_FechaPasaporte[readonly] {
+        background-color: #ffffff;
+        border: 1px solid #e5e6e7;
+    }
+</style>
+<div class="ibox" id="panelEncabezado_PerfilUsuarioIndex">
+    <div class="hide">
+        <input type="text" id="txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-4">
+            <h2 class="font-bold">Mi Perfil</h2>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <i class="fa fa-home"></i>
+                </li>
+                <li class="breadcrumb-item">
+                    Gestion de Talento
+                </li>
+                <li class="breadcrumb-item active">
+                    <strong>Mi Perfil</strong>
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-8 text-right m-t-md">
+            <button type="button" class="btn btn-primary" id="btnSave">
+                <span class="fa fa-save"> </span>
+                Guardar
+            </button>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content">
+        <div class="row animated fadeInRight">
+            <div class="col-md-2">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>Foto Perfil</h5>
+                    </div>
+                    <div>
+                        <div class="ibox-content no-padding border-left-right">
+                            <img alt="image" class="img-fluid" id="_FotoPerfil" src="~/Content/img/RRHH/personal/default.jpg" style="padding: 10px 10px 0 10px; width: 100%;">
+                        </div>
+                        <div class="ibox-content profile-content">
+                            <div class="user-button">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label title="Upload image file" for="inputImage" class="btn btn-sm btn-primary btn-block" id="btnUpload" style="display: none;">
+                                            <input type="file" accept="image/*" name="file" id="inputImage" style="display:none">
+                                            <i class="fa fa-upload"></i> Subir foto
+                                        </label>
+                                        <button type="button" class="btn btn-danger btn-sm btn-block" id="btnDeleteUpload" style="display: none;">
+                                            <i class="fa fa-trash"></i> Eliminar foto
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>Datos Perfil</h5>
+                        <div class="ibox-tools">
+                            <a class="fullscreen-link">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="ibox" style="margin-bottom: 0;">
+                                    <div class="ibox-title">
+                                        <h5>Personal</h5>
+                                        <div class="ibox-tools">
+                                            <a class="collapse-link">
+                                                <i class="fa fa-chevron-up"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div class="form-horizontal row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Apellido Paterno:</label>
+                                                        <input id="_ApellidoPaterno" class="form-control" disabled>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Apellido Materno:</label>
+                                                        <input id="_ApellidoMaterno" class="form-control" disabled>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Primer Nombre:</label>
+                                                        <input id="_PrimerNombre" class="form-control" disabled>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Segundo Nombre:</label>
+                                                        <input id="_SegundoNombre" class="form-control" disabled>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Nombre Preferido:</label>
+                                                        <input id="_NombrePreferido" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="nombrepreferido">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">N° DNI:</label>
+                                                        <input id="_Dni" class="form-control" data-min="1" data-max="254" data-id="dni" disabled>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Fecha nacimiento:</label>
+                                                        <div class="input-group">
+                                                            <input id="_FechaNacimiento" type="text" class="form-control" disabled>
+                                                            <div class="input-group-addon">
+                                                                <span class="fa fa-calendar"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Género:</label>
+                                                        <select id="_Genero" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="genero">
+                                                            @*<option value="M">Masculino</option>
+                                                            <option value="F">Femenino</option>*@
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Correo Personal:</label>
+                                                        <div class="input-group">
+                                                            <input id="_CorreoPersonal" type="text" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="correopersonal">
+                                                            <div class="input-group-addon">
+                                                                <span class="fa fa-envelope"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Telefono fijo de casa:</label>
+                                                        <div class="input-group">
+                                                            <div class="input-group-addon">
+                                                                <span>+01</span>
+                                                            </div>
+                                                            <input id="_Telefono" type="text" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="telefono" data-type="int">
+                                                            <div class="input-group-addon">
+                                                                <span class="fa fa-phone"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Celular personal:</label>
+                                                        <div class="input-group">
+                                                            <div class="input-group-addon">
+                                                                <span>+51</span>
+                                                            </div>
+                                                            <input id="_Celular" type="text" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="celular" data-type="int">
+                                                            <div class="input-group-addon">
+                                                                <span class="fa fa-phone"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Domicilio:</label>
+                                                        <div class="input-group">
+                                                            <input id="_Domicilio" type="text" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="200" data-id="domicilio" maxlength="200">
+                                                            <div class="input-group-addon">
+                                                                <span class="fa fa-home"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Referencia:</label>
+                                                        <div class="input-group">
+                                                            <input id="_Referencia" type="text" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="200" data-id="referencia" maxlength="200">
+                                                            <div class="input-group-addon">
+                                                                <span class="fa fa-map-marker"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Departamento:</label>
+                                                        <select id="_Region" class="form-control _enty_grabar" data-required="true"  data-min="1" data-max="254" data-id="region">
+                                                            @*<option value="">--</option>*@
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Provincia:</label>
+                                                        <select id="_Provincia" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="provincia">
+                                                            @*<option value="">--</option>*@
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Distrito:</label>
+                                                        <select id="_Distrito" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="distrito">
+                                                            @*<option value="">--</option>*@
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Brevete:</label>
+                                                        <div class="input-group">
+                                                            <select id="_Brevete" class="form-control _enty_grabar" data-required="false" data-min="1" data-max="254" data-id="brevete">
+                                                                @*<option value="NO">NO</option>
+                                                                <option value="A-I">A-I</option>
+                                                                <option value="A-IIa">A-IIa</option>
+                                                                <option value="A-IIb">A-IIb</option>
+                                                                <option value="A-IIIa">A-IIIa</option>
+                                                                <option value="A-IIIb">A-IIIb</option>
+                                                                <option value="A-IIIc">A-IIIc</option>
+                                                                <option value="B-I">B-I</option>
+                                                                <option value="B-IIa">B-IIa</option>
+                                                                <option value="B-IIb">B-IIb</option>
+                                                                <option value="B-IIc">B-IIc</option>*@
+                                                            </select>
+                                                            <div class="input-group-addon">
+                                                                <span class="fa fa-truck"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">¿Tiene Pasaporte?:</label>
+                                                        <select id="_TienePasaporte" class="form-control _enty_grabar" data-id="pasaporte">
+                                                            @*<option value="NO">NO</option>
+                                                            <option value="SI">SI</option>*@
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="div_passport" class="col-sm-12 hide">
+                                                <div class="form-group">
+                                                    <div class="col-sm-6">
+                                                        <label class="control-label">N° Pasaporte:</label>
+                                                        <input id="_NroPasaporte" type="text" class="form-control _enty_grabar" data-required="false" data-min="1" data-max="20" data-id="numeropasaporte" data-type="int" maxlength="20">
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label class="control-label">Fecha Vencimiento Pasaporte:</label>
+                                                        <div class="input-group date date-es">
+                                                            <input id="_FechaPasaporte" type="text" class="form-control _enty_grabar" data-required="false" data-min="1" data-max="254" data-id="fechapasaporte" readonly>
+                                                            <div class="input-group-addon">
+                                                                <span class="fa fa-calendar"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ibox" style="margin-bottom: 0;">
+                                    <div class="ibox-title">
+                                        <h5>Grados de Estudios</h5>
+                                        <div class="ibox-tools">
+                                            <a class="collapse-link">
+                                                <i class="fa fa-chevron-up"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div class="form-horizontal row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Estudios en el Perú:</label>
+                                                        <select id="_EstudiosPeru" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="estudiosperu">
+                                                            @*<option value="SI">SI</option>
+                                                            <option value="NO">NO</option>*@
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Tipo de Inst. Educativa:</label>
+                                                        <select id="_TipoInstitucionEducativa" type="text" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="codigoinstitucioneducativa">
+                                                            @*<option value="UNIVERSIDAD">UNIVERSIDAD</option>
+                                                            <option value="INSTITUTO">INSTITUTO</option>*@
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Régimen de la Institución:</label>
+                                                        <select id="_RegimenInstitucion" type="text" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="codigoregimeninstitucion">
+                                                            @*<option value="PUBLICA">PUBLICA</option>
+                                                            <option value="PRIVADA">PRIVADA</option>*@
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Nombre de la Institución:</label>
+                                                        <input id="_NombreInstitucion" type="text" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="100" data-id="nombreinstitucion" maxlength="100">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Carrera:</label>
+                                                        <input id="_Carrera" type="text" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="carrera">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Año de Egreso:</label>
+                                                        <select id="_AnioEgreso" type="text" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="anioegreso"></select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ibox" style="margin-bottom: 0;">
+                                    <div class="ibox-title">
+                                        <h5>Laboral</h5>
+                                        <div class="ibox-tools">
+                                            <a class="collapse-link">
+                                                <i class="fa fa-chevron-up"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div class="form-horizontal row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Área:</label>
+                                                        @*<input id="_Area" class="form-control" disabled>*@
+                                                        <select id="cbo_edit_area" disabled class="form-control _select2 _enty" data-id="idarea" data-required="true" style="width:100%"></select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Sub-Área:</label>
+                                                        @*<input id="_SubArea" class="form-control" disabled>*@
+                                                        <select id="cbo_edit_sub_area" disabled class="form-control _select2 _enty" data-id="idsubarea" style="width:100%"></select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Equipo:</label>
+                                                        @*<input id="_Equipo" class="form-control" disabled>*@
+                                                        <select id="cbo_edit_equipo" disabled class="form-control _select2 _enty" data-id="idequipo" style="width:100%"></select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Puesto de Trabajo:</label>
+                                                        @*<input id="_Cargo" class="form-control" disabled>*@
+                                                        <select id="cbo_edit_cargo" disabled class="form-control _select2 _enty" data-id="idcargo" data-required="true" style="width:100%"></select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Fecha de Ingreso:</label>
+                                                        <div class="input-group">
+                                                            <input id="_FechaIngreso" type="text" class="form-control" disabled>
+                                                            <div class="input-group-addon">
+                                                                <span class="fa fa-calendar"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Fecha de Cese:</label>
+                                                        <div class="input-group">
+                                                            <input id="_FechaCese" type="text" class="form-control" disabled>
+                                                            <div class="input-group-addon">
+                                                                <span class="fa fa-calendar"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">EsSalud/EPS:</label>
+                                                        <select id="_Seguro" class="form-control" disabled>
+                                                            <option value="EsSalud">EsSalud</option>
+                                                            <option value="AFP">EPS</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Correo de la Empresa:</label>
+                                                        <div class="input-group">
+                                                            <input id="_CorreoLaboral" type="text" class="form-control" disabled>
+                                                            <div class="input-group-addon">
+                                                                <span class="fa fa-envelope"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">ONP/AFP:</label>
+                                                        <select id="_Pension" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="codigopension">
+                                                            @*<option value="ONG">ONP</option>
+                                                            <option value="AFP - PROFUTURO">AFP - PROFUTURO</option>
+                                                            <option value="AFP - PRIMA">AFP - PRIMA</option>
+                                                            <option value="AFP - INTEGRA">AFP - INTEGRA</option>
+                                                            <option value="AFP - HABITAT">AFP - HABITAT</option>*@
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ibox" style="margin-bottom: 0;">
+                                    <div class="ibox-title">
+                                        <h5>Familiar</h5>
+                                        <div class="ibox-tools">
+                                            <a class="collapse-link">
+                                                <i class="fa fa-chevron-up"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div class="form-horizontal row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Estado Civil:</label>
+                                                        <select id="_EstadoCivil" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="codigoestadocivil">
+                                                            @*<option value="Soltero">Soltero</option>
+                                                            <option value="Casado">Casado</option>
+                                                            <option value="Casado">Conviviente</option>
+                                                            <option value="Casado">Divorciado</option>
+                                                            <option value="Casado">Separado</option>
+                                                            <option value="Casado">Viudo</option>*@
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">N° Hijos:</label>
+                                                        <input id="_NroHijos" type="text" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="numerohijos">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Vivienda:</label>
+                                                        <div class="input-group">
+                                                            <select id="_Vivienda" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="codigovivienda">
+                                                                @*<option value="Propia">Propia</option>
+                                                                <option value="Alquilada">Alquilada</option>
+                                                                <option value="Otros">Otros</option>*@
+                                                            </select>
+                                                            <div class="input-group-addon">
+                                                                <span class="fa fa-home"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="div_otros" class="col-sm-6 hide">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Otros:</label>
+                                                        <input id="_Otros" type="text" class="form-control _enty_grabar" data-required="false" data-min="1" data-max="254" data-id="nombrevivienda">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="inline-flex">
+                                                    <h4>Composición Familiar: ¿con qué personas vives?</h4>
+                                                    <div style="margin-left: 5px;">
+                                                        <button type="button" class="btn btn-xs btn-primary" data-toggle="modal" data-target="#moda_familiar" style="margin-top: 2px;">
+                                                            <i class="fa fa-plus"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <hr />
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="table-responsive" id='tablechk'>
+                                                    <table id="tbl_familiares" class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th>Nombre</th>
+                                                                <th>Parentesco</th>
+                                                                <th>Edad</th>
+                                                                <th>DNI</th>
+                                                                <th>Estado civil</th>
+                                                                <th>Grado de instrucción</th>
+                                                                <th>Ocupación</th>
+                                                                <th>Nombre de Empresa</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ibox" style="margin-bottom: 0;">
+                                    <div class="ibox-title">
+                                        <h5>Emergencia</h5>
+                                        <div class="ibox-tools">
+                                            <a class="collapse-link">
+                                                <i class="fa fa-chevron-up"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div class="form-horizontal row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Grupo Sanguineo:</label>
+                                                        <select id="_GrupoSanguineo" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="codigogruposanguineo">
+                                                            @*<option value="A+">A+</option>
+                                                            <option value="A-">A-</option>
+                                                            <option value="B+">B+</option>
+                                                            <option value="B-">B-</option>
+                                                            <option value="AB+">AB+</option>
+                                                            <option value="AB">AB-</option>
+                                                            <option value="O+">O+</option>
+                                                            <option value="O-">O-</option>*@
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Alergia:</label>
+                                                        <input id="_Alergia" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="200" data-id="alergia" maxlength="200">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Tratamiento Médico:</label>
+                                                        <textarea id="_TratamientoMedico" class="form-control _enty_grabar" data-required="false" data-min="1" data-max="254" data-id="tratamientomedico" style="resize:none"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">Antecedentes Médicos:</label>
+                                                        <textarea id="_AntecedentesMedicos" class="form-control _enty_grabar" data-required="false" data-min="1" data-max="254" data-id="antecedentemedico" style="resize:none"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="ibox" style="margin-top: 20px; margin-bottom: 0;">
+                                                    <div class="ibox-title">
+                                                        <h4>Contacto de Emergencia 1:</h4>
+                                                    </div>
+                                                    <div class="ibox-content">
+                                                        <div class="form-horizontal row">
+                                                            <div class="col-sm-12">
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-12">
+                                                                        <label class="control-label">Nombre Completo:</label>
+                                                                        <div class="input-group">
+                                                                            <input id="_Contacto1" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="254">
+                                                                            <div class="input-group-addon">
+                                                                                <span class="fa fa-user"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-12">
+                                                                        <label class="control-label">Parentesco:</label>
+                                                                        <div class="input-group">
+                                                                            <input id="_Parentesco1" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="254">
+                                                                            <div class="input-group-addon">
+                                                                                <span class="fa fa-users"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-12">
+                                                                        <label class="control-label">Celular:</label>
+                                                                        <div class="input-group">
+                                                                            <input id="_Celular1" type="text" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="254" data-type="int">
+                                                                            <div class="input-group-addon">
+                                                                                <span class="fa fa-phone"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="ibox" style="margin-top: 20px; margin-bottom: 0;">
+                                                    <div class="ibox-title">
+                                                        <h4>Contacto de Emergencia 2:</h4>
+                                                    </div>
+                                                    <div class="ibox-content">
+                                                        <div class="form-horizontal row">
+                                                            <div class="col-sm-12">
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-12">
+                                                                        <label class="control-label">Nombre Completo:</label>
+                                                                        <div class="input-group">
+                                                                            <input id="_Contacto2" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="254">
+                                                                            <div class="input-group-addon">
+                                                                                <span class="fa fa-user"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-12">
+                                                                        <label class="control-label">Parentesco:</label>
+                                                                        <div class="input-group">
+                                                                            <input id="_Parentesco2" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="254">
+                                                                            <div class="input-group-addon">
+                                                                                <span class="fa fa-users"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-12">
+                                                                        <label class="control-label">Celular:</label>
+                                                                        <div class="input-group">
+                                                                            <input id="_Celular2" type="text" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="254" data-type="int">
+                                                                            <div class="input-group-addon">
+                                                                                <span class="fa fa-phone"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Familiar -->
+    <div class="modal fade" id="moda_familiar" tabindex="-1" role="dialog" data-keyboard="true" data-dismiss="modal" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-green">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Añadir Familiar</h4>
+                </div>
+                <div class="modal-body" style="padding: 10px 30px 30px 30px;">
+                    <div class="form-horizontal row">
+                        <div class="col-sm-12 text-right m-b">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                <span class="fa fa-ban"></span>
+                                Cerrar
+                            </button>
+                            <button type="button" class="btn btn-primary" id="btnAddModal">
+                                <span class="fa fa-save"></span>
+                                Agregar
+                            </button>
+                            <hr />
+                        </div>
+                    </div>
+                    <div id="div_parientes" class="form-horizontal row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <label class="control-label">Nombres y Apellidos:</label>
+                                    <input id="_NombreModal" class="form-control _enty" data-required="true">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <label class="control-label">Parentesco:</label>
+                                    <input id="_ParentescoModal" class="form-control _enty" data-required="true">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <label class="control-label">Edad:</label>
+                                    <input id="_EdadModal" class="form-control _enty_grabar" data-required="false" data-min="1" data-max="3" data-type="int" maxlength="3">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <label class="control-label">DNI:</label>
+                                    <input id="_DNIModal" class="form-control _enty_grabar" data-required="false" data-min="1" data-max="8" data-type="int" maxlength="8">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <label class="control-label">Estado Civil:</label>
+                                    <select id="_EstadoCivilModal" class="form-control">
+                                        @*<option value="Soltero">Soltero</option>
+                                        <option value="Casado">Casado</option>
+                                        <option value="Casado">Conviviente</option>
+                                        <option value="Casado">Divorciado</option>
+                                        <option value="Casado">Separado</option>
+                                        <option value="Casado">Viudo</option>*@
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <label class="control-label">Grado de instrucción:</label>
+                                    <div class="input-group">
+                                        <select id="_GradoModal" class="form-control">
+                                            @*<option value="Secundaria Completa">Secundaria Completa</option>
+                                            <option value="Técnico">Técnico</option>
+                                            <option value="Bachiller / Titulado">Bachiller / Titulado</option>
+                                            <option value="Magíster">Magíster</option>*@
+                                        </select>
+                                        <div class="input-group-addon">
+                                            <span class="fa fa-mortar-board"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <label class="control-label">Ocupacion:</label>
+                                    <input id="_OcupacionModal" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <label class="control-label">Nombre de la Empresa:</label>
+                                    <input id="_NombreEmpresaModal" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,88 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2 id="titulo_sample">Factory by Client </h2>
+            </div>
+            <div class="col-sm-6 text-right">
+                <button type="button" class="btn btn-primary dim" id="btnSave">
+                    <span class="fa fa-save"></span>
+                    Save
+                </button>
+                <button type="button" class="btn btn-default dim" id="btnReturn">
+                    Return
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="hide">
+        <input type="text" id="txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="panel-body">
+                <div class="form-horizontal">
+                    <div class="form-group" id="div_cbogrupocomercial">
+                        <label class="col-sm-1 control-label">Team</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" id="cboGrupoComercial"></select>
+                        </div>
+                    </div>
+                    <div class="form-group" id="div_cbocliente">
+                        <label class="col-sm-1 control-label">Client</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" id="cboCliente"></select>
+                        </div>
+                        <button type="button" class="btn btn-info btn-sm" id="btnSearch">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Search Factory</h5>
+            </div>
+            <div class="ibox-content">
+                <div class="row" style="max-height: 300px; overflow-y: auto;">
+                    <table class="table table-bordered table-hover" id="tblfactory">
+                        <thead>
+                            <tr>
+                                <th class="col-sm-1"></th>
+                                <th class="col-sm-11">Factory</th>
+                            </tr>
+                            <tr>
+                                <th class="col-sm-1"></th>
+                                <th class="col-sm-11"><input type="text" placeholder="Search Name" id="txtfilterfactory" class="form-control _clsfilterproveedor" data-field="nombreproveedor" /></th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyfactory" class="tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Factory </h5>
+            </div>
+            <div class="ibox-content">
+                <div class="row" style="max-height: 300px; overflow-y: auto;">
+                    <table class="table table-bordered table-hover" id="tblproveedorcliente">
+                        <thead>
+                            <tr>
+                                <th class="col-sm-1"></th>
+                                <th class="col-sm-3">Team</th>
+                                <th class="col-sm-3">Client</th>
+                                <th class="col-sm-3">Factory</th>
+                                <th class="col-sm-1">Develop</th>
+                                <th class="col-sm-1">Production</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyproveedorcliente"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</div>

@@ -1,0 +1,89 @@
+﻿<style>
+    .dark-gray-bg {
+        background-color: #808080;
+        color: #ffffff;
+    }
+    .float-right {
+        margin-top: 2px;
+        float: right;
+    }
+    .close-animation {
+        position: fixed;
+        left: 95%;
+        top: 5%;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 999;
+    }
+</style>
+<div class="ibox" id="panelEncabezado_CalendarioIndex">
+    <div class="hide">
+        <input type="text" id="txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-6">
+            <h2 class="font-bold">Calendario</h2>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <i class="fa fa-home"></i>
+                </li>
+                <li class="breadcrumb-item">
+                    Gestion de Talento
+                </li>
+                <li class="breadcrumb-item active">
+                    <strong>Calendario</strong>
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-6 text-right" style="padding-top:20px"></div>
+    </div>
+    <div class="wrapper wrapper-content">
+        <div class="row animated fadeInRight">
+            <div class="col-md-3">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <h5>Nueva Solicitud</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="external-events"></div>
+                    </div>
+                </div>
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <h4>Concideraciones:</h4>
+                        1.Haciendo click en la categoría deseada y arrastrándola a la fecha deseada en el calendario. <br />
+                        2.Dar click a la categoría que ubicaste en el calendario.<br />
+                        3.Se abrirá la ventana de solicitudes y podrás completar tu solicitud
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Calendario</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="fullscreen-link">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="calendar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,112 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2>Mensajeria de Auditorias</h2>
+    </div>
+    <div class="panel-body">
+        <div class="row" id="mensajeria">
+            <div class="col-sm-6">
+                <div class="panel panel-default no-borders">
+                    <div class="panel-body">
+
+                        <div id="mensaje" class="hide">
+
+                            <form class="form-horizontal">
+
+                                <div class="form-group">
+                                    <div class="col-sm-3">
+                                        <label class="control-label">Titulo:</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" placeholder="Titulo" class="form-control _enty" id="txttitulo" data-required="true" data-min="2" data-max="60" data-id="titulo">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-3">
+                                        <label class="control-label">Mensaje:</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" placeholder="Mensaje" class="form-control _enty" id="txtmensaje" data-required="true" data-min="2" data-max="400" data-id="mensaje">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-3">
+                                        <label class="control-label">Fabrica:</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <select class="form-control _enty" id="cbofabrica" data-required="true" data-min="1" data-id="codfabrica"></select>
+                                        <input type="text" id="txtnomfabrica" class="_enty hide" data-id="nomfabrica" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group" id="fecha">
+                                    <div class="col-sm-3">
+                                        <label class="control-label">Fecha:</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="input-group date">
+                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control _enty" id="txtfecha" data-id="fecha" data-type="date">
+                                            <input type="text" id="txtsemana" data-id="semana" class="_enty hide" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-offset-3 col-sm-9 btn-group-sm">
+                                        <button class="btn btn-primary" type="button" id="btngrabar"><i class="fa fa-floppy-o"></i> Grabar</button>
+                                        <button class="btn btn-white" type="button" id="btncerrar"><i class="fa fa-ban"></i> Cancelar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div id="encabezado">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <div class="col-sm-3">
+                                        <label class="control-label">Semana:</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="week" id="txtsemanaweek" class="form-control _enty" />
+                                    </div>
+                                </div>
+                            </form>
+                            <form class="form-horizontal">
+                                <div class="col-sm-offset-3 col-md-9">
+                                    <div class="btn-group-sm">
+                                        <button class="btn btn-primary" type="button" id="btnbuscar"><i class="fa fa-search"></i> Buscar</button>
+                                        <button class="btn btn-white" type="button" id="btnnuevo"><i class="fa fa-plus"></i> Nuevo</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body col-sm-12" id="detalle" style="overflow-x:auto;overflow-y:auto;max-height:500px">
+            <table class="table table-striped table-bordered table-list" id="tblMensajeria">
+                <thead>
+                    <tr>
+                        <th class="k-header">Id</th>
+                        <th class="k-header"><span data-value="id" class="header_link">Fabrica </span> </th>
+                        <th class="k-header"><span data-value="id" class="header_link">Titulo </span> </th>
+                        <th class="k-header"><span data-value="id" class="header_link">Mensaje </span> </th>
+                        <th class="k-header"><span data-value="id" class="header_link">Fecha </span> </th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th><input type="text" id="txtfabrica" class="form-control filter" data-field="fabrica" /></th>
+                        <th><input type="text" id="txttitulo" class="form-control filter" data-field="titulo" /></th>
+                        <th><input type="text" id="txtmensaje" class="form-control filter" data-field="mensaje" /></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="tbody_detalle"></tbody>
+                <tfoot id="tfoot_detalle"></tfoot>
+            </table>
+        </div>
+    </div>
+</div>

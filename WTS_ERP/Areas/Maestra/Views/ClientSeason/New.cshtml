@@ -1,0 +1,319 @@
+﻿<style>
+     td {
+        padding: 5px;
+        border-bottom: 1px solid #e7e7e7;
+        padding-left: 20px;
+        background: #ffffff;
+    }
+    ._item {
+        border: 0;
+    }
+
+</style>
+<div id="pnl_ticket_nuevo">
+
+    <div id="pnl_ticket_nuevo_header" class="row wrapper white-bg page-heading">
+        <div class="ibox">
+            <div id="div_titulo_principal" class="col-sm-6">
+                <h2 class="font-bold">Mesa de Ayuda</h2>
+            </div>
+        </div>
+    </div>
+
+    <div id="pnl_ticket_nuevo_body" class="row wrapper-content gray-bg animated">
+
+        <div id="pnl_ticket_nuevo_formulario" class="ibox">
+
+            <div class="ibox-title">
+                <div class="form-horizontal row ">
+                    <div class="col-sm-6">
+                        <h3 id="_title" class="text-success bold">Nuevo</h3>
+                    </div>
+                    <div id="div_botones_principal" class="col-sm-6 text-right">
+                        <button id="btn_guardar" title="Guardar" type="button" class="btn btn-outline btn-primary">
+                            <span class="fa fa-save"></span>
+                            Guardar
+                        </button>
+                        <button id="btn_retornar" type="button" class="btn btn-outline btn-default">
+                            <span class="fa fa-reply-all"></span>
+                            Regresar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="form-horizontal row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-3">Solicitante:</label>
+                                <div class="col-sm-9">
+                                    <input id="txt_solicitante" disabled class="form-control" data-id="solicitante" value="LUIS ENRIQUE ROJAS SEGOVIA">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-3">Área:</label>
+                                <div class="col-sm-9">
+                                    <input id="txt_area_solicitante" disabled class="form-control" data-id="areasolicitante" value="TIC">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="ibox">
+                <div class="ibox-content">
+
+                    <div id="div_categoria" class="form-horizontal row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <label class="control-label">Descripcion:</label>
+                                    <input id="txt_descripcion" class="form-control" data-id="apellidopaterno" data-required="true" data-min="1" data-max="50">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <label class="control-label">Tipo Unidad:</label>
+                                    <select id="cbo_tipounidad" class="form-control" data-id="idsolicitante" data-required="true" style="width:100%">
+                                        <option value="1">Un</option>
+                                        <option value="2">Kg</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <label class="control-label">Cantidad:</label>
+                                    <input id="txt_cantidad" class="form-control" data-id="apellidopaterno" data-required="true" data-min="1" data-max="50">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-2  m-t-md">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <button id="btn_agregar" title="Nuevo" type="button" class="btn btn-outline btn-primary">
+                                        <span class="fa fa-plus"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div id="div_categoria" class="form-horizontal row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <input id="buscador" type="text" class="form-control input-sm m-b-xs" placeholder="Search in table">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="div_tabla_aprobador" class="form-horizontal row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <div class="table-responsive">
+                                        <table id="tbl_detalle" class="footable table table-striped table-bordered table-hover" data-page-size="20" data-filter=#buscador>
+                                            <thead>
+                                                <tr>
+                                                    <th class='col-sm-1 text-center' data-sort-ignore="true"></th>
+                                                    <th class='col-sm-9 text-center' data-sort-ignore="true">Descripcion</th>
+                                                    <th class='col-sm-1 text-center' data-sort-ignore="true">Tipo Unidad</th>
+                                                    <th class='col-sm-1 text-center' data-sort-ignore="true">Cantidad</th>
+                                                </tr>
+                                            </thead>
+                                           <tbody>
+                                               <tr><td></td><td>ARCHIVADOR PALANCA LOMO ANCHO -  NEGRO</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>ARCHIVADOR PALANCA LOMO DELGADO - NEGRO</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>ARCHIVADOR REVISTERO - 8 x 35 - NEGRO</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>ARCHIVADOR REVISTERO - 15 x 35 - NEGRO</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>BANDERITA POST IT - ROJO </td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>BANDERITA POST IT - AZUL       </td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>BANDERITA POST IT - VERDE           </td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>BANDERITA POST IT - NARANJA       </td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>BANDERITA POST IT - AMARILLO          </td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>BANDERITAS PEQUEÑAS  -  COLORES SURTIDOS</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>BARRA DE GOMA</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>BOLIGRAFO - AZUL</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>BOLIGRAFO - NEGRO</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>BOLIGRAFO - ROJO</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>BOLIGRAFO - VERDE</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>BORRADOR</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>CALCULADORA</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>CARPETA (CATALOGO) CON MICAS - 20 HOJAS</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>CARPETA (CATALOGO) CON MICAS - 40 HOJAS</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>CINTA DE EMBALAJE </td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>CINTA SCOTCH 3/4" X 36 YDS TRANSPARENTE</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>CINTA ADHESIVA DOBLE FAZ 3/4 X 11 YDAS - GRANDE</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>CINTA SCOTCH  BLANCA 3/4"X 36 YDS  - CAJA VERDE</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>CINTA SCOTCH DOBLE CONTACTO - CAJA AMARILLA</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>CLIPS # 1</td><td>CAJA</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>CLIPS MARIPOSA PEQUEÑO</td><td>CAJA</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>CLIPS MARIPOSA GRANDE</td><td>CAJA</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>CLIPS BINDER  - GANCHOS NEGROS</td><td>CAJA</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>CORRECTOR - LIQUID PAPER</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>CUADERNO A-4  ( GRANDE )</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>CUADERNO A-5   ( CHICO )</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>DISPENSADOR DE CINTA SCOTCH</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>EGRAPADOR DE ESCRITORIO ( GRANDE )</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>ETIQUETAS ADHESIVAS / COLOR VERDE-ROJO</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>FASTENER CAJITA</td><td>CAJA</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>FILE MANILA  A-4</td><td>PQT</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>FORRO FINIVAN</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>GRAPAS CAJA                 </td><td>CAJA</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>LAPIZ </td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>MICAS FUNDAS DELGADAS A-4 </td><td>PQT</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>MICAS FUNDAS GRUESAS A-4  </td><td>PQT</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>PERFORADOR  DE ESCRITORIO</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>PLUMON INDELEBLE - PUNTA DELGADA - NEGRO                   </td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>PLUMON INDELEBLE - PUNTA MEDIANA - NEGRO                   </td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>PLUMON INDELEBLE - PUNTA GRUESA - NEGRO  </td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>PORTA CLIPS</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>PORTA LAPICEROS METAL</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>POST IT - NOTA ADHESIVAS - GRANDES</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>POST IT - NOTA ADHESIVAS - PEQUEÑAS</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>REGLA 30 CMS</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>RESALTADOR - AMARILLO</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>RESALTADOR - CELESTE</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>RESALTADOR - NARANJA</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>RESALTADOR - ROSADO</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>RESALTADOR - VERDE</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>SACAGRAPA </td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>SOBRE MANILA 1/2 OFICIO</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>SOBRE MANILA A-3</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>SOBRE MANILA A-4</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>SOBRE MANILA PEQUEÑO (PAGOS)</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>TAJADOR </td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>TIJERA DE METAL PARA TELA</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+                                               <tr><td></td><td>TIJERA PARA PAPEL</td><td>UND</td><td><input type="text" name="status" class="form-control text-right _enter_item"></td></tr>
+
+                                           </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="7">
+                                                        <ul class="pagination pull-right"></ul>
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="modal_listado" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog  modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <!-- Modal Header background-color: #18a689;-->
+            <div class="modal-header bg-white" style="background-color: #f8ac59; color: #ffffff">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="fa fa-close" aria-hidden="true"></span></button>
+                <h4 id="modal_title_ViewDetail" class="modal-title">Listado de Utiles</h4>           
+                @*<div class="col-lg-11">
+                    <h3 class="font-bold"><i class="fa fa-calculator"></i> Calcular saldo de Vacaciones</h3>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active">
+                            <strong>
+                                Calcule el saldo de vacaciones colocando
+                                una fecha futura
+                            </strong>
+                        </li>
+                    </ol>
+                </div>*@
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body" style="padding-bottom: 10px!important">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        @*<div class="form-horizontal row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4">Nombre Personal:</label>
+                                    <div class="col-sm-8">
+                                        <label id="lblPersonal" class="form-control disabled"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4">Saldo restante a la fecha:</label>
+                                    <div class="col-sm-8">
+                                        <label id="lblsaldoactual" class="form-control disabled"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4">Fecha futura:<br /><small class="text-success">formato: día/mes/año</small></label>
+                                    <div class="col-sm-8">
+                                        <div class="input-group date date-es">
+                                            <input id="txtFechaInicioCalcular" type="text" class="form-control _enty_grabar" placeholder="__/__/____" data-required="true" data-min="1" data-max="254" data-id="fechainicio" readonly>
+                                            <div class="input-group-addon">
+                                                <span class="fa fa-calendar"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4">Saldo restante a fecha futura:</label>
+                                    <div class="col-sm-8">
+                                        <label id="lblsaldocalculado" class="form-control"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+                        <div id="div_tabla_aprobador" class="form-horizontal row">
+                            <div class="table-responsive">
+                                <table id="tbl_detalle" class="table table-bordered" data-page-size="10" data-filter=#filter>
+                                    <thead>
+                                        <tr>
+                                            <th class='col-sm-8 text-center' data-sort-ignore="true">Descripcion</th>
+                                            <th class='col-sm-1 text-center' data-sort-ignore="true">Tipo Unidad</th>
+                                            <th class='col-sm-2 text-center' data-sort-ignore="true">Cantidad</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

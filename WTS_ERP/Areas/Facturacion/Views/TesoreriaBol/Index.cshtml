@@ -1,0 +1,86 @@
+﻿<div class="ibox" id="panelEncabezado_TesoreriaIndex">
+    <div class="hide">
+        <input type="text" id="txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-4">
+            <h2 class="font-bold">List Invoice</h2>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <i class="fa fa-home"></i>
+                </li>
+                <li class="breadcrumb-item">
+                    Facturacion
+                </li>
+                <li class="breadcrumb-item active">
+                    <strong>Tesoreria</strong>
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-8 text-right" style="padding-top: 30px">
+            <button type="button" class="btn btn-success" id="btnUpdate">
+                <span class="fa fa-refresh"> </span>
+                Search
+            </button>
+            <button id="btnExportar" type="button" class="btn btn-primary">
+                <span class="fa fa-file-excel-o"></span>
+                Export
+            </button>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content wrapper-less animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5><i class="fa fa-table"></i> Main</h5>
+                        <div class="ibox-tools">
+                            <a class="fullscreen-link">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <label class="control-label">Client</label>
+                                <select id="cboCliente" class="form-control" style="width:100%" name="cboCliente" data-id="control" data-required="true"></select>
+                            </div>
+                            <div class="col-sm-2">
+                                <label class="control-label">Reception Status</label>
+                                <select id="cboEstado" class="form-control" style="width:100%" name="cboEstado" data-id="control" data-required="true"></select>
+                            </div>
+                            <div class="col-sm-2">
+                                <label class="control-label">Type date</label>
+                                <select id="cboFecha" class="form-control" style="width:100%" name="cboEstado" data-id="control" data-required="true"></select>
+                            </div>
+                            <div class="col-sm-2">
+                                <label class="control-label">Since </label>
+                                <div id="divfechadesde" class='input-group date'>
+                                    <input id="txtfechadesde" type='text' class='form-control _enty' data-type="date" data-min="10" data-max="10" data-level="true" data-id="fechacese">
+                                    <div id="divcalendariodesde" class="input-group-addon">
+                                        <span class="fa fa-calendar"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <label class="control-label">Until </label>
+                                <div id="divfechahasta" class='input-group date'>
+                                    <input id="txtfechahasta" type='text' class='form-control _enty' data-type="date" data-min="10" data-max="10" data-level="true" data-id="fechacese">
+                                    <div id="divcalendariohasta" class="input-group-addon">
+                                        <span class="fa fa-calendar"></span>
+                                    </div>
+                                </div>
+                            </div>                           
+                        </div>
+                        <br/>
+                        <div class="row" style="margin: 0;">
+                            <div class="option-tab active" id="divInvoice"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*comentario*@

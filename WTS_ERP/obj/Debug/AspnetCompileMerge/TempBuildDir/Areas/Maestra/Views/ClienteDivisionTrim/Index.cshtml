@@ -1,0 +1,107 @@
+﻿<div class="ibox" id="panelEncabezado_trims">
+    <div class="ibox-title">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 id="_title" class="text-navy bold">Trim</h3>
+            </div>
+            <div class="col-sm-6 text-right">
+                <button id="_btn_new_trims" class="btn btn-default">
+                    <span class="fa fa-plus"></span>
+                    New
+                </button>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox-content wrapper wrapper-content gray-bg" style="overflow-y: auto; max-height: 850px;" id="div_cuerpoprincipal">
+        <div class="hide">
+            <input type="text" id="txtpar_index_trims" value="DATA-PARAMETRO" />
+        </div>
+
+        <div class="ibox">
+            <div class="ibox-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h5 class="text-navy">Filter</h5>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <button type="button" class="btn btn-success" id="btnsearch_filter_index_trim">
+                            <span class="fa fa-search"></span>
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-4">Client</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control _enty" type="text" maxlength="50" id="cbo_cliente_trim" data-id="idcliente" data-min="1" data-max="50">
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-4">Division</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control _enty" id="cbo_clientedivision_trim" data-id="idclientedivision" data-level="true" data-min="1" data-max="10">
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ibox" id="div_tabla_trims">
+            <div class="ibox-content">
+                <div class="row">
+                    @*max-height: 400px*@
+                    <div id="div_tbl_index_trim" style="height: 100%; overflow-y: auto;">
+                        <table class="table table-bordered" id="tbl_index_trim">
+                            <thead>
+                                <tr>
+                                    <th class="col-sm-1"></th>
+                                    <th class="col-sm-1">Code</th>
+                                    <th class="col-sm-2">Description</th>
+                                    <th class="col-sm-1">Placement</th>
+                                    <th class="col-sm-2">Supplier</th>
+                                    <th class="col-sm-1">Status</th>
+                                    <th class="col-sm-1">Incoterm</th>
+                                    <th class="col-sm-1">Cost</th>
+                                    <th class="col-sm-1">Client</th>
+                                    <th class="col-sm-1">Divsion</th>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <th><input type="text" id="_txt_code_trims" class="form-control _clsfilter" placeholder="Search Code" data-field="codigo" /></th>
+                                    <th><input type="text" id="_txt_description_trims" class="form-control _clsfilter" placeholder="Search Description" data-field="descripcion" /></th>
+                                    <th><input type="text" id="_txt_placement_trims" class="form-control _clsfilter" placeholder="Search Placement" data-field="placement"/></th>
+                                    <th><input type="text" id="_txt_suplier_trims" class="form-control _clsfilter" placeholder="Search Supplier" data-field="proveedor" /></th>
+                                    <th><input type="text" id="_txt_status_trims" class="form-control _clsfilter" placeholder="Search Status" data-field="status" /></th>
+                                    <th><input type="text" id="_txt_incoterm_trims" class="form-control _clsfilter" placeholder="Search Incoterm" data-field="incoterm" /></th>
+                                    <th><input type="text" id="_txt_cost_trims" class="form-control _clsfilter" placeholder="Search Cost" data-field="costo" /></th>
+                                    <th><input type="text" id="_txt_cliente_trims" class="form-control _clsfilter" placeholder="Search Client" data-field="nombrecliente" /></th>
+                                    <th><input type="text" id="_txt_division_trims" class="form-control _clsfilter" placeholder="Search Division" data-field="nombredivision" /></th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_index_trim"></tbody>
+                        </table>
+                    </div>
+                    <div class="text-center" id="foot_paginacion_index_trim">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

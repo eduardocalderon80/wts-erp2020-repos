@@ -1,0 +1,82 @@
+﻿<div class="panel panel-default" id="_div_principal_buscartela">
+    <div class="panel-heading">
+        <div class="text-right">
+            <button type="button" class="btn btn-primary" id="_btn_aceptartela">
+                <span class="fa fa-check"></span>
+                Accept
+            </button>
+            <button type="button" class="btn btn-default" id="_btn_cancelartela" data-dismiss="modal">
+                <span class="fa fa-ban"></span>
+                Cancel
+            </button>
+        </div>
+    </div>
+    <div class="panel-body" id="_div_body_principal">
+        <div class="form-horizontal">
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Origin:</label>
+                    <div class="col-sm-4">
+                        <select id="_cboOrigen" class="form-control">
+                            <option value="proyecto">Project</option>
+                            <option value="fichatecnica">Fabric</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group hide" id="_div_grupo_temporada">
+                    <label class="control-label col-sm-2">Season:</label>
+                    <div class="col-sm-10">
+                        <select id="_cboTemporadaxCliente" class="form-control _enty" data-required="true" data-min="1" data-max="10"></select>
+                    </div>
+                </div>
+                <div class="form-group hide" id="_div_grupo_familia">
+                    <label class="control-label col-sm-2">Family:</label>
+                    <div class="col-sm-10">
+                        <select id="_cboFamilia" class="form-control _enty" data-required="true" data-min="1" data-max="10"></select>
+                    </div>
+                </div>
+                <div class="form-group" id="_div_grupo_codigotela">
+                    <label class="col-sm-2 control-label">Fabric code:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control _enty" id="_txt_codigotela" data-required="true" data-min="1" data-max="11">
+                        <span class="hide text-danger" id="_span_error_codigotela">Enter at least 4 digits</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <div class="text-right">
+            <button type="button" class="btn btn-success" id="_btn_searchtela">
+                <span class="fa fa-search"></span>
+                Search
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default no-borders">
+    <div id="_div_gridtela" style="position:relative; overflow-x:auto; overflow-y:auto; max-height:400px; min-height:0px;">
+        <table class="table table-bordered" id="_tbl_tela">
+            <thead>
+                <tr>
+                    <th class="hide">
+
+                    </th>
+                    <th class="text-center">
+                        Fabric code
+                    </th>
+                    <th class="text-center">
+                        Fabric name
+                    </th>
+                    <th class="text-center">
+                        Family
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="_tbody_tbl_tela"></tbody>
+        </table>
+    </div>
+</div>

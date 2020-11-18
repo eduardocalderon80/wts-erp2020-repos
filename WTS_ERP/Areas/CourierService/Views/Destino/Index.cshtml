@@ -1,0 +1,113 @@
+﻿<style type="text/css">
+   
+    .row-selected {
+        background-color: #1ab394 !important;
+    }
+
+    th {
+        padding: 8px;
+        border: 1px solid #e7e7e7;
+        text-align: center;
+        background: #206590 !important;
+        color: white;
+    }
+
+    td {
+        padding: 5px;
+        border-bottom: 1px solid #e7e7e7;
+        padding-left: 20px;
+    }
+
+</style>
+
+<div id="pnl_destino_index">
+
+    <div id="pnl_destino_index_header" class="row wrapper white-bg page-heading">
+        <div class="ibox">
+            <div id="divtituloprincipal" class="col-sm-6">
+                <h2 class="font-bold">Servicios de Courier</h2>
+            </div>
+            <div id="divBotonesPrincipal" class="col-sm-6 text-right">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="pnl_destino_index_body" class="row wrapper-content gray-bg animated">
+
+        <div id="content_form" class="ibox">
+
+            <div class="ibox-title">
+                <div class="form-horizontal row ">
+                    <div class="col-sm-6">
+                        <h3 id="_title" class="bold" style="color:#206590;">Lista de Destinos</h3>
+                    </div>
+                    <div id="div_botones_principal" class="col-sm-6 text-right hide">                       
+                        <button id="btn_nuevo" title="Nuevo" type="button" class="btn btn-outline btn-success">
+                            <span class="fa fa-plus"></span>
+                            Nuevo
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ibox-content">
+
+                <div class="form-group">
+                    <div class="form-horizontal row">
+                        <div class="col-sm-3">
+                            <label class="control-label">Destino:</label>
+                            <input id="txt_destino" type="text" class="form-control" data-id="destino">
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label class="control-label">Dirección:</label>
+                            <input id="txt_direccion" type="text" class="form-control" data-id="direccion">
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="control-label">Ruta:</label>
+                            <select id="cbo_ruta" class="form-control _select2 _enty" data-id="idruta" style="width:100%"></select>
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="control-label">Distrito:</label>
+                            <select id="cbo_distrito" class="form-control _select2 _enty" data-id="iddistrito" style="width:100%"></select>
+                        </div>                                    
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-horizontal row">
+                        <div id="div_botones_secundarios" class="col-sm-12 text-left hide">
+                            <button id="btn_editar" title="Editar" type="button" class="btn btn-outline btn-success">
+                                <span class="fa fa-edit"></span>
+                            </button>
+                            <button id="btn_eliminar" title="Eliminar" type="button" class="btn btn-outline btn-danger">
+                                <span class="fa fa-trash-o"></span>
+                            </button>
+                        </div>
+                        <div id="div_botones_terciarios" class="col-sm-12 text-left hide">
+                            <button id="btn_visualizar" title="Visualizar" type="button" class="btn btn-outline btn-info">
+                                <span class="fa fa-eye"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-horizontal row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div id="div_tabla_destino" class="col-sm-12">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

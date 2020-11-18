@@ -1,0 +1,73 @@
+﻿<div class="ibox" id="panelEncabezado_buscartrim">
+    <div class="ibox-title">
+        <div class="ibox-tools">
+            <button id="_btnAceptar_trim" href="javascript:void(0)" class="btn btn-primary">
+                <span class="fa fa-check-circle"></span>
+                Accept
+            </button>
+            <button id="_btnCancelar_trim" href="javascript:void(0)" class="btn btn-default" data-dismiss="modal">
+                Cancel
+            </button>
+        </div>
+    </div>
+    <div class="" style="overflow-y: auto; max-height: 850px;">
+        <div class="hide">
+            <input type="text" id="txtpar_buscartrim" value="DATA-PARAMETRO" />
+        </div>
+        <div class="ibox">
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Client</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="_txtcliente_buscartrim" value="" disabled="disabled" />
+                            </div>
+
+                            <label class="control-label col-sm-2">Division</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="_txtidclientedivision_buscartrim" value="" disabled="disabled" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ibox">
+            <div class="ibox-content">
+                <div class="row">
+                    <div id="div_tbl_buscartela" style="max-height:400px; overflow-y:auto;">
+                        <table class="table table-bordered table-hover" id="_tbl_buscar_trim">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Description</th>
+                                    <th>Code</th>
+                                    <th>Placement</th>
+                                    <th>Supplier</th>
+                                    <th>Status</th>
+                                    <th>Incoterm</th>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <th><input type="text" placeholder="Search code" id="_txtfiltercodigo_buscartrim" class="form-control _clsfilter" data-field="codigo" /></th>
+                                    <th><input type="text" placeholder="Search description" id="_txtfilterdescripcion_buscartrim" class="form-control _clsfilter" data-field="descripcion" /></th>
+                                    <th><input type="text" placeholder="Search placement" id="_txtfilterplacement_buscartrim" class="form-control _clsfilter" data-field="placement" /></th>
+                                    <th><input type="text" placeholder="Search supplier" id="_txtfilterproveedor_buscartrim" class="form-control _clsfilter" data-field="proveedor" /></th>
+                                    <th><input type="text" placeholder="Search status" id="_txtfilterestado_buscartrim" class="form-control _clsfilter" data-field="status" /></th>
+                                    <th><input type="text" placeholder="Search comment" id="_txtfiltercomentario_buscartriim" class="form-control _clsfilter" data-field="incoterm" /></th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_buscar_trim"></tbody>
+                        </table>
+                    </div>
+                    <div class="text-center" id="foot_paginacion_buscartrim">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

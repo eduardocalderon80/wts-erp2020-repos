@@ -1,0 +1,108 @@
+﻿<style type="text/css">
+    .row-selected {
+        background-color: #1ab394;
+    }
+
+    .select2-container--open {
+        z-index: 9999999;
+    }
+
+    .has-error .select2-selection {
+        border-color: #ed5565 !important;
+    }
+</style>
+
+<div id="pnl_destino_view">
+
+    <div class="hide">
+        <input type="text" id="txtpar_destino" value="DATA-PARAMETRO" />
+    </div>
+
+    <div id="pnl_destino_view_header" class="row wrapper white-bg page-heading">
+        <div class="ibox">
+            <div id="div_titulo_principal" class="col-sm-6">
+                <h2 class="font-bold">Servicios de Courier</h2>
+            </div>
+            <div id="div_botones_header" class="col-sm-6 text-right" style="padding-top:1%">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="pnl_destino_view_body" class="row wrapper-content gray-bg animated">
+
+        <div id="pnl_destino_view_formulario" class="ibox">
+            <div class="ibox-title">
+                <div class="form-horizontal row ">
+                    <div class="col-sm-6">
+                        <h3 id="_title" class="bold" style="color:#206590;">Visualizar Destino</h3>
+                    </div>
+                    <div id="div_botones_principal" class="col-sm-6 text-right">                       
+                        <button id="btn_retornar" type="button" class="btn btn-outline btn-default">
+                            <span class="fa fa-reply-all"></span>
+                            Regresar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ibox-content">
+
+                <div id="div_destino_form" class="form-group">
+                    <div class="form-horizontal row">
+                        <div class="col-sm-4">
+                            <label class="control-label">Destino:</label>
+                            <input id="txt_destino" disabled type="text" class="form-control _enty" data-id="destino" data-required="true">
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="control-label">Destino Resumido:</label>
+                            <input id="txt_resumido" disabled type="text" class="form-control _enty" data-id="destinoresumido">
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label class="control-label">Descripción:</label>
+                            <input id="txt_descripcion" disabled type="text" class="form-control _enty" data-id="descripcion">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-horizontal row">
+                        <div id="div_salida" class="col-sm-12">
+                            <fieldset>
+                                <legend class="bold" style="color:#206590; font-size:16px;">Dirección:</legend>                                                           
+
+                                <div id="div_direccion_tabla" class="ibox">
+                                    <div class="form-horizontal row">
+                                        <div class="col-sm-12">
+                                            <table id="tbl_direccion" class="table table-bordered table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-center">Dirección</th>
+                                                        <th class="text-center">Referencia</th>
+                                                        <th class="text-center">Distrito</th>
+                                                        <th class="text-center">Ruta</th>
+                                                        <th class="text-center">Latitud</th>
+                                                        <th class="text-center">Longitud</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </fieldset>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+

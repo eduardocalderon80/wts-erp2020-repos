@@ -1,0 +1,292 @@
+﻿<div id="panel_Solicitud_Pedido_New">
+    <div class="hide">
+        <input type="text" id="txtpar_test_laboratorio" value="DATA-PARAMETRO" />
+    </div>
+
+    <div class="row wrapper white-bg page-heading">
+        <div class="ibox">
+            <div id="div_titulo_principal" class="col-sm-6">
+                <h2 class="font-bold">Solicitud de Pedido</h2>
+                <ol class="breadcrumb">
+                    <li> <i class="fa fa-home"></i></li>
+                    <li class="breadcrumb-item">
+                        Gestion de Talento
+                    </li>
+                    <li class="breadcrumb-item">
+                        Vacaciones
+                    </li>
+                    <li class="breadcrumb-item active">
+                        <strong>Nuevo</strong>
+                    </li>
+                </ol>
+            </div>
+            <div id="div_botones_principal" class="col-sm-6 text-right m-t-md">
+                <button id="btn_guardar" title="Guardar" type="button" class="btn btn-outline btn-primary">
+                    <span class="fa fa-save"></span>
+                    Guardar
+                </button>
+                <button id="btn_retornar" title="Retornar" type="button" class="btn btn-outline btn-default">
+                    <span class="fa fa-reply-all"></span>
+                    Retornar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row wrapper-content gray-bg">
+
+        <div id="div_row" class="ibox">
+
+            @*<div class="ibox-title">
+                <div class="form-horizontal row">
+                    <div id="div_titulo" class="col-sm-6">
+                        <h5>Datos Generales</h5>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <div class="ibox-tools _class_tool">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+
+            <div class="ibox-content">
+
+                <div class="tabs-container">
+                    <ul class="nav nav-tabs">
+                        <li class="active bg-primary">
+                            <a id="tab_registro" data-toggle="tab" href="#tab-registro" aria-expanded="true"><label class="control-label">Registro</label></a>                            
+                        </li>
+                        <li class="">
+                            <a id="tab_registro" data-toggle="tab" href="#tab-registro" aria-expanded="true"><label class="control-label">Historial</label></a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="tab-registro" class="tab-pane active">
+
+                            <div class="ibox">
+
+                                @*<div class="ibox-title">
+                                    <div class="form-horizontal row">
+                                        <div id="div_titulo" class="col-sm-6">
+                                            <h5>Datos Generales</h5>
+                                        </div>
+                                        <div class="col-sm-6 text-right">
+                                            <div class="ibox-tools _class_tool">
+                                                <a class="collapse-link">
+                                                    <i class="fa fa-chevron-up"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>*@
+
+
+                                    <div class="ibox-content">
+
+                                        <div class="form-horizontal row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-3">Solicitante:</label>
+                                                    <div class="col-sm-9">
+                                                        <input id="txt_solicitante" disabled class="form-control" data-id="solicitante">
+                                                    </div>
+                                                    <div class="col-sm-9 hide">
+                                                        <select id="cbo_solicitante" class="form-control _select2 _cbo" data-id="idsolicitante" data-required="true" style="width:100%"></select>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-3">Área:</label>
+                                                    <div class="col-sm-9">
+                                                        <input id="txt_area_solicitante" disabled class="form-control" data-id="areasolicitante">
+                                                    </div>
+                                                    <div class="col-sm-9 hide">
+                                                        <select id="cbo_area_solicitante" class="form-control _select2" data-id="idareasolicitante" data-required="true" style="width:100%"></select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-3">Fecha:</label>
+                                                    <div id="div_fecha_solicitud" class="col-sm-9">
+                                                        <div class='input-group date'>
+                                                            <input id="txt_fecha_solicitud" disabled type='text' class='form-control input-sm m-b-xs _enty' data-id="fechasolicitud" data-type="date" data-level="true" data-min="10" data-max="10">
+                                                            <div id="div_calendario_fecha_solicitud" disabled class="input-group-addon">
+                                                                <span class="fa fa-calendar"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-3">Prioridad:</label>
+                                                    <div class="col-sm-9 _text">
+                                                        <input id="txt_prioridad" disabled class="form-control" data-id="prioridad">
+                                                    </div>
+                                                    <div class="col-sm-9 _cbo hide">
+                                                        <select id="cbo_prioridad" class="form-control _select2 _enty" data-id="idprioridad" data-required="true" style="width:100%"></select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-horizontal row">
+                                            <div class="col-sm-12">
+                                                <div class="ibox">
+                                                    <div class="ibox-title">
+                                                        <h5 class="text-success">Detalle</h5>
+                                                    </div>
+
+                                                    <div class="ibox-content">
+                                                        <div class="form-horizontal row">
+                                                            <div class="form-group">
+                                                                <div class="col-sm-3">
+                                                                    <label class="control-label">Articulo</label>
+                                                                    <div class='input-group'>
+                                                                        <select id="" class="form-control" data-id="" data-required="" style="width:100%"></select>
+                                                                        <div id="" class="input-group-addon btn-outline btn-info">
+                                                                            <span class="fa fa-eye"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-2">
+                                                                    <label class="control-label">UND</label>
+                                                                    <select id="" class="form-control" data-id="" data-required="" style="width:100%"></select>
+                                                                </div>
+                                                                <div class="col-sm-2">
+                                                                    <label class="control-label">Cantidad</label>
+                                                                    <input id="" class="form-control" data-id="" tabindex="">
+                                                                </div>
+                                                                <div class="col-sm-2 m-t-md">
+                                                                    <button id="btn_edit" type="button" title="Edit" class="btn btn-outline btn-primary">
+                                                                        <span class="fa fa-plus"></span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="col-sm-2 m-t-md">
+                                                                    <button id="btn_visualizar_items" type="button" title="Edit" class="btn btn-outline btn-primary">
+                                                                        <span class="fa fa-search"></span>
+                                                                        Buscador
+                                                                    </button>
+                                                                </div>
+                                                            </div>                                                         
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="modal_calcular" class="modal fade" tabindex="-1" role='dialog' data-dismiss='modal' data-backdrop='static' aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <!-- Modal Header background-color: #18a689;-->
+            <div class="modal-header bg-white" style="">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class='modal-title'>Articulos</h4>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body" style="padding-bottom: 10px!important">
+                <div class="ibox">
+
+                    <div class="form-horizontal row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <div class="has-float-label">
+                                    <input id="txt_buscador" class="form-control" type="text" placeholder="Buscador">
+                                    <label for="txt_buscador">Buscador</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+
+                    <div class="form-horizontal row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                @*<div class="table-responsive">*@
+                                    <table id="tbl_item" class="footable table table-striped table-bordered table-hover" data-page-size="20" data-filter=#txt_buscador>
+                                        <thead>
+                                            <tr>
+                                                <th data-sort-ignore="true"></th>
+                                                <th data-sort-ignore="true">Articulo</th>                                                
+                                                <th data-sort-ignore="true">Tipo de Unidad</th>
+                                                <th data-sort-ignore="true">Cantidad</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="col-sm-1 text-center">
+                                                    <div class="i-checks">
+                                                        <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                            <label>
+                                                                <input type="checkbox" class="i-checks" style="position: absolute; opacity: 0;">
+                                                                <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="col-sm-7">Cartón A-4</td>
+                                                <td class="col-sm-2">UND</td>
+                                                <td class="col-sm-2"><input class="form-control"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-sm-1 text-center">
+                                                    <div class="i-checks">
+                                                        <div class="icheckbox_square-green" style="position: relative;">
+                                                            <label>
+                                                                <input type="checkbox" class="i-checks" style="position: absolute; opacity: 0;">
+                                                                <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="col-sm-7">Guia de Remisión WTS - 10 UND</td>
+                                                <td class="col-sm-2">PAQ</td>
+                                                <td class="col-sm-2"><input class="form-control"></td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan="8">
+                                                    <ul class="pagination pull-right"></ul>
+                                                </td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                @*</div>*@
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

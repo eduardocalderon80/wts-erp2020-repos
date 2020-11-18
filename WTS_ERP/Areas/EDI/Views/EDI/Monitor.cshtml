@@ -1,0 +1,120 @@
+﻿<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Mensajeria de Auditorias</h2>       
+    </div>
+    <div class="col-lg-2">
+    </div>
+</div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row hide" id="mantenimiento">
+        <div class="col-lg-5">
+            <div class="float-e-margins">                
+                <div id="mensaje">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                                <button class="btn btn-primary" type="button" id="btngrabar">Grabar</button>
+                                <button class="btn btn-white" type="button" id="btncerrar">Cancelar</button>
+                            </div>
+                        </div>                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Titulo</label>
+                            <div class="col-lg-10">
+                                <input type="text" placeholder="Titulo" class="form-control _enty" id="txttitulo" data-required="true" data-min="2" data-max="60" data-id="titulo">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Mensaje</label>
+                            <div class="col-lg-10"><input type="text" placeholder="Mensaje" class="form-control _enty" id="txtmensaje" data-required="true" data-min="2" data-max="400" data-id="mensaje"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Fabrica</label>
+                            <div class="col-lg-10">
+                                <select class="form-control _enty" id="cbofabrica" data-required="true" data-min="1" data-id="codfabrica"></select>
+                                <input type="text" id="txtnomfabrica" class="_enty hide" data-id="nomfabrica" />
+                            </div>
+                        </div>
+                        <div class="form-group" id="fecha">
+                            <label class="col-lg-2 control-label">Fecha</label>
+                            <div class="col-lg-10">
+                                <div class="input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control _enty" id="txtfecha" data-required="true" data-min="10" data-max="10" data-date="date" data-id="fecha">
+                                    <input type="text" id="txtsemana" data-id="semana" class="_enty hide" />
+                                </div>
+                            </div>
+                        </div>                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="row" id="botones">       
+            <div class="col-lg-7">
+                <button class="btn btn-white" type="button" id="btnnuevo">Nuevo</button>
+                <button class="btn btn-primary" type="button" id="btnbuscar">Buscar</button>
+            </div>
+    </div>
+    <div class="row" id="encabezado">
+        <div class="col-lg-7">
+            <div class="ibox-content">
+                <label>Semana</label> <input type="week" id="txtsemana" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="detalle">
+        <div class="col-lg-7">
+        
+          <div class="ibox-content">
+              <table class="table table-striped table-bordered table-list" id="tblMensajeria">
+                  <thead>
+                      <tr>
+                          <th class="k-header">Id</th>
+                          <th class="k-header"><span data-value="id" class="header_link">Fabrica </span> </th>
+                          <th class="k-header"><span data-value="id" class="header_link">Titulo </span> </th>
+                          <th class="k-header"><span data-value="id" class="header_link">Mensaje </span> </th>
+                          <th class="k-header"><span data-value="id" class="header_link">Fecha </span> </th>
+                      </tr>
+                      <tr>
+                          <th></th>
+                          <th><input type="text" id="txtfabrica" class="form-control filter" data-field="fabrica" /></th>
+                          <th><input type="text" id="txttitulo" class="form-control filter" data-field="titulo" /></th>
+                          <th><input type="text" id="txtmensaje" class="form-control filter" data-field="mensaje" /></th>
+                          <th></th>
+                      </tr>
+                  </thead>
+                  <tbody id="tbody_detalle"></tbody>
+                  <tfoot id="tfoot_detalle"></tfoot>
+              </table> 
+          </div>
+            
+
+        </div>
+    </div>
+</div> <!-- :fin -->
+
+<div class="modal inmodal" id="myModalMensaje" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content animated fadeIn">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <i class="fa fa-check-circle-o modal-icon"></i>
+                <h4 class="modal-title" id="modal_titulo">Mensaje</h4>
+
+            </div>
+            <div class="modal-body">
+                <p id="modal_mensaje">
+                    Se registro correctamente.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>

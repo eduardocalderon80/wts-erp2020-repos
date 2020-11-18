@@ -1,0 +1,42 @@
+﻿<div id="panelEncabezado_CopyStyle">
+    <div class="hide">
+        <input type="text" id="copystyle_txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="form-horizontal row">
+        <div class="col-sm-12 m-b">
+            <div class="text-right">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <span class="fa fa-reply-all"></span>
+                    Cancel
+                </button>
+                <button type="button" class="btn btn-primary" id="btnCopyStyleSave">
+                    <span class="fa fa-save"></span>
+                    Save
+                </button>
+            </div>
+            <hr />
+        </div>
+    </div>
+    <div class="form-horizontal row">
+        <div class="col-sm-12">
+            <div class="has-float-label m-b-sm">
+                <input class="form-control" id="txtCopyStyleCode" type="text" placeholder="WTS Fabric Code" disabled>
+                <label for="txtCopyStyleCode">Client Style Number</label>
+            </div>
+            <div class="has-float-label m-b-sm">
+                <input class="form-control" id="txtCopyStyleSupplierName" type="text" placeholder="Fabric Supplier Name" disabled>
+                <label for="txtCopyStyleSupplierName">Fabric Supplier Name</label>
+            </div>
+            <div class="treeview_container" id="treeview_style">
+                <div class="pt-5">
+                    <span class="fa fa-minus"></span> WTS Fabric Code
+                    <div class="pl-20" id="div_style_fabric"></div>
+                </div>
+                <div class="pt-5">
+                    <span class="fa fa-minus"></span> WTS Trims Code
+                    <div class="pl-20" id="div_style_avio"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

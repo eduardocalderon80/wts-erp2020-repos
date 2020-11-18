@@ -1,0 +1,362 @@
+﻿<style>
+    #panelEncabezado_solicitudcolgador .ibox {
+        clear: both;
+        /* EDU: LO MODIFIQUE PARA QUITAR MARGEN INFERIOR*/
+        /*margin-bottom: 25px;*/
+        /*edu: para quitar espacios entre div usando ibox*/
+        margin-bottom: 5px !important;
+        margin-top: 0;
+        padding: 0;
+    }
+
+    #panelEncabezado_solicitudcolgador .ibox-content {
+        /*background-color: #ffffff;*/
+        color: inherit;
+        /* EDU: LO MODIFIQUE PARA QUITAR MARGEN INFERIOR*/
+        /*padding: 15px 20px 20px 20px;*/
+        /*edu: para quitar espacios entre div usando ibox*/
+        padding: 5px 20px 5px 10px !important;
+        border-color: #e7eaec;
+        border-image: none;
+        border-style: solid solid none;
+        border-width: 1px 0;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 30% 10% 60%;
+        grid-gap: 10px;
+        /*background-color: #2196F3;
+      padding: 10px;*/
+    }
+</style>
+<div class="ibox" id="panelEncabezado_solicitudcolgador">
+    <div class="ibox-title">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 id="_title" class="text-navy bold">DATA-TITULO</h3>
+            </div>
+            <div class="col-sm-6 text-right">
+                <button type="button" class="btn btn-primary" id="btnSave">
+                    <span class="fa fa-save"></span>
+                    Save New
+                </button>
+                <button type="button" class="btn btn-info hide" id="btnUpdate">
+                    <span class="fa fa-save"></span>
+                    Save Update
+                </button>
+                <button type="button" class="btn btn-default" id="btnReturn">
+                    <span class="fa fa-ban"></span>
+                    Return
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="ibox-content wrapper wrapper-content gray-bg" style="overflow-y: auto; max-height: 850px;" id="div_cuerpoprincipal">
+        <div class="ibox">
+            <div class="hide">
+                <input type="text" id="txtpar_new" value="DATA-PARAMETRO" />
+                <input type="text" id="hf_estadosolicitud" class="_enty_grabar" data-required="true" data-min="1" data-max="20" value="" data-id="estadoSolicitudColgador" />
+                <input type="text" id="hf_idsolicitud" class="_enty_grabar" data-required="false" data-min="1" data-max="20" data-id="IdSolicitud" />
+                <input type="text" id="hf_idcolgadorsolicitud" class="_enty" data-required="false" data-min="1" data-max="20" data-id="idcolgadorsolicitud" />
+            </div>
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <h5 class="text-navy bold"></h5>
+                    <a class="collapse-link">
+                        <span class="fa fa-chevron-up icono_collapse"></span>
+                    </a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-wrench"></i>
+                    </a>
+                    <ul id="submenuestado" class="dropdown-menu dropdown-user">
+                        <li class="_submenu">
+                            <input type="checkbox" id="chkCol" checked="checked" />COLGADOR
+                        </li>
+                        <li class="_submenu">
+                            <input type="checkbox" id="chkATX" />ATX
+                        </li>
+                        <li class="_submenu">
+                            @*<input type="checkbox" id="chkCoti" />Cotizacion*@
+                            <input type="checkbox" id="chkCol" />FDS
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="col-sm-12">
+                            <!--COLUMNA 1-->
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">#Solicitud</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control _enty" disabled="disabled" id="txtnrosolicitud" data-required="false" data-min="1" data-max="20" data-id="idsolicitud" />
+                                    </div>
+                                </div>
+                            </div>
+                            <!--COLUMNA 2-->
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Cliente</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control _enty" id="txtIdCliente" data-required="true" data-min="1" data-max="20" data-id="idcliente" list="ddl_cliente" />
+                                        <datalist id="ddl_cliente"></datalist>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Comentario</label>
+                                    <div class="col-sm-8">
+                                        <textarea type="text" class="form-control _enty" id="txta_comentario" data-required="false" data-min="1" data-max="8000" data-id="comentario"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ibox" id="div_codigotela">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <h5 class="text-navy bold">Búsqueda x Código WTS</h5>
+                    <a class="collapse-link">
+                        <span class="fa fa-chevron-up icono_collapse"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="col-sm-12">
+                            <!--COLUMNA 1-->
+                            <div class="col-sm-6">
+                                <div class="form-group" id="">
+                                    <label class="control-label col-sm-4">Código / Descripción</label>
+                                    <div class="col-sm-5">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="txtcodigotelawts" />
+                                            <div class="input-group-btn">
+                                                <button type="button" class="btn btn-primary" id="btnAgregarcodigotelawts">
+                                                    <span class="fa fa-plus"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!--COLUMNA 2-->
+                        </div>
+                        <div class="col-sm-12">
+                            <!--PARA EL MOCKUP DE COTIZAR SE A AUMENTO DE col-sm-6 A 12-->
+                            <div class="col-sm-12">
+                                <!--se quito col-sm-offset-4 PARA EL MOCKUP DE COTIZAR-->
+                                <div class="table-responsive col-sm-12">
+                                    <table class="table table-bordered" id="tbl_codigotela">
+                                        <thead>
+                                            <!--
+                                            <tr>
+                                                <th colspan="4" class="text-center">Colgador</th>
+                                                <th colspan="3" class="text-center">Cotización</th>
+                                            </tr>
+                                            -->
+                                            <tr>
+                                                <th class="col-sm-1"></th>
+                                                <th class="col-sm-1">Foto</th>
+                                                <th class="col-sm-1">Código</th>
+                                                <th class="col-sm-6">Descripción</th>
+                                                <!--PARA EL MOCKUP DE COTIZACION-->
+                                                <!--
+                                                <th class="col-sm-1 text-center">
+                                                    <label class="col-sm-12">
+                                                        <input type="checkbox" id="chk_requiere_cotizar" class="i-checks _enty cls_chk_cotizar_all" value="" data-valor="" />
+                                                        Cotizar
+                                                    </label>
+                                                </th>
+                                                <th class="col-sm-1 text-center">
+                                                    <label class="col-sm-12">
+                                                        <input type="checkbox" id="chk_modalidad_muestra" class="i-checks _enty cls_chk_muestra_all" value="" data-clase="_chkmodalidad_muestra_tbl_codigotela" />
+                                                        Modalidad Muestra
+                                                    </label>
+                                                </th>
+                                                <th class="col-sm-1 text-center">
+                                                    <label class="col-sm-12">
+                                                        <input type="checkbox" id="chk_modalidad_produccion" class="i-checks _enty cls_chk_produccion_all" value="" data-clase="_chkmodalidad_produccion_tbl_codigotela" />
+                                                        Modalidad Produccion
+                                                    </label>
+                                                </th>
+                                                -->
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbody_codigotela"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ibox" id="div_descripciontela">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <h5 class="text-navy bold">Búsqueda x Descripción de la Tela</h5>
+                    <a class="collapse-link">
+                        <span class="fa fa-chevron-up icono_collapse"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Descripción</label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control _enty" cols="2" rows="4" id="txta_buscar_por_descripcion" data-required="false" data-min="1" data-max="8000" data-id="descripciontela"></textarea>
+                            </div>
+                        </div>
+
+                        <!--PARA EL MOCKUP DE COTIZAR-->
+                        <!--
+                        <div class="col-sm-12">
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label class="col-sm-12 col-sm-offset-5">
+                                        <input type="checkbox" id="chk_requiere_cotizar_descripcion" class="i-checks _enty cls_chk_cotizar_descripcion" value="" data-valor="" />
+                                        Cotizar
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Modalidad</label>
+                                    <div class="col-sm-10">
+                                        <label>
+                                            <input type="checkbox" class="i-checks _enty cls_chk_modalidad_cotizar_descripcion" name="name_chk_modalidad_muestra_descripcion" value="" data-valor="" />
+                                            Muestra
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" class="i-checks _enty cls_chk_modalidad_cotizar_descripcion" name="name_chk_modalidad_muestra_descripcion" value="" data-valor="" />
+                                            Producción
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        -->
+
+                        <div class="form-group">
+                            <div style="width: 100px;">
+                                <span type="button" class="btn btn-primary btn-sm btn-file">
+                                    <span class="fa fa-plus-circle"></span>
+                                    Foto
+                                    <input id="btn_add_foto_colgador_descripcion" type="file" accept="image/*" />
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="panel panel-default" style="height: 140px; max-height:134px; overflow-y: auto;">
+                                <div class="panel-body">
+                                    <div class="form-horizontal">
+                                        <div class="">
+                                            <div class="row" id="div_contenedordetalle_fotos_descripcion">
+                                                <!--
+                            <div class="col-sm col-sm-1">
+                                <img src="//WTS-FILESERVER/erp/style/thumbnail/SinImagen.jpg" class="img-responsive" style="width:90px; height:80px;">
+
+                                <span type='button' class='btn btn-xs btn-danger fa fa-times cls_btn_delete_foto'></span>
+                            </div>
+                            <div class="col-sm col-sm-1">
+                                <img src="//WTS-FILESERVER/erp/style/thumbnail/SinImagen.jpg" class="img-responsive" style="width:90px; height:80px;">
+
+                                <span type='button' class='btn btn-xs btn-danger fa fa-times cls_btn_delete_foto'></span>
+                            </div>
+                            <div class="col-sm col-sm-1">
+                                <img src="//WTS-FILESERVER/erp/style/thumbnail/SinImagen.jpg" class="img-responsive" style="width:90px; height:80px;">
+
+                                <span type='button' class='btn btn-xs btn-danger fa fa-times cls_btn_delete_foto'></span>
+                            </div>
+                            -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="ibox" id="div_armadocolgadores">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <h5 class="text-navy bold">Armado de Colgadores</h5>
+                    <span class="btn btn-sm btn-primary" id="btnagregar_armadocolgador">
+                        <span class="fa fa-plus"></span>
+                    </span>
+                    <a class="collapse-link">
+                        <span class="fa fa-chevron-up icono_collapse"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="table-responsive col-sm-offset-2 col-sm-8">
+                            <table class="table table-bordered" id="tbl_armado_colgadores">
+                                <thead>
+                                    <!--
+                                    <tr>
+                                        <th colspan="4" class="text-center">Colgador</th>
+                                        <th colspan="3" class="text-center">Cotización</th>
+                                    </tr>
+                                    -->
+                                    <tr>
+                                        <th class="col-sm-1"></th>
+                                        <th class="col-sm-4">Proveedor</th>
+                                        <th class="col-sm-1">Cantidad</th>
+                                        <th class="col-sm-4">Comentario</th>
+                                        <!--PARA EL MOCKUP DE COTIZACION-->
+                                        <!--
+                                        <th class="col-sm-2">
+                                            <label class="col-sm-12">
+                                                <input type="checkbox" id="chk_requiere_cotizar" class="i-checks _enty cls_chk_cotizar_all" value="" data-valor="" />
+                                                Cotizar
+                                            </label>
+                                        </th>
+                                        <th class="col-sm-1 text-center">
+                                            <label class="col-sm-12">
+                                                <input type="checkbox" id="chk_modalidad_muestra" class="i-checks _enty cls_chk_muestra_all" value="" data-clase="_chkmodalidad_muestra_tbl_armadocolgadores" />
+                                                Modalidad Muestra
+                                            </label>
+                                        </th>
+                                        <th class="col-sm-1 text-center">
+                                            <label class="col-sm-12">
+                                                <input type="checkbox" id="chk_modalidad_produccion" class="i-checks _enty cls_chk_produccion_all" value="" data-clase="_chkmodalidad_produccion_tbl_armadocolgadores" />
+                                                Modalidad Produccion
+                                            </label>
+                                        </th>
+                                        -->
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody_armadocolgadores"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

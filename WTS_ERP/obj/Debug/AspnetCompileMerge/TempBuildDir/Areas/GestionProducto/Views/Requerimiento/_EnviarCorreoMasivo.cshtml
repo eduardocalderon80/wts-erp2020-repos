@@ -1,0 +1,310 @@
+﻿<style>
+    img, object {
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    img {
+        border: 0 none;
+        height: auto;
+        max-width: 100%;
+        vertical-align: middle;
+    }
+
+    a {
+        cursor: pointer;
+    }
+
+    .img-polaroid {
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        padding: 4px;
+        width: 200px;
+        height: 180px;
+    }
+
+    .img-fondo {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background-color: #EEEEEE;
+    }
+
+    textarea {
+        resize: none;
+    }
+</style>
+<div class="panel panel-default" id="_div_sendmail_requermiento">
+    <div class="panel-heading">
+        <div class="text-right">
+            <button type="button" class="btn btn-primary" id="_btn_aceptar_sendemail_req">
+                <span class="fa fa-check"></span>
+                Send
+            </button>
+            <button type="button" class="btn btn-default" id="_btn_cancelar_sendmail_req" data-dismiss="modal">
+                <span class="fa fa-ban"></span>
+                Cancel
+            </button>
+        </div>
+    </div>
+    <div class="panel-body" id="_div_body_correo">
+        <div class="form-horizontal">
+            <div class="hide">
+                <input type="text" id="hf_imagenwebnombre_estilo" value="" />             
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group" id="_div_grupo_to_sendmail">
+                    <label class="control-label col-sm-1">To:</label>
+                    <div class="col-sm-11">
+                        <input type="text" value="" id="_txtTo_sendmail" class="form-control _enty validarCorreo" data-required="true" data-min="1" data-max="1000" />
+                        <span class="hide text-danger" id="_span_error_txtTo_sendmail">Incorrrect Format</span>
+                    </div>
+                </div>
+                <div class="form-group" id="_div_grupo_cc_sendmail">
+                    <label class="col-sm-1 control-label">CC:</label>
+                    <div class="col-sm-11">
+                        <input type="text" class="form-control _enty validarCorreo" id="_txtCC_sendmail" data-required="true" data-min="1" data-max="1000">
+                        <span class="hide text-danger" id="_span_error_txtCC_sendmail">Incorrrect Format</span>
+                    </div>
+                </div>
+                <div class="form-group" id="_div_grupo_subject_sendmail">
+                    <label class="col-sm-1 control-label">Subject:</label>
+                    <div class="col-sm-11">
+                        <input type="text" class="form-control _enty" disabled="disabled" id="_txtSubject_sendmail" data-required="true" data-min="1" data-max="1000">
+                        <span class="hide text-danger" id="_span_error_subject_sendmail">Incorrrect Format</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <textarea class="form-control" id="_txtCuerpo" style="font-weight:bold;" rows="3">WTS te ha enviado un nuevo requerimiento</textarea>
+                </div>
+            </div>
+            <div class="col-sm-12">                                               
+                       <table class="table table-bordered">
+                           <tbody>
+                             <tr>
+                                <td style="width:50%;"> 
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td rowspan="3">
+                                                    <div class="container" style="width:100px;height:80px;">
+                                                        <img class="img-thumbnail" src="//WTS-FILESERVER/erp/style/thumbnail/SinImagen.jpg" width="100" height="80">
+                                                    </div>
+                                                </td>                                                                                        
+                                                <td>
+                                                    <label>Style </label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label>Description </label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label>Fabric </label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Additional instruction</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                 <td style="width:50%;">
+                                     <table class="table table-bordered table-hover">
+                                         <thead>
+                                             <tr>
+                                                 <th class="text-center" style="width:40%;">Color</th>
+                                                 <th class="text-center" style="width:20%;">Size</th>
+                                                 <th class="text-center" style="width:15%;">Qty</th>
+                                                 <th class="text-center" style="width:15%;">Counter <br /> Sample</th>
+                                             </tr>
+                                         </thead>
+                                         <tbody>
+                                             <tr>
+                                                 <td>BLUE</td>
+                                                 <td>S</td>
+                                                 <td>10</td>
+                                                 <td>11</td>
+                                             </tr>
+                                             <tr>
+                                                 <td>RED</td>
+                                                 <td>S</td>
+                                                 <td>10</td>
+                                                 <td>11</td>
+                                             </tr>
+                                             <tr>
+                                                 <td>BLACK</td>
+                                                 <td>S</td>
+                                                 <td>10</td>
+                                                 <td>11</td>
+                                             </tr>
+                                         </tbody>
+                                     </table>
+                                 </td>
+                             </tr>
+                           </tbody>
+                       </table>                        
+            </div>          
+            <div class="col-sm-12">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td style="width:50%;">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td rowspan="3">
+                                                <div class="container" style="width:100px;height:80px;">
+                                                    <img class="img-thumbnail" src="//WTS-FILESERVER/erp/style/thumbnail/SinImagen.jpg" width="100" height="80">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <label>Style </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label>Description </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label>Fabric </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Additional instruction</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td style="width:50%;">
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center" style="width:40%;">Color</th>
+                                            <th class="text-center" style="width:20%;">Size</th>
+                                            <th class="text-center" style="width:15%;">Qty</th>
+                                            <th class="text-center" style="width:15%;">Counter <br /> Sample</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>BLUE</td>
+                                            <td>S</td>
+                                            <td>10</td>
+                                            <td>11</td>
+                                        </tr>
+                                        <tr>
+                                            <td>RED</td>
+                                            <td>S</td>
+                                            <td>10</td>
+                                            <td>11</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BLACK</td>
+                                            <td>S</td>
+                                            <td>10</td>
+                                            <td>11</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>             
+            <div class="col-sm-12">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td style="width:50%;">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td rowspan="3">
+                                                <div class="container" style="width:100px;height:80px;">
+                                                    <img class="img-thumbnail" src="//WTS-FILESERVER/erp/style/thumbnail/SinImagen.jpg" width="100" height="80">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <label>Style </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label>Description </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label>Fabric </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Additional instruction</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td style="width:50%;">
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center" style="width:40%;">Color</th>
+                                            <th class="text-center" style="width:20%;">Size</th>
+                                            <th class="text-center" style="width:15%;">Qty</th>
+                                            <th class="text-center" style="width:15%;">Counter <br /> Sample</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>BLUE</td>
+                                            <td>S</td>
+                                            <td>10</td>
+                                            <td>11</td>
+                                        </tr>
+                                        <tr>
+                                            <td>RED</td>
+                                            <td>S</td>
+                                            <td>10</td>
+                                            <td>11</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BLACK</td>
+                                            <td>S</td>
+                                            <td>10</td>
+                                            <td>11</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>       
+            <div class="col-sm-12">
+                <div class="row">
+                    <table class="table table-bordered" id="_tbl_archivos_sendmail">
+                        <thead>
+                            <tr>
+                                <th class="text-center col-sm-1">
+
+                                </th>
+                                <th class="text-center col-sm-11">
+                                    File
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="_tbody_tbl_archivos_sendmail"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

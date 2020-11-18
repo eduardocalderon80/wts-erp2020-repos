@@ -1,0 +1,70 @@
+﻿<div class="ibox" id="panelEncabezado_PermisosIndex">
+    <div class="hide">
+        <input type="text" id="txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-4">
+            <h2 class="font-bold">Permissions</h2>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <i class="fa fa-home"></i>
+                </li>
+                <li class="breadcrumb-item">
+                    Security
+                </li>
+                <li class="breadcrumb-item active">
+                    <strong>Permissions</strong>
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-8 text-right" style="padding-top: 30px">
+            <button type="button" class="btn btn-success" id="btnPermisoRefresh">
+                <span class="fa fa-refresh"> </span>
+                Refresh
+            </button>
+            <button type="button" class="btn btn-warning" id="btnPermisoNew">
+                <span class="fa fa-plus"> </span>
+                New
+            </button>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content wrapper-less animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5><i class="fa fa-table"></i> Main</h5>
+                        <div class="ibox-tools">
+                            <a class="fullscreen-link">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-sm-10">
+                                <button type="button" class="btn btn-outline btn-warning" id="btnTblPermisoEdit">
+                                    <span class="fa fa-edit"> </span>
+                                </button>
+                                <button type="button" class="btn btn-outline btn-danger" id="btnTblPermisoDelete">
+                                    <span class="fa fa-trash"> </span>
+                                </button>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <div class="has-float-label">
+                                        <input type="text" class="form-control" id="txtBuscar" placeholder="Search">
+                                        <label for="txtBuscar">Search</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12" id="div_tbl_permisos"></div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

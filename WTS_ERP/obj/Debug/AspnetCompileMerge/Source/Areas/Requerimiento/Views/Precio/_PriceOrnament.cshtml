@@ -1,0 +1,45 @@
+﻿<div id="panelEncabezado_PriceOrnament">
+    <div class="hide">
+        <input type="text" id="priceornament_txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="form-horizontal row">
+        <div class="col-sm-12 m-b">
+            <div class="text-right">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <span class="fa fa-reply-all"></span>
+                    Return
+                </button>
+                <button type="button" class="btn btn-success" id="btnPriceArteSave">
+                    <span class="fa fa-save"></span>
+                    Save
+                </button>
+                <button type="button" class="btn btn-primary" id="btnPriceArteExport">
+                    <span class="fa fa-file-excel-o"></span>
+                    Export
+                </button>
+            </div>
+            <hr />
+        </div>
+    </div>
+    <div class="form-horizontal row">
+        <div class="col-sm-12" style="overflow: auto;">
+            <table class="table table-hover table-bordered table-vertical-center" id="tbl_prices_ornament">
+                <thead>
+                    <tr>
+                        <th>WTS Ornament Code</th>
+                        <th>Tecnhique</th>
+                        <th>Ornament Description</th>
+                        <th>WTS Fabric Code</th>
+                        <th>WTS Fabric Description</th>
+                        <th>WTS Style Number </th>
+                        <th>Style Client Description</th>
+                        <th>Cost $</th>
+                        <th>Unit</th>
+                        <th width="20%">Comments</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody_tbl_prices_ornament"></tbody>
+            </table>
+        </div>
+    </div>
+</div>

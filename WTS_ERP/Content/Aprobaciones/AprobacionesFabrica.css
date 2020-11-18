@@ -1,0 +1,22 @@
+﻿body, html {
+    height: 98% !important;
+}
+/* Ensure that the demo table scrolls */
+table.dataTable thead tr {
+    background-color: #F2F2F2;
+}
+
+th, td {
+    white-space: nowrap;
+}
+
+td {
+    font-size: 11px
+}
+
+div.dataTables_wrapper {
+    min-width: 800px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+

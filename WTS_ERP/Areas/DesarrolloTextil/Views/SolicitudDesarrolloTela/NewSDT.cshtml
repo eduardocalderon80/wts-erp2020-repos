@@ -1,0 +1,1099 @@
+﻿<style>
+    #panelEncabezado_SDT .ibox {
+        clear: both;
+        /* EDU: LO MODIFIQUE PARA QUITAR MARGEN INFERIOR*/
+        /*margin-bottom: 25px;*/
+        /*edu: para quitar espacios entre div usando ibox*/
+        margin-bottom: 5px !important;
+        margin-top: 0;
+        padding: 0;
+    }
+
+    #panelEncabezado_SDT .ibox-content {
+        /*background-color: #ffffff;*/
+        color: inherit;
+        /* EDU: LO MODIFIQUE PARA QUITAR MARGEN INFERIOR*/
+        /*padding: 15px 20px 20px 20px;*/
+        /*edu: para quitar espacios entre div usando ibox*/
+        padding: 5px 20px 5px 10px !important;
+        border-color: #e7eaec;
+        border-image: none;
+        border-style: solid solid none;
+        border-width: 1px 0;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 10% 15% 30% 5% 40%;
+        grid-gap: 10px;
+    }
+</style>
+
+<div class="ibox" id="panelEncabezado_SDT">
+    <!-- :SDT = SOLICITUD DE DESARROLLO DE TELA-->
+    <div class="hide">
+        <input type="text" id="txtpar_newsdt" value="DATA-PARAMETRO" />
+        <input type="text" id="hf_idanalisistextil" value="" class="_enty" data-min="1" data-max="20" data-id="IdAnalisisTextil" />
+        @*<input type="text" id="hf_idcliente" value="" class="_enty" data-min="1" data-max="20" data-id="IdCliente" />*@
+        <input type="text" id="hf_idsolicitud" value="" class="_enty" data-min="1" data-max="20" data-id="idsolicitud" />
+        <input type="text" id="hf_idsolicituddesarrollotela" value="" class="_enty" data-min="1" data-max="20" data-id="idsolicituddesarrollotela" />
+        <input type="text" id="hf_idsolicituddesarrollotela_padre" value="" class="_enty _enty_escomplemento" data-min="1" data-max="20" data-required="false" data-id="idsolicituddesarrollotela_padre" />
+        <input type="text" id="hf_escomplemento" value="" class="_enty" data-min="1" data-max="20" data-required="false" data-id="escomplemento" />
+        <input type="text" id="hf_tieneatx" value="1" class="_enty" data-min="1" data-max="20" data-required="false" data-id="tieneatx" />
+        <input type="text" id="hf_escomplemento_peroreferenciapadremuyantiguo" value="" class="_enty" data-min="1" data-max="20" data-required="false" data-id="escomplemento_peroreferenciapadremuyantiguo" />
+        <!--NOTA: ESTE DATO LO CARGO AL MOMENTO DE SELECCIONAR EL CODIGO DE TELA CUANDO SE CREA UN COMPLEMENTO-->
+        <input type="text" id="hf_codigotelaclientepadremuyantiguo_referencia" value="" class="_enty" data-min="1" data-max="20" data-required="false" data-id="codigotelaclientepadremuyantiguo_referencia" />
+        <input type="text" id="hf_escomplemento_peroreferenciapadrehistorico" value="" class="_enty" data-min="1" data-max="20" data-required="false" data-id="escomplemento_peroreferenciapadrehistorico" />
+    </div>
+
+    <div class="ibox-title">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 id="_title" class="text-navy bold">Solicitud Desarrollo Tela</h3>
+                <!--COMENTADO SIRVE PARA SWATCH-->
+                <!--
+                <div class="row">
+                    <h3 id="_title" class="col-sm-4 text-navy bold">Solicitud Desarrollo Tela</h3>
+                    <label class="text-danger"><div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_tipo_desarrollo" value="TELA" name="rb_tipo_desarrollo" data-pregunta="TELA" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i>TELA</label>
+                    &nbsp;&nbsp;
+                    <label class="text-danger"><div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_tipo_desarrollo" value="SWATCH" name="rb_tipo_desarrollo" data-pregunta="SWATCH" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i>TEJIDO</label>
+                </div>
+                -->
+            </div>
+            <div class="col-sm-6 text-right">
+                <button id="btn_save_newsdt" class="btn btn-primary" title="Guardar">
+                    <span class="fa fa-save"></span>
+                    Guardar
+                </button>
+                <button id="btn_save_updatesdt" class="btn btn-info" title="Actualizar">
+                    <span class="fa fa-save"></span>
+                    Actualizar
+                </button>
+                <button id="btn_save_leadtime" class="btn btn-info" title="leadtime">
+                    <span class="fa fa-save"></span>
+                    Register Leadtime
+                </button>
+                <button type="button" id="btn_enviar_sdt" class="btn btn-success hide" title="Enviar">
+                    <span class="fa fa-send"></span>
+                    Enviar
+                </button>
+                <button type="button" id="btn_cancelar_sdt" class="btn btn-warning hide" title="Cancelar">
+                    <span class="fa fa-send"></span>
+                    Cancelar
+                </button>
+                <button type="button" class="btn btn-default" id="btnreturn_newsdt" title="Retornar">
+                    <span class="fa fa-ban" aria-hidden="true"></span>
+                    Retornar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox-content wrapper wrapper-content gray-bg" style="overflow-y: auto; max-height: 850px;" id="div_cuerpoprincipal">
+        <div class="row">
+            <div class="col-sm-12 m-b-md">
+                <div class="tabs-container" id="tab_principal">
+                    <ul class="nav nav-tabs">
+                        <li class="active cls_tab_principal cls_tabli_telaprincipal">
+                            <a data-toggle="tab" id="tab_a_solicitante" href="#tab_usu_comercial">Tela Principal</a>
+                        </li>
+                        <li class="cls_tab_principal cls_tabli_complementos">
+                            <a data-toggle="tab" href="#tab_complementos">Complementos</a>
+                        </li>
+                        <li class="cls_tab_principal cls_tabli_fabrica">
+                            <a data-toggle="tab" href="#tab_usu_fabrica">Fabrica</a>
+                        </li>
+                        <li class="cls_tab_principal cls_tabli_estadofinal">
+                            <a data-toggle="tab" href="#tab_estadofinal">Estado Final Del Desarrollo</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="tab_usu_comercial" class="tab-pane active cls_tabpane_principal">
+                            <div class="">
+                                <!--SE USO HIDE PARA SWATCH hide-->
+                                <div class="ibox cls_divs_tab_telaprincipal" id="div_datos_atx_original">
+                                    <div class="ibox-title">
+                                        <h5 class="text-navy bold">Datos ATX Original</h5>
+                                        <div class="ibox-tools">
+                                            <a class="collapse-link">
+                                                <span class="fa fa-chevron-up icono_collapse"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="ibox-content" id="div_content_datosatxoriginal">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <!--FILA 1-->
+                                                <div class="col-sm-12">
+                                                    <!--COLUMNA 1-->
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group" id="divATX">
+                                                            <div class="col-sm-12 grid-container">
+                                                                <div class="text-right">
+                                                                    <!--PARA EL CHECKBOX-->
+                                                                    <label class="control-label cls_chk_conatx" id="div_chk_contela">
+                                                                        <div class='icheckbox_square-green _clsdiv_chk_conatx' style='position: relative;'>
+                                                                            <input type='checkbox' class='i-checks _clscheck_conatx _cls_conatx _cls_datosoriginalatx' id="chk_conatx" style='position: absolute; opacity: 0;' name='_chk_conatx' value="" data-valor="" checked="checked" />&nbsp
+                                                                            <ins class='iCheck-helper' style='position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0'></ins>
+                                                                        </div>
+                                                                    </label>
+                                                                </div>
+                                                                <div>
+                                                                    <!--PARA EL LABEL-->
+                                                                    <label class="col-sm-12 control-label">N° ATX</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="text" id="txtanio" class="form-control _enty _cls_conatx _cls_datosoriginalatx" data-id="anio" placeholder="2019" data-required="false" data-min="1" data-max="99" onkeypress="return DigitimosDecimales(event,this)" />
+                                                                </div>
+                                                                <div class="text-center"><label class="control-label">-</label></div>
+                                                                <div>
+                                                                    <div class="input-group">
+                                                                        <input type="text" class="form-control _enty _cls_conatx _cls_datosoriginalatx" id="txtCorrelativo" data-id="correlativo" data-required="false" placeholder="1545" data-min="1" data-max="9999" onkeypress="return DigitimosDecimales(event,this)" />
+                                                                        <div class="input-group-btn">
+                                                                            <button class="btn btn-primary _cls_datosoriginalatx" type="button" id="btnBuscarAtx">
+                                                                                <span class="fa fa-search"></span>
+                                                                            </button>
+                                                                        </div>
+                                                                        <!--QUITAR YA NO VA CRISTINA-->
+                                                                        <div class="input-group-btn hide">
+                                                                            <button class="btn btn-success" type="button" id="btnpdfatx">
+                                                                                PDF  <span class="fa fa-file-pdf-o"></span>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--COLUMNA 2-->
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label class="col-sm-4 control-label">ATX</label>
+                                                            <div class="col-sm-8">
+                                                                <label class="control-label"><a href="javascript:void(0)" id="link_ver_atx"></a></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--COLUMNA 3-->
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group cls_nombre_telacliente_manual hide" id="div_grupo_nombretelacliente_padre_referencia">
+                                                            <label class="control-label col-sm-4" id="lbl_codigotela_o_codigotelaprincipal">Nombre Tela Cliente</label>
+                                                            <div class="col-sm-8">
+                                                                <div class="input-group">
+                                                                    <input type="text" class="form-control cls_disabled_por_proveedor" id="txtnombretelacliente_telaprincipal" value="" disabled="disabled" />
+                                                                    <div class="input-group-btn">
+                                                                        <button type="button" class="btn btn-primary cls_disabled_por_proveedor" id="btn_buscartela_y_buscartelaprincipal" title="Buscar Tela">
+                                                                            <span class="fa fa-search"></span>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group cls_nuevo_complemento cls_div_complementos" id="div_grupo_cantidadcomplementos">
+                                                            <label class="col-sm-4 control-label">Complementos</label>
+                                                            <div class="col-sm-4">
+                                                                <div class="input-group">
+                                                                    <input type="text" class="form-control" id="txttotalcomplementos" value="0" disabled="disabled" />
+                                                                    <div class="input-group-btn">
+                                                                        <button class="btn btn-primary _cls_datosoriginalatx" id="btnnuevocomplemento">
+                                                                            <span class="fa fa-plus"></span>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--FILA 2-->
+                                                <div class="col-sm-12" id="div_escomplemento">
+                                                    <div class="col-sm-4">
+                                                        <!--
+                            <div class="form-group" id="">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-offset-4">
+                                        <div class='icheckbox_square-green _clsdiv_chk_escomplemento' style='position: relative;'>
+                                            <input type='checkbox' class='i-checks _clscheck_escomplemento _cls_escomplemento' style='position: absolute; opacity: 0;' name='_chk_escomplemento' value="" data-valor="" />&nbsp
+                                            <ins class='iCheck-helper' style='position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0'></ins>
+                                        </div>
+                                        Es Complemento
+                                    </label>
+                                </div>
+                            </div>
+                            -->
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <!--NOTA: ESTE DATO NO SE GRABA LO QUE SE GRABARA ES EL hf_idsolicituddesarrollotela_padre-->
+                                                        <!--
+                            <div class="form-group hide" id="div_grupo_telacuerpo_referencia">
+                                <label class="control-label col-sm-5">Desarrollo Tela Cuerpo Ref#</label>
+                                <div class="col-sm-7">
+                                    <div class="input-group">
+
+                                        <input type="text" class="form-control _enty _cls_escomplemento" id="txtnombretelacliente" value="" data-min="1" data-max="1000" maxlength="200" data-required="false" data-id="nombretelaclientereferencia" />
+                                        <div class="input-group-btn">
+                                            <button type="button" class="btn btn-primary _cls_escomplemento" id="btn_buscardesarrollotelapadre">
+                                                <span class="fa fa-search"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            -->
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="col-sm-12 cls_div_complementos" id="div_grupo_total_registro_complementos">
+                                                            <div class="col-sm-12">
+                                                                <!--Desarrollo Tela #50 - MARMAX - FALL19-->
+                                                                <label class="col-sm-12" id="lbl_descripcion_telaprincipal_totalcomplementos"></label>
+                                                            </div>
+                                                            <div class="col-sm-12">
+                                                                <div class="table-responsive">
+                                                                    <table class="table table-bordered cls_tbl_totalcomplementos">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th class="col-sm-1 text-center">N°</th>
+                                                                                <th class="col-sm-8 text-center">Complementos</th>
+                                                                                <th class="col-sm-3 text-center">Fecha Registro</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody id="tbody_totalcomplementos">
+                                                                            <!--
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>MXMJERSEY 101</td>
+                                                    <td>06/01/2019 12:40 PM</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>MXMJERSEY 105</td>
+                                                    <td>06/01/2019 14:50 PM</td>
+                                                </tr>
+                                                -->
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!--
+                            <div class="form-group hide" id="div_tbl_complementos">
+                                <div class="col-sm-6">
+                                    <div class="col-sm-12">
+                                        <label class="col-sm-offset-2">
+                                            <div class='icheckbox_square-green _clsdiv_chk_noexistebddesarrollotela' style='position: relative;'>
+                                                <input type='checkbox' class='i-checks _clscheck_noexistebddesarrollotela _cls_noexistebddesarrollotela _cls_escomplemento' style='position: absolute; opacity: 0;' name='_chk_noexistebddesarrollotela' value="" data-valor="" />&nbsp
+                                                <ins class='iCheck-helper' style='position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0'></ins>
+                                            </div>
+                                            No existe BD Desarrollo Tela
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <label class="control-label col-sm-4">Referencia Padre</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control _enty _cls_escomplemento" id="txtnombretelacliente_cuandonohaydesarrollo" disabled="disabled" value="" data-min="1" data-max="1000" maxlength="200" data-required="false" data-id="codigotelaclientepadremuyantiguo_referencia" />
+                                    </div>
+                                </div>
+                            </div>
+                            -->
+                                                    </div>
+                                                </div>
+                                                <!--FILA 3-->
+                                                <div class="col-sm-12 cls_grupo_datosatx">
+                                                    <!--columna 1-->
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-4" id="lbl_estructura_punto">Estructura</label>
+                                                            <div class="col-sm-8" id="">
+                                                                <input type="text" disabled class="form-control cls_dato_atx _enty _cls_datosoriginalatx" data-min="1" data-max="2000" data-required="true" id="txtestructura" data-id="estructura" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--columna 2-->
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-4">Titulo</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" disabled class="form-control cls_dato_atx _enty _cls_datosoriginalatx" id="txttitulo" data-min="1" data-max="2000" data-required="true" data-id="titulo" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--columna 3-->
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-4">Incluye Muestra Física a Replicar</label>
+                                                            <div class="col-sm-8" id="divrbmuestrafisica">
+                                                                <label class=""><div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_muestrafisica _cls_datosoriginalatx" checked="checked" value="1" name="rbmuestrafisica" data-pregunta="1" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i>SI</label>
+                                                                <label class=""><div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_muestrafisica _cls_datosoriginalatx" checked="checked" value="0" name="rbmuestrafisica" data-pregunta="0" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i>NO</label>
+                                                            </div>
+                                                            <!--
+                                    <label class="control-label col-sm-4">Composición</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" disabled class="form-control" id="txtcomposicion" data-id="idclientetemporada" />
+                                    </div>
+                                -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--FILA 4-->
+                                                <div class="col-sm-12 cls_grupo_datosatx">
+                                                    <!--columna 1-->
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-4">Densidad</label>
+                                                            <div class="col-sm-8" id="">
+                                                                <input type="text" disabled class="form-control cls_dato_atx _enty _cls_datosoriginalatx" id="txtdensidad" data-min="1" data-max="200" data-required="true" data-id="densidad" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--columna 2-->
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-4">Composicion</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" disabled class="form-control cls_dato_atx _enty _cls_datosoriginalatx" id="txtcomposicion" data-min="1" data-max="2000" data-required="true" data-id="composicion" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--columna 3-->
+                                                    <div class="col-sm-4">
+                                                        <!--COMENTADO SIRVE PARA SWATCH-->
+                                                        <!--
+                            <div class="form-group hide cls_div_dato_swatch">
+                                <label class="control-label col-sm-4">Galga</label>
+                                <div class="col-sm-8">
+                                    <input type="text" disabled class="form-control cls_dato_atx _enty _cls_datosoriginalatx" id="txtgalga" data-min="1" data-max="20" data-required="false" data-id="numero_galgas" />
+                                </div>
+                            </div>
+                            -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--SE USO PARA SWATCH hide-->
+                                <div class="ibox cls_divs_tab_telaprincipal" id="div_datos_nuevo_desarrollo">
+                                    <div class="ibox-title">
+                                        <div class="ibox-tools">
+                                            <h5 class="text-navy bold">Datos Nuevo Desarrollo</h5>
+                                            <a class="collapse-link">
+                                                <span class="fa fa-chevron-up icono_collapse"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <!--FILA 1-->
+                                                <div class="col-sm-12">
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label class="col-sm-4 control-label">Nombre Tela Cliente</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control _enty cls_nombretelacliente" data-id="nombretela" id="txtnombretela" data-min="1" data-max="2000" data-required="true" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-4">Cliente</label>
+                                                            <div class="col-sm-8">
+                                                                <!--idcliente_datosnuevodesarrollo-->
+                                                                <select class="form-control _enty cls_cliente cls_cbocliente" id="cbocliente" data-required="true" data-min="1" data-max="100" data-id="idcliente">
+                                                                    <option value="">Select</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-4">Temporada</label>
+                                                            <div class="col-sm-8">
+                                                                <select class="form-control _enty cls_clientetemporada" id="cbocliente_temporada" data-min="1" data-max="100" data-id="idclientetemporada">
+                                                                    <option value="">Select</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--FILA 2-->
+                                                <div class="col-sm-12">
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-4">Acabados Especiales</label>
+                                                            <div class="col-sm-8" id="div_grupofechainicio">
+                                                                <input class="form-control _enty" id="txtacabados_especiales" data-id="acabadosespeciales" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        @*<div class="form-group">
+                                    <label class="control-label col-sm-4">Acabados Especiales</label>
+                                    <div class="col-sm-8" id="div_grupofechainicio">
+                                        <input class="form-control _enty" id="txtacabados_especiales" data-id="acabadosespeciales" />
+                                    </div>
+                                </div>*@
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-4">Fecha Entrega Requerida</label>
+                                                            <div class="cls_div_grupofecharequerida col-sm-8" id="div_grupofecharequerida">
+                                                                <div class="input-group date" id="div_groupdate">
+                                                                    <input type="text" class="form-control _enty" data-id="fecharequerida" id="txtfecharequerida" data-type="date" data-min="10" data-max="10" data-required="true" data-level="true" />
+                                                                    <div class="input-group-addon" id="divinputspancalendar">
+                                                                        <span class="fa fa-calendar" id="idiconcalendar"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- YA NO VA -->
+                                                        <div class="form-group hide">
+                                                            <label class="control-label col-sm-4">Complementos</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control _enty" id="txtcomplemento" data-id="complemento" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-4">Requerimiento Cliente</label>
+                                                            <div class="cls_div_grupofecharequerida col-sm-8" id="div_grupofecharequerimientocliente">
+                                                                <div class="input-group date" id="div_sub_grupofecharequerimientocliente">
+                                                                    <input type="text" class="form-control _enty cls_disabled_por_proveedor" data-id="fecharequerimientocliente" id="txt_fecharequerimientocliente" data-type="date" data-min="10" data-max="10" data-required="false" data-level="true" />
+                                                                    <div class="input-group-addon cls_disabled_por_proveedor" id="div_inputspancalendar_requerimientocliente" data-type="btnfecha_inspinia">
+                                                                        <span class="fa fa-calendar" id="id_icon_calendar_requerimientocliente"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        @*<div class="form-group">
+                                    <label class="control-label col-sm-4">Fecha Entrega Requerida</label>
+                                    <div class="cls_div_grupofecharequerida col-sm-8" id="div_grupofecharequerida">
+                                        <div class="input-group date" id="div_groupdate">
+                                            <input type="text" class="form-control _enty" data-id="fecharequerida" id="txtfecharequerida" data-type="date" data-min="10" data-max="10" data-required="true" data-level="true" />
+                                            <div class="input-group-addon" id="divinputspancalendar">
+                                                <span class="fa fa-calendar" id="idiconcalendar"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>*@
+                                                    </div>
+                                                </div>
+                                                <!--FILA 3-->
+                                                <div class="col-sm-12">
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-4">Comentario</label>
+                                                            <div class="col-sm-8">
+                                                                <textarea class="form-control _enty" id="txta_comentario" data-id="comentarios"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--COL 2-->
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-4">Asume Costo Desarrollo</label>
+                                                            <div class="col-sm-8 text-left" id="div_grupo_quienasumedesarrollo">
+                                                                <table class="table table-bordered">
+                                                                    <tbody id="tbody_quienasumedesarrollo">
+                                                                        <tr>
+                                                                            <td>
+                                                                                <label>
+                                                                                    <div class='icheckbox_square-green _clsdiv_chk_asumefabrica' style='position: relative;'>
+                                                                                        <input type='checkbox' class='i-checks _clscheck_asumefabrica _cls_chk_quienasume cls_disabled_por_proveedor' style='position: absolute; opacity: 0;' name='_chk_asumefabrica' value="" data-valor="" />&nbsp
+                                                                                        <ins class='iCheck-helper' style='position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0'></ins>
+                                                                                    </div>
+                                                                                    Asume Fábrica
+                                                                                </label>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <label>
+                                                                                    <div class='icheckbox_square-green _clsdiv_chk_asumewts' style='position: relative;'>
+                                                                                        <input type='checkbox' class='i-checks _clscheck_asumewts _cls_chk_quienasume cls_disabled_por_proveedor' style='position: absolute; opacity: 0;' name='_chk_asumewts' value="" data-valor="" />&nbsp
+                                                                                        <ins class='iCheck-helper' style='position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0'></ins>
+                                                                                    </div>
+                                                                                    Asume Wts
+                                                                                </label>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <label>
+                                                                                    <div class='icheckbox_square-green _clsdiv_chk_asumecliente' style='position: relative;'>
+                                                                                        <input type='checkbox' class='i-checks _clscheck_asumecliente _cls_chk_quienasume cls_disabled_por_proveedor' style='position: absolute; opacity: 0;' name='_chk_asumecliente' value="" data-valor="" />&nbsp
+                                                                                        <ins class='iCheck-helper' style='position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0'></ins>
+                                                                                    </div>
+                                                                                    Asume Cliente
+                                                                                </label>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                        @*<div class="form-group">
+                                    <label class="control-label col-sm-4">Requerimiento Cliente</label>
+                                    <div class="cls_div_grupofecharequerida col-sm-8" id="div_grupofecharequerimientocliente">
+                                        <div class="input-group date" id="div_sub_grupofecharequerimientocliente">
+                                            <input type="text" class="form-control _enty cls_disabled_por_proveedor" data-id="fecharequerimientocliente" id="txt_fecharequerimientocliente" data-type="date" data-min="10" data-max="10" data-required="false" data-level="true" />
+                                            <div class="input-group-addon cls_disabled_por_proveedor" id="div_inputspancalendar_requerimientocliente" data-type="btnfecha_inspinia">
+                                                <span class="fa fa-calendar" id="id_icon_calendar_requerimientocliente"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>*@
+                                                    </div>
+                                                    <!--COL 3-->
+                                                    <div class="col-sm-4">
+                                                        @*<div class="form-group">
+                                    <label class="control-label col-sm-4">Asume Costo Desarrollo</label>
+                                    <div class="col-sm-8 text-left" id="div_grupo_quienasumedesarrollo">
+                                        <table class="table table-bordered">
+                                            <tbody id="tbody_quienasumedesarrollo">
+                                                <tr>
+                                                    <td>
+                                                        <label>
+                                                            <div class='icheckbox_square-green _clsdiv_chk_asumefabrica' style='position: relative;'>
+                                                                <input type='checkbox' class='i-checks _clscheck_asumefabrica _cls_chk_quienasume cls_disabled_por_proveedor' style='position: absolute; opacity: 0;' name='_chk_asumefabrica' value="" data-valor="" />&nbsp
+                                                                <ins class='iCheck-helper' style='position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0'></ins>
+                                                            </div>
+                                                            Asume Fábrica
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label>
+                                                            <div class='icheckbox_square-green _clsdiv_chk_asumewts' style='position: relative;'>
+                                                                <input type='checkbox' class='i-checks _clscheck_asumewts _cls_chk_quienasume cls_disabled_por_proveedor' style='position: absolute; opacity: 0;' name='_chk_asumewts' value="" data-valor="" />&nbsp
+                                                                <ins class='iCheck-helper' style='position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0'></ins>
+                                                            </div>
+                                                            Asume Wts
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label>
+                                                            <div class='icheckbox_square-green _clsdiv_chk_asumecliente' style='position: relative;'>
+                                                                <input type='checkbox' class='i-checks _clscheck_asumecliente _cls_chk_quienasume cls_disabled_por_proveedor' style='position: absolute; opacity: 0;' name='_chk_asumecliente' value="" data-valor="" />&nbsp
+                                                                <ins class='iCheck-helper' style='position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0'></ins>
+                                                            </div>
+                                                            Asume Cliente
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>*@
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--SE USO PARA SWATCH hide-->
+                                <div class="ibox cls_divs_tab_telaprincipal" id="div_color">
+                                    <div class="ibox-title">
+                                        <h5 class="text-navy bold">Color</h5>
+                                        <div class="ibox-tools text-right">
+                                            <span class="btn btn-sm btn-primary cls_disabled_por_proveedor" id="btnNewColor" title="Agregar Color">
+                                                <span class="fa fa-plus"></span>
+                                            </span>
+                                            <a class="collapse-link">
+                                                <span class="fa fa-chevron-up icono_collapse"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <div class="col-sm-4">
+                                                    <label class="control-label col-sm-4">Color</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control _enty_color_json cls_disabled_por_proveedor" id="txtcolornew" data-required="true" data-min="1" data-max="2000" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4 cls_div_color_hide">
+                                                    <label class="control-label col-sm-4">Peso KG</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="number" class="form-control _enty_color_json cls_input_color_required cls_disabled_por_proveedor" id="txtpesonew" data-required="true" data-min="1" data-max="2000" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4 cls_div_color_hide">
+                                                    <label class="control-label col-sm-4">Discharge</label>
+                                                    <div class="col-sm-8">
+                                                        <div class="input-group">
+                                                            @*<input type="text" class="form-control" id="txtdischargenew" />*@
+                                                            <select class="form-control _enty_color_json cls_input_color_required cls_disabled_por_proveedor" id="txtdischargenew" data-required="true" data-min="1" data-max="100" data-id="discharge_color">
+                                                                <option value="Si">Si</option>
+                                                                <option value="No">No</option>
+                                                            </select>
+                                                            @*<div class="input-group-btn">
+                                        <button class="btn btn-primary" id="btnNewColor">
+                                            <span class="fa fa-plus"></span>
+                                        </button>
+                                    </div>*@
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-sm-12">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="col-sm-1"></th>
+                                                                    <th class="col-sm-1">N°</th>
+                                                                    <th class="col-sm-6">Color</th>
+                                                                    <th class="col-sm-2">Peso KG</th>
+                                                                    <th class="col-sm-2">Discharge</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="tbody_colornew"></tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--SE USO PARA SWATCH hide-->
+                                <div class="ibox cls_divs_tab_telaprincipal" id="div_adjuntararchivo">
+                                    <div class="ibox-title">
+                                        <div class="ibox-tools">
+                                            <h5 class="text-navy bold">Adjuntar Archivos</h5>
+                                            <a class="collapse-link">
+                                                <span class="fa fa-chevron-up icono_collapse"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div style="width: 100px;">
+                                                        <span class="btn btn-primary btn-sm btn-file input-group-addon" style="background-color: #0069d9; color: #fff; height: 30px;">
+                                                            <span class="fa fa-cloud-upload"></span>
+                                                            Archivo
+                                                            <input id="btn_addfile" type="file" multiple />
+                                                        </span>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="div_addfile" class="table-responsive m-t" style="position:relative; overflow-x:auto; overflow-y:auto; max-height:400px; min-height:0px;">
+                                                <table class="table table-bordered table-hover" id="table_addfile">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="text-center col-sm-1">
+
+                                                            </th>
+                                                            <th class="text-center col-sm-5" style="vertical-align:middle;">
+                                                                Archivo
+                                                            </th>
+                                                            <th class="text-center col-sm-6" style="vertical-align:middle;">
+                                                                Comentario
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="tbody_addfile"></tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--SE USO PARA SWATCH hide-->
+                                <div class="ibox cls_divs_tab_telaprincipal" id="div_proyecto">
+                                    <div class="ibox-title">
+                                        <div class="ibox-tools">
+                                            <h5 class="text-navy bold">Datos Proyecto</h5>
+                                            <a class="collapse-link">
+                                                <span class="fa fa-chevron-up icono_collapse"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <div class="col-sm-12">
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-4">N° Proyecto</label>
+                                                            <div class="col-sm-8">
+                                                                <div class="input-group">
+                                                                    <input type="text" class="form-control cls_input_div_proyecto_disabled cls_disabled_por_proveedor" id="txtcodigopry" style="text-transform: uppercase;">
+                                                                    <div class="input-group-btn">
+                                                                        <button type="button" class="btn btn-primary cls_input_div_proyecto_disabled cls_disabled_por_proveedor" id="btnBuscarPry">
+                                                                            <span class="fa fa-search"></span>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-4">Proyecto</label>
+                                                            <div class="col-sm-8">
+                                                                <label class="control-label" id="txtproyecto" style="color: #337ab7;"></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-4">Descripcion</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control _enty cls_input_div_proyecto_disabled" id="txtdescripcionpry"
+                                                                       data-min="1" data-max="2000" data-required="false" data-id="txtcodigopry" disabled>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-4">Cliente</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control _enty cls_input_div_proyecto_disabled" id="txtclientepry" data-min="1"
+                                                                       data-max="2000" data-required="false" data-id="txtcodigopry" disabled>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-4">Fecha Aprobación</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control _enty cls_input_div_proyecto_disabled" id="txtaprobacionpry" data-min="1"
+                                                                       data-max="2000" data-required="false" data-id="txtcodigopry" disabled>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-4">Estado</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control _enty cls_input_div_proyecto_disabled" id="txtestadopry" data-min="1"
+                                                                       data-max="2000" data-required="false" data-id="txtcodigopry" disabled>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--SE USO PARA SWATCH hide-->
+                                <div class="ibox cls_divs_tab_telaprincipal" style="margin-bottom:0px;" id="divFabrica">
+                                    <div class="ibox-title">
+                                        <h5 class="text-navy bold">Fabrica</h5>
+                                        <div class="ibox-tools text-right">
+                                            <a class="collapse-link">
+                                                <span class="fa fa-chevron-up icono_collapse"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="col-sm-1 control-label">Fábrica</label>
+                                                        <div class="col-sm-8">
+                                                            @* <select class="form-control _enty" data-id="Fabrica" id="cboproveedor"></select>*@
+                                                            <input list="listproveedor" id="txtfabrica" name="nlistproveedor" class="form-control" />
+                                                            <datalist id="listproveedor"></datalist>
+                                                        </div>
+                                                        <div class="col-sm-2">
+                                                            <button class="btn btn-primary" type="button" id="btnaddfabrica">Add</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-12">
+                                                            <div class="table-responsive" id="divtblfabrica">
+                                                                <table class="table table-responsive table-bordered" id="tblfabrica">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th class="text-center"></th>
+                                                                            <th class="text-center">Fabrica</th>
+                                                                            <th class="text-center">Fecha</th>
+                                                                            <th class="text-center">Estado</th>
+                                                                            <th class="text-center"></th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody id="tblbodyfabrica" class="clstblbodyfabrica">
+                                                                        @*<tr>
+                                                    <th colspan="3" style="text-align:center;">
+                                                        Debe agregar fabricas
+                                                    </th>
+                                                </tr>*@
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--SE USO PARA SWATCH hide-->
+                                <div class="ibox cls_divs_tab_telaprincipal" style="margin-bottom:0px;" id="div_requerimientos_cliente">
+                                    <div class="ibox-title">
+                                        <h5 class="text-navy bold">Requerimientos del Cliente</h5>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <div class="col-sm-12">
+                                                    <textarea class="form-control _enty" id="txta_requerimientos_del_cliente" data-id="requerimientoscliente"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--SE USO PARA SWATCH hide-->
+                                <div class="ibox cls_divs_tab_telaprincipal" style="margin-bottom:0px;" id="div_recomendaciones_tecnicas">
+                                    <div class="ibox-title">
+                                        <h5 class="text-navy bold">Recomendaciones Técnicas</h5>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <div class="col-sm-12">
+                                                    <textarea class="form-control _enty" id="txta_recomendaciones_tecnicas" data-id="recomendacionestecnicas"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--SE USO PARA SWATCH hide-->
+                                <div class="ibox cls_divs_tab_telaprincipal" style="margin-bottom:0px;" id="div_instrucciones_cuidado">
+                                    <div class="ibox-title">
+                                        <h5 class="text-navy bold">Instrucciones de Cuidado</h5>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <div class="col-sm-12">
+                                                    <textarea class="form-control _enty" id="txta_instruccionescuidado" data-id="instruccionescuidado"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--SE USO PARA SWATCH hide-->
+                                <div class="ibox cls_divs_tab_telaprincipal " style="margin-bottom:0px;" id="div_analisis_laboratorio">
+                                    <div class="ibox-title">
+                                        <h5 class="text-navy bold">Análisis de laboratorio</h5>
+                                    </div>
+                                    <div class="ibox-content">
+                                        &nbsp;
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <div class="col-sm-12">
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <div class="col-sm-10">
+                                                                <label class="col-sm-12">
+                                                                    <input type="checkbox" id="chk_requiereanalisis" class="i-checks _enty" value="" data-valor="" checked data-id="requiereanalisis" />
+                                                                    Requiere Análisis de Laboratorio
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-6">Tipo de prueba:</label>
+                                                            <div class="col-sm-6">
+                                                                <select class="form-control _enty cls_cbotipoprueba cls_input_div_requiereanalisis_disabled" id="cbotipoprueba" data-min="1" data-max="100" data-id="idpaquetepruebalaboratorio">
+                                                                    <option value="">Select</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-horizontal">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <textarea class="form-control _enty cls_input_div_requiereanalisis_disabled" id="txta_comentario_analisis_laboratorio" data-id="comentarioanalisislaboratorio"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--SE USO PARA SWATCH hide-->
+                                <div class="ibox cls_divs_tab_telaprincipal" style="margin-bottom:0px;" id="div_datos_a_considerar">
+                                    <div class="ibox-title">
+                                        <h5 class="text-navy bold">Datos a Considerar</h5>
+                                        <div class="ibox-tools text-right" style="display:none">
+                                            <label>
+                                                <div class="icheckbox_square-green _clsdiv_chk_correo_consignacion' style='position: relative;">
+                                                    <input type='checkbox' id="chk_correo_consignacion" class='i-checks _enty' style='position: absolute; opacity: 0;' name='_chk_correo_consignacion' value="" data-valor="" data-id="enviarcorreo" />&nbsp
+                                                    <ins class='iCheck-helper' style='position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0'></ins>
+                                                </div>
+                                                Enviar correo por consignacion
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div class="table-responsive" id="divcomparacion">
+                                            <table class="table table-bordered table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-center" style="width:20%">
+                                                            <label>
+                                                                <div class='icheckbox_square-green _clsdiv_chk_criterio_cabecera' style='position: relative;'>
+                                                                    <input type='checkbox' class='i-checks _clscheck_criterio_cabecera _cls_criterio_cabecera' style='position: absolute; opacity: 0;' name='_chk_criterio_cabecera' value="" data-valor="" />&nbsp
+                                                                    <ins class='iCheck-helper' style='position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0'></ins>
+                                                                </div>
+                                                                Criterio
+                                                            </label>
+                                                        </th>
+                                                        <th class="text-center" style="width:80%">Descripción</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="" id="tblbodychk"></tbody>
+                                            </table>
+                                        </div>
+                                        @*<div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-sm-12" id="divcomparacion">
+
+                        </div>
+                    </div>
+                </div>*@
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab_complementos" class="tab-pane cls_tabpane_principal">
+                            <div class="ibox" id="div_principal_complementos">
+                                <div class="ibox-content" id="ibox-content">
+                                    <div id="vertical-timeline" class="vertical-container dark-timeline center-orientation">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab_usu_fabrica" class="tab-pane cls_tabpane_principal">
+                            <div class="row">
+                                <div class="col-sm-12 m-b-md">
+                                    <div class="tabs-container" id="div_fabrica_tabs_complementos">
+                                        <!--ACA VIENE LO DINAMICO PARA LOS TABS A GENERAR-->
+                                        <ul class="nav nav-tabs" id="tab_ul_fabrica_complementos"></ul>
+                                        <div class="tab-content" id="tab_content_fabrica_complementos">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--DEL ANTERIOR-->
+                            <!--
+                            <div class="">
+                                <div class="ibox">
+                                    <div class="ibox-title">
+                                        <h5 class="text-navy bold">Lead Times</h5>
+                                        <div class="ibox-tools text-right">
+                                            <span type="button" class="btn btn-sm btn-primary hide">
+                                                <span class="fa fa-plus"></span>
+                                                Add
+                                            </span>
+                                            <a class="collapse-link">
+                                                <span class="fa fa-chevron-up icono_collapse"></span>
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <div class="col-sm-12" id="divleadtime">
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            -->
+                        </div>
+                        <div id="tab_estadofinal" class="tab-pane cls_tabpane_principal">
+                            <div id="div_principal_statusfinal" class="row">
+                                <div class="col-sm-12 m-b-md">
+                                    <div class="tabs-container" id="div_estadofinal_tabs_complementos">
+                                        <!--ACA VIENE LO DINAMICO PARA LOS TABS A GENERAR-->
+                                        <ul class="nav nav-tabs" id="tab_ul_estadofinal_complementos"></ul>
+                                        <div class="tab-content" id="tab_content_estadofinal_complementos">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--
+                                <div class="ibox">
+                                    <div class="ibox-title">
+                                        <h5 class="text-navy bold">FABRICA 1</h5>
+                                        <div class="ibox-tools text-right">
+                                            <span type="button" class="btn btn-sm btn-primary hide">
+                                                <span class="fa fa-plus"></span>
+                                                Add
+                                            </span>
+                                            <a class="collapse-link">
+                                                <span class="fa fa-chevron-up icono_collapse"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <div class="col-sm-12" id="">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="ibox">
+                                    <div class="ibox-title">
+                                        <h5 class="text-navy bold">FABRICA 2</h5>
+                                        <div class="ibox-tools text-right">
+                                            <span type="button" class="btn btn-sm btn-primary hide">
+                                                <span class="fa fa-plus"></span>
+                                                Add
+                                            </span>
+                                            <a class="collapse-link">
+                                                <span class="fa fa-chevron-up icono_collapse"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <div class="col-sm-12" id="">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                    -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

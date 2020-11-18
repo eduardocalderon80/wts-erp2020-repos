@@ -1,0 +1,190 @@
+﻿<div class="row wrapper white-bg page-heading">
+    <div id="content_header" class="ibox float-e-margins">
+        <div id="divtituloprincipal" class="col-sm-6">
+            <h2 class="font-bold">Planilla</h2>
+        </div>
+        <div class="col-sm-6 text-right position_right" style="vertical-align: middle;margin-top:15px;">
+            <button id="btnNew" type="button" class="btn btn-default">
+                <span class="fa fa-plus"></span>
+                New
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="row wrapper-content gray-bg animated">
+
+    <div id="content_form" class="ibox">
+        <div class="ibox-title">
+            <div class="form-horizontal row ">
+                <div class="col-sm-6">
+                    <h3 id="_title" class="text-navy bold">Search</h3>
+                </div>
+                @*<div class="col-sm-6 text-right">
+                    <button type="button" class="btn btn-success" id="btnSearch">
+                        <span class="fa fa-search"></span>
+                        Search
+                    </button>
+                </div>*@
+            </div>
+        </div>
+        <div class="ibox-content">
+            <div class="form-horizontal row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Document:</label>
+                        <div class="col-sm-9">
+                            <select class="select2_Documento form-control" name="IdDocumento" id="cboDocumento" style="width:100%" data-min="1" data-required="true" data-id="IdDocumento">                               
+                            </select>
+                        </div>
+                    </div>
+                </div>          
+            </div>
+        </div>
+    </div>
+    <div id="content_form" class="ibox">
+        <div class="ibox-title hide">
+            <h5>Details</h5>
+        </div>
+        <div id="tabledetails" class="ibox-content">
+            <div class="table-responsive">
+                <input type="text" class="form-control input-sm m-b-xs" id="filter" placeholder="Search in table">
+                <table class="footable table table-stripped table-bordered " data-page-size="10" data-filter=#filter id="contenTableDetails">
+                    <thead>
+                        <tr>
+                            <th class ='col-sm-2' data-sort-ignore="true"></th>
+                            <th class ='col-sm-2' data-sort-ignore="true">Year</th>
+                            <th class ='col-sm-2' data-sort-ignore="true">Month</th>
+                            <th class ='col-sm-2' data-sort-ignore="true">Total Employee</th>
+                            <th class ='col-sm-2' data-sort-ignore="true">Total Discount</th>
+                            <th class ='col-sm-2' data-sort-ignore="true">Total Net</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="8">
+                                <ul class="pagination pull-right"></ul>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+@*<div class="row wrapper border-bottom white-bg page-heading">
+    <div id="content_header" class="col-lg-12">
+        <div class="col-lg-8">
+            <h2>Planillas</h2>
+            <ol class="breadcrumb">
+                <li>
+                    Carga de Planillas por Periodo
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-4" style="text-align:right;">
+            <div class="btn-group">
+                <label title="Upload image file" for="inputFile" class="btn btn-primary">
+                    <input type="file" id="inputFile" name="file" onchange="checkfile(this);" class="hide">
+                    <i class="fa  fa-plus-square-o"></i>&nbsp;&nbsp;
+                    <span class="bold">New</span>
+                </label>
+            </div>
+            <span style="text-align:right;">
+                <button class="btn btn-success " type="button" onclick="savePlanilla()">
+                    <i class="fa fa-save"></i>&nbsp;&nbsp;
+                    <span class="bold">Save</span>
+                </button>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="row wrapper border-bottom white-bg page-heading" style="padding-top:10px;">
+    <div class="col-lg-6">
+        <div id="content_page1">
+            <div class="form-group" id="data_4">
+                <label class="font-noraml">Month Select Upload</label>
+                <div class="input-group date">
+                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                    <input type="text" class="form-control" id="periodo" value="07/01/2014">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-lg-6">
+        <div id="content_page1">
+            <div class="form-group">
+                <label class="font-noraml">File Selected</label>
+                <input type="text" id="fileSelected" class="form-control" value="">
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div>
+        <div id="content_page2">
+            <div class="row">
+                <div class="table-responsive">
+                    <input type="text" class="form-control input-sm m-b-xs" id="filter"
+                           placeholder="Search in table">
+                                        
+                    <table style="width:100%" height="100" class="footable table table-stripped table-bordered " data-page-size="10" data-filter=#filter>
+                        <thead>
+                            <tr>
+                                <th>Año</th>
+                                <th>Mes Pago</th>
+                                <th>Total Empleados</th>
+                                <th>Total Dscto</th>
+                                <th>Total Neto</th>
+                                <th>Detalle</th>
+                            </tr>
+                        </thead>
+                        <tbody id="editableTable"></tbody>
+                        <tfoot>
+                            <tr>
+                                <th>Año</th>
+                                <th>Mes Pago</th>
+                                <th>Total Empleados</th>
+                                <th>Total Dscto</th>
+                                <th>Total Neto</th>
+                                <th>Detalle</th>
+                            </tr>
+                            <tr>
+                                <td colspan="6">
+                                    <ul class="pagination pull-right"></ul>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                </div>
+
+            </div>
+            <div class="footer">
+                <div class="pull-right">
+                    10GB of <strong>250GB</strong> Free.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@
+
+

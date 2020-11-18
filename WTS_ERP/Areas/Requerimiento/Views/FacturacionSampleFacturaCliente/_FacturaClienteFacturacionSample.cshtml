@@ -1,0 +1,448 @@
+﻿<style>
+    #panelEncabezado_FacturaClienteFacturacionSample ._cls_row_selected {
+        background-color: #1ab394;
+    }
+</style>
+
+<div id="panelEncabezado_FacturaClienteFacturacionSample" tabindex="0" style="outline:none;">
+    <div class="hide">
+        <input type="text" id="txtpar_FacturaClienteFacturacionSample" value="DATA-PARAMETRO" />
+        @*<input type="text" id="rutaFileServerEstilo" value="@ViewBag.RutaFileServer" />*@
+        <input type="text" class="_enty" id="hf_idprograma_fc" data-required="true" data-id="IdPrograma" data-min="1" data-max="20" />
+        <input type="text" class="_enty" id="hf_idcliente_fc" data-required="true" data-id="IdCliente" data-min="1" data-max="20" />
+        <input type="text" class="_enty" id="hf_idfacturacliente" value="0" data-required="false" data-id="IdFacturaCliente" data-min="1" data-max="20" />
+    </div>
+    <div class="form-horizontal row">
+        <div class="text-right">
+            @*data-dismiss="modal"*@
+            <button type="button" class="btn btn-default" id="btnGenerarFC_Return">
+                <span class="fa fa-ban"></span>
+                Return
+            </button>
+            <button type="button" class="btn btn-primary" id="btnGenerarFC_Previous">
+                <span class="fa fa-chevron-left"></span>
+                Previous
+            </button>
+            <button type="button" class="btn btn-primary" id="btnGenerarFC_Next">
+                <span class="fa fa-chevron-right"></span>
+                Next
+            </button>
+            <button type="button" class="btn btn-success" id="btnGenerarFC_Save">
+                <span class="fa fa-save"></span>
+                Save
+            </button>
+
+        </div>
+        <hr class="modal_hr">
+        <div class="col-sm-12 m-b">
+            <div class="float-left">
+                <ul class="nav nav-tabs" role="tablist" id="ul_tabs_generarfacturacliente">
+                    <li class="active cls_tab_facturacliente cls_li_fc_requerimientomuestra" data-tag="fc_requerimientomuestra"><a class="nav-link" data-toggle="tab" href="#tab-samplelist_fc" aria-expanded="true">Samples</a></li>
+                    <li class="cls_tab_facturacliente cls_li_fc_detalle" data-tag="fc_detalle"><a class="nav-link" data-toggle="tab" href="#tab-facturaclientedetalle_fc" aria-expanded="true">Detail Client Invoice</a></li>
+                    <li class="cls_tab_facturacliente cls_li_fc_datosadicionales" data-tag="fc_datosadicionales"><a class="nav-link" data-toggle="tab" href="#tab-datosadicionales_fc" aria-expanded="true">Additional Data</a></li>
+                    <li class="cls_tab_facturacliente cls_li_fc_headersinvoice" data-tag="fc_headersinvoice"><a class="nav-link" data-toggle="tab" href="#tab-headers_invoice_fc" aria-expanded="true">Headers Invoice</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="form-horizontal row" id="scroll_facturacliente" style="max-height:405px; overflow-y: auto;">
+        <div class="tab-content">
+            <div role="tabpanel" id="tab-samplelist_fc" class="tab-pane active">
+                <div class="col-sm-12">
+                    <div class="form-horizontal">
+                        <div class="col-sm-12">
+                            <div class="form-group" id="div_grupo_proveedor_fc">
+                                <label class="control-label col-sm-2">Supplier</label>
+                                <div class="col-sm-6">
+                                    <select class="form-control _enty _cls_disabled_edit" id="cbo_proveedor_fc" data-required="true" data-id="IdProveedor" data-min="1" data-max="20">
+
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Client</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control _enty" id="txt_cliente_fc" value="" disabled data-required="true" data-id="NombreCliente" data-min="1" data-max="200"  />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="tbl_requerimientosample_fc">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Style Code</th>
+                                        <th>Request</th>
+                                        <th>Sample</th>
+                                        <th>V</th>
+                                        <th>Ex Factory</th>
+                                        <th>In DC</th>
+                                        <th>Billable</th>
+                                        <th>It Will Cost</th>
+                                        <th>Billing Status</th>
+                                    </tr>
+                                    <tr>
+                                        <th></th>
+                                        <th><input type="text" placeholder="Search" class="form-control _clsfilter" data-field="CodigoEstilo" /></th>
+                                        <th><input type="text" placeholder="Search" class="form-control _clsfilter" data-field="FechaCreacion" /></th>
+                                        <th><input type="text" placeholder="Search" class="form-control _clsfilter" data-field="NombreTipoMuestra" /></th>
+                                        <th><input type="text" placeholder="Search" class="form-control _clsfilter" data-field="Version" /></th>
+                                        <th><input type="text" placeholder="Search" class="form-control _clsfilter" data-field="ExFactoryInicial" /></th>
+                                        <th><input type="text" placeholder="Search" class="form-control _clsfilter" data-field="FechaInDC" /></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th><input type="text" placeholder="Search" class="form-control _clsfilter" data-field="NombreEstadoFacturacionCatologo" /></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody_requerimientosample_fc"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" id="tab-facturaclientedetalle_fc" class="tab-pane">
+                <div class="col-sm-12">
+                    <div class="form-horizontal">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <div class="col-sm-1 col-sm-offset-7">
+                                    <input type="text" class="form-control" id="txt_updateprecio_fc" />
+                                </div>
+                                <div class="col-sm-1">
+                                    <button type="button" class="btn btn-sm btn-info" id="btn_updateprecio_fc">Price Update</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-12" id="div_tbl_files_estilo">
+                    <table class="table table-hover table-bordered table-vertical" id="tbl_RequerimientoDetalle_fc">
+                        <thead>
+                            <tr>
+                                <th>Style Code</th>
+                                <th>Sample</th>
+                                <th>V</th>
+                                <th>Color Combo</th>
+                                <th>Size</th>
+                                <th>Sample Required</th>
+                                <th>Counter Sample Will be Billed</th>
+                                <th>Sample to be Billed</th>
+                                <th>Sample Price</th>
+                                <th>Counter Sample to be Billed</th>
+                                <th>Counter Sample Price</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody_RequerimientoDetalle_fc"></tbody>
+                    </table>
+                </div>
+                <div class="col-sm-12 text-right">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-sm-1 col-sm-offset-9">Total $</label>
+                            <div class="col-sm-2 text-right">
+                                <input type="text" class="form-control font-bold" id="txt_total_fc" disabled />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" id="tab-datosadicionales_fc" class="tab-pane">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">Boarding Date</label>
+                        <div class="col-sm-8">
+                            <div class='input-group date cls_grupo_fechaembarque_fc'>
+                                <input id="txtfechaembaque_fc" type='text' class='form-control _fechaembaque_fc _enty'
+                                       data-date-format="mm/dd/yyyy" data-type="date"
+                                       data-level="true" data-min="10" data-max="10"
+                                       data-required="false" data-id="BoardingDate">
+                                <div class="input-group-addon">
+                                    <span class="fa fa-calendar"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">Boarding Type</label>
+                        <div class="col-sm-8">
+                            <select class="form-control _enty" id="cbo_tipoembarque_fc" data-required="true" data-id="IdCatalogo_Boarding" data-min="1" data-max="20"></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">Shipping Form</label>
+                        <div class="col-sm-8">
+                            <select class="form-control _enty" id="cbo_formaenvio_fc" data-required="true" data-id="IdCatalogo_FormaEnvio" data-min="1" data-max="20"></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">Who assumes the freight</label>
+                        <div class="col-sm-8">
+                            <select class="form-control _enty" id="cbo_quienasume_flete_fc" data-required="true" data-id="IdCatalogo_QuienAsumeFlete" data-min="1" data-max="20"></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">Guide Number</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control _enty" id="txt_numeroguia_fc" value="" data-required="false" data-id="NumeroGuia" data-min="1" data-max="20" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">PackingList</label>
+                        <div class="col-sm-9 input-group">
+                            <input type="text" class="form-control _enty" id="txt_archivo_packinglist" readonly="readonly" value="" data-required="false" data-id="NombreArchivoPackingListOriginal" data-min="0" data-max="200" />
+                            <label class="btn btn-primary btn-sm btn-file input-group-addon">
+                                <span class="fa fa-paperclip"></span>
+                                <input type="file" id="filearchivo_packinglist" data-file="packinglist" />
+                            </label>
+                            <label id="btn_eliminararchivo_packginlist" 
+                                    class="btn btn-danger btn-sm btn-file input-group-addon" 
+                                    type="button" data-file="packinglist">
+                                <span class="fa fa-trash"></span>
+                            </label>
+                            <label id="btn_download_packinglist"
+                                   class="btn btn-success btn-sm input-group-addon hide"
+                                   type="button" data-file="packinglist">
+                                <span class="fa fa-download"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Declaracion Jurada</label>
+                        <div class="col-sm-9 input-group">
+                            <input type="text" class="form-control _enty" id="txt_archivo_declaracion_jurada" readonly="readonly" value="" data-required="false" data-id="NombreArchivoDeclaracionJuradaOriginal" data-min="0" data-max="200" />
+                            <label class="btn btn-primary btn-sm btn-file input-group-addon">
+                                <span class="fa fa-paperclip"></span>
+                                <input type="file" id="filearchivo_declaracion_jurada" data-file="declaracionjurada" />
+                            </label>
+                            <label id="btn_eliminararchivo_declaracionjurada"
+                                   class="btn btn-danger btn-sm btn-file input-group-addon"
+                                   type="button" data-file="declaracionjurada">
+                                <span class="fa fa-trash"></span>
+                            </label>
+                            <label id="btn_download_declaracionjurada"
+                                   class="btn btn-success btn-sm input-group-addon hide"
+                                   type="button" data-file="declaracionjurada">
+                                <span class="fa fa-download"></span>
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-9">
+                            <textarea class="form-control" rows="3" style="resize:none; overflow-y:hidden;" disabled>
+It is needed if the shipment is 
+greater than 2000 dollars and is 
+sent by courier, please attach file.
+                        </textarea>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">ARW</label>
+                        <div class="col-sm-9 input-group">
+                            <input type="text" class="form-control _enty" id="txt_ArchivoGuiaAerea" readonly="readonly" value="" data-required="false" data-id="NombreArchivoGuiaAereaOriginal" data-min="0" data-max="200" />
+                            <label class="btn btn-primary btn-sm btn-file input-group-addon">
+                                <span class="fa fa-paperclip"></span>
+                                <input type="file" id="filearchivo_guiaaerea" data-file="guiaaerea" />
+                            </label>
+                            <label id="btn_eliminararchivo_guiaaerea"
+                                   class="btn btn-danger btn-sm btn-file input-group-addon"
+                                   type="button" data-file="guiaaerea">
+                                <span class="fa fa-trash"></span>
+                            </label>
+                            <label id="btn_download_guiaaerea"
+                                   class="btn btn-success btn-sm input-group-addon hide"
+                                   type="button" data-file="guiaaerea">
+                                <span class="fa fa-download"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Certificate of Origin</label>
+                        <div class="col-sm-9 input-group">
+                            <input type="text" class="form-control _enty" id="txt_archivo_cerficadoorigen" readonly="readonly" value="" data-required="false" data-id="NombreArchivoCerfiticadoOrigenOriginal" data-min="0" data-max="200" />
+                            <label class="btn btn-primary btn-sm btn-file input-group-addon">
+                                <span class="fa fa-paperclip"></span>
+                                <input type="file" id="filearchivo_certificadoorigen" data-file="certificadoorigen" />
+                            </label>
+                            <label id="btn_eliminararchivo_certificadoorigen"
+                                   class="btn btn-danger btn-sm btn-file input-group-addon"
+                                   type="button" data-file="certificadoorigen">
+                                <span class="fa fa-trash"></span>
+                            </label>
+                            <label id="btn_download_certificadoorigen"
+                                   class="btn btn-success btn-sm input-group-addon hide"
+                                   type="button" data-file="certificadoorigen">
+                                <span class="fa fa-download"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="control-label col-sm-1">Comment</label>
+                        <div class="col-sm-11">
+                            <textarea class="form-control _enty" id="txta_comentario_fc" rows="2" style="resize: none;"
+                                      data-required="false" data-id="Comentario" data-min="0" data-max="8000"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 text-right">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-sm btn-primary" id="btn_add_op">
+                            <span class="fa fa-plus"></span>
+                            Add Purchase Order
+                        </button>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <table class="table table-bordered table-hover" id="tbl_ordenpedido_fc">
+                            <thead>
+                                <tr>
+                                    <th class="col-sm-1"></th>
+                                    <th class="col-sm-4">Purchase Order</th>
+                                    <th class="col-sm-4">Generation Date</th>
+                                    <th class="col-sm-3">Total $</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_ordenpedido_fc"></tbody>
+                        </table>
+                    </div>
+                    
+
+                </div>
+            </div>
+            <div role="tabpanel" id="tab-headers_invoice_fc" class="tab-pane">
+                <div class="col-sm-12 m-b">
+                    <div class="tabs-container">
+                        <ul class="nav nav-tabs" id="ul_tabs_headersinvoice_fc">
+                            <li class="active " data-tag=""><a class="nav-link" data-toggle="tab" href="#tab-seller_fc" aria-expanded="true">Seller</a></li>
+                            <li class="" data-tag=""><a class="nav-link" data-toggle="tab" href="#tab-bank_fc" aria-expanded="true">Bank</a></li>
+                            <li class="" data-tag=""><a class="nav-link" data-toggle="tab" href="#tab-terms_fc" aria-expanded="true">Terms</a></li>
+                            <li class="" data-tag=""><a class="nav-link" data-toggle="tab" href="#tab-origininvoice_fc" aria-expanded="true">Origin</a></li>
+                            <li class="" data-tag=""><a class="nav-link" data-toggle="tab" href="#tab-billto_fc" aria-expanded="true">Bill To</a></li>
+                            <li class="" data-tag=""><a class="nav-link" data-toggle="tab" href="#tab-consignee_fc" aria-expanded="true">Consignee</a></li>
+                            <li class="" data-tag=""><a class="nav-link" data-toggle="tab" href="#tab-shipmode_fc" aria-expanded="true">Ship Mode</a></li>
+                            <li class="" data-tag=""><a class="nav-link" data-toggle="tab" href="#tab-otherreference_fc" aria-expanded="true">Other Reference</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab-seller_fc">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control _enty _cls_disabled_edit" id="txta_seller_fc" 
+                                                  rows="10" style="resize:none;" data-required="false" 
+                                                  data-id="CabeceraFacturaClienteSeller" data-min="0" 
+                                                  data-max="8000" disabled>
+                                    </textarea>
+                                    </div>
+                                    
+                                </div>
+
+                            </div>
+                            <div class="tab-pane " id="tab-bank_fc">
+                                <div class="col-sm-12">
+                                    <textarea class="form-control _enty _cls_disabled_edit" id="txta_bank_fc" 
+                                              rows="10" style="resize:none;" data-required="false" 
+                                              data-id="CabeceraFacturaClienteBank" data-min="0" 
+                                              data-max="8000" disabled>
+                                    </textarea>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab-terms_fc">
+                                <div class="col-sm-12">
+                                    <textarea class="form-control _enty _cls_disabled_edit" id="txta_terms_fc" 
+                                              rows="10" style="resize:none;" data-required="false" 
+                                              data-id="CabeceraFacturaClienteTerms" data-min="0" 
+                                              data-max="8000">
+                                    </textarea>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab-origininvoice_fc">
+                                <div class="col-sm-12">
+                                    <textarea class="form-control _enty _cls_disabled_edit" id="txta_origininvoice_fc" 
+                                              rows="10" style="resize:none;" data-required="false" 
+                                              data-id="CabeceraFacturaClienteOrigin" data-min="0" 
+                                              data-max="8000" disabled>
+                                    </textarea>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab-billto_fc">
+                                <div class="col-sm-12">
+                                    <div class="form-group"></div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-1">Bill To</label>
+                                        <div class="col-sm-4">
+                                            <select class="form-control _enty _cls_disabled_edit" id="_cbo_billto_direccion"
+                                                    data-required="false" data-id="IdClienteDireccion_BillTo" data-min="1" data-max="20"
+                                                    data-type="int"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <textarea class="form-control _enty _cls_disabled_edit" id="txta_billto_fc"
+                                              rows="10" style="resize:none;" data-required="false"
+                                              data-id="CabeceraFacturaClienteBillTo" data-min="0"
+                                              data-max="8000" disabled>
+                                    </textarea>
+                                </div>
+
+                            </div>
+                            <div class="tab-pane" id="tab-consignee_fc">
+                                <div class="col-sm-12">
+                                    <div class="form-group"></div>
+                                    <div class="form-group">
+                                        <!--CONSIGNEE = SHIPTO-->
+                                        <label class="control-label col-sm-1">Consignee</label>
+                                        <div class="col-sm-4">
+                                            <select class="form-control _enty _cls_disabled_edit" id="_cbo_shipto_direccion"
+                                                    data-required="false" data-id="IdClienteDireccion_ShipTo" data-min="1" data-max="20"
+                                                    data-type="int"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <textarea class="form-control _enty _cls_disabled_edit" id="txta_consignee_fc" 
+                                              rows="10" style="resize:none;" data-required="false" 
+                                              data-id="CabeceraFacturaClienteConsignee" data-min="0" 
+                                              data-max="8000" disabled>
+                                    </textarea>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab-shipmode_fc">
+                                <div class="col-sm-12">
+                                    <textarea class="form-control _enty _cls_disabled_edit" id="txta_shipmode_fc" 
+                                              rows="10" style="resize:none;" data-required="false" 
+                                              data-id="CabeceraFacturaClienteShipMode" data-min="0" 
+                                              data-max="8000">
+                                    </textarea>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab-otherreference_fc">
+                                <div class="col-sm-12">
+                                    <textarea class="form-control _enty _cls_disabled_edit" id="txta_otherreference_fc" 
+                                              rows="10" style="resize:none;" data-required="false" 
+                                              data-id="CabeceraFacturaClienteOtherReference" data-min="0" 
+                                              data-max="8000">
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,345 @@
+﻿@{
+    string _parametro = ViewBag.parametro;
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Colgador WTS</title>
+    <style>
+        body {
+            margin: 0px !important;
+            padding: 0px !important;
+            border: 0px !important;
+            height: 100% !important;
+            max-height: 100% !important;
+            top: 0px !important;
+            bottom: 0px !important;
+            background-color: white;
+            position: static;
+        }
+
+        .Sheet {
+            height: 100%;
+            min-height: 100%;
+            max-height: 100%;
+            position: relative;
+            padding: 0px;
+            border: 0px;
+            margin: 0px;
+            top: 0px;
+            bottom: 0px;
+            display: flex !important;
+        }
+
+        .CartonSize {
+            /*EL ANTERIOR*/
+            /*width: 3.54in;
+            height: 5.55in;
+            margin: 0px;
+            padding-left: 0.2in;
+            padding-top: 0.3in;
+            font-family: Arial;*/
+            /*EL NUEVO*/
+            width: 10cm; /*15.5cm;*/ /*10cm;*/ /*3.54in;*/
+            height: 7cm; /*7.5*/  /*10cm;*/ /*15.5cm;*/ /*5.55in;*/
+            margin: 0px;
+            padding-left: 0.25cm; /*0.5*/ /*0.1cm;*/ /*0.38cm;*/ /*0.15in;*/
+            padding-top: 0.3cm; /*1cm;*/ /*2cm;*/ /*1cm;*/ /*0.38cm;*/ /*0.15in;*/
+            font-family: Arial;
+        }
+
+        .Colgador {
+            /*EL ANTERIOR*/
+            /*width: 3.7in;
+            height: 2.7in;
+            margin: 0px;
+            border: 1px solid;*/
+            /*EL NUEVO*/
+            width: 9.4cm;
+            height: 6.7cm; /*6.9*/
+            margin: 0px;
+            border: 1px solid;
+        }
+
+        .tblColgador {
+            width: 100%;
+            font-weight: bold;
+            font-size: 8pt;
+        }
+
+            .tblColgador td {
+                padding-left: 5px;
+            }
+
+        .PrintMessage {
+            display: none;
+            font-weight: bold;
+            color: red;
+            font-size: 14pt;
+        }
+
+        .ErrorMessage {
+            color: red;
+            font-weight: bold;
+            font-size: 20pt;
+            padding-left: 20px;
+            margin-top: 20px;
+            padding-top: 20px;
+        }
+
+        .altoFila {
+            height: 15px;
+        }
+
+        .altoFilaCabeceraIntermedio {
+            height: 13px;
+        }
+
+        .paddingColumnasCabeceraIntermedio {
+            padding-top: 1px;
+            padding-bottom: 1px;
+        }
+
+        .altoFilaComentario {
+            height: 25px;
+        }
+    </style>
+    <script src="~/Scripts/js/jquery-2.1.1.js"></script>
+    <script src="~/Scripts/kendo/2015.3.930/kendo.all.min.js"></script>
+</head>
+<body>
+    @Html.Hidden("urlBase", Url.Content("~/"))
+    <div style="display:none">
+        <input type="text" id="hf_parametro" value="@_parametro" />
+    </div>
+    <div id="div_principal_print_all">
+        <!--SHEET REPRESENTA UN COLGADOR QUE SE VA A SUBDIVIDIR EN 2 COLGADORES-->
+        <!--INCIO COLGADOR BASICO-->
+        <div class="Sheet">
+            <div class="CartonSize">
+                <div class="Colgador row">
+                    <div style="height:70%;">
+                        <div id="divPadreTablaCabeceraIntermedio" style="text-align:left;width:100%;float:left;">
+                            <div id="divHijoTablaCabeceraIntermedio">
+                                <table cellpadding="0" cellspacing="0" class="tblColgador">
+                                    <tbody>
+                                        <tr class="altoFila">
+                                            <td style="width: 58px; height: 21px;">Knit Type:</td>
+                                            <td style="width: 267px; height: 21px;">FLAT KNIT</td>
+                                        </tr>
+                                        <tr class="altoFila">
+                                            <td style="width: 58px; height: 21px;">Tradename:</td>
+                                            <td style="width: 267px; height: 21px;"></td>
+                                        </tr>
+                                        <tr class="altoFila">
+                                            <td style="width: 58px; height: 21px;">Yarn Size:</td>
+                                            <td style="width: 267px; height: 21px;">30/1 Ne</td>
+
+                                        </tr>
+                                        <tr class="altoFila">
+                                            <td style="width: 58px; height: 21px;">Density:</td>
+
+                                            <td style="width: 267px; height: 21px;">570.7 gr/m2 BW</td>
+
+                                        </tr>
+                                        <tr class="altoFila">
+                                            <td style="width: 58px; height: 26px;">Content:</td>
+                                            <td style="width: 267px; height: 26px;">100% Cotton</td>
+                                        </tr>
+                                        <tr class="altoFila">
+                                            <td>Comments:</td>
+                                            <td colspan="3" style="vertical-align: top;"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="height:30%;">
+                        <div id="BarCode0" data-role="barcode" class="k-barcode" style="display: block;">
+                            @*<script>drawBarcode39("BarCode0", "1602483FKN301")</script><div data-role="surface" style="position: relative; width: 356px; height: 78px;"><svg style="width: 100%; height: 100%; overflow: hidden; left: -0.173612px; top: -0.197922px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><defs></defs><g><path d="M0 0 L 356 0 356 78 0 78Z" stroke="none" fill="none"></path><g><text style="font:16px Consolas, Monaco, Sans Mono, monospace, sans-serif;" x="120.5" y="73" stroke="none" fill="black" fill-opacity="1">1602483FKN301</text></g><g><path d="M13.745 0 L 15.12 0 15.12 59 13.745 59Z" stroke="none" fill="black"></path><path d="M19.243 0 L 20.618 0 20.618 59 19.243 59Z" stroke="none" fill="black"></path><path d="M21.992 0 L 26.116 0 26.116 59 21.992 59Z" stroke="none" fill="black"></path><path d="M27.49 0 L 31.614 0 31.614 59 27.49 59Z" stroke="none" fill="black"></path><path d="M32.988 0 L 34.363 0 34.363 59 32.988 59Z" stroke="none" fill="black"></path><path d="M35.737 0 L 39.861 0 39.861 59 35.737 59Z" stroke="none" fill="black"></path><path d="M41.236 0 L 42.61 0 42.61 59 41.236 59Z" stroke="none" fill="black"></path><path d="M46.734 0 L 48.108 0 48.108 59 46.734 59Z" stroke="none" fill="black"></path><path d="M49.483 0 L 50.857 0 50.857 59 49.483 59Z" stroke="none" fill="black"></path><path d="M52.232 0 L 56.355 0 56.355 59 52.232 59Z" stroke="none" fill="black"></path><path d="M57.73 0 L 59.104 0 59.104 59 57.73 59Z" stroke="none" fill="black"></path><path d="M60.479 0 L 64.602 0 64.602 59 60.479 59Z" stroke="none" fill="black"></path><path d="M68.726 0 L 72.849 0 72.849 59 68.726 59Z" stroke="none" fill="black"></path><path d="M74.224 0 L 75.598 0 75.598 59 74.224 59Z" stroke="none" fill="black"></path><path d="M76.973 0 L 78.347 0 78.347 59 76.973 59Z" stroke="none" fill="black"></path><path d="M79.722 0 L 81.097 0 81.097 59 79.722 59Z" stroke="none" fill="black"></path><path d="M82.471 0 L 83.846 0 83.846 59 82.471 59Z" stroke="none" fill="black"></path><path d="M87.969 0 L 92.093 0 92.093 59 87.969 59Z" stroke="none" fill="black"></path><path d="M93.467 0 L 97.591 0 97.591 59 93.467 59Z" stroke="none" fill="black"></path><path d="M98.965 0 L 100.34 0 100.34 59 98.965 59Z" stroke="none" fill="black"></path><path d="M101.714 0 L 103.089 0 103.089 59 101.714 59Z" stroke="none" fill="black"></path><path d="M104.463 0 L 108.587 0 108.587 59 104.463 59Z" stroke="none" fill="black"></path><path d="M112.71 0 L 114.085 0 114.085 59 112.71 59Z" stroke="none" fill="black"></path><path d="M115.459 0 L 116.834 0 116.834 59 115.459 59Z" stroke="none" fill="black"></path><path d="M118.208 0 L 122.332 0 122.332 59 118.208 59Z" stroke="none" fill="black"></path><path d="M123.707 0 L 125.081 0 125.081 59 123.707 59Z" stroke="none" fill="black"></path><path d="M126.456 0 L 127.83 0 127.83 59 126.456 59Z" stroke="none" fill="black"></path><path d="M131.954 0 L 136.077 0 136.077 59 131.954 59Z" stroke="none" fill="black"></path><path d="M137.452 0 L 138.826 0 138.826 59 137.452 59Z" stroke="none" fill="black"></path><path d="M140.201 0 L 144.324 0 144.324 59 140.201 59Z" stroke="none" fill="black"></path><path d="M145.699 0 L 149.822 0 149.822 59 145.699 59Z" stroke="none" fill="black"></path><path d="M151.197 0 L 152.571 0 152.571 59 151.197 59Z" stroke="none" fill="black"></path><path d="M156.695 0 L 158.069 0 158.069 59 156.695 59Z" stroke="none" fill="black"></path><path d="M159.444 0 L 163.568 0 163.568 59 159.444 59Z" stroke="none" fill="black"></path><path d="M164.942 0 L 166.317 0 166.317 59 164.942 59Z" stroke="none" fill="black"></path><path d="M167.691 0 L 171.815 0 171.815 59 167.691 59Z" stroke="none" fill="black"></path><path d="M173.189 0 L 177.313 0 177.313 59 173.189 59Z" stroke="none" fill="black"></path><path d="M181.436 0 L 182.811 0 182.811 59 181.436 59Z" stroke="none" fill="black"></path><path d="M184.185 0 L 185.56 0 185.56 59 184.185 59Z" stroke="none" fill="black"></path><path d="M186.934 0 L 188.309 0 188.309 59 186.934 59Z" stroke="none" fill="black"></path><path d="M189.683 0 L 191.058 0 191.058 59 189.683 59Z" stroke="none" fill="black"></path><path d="M192.432 0 L 196.556 0 196.556 59 192.432 59Z" stroke="none" fill="black"></path><path d="M197.931 0 L 202.054 0 202.054 59 197.931 59Z" stroke="none" fill="black"></path><path d="M206.178 0 L 207.552 0 207.552 59 206.178 59Z" stroke="none" fill="black"></path><path d="M208.927 0 L 210.301 0 210.301 59 208.927 59Z" stroke="none" fill="black"></path><path d="M211.676 0 L 215.799 0 215.799 59 211.676 59Z" stroke="none" fill="black"></path><path d="M217.174 0 L 218.548 0 218.548 59 217.174 59Z" stroke="none" fill="black"></path><path d="M219.923 0 L 221.297 0 221.297 59 219.923 59Z" stroke="none" fill="black"></path><path d="M222.672 0 L 224.046 0 224.046 59 222.672 59Z" stroke="none" fill="black"></path><path d="M228.17 0 L 232.293 0 232.293 59 228.17 59Z" stroke="none" fill="black"></path><path d="M233.668 0 L 235.042 0 235.042 59 233.668 59Z" stroke="none" fill="black"></path><path d="M236.417 0 L 237.792 0 237.792 59 236.417 59Z" stroke="none" fill="black"></path><path d="M239.166 0 L 243.29 0 243.29 59 239.166 59Z" stroke="none" fill="black"></path><path d="M244.664 0 L 246.039 0 246.039 59 244.664 59Z" stroke="none" fill="black"></path><path d="M250.162 0 L 254.286 0 254.286 59 250.162 59Z" stroke="none" fill="black"></path><path d="M255.66 0 L 259.784 0 259.784 59 255.66 59Z" stroke="none" fill="black"></path><path d="M261.158 0 L 265.282 0 265.282 59 261.158 59Z" stroke="none" fill="black"></path><path d="M269.405 0 L 270.78 0 270.78 59 269.405 59Z" stroke="none" fill="black"></path><path d="M272.154 0 L 273.529 0 273.529 59 272.154 59Z" stroke="none" fill="black"></path><path d="M274.903 0 L 276.278 0 276.278 59 274.903 59Z" stroke="none" fill="black"></path><path d="M277.653 0 L 279.027 0 279.027 59 277.653 59Z" stroke="none" fill="black"></path><path d="M280.402 0 L 281.776 0 281.776 59 280.402 59Z" stroke="none" fill="black"></path><path d="M285.9 0 L 290.023 0 290.023 59 285.9 59Z" stroke="none" fill="black"></path><path d="M291.398 0 L 295.521 0 295.521 59 291.398 59Z" stroke="none" fill="black"></path><path d="M296.896 0 L 298.27 0 298.27 59 296.896 59Z" stroke="none" fill="black"></path><path d="M299.645 0 L 303.768 0 303.768 59 299.645 59Z" stroke="none" fill="black"></path><path d="M305.143 0 L 306.517 0 306.517 59 305.143 59Z" stroke="none" fill="black"></path><path d="M310.641 0 L 312.015 0 312.015 59 310.641 59Z" stroke="none" fill="black"></path><path d="M313.39 0 L 314.764 0 314.764 59 313.39 59Z" stroke="none" fill="black"></path><path d="M316.139 0 L 320.263 0 320.263 59 316.139 59Z" stroke="none" fill="black"></path><path d="M321.637 0 L 323.012 0 323.012 59 321.637 59Z" stroke="none" fill="black"></path><path d="M327.135 0 L 328.51 0 328.51 59 327.135 59Z" stroke="none" fill="black"></path><path d="M329.884 0 L 334.008 0 334.008 59 329.884 59Z" stroke="none" fill="black"></path><path d="M335.382 0 L 339.506 0 339.506 59 335.382 59Z" stroke="none" fill="black"></path><path d="M340.88 0 L 342.255 0 342.255 59 340.88 59Z" stroke="none" fill="black"></path></g></g></svg></div>*@
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="Colgador row">
+                    <div style="height:70%;">
+                        <div id="divPadreTablaCabeceraIntermedio" style="text-align:left;width:100%;float:left;">
+                            <div id="divHijoTablaCabeceraIntermedio">
+                                <table cellpadding="0" cellspacing="0" class="tblColgador">
+                                    <tbody>
+                                        <tr class="altoFila">
+                                            <td style="width: 58px; height: 21px;">Knit Type:</td>
+                                            <td style="width: 267px; height: 21px;">FLAT KNIT</td>
+                                        </tr>
+                                        <tr class="altoFila">
+                                            <td style="width: 58px; height: 21px;">Tradename:</td>
+                                            <td style="width: 267px; height: 21px;"></td>
+                                        </tr>
+                                        <tr class="altoFila">
+                                            <td style="width: 58px; height: 21px;">Yarn Size:</td>
+                                            <td style="width: 267px; height: 21px;">30/1 Ne</td>
+                                        </tr>
+                                        <tr class="altoFila">
+                                            <td style="width: 58px; height: 21px;">Density:</td>
+                                            <td style="width: 267px; height: 21px;">570.7 gr/m2 BW</td>
+                                        </tr>
+                                        <tr class="altoFila">
+                                            <td style="width: 58px; height: 26px;">Content:</td>
+                                            <td style="width: 267px; height: 26px;">100% Cotton</td>
+                                        </tr>
+                                        <tr class="altoFila">
+                                            <td>Comments:</td>
+                                            <td colspan="3" style="vertical-align: top;"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="height:30%;">
+                        <div id="BarCode1" data-role="barcode" class="k-barcode" style="display: block;">
+                            @*<script>drawBarcode39("BarCode1", "1602483FKN301")</script><div data-role="surface" style="position: relative; width: 356px; height: 78px;"><svg style="width: 100%; height: 100%; overflow: hidden; left: -0.173612px; top: -0.138902px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><defs></defs><g><path d="M0 0 L 356 0 356 78 0 78Z" stroke="none" fill="none"></path><g><text style="font:16px Consolas, Monaco, Sans Mono, monospace, sans-serif;" x="120.5" y="73" stroke="none" fill="black" fill-opacity="1">1602483FKN301</text></g><g><path d="M13.745 0 L 15.12 0 15.12 59 13.745 59Z" stroke="none" fill="black"></path><path d="M19.243 0 L 20.618 0 20.618 59 19.243 59Z" stroke="none" fill="black"></path><path d="M21.992 0 L 26.116 0 26.116 59 21.992 59Z" stroke="none" fill="black"></path><path d="M27.49 0 L 31.614 0 31.614 59 27.49 59Z" stroke="none" fill="black"></path><path d="M32.988 0 L 34.363 0 34.363 59 32.988 59Z" stroke="none" fill="black"></path><path d="M35.737 0 L 39.861 0 39.861 59 35.737 59Z" stroke="none" fill="black"></path><path d="M41.236 0 L 42.61 0 42.61 59 41.236 59Z" stroke="none" fill="black"></path><path d="M46.734 0 L 48.108 0 48.108 59 46.734 59Z" stroke="none" fill="black"></path><path d="M49.483 0 L 50.857 0 50.857 59 49.483 59Z" stroke="none" fill="black"></path><path d="M52.232 0 L 56.355 0 56.355 59 52.232 59Z" stroke="none" fill="black"></path><path d="M57.73 0 L 59.104 0 59.104 59 57.73 59Z" stroke="none" fill="black"></path><path d="M60.479 0 L 64.602 0 64.602 59 60.479 59Z" stroke="none" fill="black"></path><path d="M68.726 0 L 72.849 0 72.849 59 68.726 59Z" stroke="none" fill="black"></path><path d="M74.224 0 L 75.598 0 75.598 59 74.224 59Z" stroke="none" fill="black"></path><path d="M76.973 0 L 78.347 0 78.347 59 76.973 59Z" stroke="none" fill="black"></path><path d="M79.722 0 L 81.097 0 81.097 59 79.722 59Z" stroke="none" fill="black"></path><path d="M82.471 0 L 83.846 0 83.846 59 82.471 59Z" stroke="none" fill="black"></path><path d="M87.969 0 L 92.093 0 92.093 59 87.969 59Z" stroke="none" fill="black"></path><path d="M93.467 0 L 97.591 0 97.591 59 93.467 59Z" stroke="none" fill="black"></path><path d="M98.965 0 L 100.34 0 100.34 59 98.965 59Z" stroke="none" fill="black"></path><path d="M101.714 0 L 103.089 0 103.089 59 101.714 59Z" stroke="none" fill="black"></path><path d="M104.463 0 L 108.587 0 108.587 59 104.463 59Z" stroke="none" fill="black"></path><path d="M112.71 0 L 114.085 0 114.085 59 112.71 59Z" stroke="none" fill="black"></path><path d="M115.459 0 L 116.834 0 116.834 59 115.459 59Z" stroke="none" fill="black"></path><path d="M118.208 0 L 122.332 0 122.332 59 118.208 59Z" stroke="none" fill="black"></path><path d="M123.707 0 L 125.081 0 125.081 59 123.707 59Z" stroke="none" fill="black"></path><path d="M126.456 0 L 127.83 0 127.83 59 126.456 59Z" stroke="none" fill="black"></path><path d="M131.954 0 L 136.077 0 136.077 59 131.954 59Z" stroke="none" fill="black"></path><path d="M137.452 0 L 138.826 0 138.826 59 137.452 59Z" stroke="none" fill="black"></path><path d="M140.201 0 L 144.324 0 144.324 59 140.201 59Z" stroke="none" fill="black"></path><path d="M145.699 0 L 149.822 0 149.822 59 145.699 59Z" stroke="none" fill="black"></path><path d="M151.197 0 L 152.571 0 152.571 59 151.197 59Z" stroke="none" fill="black"></path><path d="M156.695 0 L 158.069 0 158.069 59 156.695 59Z" stroke="none" fill="black"></path><path d="M159.444 0 L 163.568 0 163.568 59 159.444 59Z" stroke="none" fill="black"></path><path d="M164.942 0 L 166.317 0 166.317 59 164.942 59Z" stroke="none" fill="black"></path><path d="M167.691 0 L 171.815 0 171.815 59 167.691 59Z" stroke="none" fill="black"></path><path d="M173.189 0 L 177.313 0 177.313 59 173.189 59Z" stroke="none" fill="black"></path><path d="M181.436 0 L 182.811 0 182.811 59 181.436 59Z" stroke="none" fill="black"></path><path d="M184.185 0 L 185.56 0 185.56 59 184.185 59Z" stroke="none" fill="black"></path><path d="M186.934 0 L 188.309 0 188.309 59 186.934 59Z" stroke="none" fill="black"></path><path d="M189.683 0 L 191.058 0 191.058 59 189.683 59Z" stroke="none" fill="black"></path><path d="M192.432 0 L 196.556 0 196.556 59 192.432 59Z" stroke="none" fill="black"></path><path d="M197.931 0 L 202.054 0 202.054 59 197.931 59Z" stroke="none" fill="black"></path><path d="M206.178 0 L 207.552 0 207.552 59 206.178 59Z" stroke="none" fill="black"></path><path d="M208.927 0 L 210.301 0 210.301 59 208.927 59Z" stroke="none" fill="black"></path><path d="M211.676 0 L 215.799 0 215.799 59 211.676 59Z" stroke="none" fill="black"></path><path d="M217.174 0 L 218.548 0 218.548 59 217.174 59Z" stroke="none" fill="black"></path><path d="M219.923 0 L 221.297 0 221.297 59 219.923 59Z" stroke="none" fill="black"></path><path d="M222.672 0 L 224.046 0 224.046 59 222.672 59Z" stroke="none" fill="black"></path><path d="M228.17 0 L 232.293 0 232.293 59 228.17 59Z" stroke="none" fill="black"></path><path d="M233.668 0 L 235.042 0 235.042 59 233.668 59Z" stroke="none" fill="black"></path><path d="M236.417 0 L 237.792 0 237.792 59 236.417 59Z" stroke="none" fill="black"></path><path d="M239.166 0 L 243.29 0 243.29 59 239.166 59Z" stroke="none" fill="black"></path><path d="M244.664 0 L 246.039 0 246.039 59 244.664 59Z" stroke="none" fill="black"></path><path d="M250.162 0 L 254.286 0 254.286 59 250.162 59Z" stroke="none" fill="black"></path><path d="M255.66 0 L 259.784 0 259.784 59 255.66 59Z" stroke="none" fill="black"></path><path d="M261.158 0 L 265.282 0 265.282 59 261.158 59Z" stroke="none" fill="black"></path><path d="M269.405 0 L 270.78 0 270.78 59 269.405 59Z" stroke="none" fill="black"></path><path d="M272.154 0 L 273.529 0 273.529 59 272.154 59Z" stroke="none" fill="black"></path><path d="M274.903 0 L 276.278 0 276.278 59 274.903 59Z" stroke="none" fill="black"></path><path d="M277.653 0 L 279.027 0 279.027 59 277.653 59Z" stroke="none" fill="black"></path><path d="M280.402 0 L 281.776 0 281.776 59 280.402 59Z" stroke="none" fill="black"></path><path d="M285.9 0 L 290.023 0 290.023 59 285.9 59Z" stroke="none" fill="black"></path><path d="M291.398 0 L 295.521 0 295.521 59 291.398 59Z" stroke="none" fill="black"></path><path d="M296.896 0 L 298.27 0 298.27 59 296.896 59Z" stroke="none" fill="black"></path><path d="M299.645 0 L 303.768 0 303.768 59 299.645 59Z" stroke="none" fill="black"></path><path d="M305.143 0 L 306.517 0 306.517 59 305.143 59Z" stroke="none" fill="black"></path><path d="M310.641 0 L 312.015 0 312.015 59 310.641 59Z" stroke="none" fill="black"></path><path d="M313.39 0 L 314.764 0 314.764 59 313.39 59Z" stroke="none" fill="black"></path><path d="M316.139 0 L 320.263 0 320.263 59 316.139 59Z" stroke="none" fill="black"></path><path d="M321.637 0 L 323.012 0 323.012 59 321.637 59Z" stroke="none" fill="black"></path><path d="M327.135 0 L 328.51 0 328.51 59 327.135 59Z" stroke="none" fill="black"></path><path d="M329.884 0 L 334.008 0 334.008 59 329.884 59Z" stroke="none" fill="black"></path><path d="M335.382 0 L 339.506 0 339.506 59 335.382 59Z" stroke="none" fill="black"></path><path d="M340.88 0 L 342.255 0 342.255 59 340.88 59Z" stroke="none" fill="black"></path></g></g></svg></div>*@
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+        <!--FIN COLGADOR BASICO-->
+        <!--INICIO COLGADOR INTERMEDIO-->
+        <div class="Sheet">
+            <div class="CartonSize">
+                <div class="Colgador row">
+                    <div style="height:70%;">
+                        <div id="divPadreTablaCabeceraIntermedio" style="text-align:left;width:100%;float:left;">
+                            <div id="divHijoTablaCabeceraIntermedio">
+                                <table cellpadding="0" cellspacing="0" class="tblColgador">
+                                    <tbody>
+                                        <tr class="altoFilaCabeceraIntermedio">
+                                            <td style="width: 80px;">Knit Type:</td>
+                                            <td colspan="3" class="paddingColumnasCabeceraIntermedio">FLAT KNIT</td>
+                                        </tr>
+                                        <tr class="altoFilaCabeceraIntermedio">
+                                            <td style="width: 80px;">Tradename:</td>
+                                            <td colspan="3" class="paddingColumnasCabeceraIntermedio"></td>
+                                        </tr>
+                                        <tr class="altoFilaCabeceraIntermedio">
+                                            <td style="width: 80px;">Yarn Size:</td>
+                                            <td colspan="3" class="paddingColumnasCabeceraIntermedio">36/1 x 5 Cabos Ne+40 DN Dn</td>
+                                        </tr>
+                                        <tr class="altoFilaCabeceraIntermedio">
+                                            <td style="width: 80px;">Density:</td>
+                                            <td colspan="3" class="paddingColumnasCabeceraIntermedio">665 gr/m2 BW</td>
+                                        </tr>
+                                        <tr class="altoFilaCabeceraIntermedio">
+                                            <td style="width: 80px;">Content:</td>
+                                            <td colspan="3" class="paddingColumnasCabeceraIntermedio">99.86% Cotton  0.14% Spandex</td>
+                                        </tr>
+                                        <tr class="altoFilaCabeceraIntermedio">
+                                            <td style="width: 80px;">Width:</td>
+                                            <td colspan="3" class="paddingColumnasCabeceraIntermedio"></td>
+                                        </tr>
+                                        <tr class="altoFilaCabeceraIntermedio">
+                                            <td style="width: 80px;">Stich Count:</td>
+                                            <td colspan="3" class="paddingColumnasCabeceraIntermedio">Wales: 21 / 3 Cm X Courses: 40 / 3 Cm</td>
+                                        </tr>
+                                        <tr class="altoFilaCabeceraIntermedio">
+                                            <td style="width: 80px;">Report Code:</td>
+                                            <td style="width: 91px;" class="paddingColumnasCabeceraIntermedio">ATX16 - 01461</td>
+
+                                            <td style="width: 68px;">Mill Code:</td>
+                                            <td style="width: 103px;" class="paddingColumnasCabeceraIntermedio"></td>
+                                        </tr>
+                                        <tr class="altoFilaCabeceraIntermedio">
+                                            <td style="width: 80px;">Testing Code:</td>
+                                            <td style="width: 91px;" class="paddingColumnasCabeceraIntermedio"></td>
+                                            <td style="width: 68px;">Batch:</td>
+                                            <td style="width: 103px;" class="paddingColumnasCabeceraIntermedio"></td>
+                                        </tr>
+                                        <tr class="altoFilaCabeceraIntermedio">
+                                            <td style="width: 80px;">Comments:</td>
+                                            <td colspan="3" style="vertical-align: top;" class="paddingColumnasCabeceraIntermedio"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="height:30%;">
+                        <div id="BarCode2" data-role="barcode" class="k-barcode" style="display: block;">
+                            @*<script>drawBarcode39("BarCode2", "1602534FKN301")</script><div data-role="surface" style="position: relative; width: 356px; height: 78px;"><svg style="width: 100%; height: 100%; overflow: hidden; left: -0.173612px; top: -0.847256px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><defs></defs><g><path d="M0 0 L 356 0 356 78 0 78Z" stroke="none" fill="none"></path><g><text style="font:16px Consolas, Monaco, Sans Mono, monospace, sans-serif;" x="120.5" y="73" stroke="none" fill="black" fill-opacity="1">1602534FKN301</text></g><g><path d="M13.745 0 L 15.12 0 15.12 59 13.745 59Z" stroke="none" fill="black"></path><path d="M19.243 0 L 20.618 0 20.618 59 19.243 59Z" stroke="none" fill="black"></path><path d="M21.992 0 L 26.116 0 26.116 59 21.992 59Z" stroke="none" fill="black"></path><path d="M27.49 0 L 31.614 0 31.614 59 27.49 59Z" stroke="none" fill="black"></path><path d="M32.988 0 L 34.363 0 34.363 59 32.988 59Z" stroke="none" fill="black"></path><path d="M35.737 0 L 39.861 0 39.861 59 35.737 59Z" stroke="none" fill="black"></path><path d="M41.236 0 L 42.61 0 42.61 59 41.236 59Z" stroke="none" fill="black"></path><path d="M46.734 0 L 48.108 0 48.108 59 46.734 59Z" stroke="none" fill="black"></path><path d="M49.483 0 L 50.857 0 50.857 59 49.483 59Z" stroke="none" fill="black"></path><path d="M52.232 0 L 56.355 0 56.355 59 52.232 59Z" stroke="none" fill="black"></path><path d="M57.73 0 L 59.104 0 59.104 59 57.73 59Z" stroke="none" fill="black"></path><path d="M60.479 0 L 64.602 0 64.602 59 60.479 59Z" stroke="none" fill="black"></path><path d="M68.726 0 L 72.849 0 72.849 59 68.726 59Z" stroke="none" fill="black"></path><path d="M74.224 0 L 75.598 0 75.598 59 74.224 59Z" stroke="none" fill="black"></path><path d="M76.973 0 L 78.347 0 78.347 59 76.973 59Z" stroke="none" fill="black"></path><path d="M79.722 0 L 81.097 0 81.097 59 79.722 59Z" stroke="none" fill="black"></path><path d="M82.471 0 L 83.846 0 83.846 59 82.471 59Z" stroke="none" fill="black"></path><path d="M87.969 0 L 92.093 0 92.093 59 87.969 59Z" stroke="none" fill="black"></path><path d="M93.467 0 L 97.591 0 97.591 59 93.467 59Z" stroke="none" fill="black"></path><path d="M98.965 0 L 100.34 0 100.34 59 98.965 59Z" stroke="none" fill="black"></path><path d="M101.714 0 L 103.089 0 103.089 59 101.714 59Z" stroke="none" fill="black"></path><path d="M104.463 0 L 108.587 0 108.587 59 104.463 59Z" stroke="none" fill="black"></path><path d="M112.71 0 L 114.085 0 114.085 59 112.71 59Z" stroke="none" fill="black"></path><path d="M115.459 0 L 116.834 0 116.834 59 115.459 59Z" stroke="none" fill="black"></path><path d="M118.208 0 L 122.332 0 122.332 59 118.208 59Z" stroke="none" fill="black"></path><path d="M123.707 0 L 127.83 0 127.83 59 123.707 59Z" stroke="none" fill="black"></path><path d="M129.205 0 L 130.579 0 130.579 59 129.205 59Z" stroke="none" fill="black"></path><path d="M134.703 0 L 138.826 0 138.826 59 134.703 59Z" stroke="none" fill="black"></path><path d="M140.201 0 L 141.575 0 141.575 59 140.201 59Z" stroke="none" fill="black"></path><path d="M142.95 0 L 144.324 0 144.324 59 142.95 59Z" stroke="none" fill="black"></path><path d="M145.699 0 L 149.822 0 149.822 59 145.699 59Z" stroke="none" fill="black"></path><path d="M151.197 0 L 155.32 0 155.32 59 151.197 59Z" stroke="none" fill="black"></path><path d="M159.444 0 L 160.819 0 160.819 59 159.444 59Z" stroke="none" fill="black"></path><path d="M162.193 0 L 163.568 0 163.568 59 162.193 59Z" stroke="none" fill="black"></path><path d="M164.942 0 L 166.317 0 166.317 59 164.942 59Z" stroke="none" fill="black"></path><path d="M167.691 0 L 169.066 0 169.066 59 167.691 59Z" stroke="none" fill="black"></path><path d="M170.44 0 L 171.815 0 171.815 59 170.44 59Z" stroke="none" fill="black"></path><path d="M175.938 0 L 180.062 0 180.062 59 175.938 59Z" stroke="none" fill="black"></path><path d="M181.436 0 L 182.811 0 182.811 59 181.436 59Z" stroke="none" fill="black"></path><path d="M184.185 0 L 188.309 0 188.309 59 184.185 59Z" stroke="none" fill="black"></path><path d="M189.683 0 L 191.058 0 191.058 59 189.683 59Z" stroke="none" fill="black"></path><path d="M192.432 0 L 196.556 0 196.556 59 192.432 59Z" stroke="none" fill="black"></path><path d="M197.931 0 L 202.054 0 202.054 59 197.931 59Z" stroke="none" fill="black"></path><path d="M206.178 0 L 207.552 0 207.552 59 206.178 59Z" stroke="none" fill="black"></path><path d="M208.927 0 L 210.301 0 210.301 59 208.927 59Z" stroke="none" fill="black"></path><path d="M211.676 0 L 215.799 0 215.799 59 211.676 59Z" stroke="none" fill="black"></path><path d="M217.174 0 L 218.548 0 218.548 59 217.174 59Z" stroke="none" fill="black"></path><path d="M219.923 0 L 221.297 0 221.297 59 219.923 59Z" stroke="none" fill="black"></path><path d="M222.672 0 L 224.046 0 224.046 59 222.672 59Z" stroke="none" fill="black"></path><path d="M228.17 0 L 232.293 0 232.293 59 228.17 59Z" stroke="none" fill="black"></path><path d="M233.668 0 L 235.042 0 235.042 59 233.668 59Z" stroke="none" fill="black"></path><path d="M236.417 0 L 237.792 0 237.792 59 236.417 59Z" stroke="none" fill="black"></path><path d="M239.166 0 L 243.29 0 243.29 59 239.166 59Z" stroke="none" fill="black"></path><path d="M244.664 0 L 246.039 0 246.039 59 244.664 59Z" stroke="none" fill="black"></path><path d="M250.162 0 L 254.286 0 254.286 59 250.162 59Z" stroke="none" fill="black"></path><path d="M255.66 0 L 259.784 0 259.784 59 255.66 59Z" stroke="none" fill="black"></path><path d="M261.158 0 L 265.282 0 265.282 59 261.158 59Z" stroke="none" fill="black"></path><path d="M269.405 0 L 270.78 0 270.78 59 269.405 59Z" stroke="none" fill="black"></path><path d="M272.154 0 L 273.529 0 273.529 59 272.154 59Z" stroke="none" fill="black"></path><path d="M274.903 0 L 276.278 0 276.278 59 274.903 59Z" stroke="none" fill="black"></path><path d="M277.653 0 L 279.027 0 279.027 59 277.653 59Z" stroke="none" fill="black"></path><path d="M280.402 0 L 281.776 0 281.776 59 280.402 59Z" stroke="none" fill="black"></path><path d="M285.9 0 L 290.023 0 290.023 59 285.9 59Z" stroke="none" fill="black"></path><path d="M291.398 0 L 295.521 0 295.521 59 291.398 59Z" stroke="none" fill="black"></path><path d="M296.896 0 L 298.27 0 298.27 59 296.896 59Z" stroke="none" fill="black"></path><path d="M299.645 0 L 303.768 0 303.768 59 299.645 59Z" stroke="none" fill="black"></path><path d="M305.143 0 L 306.517 0 306.517 59 305.143 59Z" stroke="none" fill="black"></path><path d="M310.641 0 L 312.015 0 312.015 59 310.641 59Z" stroke="none" fill="black"></path><path d="M313.39 0 L 314.764 0 314.764 59 313.39 59Z" stroke="none" fill="black"></path><path d="M316.139 0 L 320.263 0 320.263 59 316.139 59Z" stroke="none" fill="black"></path><path d="M321.637 0 L 323.012 0 323.012 59 321.637 59Z" stroke="none" fill="black"></path><path d="M327.135 0 L 328.51 0 328.51 59 327.135 59Z" stroke="none" fill="black"></path><path d="M329.884 0 L 334.008 0 334.008 59 329.884 59Z" stroke="none" fill="black"></path><path d="M335.382 0 L 339.506 0 339.506 59 335.382 59Z" stroke="none" fill="black"></path><path d="M340.88 0 L 342.255 0 342.255 59 340.88 59Z" stroke="none" fill="black"></path></g></g></svg></div>*@
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="Colgador row">
+                    <div style="height:70%;">
+                        <div id="divPadreTablaCabeceraIntermedio" style="text-align:left;width:100%;float:left;">
+                            <div id="divHijoTablaCabeceraIntermedio">
+                                <table cellpadding="0" cellspacing="0" class="tblColgador">
+                                    <tbody>
+                                        <tr class="altoFilaCabeceraIntermedio">
+                                            <td style="width: 80px;">Knit Type:</td>
+                                            <td colspan="3" class="paddingColumnasCabeceraIntermedio">FLAT KNIT</td>
+                                        </tr>
+                                        <tr class="altoFilaCabeceraIntermedio">
+                                            <td style="width: 80px;">Tradename:</td>
+                                            <td colspan="3" class="paddingColumnasCabeceraIntermedio"></td>
+                                        </tr>
+                                        <tr class="altoFilaCabeceraIntermedio">
+                                            <td style="width: 80px;">Yarn Size:</td>
+                                            <td colspan="3" class="paddingColumnasCabeceraIntermedio">36/1 x 5 Cabos Ne+40 DN Dn</td>
+                                        </tr>
+                                        <tr class="altoFilaCabeceraIntermedio">
+                                            <td style="width: 80px;">Density:</td>
+                                            <td colspan="3" class="paddingColumnasCabeceraIntermedio">665 gr/m2 BW</td>
+                                        </tr>
+                                        <tr class="altoFilaCabeceraIntermedio">
+                                            <td style="width: 80px;">Content:</td>
+                                            <td colspan="3" class="paddingColumnasCabeceraIntermedio">99.86% Cotton  0.14% Spandex</td>
+                                        </tr>
+                                        <tr class="altoFilaCabeceraIntermedio">
+                                            <td style="width: 80px;">Width:</td>
+                                            <td colspan="3" class="paddingColumnasCabeceraIntermedio"></td>
+                                        </tr>
+                                        <tr class="altoFilaCabeceraIntermedio">
+                                            <td style="width: 80px;">Stich Count:</td>
+                                            <td colspan="3" class="paddingColumnasCabeceraIntermedio">Wales: 21 / 3 Cm X Courses: 40 / 3 Cm</td>
+                                        </tr>
+                                        <tr class="altoFilaCabeceraIntermedio">
+                                            <td style="width: 80px;">Report Code:</td>
+                                            <td style="width: 91px;" class="paddingColumnasCabeceraIntermedio">ATX16 - 01461</td>
+                                            <td style="width: 68px;">Mill Code:</td>
+                                            <td style="width: 103px;" class="paddingColumnasCabeceraIntermedio"></td>
+                                        </tr>
+                                        <tr class="altoFilaCabeceraIntermedio">
+                                            <td style="width: 80px;">Testing Code:</td>
+                                            <td style="width: 91px;" class="paddingColumnasCabeceraIntermedio"></td>
+                                            <td style="width: 68px;">Batch:</td>
+                                            <td style="width: 103px;" class="paddingColumnasCabeceraIntermedio"></td>
+                                        </tr>
+                                        <tr class="altoFilaCabeceraIntermedio">
+                                            <td style="width: 80px;">Comments:</td>
+                                            <td colspan="3" style="vertical-align: top;" class="paddingColumnasCabeceraIntermedio"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="height:30%;">
+                        <div id="BarCode3" data-role="barcode" class="k-barcode" style="display: block;">
+                            @*<script>drawBarcode39("BarCode3", "1602534FKN301")</script><div data-role="surface" style="position: relative; width: 356px; height: 78px;"><svg style="width: 100%; height: 100%; overflow: hidden; left: -0.173612px; top: -0.788236px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><defs></defs><g><path d="M0 0 L 356 0 356 78 0 78Z" stroke="none" fill="none"></path><g><text style="font:16px Consolas, Monaco, Sans Mono, monospace, sans-serif;" x="120.5" y="73" stroke="none" fill="black" fill-opacity="1">1602534FKN301</text></g><g><path d="M13.745 0 L 15.12 0 15.12 59 13.745 59Z" stroke="none" fill="black"></path><path d="M19.243 0 L 20.618 0 20.618 59 19.243 59Z" stroke="none" fill="black"></path><path d="M21.992 0 L 26.116 0 26.116 59 21.992 59Z" stroke="none" fill="black"></path><path d="M27.49 0 L 31.614 0 31.614 59 27.49 59Z" stroke="none" fill="black"></path><path d="M32.988 0 L 34.363 0 34.363 59 32.988 59Z" stroke="none" fill="black"></path><path d="M35.737 0 L 39.861 0 39.861 59 35.737 59Z" stroke="none" fill="black"></path><path d="M41.236 0 L 42.61 0 42.61 59 41.236 59Z" stroke="none" fill="black"></path><path d="M46.734 0 L 48.108 0 48.108 59 46.734 59Z" stroke="none" fill="black"></path><path d="M49.483 0 L 50.857 0 50.857 59 49.483 59Z" stroke="none" fill="black"></path><path d="M52.232 0 L 56.355 0 56.355 59 52.232 59Z" stroke="none" fill="black"></path><path d="M57.73 0 L 59.104 0 59.104 59 57.73 59Z" stroke="none" fill="black"></path><path d="M60.479 0 L 64.602 0 64.602 59 60.479 59Z" stroke="none" fill="black"></path><path d="M68.726 0 L 72.849 0 72.849 59 68.726 59Z" stroke="none" fill="black"></path><path d="M74.224 0 L 75.598 0 75.598 59 74.224 59Z" stroke="none" fill="black"></path><path d="M76.973 0 L 78.347 0 78.347 59 76.973 59Z" stroke="none" fill="black"></path><path d="M79.722 0 L 81.097 0 81.097 59 79.722 59Z" stroke="none" fill="black"></path><path d="M82.471 0 L 83.846 0 83.846 59 82.471 59Z" stroke="none" fill="black"></path><path d="M87.969 0 L 92.093 0 92.093 59 87.969 59Z" stroke="none" fill="black"></path><path d="M93.467 0 L 97.591 0 97.591 59 93.467 59Z" stroke="none" fill="black"></path><path d="M98.965 0 L 100.34 0 100.34 59 98.965 59Z" stroke="none" fill="black"></path><path d="M101.714 0 L 103.089 0 103.089 59 101.714 59Z" stroke="none" fill="black"></path><path d="M104.463 0 L 108.587 0 108.587 59 104.463 59Z" stroke="none" fill="black"></path><path d="M112.71 0 L 114.085 0 114.085 59 112.71 59Z" stroke="none" fill="black"></path><path d="M115.459 0 L 116.834 0 116.834 59 115.459 59Z" stroke="none" fill="black"></path><path d="M118.208 0 L 122.332 0 122.332 59 118.208 59Z" stroke="none" fill="black"></path><path d="M123.707 0 L 127.83 0 127.83 59 123.707 59Z" stroke="none" fill="black"></path><path d="M129.205 0 L 130.579 0 130.579 59 129.205 59Z" stroke="none" fill="black"></path><path d="M134.703 0 L 138.826 0 138.826 59 134.703 59Z" stroke="none" fill="black"></path><path d="M140.201 0 L 141.575 0 141.575 59 140.201 59Z" stroke="none" fill="black"></path><path d="M142.95 0 L 144.324 0 144.324 59 142.95 59Z" stroke="none" fill="black"></path><path d="M145.699 0 L 149.822 0 149.822 59 145.699 59Z" stroke="none" fill="black"></path><path d="M151.197 0 L 155.32 0 155.32 59 151.197 59Z" stroke="none" fill="black"></path><path d="M159.444 0 L 160.819 0 160.819 59 159.444 59Z" stroke="none" fill="black"></path><path d="M162.193 0 L 163.568 0 163.568 59 162.193 59Z" stroke="none" fill="black"></path><path d="M164.942 0 L 166.317 0 166.317 59 164.942 59Z" stroke="none" fill="black"></path><path d="M167.691 0 L 169.066 0 169.066 59 167.691 59Z" stroke="none" fill="black"></path><path d="M170.44 0 L 171.815 0 171.815 59 170.44 59Z" stroke="none" fill="black"></path><path d="M175.938 0 L 180.062 0 180.062 59 175.938 59Z" stroke="none" fill="black"></path><path d="M181.436 0 L 182.811 0 182.811 59 181.436 59Z" stroke="none" fill="black"></path><path d="M184.185 0 L 188.309 0 188.309 59 184.185 59Z" stroke="none" fill="black"></path><path d="M189.683 0 L 191.058 0 191.058 59 189.683 59Z" stroke="none" fill="black"></path><path d="M192.432 0 L 196.556 0 196.556 59 192.432 59Z" stroke="none" fill="black"></path><path d="M197.931 0 L 202.054 0 202.054 59 197.931 59Z" stroke="none" fill="black"></path><path d="M206.178 0 L 207.552 0 207.552 59 206.178 59Z" stroke="none" fill="black"></path><path d="M208.927 0 L 210.301 0 210.301 59 208.927 59Z" stroke="none" fill="black"></path><path d="M211.676 0 L 215.799 0 215.799 59 211.676 59Z" stroke="none" fill="black"></path><path d="M217.174 0 L 218.548 0 218.548 59 217.174 59Z" stroke="none" fill="black"></path><path d="M219.923 0 L 221.297 0 221.297 59 219.923 59Z" stroke="none" fill="black"></path><path d="M222.672 0 L 224.046 0 224.046 59 222.672 59Z" stroke="none" fill="black"></path><path d="M228.17 0 L 232.293 0 232.293 59 228.17 59Z" stroke="none" fill="black"></path><path d="M233.668 0 L 235.042 0 235.042 59 233.668 59Z" stroke="none" fill="black"></path><path d="M236.417 0 L 237.792 0 237.792 59 236.417 59Z" stroke="none" fill="black"></path><path d="M239.166 0 L 243.29 0 243.29 59 239.166 59Z" stroke="none" fill="black"></path><path d="M244.664 0 L 246.039 0 246.039 59 244.664 59Z" stroke="none" fill="black"></path><path d="M250.162 0 L 254.286 0 254.286 59 250.162 59Z" stroke="none" fill="black"></path><path d="M255.66 0 L 259.784 0 259.784 59 255.66 59Z" stroke="none" fill="black"></path><path d="M261.158 0 L 265.282 0 265.282 59 261.158 59Z" stroke="none" fill="black"></path><path d="M269.405 0 L 270.78 0 270.78 59 269.405 59Z" stroke="none" fill="black"></path><path d="M272.154 0 L 273.529 0 273.529 59 272.154 59Z" stroke="none" fill="black"></path><path d="M274.903 0 L 276.278 0 276.278 59 274.903 59Z" stroke="none" fill="black"></path><path d="M277.653 0 L 279.027 0 279.027 59 277.653 59Z" stroke="none" fill="black"></path><path d="M280.402 0 L 281.776 0 281.776 59 280.402 59Z" stroke="none" fill="black"></path><path d="M285.9 0 L 290.023 0 290.023 59 285.9 59Z" stroke="none" fill="black"></path><path d="M291.398 0 L 295.521 0 295.521 59 291.398 59Z" stroke="none" fill="black"></path><path d="M296.896 0 L 298.27 0 298.27 59 296.896 59Z" stroke="none" fill="black"></path><path d="M299.645 0 L 303.768 0 303.768 59 299.645 59Z" stroke="none" fill="black"></path><path d="M305.143 0 L 306.517 0 306.517 59 305.143 59Z" stroke="none" fill="black"></path><path d="M310.641 0 L 312.015 0 312.015 59 310.641 59Z" stroke="none" fill="black"></path><path d="M313.39 0 L 314.764 0 314.764 59 313.39 59Z" stroke="none" fill="black"></path><path d="M316.139 0 L 320.263 0 320.263 59 316.139 59Z" stroke="none" fill="black"></path><path d="M321.637 0 L 323.012 0 323.012 59 321.637 59Z" stroke="none" fill="black"></path><path d="M327.135 0 L 328.51 0 328.51 59 327.135 59Z" stroke="none" fill="black"></path><path d="M329.884 0 L 334.008 0 334.008 59 329.884 59Z" stroke="none" fill="black"></path><path d="M335.382 0 L 339.506 0 339.506 59 335.382 59Z" stroke="none" fill="black"></path><path d="M340.88 0 L 342.255 0 342.255 59 340.88 59Z" stroke="none" fill="black"></path></g></g></svg></div>*@
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+        <!--FIN COLGADOR INTERMEDIO-->
+    </div>
+    <script src="~/Scripts/Home/Util.js"></script>
+    <script src="~/Scripts/DesarrolloTextil/SolicitudColgador/colgadorimprimir.js"></script>
+</body>
+</html>

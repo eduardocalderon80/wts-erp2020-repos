@@ -1,0 +1,170 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!--<!DOCTYPE html>-->
+
+<html>
+<head>
+    <script src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo/2015.3.930/kendo.all.min.js")"></script>
+    <style>
+        body {
+            margin: 0px !important;
+            padding: 0px !important;
+            border: 0px !important;
+            height: 100% !important;
+            max-height: 100% !important;
+            top: 0px !important;
+            bottom: 0px !important;
+            background-color: white;
+            position: static;
+        }
+
+        table td {
+            font-size: 9pt;
+            font-weight: bold;
+            cellpadding: 15px;
+        }
+
+        .tableContent {
+            width: 3.2in;
+        }
+
+            .tableContent td {
+                font-size: xx-small;
+                padding-left: 5px;
+                text-align: center;
+            }
+
+            .tableContent caption {
+                font-size: small;
+                font-weight: bold;
+                border-bottom: 1px solid;
+                padding-bottom: 10px;
+            }
+
+        .ajustar {
+            overflow: scroll-x;
+        }
+
+        .divContent span {
+            font-size: small;
+            font-weight: bold;
+        }
+
+        #tblContent {
+            min-width: 100%;
+        }
+
+        .textoMediano {
+            font-size: small;
+            font-weight: bold;
+        }
+
+        .textoGrande {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .textoPequeño {
+            font-size: xx-small;
+            font-weight: bold;
+        }
+
+        .Hoja {
+            height: 100%;
+            min-height: 100%;
+            max-height: 100%;
+            position: relative;
+            padding: 0px;
+            border: 0px;
+            margin: 0px;
+            top: 0px;
+            bottom: 0px;
+            display: flex;
+        }
+
+        .CartonSize {
+            width: 3.6in;
+            padding-left: 0.38in;
+            padding-top: 0.2in;
+            margin: 0px;
+        }
+
+            .CartonSize td {
+                margin-bottom: 0.2in;
+            }
+
+        .CartonSizeSoftSur {
+            width: 100%;
+            height: 1.2in;
+            border: 1px solid;
+        }
+
+        .CartonTitle {
+            padding-left: 0.2in;
+            padding-top: 0.08in;
+            padding-bottom: 2px;
+        }
+
+            .CartonTitle span {
+                font-size: 12pt;
+                border-top: 20px;
+            }
+
+        .CartonBarcode {
+            position: relative;
+            width: 100%;
+            height: 0.7in;
+            /*padding-left: 0.1205in;
+        padding-right: 0.1205in;*/
+            display: block;
+        }
+
+        .CartonBarCodeValue {
+            text-align: center;
+        }
+
+            .CartonBarCodeValue span {
+                font-size: 12pt;
+                border-top: 20px;
+                font: 12pt Consolas, Monaco, Sans Mono,monospace,sans-serif;
+            }
+    </style>
+    <script type="text/javascript">
+
+        window.onload = function () {
+            window.print();
+        };
+        function drawBarcode39(divID, value) {
+            $("#" + divID).kendoBarcode({
+                value: value,
+                type: "Code39",
+                background: "transparent",
+                text: { visible: false },
+                renderAs: "svg"
+            });
+            var barcode = $("#" + divID).data("kendoBarcode");
+            var imageDataURL = barcode.imageDataURL();
+            $("#im" + divID).attr("src", imageDataURL);
+        }
+        $("#export").on("click", function () {
+            var barcode = $("#barcode").data("kendoBarcode");
+            var imageDataURL = barcode.imageDataURL();
+
+            if (navigator.msSaveBlob) {
+                var blob = toBlob(imageDataURL, "image/png");
+                navigator.msSaveBlob(blob, this.getAttribute("download"));
+            } else {
+                this.href = imageDataURL;
+            }
+        });
+    </script>
+</head>
+<body>
+
+    <div>@Html.Raw(ViewBag.litSSCC)</div>
+</body>
+</html>

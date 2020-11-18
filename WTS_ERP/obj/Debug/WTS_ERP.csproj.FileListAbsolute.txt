@@ -1,0 +1,526 @@
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\ApplicationInsights.config
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\SqlServerTypes\x64\msvcr120.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\SqlServerTypes\x86\msvcr120.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\WTS_ERP.dll.config
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\WTS_ERP.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\WTS_ERP.pdb
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Antlr3.Runtime.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\BarcodeLib.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\BE_ERP.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\BL_ERP.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\EntityFramework.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\EntityFramework.SqlServer.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\EPPlus.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Excel.4.5.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\ICSharpCode.SharpZipLib.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\itextsharp.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.AI.Agent.Intercept.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.AI.DependencyCollector.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.AI.Web.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.AI.WindowsServer.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.ApplicationInsights.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.AspNet.Identity.Core.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.Owin.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.Owin.Security.Cookies.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.Owin.Security.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.Owin.Security.Facebook.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.Owin.Security.Google.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.Owin.Security.OAuth.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.Owin.Security.Twitter.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.ReportViewer.Common.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.ReportViewer.Design.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.ReportViewer.WebDesign.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.ReportViewer.WebForms.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.ReportViewer.WinForms.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.SqlServer.Types.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.Web.Infrastructure.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Newtonsoft.Json.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Owin.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\SimpleInjector.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\SimpleInjector.Integration.Web.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\SimpleInjector.Integration.Web.Mvc.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\System.Threading.Tasks.Extensions.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\System.ValueTuple.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\System.Web.Helpers.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\System.Web.Mvc.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\System.Web.Optimization.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\System.Web.Razor.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\System.Web.WebPages.Deployment.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\System.Web.WebPages.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\System.Web.WebPages.Razor.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Utilitario.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\WebActivator.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\WebGrease.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\DAL_ERP.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\WinSCPnet.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\EnvDTE.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Interop.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Shell.14.0.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Design.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\stdole.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.OLE.Interop.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.VSHelp.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Utilities.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Immutable.10.0.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Immutable.14.0.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Threading.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Immutable.11.0.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Interop.9.0.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.ProjectAggregator.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Imaging.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Immutable.12.0.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.ComponentModelHost.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.ImageCatalog.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Designer.Interfaces.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.TemplateWizardInterface.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Text.Data.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Text.UI.Wpf.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Text.UI.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Package.LanguageService.14.0.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Debugger.InteropA.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\EnvDTE80.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Language.Intellisense.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Data.Services.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\VSLangProj.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Interop.11.0.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Data.Core.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Interop.10.0.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\VSLangProj80.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.ManagedInterfaces.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.WCFReference.Interop.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Data.Framework.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Editor.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Debugger.Interop.11.0.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.GraphModel.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.CoreUtility.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.MSXML.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Text.Logic.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.TextManager.Interop.10.0.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\VSLangProj2.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\BE_ERP.pdb
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\BL_ERP.pdb
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Utilitario.pdb
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.AI.DependencyCollector.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.AI.Web.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.AI.WindowsServer.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.ApplicationInsights.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.AspNet.SignalR.Core.pdb
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Newtonsoft.Json.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\SimpleInjector.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\SimpleInjector.Integration.Web.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\SimpleInjector.Integration.Web.Mvc.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\System.Threading.Tasks.Extensions.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\System.ValueTuple.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\System.Web.Helpers.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\System.Web.Mvc.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\System.Web.Optimization.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\System.Web.Razor.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\System.Web.WebPages.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\System.Web.WebPages.Deployment.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\System.Web.WebPages.Razor.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Antlr3.Runtime.pdb
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\EntityFramework.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\EntityFramework.SqlServer.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.AspNet.Identity.Core.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.Owin.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.Owin.Security.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.Owin.Security.Facebook.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.Owin.Security.Cookies.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.Owin.Security.OAuth.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.Owin.Security.Google.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.Owin.Security.Twitter.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\DAL_ERP.pdb
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Shell.14.0.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Design.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Utilities.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Immutable.10.0.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Immutable.14.0.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Threading.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Immutable.11.0.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Imaging.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Immutable.12.0.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.ImageCatalog.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Designer.Interfaces.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.TemplateWizardInterface.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Text.Data.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Text.UI.Wpf.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Text.UI.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Package.LanguageService.14.0.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Language.Intellisense.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.WCFReference.Interop.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Data.Framework.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Editor.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.CoreUtility.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\Microsoft.VisualStudio.Text.Logic.xml
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\es\Microsoft.AspNet.SignalR.SystemWeb.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\de\Microsoft.ReportViewer.Common.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\es\Microsoft.ReportViewer.Common.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\it\Microsoft.ReportViewer.Common.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\de\Microsoft.ReportViewer.Design.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\es\Microsoft.ReportViewer.Design.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\it\Microsoft.ReportViewer.Design.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\de\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\es\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\fr\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\it\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\ja\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\ko\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\pt\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\ru\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\de\Microsoft.ReportViewer.WebForms.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\es\Microsoft.ReportViewer.WebForms.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\fr\Microsoft.ReportViewer.WebForms.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\it\Microsoft.ReportViewer.WebForms.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\ja\Microsoft.ReportViewer.WebForms.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\ko\Microsoft.ReportViewer.WebForms.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\pt\Microsoft.ReportViewer.WebForms.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\ru\Microsoft.ReportViewer.WebForms.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\es\Microsoft.VisualStudio.Data.Services.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\es\Microsoft.VisualStudio.Data.Core.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\es\Microsoft.VisualStudio.GraphModel.resources.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\obj\Debug\WTS_ERP.csprojAssemblyReference.cache
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\obj\Debug\WTS_ERP.csproj.CoreCompileInputs.cache
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\obj\Debug\WTS_ERP.csproj.CopyComplete
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\obj\Debug\WTS_ERP.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\obj\Debug\WTS_ERP.pdb
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\WinSCP.exe
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\roslyn\csc.exe
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\roslyn\System.Collections.Immutable.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\roslyn\System.Reflection.Metadata.dll
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\roslyn\vbc.exe
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\roslyn\VBCSCompiler.exe
+C:\EDUARDO\GITLAB_ERPNEWJACOB\WTS_ERP\bin\roslyn\VBCSCompiler.exe.config
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\WinSCP.exe
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\ApplicationInsights.config
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\SqlServerTypes\x64\msvcr120.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\SqlServerTypes\x86\msvcr120.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\roslyn\csc.exe
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\roslyn\System.Collections.Immutable.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\roslyn\System.Reflection.Metadata.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\roslyn\vbc.exe
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\roslyn\VBCSCompiler.exe
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\roslyn\VBCSCompiler.exe.config
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\WTS_ERP.dll.config
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\WTS_ERP.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\WTS_ERP.pdb
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Antlr3.Runtime.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\BarcodeLib.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\BE_ERP.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\BL_ERP.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\EntityFramework.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\EntityFramework.SqlServer.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\EPPlus.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Excel.4.5.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\ICSharpCode.SharpZipLib.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\itextsharp.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.AI.Agent.Intercept.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.AI.DependencyCollector.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.AI.Web.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.AI.WindowsServer.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.ApplicationInsights.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.AspNet.Identity.Core.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.Owin.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.Owin.Security.Cookies.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.Owin.Security.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.Owin.Security.Facebook.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.Owin.Security.Google.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.Owin.Security.OAuth.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.Owin.Security.Twitter.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.ReportViewer.Common.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.ReportViewer.Design.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.ReportViewer.WebDesign.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.ReportViewer.WebForms.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.ReportViewer.WinForms.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.SqlServer.Types.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.Web.Infrastructure.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Newtonsoft.Json.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Owin.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\SimpleInjector.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\SimpleInjector.Integration.Web.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\SimpleInjector.Integration.Web.Mvc.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\System.Threading.Tasks.Extensions.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\System.ValueTuple.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\System.Web.Helpers.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\System.Web.Mvc.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\System.Web.Optimization.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\System.Web.Razor.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\System.Web.WebPages.Deployment.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\System.Web.WebPages.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\System.Web.WebPages.Razor.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Utilitario.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\WebActivator.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\WebGrease.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\DAL_ERP.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\WinSCPnet.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\EnvDTE.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Interop.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Shell.14.0.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Design.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\stdole.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.OLE.Interop.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.VSHelp.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Utilities.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Immutable.10.0.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Immutable.14.0.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Threading.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Immutable.11.0.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Interop.9.0.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.ProjectAggregator.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Imaging.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Immutable.12.0.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.ComponentModelHost.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.ImageCatalog.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Designer.Interfaces.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.TemplateWizardInterface.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Text.Data.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Text.UI.Wpf.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Text.UI.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Package.LanguageService.14.0.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Debugger.InteropA.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\EnvDTE80.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Language.Intellisense.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Data.Services.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\VSLangProj.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Interop.11.0.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Data.Core.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Interop.10.0.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\VSLangProj80.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.ManagedInterfaces.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.WCFReference.Interop.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Data.Framework.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Editor.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Debugger.Interop.11.0.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.GraphModel.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.CoreUtility.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.MSXML.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Text.Logic.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.TextManager.Interop.10.0.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\VSLangProj2.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\BE_ERP.pdb
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\BL_ERP.pdb
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Utilitario.pdb
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.AI.DependencyCollector.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.AI.Web.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.AI.WindowsServer.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.ApplicationInsights.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.AspNet.SignalR.Core.pdb
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Newtonsoft.Json.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\SimpleInjector.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\SimpleInjector.Integration.Web.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\SimpleInjector.Integration.Web.Mvc.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\System.Threading.Tasks.Extensions.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\System.ValueTuple.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\System.Web.Helpers.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\System.Web.Mvc.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\System.Web.Optimization.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\System.Web.Razor.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\System.Web.WebPages.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\System.Web.WebPages.Deployment.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\System.Web.WebPages.Razor.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Antlr3.Runtime.pdb
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\EntityFramework.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\EntityFramework.SqlServer.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.AspNet.Identity.Core.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.Owin.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.Owin.Security.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.Owin.Security.Facebook.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.Owin.Security.Cookies.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.Owin.Security.OAuth.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.Owin.Security.Google.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.Owin.Security.Twitter.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\DAL_ERP.pdb
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Shell.14.0.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Design.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Utilities.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Immutable.10.0.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Immutable.14.0.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Threading.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Immutable.11.0.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Imaging.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Shell.Immutable.12.0.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.ImageCatalog.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Designer.Interfaces.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.TemplateWizardInterface.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Text.Data.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Text.UI.Wpf.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Text.UI.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Package.LanguageService.14.0.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Language.Intellisense.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.WCFReference.Interop.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Data.Framework.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Editor.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.CoreUtility.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\Microsoft.VisualStudio.Text.Logic.xml
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\es\Microsoft.AspNet.SignalR.SystemWeb.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\de\Microsoft.ReportViewer.Common.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\es\Microsoft.ReportViewer.Common.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\it\Microsoft.ReportViewer.Common.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\de\Microsoft.ReportViewer.Design.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\es\Microsoft.ReportViewer.Design.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\it\Microsoft.ReportViewer.Design.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\de\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\es\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\fr\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\it\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\ja\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\ko\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\pt\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\ru\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\de\Microsoft.ReportViewer.WebForms.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\es\Microsoft.ReportViewer.WebForms.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\fr\Microsoft.ReportViewer.WebForms.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\it\Microsoft.ReportViewer.WebForms.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\ja\Microsoft.ReportViewer.WebForms.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\ko\Microsoft.ReportViewer.WebForms.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\pt\Microsoft.ReportViewer.WebForms.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\ru\Microsoft.ReportViewer.WebForms.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\es\Microsoft.VisualStudio.Data.Services.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\es\Microsoft.VisualStudio.Data.Core.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\bin\es\Microsoft.VisualStudio.GraphModel.resources.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\obj\Debug\WTS_ERP.csprojAssemblyReference.cache
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\obj\Debug\WTS_ERP.csproj.CoreCompileInputs.cache
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\obj\Debug\WTS_ERP.csproj.CopyComplete
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\obj\Debug\WTS_ERP.dll
+C:\EDUARDO\TODO SOBRE AZURE\WTSERP2020-GITHUB\wts-erp2020-repos\WTS_ERP\obj\Debug\WTS_ERP.pdb

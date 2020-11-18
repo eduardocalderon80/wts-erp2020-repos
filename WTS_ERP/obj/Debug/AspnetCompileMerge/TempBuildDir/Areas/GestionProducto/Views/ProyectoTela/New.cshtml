@@ -1,0 +1,335 @@
+﻿<style>
+    img, object {
+        max-height: 100%;
+        max-width: 100%;
+    }
+    img {
+        border: 0 none;
+        height: auto;
+        max-width: 100%;
+        vertical-align: middle;
+    }
+    a {
+        cursor: pointer;
+    }
+    .img-polaroid {
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        padding: 4px;
+        width: 200px;
+        height: 180px;
+    }
+    .img-fondo {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background-color: #EEEEEE;
+    }
+    textarea {
+        resize: none;
+    }
+</style>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row" style="vertical-align: middle;">
+            <div class="col-sm-6" id="divtituloprincipal">
+                <h2>Fabric Project</h2>
+            </div>
+            <div class="col-sm-6 text-right">
+                <button type="button" class="btn btn-primary dim" id="btnSave">Save</button>
+                <button type="button" class="btn btn-danger dim" id="btnCancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel-body">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                    <h4>Header</h4>
+                            </div>
+            <div class="ibox-content">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label for="cboCliente" class="col-sm-2 control-label">* Client:</label>
+                            <div class="col-sm-8">
+                                <select id="cboCliente" class="form-control"><option value="">Select one</option></select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        <label for="cboSeason" class="col-sm-2 control-label">* Season:</label>
+                            <div class="col-sm-8">
+                                <select id="cboSeason" class="form-control"><option value="">Select one</option></select>
+                            </div>
+                        </div>
+                    <div id="divCodigo" class="form-group">
+                        <label for="txtCode" class="col-sm-2 control-label">Code:</label>
+                        <div class="col-sm-8">
+                            <input id="txtCode" class="form-control" readonly />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                    <h4>Detail</h4>
+            </div>
+            <div class="ibox-content">
+                <div id="divFabric1" class="form-horizontal divFabric" data-divProcess="divFabricProcess1" data-type="">
+                    <div class="form-group">
+                        <label class="lblSupplierReq control-label col-sm-2">Supplier:</label>
+                        <div class="col-sm-8">
+                            <select id="cboFabricSupplier" class="cboFabricSupplier form-control"><option value="">Select One</option></select>
+                         
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="lblConstructionReq control-label col-sm-2">Construction:</label>
+                        <div class="col-sm-8">
+                            <textarea id="txtConstruction" onkeyup="Mayus(this)"  class="form-control FabricConstruction" rows="2" cols="8"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="lblYarnReq control-label col-sm-2">Yarn:</label>
+                        <div class="col-sm-8">
+                            <input id="txtYarn" onkeyup="Mayus(this)"  class="form-control FabricYarn" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="lblContentReq control-label col-sm-2">Content:</label>
+                        <div class="col-sm-8">
+                            <input id="txtContent" onkeyup="Mayus(this)"  class="form-control FabricContent" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="lblWeightReq control-label col-sm-2">Weight:</label>
+                        <div class="col-sm-5">
+                            <input id="txtWeight" class="form-control Fabricweight" value="0" type="text" onblur="ValidarNumero(this);" onkeypress="return DigitimosDecimales(event, this)" />
+                        </div>
+                        <div class="col-sm-3">
+                            <select id="cboLavado" class="form-control FabricLavado"><option>AW</option><option>BW</option></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Status:</label>
+                        <div class="col-sm-8">
+                            <select id="cboStatus" class="form-control FabricStatus">
+                                <option value="P">Pending</option>
+                                <option value="A">Approved</option>
+                                <option value="R">Rejected</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Comments:</label>
+                        <div class="col-sm-8">
+                            <input id="txtComents" onkeyup="Mayus(this)"  class="form-control FabricComent" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-10">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4>Process</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-horizontal">
+                                
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2">Dyeing Process</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control" id="cboDyeProcess"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group" id="div_grupocomboproceso">
+                                            <label class="control-label col-sm-2">Process</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control" id="cbo_proceso_add"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-1">
+                                                <button type="button" class="btn btn-sm btn-primary" id="btn_addproceso">
+                                                    <span class="fa fa-plus-square"></span>
+                                                    Add
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th class="col-sm-1"></th>
+                                                <th class="col-sm-5 text-center">Process</th>
+                                                <th class="col-sm-6 text-center">Comment</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbody_process"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h3 class="col-sm-3 font-bold">Labdip</h3>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <button type="button" class="btn btn-sm btn-info" id="btn_addlabdip">
+                            <span class="fa fa-plus-square"></span>
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div style="max-height: 400px; overflow-y:auto;">
+                    <table id="tblLabDip" class="table table-hover table-bordered">
+                        <thead>
+                            <tr class="text-center">
+                                <th>Color (*)</th>
+                                <th>Standard</th>
+                                <th>Type (*)</th>
+                                <th>Approval By</th>
+                                <th>Dyeing House </th>
+                                <th class="hide">Process</th>
+                                <th>Season (*)</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody_labdip"></tbody>
+                    </table>
+                </div>
+            </div>             
+        </div>
+    </div>
+</div>
+
+<div class="modal inmodal in" id="mdStatus" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 17px;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h5 class="modal-title">LabDip Status</h5>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <div class="form-group" style="padding-right:20px;">
+                        <div class="col-sm-3 control-label">
+                            <label>Color:</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input id="txtColor" type="text" class="form-control" readonly />
+                        </div>
+                    </div>
+                    <div class="form-group" style="padding-right:20px;">
+                        <div class="col-sm-3 control-label">
+                            <label>Status:</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <select id="cboStatusLabDip" class="form-control"></select>
+                        </div>
+                    </div>
+                    <div class="form-group" style="padding-right:20px;">
+                        <div class="col-sm-3 control-label">
+                            <label>Date:</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <div id='dtLabDipStatus' class='input-group date' style='width:150px;'>
+                                <span class='input-group-addon'><i class='fa fa-calendar'></i></span>
+                                <input type='text' class='form-control'>
+                            </div>
+                        </div>
+                    </div>
+                    <div  id="_iddivApproval" class="_divApproval hide" >
+                        <div class="form-group">
+                            <div class="col-sm-3 control-label">
+                                <label>Alternativa</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text" onkeyup="Mayus(this)"  class="form-control" id="txtAlternativa"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-3 control-label">
+                                <label>Dyeing House Code</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text" onkeyup="Mayus(this)"  class="form-control" id="txtDyeingCode" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-3 control-label">
+                                <label>Comment</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text" onkeyup="Mayus(this)"  class="form-control" id="txtComment" />
+                            </div>
+                        </div>
+
+                    </div>
+                   
+                    <div class="form-group" style="padding-right:20px;">
+                        <div class="col-sm-3 control-label">
+                            <button type="button" class="btn btn-primary" id="btnSave" onclick="AgregarLabdipStatus();">Add</button>
+                        </div>
+                        <div class="col-sm-4">                            
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <table id="tblLabdipStatus" class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Alternativa</th>
+                            <th>Dyeing House Code</th>
+                            <th>Comment</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" id="btnCloseFabricCode" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="hide">
+
+    <select id="cboProceso"></select>
+    <select id="cboTipo"></select>
+    <select id="cboAprobacion"></select>
+    <select id="cboDyeingHouse"></select>
+    <input type="hidden" id="hfLabdipCont" value="0" />
+    <input type="hidden" id="hfLabdipStatuspCont" value="0" />
+    <input type="hidden" id="hfLabdipCurrent" value="0" />
+    <input type="hidden" id="hfLabdipStatuspCurrent" value="0" />
+    <input type="hidden" id="hfTipo" value="1" />
+</div>

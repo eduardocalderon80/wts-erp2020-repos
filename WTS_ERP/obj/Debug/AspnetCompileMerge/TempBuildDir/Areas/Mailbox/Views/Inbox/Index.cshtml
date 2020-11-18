@@ -1,0 +1,53 @@
+﻿<div class="ibox" id="panelEncabezado_Inbox" style="min-height: 552px;">
+    <div class="hide">
+        <input type="text" id="txtpar_inbox" value="DATA-PARAMETRO" />
+    </div>
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-6">
+            <h2>Inbox</h2>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <i class="fa fa-home"></i>
+                </li>
+                <li class="breadcrumb-item">
+                    Mailbox
+                </li>
+                <li class="breadcrumb-item active">
+                    <strong>Inbox</strong>
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-6 text-right" style="padding-top: 30px">
+            <button type="button" class="btn btn-success" id="btnInboxRefresh">
+                <span class="fa fa-refresh"> </span>
+                Refresh
+            </button>
+            <div class="pull-right mail-search" style="margin-left: 2px;">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="txtInboxSearch" name="search" placeholder="Search email">
+                    <div class="input-group-btn">
+                        <button type="submit" class="btn btn-primary" id="btnInboxSearch" data-toggle="tooltip" data-placement="left" title="Search only for subject">
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fh-breadcrumb">
+        <div class="fh-column">
+            <div class="full-height-scroll" id="div_scroll_maillist">
+                <ul class="list-group elements-list" id="div_head_inbox"></ul>
+            </div>
+        </div>
+        <div class="full-height">
+            <div class="full-height-scroll white-bg border-left">
+                <div class="element-detail-box">
+                    <div class="tab-content">
+                        <div id="div_body_inbox" class="tab-pane active"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

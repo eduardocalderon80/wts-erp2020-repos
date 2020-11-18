@@ -1,0 +1,502 @@
+﻿<style type="text/css">
+    .has-error .select2-selection {
+        border-color: #ed5565 !important;
+    }
+
+    .row-selected {
+        background-color: #1ab394 !important;
+    }
+
+    th {
+        padding: 8px;
+        border: 1px solid #e7e7e7;
+        background-color: #F5F5F6;
+        text-align: center;
+    }
+
+    td {
+        padding: 5px;
+        border-bottom: 1px solid #e7e7e7;
+        padding-left: 20px;
+    }
+</style>
+
+<div class="row wrapper white-bg page-heading">
+    <div id="content_header" class="ibox float-e-margins">
+        <div id="divtituloprincipal" class="col-sm-6">
+            <h2 class="font-bold">Courier Guide</h2>
+        </div>
+    </div>
+</div>
+
+<div class="row wrapper-content gray-bg animated">
+
+    <div class="ibox">
+        <div class="ibox-title">
+            <div class="form-horizontal row ">
+                <div id="divTitulo" class="col-sm-6">
+                    <h3 id="_title" class="text-navy bold">Nuevo</h3>
+                </div>
+                <div id="divBotonesprimarios" class="col-sm-6 text-right">
+                    <button id="btnsave" type="button" class="btn btn-primary">
+                        <span class="fa fa-save"></span>
+                        Save
+                    </button>
+                    <button id="btnreturn" type="button" class="btn btn-default">
+                        <span class="fa fa-reply-all"></span>
+                        Return
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="ibox-content">
+            <div class="tabs-container">
+
+                <ul class="nav nav-tabs">
+                    <li class="active bg-primary">
+                        <a id="tabgrupal" data-toggle="tab" href="#tab-grupal" aria-expanded="true"><label class="control-label">Grupal</label></a>
+                    </li>
+                    <li class="">
+                        <a id="tabindividual" data-toggle="tab" href="#tab-individual" aria-expanded="false"><label class="control-label">Individual</label></a>
+                    </li>
+
+                </ul>
+
+                <div id="informacion" class="tab-content">
+
+                    <div id="tab-grupal" class="tab-pane active">
+                        <div class="ibox">
+                            <div id="div_grilla" class="ibox-content">
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-3 text-right ">
+                                                <span class="btn btn-warning btn-file text-right ">
+                                                    <span class="fa fa-upload"></span> Excel File
+                                                    <input class="text-right" type="file" id="inputFile" accept=".xlsx" onchange="fn_validfile(this);" />
+                                                </span>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input class="form-control" disabled="disabled" id="fileSelected" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label id='idnumero' class="form-control text-right text-success" style="border:0"></label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <div id="divBotonesSecundarios" class="col-sm-12 text-right">                                                
+                                                <button id="btneliminar" type="button" title="Eliminar" class="btn btn-outline btn-danger" onclick="req_delete()">
+                                                    <span class="fa fa-trash"></span>
+                                                </button>
+                                                <button id="btnlimpiar" type="button" title="Limpiar" class="btn btn-outline btn-default" onclick="req_clean(false)">
+                                                    <span class="fa fa-file"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*<div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3"># Guide:</label>
+                                                <div class="col-sm-9">
+                                                    <input id="txtnumeroguia" class="form-control _enty" type="text" placeholder="Number Guide" onkeyup="event_search(event)" data-required="true" data-min="1">
+                                                </div>
+                                            </div>
+                                        </div>*@
+
+                                </div>
+
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <div id="tablaguiatemporalcontent" class="col-sm-12" style="max-height:400px;overflow-x:hidden; overflow-y:hidden">
+                                                @*<table id="tableguiatemporal" class="stripe row-border order-column" style="width:150%; max-width: 150%;">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Guide</th>
+                                                                <th>Date</th>
+                                                                <th>Description</th>
+                                                                <th>Weight</th>
+                                                                <th>Neto</th>
+                                                                <th>Courier</th>
+                                                                <th>Type Send</th>
+                                                                <th>Responsible</th>
+                                                                <th>Responsible WTS</th>
+                                                                <th>Ship By</th>
+                                                                <th>Type</th>
+                                                                <th>Ship By WTS</th>
+                                                                <th>Assume</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody></tbody>
+                                                    </table>*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tab-individual" class="tab-pane ">
+                        <div class="ibox">
+                            <div id="divformulario" class="ibox-content">
+
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3"># Guide:</label>
+                                            <div class="col-sm-9">
+                                                <input id="txtnumeroguia" class="form-control _enty" type="text" placeholder="Number Guide" data-required="true" data-min="1" data-id="NumeroGuia" data-type="int" onKeyPress="return soloNumeros(event)">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3">Date Send :</label>
+                                            <div class="col-sm-9">
+                                                <div id="divfechaenvio" class='input-group date'>
+                                                    <input id="txtfechahasta" class='form-control _enty' type='text' data-type="date" data-min="10" data-max="10" data-level="true" data-required="true" data-id="FechaEnvioEntrega">
+                                                    <div id="divcalendariohasta" class="input-group-addon">
+                                                        <span class="fa fa-calendar"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3">Courier:</label>
+                                            <div class="col-sm-9">
+                                                <select id="cbocourier" class="form-control select2_courier _enty" style="width:100%" name="idcourier" data-id="IdCourier" data-required="true" data-min="1"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3">Type Send:</label>
+                                            <div class="col-sm-9">
+                                                <select id="cbotipoenvio" class="form-control select2_tipoenvio _enty" style="width:100%" name="idtipoenvio" data-id="IdTipoEnvio" data-required="true" data-min="1"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3">Type:</label>
+                                            <div class="col-sm-9">
+                                                <select id="cbotipo" class="form-control select2_tipo _enty" style="width:100%" name="idtipo" data-id="IdTipo" data-required="true" data-min="1"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3">Name:</label>
+                                            <div class="col-sm-9">
+                                                <select id="cbonombre" class="form-control select2_nombre  _enty" style="width:100%" name="idtipodata" data-id="IdTipoDato" data-required="true" data-min="1"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3">Assume:</label>
+                                            <div class="col-sm-9">
+                                                <select id="cboasume" class="form-control select2_asume  _enty" style="width:100%" name="idasume" data-id="IdAsume" data-required="true" data-min="1"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3">Responsible:</label>
+                                            <div class="col-sm-9">
+                                                <select id="cboresponsable" class="form-control select2_responsable  _enty" style="width:100%" name="idpersonal" data-id="IdResponsable" data-required="true" data-min="1"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3">Weight:</label>
+                                            <div class="col-sm-9">
+                                                <input id="txtAccion" class="form-control _enty" type="text" name="Accion" data-id="Peso" data-min="1" data-max="100">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3">Description:</label>
+                                            <div class="col-sm-9">
+                                                <input id="txtClase" class="form-control _enty" type="text" style="resize:none" name="Clase" data-id="Descripcion" data-max="200">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-horizontal row hide">
+                                    <div class="col-sm-6">
+                                        <div id="infocourier" class="form-group">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div id="infotipoenvio" class="form-group">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div id="inforesponsable" class="form-group">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div id="infotipo" class="form-group">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div id="infoshipby" class="form-group">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div id="infoproveedor" class="form-group">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div id="infocliente" class="form-group">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div id="infootros" class="form-group">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div id="infoasume" class="form-group">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--<div id="divformulario" class="ibox">
+
+        <div class="ibox-title">
+            <div class="form-horizontal row ">
+                <div id="divTitulo" class="col-sm-6">
+                    <h3 id="_title" class="text-navy bold">Nuevo</h3>
+                </div>
+                <div id="divBotonesprimarios" class="col-sm-6 text-right">
+                    <button id="btnsave" type="button" class="btn btn-primary">
+                        <span class="fa fa-save"></span>
+                        Save
+                    </button>
+                    <button id="btnreturn" type="button" class="btn btn-default">
+                        <span class="fa fa-reply-all"></span>
+                        Return
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="ibox-content">
+
+            <div class="form-horizontal row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3"># Guide:</label>
+                        <div class="col-sm-9">
+                            <input id="txtnumeroguia" class="form-control _enty" type="text" placeholder="Number Guide" onkeyup="event_search(event)" data-required="true" data-min="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Date Send :</label>
+                        <div class="col-sm-9">
+                            <div id="divfechaenvio" class='input-group date'>
+                                <input id="txtfechahasta" class='form-control _enty' type='text' data-type="date" data-min="10" data-max="10" data-level="true" data-id="fechacese">
+                                <div id="divcalendariohasta" class="input-group-addon">
+                                    <span class="fa fa-calendar"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-horizontal row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Courier:</label>
+                        <div class="col-sm-9">
+                            <select id="cbocourier" class="form-control select2_courier _enty" style="width:100%" name="idcourier" data-id="idcourier" data-required="true" data-min="1"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Type Send:</label>
+                        <div class="col-sm-9">
+                            <select id="cbotipoenvio" class="form-control select2_tipoenvio _enty" style="width:100%" name="idtipoenvio" data-id="idtipoenvio" data-required="true" data-min="1"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-horizontal row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Type:</label>
+                        <div class="col-sm-9">
+                            <select id="cbotipo" class="form-control select2_tipo _enty" style="width:100%" name="idtipo" data-id="idtipo" data-required="true" data-min="1"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Name:</label>
+                        <div class="col-sm-9">
+                            <select id="cbonombre" class="form-control select2_nombre  _enty" style="width:100%" name="idtipodata" data-id="idtipodata" data-required="true" data-min="1"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-horizontal row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Assume:</label>
+                        <div class="col-sm-9">
+                            <select id="cboasume" class="form-control select2_asume  _enty" style="width:100%" name="idasume" data-id="idasume" data-required="true" data-min="1"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Responsible:</label>
+                        <div class="col-sm-9">
+                            <select id="cboresponsable" class="form-control select2_responsable  _enty" style="width:100%" name="idpersonal" data-id="idreponsable" data-required="true" data-min="1"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-horizontal row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Weight:</label>
+                        <div class="col-sm-9">
+                            <input id="txtAccion" class="form-control" type="text" name="Accion" data-id="Accion" data-min="1" data-max="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Description:</label>
+                        <div class="col-sm-9">
+                            <input id="txtClase" class="form-control" type="text" style="resize:none" name="Clase" data-id="Clase" data-max="200">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-horizontal row hide">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Assume:</label>
+                        <div class="col-sm-9">
+                            <select id="cboasumewts" class="form-control select2_asume _enty" style="width:100%" name="idasume" data-id="idasume" data-required="true" data-min="1"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div id="inforesponsable" class="form-group">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-horizontal row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <div class="col-sm-3 text-right ">
+                            <span class="btn btn-warning btn-file text-right ">
+                                <span class="fa fa-upload"></span> Excel File
+                                <input class="text-right" type="file" id="inputFile" accept=".xlsx" onchange="fn_validfile(this);" />
+                            </span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input class="form-control" disabled="disabled" id="fileSelected" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <div id="divBotonesSecundarios" class="col-sm-12 text-right">
+                            <button id="btnagregar" type="button" title="Agregar" class="btn btn-outline btn-primary">
+                                <span class="fa fa-plus"></span>
+                            </button>
+                            <button id="btneditar" type="button" title="Editar" class="btn btn-outline btn-success">
+                                <span class="fa fa-edit"></span>
+                            </button>
+                            <button id="btneliminar" type="button" title="Eliminar" class="btn btn-outline btn-danger">
+                                <span class="fa fa-trash"></span>
+                            </button>
+                            <button id="btnlimpiar" type="button" title="Limpiar" class="btn btn-outline btn-default">
+                                <span class="fa fa-file"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="content_form" class="ibox">
+
+
+        <div id="divContentTBL" class="ibox-content">
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div id="tablaguiatemporalcontent" style="height:530px; max-height:530px;overflow-x:hidden; overflow-y:hidden">
+                        <table id="tableguiatemporal" class="stripe row-border order-column" style="width:115%; max-width: 115%;">
+                            <thead style="width:97%;">
+                                <tr>
+                                    <th>Guide</th>
+                                    <th>Date</th>
+                                    <th>Description</th>
+                                    <th>Weight</th>
+                                    <th>Neto</th>
+                                    <th>Responsible WTS</th>
+                                    <th>Type</th>
+                                    <th>Ship By WTS</th>
+                                    <th>Assume</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>-->
+
+</div>

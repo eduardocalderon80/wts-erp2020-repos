@@ -1,0 +1,140 @@
+﻿<div class="row wrapper border-bottom white-bg page-heading">
+    <div id="content_header">
+        <div class="col-lg-8">
+            <h2>Creating Destination</h2>
+            <ol class="breadcrumb">
+                <li>
+                    View of Active Destinations
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-4" style="text-align:right; padding:20px">
+            <div class="btn-group" id="btnNew">
+                <button class="btn btn-success " type="button" onclick="NewRoute()" data-animation="rotateIn">
+                    <i class="fa fa-plus"></i>&nbsp;&nbsp;
+                    <span class="bold">New</span>
+                </button>
+            </div>
+            <div class="btn-group" id="btnSave">
+                <button class="btn btn-primary " type="button" onclick="SaveRoute()">
+                    <i class="fa fa-save"></i>&nbsp;&nbsp;
+                    <span class="bold">Save</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content gray-bg animated fadeInRight">
+    <div class="ibox" id="formulario">
+        <div class="ibox-title">
+            <h5>
+                <span class="text-success" id="txtTituloMantenimiento"><b>New Destination</b></span>
+            </h5>
+            <div class="ibox-tools">
+                <a class="close-link" onclick="hideForm()">
+                    <i class="fa fa-times"></i>
+                </a>
+
+            </div>
+        </div>
+        <div class="ibox-content" id="divdestination">
+            <div id="animation_box" class="animated bounceIn" style="background-color:white;padding-left:50px;width:100%">
+                <form role="form" id="form" novalidate="novalidate" style="width:95%;">
+                    <input type="hidden" id="hf_iddestino" class="_enty" data-id="iddestino" data-default="0" value="0" />
+                    <div class="row">
+                        <div>
+                            <label class="col-sm-1 control-label">Type Route:</label>
+                            <div class="col-sm-5">
+                                <select class="select2_TypeMobility form-control _enty" name="Route" id="selectRoute" style="width:100%" data-min="1" data-max="100" data-required="true" data-id="idroute" maxlength="200"></select>                                
+                            </div>
+                        </div>
+                        <div>
+                            <label class="col-sm-1 control-label">Destination:</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control _enty" name="destino" id="txtInputDestino" onkeyup="aMayusculas(this)" data-min="1" data-max="100" data-required="true" data-id="destino" maxlength="200">
+                            </div>
+                        </div>
+                    </div>
+                    <div>&nbsp;</div>
+                    <div class="row">
+                        <label class="col-sm-1 control-label">Address:</label>
+                        <div class="col-sm-11">
+                            <input type="text" class="form-control _enty" name="contacto" id="txtDireccion" data-min="1" data-max="100" data-required="true" data-id="address" maxlength="200">
+                        </div>
+                    </div>
+                    <div>&nbsp;</div>
+                    <div class="row">
+                        <div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label">Latitud:</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control _enty" name="latitud" id="txtLatitud" data-mask="-99.99999999" data-min="1" data-max="100" data-required="true" data-id="latitud" maxlength="50">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="col-sm-1 control-label">Longitud:</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control _enty" name="longitud" id="txtLongitud" data-mask="-99.99999999" data-min="1" data-max="100" data-required="true" data-id="longitud" maxlength="50">
+                            </div>
+                        </div>
+                    </div>
+                    <div>&nbsp;</div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox" id="formulario">
+        <div class="ibox-title">
+            <h5>
+                <span id="txtTituloTabla" class="text-success"><b>List Destinations - Ruta A</b></span>
+            </h5>
+
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-sm-11">
+                    <input type="text" class="form-control input-sm m-b-xs" id="filterE"
+                            placeholder="Search in table">
+                </div>
+                <div class="col-sm-1">
+                    <span style="float:right;">
+                        <select id="select2_TypeService" class="select2_TypeService form-control" name="servicio" style="width:120px">
+                            <option value="Ruta A" selected>Ruta A</option>
+                            <option value="Ruta B">Ruta B</option>
+                        </select>
+                    </span>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="table-responsive">
+                    <table class="footable table table-stripped table-bordered" data-page-size="50" data-filter=#filterE>
+                        <thead>
+                            <tr>
+                                <th>Route</th>
+                                <th>Destination</th>
+                                <th>Address</th>
+                                <th>Latitud</th>
+                                <th>Longitud</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="contentTableRoute"></tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="7">
+                                    <ul class="pagination pull-right"></ul>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

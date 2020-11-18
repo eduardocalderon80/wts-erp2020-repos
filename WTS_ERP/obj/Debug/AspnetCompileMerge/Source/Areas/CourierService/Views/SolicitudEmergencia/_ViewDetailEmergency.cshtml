@@ -1,0 +1,314 @@
+﻿<style type="text/css">
+    .row-selected {
+        background-color: #1ab394;
+    }
+
+    .select2-container--open {
+        z-index: 9999999;
+    }
+
+    .has-error .select2-selection {
+        border-color: #ed5565 !important;
+    }
+</style>
+
+<div id="pnl_solicitud_emergencia_detalle" class="ibox float-e-margins">
+
+    <div class="hide">
+        <input type="text" id="txtpar_solicitud_emergencia_detalle" value="DATA-PARAMETRO" />
+    </div>
+
+    <div class="ibox">
+
+        <div class="ibox-content">
+
+            <div class="tabs-container">
+                <ul class="nav nav-tabs navbar-left">
+                    <li class="active bg-primary">
+                        <a id="tab_informacion_emergencia" data-toggle="tab" href="#tab-informacion_emergencia" aria-expanded="true"><label class="control-label">Información</label></a>
+                    </li>
+                    <li id="li_detalle_solicitud_emergencia" class="hide">
+                        <a id="tab_detalle_solicitud_emergencia" data-toggle="tab" href="#tab-detalle_solicitud_emergencia" aria-expanded="false"><label class="control-label">Detalle</label></a>
+                    </li>
+                    <li class="">
+                        <a id="tab_historial_solicitud_emergencia" data-toggle="tab" href="#tab-historial_solicitud_emergencia" aria-expanded="false"><label class="control-label">Historial</label></a>
+                    </li>
+                </ul>
+                <div id="informacion_emergencia" class="tab-content">
+
+                    <div id="tab-informacion_emergencia" class="tab-pane active">
+
+                        <div class="ibox-content" style="overflow-y: auto; max-height: 380px;">
+                            <div class="form-horizontal row">
+                                <div class="col-sm-6">
+                                    <label class="control-label text-right">Enviado Por:</label>
+                                    <input id="txt_solicitud_emergencia_usuario" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="control-label text-right">Aprobado Por:</label>
+                                    <input id="txt_solicitud_emergencia_usuarioaprobador" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>
+                            </div>
+                            <div class="form-horizontal row">
+                                <div class="col-sm-6">
+                                    <label class="control-label text-right">Fecha:</label>
+                                    <input id="txt_solicitud_emergencia_fecha" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="control-label text-right">Servicio:</label>
+                                    <input id="txt_solicitud_emergencia_servicio" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>
+                            </div>
+                            <div class="form-horizontal row">
+                                <div class="col-sm-6">
+                                    <label class="control-label text-right">Turno:</label>
+                                    <input id="txt_solicitud_emergencia_turno" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="control-label text-right">Hora:</label>
+                                    <input id="txt_solicitud_emergencia_hora" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>
+                            </div>
+                            <div class="form-horizontal row">
+                                <div class="col-sm-6">
+                                    <label class="control-label text-right">Vehiculo:</label>
+                                    <input id="txt_solicitud_emergencia_vehiculo" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>       
+                                <div class="col-sm-6">
+                                    <label class="control-label text-right">Costo:</label>
+                                    <input id="txt_solicitud_emergencia_costo" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>                        
+                            </div>
+                            <div class="form-horizontal row">
+                                <div class="col-sm-6">
+                                    <label class="control-label text-right">Cliente:</label>
+                                    <input id="txt_solicitud_emergencia_cliente" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="control-label text-right">Destino:</label>
+                                    <input id="txt_solicitud_emergencia_destino" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>                                
+                            </div>
+                            <div class="form-horizontal row">
+                                <div class="col-sm-12">
+                                    <label class="control-label text-right">Dirección:</label>
+                                    <input id="txt_solicitud_emergencia_direccion" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>
+                            </div>
+                            <div class="form-horizontal row">
+                                <div class="col-sm-6">
+                                    <label class="control-label text-right">Responsable:</label>
+                                    <input id="txt_solicitud_emergencia_contacto" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="control-label text-right">Número Contacto:</label>
+                                    <input id="txt_solicitud_emergencia_numero_contacto" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>
+                            </div>
+                            <div class="form-horizontal row">
+                                <div class="col-sm-12">
+                                    <label class="control-label text-right">Motivo:</label>
+                                    <input id="txt_solicitud_emergencia_motivo" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>
+                            </div>
+                            <div id="div_row_solicitud_emergencia_asistente" class="form-horizontal row hide">
+                                <div class="col-sm-12">
+                                    <label class="control-label text-right">Asistentes:</label>
+                                    <input id="txt_solicitud_emergencia_asistente" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="tab-detalle_solicitud_emergencia" class="tab-pane">
+                        <div class="ibox">
+                            <div class="ibox-content" style="overflow-y: auto; max-height: 380px;">
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <label class="control-label text-right">Terminada Por:</label>
+                                        <input id="txt_solicitud_emergencia_usuario_terminado" disabled type="text" class="form-control input-sm m-b-xs">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="control-label text-right">Hora Terminada:</label>
+                                        <input id="txt_solicitud_emergencia_hora_terminado" disabled type="text" class="form-control input-sm m-b-xs">
+                                    </div>
+                                </div>
+                                <div class="form-horizontal row">
+
+                                </div>
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-12">
+                                        <label class="control-label text-right">Observación:</label>
+                                        <input id="txt_solicitud_emergencia_observacion_terminado" disabled type="text" class="form-control input-sm m-b-xs">
+                                    </div>
+                                </div>
+                                <div id="div_row_receptor" class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <label class="control-label text-right">Tiempo Espera:(min)</label>
+                                        <input id="txt_solicitud_emergencia_tiempo_espera_terminado" disabled type="text" class="form-control input-sm m-b-xs">
+                                    </div>
+                                </div>
+                                <div id="div_row_receptor" class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <label class="control-label text-right">Nombre:</label>
+                                        <input id="txt_solicitud_emergencia_nombre_terminado" disabled type="text" class="form-control input-sm m-b-xs">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="control-label text-right">DNI:</label>
+                                        <input id="txt_solicitud_emergencia_dni_terminado" disabled type="text" class="form-control input-sm m-b-xs">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tab-historial_solicitud_emergencia" class="tab-pane">
+                        <div class="ibox">
+                            <div class="ibox-content">
+                                <div class="table-responsive">
+
+                                    <table id="tbl_historial_solicitud_emergencia" class="footable table table-stripped table-bordered " data-page-size="10">
+                                        <thead>
+                                            <tr>
+                                                <th class='col-sm-1 text-center'>Fecha</th>
+                                                <th class='col-sm-1 text-center'>Hora</th>
+                                                <th class='col-sm-1 text-center'>Estado</th>
+                                                <th class='col-sm-2 text-center'>Acción</th>
+                                                <th class='col-sm-3 text-center'>Autor</th>
+                                                <th class='col-sm-4 text-center'>Observación</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                        <tfoot>
+                                            <tr></tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="ibox-footer">
+
+            <div id="div_cancelar_solicitud_emergencia" class="form-horizontal row hide">
+                <div class="col-sm-6 text-right">
+                    <input id="txt_motivo_cancelar_solicitud_emergencia" type="text" placeholder="Motivo de cancelación" class="form-control input-sm m-b-xs _enty" data-required="true" />
+                </div>
+                <div class="col-sm-6 text-left">
+                    <button id="btn_cancelar_solicitud_emergencia" class="btn btn-outline btn-danger">
+                        <span class="fa fa-power-off"></span>
+                        Cancelar
+                    </button>
+                    <button id="" class="btn btn-outline btn-default _retroceder_botones_detalle_solicitud_emergencia">
+                        <span class="fa fa-reply-all"></span>
+                        Regresar
+                    </button>
+                </div>
+            </div>
+
+            <div id="div_programar_solicitud_emergencia" class="form-horizontal row hide">
+                <div class="col-sm-6 text-left">
+                    <select id="cbo_vehiculo_solicitud_emergencia" class="form-control _select2 _enty" data-id="idvehiculo" data-required="true" style="width:100%"></select>
+                </div>
+                <div class="col-sm-6 text-left">
+                    <button id="btn_programar_solicitud_emergencia" class="btn btn-outline btn-primary">
+                        <span class="fa fa-refresh"></span>
+                        Programar
+                    </button>
+                    <button id="" class="btn btn-outline btn-default _retroceder_botones_detalle_solicitud_emergencia">
+                        <span class="fa fa-reply-all"></span>
+                        Regresar
+                    </button>
+                </div>
+            </div>
+                       
+            <div id="div_agregar_costo_solicitud_emergencia" class="form-horizontal row hide">
+                <div class="col-sm-6 text-right">
+                    <input id="txt_costo_solicitud_emergencia" type="text" placeholder="Agregar Costo" class="form-control input-sm m-b-xs _enty" data-required="true"/>
+                </div>                
+                <div class="col-sm-6 text-left">
+                    <button id="btn_agregar_costo_solicitud_emergencia" class="btn btn-outline btn-success">
+                        <span class="fa fa-dollar"></span>
+                        Costo
+                    </button>
+                    <button id="" class="btn btn-outline btn-default _retroceder_botones_detalle_solicitud_emergencia">
+                        <span class="fa fa-reply-all"></span>
+                        Regresar
+                    </button>
+                </div>
+            </div>
+            
+            <div id="div_terminar_solicitud_observacion_solicitud_emergencia" class="form-horizontal row hide">
+                <div class="col-sm-10 text-right">
+                    <input id="txt_observacion_terminar_solicitud_emergencia" type="text" placeholder="Observación" class="form-control input-sm m-b-xs _enty" data-required="true" />
+                </div>
+                <div class="col-sm-2 text-right">
+                    <input id="txt_costo_terminar_solicitud_emergencia" type="text" placeholder="Agregar Costo" class="form-control input-sm m-b-xs _enty" data-required="true" />
+                </div>
+            </div>
+
+            <div id="div_terminar_solicitud_campos_solicitud_emergencia" class="form-horizontal row hide">
+                <div class="col-sm-4 text-right">
+                    <input id="txt_nombre_terminar_solicitud_emergencia" type="text" placeholder="Nombre de Receptor" class="form-control input-sm m-b-xs _enty" />
+                </div>
+                <div class="col-sm-4 text-right">
+                    <input id="txt_dni_terminar_solicitud_emergencia" type="text" placeholder="Dni de Receptor" class="form-control input-sm m-b-xs _enty" />
+                </div>
+                <div class="col-sm-4 text-right">
+                    <input id="txt_tiempo_espera_terminar_solicitud_emergencia" type="number" placeholder="Tiempo de espera" class="form-control input-sm m-b-xs _enty" />
+                </div>
+            </div>
+
+            <div id="div_terminar_solicitud_emergencia" class="form-horizontal row hide">
+                <div class="col-sm-12 text-right">
+                    <button id="btn_terminar_solicitud_emergencia" class="btn btn-outline btn-success">
+                        <span class="fa fa-save"></span>
+                        Terminar
+                    </button>
+                    <button class="btn btn-outline btn-default _retroceder_botones_detalle_solicitud_emergencia">
+                        <span class="fa fa-reply-all"></span>
+                        Regresar
+                    </button>
+                </div>
+            </div>
+            
+            <div id="div_botones_detalle_solicitud_emergencia" class="form-horizontal row">
+                <div class="col-sm-12 text-right">
+                    <button id="btn_visualizar_programar_solicitud_emergencia" class="btn btn-outline btn-primary hide">
+                        <span class="fa fa-refresh"></span>
+                        Programar
+                    </button>
+                    <button id="btn_visualizar_agregar_costo_solicitud_emergencia" class="btn btn-outline btn-success hide">
+                        <span class="fa fa-dollar "></span>
+                        Costo
+                    </button>
+                    <button id="btn_visualizar_cancelar_solicitud_emergencia" class="btn btn-outline btn-danger hide">
+                        <span class="fa fa-power-off"></span>
+                        Cancelar
+                    </button>
+                    <button id="btn_visualizar_terminar_solicitud_emergencia" class="btn btn-outline btn-success hide">
+                        <span class="fa fa-save"></span>
+                        Terminar
+                    </button>
+                    <button id="btn_print_solicitud_emergencia" class="btn btn-outline btn-primary hide">
+                        <span class="fa fa-print"></span>
+                        Imprimir
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+

@@ -1,0 +1,57 @@
+﻿<style type="text/css">
+    .row-selected {
+        background-color: #1ab394;
+    }
+
+    .select2-container--open {
+        z-index: 9999999;
+    }
+
+    .has-error .select2-selection {
+        border-color: #ed5565 !important;
+    }
+</style>
+
+<div id="pnl_equipo_new" class="ibox float-e-margins">
+    
+    <div class="ibox">
+        <div id="div_equipo_new_titulo" class="ibox-title">
+            <div class="form-horizontal row">
+                <div class="col-sm-12 text-right">
+                    <button id="btn_new_guardar" class="btn btn-outline btn-primary">
+                        <span class="fa fa-save"></span>
+                        Guardar
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="div_equipo_new_formulario" class="ibox-content">
+            <div class="form-horizontal row">
+                <div class="col-sm-6">
+                    <label class="control-label">Equipo:</label>
+                    <input id="txt_new_equipo" type="text" class="form-control _enty input-sm m-b-xs" data-id="equipo" data-required="true">
+                </div>
+                <div class="col-sm-6">
+                    <label class="control-label">Responsable:</label>
+                    <select id="cbo_new_personal" class="form-control _select2 _enty" data-id="idpersonal" data-required="true" style="width:100%"></select>
+                </div>
+            </div>
+            <div class="form-horizontal row">
+                <div class="col-sm-6">
+                    <label class="control-label">Área:</label>
+                    <select id="cbo_new_area" class="form-control _select2 _enty" data-id="idarea" data-required="true" style="width:100%"></select>
+                </div>
+                <div class="col-sm-6">
+                    <label class="control-label">Sub Área:</label>
+                    <select id="cbo_new_sub_area" class="form-control _select2 _enty" data-id="idsubarea" style="width:100%"></select>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+

@@ -1,0 +1,395 @@
+﻿<style type="text/css">
+    /* Table Css */
+    .row-selected {
+        background-color: #1ab394 !important;
+    }
+
+    th {
+        padding: 8px;
+        border: 1px solid #e7e7e7;
+        background-color: #F5F5F6;
+        text-align: center;
+    }
+
+    td {
+        padding: 5px;
+        border-bottom: 1px solid #e7e7e7;
+        padding-left: 20px;
+    }
+
+    /* Popover Header */
+    .popover-title {
+        font-size: 10px;
+    }
+    /* Popover Body */
+    .popover-content {
+        font-size: 10px;
+    }
+
+    /* Panel Heading h4 fake */
+    .panel-default > .panel-heading {
+        font-weight: 600 !important;
+        font-size: 14px !important;
+    }
+
+    /* Fix Select2 en insipnia & boostrap 3 */
+    .CustomSizeSelect2 {
+        height: 34px !important;
+    }
+
+        .CustomSizeSelect2 span:nth-child(1) {
+            line-height: 32px !important;
+        }
+
+        .CustomSizeSelect2 span:nth-child(2) {
+            top: 3px !important;
+        }
+
+    /* Fix select2 en modal boostrap 3 (no olvidar borrar el tabindex) */
+    .select2-container.select2-container--default.select2-container--open {
+        z-index: 2050 !important;
+    }
+
+    .modal-lg-870 {
+        width: 870px;
+    }
+
+    /* Master detail */
+    .view-details {
+        text-align: center;
+        padding: 0;
+    }
+
+    .cursor-pointer {
+        cursor: pointer;
+    }
+
+    /* Radio Button Estilo */
+    .radio_cont {
+        cursor: pointer;
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 0px;
+        cursor: pointer;
+        font-size: 22px;
+        height: 25px; /* En caso de no tener texto se agrega el fix */
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+        .radio_cont input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+    .radio_mark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+        border-radius: 50%;
+    }
+
+    .radio_cont:hover input ~ .radio_mark {
+        background-color: #ccc;
+    }
+
+    .radio_cont input:checked ~ .radio_mark {
+        background-color: #1ab394;
+    }
+
+    .radio_mark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    .radio_cont input:checked ~ .radio_mark:after {
+        display: block;
+    }
+
+    .radio_cont .radio_mark:after {
+        top: 9px;
+        left: 9px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: white;
+    }
+
+    /* Checkbox Button Estilos */
+    .check_cont {
+        cursor: pointer;
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 0;
+        cursor: pointer;
+        font-size: 22px;
+        height: 25px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+        .check_cont input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+    .check_mark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+        border-radius: 50%;
+    }
+
+    .check_cont:hover input ~ .check_mark {
+        background-color: #ccc;
+    }
+
+    .check_cont input:checked ~ .check_mark {
+        background-color: #1ab394;
+    }
+
+    .check_mark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    .check_cont input:checked ~ .check_mark:after {
+        display: block;
+    }
+
+    .check_cont .check_mark:after {
+        left: 10px;
+        top: 7px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+</style>
+
+<div class="row wrapper white-bg page-heading">
+    <div id="content_header" class="ibox float-e-margins">
+        <div id="divtituloprincipal" class="col-sm-6">
+            <h2 class="font-bold">Asignar Sub Responsable</h2>
+        </div>
+    </div>
+</div>
+
+<div class="row wrapper-content gray-bg animated">
+
+    <div id="content_form" class="ibox">
+
+        <div class="ibox-title">
+            <div class="form-horizontal row ">
+                <div class="col-sm-6">
+                    <h3 id="_title" class="text-navy bold">Seleccionar Sub Responsable x Guia</h3>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <button id="btnAdd" type="button" class="btn btn-primary">
+                        <span class="fa fa-plus"></span>
+                        Nueva Guia
+                    </button>
+                    <button id="btnReturn" type="button" class="btn btn-default">
+                        <span class="fa fa-reply-all"></span>
+                        Return
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="tabledetails" class="ibox-content">
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div class="col-sm-4">
+                        <label class="control-label">N° Guia</label>
+                        <input type="text" id="txtNumeroGuia" class="form-control filter-data">
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="control-label">Courier</label>
+                        <select id="cboCourier" class="form-control filter-data" style="width:100%"></select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="control-label">Tipo Envio</label>
+                        <select id="cboTipoEnvio" class="form-control filter-data" style="width:100%"></select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div class="col-sm-4">
+                        <label class="control-label">Desde :</label>
+                        <div class="input-group date">
+                            <input id="txtFechaDesde" type="text" class="form-control filter-data">
+                            <div class="input-group-addon">
+                                <span class="fa fa-calendar"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="control-label">Hasta :</label>
+                        <div class="input-group date">
+                            <input id="txtFechaHasta" type="text" class="form-control filter-data">
+                            <div class="input-group-addon">
+                                <span class="fa fa-calendar"></span>
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="col-sm-4">
+                            <button type="button" class="btn btn-sm btn-primary" id="btnBuscarFecha" style="margin-top: 25px;">
+                                <span class="fa fa-calendar-o"></span>
+                                Buscar x fecha
+                            </button>
+                        </div>*@
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div id="divBotonesSecundarios" class="col-sm-12  text-left">
+                        <button type="button" title="Search" class="btn btn-outline btn-info" id="btnSearch">
+                            <span class="fa fa-search"></span>
+                            Mostrar Todos
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div id="divGuiaCourier" class="col-sm-12">
+
+                    </div>
+                </div>
+            </div>
+
+            @*<div id="AgregarSubRes" class="form-group" style="display: none;">
+                    <div class="form-horizontal row">
+                        <div class="col-sm-10">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Ver o Asignar
+                                    <button type="button" class="close" id="btnCancelarSubRes">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="form-horizontal">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-4">Sub Responsable</label>
+                                                    <div class="col-sm-8">
+                                                        <select class="form-control" id="cboSubResponsable" style="width:100%"></select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <button type="button" class="btn btn-sm btn-primary" id="btnAgregarSubRes">
+                                                        <span class="fa fa-plus-square"></span>
+                                                        Agregar
+                                                    </button>
+                                                    <button type="button" class="btn btn-sm btn-success" id="btnGrabarSubRes">
+                                                        <span class="fa fa-save"></span>
+                                                        Grabar
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="col-sm-1"></th>
+                                                        <th class="col-sm-11 text-center">Nombre</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="tbodySubResponsable"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="AgregarSubRes" role="dialog">
+    <div class="modal-dialog modal-lg-870">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" id="btnCancelarSubRes"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Ver o Asignar</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-4">Sub Responsable</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="cboSubResponsable" style="width:100%"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <button type="button" class="btn btn-sm btn-primary" id="btnAgregarSubRes">
+                                    <span class="fa fa-plus-square"></span>
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="col-sm-1"></th>
+                                    <th class="col-sm-11 text-center">Nombre</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbodySubResponsable"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" data-dismiss="modal" id="btnDismissModal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="btnGrabarSubRes">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>

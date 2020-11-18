@@ -1,0 +1,412 @@
+﻿<div class="hide">
+    <input type="text" id="txtpar_editpartida" value="DATA-PARAMETRO" />
+</div>
+
+
+<div class="ibox float-e-margins" id="panelEncabezado">
+    <div class="ibox-title">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 id="_title" class="text-navy bold">DATA-TITULO</h3>                
+            </div>
+            <div class="col-sm-6 text-right">
+                <button id="_btn_save_new_partida" href="javascript:void(0)" class="btn btn-primary">
+                    <span class="fa fa-save"></span>
+                    Save new
+                </button>
+                <button id="_btn_save_update_partida" href="javascript:void(0)" class="btn btn-info">
+                    <span class="fa fa-save"></span>
+                    Save update
+                </button>
+                <button type="button" class="btn btn-default" id="_btnreturn_solicitudpartida">
+                    <span class="fa fa-ban" aria-hidden="true"></span>
+                    Return
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="ibox-content wrapper wrapper-content gray-bg" style="overflow-y: auto; max-height: 850px;" id="div_cuerpoprincipal">
+        <div class="hide">
+            <input type="text" id="hf_estadosolicitudpartida" value="" class="_enty" data-id="estado" data-required="false" />
+            <input type="text" id="hf_reenviarsino" value="" class="_enty" data-id="reenviadosino" data-required="false" data-default="0" />
+            <input type="text" id="hf_tienecodigotela" value="" class="_enty" data-id="tienecodigotela" data-required="false" data-default="0" />
+            <input type="text" id="hf_idsolicitudpartida" value="" class="_enty" data-id="idsolicitudpartida" data-required="false" data-default="0" />
+            <input type="text" id="hf_estado_solicitudpartida_finalizado" value="" />
+        </div>
+        
+        <div class="ibox float-e-margins">
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-4">Code</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control _enty" type="text" maxlength="50" id="txt_codigo" data-id="codigo" data-min="2" data-max="50" data-default="empty" disabled="disabled">
+                                </div>
+                            </div>
+                            @*<div class="form-group" id="grupo_fechasolicitudpartida">
+                                <label class="control-label col-sm-4">Date</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group date">
+                                        <input type="text" id="txt_fechasolicitudpartida" data-id="fechasolicitudpartida" class="form-control _enty" data-level="true" data-type="date" data-min="10" data-max="10" disabled="disabled">
+                                        <div class="input-group-addon"><span class="fa fa-calendar"></span> </div>
+                                    </div>
+                                </div>
+                                </div>*@
+                            <div class="form-group">
+                                <!-- edu: EN LA TABLA ES partida-->
+                                <label class="control-label col-sm-4">Batch</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control _enty" type="text" maxlength="50" id="txt_partida" data-id="partida" data-min="2" data-max="50" data-default="empty" data-required="true">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4">Factory</label>
+                                <div class="col-sm-8">
+                                    <select id="cbo_idfabrica" data-id="idfabrica" data-min="1" class="form-control _enty" data-required="true">
+                                        <option value="option1">Option idfabrica</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4">Customer</label>
+                                <div class="col-sm-8">
+                                    <select id="cbo_idcliente" data-id="idcliente" data-min="1" class="form-control _enty" data-required="true">
+                                        <option value="option1">Option idcliente</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4">Type of departure</label>
+                                <div class="col-sm-8">
+                                    <select id="cbo_tipopartida" data-id="tipopartida" data-min="1" class="form-control _enty" data-required="true">
+                                        <option value="option1">Option tipopartida</option>
+                                    </select>
+                                </div>
+                            </div>
+                            @*<div class="form-group _group_radio _enty" id="div_tienecodigotela" data-group="tienecodigotela" data-group-type="radio" data-required="true">
+                                <label class="control-label col-sm-4">With fabric?</label>
+                                <div class="col-sm-8">
+                                    <div class="i-checks _group_tienecodigotela">
+                                        <label class=""> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_tienecodigotela" value="1" name="tienecodigotela" data-contienetela="si" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> With fabric code</label>
+                                        <label class=""> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_tienecodigotela" value="0" name="tienecodigotela" data-contienetela="no" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> No fabric code </label>
+                                    </div>
+                                </div>
+                                </div>*@
+
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group" id="grupo_fechasolicitudpartida">
+                                <label class="control-label col-sm-4">Date</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group date">
+                                        <input type="text" id="txt_fechasolicitudpartida" data-id="fechasolicitudpartida" class="form-control _enty" data-level="true" data-type="date" data-min="10" data-max="10" disabled="disabled">
+                                        <div class="input-group-addon"><span class="fa fa-calendar"></span> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4">Color</label>
+                                <div class="col-sm-8">
+                                    <select id="cbo_idcolor" data-id="idcolor" data-min="1" class="form-control _enty" data-required="true">
+                                        <option value="option1">Option idcolor</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4">Family</label>
+                                <div class="col-sm-8">
+                                    <select id="cbo_idfamilia" data-id="idfamilia" data-min="1" class="form-control _enty" data-required="true">
+                                        <option value="option1">Option idfamilia</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <!--ESTE DATO YA NO SE VA A GRABAR EN LA SOLICITUD; SINO EN LA PARTIDA
+                            <div class="form-group hide">
+                                <label class="control-label col-sm-4">Technical report format</label>
+                                <div class="col-sm-8">
+                                    <select id="cbo_formatoreportetecnico" data-id="formatoreportetecnico" data-min="1" class="form-control _enty" data-required="false" data-default="empty">
+                                        <option value="option1">Option formatoreportetecnico</option>
+                                    </select>
+                                </div>
+                            </div>
+                            -->
+                            <div class="form-group">
+                                <label class="control-label col-sm-4">Dry Cleaner</label>
+                                <div class="col-sm-8">
+                                    <select id="cbo_idtintoreria" data-id="idtintoreria" data-min="1" class="form-control _enty" data-required="true">
+                                        <option value="option1">Option idtintoreria</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group _group_radio _enty" id="div_tienecodigotela" data-group="tienecodigotela" data-group-type="radio" data-required="true">
+                                <label class="control-label col-sm-4">With fabric?</label>
+                                <div class="col-sm-8">
+                                    <div class="i-checks _group_tienecodigotela">
+                                        <label class=""> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_tienecodigotela" value="1" name="tienecodigotela" data-contienetela="si" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> With fabric code</label>
+                                        <label class=""> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_tienecodigotela" value="0" name="tienecodigotela" data-contienetela="no" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> No fabric code </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            @*<div class="form-group">
+                                <label class="control-label col-sm-4">PO</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control _enty" type="text" maxlength="10" id="txt_idpo" data-id="idpo" data-min="1" data-max="10" data-default="0" data-type="int">
+                                </div>
+                                </div>*@
+                            
+                            <!--
+                            <div class="form-group">
+                                 <label class="control-label col-sm-4">IdTela</label>
+                                 <div class="col-sm-8">
+                                     <input class="form-control _enty" type="text" maxlength="10" id="txt_idtela" data-id="idtela" data-min="1" data-max="10" data-default="0" data-type="int" data-required="true">
+                                 </div>
+                             </div>
+                             -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ibox float-e-margins hide" id="div_laboratorio_tela">
+            <div class="ibox-title">
+                <h5 class="text-navy bold">Fabric</h5>
+            </div>
+            <div class="ibox-content">
+                <div class="hide">
+                    <input type="text" id="hf_idtela" value="" class="_enty" data-id="idtela" data-min="1" data-max="10" />
+                </div>
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <!-- :aqui -->
+                        <div class="col-sm-6">
+
+                        <div class="form-group" id="div_grupo_codigotela">
+                                <label class="control-label col-sm-4">Fabric</label>
+                                <div class="col-sm-8">
+                                <div class="input-group">
+                                    <input class="form-control _enty" type="text" maxlength="11" id="txt_codigotela" data-id="codigotela" data-min="2" data-max="11" data-default="empty" data-level="true" disabled="disabled">
+                                        <span type="button" class="input-group-addon bg-primary cursor" id="_btn_buscartela_solicitudpartida">
+                                        <span class="fa fa-search"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" id="div_grupo_descripciontela">
+                                <label class="control-label col-sm-4">Description</label>
+                                <div class="col-sm-8">
+                                <input class="form-control _enty" type="text" maxlength="500" id="txt_descripciontela" data-id="descripciontela" data-min="2" data-max="500" data-default="empty" data-required="true" disabled="disabled">
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                        <div class="form-group" id="div_grupo_titulotela">
+                                <label class="control-label col-sm-4">Tittle</label>
+                                <div class="col-sm-8">
+                                <input class="form-control _enty" type="text" maxlength="500" id="txt_titulotela" data-id="titulotela" data-min="2" data-max="500" data-default="empty" disabled="disabled">
+                            </div>
+                        </div>
+                        <div class="form-group" id="div_grupo_composiciontela">
+                                <label class="control-label col-sm-4">Composition %</label>
+                                <div class="col-sm-8">
+                                <input class="form-control _enty" type="text" maxlength="50" id="txt_composiciontela" data-id="composicionporcentajetela" data-min="2" data-max="50" data-default="empty" disabled="disabled">
+                            </div>
+                        </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="ibox float-e-margins hide" id="div_laboratorioestilo">
+            <div class="ibox-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h5 class="text-navy bold">Style</h5>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <button class="btn btn-sm btn-primary" type="button" id="_btn_buscar_estilo">
+                            <span class="fa fa-search"></span>
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="row">
+                    <table class="table table-bordered" id="tblSolicitudPartidaEstiloxTela">
+                        <thead>
+                            <tr>
+                                <th class="text-center col-sm-1">
+
+                                </th>
+                                <th class="text-center col-sm-1">
+                                    Style Code
+                                </th>
+                                <th class="text-center col-sm-1">
+                                    Fabric Code
+                                </th>
+                                <th class="text-center col-sm-3">
+                                    Fabric Name
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="_tbodyGridSolicitudPartidaEstiloxTelaEditar"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <div class="ibox float-e-margins hide" id="div_laboratoriopo">
+            <div class="ibox-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h5 class="text-navy bold">PO</h5>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <button class="btn btn-sm btn-primary" type="button" id="_btn_buscar_po">
+                            <span class="fa fa-search"></span>
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="row">
+                    <table class="table table-bordered" id="tblSolicitudPartidaPo">
+                        <thead>
+                            <tr>
+                                <th class="text-center col-sm-1">
+
+                                </th>
+                                <th class="text-center col-sm-6">
+                                    Client PO
+                                </th>
+                                <th class="text-center col-sm-5">
+                                    Style code
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="_tbodyGridSolicitudPartidaPoEditar"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="ibox float-e-margins hide" id="div_laboratorio_hilados">
+            <div class="ibox-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h5 class="text-navy bold">Yarns</h5>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <button class="btn btn-sm btn-primary" id="_btn_add_yarns">
+                            <span class="fa fa-plus"></span>
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="row" style="max-height:300px; overflow-y:auto">
+                    <table class="table table-bordered table-hover" id="tblHiladoEditarSolicitudPartida">
+                        <thead>
+                            <tr>
+                                <th class="col-sm-1 text-center"></th>
+                                <th class="col-sm-1 text-center">N° Yarn</th>
+                                <th class="col-sm-2 text-center">System</th>
+                                <th class="col-sm-1 text-center">Title</th>
+                                <th class="col-sm-2 text-center">
+                                    <div class="row">
+                                        <div class="col-sm-7 text-right">Yarn</div>
+                                        <div class="col-sm-5 text-center">
+                                            <a href="javascript:void(0)" class="_cls_view_crearhilado" id="_lnk_view_crearhilado">
+                                                <span class="fa fa-plus-square"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th class="col-sm-2 text-center">Shaped Yarn</th>
+                                <th class="col-sm-2 text-center">% Fiber/Yarn</th>
+                                <th class="col-sm-1 text-center">% Yarn/Fabric</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyHiladoEditarSolicitudPartida"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="ibox float-e-margins">
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            <div class="col-sm-6">
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4">Density</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control _enty" type="text" maxlength="18" id="txt_densidad" data-id="densidad" data-min="2" data-max="18" data-default="0" data-required="true" data-type="dec">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4">Standard Density</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control _enty" type="text" maxlength="8" id="txt_densidadestandard" data-id="densidadestandard" data-min="2" data-max="8" data-default="0.0" data-type="dec" disabled="disabled">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4">Comments</label>
+                                    <div class="col-sm-8">
+                                        <textarea id="txt_comentario" data-id="comentario" data-min="2" cols="40" rows="4" class="form-control _enty" data-default="empty"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group _group_radio _enty" id="div_grupo_lavado" data-group="lavado" data-group-type="radio" data-required="true">
+                                    <label class="control-label col-sm-4">Washing in Cloths</label>
+                                    <div class="col-sm-8">
+                                        <div class="i-checks _group_lavado">
+                                            <label class=""> <div class="iradio_square-green" style="position: relative;"><input class="clslavado" type="radio" value="2" name="lavado" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> BW </label>
+                                            <label class=""> <div class="iradio_square-green" style="position: relative;"><input class="clslavado" type="radio" value="1" name="lavado" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> AW</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group _group_radio _enty" data-group="articulollevacomplementomismocolor" data-group-type="radio" data-required="true">
+                                    <label class="control-label col-sm-4">Does the article have a complement of the same color?</label>
+                                    <div class="col-sm-8">
+                                        <div class="i-checks _group_articulollevacomplementomismocolor">
+                                            <label class=""> <div class="iradio_square-green" style="position: relative;"><input class="clsradmismocolor" type="radio" value="1" name="articulollevacomplementomismocolor" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Yes</label>
+                                            <label class=""> <div class="iradio_square-green" style="position: relative;"><input class="clsradmismocolor" type="radio" value="0" name="articulollevacomplementomismocolor" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> No</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group hide" id="div_reproceso">
+                                    <label class="control-label col-sm-4">Reproceso</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control _enty" id="cbo_reproceso" data-min="1" data-max="20" data-id="tiporeproceso" data-required="false"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

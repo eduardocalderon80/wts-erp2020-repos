@@ -1,0 +1,437 @@
+﻿<div class="row wrapper border-bottom white-bg page-heading">
+    <div id="content_header">
+        <div class="col-lg-8">
+            <h2>@*<i class="fa fa-car"></i>*@ 
+            Creating New Textil Route </h2>
+            <ol class="breadcrumb">
+                <li>
+                    Messenger Service
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-4" style="text-align:right; padding:20px">
+            <div class="btn-group" id="btnCancel">
+                <button class="btn btn-white " type="button" onclick="cancelAddRoute()">
+                    <i class="fa fa-globe"></i>&nbsp;&nbsp;
+                    <span class="bold">View Map</span>
+                </button>
+            </div>
+            <div class="btn-group" id="btnViewQuery">
+                <button class="btn btn-warning" type="button">
+                    <i class="fa fa-search"></i>&nbsp;&nbsp;
+                    <span class="bold">Query</span>
+                </button>
+            </div>
+            <div class="btn-group" id="btnNew">
+                <button class="btn btn-success " type="button" onclick="newAddRoute()" data-animation="rotateIn">
+                    <i class="fa fa-plus"></i>&nbsp;&nbsp;
+                    <span class="bold">New</span>
+                </button>
+            </div>
+            <span style="text-align:right;" id="btnSave">
+                <button class="btn btn-primary " type="button" onclick="validInsert()">
+                    <i class="fa fa-save"></i>&nbsp;&nbsp;
+                    <span class="bold">Save</span>
+                </button>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="wrapper wrapper-content gray-bg animated fadeInRight">
+    <div class="ibox">
+        <div class="ibox-content">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table class="table" style="width:100%;" id="tabletextil">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th style="text-align:center">Today</th>
+                                    <th style="text-align:center" id="lblCountTomorrow">Tomorrow</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-navy" style="font-weight:bold;">Service Morning</td>
+                                    <td id="hoyDia" style="text-align:center;font-weight:bold;">TOPY TOP</td>
+                                    <td id="mananaDia" style="text-align:center;font-weight:bold;">JOHN VARBATOS</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-warning" style="font-weight:bold;">Service Afternoon</td>
+                                    <td id="hoyTarde" style="text-align:center;font-weight:bold;">TOPY TOP</td>
+                                    <td id="mananaTarde" style="text-align:center;font-weight:bold;">JOHN VARBATOS</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ibox" id="formulario">
+        <div class="ibox-title">
+            <h5>
+                <span class="text-success"><b>New Service</b></span>
+            </h5>
+            <div class="ibox-tools">
+                <a class="close-link" onclick="hideFormulario()">
+                    <i class="fa fa-times"></i>
+                </a>
+
+            </div>
+        </div>
+        <div class="ibox-content">
+            <div id="animation_box" class="animated bounceIn" style="background-color:white;padding-left:50px;width:100%">
+                <form role="form" id="form" novalidate="novalidate" style="width:95%;">
+                    <div class="form-group">
+                        <div class="row">
+                            <div>
+                                <label class="col-sm-1 control-label">Ship by:</label>
+                                <div class="col-sm-5">
+                                    <div id="txtEnvia" style="font-weight:bold" class="text-success"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="col-sm-1 control-label">Client:</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" name="cliente" id="idcliente" onkeyup="aMayusculas(this)">
+                                </div>
+                            </div>
+                        </div>
+                        <div>&nbsp;</div>
+                        <div class="row">
+                            <div>
+                                <label class="col-sm-1 control-label">Type Mobility:</label>
+                                <label class="col-sm-5 control-label" id="selectMobilidad">Textil Route</label>
+                                
+                            </div>
+                            <div>
+                                <label class="col-sm-1 control-label">Destination:</label>
+                                <div class="col-sm-3">
+                                    <div>
+                                        <div id="selectDestino">
+                                            <select class="select2_Destination form-control" name="destino" id="cboDestino" style="width:100%"></select>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div id="txtDestino">
+                                            <input type="text" class="form-control" name="destino" id="txtInputDestino">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-sm-2" style="text-align:left;">
+                                    <div class="i-checks">
+                                        <div class="i-checks">
+                                            <label class="">
+                                                <div class="icheckbox_square-green" style="position: relative;">
+                                                    <input type="checkbox" style="position: absolute; opacity: 0;" id="chkOthers">
+                                                    <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                </div>
+                                                <i></i>Others
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div>&nbsp;</div>
+                        <div class="row">
+                            <label class="col-sm-1 control-label">Service:</label>
+
+                            <div class="col-sm-5">
+                                <div id="txtTipoServicio"></div>
+                                <div id="cboServicio">
+                                    <select id="select2_TypeService" class="select2_TypeService form-control" onchange="selectTipo()" name="servicio" style="width:100%">
+                                        <option|></option|>
+                                        <option value="1" selected>Morning</option>
+                                        <option value="2">Afternoon</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <label class="col-sm-1 control-label">Delivery Time:</label>
+                            <div class="col-sm-3">
+                                <div class="input-group clockpicker" data-autoclose="true">
+                                    <input type="text" class="form-control" value="09:30" name="hora" id="txtHora" onkeypress="fn_ValidarHora();" onkeyup="fn_ValidarHora();">
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-clock-o"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-sm-1">
+                                <div class="i-checks" id="ichkTomorrow">
+                                    <div class="i-checks">
+                                        <label class="">
+                                            <div class="icheckbox_square-green" style="position: relative;">
+                                                <input type="checkbox" style="position: absolute; opacity: 0;" id="chkTomorrow">
+                                                <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                            </div>
+                                            <i></i>Tomorrow
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-1" style="text-align:left;">
+                                <div class="i-checks" id="ichkMonday">
+                                    <div class="i-checks">
+                                        <label class="">
+                                            <div class="icheckbox_square-green" style="position: relative;">
+                                                <input type="checkbox" style="position: absolute; opacity: 0;" id="chkMonday">
+                                                <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                            </div>
+                                            <i></i>Monday
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>&nbsp;</div>
+                        <div id="txtAprobadoPor">
+                            <div class="row">
+                                <label class="col-sm-1 control-label">Approved by:</label>
+
+                                <div class="col-sm-11">
+                                    <input type="text" class="form-control" name="contacto" id="txtAprueba" onkeyup="aMayusculas(this)">
+                                </div>
+                            </div>
+                            <div>&nbsp;</div>
+                        </div>
+                        <div class="row">
+                            <label class="col-sm-1 control-label">Contact:</label>
+
+                            <div class="col-sm-11">
+                                <input type="text" class="form-control" name="contacto" id="txtContacto" onkeyup="aMayusculas(this)">
+                            </div>
+                        </div>
+                        <div>&nbsp;</div>
+                        <div class="row">
+                            <label class="col-sm-1 control-label">Reason:</label>
+                            <div class="col-sm-11 form-group">
+                                <textarea class="form-control message-input" name="motivo" placeholder="Enter reason text" id="txtMotivo" onkeyup="aMayusculas(this)"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label class="col-sm-1 control-label">Observations:</label>
+                            <div class="col-sm-11 form-group">
+                                <textarea class="form-control message-input" name="observacion" placeholder="Enter observations text" id="txtObservacion" onkeyup="aMayusculas(this)"></textarea>
+                            </div>
+                        </div>
+                        <!--<div class="row">
+                            <div class="col-sm-2 col-sm-offset-10" style="text-align:right;">
+                                <a href="#" class="btn btn-success btn-sm" id="btn_newroute"><i class="fa fa-plus"></i> Add Route</a>
+                            </div>
+                        </div>-->
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!--MENSAJERIA PARA HOY-->
+
+    <div class="ibox">
+        <div class="ibox-title">
+            <h5>
+                <span class="text-navy" id="titleTablaMananaHoy"><b>Shipments Today - Morning</b></span>
+                <span class="text-warning" id="titleTablaTardeHoy"><b>Shipments Today - Afternoon</b></span>
+            </h5>
+            <div class="ibox-tools">
+                <div class="btn-group">
+                    <button type="button" id="btnMananaHoy" class="btn btn-xs btn-primary">Morning Today</button>
+                    <button type="button" id="btnTardeHoy" class="btn btn-xs btn-warning">Afternoon Today</button>
+                </div>
+                <a class="collapse-link" onclick="viewHoy()">
+                    <i id="flechaHoy" class="fa fa-chevron-up"></i>
+                </a>
+
+            </div>
+        </div>
+        <div class="ibox-content" id="contentHoy">
+            <div class="table-responsive">
+                <input type="text" class="form-control input-sm m-b-xs" id="filterC" placeholder="Search in table">
+                <table id="tblMananaHoy" style="width:100%" height="100" class="footable table table-stripped table-bordered " data-page-size="4" data-filter=#filterC>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date</th>
+                            <th>Destination</th>
+                            <th>Client</th>
+                            <th>Ship to</th>
+                            <th>Type Mobility</th>
+                            <th>Pickup Time</th>
+                            <th>Service</th>
+                            <th>Contact</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="contentMananaHoy"></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="11">
+                                <ul class="pagination pull-right"></ul>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <table id="tblTardeHoy" style="width:100%" height="100" class="footable table table-stripped table-bordered " data-page-size="4" data-filter=#filterC>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date</th>
+                            <th>Destination</th>
+                            <th>Client</th>
+                            <th>Ship to</th>
+                            <th>Type Mobility</th>
+                            <th>Pickup Time</th>
+                            <th>Service</th>
+                            <th>Contact</th>
+                            <!--<th></th>-->
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="contentTardeHoy"></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="11">
+                                <ul class="pagination pull-right"></ul>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    <!--MENSAJERIA PARA MAÑANA-->
+
+    <div class="ibox">
+        <div class="ibox-title">
+            <h5>
+                <span class="text-navy" id="titleTablaMananaManana"><b>Shipments Tomorrow - Morning</b></span>
+                <span class="text-warning" id="titleTablaTardeManana"><b>Shipments Tomorrow - Afternoon</b></span>
+            </h5>
+            <div class="ibox-tools">
+                <div class="btn-group">
+                    <button type="button" id="btnMananaManana" class="btn btn-xs btn-primary">Morning Tomorrow</button>
+                    <button type="button" id="btnTardeManana" class="btn btn-xs btn-warning">Afternoon Tomorrow</button>
+                </div>
+                <a class="collapse-link" onclick="viewManana()">
+                    <i id="flechaManana" class="fa fa-chevron-up"></i>
+                </a>
+
+            </div>
+        </div>
+        <div class="ibox-content" id="contentManana">
+            <div class="table-responsive">
+                <input type="text" class="form-control input-sm m-b-xs" id="filterD"
+                       placeholder="Search in table">
+                <table id="tblMananaManana" style="width:100%" height="100" class="footable table table-stripped table-bordered " data-page-size="4" data-filter=#filterD>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date</th>
+                            <th>Destination</th>
+                            <th>Client</th>
+                            <th>Ship to</th>
+                            <th>Type Mobility</th>
+                            <th>Pickup Time</th>
+                            <th>Service</th>
+                            <th>Contact</th>
+                            <!--<th></th>-->
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="contentMananaManana"></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="11">
+                                <ul class="pagination pull-right"></ul>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <table id="tblTardeManana" style="width:100%" height="100" class="footable table table-stripped table-bordered " data-page-size="4" data-filter=#filterD>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date</th>
+                            <th>Destination</th>
+                            <th>Client</th>
+                            <th>Ship to</th>
+                            <th>Type Mobility</th>
+                            <th>Pickup Time</th>
+                            <th>Service</th>
+                            <th>Contact</th>
+                            <!--<th></th>-->
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="contentTardeManana"></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="11">
+                                <ul class="pagination pull-right"></ul>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!--MENSAJERIA PARA LUNES-->
+
+    <div class="ibox" id="iBoxLunes">
+        <div class="ibox-title">
+            <h5>
+                <span class="text-navy" id="titleTablaMananaManana"><b>Shipments Monday - Morning</b></span>
+            </h5>
+            <div class="ibox-tools">
+                <a class="collapse-link" onclick="viewLunes()">
+                    <i id="flechaLunes" class="fa fa-chevron-up"></i>
+                </a>
+
+            </div>
+        </div>
+        <div class="ibox-content" id="contentLunes">
+            <div class="table-responsive">
+                <input type="text" class="form-control input-sm m-b-xs" id="filterD"
+                       placeholder="Search in table">
+                <table id="tblLunesManana" style="width:100%" height="100" class="footable table table-stripped table-bordered " data-page-size="4" data-filter=#filterD>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date</th>
+                            <th>Destination</th>
+                            <th>Client</th>
+                            <th>Ship to</th>
+                            <th>Type Mobility</th>
+                            <th>Pickup Time</th>
+                            <th>Service</th>
+                            <th>Contact</th>
+                            <!--<th></th>-->
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="contentLunesManana"></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="11">
+                                <ul class="pagination pull-right"></ul>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+</div>

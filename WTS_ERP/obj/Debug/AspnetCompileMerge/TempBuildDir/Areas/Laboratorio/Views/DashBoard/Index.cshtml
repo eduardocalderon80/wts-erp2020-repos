@@ -1,0 +1,145 @@
+﻿<style>
+
+    /***** CHART CANTIDAD TOTAL MENSUAL *****/
+     #chartdiv_cantidad_total_pruebas_mensual {
+      width: 100%;
+      height: 500px;
+      float: left;
+    }
+
+    /*  */
+    #chartdiv_cantidad_total_pruebas_mensual .amcharts-axis-label {
+        cursor: pointer;
+    }
+
+    /*#chartdiv_cantidad_total_pruebas_mensual .amcharts-graph-column {
+        cursor: pointer;
+    }*/
+
+     /* CHART CANTIDAD POR PEUAB DE ULTIMO MES */
+
+    #chartdiv_cantidad_pruebas_paqueteprueba_mes {
+        width: 100%;
+        height: 600px;
+        float: left;
+    }
+
+
+    #legenddiv {
+        width: 150px;
+        height: 500px;
+        font-size: 11px;
+        /*border: 2px dotted #ccc;*/
+        float: left;
+    }
+
+    
+    /*.amcharts-export-menu-top-right {
+        top: 10px;
+        right: 0;
+    }*/
+
+    /*#chartdiv {
+        width: 100%;
+        height: 500px;
+        float: left;
+    }*/
+
+    /*#chartdiv2 {
+        width: 100%;
+        height: 500px;
+    }*/
+
+    /*.amcharts-export-menu-top-right {
+        top: 10px;
+        right: 0;
+    }*/
+
+   
+
+    /*#exportdiv {
+      float: right;
+    }
+
+    #exportdiv:hover .amcharts-export-menu {
+      opacity: 1;
+    }*/
+
+</style>
+
+<div id="pnl_laboratorio_dashboard">
+
+    <div id="pnl_laboratorio_dashboard_header" class="row wrapper white-bg page-heading">
+        <div class="ibox">
+            <div id="div_titulo_principal" class="col-sm-6">
+                <h2 class="font-bold">DashBoard</h2>
+            </div>
+            <div id="div_botones_header" class="col-sm-6 text-right" style="padding-top:1%">
+                @*<button id="btn_return" type="button" class="btn btn-outline btn-default">
+                    <span class="fa fa-reply-all"></span>
+                    Regresar
+                </button>*@
+            </div>
+        </div>
+    </div>
+
+
+    <div id="pnl_laboratorio_dashboard_body" class="row wrapper-content gray-bg animated">
+
+
+        <div class="ibox">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a class="fullscreen-link">
+                        <i class="fa fa-expand"></i>
+                    </a>
+                    @*<a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>*@
+                </div>
+            </div>
+
+            <div class="ibox-content">
+                <div class="form-group">
+                    <div class="form-horizontal row">
+                        <div class="col-sm-12">
+                            <div id="chartdiv_cantidad_total_pruebas_mensual"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ibox">
+            <div class="ibox-content">
+                <div class="form-group">
+                    <div class="form-horizontal row">
+                        <div class="col-sm-12">
+                            <div id="chartdiv_cantidad_pruebas_paqueteprueba_mes"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ibox">
+
+            <div class="ibox-content">
+                <div class="form-group">
+                    <div class="form-horizontal row">
+                        <div class="col-sm-12">
+                            <div id="tabla_cantidad_paquetepruebas_mensual"></div>
+                            <div id="legenddiv"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

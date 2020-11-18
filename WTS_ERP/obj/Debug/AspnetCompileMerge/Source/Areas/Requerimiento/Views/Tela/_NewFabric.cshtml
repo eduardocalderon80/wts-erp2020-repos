@@ -1,0 +1,477 @@
+﻿<style>
+    input[readonly] {
+        background-color: rgb(255, 255, 255) !important;
+        border: 1px solid #e5e6e7 !important;
+    }
+
+</style>
+<div id="panelEncabezado_NewFabric">
+    <div class="hide">
+        <input type="text" id="ParamsTela" value="DATA-PARAMETRO" />
+        <input type="text" id="rutaFileServerTela" value="@ViewBag.RutaFileServer" />
+    </div>
+    <div class="form-horizontal row">
+        <div class="col-sm-12 m-b">
+            <div class="float-left">
+                <ul class="nav nav-tabs" role="tablist" style="border-bottom: 0">
+                    <li class="active"><a class="nav-link" data-toggle="tab" href="#tabfa-1" aria-expanded="true"> SUMMARY</a></li>
+                    <li><a class="nav-link" data-toggle="tab" href="#tabfa-2" aria-expanded="true"> FILES</a></li>
+                    <li><a class="nav-link" data-toggle="tab" href="#tabfa-3" aria-expanded="true"> REQUESTS</a></li>
+                    <li><a class="nav-link" data-toggle="tab" href="#tabfa-4" aria-expanded="true"> COMBINATIONS</a></li>
+                    <li><a class="nav-link" data-toggle="tab" href="#tabfa-5" aria-expanded="false"> E-MAIL</a></li>
+                </ul>
+            </div>
+            <div class="text-right">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <span class="fa fa-ban"></span>
+                    Close
+                </button>
+                <button type="button" id="btnSaveFabric" class="btn btn-primary">
+                    <span class="fa fa-save"></span>
+                    Save
+                </button>
+                <button type="button" class="btn btn-warning" id="btnHoldFabric" style="display: none;">
+                    <span class="fa fa-repeat"></span>
+                    On Hold
+                </button>
+                <button type="button" class="btn btn-danger" id="btnDropFabric" style="display: none;">
+                    <span class="fa fa-repeat"></span>
+                    Dropped
+                </button>
+                <button type="button" class="btn btn-success" id="btnFabricSendRqs" style="display: none;">
+                    <span class="fa fa-send"></span> 
+                    Send
+                </button>
+            </div>
+            <hr />
+        </div>
+    </div>
+    <div class="form-horizontal row">
+        <div class="tab-content">
+            <div role="tabpanel" id="tabfa-1" class="tab-pane active">
+                <div id="fa_scroll_summary">
+                    <div class="col-sm-12 m-b-sm">
+                        <button type="button" class="btn btn-primary" id="btnFabricValidationRQs" onclick="app_NewFabric.fn_show_reqs(this)" style="display: none;">
+                            <span class="fa fa-chevron-up"></span> Validation
+                        </button>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group" id="div_fabric_reqs" style="display: none;">
+                            <div class="col-sm-4">
+                                <div class="checkbox checkbox-green">
+                                    <input id="req_fa_sel1" type="checkbox" name="reqs_fabric_select" >
+                                    <label for="req_fa_sel1">
+                                        Search for hangers by fabric code
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="checkbox checkbox-green">
+                                    <input id="req_fa_sel2" type="checkbox" name="reqs_fabric_select">
+                                    <label for="req_fa_sel2">
+                                        Textile analysis
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="checkbox checkbox-green">
+                                    <input id="req_fa_sel3" type="checkbox" name="reqs_fabric_select">
+                                    <label for="req_fa_sel3">
+                                        Laboratory testing
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="checkbox checkbox-green">
+                                    <input id="req_fa_sel4" type="checkbox" name="reqs_fabric_select">
+                                    <label for="req_fa_sel4">
+                                        Search for hangers by fabric description
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="checkbox checkbox-green">
+                                    <input id="req_fa_sel5" type="checkbox" name="reqs_fabric_select">
+                                    <label for="req_fa_sel5">
+                                        Projected textile analysis
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="checkbox checkbox-green">
+                                    <input id="req_fa_sel6" type="checkbox" name="reqs_fabric_select">
+                                    <label for="req_fa_sel6">
+                                        Fabric quotation
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="checkbox checkbox-green">
+                                    <input id="req_fa_sel7" type="checkbox" name="reqs_fabric_select" disabled>
+                                    <label for="req_fa_sel7">
+                                        Assembling hangers with fabric from a supplier
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="checkbox checkbox-green">
+                                    <input id="req_fa_sel8" type="checkbox" name="reqs_fabric_select">
+                                    <label for="req_fa_sel8">
+                                        Search for a past analysis report (2011 - 2016)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="checkbox checkbox-green">
+                                    <input id="req_fa_sel9" type="checkbox" name="reqs_fabric_select" disabled>
+                                    <label for="req_fa_sel9">
+                                        Fabric development
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <div class="hide">
+                                        <input type="text" id="IdRequerimiento" data-id="IdRequerimiento" class="enty_fabric" value="" />
+                                        <input type="text" id="IdRequerimientoDetalle" data-id="IdRequerimientoDetalle" class="enty_fabric" value="" />
+                                        <input type="text" id="IdPrograma" data-id="IdPrograma" class="enty_fabric" value="" />
+                                        <input type="text" id="IdCliente" data-id="IdCliente" class="enty_fabric" value="" />
+                                        <input type="text" id="IdEstado" data-id="_IdEstado" class="enty_fabric" value="" />
+
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="img-frame-gray">
+                                            <img id="imgSketchTela" src="">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label title="Upload image file" for="inputImageTela" class="btn btn-sm btn-primary btn-block btn-frame-gray" id="btnUpload">
+                                            <input type="file" accept="image/*" name="file" id="inputImageTela" style="display:none">
+                                            <i class="fa fa-upload"></i> Upload image
+                                        </label>
+                                        <button type="button" class="btn btn-danger btn-sm btn-block btn-frame-gray" id="btnDeleteUploadTela">
+                                            <i class="fa fa-trash"></i> Delete image
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <textarea class="form-control enty_fabric" id="txtFabricNotes" data-id="Nota" placeholder="Notes" rows="2"></textarea>
+                                            <label for="txtFabricNotes">Notes</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <select class="form-control enty_fabric" id="cboFabricTypeReq" data-id="TipoRequerimiento" disabled></select>
+                                            <label for="cboFabricTypeReq">Requirement Type</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group" style="display: none;">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <input class="form-control" id="cboStatusFabric" type="text" placeholder="Status" disabled>
+                                            <label for="cboStatusFabric">RQ Status</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <select class="form-control enty_fabric" id="cboFabricOwner" data-id="Duenio" ></select>
+                                            <label for="cboFabricOwner">Fabric Owner</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <input class="form-control enty_fabric" id="txtFabricWTSCode" type="text" placeholder="WTS Fabric Code" data-id="Codigo" disabled>
+                                            <label for="txtFabricWTSCode">WTS Fabric Code</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <textarea class="form-control enty_fabric" id="txtFabricDescription" placeholder="Category - Structure - (Title) - Density - (Content)" rows="3" data-id="Descripcion"></textarea>
+                                            <label for="txtFabricDescription">Fabric Description</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <input class="form-control enty_fabric" id="txtFabricReportATX" type="text" placeholder="Report WTS ATX" data-id="ReporteAtx" disabled>
+                                            <label for="txtFabricReportATX">Report WTS ATX</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <input class="form-control enty_fabric" id="txtFabricReportLab" type="text" placeholder="Report WTS Lab" data-id="ReporteLaboratorio" disabled>
+                                            <label for="txtFabricReportLab">Report WTS Lab</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <input class="form-control enty_fabric" id="txtFabricTradeName" type="text" placeholder="Trade Name" data-id="NombreComercial">
+                                            <label for="txtFabricTradeName">Trade Name</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <select class="form-control enty_fabric" id="cboFabricCategory" data-id="Categoria"></select>
+                                            <label for="cboFabricCategory">Fabric Category</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <select class="form-control enty_fabric" id="cboFabricStructure" data-id="Estructura"></select>
+                                            <label for="cboFabricStructure">Structure</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-6" style="padding-right: 0;">
+                                                <div class="has-float-label">
+                                                    <input class="form-control enty_fabric" id="txtFabricDensity" type="text" placeholder="Density (gr/m2)" data-id="Densidad" />
+                                                    <label for="txtFabricDensity">Density (gr/m2)</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <p style="margin-top: 5px; text-align: center;">-</p>
+                                            </div>
+                                            <div class="col-sm-4" style="padding-left: 0;">
+                                                <div class="has-float-label">
+                                                    <select class="form-control enty_fabric" id="cboFabricWash" data-id="TipoLavado"></select>
+                                                    <label for="cboFabricWash">BW/AW</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="input-group">
+                                            <div class="has-float-label">
+                                                <input class="form-control enty_fabric" id="txtFabricTitle" type="text" placeholder="Yarns Title" data-id="TituloHilado" disabled>
+                                                <label for="txtFabricTitle">Yarns Size</label>
+                                            </div>
+                                            <div class="input-group-btn">
+                                                <button type="button" class="btn btn-primary" id="btnFabricAddYarn">
+                                                    <span class="fa fa-plus"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="input-group">
+                                            <div class="has-float-label">
+                                                <input class="form-control enty_fabric" id="txtFabricContent" type="text" placeholder="Content" data-id="Contenido" disabled>
+                                                <label for="txtFabricContent">Content</label>
+                                            </div>
+                                            <div class="input-group-btn">
+                                                <button type="button" class="btn btn-primary" id="btnFabricAddContent">
+                                                    <span class="fa fa-plus"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <select class="form-control enty_fabric" id="cboFabricColor" multiple="multiple" data-id="ColorCliente" disabled="disabled">
+                                                <option value="Red">Red</option>
+                                                <option value="Blue">Blue</option>
+                                                <option value="Green">Green</option>
+                                                <option value="Yellow">Yellow</option>
+                                                <option value="Pink">Pink</option>
+                                            </select>
+                                            <label for="cboFabricColor">Client Color RQs</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <select class="form-control enty_fabric" id="cboFabricSupplierDirecType" data-id="TipoProveedorDirecto"></select>
+                                            <label for="cboFabricSupplierType">Direct Supplier Type</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <select class="form-control enty_fabric" id="cboFabricSupplierDirecName" data-id="ProveedorDirecto"></select>
+                                            <label for="cboFabricSupplierName">Direct Supplier Name</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <select class="form-control enty_fabric" id="cboFabricSupplierType" data-id="TipoProveedor"></select>
+                                            <label for="cboFabricSupplierType2">Fabric Supplier Type</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <select class="form-control enty_fabric" id="cboFabricSupplierName" data-id="Proveedor"></select>
+                                            <label for="cboFabricSupplierName2">Fabric Supplier Name</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <input class="form-control enty_fabric" id="txtFabricSupplierCode" type="text" placeholder="Supplier Fabric Code" data-id="CodigoProveedor">
+                                            <label for="txtFabricSupplierCode">Supplier Fabric Code</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <input class="form-control enty_fabric" id="txtFabricBulkNumer" type="text" placeholder="Fabric Bulk Number" data-id="NumeroBulk">
+                                            <label for="txtFabricBulkNumer">Fabric Bulk Number</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="btn-group">
+                                            <label title="Upload image file" for="inputTelaDoc" class="btn btn-sm btn-primary" style="width: 218px;">
+                                                <input type="file" accept=".csv,.xls,.xlsx,.pdf,.doc,.docx,.txt" name="fileDoc" id="inputTelaDoc" style="display:none">
+                                                <i class="fa fa-paperclip"></i> Attach Data Sheet
+                                            </label>
+                                            <button type="button" class="btn btn-info btn-sm" id="btnDownloadUploadDoc">
+                                                <i class="fa fa-download"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm" id="btnDeleteUploadDoc">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                            <small id="txtNameFileTela"></small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" id="tabfa-2" class="tab-pane">
+                <div class="col-sm-12">
+                    <label title="Upload  file" for="inputFileRequerimientoTela" class="btn btn-primary m-b-sm">
+                        <input type="file" accept=".csv,.xls,.xlsx,.pdf,.doc,.docx,.txt" id="inputFileRequerimientoTela" style="display:none">
+                        <span class="fa fa-upload"></span> Upload File
+                    </label>
+                    <div class="col-sm-12" id="div_tbl_files_fa" style="padding: 0;">
+                        <table class="table table-hover table-bordered table-vertical-center" id="tbl_files_fa">
+                            <thead>
+                                <tr>
+                                    <th class="no-sort" width="6%"></th>
+                                    <th width="32%">Name</th>
+                                    <th width="20%">User</th>
+                                    <th width="22%">Type</th>
+                                    <th width="20%">Upload Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_files_fa"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" id="tabfa-3" class="tab-pane">
+                <div class="col-sm-12">
+                    <div id="div_tbl_Requeriments" style="overflow: auto; height: 400px;">
+                        <table class="table table-hover table-bordered table-vertical-center" id="tbl_files_comm" style="width: 1800px;">
+                            <thead>
+                                <tr>
+                                    <th>Request Date</th>
+                                    <th>Request Type</th>
+                                    <th width="5%"># Request</th>
+                                    <th>Number</th>
+                                    <th></th>
+                                    <th>Fabric Description</th>
+                                    <th>Supplier Name</th>
+                                    <th>Comment of Applicant</th>
+                                    <th width="7%">Last Status</th>
+                                    <th>Status</th>
+                                    <th>Operator</th>
+                                    <th width="20%">Comment / Reason</th>
+                                    <th width="5%">Links</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_tbl_files_comm"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" id="tabfa-4" class="tab-pane">
+                <div class="col-sm-12" id="scroll-combination">
+                    <button type="button" class="btn btn-sm btn-primary" id="btnFabricAddCombination" style="width: 200px;">
+                        <span class="fa fa-plus"></span>
+                        Add
+                    </button>
+                    <table class="table table-hover table-bordered table-vertical-center" id="tbl_combinations" style="margin-top: 20px">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Product Type</th>
+                                <th>Color Combo</th>
+                                <th>Ornament Color</th>
+                                <th>Requirement Type</th>
+                                <th>WTS Ornament Code</th>
+                                <th>Ornament Type</th>
+                                <th>Technique</th>
+                                <th>Description</th>
+                                <th>Client Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody_tbl_combinations"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div role="tabpanel" id="tabfa-5" class="tab-pane">
+                <div class="col-sm-3">
+                    <div class="feed-activity-list" id="mailbox_header_fabric"></div>
+                </div>
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="chat-discussion" id="mailbox_body_fabric"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,182 @@
+﻿<div class="ibox" id="panelEncabezado_new_motivo_movimiento">
+    <div class="ibox-title">
+        <div class="ibox-tools">
+            <button id="_btnSave_new_motivo_movimiento" class="btn btn-primary">
+                Guardar
+            </button>
+            <button id="_btnCancelar_new_motivo_movimiento" class="btn btn-default" data-dismiss="modal">
+                Cerrar
+            </button>
+        </div>
+    </div>
+    <div class="" style="overflow-y: auto; max-height: 850px;">
+        <div class="hide">
+            <input type="text" id="txtpar_new_motivo_movimiento" value="DATA-PARAMETRO" />
+            <input type="text" id="hf_idtipomotivo" class="_enty" value="0" data-required="true" data-min="1" data-max="20" data-id="idtipomotivo" />
+            <input type="text" id="hf_accion_new_motivo" class="_enty" value="new" data-id="accion" />
+        </div>
+        <div class="ibox">
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <!--FILA 1-->
+                        <div class="col-sm-12">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Movimiento</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control _enty" data-min="1" data-max="20" data-required="true" id="_cbo_movimiento_new_motivo" data-id="idtipomovimiento"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Motivo</label>
+                                        <div class="col-sm-9">
+                                            <input id="txtmotivo_new_motivo" class="form-control _enty" data-required="true" data-min="1" data-max="50" data-id="motivo">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ibox">
+            <div class="ibox-title">
+                <h4>Ver Motivos</h4>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Filtrar x Movimiento</label>
+                                <div class="col-sm-7">
+                                    <select class="form-control" id="_filtro_tipo"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div id="div_tbl_motivo" class="table-responsive" style="max-height: 250px;">
+                        <table id="tbl_motivo" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="col-sm-2"></th>
+                                    <th class="col-sm-5">Movimiento</th>
+                                    <th class="col-sm-5">Motivo</th>
+                                </tr>
+                            </thead>
+                            <tbody id="_tbody_new_motivo_movimiento">
+                                @*<tr>
+                                    <td class="text-center">
+                                        <button class="btn btn-sm btn-info" onclick="appInventarioMotivo.fn_EditarDatos(4)" title="Editar Motivo">
+                                            <span class="fa fa-edit" style="cursor:pointer;"></span>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger" onclick="appInventarioMotivo.req_EliminarDatos(4)" title="Eliminar Motivo">
+                                            <span class="fa fa-trash" style="cursor:pointer;"></span>
+                                        </button>
+                                    </td>
+                                    <td>Entrada</td>
+                                    <td>aaa</td>
+                                </tr>*@
+
+                                @*<tr>
+                                    <td class="text-center">
+                                        <button class="btn btn-sm btn-info" onclick="appInventarioMotivo.fn_EditarDatos(4)" title="Editar Motivo">
+                                            <span class="fa fa-edit" style="cursor:pointer;"></span>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger" onclick="appInventarioMotivo.req_EliminarDatos(4)" title="Eliminar Motivo">
+                                            <span class="fa fa-trash" style="cursor:pointer;"></span>
+                                        </button>
+                                    </td>
+                                    <td>Entrada</td>
+                                    <td>aaa</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">
+                                        <button class="btn btn-sm btn-info" onclick="appInventarioMotivo.fn_EditarDatos(4)" title="Editar Motivo">
+                                            <span class="fa fa-edit" style="cursor:pointer;"></span>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger" onclick="appInventarioMotivo.req_EliminarDatos(4)" title="Eliminar Motivo">
+                                            <span class="fa fa-trash" style="cursor:pointer;"></span>
+                                        </button>
+                                    </td>
+                                    <td>Entrada</td>
+                                    <td>aaa</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">
+                                        <button class="btn btn-sm btn-info" onclick="appInventarioMotivo.fn_EditarDatos(4)" title="Editar Motivo">
+                                            <span class="fa fa-edit" style="cursor:pointer;"></span>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger" onclick="appInventarioMotivo.req_EliminarDatos(4)" title="Eliminar Motivo">
+                                            <span class="fa fa-trash" style="cursor:pointer;"></span>
+                                        </button>
+                                    </td>
+                                    <td>Entrada</td>
+                                    <td>aaa</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">
+                                        <button class="btn btn-sm btn-info" onclick="appInventarioMotivo.fn_EditarDatos(4)" title="Editar Motivo">
+                                            <span class="fa fa-edit" style="cursor:pointer;"></span>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger" onclick="appInventarioMotivo.req_EliminarDatos(4)" title="Eliminar Motivo">
+                                            <span class="fa fa-trash" style="cursor:pointer;"></span>
+                                        </button>
+                                    </td>
+                                    <td>Entrada</td>
+                                    <td>aaa</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">
+                                        <button class="btn btn-sm btn-info" onclick="appInventarioMotivo.fn_EditarDatos(4)" title="Editar Motivo">
+                                            <span class="fa fa-edit" style="cursor:pointer;"></span>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger" onclick="appInventarioMotivo.req_EliminarDatos(4)" title="Eliminar Motivo">
+                                            <span class="fa fa-trash" style="cursor:pointer;"></span>
+                                        </button>
+                                    </td>
+                                    <td>Entrada</td>
+                                    <td>aaa</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">
+                                        <button class="btn btn-sm btn-info" onclick="appInventarioMotivo.fn_EditarDatos(4)" title="Editar Motivo">
+                                            <span class="fa fa-edit" style="cursor:pointer;"></span>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger" onclick="appInventarioMotivo.req_EliminarDatos(4)" title="Eliminar Motivo">
+                                            <span class="fa fa-trash" style="cursor:pointer;"></span>
+                                        </button>
+                                    </td>
+                                    <td>Entrada</td>
+                                    <td>aaa</td>
+                                </tr>*@
+                            </tbody>
+                        </table>
+                    </div>
+                    @*<div id="div_tbl_new_motivo_movimiento" style="max-height:300px; overflow-y:auto;">
+            <table class="table table-bordered table-hover" id="_tbl_new_motivo_movimiento">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="text-center">Raw Material</th>
+                        <th class="text-center">%</th>
+                        <th class="text-center">Yarn type</th>
+                        <th class="text-center">Color</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody_new_motivo_movimiento"></tbody>
+            </table>
+        </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

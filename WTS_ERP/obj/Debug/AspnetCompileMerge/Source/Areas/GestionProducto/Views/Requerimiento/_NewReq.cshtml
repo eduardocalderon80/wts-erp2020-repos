@@ -1,0 +1,83 @@
+﻿<div class="panel panel-default" id="newreq_header">
+    <div class="panel-heading">
+        <div class="text-right">
+            <button type="button" class="btn btn-primary" id="_btn_aceptarnewreq">
+                <span class="fa fa-check"></span>
+                Accept
+            </button>
+            <button type="button" class="btn btn-default" id="_btn_cancelarnewreq" data-dismiss="modal">
+                <span class="fa fa-ban"></span>
+                Cancel
+            </button>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+
+            <div class="col-sm-12 text-center" >
+                <div class="form-group">
+                    <div class="radio i-checks">
+                        <div class="col-sm-6"><input type="radio" name="option" class="" id="divRbCopy" value="0" onclick="Mostrar(this)" /><label>Copy</label>            </div>
+                        <div class="col-sm-6"><input type="radio" name="option" class="" id="divRbNext" value="1" onclick="Mostrar(this)" checked /><label>Next Sample</label></div>
+                    </div>
+                    <div class="text-center hide" id="divLblRBCopy">
+                        <label class="control-label" style="color:red;">Si se requiere copiar el req como referencia para un req nuevo. Ejm: Solicitar un proto a una segunda fabrica</label>
+                    </div>
+                    <div class="text-center" id="divLblRBNext">
+                        <label class="control-label" style="color:red;">Se va a solicitar la siguiente muestra correspondiente al mismo estilo. Ejm: Solicitar un Fit Sample cuando se envió un proto</label>
+                    </div>
+                </div>             
+            </div>
+
+            <div class="col-sm-12" id="_div_TipoMuestranewreq">
+                <div class="form-group">                                   
+                            <label class="control-label col-sm-2">Sample Type</label>
+                            <div class="col-sm-5">
+                                <select class="form-control _enty" id="cboTipoMuestranewreq" data-min="1" data-max="100" data-required="true" data-id="idtipomuestraxclientenewreq">
+                                    <option value="">Select</option>
+                                </select>
+                                <span class="hide text-danger" id="_span_error_TipoMuestranewreq">Select type</span>
+                            </div>                                         
+                            <label class="control-label col-sm-2"># Submit</label>
+                            <div class="col-sm-2">
+                                <select id="cboVersionnewreq" class="form-control _enty" data-min="1" data-max="100" data-required="true" data-id="versionnewreq"></select>
+                            </div>
+                            <span class="hide text-danger" id="_span_error_Versionnewreq">Select version</span>                                        
+                </div>
+            </div>
+            
+            <div class="col-sm-12" id="_div_team_newreq">
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Team</label>
+                    <div class="col-sm-5">
+                        <select class="form-control _enty " id="cboTeam_newreq" data-live-search="true" data-min="1" data-max="100" data-required="true" data-id="idgrupopersonal_newreq">
+                            <option value="0">Select</option>
+                        </select>
+                        <span class="hide text-danger" id="_span_error_team_newreq">Select Team</span>
+                    </div>
+                </div>              
+            </div>               
+               
+            <div class="col-sm-12" id="_div_Comment">
+                <div class="form-group">                  
+                        <label class="control-label col-sm-2"> Comment</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" rows="4" id="_txtCommentNew"></textarea>
+                        </div>                                                                        
+                </div>
+            </div>
+             <div class="col-sm-12 hide" id="_div_file">
+                 <div class="form-group">                    
+                     <label class="control-label col-sm-2"> File</label>                        
+                     <span class="input-group-btn">
+                         <span class="btn btn-success btn-sm btn-file">
+                             <span class="fa fa-upload"></span> &nbsp;Add File
+                             <input type="file" id="filearchivo" />
+                         </span>
+                     </span>                                       
+                 </div>                                                            
+             </div>                   
+        </div>
+    </div>    
+</div>
+

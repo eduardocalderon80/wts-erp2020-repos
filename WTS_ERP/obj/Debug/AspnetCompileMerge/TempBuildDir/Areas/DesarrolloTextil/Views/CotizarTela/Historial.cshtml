@@ -1,0 +1,56 @@
+﻿<style>
+    .dataTables_paginate {
+        margin-top: 15px;
+        position: absolute;
+        text-align: center;
+    }
+
+    .align-middle {
+        vertical-align: middle !important;
+    }
+
+    .details-control {
+        text-align: center;
+        cursor: pointer;
+    }
+
+    button.dim {
+        /*margin-right: 0px;
+        margin-bottom: 12px !important;*/
+        margin: 0px 10px 12px 10px !important;
+    }
+</style>
+<div class="ibox" id="panelEncabezado_Historial_Cotizacion">
+    <div class="hide">
+        <input type="text" id="txtparametro" value="DATA-PARAMETRO" />
+    </div>
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div id="content_header">
+            <div class="col-lg-6">
+                <h2 id="_title" class="text-navy bold"></h2>
+                <ol class="breadcrumb">
+                    <li></li>
+                </ol>
+            </div>
+            <div class="col-lg-6" style="text-align:right;padding:20px">
+                <button type="button" class="btn btn-default" id="btnReturn">
+                    <span class="fa fa-ban"></span>
+                    Regresar
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content gray-bg animated fadeInRight">
+        <div class="ibox">
+            <div class="ibox float-e-margins">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div id="div_tbl_historial"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

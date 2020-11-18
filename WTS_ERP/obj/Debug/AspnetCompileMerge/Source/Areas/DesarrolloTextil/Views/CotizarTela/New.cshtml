@@ -1,0 +1,700 @@
+﻿<style>
+    .no-sort::after {
+        display: none !important;
+    }
+
+    .no-sort {
+        pointer-events: none !important;
+        cursor: default !important;
+    }
+
+    thead input {
+        width: 100%;
+    }
+
+    .modal-lg-1000 {
+        width: 1000px;
+    }
+    .error-empty {
+        border-color: #ed5565 !important;
+    }
+        .error-empty .form-control:focus {
+            border-color: #ed5565 !important;
+        }
+</style>
+<div class="ibox" id="panelEncabezado_cotizartela">
+    <div class="hide">
+        <input type="text" id="txtpar_new" value="DATA-PARAMETRO" />
+    </div>
+    <div class="ibox-title">
+        <div class="row">
+            <div class="col-sm-5">
+                <h3 id="_title" class="text-navy bold">DATA-TITULO</h3>
+            </div>
+            <div class="col-sm-7 text-right">
+                <button type="button" class="btn btn-success" id="btnFinalizar" style="display: none;">
+                    <span class="fa fa-save"></span>
+                    Finalizar Orden de Cotizacion
+                </button>
+                <button type="button" class="btn btn-primary" id="btnSave">
+                    <span class="fa fa-save"></span>
+                    Grabar
+                </button>
+                <button type="button" class="btn btn-warning" id="btnClean">
+                    <span class="fa fa-eraser"></span>
+                    Limpiar Campos
+                </button>
+                <button type="button" class="btn btn-default" id="btnReturn">
+                    <span class="fa fa-ban"></span>
+                    Regresar
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="ibox-content wrapper wrapper-content gray-bg" id="div_cuerpoprincipal" style="overflow-y: auto; max-height: 850px;">
+        <div class="ibox" id="div_solicitud">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <h5 class="text-navy bold">Solicitud Detalle</h5>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div id="div_tbl_solicitud">
+                            <table class="table table-bordered" style="width: 100%; margin-bottom: 0;">
+                                <thead>
+                                    <tr>
+                                        <th>N°</th>
+                                        <th>Cliente</th>
+                                        <th>Cliente Temporada</th>
+                                        <th>Codigo Tela</th>
+                                        <th>N° ATX</th>
+                                        <th>Descripción</th>
+                                        <th>Trade Name</th>
+                                        <th>Division</th>
+                                        <th>Rango KG</th>
+                                        <th>Modalidad</th>
+                                        <th>Comentario</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody_tbl_solicitud"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ibox">
+            <div class="hide">
+                <input type="text" id="txtpar_new" value="DATA-PARAMETRO" />
+                <input type="text" id="hf_idsolicitud" class="_enty_grabar" data-required="false" data-min="1" data-max="20" data-id="IdInventario" />
+            </div>
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <h5 class="text-navy bold">Datos</h5>
+                </div>
+
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal col-sm-12">
+                        <!--COLUMNA 1-->
+                        <div class="col-sm-4">
+                            <div class="form-group" id="ddfechainicio">
+                                <label class="col-sm-4 control-label"> Fecha</label>
+                                <div class="col-sm-8">
+                                    <div class='input-group date '>
+                                        <span class='input-group-addon'> <i class='fa fa-calendar'> </i> </span>
+                                        <input id="txtfechainicio" class="form-control  _enty_grabar" disabled  data-min="1" data-max="254" data-id="fecharegistro">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--COLUMNA 2-->
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Cliente</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control _enty_grabar" data-min="1" data-max="20"  data-type="int" data-required="true"  id="cbo_clientes" data-id="idcliente"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Temporada</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control _enty_grabar" data-min="1" data-max="20" data-type="int" data-required="true" id="cbo_temporada" data-id="idclientetemporada">
+                                        <option value="0">Seleccione...</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal col-sm-12">
+                        <!--COLUMNA 1-->
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Codigo Tela</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group _viewOnly">
+                                        <input id="txtCodigoTela" class="form-control  _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="codigotela">
+                                        <div class="input-group-btn">
+                                            <button type="button" class="btn btn-primary" id="btnBuscarxCodigoTela">
+                                                <span class="fa fa-search"></span>
+                                            </button>
+                                            <button type="button" class="btn btn-warning" id="btnBuscarCodigoEnLista" data-toggle="modal" data-target=".bd-example-modal-lg">
+                                                <span class="fa fa-plus"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> N° Reporte ATX</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group _viewOnly">
+                                        <input id="txtnumero_reporteatx" class="form-control  _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="codigo">
+                                        <div class="input-group-btn">
+                                            <button type="button" class="btn btn-primary" id="btnBuscarxATX">
+                                                <span class="fa fa-search"></span>
+                                            </button>
+                                            <button type="button" class="btn btn-warning" id="btnBuscarATXEnLista" data-toggle="modal" data-target=".bd-example-modal-lg">
+                                                <span class="fa fa-plus"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal col-sm-12">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Mill Code</label>
+                                <div class="col-sm-8">
+                                    <input id="txtmillcode" class="form-control  _enty_grabar" data-min="1" data-max="254" data-id="millcode">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Batch</label>
+                                <div class="col-sm-8">
+                                    <input id="txtbatch" class="form-control  _enty_grabar" data-min="1" data-max="254" data-id="batch">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Familia</label>
+                                <div class="col-sm-8">
+                                    <input id="txtfamilia" class="form-control  _enty_grabar" data-min="1" data-max="254" data-id="familia">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal col-sm-12">
+                        <!--COLUMNA 1-->
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Especificacion</label>
+                                <div class="col-sm-8">
+                                    <input id="txtespecificacion" class="form-control  _enty_grabar" data-min="1" data-max="254" data-id="especificacion">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> % Contenido de Tela</label>
+                                <div class="col-sm-8">
+                                    <input id="txtporcentaje_contenido_tela" class="form-control  _enty_grabar" data-min="1" data-max="254" data-id="porcentaje_contenido_tela">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Teñido</label>
+                                <div class="col-sm-8">
+                                    <input id="txttenido" class="form-control  _enty_grabar" data-min="1" data-max="254" data-id="tenido">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-horizontal col-sm-12">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Densidad(g./m.²)</label>
+                                <div class="col-sm-8">
+                                    <input id="txtdensidad" class="form-control  _enty_grabar" data-min="1" data-max="254" data-id="densidad">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Densidad (oz./Yd.²)</label>
+                                <div class="col-sm-8">
+                                    <input id="txtdensidad_oz" class="form-control  _enty_grabar" data-min="1" data-max="254" style="color:#0000FF;" data-id="densidadozyd" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Galga</label>
+                                <div class="col-sm-8">
+                                    <input id="txtgalga" class="form-control  _enty_grabar" data-min="1" data-max="254" data-id="txtgalga">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal col-sm-12">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Ancho Total (m.)</label>
+                                <div class="col-sm-8">
+                                    <input id="txtanchototal" class="form-control  _enty_grabar" data-min="1" data-max="254" data-id="anchototal">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Ancho Util (inch.)</label>
+                                <div class="col-sm-8">
+                                    <input id="txtancho_util" class="form-control  _enty_grabar" data-min="1" data-max="254" style="color:#0000FF;" data-id="anchoutil" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Diametro</label>
+                                <div class="col-sm-8">
+                                    <input id="txtdiametro" class="form-control  _enty_grabar" data-min="1" data-max="254" data-id="diametro">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal col-sm-12">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Testing</label>
+                                <div class="col-sm-8">
+                                    <input id="txttesting" class="form-control  _enty_grabar" data-min="1" data-max="254" data-id="codtesting">
+                                </div>
+                            </div>
+                        </div>                        
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> BW/AW</label>
+                                <div class="col-sm-8">
+                                    <label>
+                                        <input class="i-check-lavado" type="radio" value="BW" name="tipo_lavado" />
+                                        BW
+                                    </label>
+                                    <label>
+                                        <input class="i-check-lavado" type="radio" value="AW" name="tipo_lavado" />
+                                        AW
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal col-sm-12">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Modalidad</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control _enty_grabar" data-min="1" data-max="20" data-type='int' data-required="true" id="cbo_modalidad" data-id="modalidad">
+                                        <option value="0">Seleccione ...</option>
+                                        <option value="M">Muestra</option>
+                                        <option value="P">Produccion</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Semaforo Oculto -->
+                        <div class="col-sm-4 hide">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Semáforo</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control _enty_grabar" data-min="1" data-max="20" data-type='int' data-required="false" id="cbo_semaforo" data-id="semaforo">
+                                        <option value="0">Seleccione ...</option>
+                                        <option value="V">Verde</option>
+                                        <option value="A">Amarillo</option>
+                                        <option value="R">Rojo</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Semaforo -->
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Shapped Yarn</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control _enty_grabar" id="txtyarn" data-required="true" data-min="1" data-max="2000" data-id="yarn" list="lstYarn" />
+                                        <datalist id="lstYarn"></datalist>
+                                        <span class="btn btn-sm btn-success input-group-addon">
+                                            <span class="fa fa-plus-circle"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4" style="display: none;">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="txtnewyarn" />
+                                        <span class="btn btn-sm btn-success input-group-addon">
+                                            <span class="fa fa-save"></span>
+                                            Grabar
+                                        </span>
+                                        <span class="btn btn-sm btn-danger input-group-addon">
+                                            <span class="fa fa-close"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ibox" id="div_Hilado">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <h5 class="text-navy bold">Hilado</h5>
+                    <a class="collapse-link">
+                        <span class="fa fa-chevron-up icono_collapse"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div id="divHilado">
+                            <table id="tbl_style_agregar" class="table table-bordered table-hover" style="width: 100%; max-width: 100%;  padding-right: 0px;">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 5%;">Titulo</th>
+                                        <th style="width: 5%;">% Hilado</th>
+                                        <th style="width: 10%;">Contenido</th>
+                                        <th style="width: 10%;">% Tela</th>
+                                        <th class="text-center" style="width: 15%;">Proveedor</th>
+                                        <th class="text-center" style="width: 5%;">Precio</th>
+                                        <th class="text-center" style="width: 5%;">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody_index_contenido"></tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="6">Total</td>
+                                        <td><label id="td_total_precio_hilos">0.00</label></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ibox" id="div_Hilado">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <h5 class="text-navy bold">Servicio</h5>
+                    <a class="collapse-link">
+                        <span class="fa fa-chevron-up icono_collapse"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal col-sm-12 _viewOnly-hide">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Servicio</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control _enty_grabar" data-max="20"  data-required="true" id="cbo_servicio" data-id="idservicio"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <div class="col-sm-8">
+                                    <button type="button" class="btn btn-primary" id="btnAgregarServicio">
+                                        <span class="fa fa-plus"></span>
+                                        Añadir
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal">
+                        <div id="divHilado">
+                            <table id="tbl_servicios" class="table table-bordered table-hover" style="width: 100%; max-width: 100%;  padding-right: 0px;">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center" style="width: 5%;"></th>
+                                        <th style="width: 10%;">Servicios</th>
+                                        <th style="width: 10%;">Proveedor</th>
+                                        <th style="width: 10%;">% Merma</th>
+                                        <th class="text-center" style="width: 5%;">Precio</th>
+                                        <th class="text-center" style="width: 5%;">Total Acumulado</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody_servicios_proveedor"></tbody>
+                                <tfoot style="display: none;">
+                                    <tr>
+                                        <td colspan="5">Total</td>
+                                        <td><label id="td_total_precio_servicio">0.00</label></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ibox" id="div_Hilado">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <h5 class="text-navy bold">Cotizacion</h5>
+                    <a class="collapse-link">
+                        <span class="fa fa-chevron-up icono_collapse"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal col-sm-12">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">RENDIMIENTO m/Kg</label>
+                                <div class="col-sm-6">
+                                    <input id="txtrendimiento_m" class="form-control  _enty_grabar" data-required="true" disabled data-min="1" data-max="254" style="color:#0000FF;" data-id="rendimientomkg" value="0.00">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">RENDIMIENTO Yd/Kg</label>
+                                <div class="col-sm-6">
+                                    <input id="txtrendimiento_yd" class="form-control  _enty_grabar" data-required="true" disabled data-min="1" data-max="254" style="color:#0000FF;" data-id="rendimientoydkg" value="0.00">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal col-sm-12">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">PRECIO RESULTANTE US$/Kg.</label>
+                                <div class="col-sm-6">
+                                    <input id="txtprecio_kg" class="form-control  _enty_grabar" data-required="true" disabled data-min="1" data-max="254" style="color:#0000FF;" data-id="precioresultantekg" value="0.00">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">PRECIO RESULTANTE $/m</label>
+                                <div class="col-sm-6">
+                                    <input id="txtprecio_m" class="form-control  _enty_grabar" data-required="true" data-min="1" data-max="254" disabled style="color:#0000FF;" data-id="precioresultantem" value="0.00">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">PRECIO RESULTANTE $/Yd</label>
+                                <div class="col-sm-6">
+                                    <input id="txtprecio_yd" class="form-control  _enty_grabar" data-required="true" data-min="1" data-max="254" disabled style="color:#0000FF;" data-id="precioresultanteyd" value="0.00">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal col-sm-12">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">N° DÍAS</label>
+                                <div class="col-sm-6">
+                                    <input id="txtdias" class="form-control  _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="dias" value="0" data-type="int">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal col-sm-12">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">CANTIDAD MÍNIMA/ ORDEN Kg</label>
+                                <div class="col-sm-6">
+                                    <input id="txtcantidad_minima_kg" class="form-control  _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="cantidadminimaordenkg" value="0.00" data-type="dec">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">CANTIDAD MÍNIMA/ ORDEN m</label>
+                                <div class="col-sm-6">
+                                    <input id="txtcantidad_minima_m" class="form-control  _enty_grabar" data-required="true" disabled style="color:#0000FF;" data-min="1" data-max="254" data-id="cantidadminimaordenm" value="0.00" title="editar">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">CANTIDAD MÍNIMA/ ORDEN Yd</label>
+                                <div class="col-sm-6">
+                                    <input id="txtcantidad_minima_yd" class="form-control  _enty_grabar" data-required="true" data-min="1" disabled style="color:#0000FF;" data-max="254" data-id="cantidadminimaordenyd" value="0.00">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal col-sm-12">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">CANTIDAD MÍNIMA/ COLOR Kg</label>
+                                <div class="col-sm-6">
+                                    <input id="txtcantidad_minima_color_kg" class="form-control  _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="cantidadminimacolorkg" value="0.00" data-type="dec">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">CANTIDAD MÍNIMA/ COLOR m</label>
+                                <div class="col-sm-6">
+                                    <input id="txtcantidad_minima_color_m" class="form-control  _enty_grabar" data-required="true" data-min="1" disabled style="color:#0000FF;" data-max="254" data-id="cantidadminimacolorm" value="0.00">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">CANTIDAD MÍNIMA/ COLOR Yd</label>
+                                <div class="col-sm-6">
+                                    <input id="txtcantidad_minima_color_yd" class="form-control  _enty_grabar" data-required="true" data-min="1" disabled style="color:#0000FF;" data-max="254" data-id="cantidadminimacoloryd" value="0.00">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal col-sm-12 hide">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">STOCK COLOR</label>
+                                <div class="col-sm-6">
+                                    <input id="txtstock" class="form-control  _enty_grabar" data-required="false" data-min="1" data-max="254" data-id="stockcolor" value="0" data-type="int">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal col-sm-12 hide">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">STOCK Kg</label>
+                                <div class="col-sm-6">
+                                    <input id="txtstock_kg" class="form-control  _enty_grabar" data-required="false" data-min="1" data-max="254" data-id="stockcolorkg" value="0.00" data-type="dec">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">STOCK m</label>
+                                <div class="col-sm-6">
+                                    <input id="txtstock_m" class="form-control  _enty_grabar" data-required="false" data-min="1" disabled style="color:#0000FF;" data-max="254" data-id="stockcolorm" value="0.00">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">STOCK Yd</label>
+                                <div class="col-sm-6">
+                                    <input id="txtstock_yd" class="form-control  _enty_grabar" data-required="false" data-min="1" disabled style="color:#0000FF;" data-max="254" data-id="stockcoloryd" value="0.00">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ibox" style="margin-bottom:0px;">
+            <div class="ibox-title">
+                <h5 class="text-navy bold">Observaciones</h5>
+            </div>
+            <div class="ibox-content">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <textarea class="form-control _enty_grabar" id="txta_observaciones" data-id="observaciones"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="ibox" style="margin-bottom:0px;">
+            <div class="ibox-title">
+                <h5 class="text-navy bold">Recordar</h5>
+            </div>
+            <div class="ibox-content">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <textarea class="form-control _enty_grabar" id="txta_recordar" data-id="recordar"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered modal-lg-1000">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header bg-primary">
+                <button type="button" class="close"
+                        data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Agregar Items
+                </h4>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="col-sm-8">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Filtrar x Anio</label>
+                                <div class="col-sm-8">
+                                    <select id="cboAnioATX" class="form-control"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-warning" id="btnBuscarItemsModal">
+                            <span class="fa fa-plus"></span>
+                            Buscar Items
+                        </button>
+                        <button type="button" class="btn btn-primary" id="btnAgregarItemsModal" data-dismiss="modal">
+                            <span class="fa fa-plus"></span>
+                            Agregar Item
+                        </button>
+                    </div>
+                </div>
+                <div id="div_tbl_Items" style="width: 100%; overflow-y: auto;"></div>
+                <div id="div_tbl_Items_pagination"></div>
+            </div>
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                @*<button type="button" class="btn btn-default"
+                            data-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        Save changes
+                    </button>*@
+            </div>
+        </div>
+    </div>
+</div>

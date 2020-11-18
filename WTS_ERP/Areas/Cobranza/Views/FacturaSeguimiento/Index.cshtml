@@ -1,0 +1,148 @@
+﻿<style type="text/css">    
+    .row-selected {
+        background-color: #1ab394 !important;
+
+    }
+
+    th {
+        padding: 8px;
+        border: 1px solid #e7e7e7;
+        background-color: #F5F5F6;
+        text-align: center;
+    }
+
+    td {
+        padding: 5px;
+        border-bottom: 1px solid #e7e7e7;
+        padding-left: 20px;
+    }
+
+     .hoverTable {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .hoverTable td {
+        padding: 7px;
+        border: #4e95f4 1px solid;
+    }
+    
+    .hoverTable tr:hover {
+            background-color: #e7e7e7;
+    }
+
+    .underline {
+        border-bottom: 2px solid currentColor !important;
+    }
+
+    .pointer {
+        cursor:pointer !important;
+    }
+
+</style>
+<div class="ibox" id="panelencabezado_seguimiento">
+    <div id="content_header" class="ibox-title">
+        <h2 class="text-navy bold">List of Invoice</h2>
+        <div class="ibox-tools text-right">
+            <button id="btnBuscarFactura" type="button" class="btn btn-primary">
+                <span class="fa fa-search"></span>
+                Search
+            </button>
+            <button id="btnExportar" type="button" class="btn btn-primary">
+                <span class="fa fa-file-excel-o"></span>
+                Export
+            </button>
+            <button id="btnSeguimiento" type="button" class="btn btn-info">
+                <span class="fa fa-share"></span>
+                tracing
+            </button>
+        </div>
+
+
+    </div>
+
+
+    <div class="row wrapper white-bg page-heading">
+
+        <div id="tabledetails" class="ibox-content">
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div class="col-sm-3">
+                        <label class="control-label">Client</label>
+                        <select id="cbocliente" class="form-control _enty select2_courier" style="width:100%" name="cbocliente" data-id="cbocliente" data-required="true"></select>
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="control-label">Estado</label>
+                        <select id="cboestado" class="form-control _enty select2_courier" style="width:100%" name="cboestado" data-id="cboestado" data-required="true"></select>
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="control-label">Type Report</label>
+                        <select id="cbotipo" class="form-control _enty select2_courier" style="width:100%" name="cbotipo" data-id="cbocliente" data-required="true"></select>
+                    </div>
+                </div>
+                <div class="form-horizontal row">
+                    <div class="col-sm-3">
+                        <label class="control-label">N° Invoice</label>
+                        <input type="text" id="txtfactura" name="status" value="" placeholder="Number Invoice" class="form-control">
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="control-label">N° Operacion</label>
+                        <input type="text" id="txtoperacion" name="status" value="" placeholder="Number Operacion" class="form-control">
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="control-label">Type Invoice</label>
+                        <select id="cbotipofactura" class="form-control _enty select2_courier" style="width:100%" name="cbotipo" data-id="cbocliente" data-required="true"></select>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row wrapper-content gray-bg animated">
+
+
+        <div class="ibox">
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-group left" style="width:100%;">
+                        <div class="table-responsive" style="width:100%; overflow-x:auto;margin-right:0px;margin-left:0px">
+                            <table id="tblSeguimiento" class="table2 table-bordered hoverTable" style="table-layout:fixed;width:100%;">
+                                <thead id="tblcabecera">
+                                    <tr>
+                                        <th width="150"  class="underline">Customer</th>
+                                        <th width="50">Type</th>
+                                        <th width="120" class="underline">Wts Inv</th>
+                                        <th width="80">Num. Operacion</th>
+                                        <th width="110">Wts Inv <br /> Amount</th>
+                                        <th width="110">Inv Balance</th>
+                                        <th width="80">Wts Inv Date</th>
+                                        <th width="80">VIA</th>
+                                        <th width="100">POD</th>
+                                        <th width="100">POD <br />Validate</th>
+                                        <th width="100">Due Date</th>
+                                        <th width="100">Date Ini <br />Factor</th>
+                                        <th width="100"  class="underline">Date End <br />Factor</th>
+                                        <th width="100">Tardanza</th>
+                                        <th width="100">Tardanza <br />Factor</th>
+                                        <th width="100" class="underline">Ultimo<br /> Seg.</th>
+                                        <th width="80">Fecha de Pago</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody_vaucherList"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="ibox-footer text-center" id="foot_paginacion">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+</div>

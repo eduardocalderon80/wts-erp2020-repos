@@ -1,0 +1,182 @@
+﻿<style>
+    .inner {
+        overflow-x: auto;
+        overflow-y: visible;
+        margin-left: 120px;
+    }
+
+    .outer {
+        position: relative;
+    }
+
+    
+</style>
+
+<div class="hide">
+    <input type="text" id="txtparDespacho"  value="DATA-PARAMETRO"/>
+</div>
+
+<div class="panel panel-default" id="despacho_header">
+    <div class="panel-heading">
+        <div class="text-right">
+            <button type="button" class="btn btn-primary" id="_btn_aceptardespacho">
+                <span class="fa fa-check"></span>
+                Accept
+            </button>
+            <button type="button" class="btn btn-default" id="_btn_cancelardespacho" data-dismiss="modal">
+                <span class="fa fa-ban"></span>
+                Cancel
+            </button>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-12">
+                    <label class="col-sm-2 control-label">Cliente:</label>
+                    <div class="col-sm-4">
+                        <div id="_despacho_cliente" style="font-weight:bold" class="text-success">Sam </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <label class="col-sm-2 control-label">Estilo:</label>
+                    <div class="col-sm-4">
+                        <div id="_despacho_estilo" style="font-weight:bold" class="text-success">Arone</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <label class="col-sm-2 control-label">Temporada:</label>
+                    <div class="col-sm-4">
+                        <div id="_despacho_temporada" style="font-weight:bold" class="text-success">Tempo</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal">
+            <div class="tabs-container">
+                <ul class="nav nav-tabs">
+                    <li class="active bg-primary">
+                        <a id="panDespacho" data-toggle="tab" href="#tab-add" aria-expanded="true"> Add </a>
+                    </li>
+                    <li class="" id="div_li_tabcontent">
+                        <a id="panHistory" data-toggle="tab" href="#tab-history" aria-expanded="false"> History </a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <div id="tab-add" class="tab-pane active">
+                        <div class="table-responsive" style="font-size:10px;">
+                            <div class="table">
+                                <table class="table table-bordered" id="_tbl_despacho" style="margin-top:10px">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center" style="width:10%;">
+                                                Color
+                                            </th>
+                                            <th class="text-center" style="width:5%;">
+                                                Size
+                                            </th>
+                                            <th class="text-center" style="width:5%;">
+                                                Qty <br>Req
+                                            </th>
+                                            <th class="text-center" style="width:5%;">
+                                                Counter Sample <br> Req
+                                            </th>
+                                            <th class="text-center" style="width:5%;">
+                                                Qty <br>Shipped
+                                            </th>
+                                            <th class="text-center" style="width:5%;">
+                                                Counter Sample <br> Shipped
+                                            </th>
+                                            <th class="text-center" style="width:5%;">
+                                                Count <br>Rej
+                                            </th>
+                                            <th class="text-center" style="width:8%;">
+                                                Internal <br>Rej
+                                            </th>
+                                            <th class="text-center" style="width:10%;">
+                                                Qty
+                                            </th>
+                                            <th class="text-center" style="width:10%;">
+                                                Counter  Sample
+                                            </th>
+                                            <th class="text-center" style="width:30%;">
+                                                <div class="col-sm-12">Actual Date</div> 
+                                                <div class="col-sm-1 text-center form-check">
+                                                    <input class='form-check-input' id="chkDespacho" name="chkDespacho" type="checkbox" />
+                                                </div>
+                                                <div class="col-sm-9" id="div_general_exactualdate" style="padding:0px;">
+                                                    <div id='div_inputdate_actualdate' class='input-group date'>
+                                                        <input type='text' style="padding:0px;" class='form-control' id="txt_general_exactualdate_despacho" data-type="date" data-required="true" data-min="10" data-max="10" data-level="true">
+                                                        <div class='input-group-addon'>
+                                                            <span class='fa fa-calendar'></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <th class="text-center" style="width:5%;">
+                                            </th>                                            
+                                        </tr>
+
+                                    </thead>
+                                    <tbody id="_tbody_tbl_despacho"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab-history" class="tab-pane">
+                        <div class="table-responsive">
+                            <div class="table">
+                                <table class="table table-bordered table-hover" id="_tbl_history" style="margin-top:10px">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center" style="width:5%">
+
+                                            </th>
+                                            <th class="text-center" style="width:20%">
+                                                Color
+                                            </th>
+                                            <th class="text-center" style="width:15%">
+                                                Size
+                                            </th>
+                                            <th class="text-center" style="width:10%">
+                                                Internal <br />Rejected
+                                            </th>
+                                            <th class="text-center" style="width:10%">
+                                                Qty<br />Shipped
+                                            </th>
+                                            <th class="text-center" style="width:10%">
+                                                Counter  Sample
+                                            </th>
+                                            <th class="text-center" style="width:10%">
+                                                Actual Delivery Date
+                                            </th>
+                                            <th class="text-center" style="width:10%">
+                                                Register  User
+                                            </th>
+                                            <th class="text-center" style="width:10%">
+                                                Register  Date
+                                            </th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody id="_tbody_tbl_history" style="font-size:11px;"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <div class="text-right">
+
+        </div>
+    </div>
+</div>
+

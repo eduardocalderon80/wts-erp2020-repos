@@ -1,0 +1,60 @@
+﻿<div class="ibox" id="panelEncabezado_estilosafectadostrim">
+    <div class="ibox-title">
+        <div class="ibox-tools">
+            <button id="_btnAceptar_estilos_afectados_trim" href="javascript:void(0)" class="btn btn-primary">
+                <span class="fa fa-check-circle"></span>
+                Accept
+            </button>
+            <button id="_btnCancelar_estilos_afectados_trim" href="javascript:void(0)" class="btn btn-default" data-dismiss="modal">
+                Cancel
+            </button>
+        </div>
+    </div>
+    <div class="ibox-content">
+        <div class="panel-body">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Season</label>
+                    <div class="col-sm-4">
+                        <select class="form-control _cls_clientetemporada_estilosafectados" id="_cbo_clientetemporada_estilosafectados"></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="" style="overflow-y: auto; max-height: 850px;">
+        <div class="hide">
+            <input type="text" id="txtpar_estilosafectadostrim" value="DATA-PARAMETRO" />
+        </div>
+        <div class="ibox">
+            <label class="control-label">Affected styles when editing the trim</label>
+            <div class="ibox-content">
+                <div class="row">
+                    <div id="div_tbl_buscartela" style="max-height:400px; overflow-y:auto;">
+                        <table class="table table-bordered table-hover" id="_tbl_estilosafectados_trim">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">
+                                        <label>
+                                            <div class='icheckbox_square-green _clsdivcheck_estilosafectadostrim_header' style='position: relative;'>
+                                                <input type='checkbox' class='i-checks _clscheck_estilosafectadostrim_header' style='position: absolute; opacity: 0;' name='_chk_estilosafectadostrim_header' />&nbsp
+                                                <ins class='iCheck-helper' style='position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0'></ins>
+                                            </div>
+                                        </label>
+                                    </th>
+                                    <th>Style</th>
+                                    <th>Description</th>
+                                    <th>Season</th>
+                                    <th>Version</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_estilosafectados_trim"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

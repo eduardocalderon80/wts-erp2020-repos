@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+@{
+    string _parametro = ViewBag.par;
+}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Recibi Conforme</title>
+    <script src="~/Scripts/js/jquery-2.1.1.js"></script>
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+</head>
+
+<body class="gray-bg" id="div_principal">
+    <div class="hide">
+        @Html.Hidden("urlBase", Url.Content("~/"))
+        <input type="text" id="hf_parametro" value="@_parametro" />
+    </div>
+    <div class="middle-box text-center loginscreen animated fadeInDown">
+        <div id="div_mensaje_recibirconforme">
+
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="~/Scripts/Home/Util.js"></script>
+    <script src="~/Scripts/js/plugins/sweetalert/sweetalert.min.js"></script>
+    <!-- ACA VA EL JS DE LA PAGINA -->
+    <script src="~/Scripts/DesarrolloTextil/SolicitudDesarrolloTela/conformerecibidocomercialleadtime.js"></script>
+</body>
+</html>

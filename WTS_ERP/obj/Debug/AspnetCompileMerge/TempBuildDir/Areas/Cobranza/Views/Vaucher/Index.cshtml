@@ -1,0 +1,134 @@
+﻿<style type="text/css">
+    /* 1 */
+    .row-selected {
+        background-color: #1ab394 !important;
+
+    }
+
+    th {
+        padding: 8px;
+        border: 1px solid #e7e7e7;
+        background-color: #F5F5F6;
+        text-align: center;
+    }
+
+    td {
+        padding: 5px;
+        border-bottom: 1px solid #e7e7e7;
+        padding-left: 20px;
+    }
+</style>
+<div class="ibox" id="panelencabezado_Vaucher">
+    <div class="row wrapper white-bg page-heading">
+        <div id="content_header" class="ibox float-e-margins">
+            <div id="divtituloprincipal" class="col-sm-6">
+                <h2 class="text-navy bold">List of Voucher</h2>
+            </div>
+            <div id="divBotonesPrincipal" class="col-sm-6 text-right" style="vertical-align: middle;margin-top:15px;">
+                <button id="btnnew" type="button" class="btn btn-success">
+                    <span class="fa fa-file-text-o"></span>
+                    New document
+                </button>               
+            </div>
+        </div>
+        <div id="tabledetails" class="ibox-content">
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div class="col-sm-3">
+                        <label class="control-label">Client</label>
+                        <select id="cbocliente" class="form-control _enty select2_courier" style="width:100%" name="cbocliente" data-id="cbocliente" data-required="true"></select>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label class="control-label">N° Voucher</label>
+                        <input type="text" id="txtvaucher" name="status" value="" placeholder="Number vaucher" class="form-control" >
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label class="control-label">N° Invoice</label>
+                        <input type="text" id="txtfactura" name="status" value="" placeholder="Number Invoice" class="form-control">
+                    </div>
+                    <div class="col-sm-3">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-horizontal row">
+
+                    <div class="col-sm-3">
+                        <label class="control-label">Since :</label>
+                        <div id="divfechadesde" class='input-group date'>
+                            <input id="txtfechadesde" type='text' class='form-control _enty' data-type="date" data-min="10" data-max="10" data-level="true" data-id="fechacese">
+                            <div id="divcalendariodesde" class="input-group-addon">
+                                <span class="fa fa-calendar"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="control-label">Until :</label>
+                        <div id="divfechahasta" class='input-group date'>
+                            <input id="txtfechahasta" type='text' class='form-control _enty' data-type="date" data-min="10" data-max="10" data-level="true" data-id="fechacese">
+                            <div id="divcalendariohasta" class="input-group-addon">
+                                <span class="fa fa-calendar"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <br/>
+                        <button id="btnBuscarVaucher" style="width:50%" type="button" class="btn btn-primary">
+                            <span class="fa fa-search"></span>
+                            Search
+                        </button>
+                    </div>
+                    <div class="col-sm-3">
+                        
+                    </div>
+                </div>
+            </div>       
+        </div>
+    </div>
+
+    <div class="row wrapper-content gray-bg animated">
+
+       <div class="" style="overflow-y: auto; max-height: 950px;">
+            <div class="hide">
+                <input type="text" id="txtpar_idvaucher" value="DATA-PARAMETRO" />
+            </div>
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="table-responsive" style="max-height:550px; overflow-y:auto;">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="col-sm-1 "></th>
+                                        @*<th class="col-sm-1">Vaucher</th>*@
+                                        <th class="col-sm-3">Client</th>
+                                        <th class="col-sm-1">Qty. Doc.</th>
+                                        <th class="col-sm-1">Date</th>
+                                        <th class="col-sm-1">Amount</th>
+                                    </tr>
+                                    @*<tr>
+                                        <th class="hide"></th>
+                                        <th class=""></th>
+                                        <th class=""><input type="text" placeholder="Search" id="_txtfiltercodigo" class="form-control _clsfilter" data-field="CodigoBol" /></th>
+                                        <th class=""></th>
+                                        <th class=""></th>
+                                        <th class=""></th>
+                                    </tr>*@
+                                </thead>
+                                <tbody id="tbody_vaucherList"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+              
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

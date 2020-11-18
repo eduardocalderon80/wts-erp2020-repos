@@ -1,0 +1,98 @@
+﻿<div class="ibox" id="panelEncabezado_ProgramasIndex">
+    <div class="hide">
+        <input type="text" id="txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-4">
+            <h2 class="font-bold">Client Requirements</h2>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <i class="fa fa-home"></i>
+                </li>
+                <li class="breadcrumb-item">
+                    Commercial
+                </li>
+                <li class="breadcrumb-item active">
+                    <strong>Programs</strong>
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-8 text-right" style="padding-top: 30px">
+            <button type="button" class="btn btn-success" id="btnUpdate">
+                <span class="fa fa-refresh"> </span>
+                Refresh
+            </button>
+            <button type="button" class="btn btn-warning" id="btnNew">
+                <span class="fa fa-plus"> </span>
+                New Program
+            </button>
+            <button type="button" class="btn btn-default" id="btnMailbox">
+                <span class="fa fa-envelope"> </span>
+                MailBox
+            </button>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content wrapper-less animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5><i class="fa fa-table"></i> Main</h5>
+                        <div class="ibox-tools">
+                            <a class="fullscreen-link">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-sm-6 m-b-xs">
+                                <div data-toggle="buttons" class="btn-group">
+                                    <label class="btn btn-white active"> <input class="option-link" type="radio" data-id="#tab-1" name="options">Programs List</label>
+                                    <label class="btn btn-white"> <input class="option-link" type="radio" data-id="#tab-2" name="options">Realtime Control</label>
+                                    <label class="btn btn-white"> <input class="option-link" type="radio" data-id="#tab-4" name="options">Design RQs</label>
+                                    <label class="btn btn-white"> <input class="option-link" type="radio" data-id="#tab-3" name="options">Control Per Period </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-2 no-need">
+                                <div class="form-group">
+                                    <div class="has-float-label">
+                                        <select class="form-control" id="cboGroup"></select>
+                                        <label for="cboGroup">Group</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2 no-need">
+                                <div class="form-group">
+                                    <div class="has-float-label">
+                                        <select class="form-control" id="cboEstado"></select>
+                                        <label for="cboEstado">Program Status</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2 no-need">
+                                <div class="form-group">
+                                    <div class="has-float-label">
+                                        <input type="text" class="form-control" id="txtBuscar" placeholder="Write something...">
+                                        <label for="txtBuscar">Search</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 no-need">
+                                <button type="button" class="btn btn-outline btn-warning" id="btnEdit">
+                                    <span class="fa fa-edit"> </span>
+                                </button>
+                                <button type="button" class="btn btn-outline btn-danger" id="btnDelete">
+                                    <span class="fa fa-trash"> </span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row" style="margin: 0;">
+                            <div class="option-tab active" id="tab-1"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

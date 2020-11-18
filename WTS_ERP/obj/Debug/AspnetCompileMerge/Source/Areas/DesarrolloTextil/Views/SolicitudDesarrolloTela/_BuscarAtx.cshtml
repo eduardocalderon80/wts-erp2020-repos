@@ -1,0 +1,200 @@
+﻿<div class="ibox" id="panelencabezado_buscaratx">
+    <div class="ibox-title">
+        <div class="ibox-tools">
+            <button id="_btnAceptar_buscaratx" href="javascript:void(0)" class="btn btn-primary">
+                <span class="fa fa-check-circle"></span>
+                Accept
+            </button>
+            <button id="_btnCancelar_buscaratx" href="javascript:void(0)" class="btn btn-default" data-dismiss="modal">
+                Cancel
+            </button>
+        </div>
+    </div>
+    
+    <div class="" style="overflow-y: auto; max-height: 850px;">
+        <div class="hide">
+            <input type="text" id="txtpar_buscaratx" value="DATA-PARAMETRO" />
+        </div>
+
+        <div class="ibox">
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <!--COLUMNA 1-->
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Supplier</label>
+                                <div class="col-sm-10">
+                                    <select class="_cls_proveedor_filtrobuscador form-control" id="_cboproveedor_filtrobuscador"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <!--COLUMNA 2-->
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Customer</label>
+                                <div class="col-sm-10">
+                                    <select class="_cls_cliente_filtrobuscador form-control" id="_cbocliente_filtrobuscador"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <!--COLUMNA 1-->
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Inicio</label>
+                                <div class="cls_div_grupofechainicio col-sm-10" id="div_grupofechainicio">
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control _enty" id="txtfechainicio_buscadoratx" data-type="date" data-min="10" data-max="10" data-required="true" data-level="true" />
+                                        <div class="input-group-addon">
+                                            <span class="fa fa-calendar"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--COLUMNA 2-->
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Fin</label>
+                                <div class="cls_div_grupofechafin col-sm-10" id="div_grupofechafin">
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control _enty" id="txtfechafin_buscadoratx" data-type="date" data-min="10" data-max="10" data-required="true" data-level="true" />
+                                        <div class="input-group-addon">
+                                            <span class="fa fa-calendar"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="ibox-footer text-right">
+                <button class="btn btn-sm btn-success" id="_btnbuscaratx">
+                    <span class="fa fa-search"></span>
+                    Search
+                </button>
+            </div>
+        </div>
+
+        <div class="ibox">
+            <div class="ibox-content">
+                <div class="row">
+                    <div id="div_tbl_buscartela" style="max-height:400px; overflow-y:auto;" class="table-responsive">
+                        <table class="table table-bordered table-hover" id="_tbl_buscaratx">
+                            <thead>
+                                <tr>
+                                    <th class="text-center hide" style="width: 50% !important;">
+                                        ATX Code
+                                    </th>
+                                    <th class="text-center hide" style="width: 10%;">
+                                        @*link para ver atx*@
+                                    </th>
+                                    <th class="text-center" style="width: 10%;">
+                                        WTS Fabric Code
+                                    </th>
+                                    <th class="text-center" style="width: 10%;">
+                                        Testing Code
+                                    </th>
+                                    <th class="text-center" style="width: 10%;">
+                                        Date Update
+                                    </th>
+                                    <th class="text-center" style="width: 30% !important;">
+                                        Client Name
+                                    </th>
+                                    <th class="text-center" style="width: 30%;">
+                                        Name Family
+                                    </th>
+                                    <th class="text-center" style="width: 10%;">
+                                        Mill Code
+                                    </th>
+
+                                    <th class="text-center" style="width: 20%;">
+                                        Applicant Name
+                                    </th>
+                                    <th class="text-center" style="width: 20%;">
+                                        Operator Name
+                                    </th>
+                                    <th class="text-center" style="width: 10%;">
+                                        Batch
+                                    </th>
+
+                                    <th class="text-center" style="width: 10%;">
+                                        Cuttable Width
+                                    </th>
+                                    <th class="text-center" style="width: 10%;">
+                                        Galga
+                                    </th>
+                                    <th class="text-center" style="width: 10%;">
+                                        Diameter
+                                    </th>
+                                    <th class="text-center" style="width: 10%;">
+                                        Density
+                                    </th>
+                                    <th class="text-center" style="width: 10%;">
+                                        Washed
+                                    </th>
+                                    <th class="text-center" style="width: 10%;">
+                                        Title
+                                    </th>
+                                    <th class="text-center" style="width: 30%;">
+                                        Composition
+                                    </th>
+
+                                    <th class="text-center" style="width: 20%;">
+                                        Warp/Wales
+                                    </th>
+
+                                    <th class="text-center" style="width: 10%;">
+                                        Weft/Courses
+                                    </th>
+                                    <th class="text-center" style="width: 30%;">
+                                        Supplier
+                                    </th>
+                                    <th class="text-center" style="width: 20%;">
+                                        Request Number
+                                    </th>
+                                    <th class="text-center" style="width: 30%;">
+                                        Tradename
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th class="hide"><input type="text" placeholder="Search" id="_txtfiltercodigoatx" class="form-control _clsfilter" data-field="codigo" /></th>
+                                    <th class="hide"></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfiltercodigotela" class="form-control _clsfilter" data-field="codigotela" /></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfiltercodigolaboratorio" class="form-control _clsfilter" data-field="codigolaboratorio" /></th>
+                                    <th></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfiltercliente" class="form-control _clsfilter" data-field="nombrecliente" /></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfilterfamilia" class="form-control _clsfilter" data-field="nombrefamilia" /></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfiltercodigotelafabrica" class="form-control _clsfilter" data-field="codigofabrica" /></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfiltersolicitante" class="form-control _clsfilter" data-field="nombresolicitante" /></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfilteranalistatextil" class="form-control _clsfilter" data-field="nombreoperador" /></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfilterpartidalote" class="form-control _clsfilter" data-field="partidalote" /></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfilterdensidad" class="form-control _clsfilter" data-field="densidad" /></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfilterlavado" class="form-control _clsfilter" data-field="lavado" /></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfiltertitulo" class="form-control _clsfilter" data-field="titulo" /></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfiltercontenido" class="form-control _clsfilter" data-field="descripcionporcentajecontenidotela" /></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfilterproveedor" class="form-control _clsfilter" data-field="nombreproveedor" /></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfilternumerosolicitud" class="form-control _clsfilter" data-field="idsolicitud" /></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfilternombrecomercial" class="form-control _clsfilter" data-field="nombrecomercial" /></th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_buscaratx"></tbody>
+                        </table>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="ibox-footer text-center" id="foot_paginacion">
+
+            </div>
+        </div>
+
+    </div>
+</div>

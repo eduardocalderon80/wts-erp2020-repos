@@ -1,0 +1,182 @@
+﻿
+<div class="ibox float-e-margins" id="panelEncabezado_buscartela">
+    <div class="ibox">
+        <div class="ibox-title">
+            <div class="ibox-tools">
+                <button id="_btnAceptarUpload" href="javascript:void(0)" class="btn btn-primary">
+                    <span class="fa fa-check-circle"></span>
+                    Accept
+                </button>
+                <button id="_btnCancelarUpload" href="javascript:void(0)" class="btn btn-danger" data-dismiss="modal">
+                    <span class="fa fa-ban"></span>
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="ibox">
+        <div class="ibox-content">
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div class="col-sm-4">
+                        <label class="control-label col-sm-2">Customer:</label>
+                        <select class="form-control" id="_cboCliente">
+                            <option value="0">Select one</option>
+                        </select>
+                        <span class="hide text-danger" id="_span_error_Client">Select Client</span>
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="control-label col-sm-2"> Season:</label>
+                        <select id="_cboSeason" class="form-control"><option value="0">Select one</option></select>
+                        <span class="hide text-danger" id="_span_error_Season">Select Season</span>
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="control-label col-sm-2"> Division:</label>
+                        <select id="_cboDivision" class="form-control"><option value="0">Select one</option></select>
+                        <span class="hide text-danger" id="_span_error_Division">Select Division</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div class="col-sm-4 text-right ">
+                        <span class="btn btn-success btn-file text-right ">
+                            <span class="fa fa-upload"></span> Excel File
+                            <input class="text-right" type="file" id="inputFile" accept=".xlsx" onchange="Load(this);" />
+                        </span>
+                    </div>
+                    <div class="col-sm-8">
+                        <input class="form-control" disabled="disabled" id="fileSelect" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal row">
+                <div class="col-sm-12" id="_divError_filas" style="display:none;color:red;font-weight:bold;">
+                    <label class="control-label">Verifique las observaciones en las filas resaltadas, si desea modificar cargue el archivo excel con las modificaciones</label>
+                    <label class="control-label">si desea continuar hacer clic en guardar</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ibox">
+        <div class="" style="overflow-y: auto; max-height: 850px;">
+            @*<div class="ibox float-e-margins">*@
+                <div class="ibox-content">
+                    @*<div class="row">*@
+                        <div id="_divTableUpload" style="position:relative; overflow-x:auto; overflow-y:auto; max-height:400px; min-height:0px;">
+                            <table class="table table-bordered" id="_TableUpload">
+                                <thead id="_TableUpload_Head">
+                                    <tr>
+                                        <th>Style</th>
+                                        <th>Description</th>
+                                        <th>Fabric</th>
+                                        <th>Obs</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="_TableUpload_Body"></tbody>
+                            </table>
+                        </div>
+                    @*</div>*@
+                </div>
+            @*</div>*@
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+@*<div class="panel panel-default" id="_div_principal_buscartela">
+    <div class="panel-heading">
+        <div class="text-right">
+            <button type="button" class="btn btn-primary" id="_btnAceptarUpload">
+                <span class="fa fa-check"></span>
+                Accept
+            </button>
+            <button type="button" class="btn btn-default" id="_btnCancelarUpload" data-dismiss="modal">
+                <span class="fa fa-ban"></span>
+                Cancel
+            </button>
+        </div>
+    </div>
+    <div class="panel-body" id="_div_body_principal">
+        <div class="form-horizontal">
+            
+            <div class="form-group">
+                <div id="_div_Client">
+                    <label class="control-label col-sm-2">Customer:</label>
+                    <div class="col-sm-5">
+                        <select class="form-control" id="_cboCliente">
+                            <option value="0">Select one</option>
+                        </select>
+                        <span class="hide text-danger" id="_span_error_Client">Select Client</span>
+                    </div>
+                </div>                                   
+            </div>
+
+            <div class="form-group">
+                <div id="_div_Season">
+                    <label class="control-label col-sm-2"> Season:</label>
+                    <div class="col-sm-5">
+                        <select id="_cboSeason" class="form-control"><option value="0">Select one</option></select>
+                    </div>
+                    <span class="hide text-danger" id="_span_error_Season">Select Season</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div id="_div_Division">
+                    <label class="control-label col-sm-2"> Division:</label>
+                    <div class="col-sm-5">
+                        <select id="_cboDivision" class="form-control"><option value="0">Select one</option></select>
+                    </div>
+                    <span class="hide text-danger" id="_span_error_Division">Select Division</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2"> Upload Excel: </label>
+                <div class="col-sm-10">                    
+                    <span class="btn btn-success btn-file">
+                        <span class="fa fa-upload"></span> &nbsp;Excel File  <input type="file" id="inputFile" accept=".xlsx" onchange="Load(this);" />
+                    </span>
+                     <div class="col-sm-5">
+                         <input class="form-control" disabled="disabled" style="text-align:right;" id="fileSelect" />
+                     </div>                     
+                </div>
+            </div>
+             
+            <div class="form-group">
+                <div class="col-sm-12" id="_divError_filas" style="display:none;color:red;font-weight:bold;">
+                    <label class="control-label">Verifique las observaciones en las filas resaltadas, si desea modificar cargue el archivo excel con las modificaciones</label>
+                    <label class="control-label">si desea continuar hacer clic en guardar</label>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="panel-footer">
+        <div class="text-right">
+          
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default no-borders">
+    
+    <div id="_divTableUpload" style="position:relative; overflow-x:auto; overflow-y:auto; max-height:400px; min-height:0px;">
+        <table class="table table-bordered" id="_TableUpload">
+            <thead id="_TableUpload_Head">
+                <tr>
+                    <th>Style</th>
+                    <th>Description</th>
+                    <th>Fabric</th>
+                    <th>Obs</th>
+                </tr>
+            </thead>
+            <tbody id="_TableUpload_Body"></tbody>
+        </table>
+    </div>
+
+</div>*@

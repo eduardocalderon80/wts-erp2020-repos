@@ -1,0 +1,247 @@
+﻿<style>
+    .row-selected {
+        background-color: #1ab394;
+    }
+    /*.table-hover thead tr:hover th, .table-hover tbody tr:hover td {
+    background-color: #1ab394;
+    }*/
+</style>
+
+<div class="row wrapper white-bg page-heading">
+    <div id="content_header" class="ibox float-e-margins">
+        <div id="divtituloprincipal" class="col-sm-6">
+            <h2 class="font-bold">Botones por Ventana</h2>
+        </div>
+    </div>
+</div>
+
+<div class="hide">
+    <input type="text" id="txtpar" value="DATA-PARAMETRO" />
+    <input type="hidden" id="hf_IdSolicitud" data-id="IdPersonal" data-default="0" value="0" />
+    <input type="hidden" id="hf_IdPersonal" data-id="IdPersonal" data-default="0" value="0" />
+</div>
+
+<div class="row wrapper-content gray-bg animated">
+
+    <div id="idformulario" class="ibox">
+        <div class="ibox-title">
+            <div class="form-horizontal row ">
+                <div id="divTitulo" class="col-sm-6">
+                    <h3 id="_title" class="text-navy bold">Edit</h3>
+                </div>
+                <div id="divBotones" class="col-sm-6 text-right">
+                    <button id="btnSave" type="button" class="btn btn-primary">
+                        <span class="fa fa-save"></span>
+                        Save
+                    </button>
+                    <button id="btnReturn" type="button" class="btn btn-default">
+                        <span class="fa fa-reply-all"></span>
+                        Return
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="ibox-content">
+
+            <div class="form-horizontal row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Ventana:</label>
+                        <div class="col-sm-9">
+                            <select id="cboVentana" disabled class="form-control _enty" name="IdVentana" data-id="IdVentana" data-required="true" data-min="1"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Controlador:</label>
+                        <div class="col-sm-9">
+                            <input id="txtControlador" disabled class="form-control font-bold _enty" type="text" name="Identificador" data-id="Identificador">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-horizontal row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Función:</label>
+                        <div class="col-sm-9">
+                            <select id="cboFuncion" disabled class="form-control _enty" name="IdFuncion" data-id="IdFuncion" data-required="true" data-min="1"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Agrupador:</label>
+                        <div class="col-sm-9">
+                            <input id="txtAgrupador" class="form-control _enty" type="text" name="Agrupador" data-id="Agrupador" data-required="true" data-min="1" data-max="100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-horizontal row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">ID Botón:</label>
+                        <div class="col-sm-9">
+                            <input id="txtIdBoton" class="form-control _enty" type="text" name="IdBoton" data-id="IdBoton" data-required="true" data-min="1" data-max="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Método:</label>
+                        <div class="col-sm-9">
+                            <input id="txtMetodo" class="form-control _enty" type="text" name="Metodo" data-id="Metodo" data-required="true" data-min="1" data-max="100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-horizontal row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Titulo:</label>
+                        <div class="col-sm-9">
+                            <input id="txtTitulo" class="form-control _enty" type="text" name="Titulo" data-id="Titulo" data-required="true" data-min="1" data-max="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Nombre:</label>
+                        <div class="col-sm-9">
+                            <input id="txtNombre" class="form-control _enty" type="text" name="Nombre" data-id="Nombre" data-min="1" data-max="100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-horizontal row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Acción:</label>
+                        <div class="col-sm-9">
+                            <input id="txtAccion" class="form-control _enty" type="text" name="Accion" data-id="Accion" data-required="true" data-min="1" data-max="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Clase:</label>
+                        <div class="col-sm-9">
+                            <input id="txtClase" class="form-control _enty" type="text" name="Clase" data-id="Clase" data-required="true" data-min="1" data-max="100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-horizontal row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Icono:</label>
+                        <div class="col-sm-9">
+                            <input id="txtIcono" class="form-control _enty" type="text" name="Icono" data-id="Icono" data-required="true" data-min="1" data-max="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Ubicación:</label>
+                        <div class="col-sm-9">
+                            <input id="txtUbicacion" class="form-control _enty" type="text" name="Ubicacion" data-id="Ubicacion" data-required="true" data-min="1" data-max="100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-horizontal row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Regla:</label>
+                        <div class="col-sm-9">
+                            <input id="txtRegla" class="form-control _enty" type="text" name="Regla" data-id="Regla" data-required="true" data-min="1" data-max="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Orden:</label>
+                        <div class="col-sm-9">
+                            <input id="txtOrden" class="form-control _enty" type="text" name="Orden" data-id="Orden" data-required="true" data-min="1" data-max="100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-horizontal row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group text-right">
+                        <div class="col-sm-12">
+                            <button id="btnAgregar" type="button" title="Agregar" class="btn btn-outline btn-primary">
+                                <span class="fa fa-plus"></span>
+                            </button>
+                            <button id="btnEditar" type="button" title="Editar" class="btn btn-outline btn-success">
+                                <span class="fa fa-edit"></span>
+                            </button>
+                            <button id="btnEliminar" type="button" title="Eliminar" class="btn btn-outline btn-danger">
+                                <span class="fa fa-trash"></span>
+                            </button>
+                            <button id="btnLimpiar" type="button" title="Limpiar" class="btn btn-outline btn-default">
+                                <span class="fa fa-file"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="content_form" class="ibox">
+        <div class="ibox-title hide">
+            <h5>Details</h5>
+        </div>
+        <div id="divContentTBL" class="ibox-content">
+            <div class="table-responsive">
+                <table id="contentTable" class="footable table table-hover table-stripped table-bordered " data-page-size="10" data-filter=#filter>
+                    <thead>
+                        <tr>
+                            <th class='col-sm-1'>Preview</th>
+                            <th class='col-sm-1'>ID Boton</th>
+                            <th class='col-sm-2'>Agrupador</th>
+                            <th class='col-sm-1'>Acción</th>
+                            <th class='col-sm-2'>Titulo</th>
+                            <th class='col-sm-2'>Ventana</th>
+                            <th class='col-sm-2'>Función</th>
+                            <th class='col-sm-2 hide'>Método</th>
+                            <th class='col-sm-2 hide'>Nombre</th>
+                            <th class='col-sm-2 hide'>Clase</th>
+                            <th class='col-sm-2 hide'>Icono</th>
+                            <th class='col-sm-2 hide'>Ubicación</th>
+                            <th class='col-sm-2 hide'>Regla</th>
+                            <th class='col-sm-2 hide'>Orden</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="8">
+                                <ul class="pagination pull-right"></ul>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+</div>

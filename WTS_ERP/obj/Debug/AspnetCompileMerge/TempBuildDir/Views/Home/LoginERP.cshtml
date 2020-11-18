@@ -1,0 +1,57 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+@{ 
+    var data = ViewBag.redirect;
+}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ERP | Login</title>
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="~/Content/css/style.css" rel="stylesheet">
+</head>
+
+<body class="gray-bg">
+
+    <div class="middle-box text-center loginscreen animated fadeInDown">
+        <div>
+            <div>
+                <h2 class="logo-name">WTS</h2>
+            </div>
+
+            <p>Login in</p>
+            <form class="m-t">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="User" required="" id="txtuser">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" required="" id="txtpassword">
+                </div>
+                <button type="button" class="btn btn-primary block full-width m-b" id="btnlogin">Login</button>
+            </form>
+            <p class="m-t"> <small>WTS ERP &copy; 2017</small> </p>
+        </div>
+    </div>
+    @Html.Hidden("urlBase", Url.Content("~/"))
+    <!-- Mainly scripts -->
+    <script src="~/Scripts/js/jquery-2.1.1.js"></script>
+    <script src="~/Scripts/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/Home/Login.js"></script>
+    <script>
+        var redirect = null;
+        @if (data != null)
+        {
+            <text>
+            redirect = "@Utilitario.Utils.DecryptString(data).ToString()";
+            redirect = redirect.replace(/&quot;/g, '"');
+            </text>
+        }
+        localStorage.removeItem('redirect');
+        localStorage.setItem('redirect', redirect);
+    </script>
+</body>
+</html>

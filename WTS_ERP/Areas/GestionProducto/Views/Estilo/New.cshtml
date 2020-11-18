@@ -1,0 +1,974 @@
+﻿<style>
+    img, object {
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    img {
+        border: 0 none;
+        height: auto;
+        max-width: 100%;
+        vertical-align: middle;
+    }
+
+    a {
+        cursor: pointer;
+    }
+
+    .img-polaroid {
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        padding: 4px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .img-fondo {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background-color: #EEEEEE;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    .hideFabriccombo {
+        display: none;
+    }
+
+    .hidecombo {
+        display: none;
+    }
+
+    .hideproceso {
+        display: none;
+    }
+
+    .hideatwork {
+        display: none;
+    }
+
+    .hidetrim {
+        display: none;
+    }
+</style>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row" style="vertical-align: middle;">
+            <div class="col-sm-6" id="divtituloprincipal">
+                <h2>Style</h2>
+            </div>
+            <div class="col-sm-6 text-right">
+                <button type="button" class="btn btn-default dim" id="btnMigrar">Migrar a Intranet</button>
+                <button type="button" class="btn btn-info dim" id="btnColor">Color</button>
+                <button type="button" class="btn btn-primary dim" id="btnDDP">New Req UDP</button>
+                <button type="button" class="btn btn-primary dim" id="btnSave">Save</button>
+                <button type="button" class="btn btn-success dim" id="btnUpdate">Update</button>
+                <button type="button" class="btn btn-info dim" id="btnNewVersion">New Version</button>
+                <button type="button" class="btn btn-danger dim" id="btnCancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <div class="hide">
+        <input type="text" id="txtpar" value="DATA-PARAMETRO" />
+        <input type="text" id="txtUsuario" value="@ViewBag.Usuario" />
+        <!-- :EDU INPUTS PARA EDITAR TELAS-->
+        <input type="text" id="hf_accion_editartela" value="" /> <!-- :EDU SE SETEA VALUE PARA INDICAR QUE SE ESTA EDITANDO LA TELA; ABRE EL MODAL DE BUSCAR TELA-->
+        <input type="text" id="hf_idtela_editando" value="" /> <!-- :EDU ESTE ES EL IDTELA QUE SE ESTA EDITANDO-->
+        <input type="text" id="hf_indice_divtela_editando" value="" /> <!-- :EDU ESTE ES EL DIV DE TELA QUE SE ESTA EDITANDO-->
+        <input type="text" id="txtRutaFileServer" value="@ViewBag.PathStyleWeb" />
+        <input type="text" id="txtFabricComboFileServer" value="@ViewBag.PathFabricCombo" />
+        <input type="text" id="hf_estado_actualizarimagen" value="0"/>
+        <input type="text" id="hf_estado_actualizarimagenFabricCombo" value="0" />
+        <input type="text" id="txtperfil" value="@ViewBag.perfil" />
+    </div>
+    <div class="panel-body">
+        <div class="row" id="poproducto">
+            <div class="col-sm-12" id="panelDetalle">
+                <div class="tabs-container">
+                    <ul class="nav nav-tabs">
+                        <li class="active bg-primary">
+                            <a id="panStyle" data-toggle="tab" href="#tab-style" aria-expanded="true">Style</a>
+                        </li>
+                        <li class="">
+                            <a id="panFabric" data-toggle="tab" href="#tab-fabric" aria-expanded="false">Fabric</a>
+                        </li>
+                        <li class="">
+                            <a id="panFabricCombo" data-toggle="tab" href="#tab-FabricCombo" aria-expanded="false">Fabric Combo</a>
+                        </li>
+                        <li class="">
+                            <a id="panGarmentCombo" data-toggle="tab" href="#tab-GarmentCombo" aria-expanded="false">Garment Combo</a>
+                        </li>
+                        <li class="">
+                            <a id="panProcess" data-toggle="tab" href="#tab-process" aria-expanded="false">Additional Process</a>
+                        </li>
+                        <li class="">
+                            <a id="panArtwork" data-toggle="tab" href="#tab-artwork" aria-expanded="false">Artwork</a>
+                        </li>
+                        <li class="">
+                            <a id="panTrim" data-toggle="tab" href="#tab-trims" aria-expanded="false">Trim</a>
+                        </li>
+                        <li class="">
+                            <a id="panSample" data-toggle="tab" href="#tab-Sample" aria-expanded="false">Sample Record</a>
+                        </li>
+                        <li class="">
+                            <a id="panestilotechpack" data-toggle="tab" href="#tab-estilotechpack" aria-expanded="false">Files</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="tab-style" class="tab-pane active">
+                            <div class="panel-body">
+                                <div class="hide">
+                                    <input type="text" id="hf_idestilo" value="0" />
+                                </div>
+                                <div class="form-horizontal">
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <center>
+                                                <div class="img-polaroid">
+                                                    <div class="img-fondo">
+                                                        <img src="" id="imgEstilo" data-initial="" name="imgEstilo" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="input-group" style="width: 200px !important;">
+                                                    <span class="btn btn-success btn-sm btn-file input-group-addon" style="background-color: #0069d9; color: #fff; height: 30px;">
+                                                        <span class="fa fa-cloud-upload"></span>
+                                                        Image
+                                                        <input id="fupArchivo" type="file" />
+                                                    </span>
+                                                    <span class="btn btn-danger btn-sm btn-file input-group-addon" style="background-color: #c82333; color: #fff; height: 30px;" id="btnImagenEliminar">
+                                                        <span class="fa fa-trash-o"></span>
+                                                    </span>
+                                                    <span class="input-group-addon">
+                                                        <input type="text" class="form-control" id="pasteArea" placeholder="Paste" rows="1" onchange="LimpiarArea();" style="width:50px;height:30px" />
+                                                    </span>
+                                                </div>
+                                            </center>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2">Client:</label>
+                                            <div class="col-sm-8">
+                                                <select id="cboCliente" class="form-control _enty" data-min="1" data-max="20" data-required="true"><option value="">Select one</option></select>
+                                            </div>
+                                        </div>
+                                        <div id="divCodigo" class="form-group">
+                                            <label class="control-label col-sm-2">Style:</label>
+                                            <div class="col-sm-8">
+                                                <input id="txtCode_estilo" class="form-control _enty" onkeyup="Mayus(this)" data-min="1" data-max="50" data-required="true" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2">Description:</label>
+                                            <div class="col-sm-8">
+                                                <textarea id="txtStyleDescription" class="form-control _enty" onkeyup="Mayus(this)"  data-min="1" data-max="5000" data-required="true"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2">Version</label>
+                                            <div class="col-sm-3">
+                                                <input id="txtVersion" class="form-control" data-min="1" data-max="50" readonly />
+                                            </div>
+                                        </div>
+                                        <div class="form-group"> 
+                                            <label class="control-label col-sm-2">Notes HangTag</label>
+                                            <div class="col-sm-6">
+                                                <textarea class="form-control _enty" rows="2" maxlength="150" placeholder="Notes HangTag" id="txta_notashangtag" data-min="1" data-max="150" data-required="false"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="hr-line-dashed"></div>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-1"> Season:</label>
+                                            <div class="col-sm-4">
+                                                <select id="cboSeason" class="form-control"><option value="0">Select one</option></select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-1"> Division:</label>
+                                            <div class="col-sm-4">
+                                                <select id="cboDivision" class="form-control"><option value="0">Select one</option></select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-1"> Program:</label>
+                                            <div class="col-sm-4">
+                                                <select id="cboProgram" class="form-control"><option value="0">Select one</option></select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-1"> Status:</label>
+                                            <div class="col-sm-4">
+                                                <select id="cboStatus" class="form-control"> </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-1">Minutes:</label>
+                                            <div class="col-sm-4">
+                                                <input id="txtminutaje" class="form-control _enty" value="" data-type="int" data-required="false" data-min='1' data-max='7' onKeyPress="return validators_keypress(event)" onBlur="validators_blur(event)" onKeyUp="validator_keyup(event)"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-1 control-label">
+                                                <label>Factory:</label>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <select id="cboSupplier" class="cboSupplier Supplier form-control"><option value="0">Select One</option></select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-1 control-label">
+                                                <label>Fit Status</label>
+                                            </div>
+                                            <div class="col-sm-10">
+                                                <textarea class="form-control" rows="3" id="txtFitStatus"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 hide" id="div_callout">
+                                    <div class="ibox float-e-margins">
+                                        <div class="ibox-title">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <h5>Callout</h5>
+                                                </div>
+                                                <div class="col-sm-6 text-right">
+                                                    <button type="button" class="btn btn-primary" id="btnAddCallout">
+                                                        <span class="fa fa-plus"></span>
+                                                        Add Callout
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ibox-content">
+                                            <div class="row">
+                                                <table id="tblCallout" class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="col-sm-9">Comment (*)</th>
+                                                            <th class="col-sm-1">Date</th>
+                                                            <th class="col-sm-1">User</th>
+                                                            <th class="col-sm-1"></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="tbody_callout"></tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--
+                                <div class="form-group hide" id="div_callout_boton">
+                                    <div class="col-sm-12">
+                                        <button type="button" class="btn btn-primary" id="btnAddCallout"><b> + </b>Add Callout</button>
+                                    </div>
+                                </div>
+                                <div class="container hide" style="padding-top:30px;" id="div_callout_tabla">
+                                    <h4>Callout</h4>
+                                    <div>
+                                        <table id="tblCallout" class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Comment (*)</th>
+                                                    <th>Date</th>
+                                                    <th>User</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                    -->
+                            </div>
+                        </div>
+                        <div id="tab-fabric" class="tab-pane">
+                            <div class="panel-body">
+                                <div id="divFabric" class="row">
+                                    <div class="col-sm-12">
+                                        <button class="btn btn-success" id="btnBuscarTela">
+                                            <span class="fa fa-plus-square"></span>
+                                            Add
+                                        </button>
+                                        @*<button type="button" class="btn btn-primary" id="btnAddFabricProject">Fabric Project</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <button type="button" class="btn btn-primary" id="btnAddFabricCode">Fabric Code</button>*@
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <h4><strong>Se refiere a las distintas telas/tejidos que participan en el estilo.  Para registrar el estilo es necesario  llenar  todos los campos requeridos de la tela principal – (tela 1).  No es obligatorio pero si recomendado ingresar otras telas que participen en el estilo como complementos (cuellos, pretinas, puños, piezas en contraste, etc).  No incluir aquí tela plana, telas importadas, cuero,  cintas para tapetes  pues éstos deben ser ingresados en la sección de trims/avios.</strong></h4>
+                                    </div>
+                                </div>
+                                <div class="row" id="div_principal_paneltelas">
+                                    @*style="float:left;margin-top:15px;margin-left:15px;width:60%;border:1px solid #e7eaec;padding:15px;"*@
+                                    <!-- COLUMNA 1-->
+                                    <!--
+                                    <div class="col-sm-4">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <div class="row" style="vertical-align: middle;">
+                                                    <div class="col-sm-6">
+                                                        <h3>Fabric 1</h3>
+                                                    </div>
+                                                    <div class="col-sm-6 text-right">
+                                                        <button type="button" class="btn btn-primary btn-sm">
+                                                            <span class="fa fa-edit"></span>
+                                                            Edit
+                                                        </button>
+                                                        <button class="btn btn-danger btn-sm" type="button">
+                                                            <span class="fa fa-trash-o"></span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div id="divFabric" class="form-horizontal divFabric">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-2">Fabric Reference:</label>
+                                                        <div class="col-sm-10">
+                                                            <input name="txtFabricReference" class="form-control FabricReference" disabled="disabled" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-2">Supplier:</label>
+                                                        <div class="col-sm-10">
+                                                            <input id="txtFabricSupplier" class="form-control FabricSupplierTXT" disabled="disabled" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-2">Placement:</label>
+                                                        <div class="col-sm-10">
+                                                            <input name="txtPlacement" class="form-control FabricPlacement" value='Body' disabled="disabled" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-2">Construction:</label>
+                                                        <div class="col-sm-10">
+                                                            <textarea name="txtConstruction" disabled="disabled" class="form-control FabricConstruction" rows="2" cols="8"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-2">Yarn:</label>
+                                                        <div class="col-sm-10">
+                                                            <input name="txtYarn" disabled="disabled" class="form-control FabricYarn" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">Content:</label>
+                                                        <div class="col-sm-10">
+                                                            <input name="txtContent" disabled="disabled" class="form-control FabricContent" />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-2">Weight:</label>
+                                                        <div class="col-sm-5">
+                                                            <input name="txtWeight" class="form-control Fabricweight" disabled="disabled" value="0" type="text" onblur="ValidarNumero(this);" onkeypress="return DigitimosDecimales(event, this)" />
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input name="txtLavado" disabled="disabled" class="form-control FabricLavado" value="AW" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group" style="display:none;">
+                                                        <label class="col-sm-2 control-label">Wash:</label>
+                                                        <div class="col-sm-10">
+                                                            <input name="txtWash" disabled="disabled" class="form-control FabricWash" />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">Status:</label>
+                                                        <div class="col-sm-10">
+                                                            <input name="txtStatus" disabled="disabled" class="form-control FabricStatus" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">Comments:</label>
+                                                        <div class="col-sm-10">
+                                                            <input name="txtComents" class="form-control FabricComent" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        -->
+                                    <!-- COLUMNA 2-->
+                                    <!--
+                                    <div class="col-sm-4">
+
+                                    </div>
+                                        -->
+                                    <!-- COLUMNA 3-->
+                                    <!--
+                                    <div class="col-sm-4">
+
+                                    </div>
+                                        -->
+                                    <!-- COLUMNA 1-->
+                                    <!--
+                                    <div class="col-sm-4">
+
+                                    </div>
+                                        -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="tab-FabricCombo" class="tab-pane">
+                            <div class="panel-body">
+                                <div id="divFabricCombination" class="row">
+                                   
+                                    <div class="col-sm-12">
+                                        <h4><strong> Se refiere a las combinaciones de color que una tela puede tener. Ejemplo: los colores de las rayas en una tela listada </strong></h4>
+                                    </div>
+                                    <div class="col-sm-12">
+                                    <div class="panel panel-default">                                        
+                                        <div class="panel-heading">
+                                        </div>
+                                        
+                                        <div class="panel-body">
+                                            <div class="form-group descripcion_Fabriccombo">
+                                                
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <div class="form-group">
+                                                            <div class="col-sm-3 control-label">
+                                                                <label>Description:</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-sm-8">
+                                                                <textarea id ="txtFabricCombo" onkeyup="Mayus(this)"  name="txtFabricCombo" class="form-control ComboFabric" rows="2" cols="8"></textarea>
+                                                            </div>
+                                                        </div>                 
+                                                    </div>                                                                                       
+                                                </div>
+                                                 
+                                                <div class="col-sm-6">
+                                                    <div class="img-polaroid" style="height:80px;height:100px;">
+                                                        <div class="img-fondo">
+                                                            <img src="" id="imgEstilo_fabric" data-initial="" name="imgEstilo_fabric" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-group" style="width: 200px !important;">
+                                                        <span class="btn btn-success btn-sm btn-file input-group-addon" style="background-color: #0069d9; color: #fff; height: 30px;">
+                                                            <span class="fa fa-cloud-upload"></span>
+                                                            Image
+                                                            <input id="fupArchivo_fabric" type="file" />
+                                                        </span>
+                                                        <span class="btn btn-danger btn-sm btn-file input-group-addon" style="background-color: #c82333; color: #fff; height: 30px;" id="btnImagenFabricComboEliminar">
+                                                            <span class="fa fa-trash-o"></span>
+                                                        </span>
+                                                        <span class="input-group-addon">
+                                                            <input type="text" class="form-control" id="pasteAreaFabric" placeholder="Paste" rows="1" onchange="LimpiarAreaFabric();" style="width:50px;height:30px" />
+                                                        </span>
+                                                    </div>
+                                                </div>                        
+                                            </div>                                                                 
+                                        </div>                                         
+                                    </div>                                         
+                                  </div>
+                                </div>
+                                <div class="row" id="divFabricCombo">
+                                    <div class="col-sm-12">
+                                        <button class="btn btn-success" id="btnAddFabricCombo">
+                                            <span class="fa fa-plus-square"></span>
+                                            Add fabric combo
+                                        </button>
+                                    </div>
+                                    <!-- COLUMNA 1-->
+                                    <div class="col-sm-6 _clsdivFabricCombo divFabricCombo hideFabriccombo" id="divFabricCombo1">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <div class="row" style="vertical-align: middle;">
+                                                    <div class="col-sm-6">
+                                                        <h3>Fabric Combo 1</h3>
+                                                    </div>
+                                                    <div class="col-sm-6 text-right">
+                                                        <button class="btn btn-danger btn-sm" type="button" onclick='EliminarEstiloxFabricCombo(this)'>
+                                                            <span class="fa fa-trash-o"></span>
+                                                        </button>
+                                                    </div>                                                     
+                                                </div>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="form-horizontal" data-type="">
+                                                    <div class="form-group clsgrupodescripcion_Fabriccombo">
+                                                        <div class="col-sm-1 control-label">
+                                                            <label>*Combo Name:</label>
+                                                        </div>
+                                                        <div class="col-sm-8">
+                                                            <textarea name="txtDescriptionFabricCombo" onkeyup="Mayus(this)" id="txtDescriptionFabric1"  class="form-control ComboFabricDescription" rows="2" cols="8"></textarea>
+                                                        </div>
+                                                        <div class="col-sm-2"><button type="button" class="btn btn-success btn-xs" title="Convertir a color" data-btn="" id="btnFCombo1" onclick="ConfColorName(this,3)">Color Name</button></div>
+                                                    </div>
+                                                  
+                                                    <div class="form-group">
+                                                        <div class="col-sm-offset-2 col-sm-10">
+                                                            <button type="button" class="btn btn-primary" name="btnAddColorFabricCombo" data-divcolor="divFabricComboColor1" onclick="AgregarFabricColorCombo(this);">Add Color</button>
+                                                           
+                                                        </div>
+                                                    </div>
+                                                    <div id="divFabricComboColor1">
+                                                        <table class="table table-hover table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="col-sm-4">Position (*)</th>
+                                                                    <th class="col-sm-4">Color (*)</th>
+                                                                    <th class="col-sm-1"></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="tblBodyFabricComboColor" class="clstbodyFabriccombocolor"></tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- FIN YA NO MOSTRAR ESTO-->
+                            </div>
+                        </div>
+
+                        <div id="tab-GarmentCombo" class="tab-pane">
+                            <div class="panel-body">
+                                <div id="divCombination" class="row">
+                                    <div class="col-sm-12">
+                                        <button class="btn btn-success" id="btnAddCombo">
+                                            <span class="fa fa-plus-square"></span>
+                                            Add
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <h4><strong> Se refiere a los colores que intervienen en una prenda. Ejemplo: cuerpo listado y cuello en color solido </strong></h4>
+                                    </div>
+                                </div>                               
+                                <div class="row" id="divCombo">
+                                    <!-- COLUMNA 1-->
+                                    <div class="col-sm-6 _clsdivCombo divCombo hidecombo" id="divCombo1">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <div class="row" style="vertical-align: middle;">
+                                                    <div class="col-sm-6">
+                                                        <h3>Combination 1</h3>
+                                                    </div>
+                                                    <div class="col-sm-6 text-right">
+                                                        <button class="btn btn-danger btn-sm" type="button" onclick='EliminarEstiloxCombo(this)'>
+                                                            <span class="fa fa-trash-o"></span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="form-horizontal" data-type="">
+                                                    <div class="form-group clsgrupodescripcion_combo">
+                                                        <div class="col-sm-3 control-label">
+                                                            <label>*Combo Name:</label>
+                                                        </div>
+                                                        <div class="col-sm-8">
+                                                            <textarea name="txtDescriptionCombo" onkeyup="Mayus(this)"  class="form-control ComboDescription" rows="2" cols="8"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-offset-2 col-sm-10">
+                                                            <button type="button" class="btn btn-primary" name="btnAddColorCombo" data-divcolor="divComboColor1" onclick="AgregarColorCombo(this);">Add Color</button>
+                                                        </div>
+                                                    </div>
+                                                    <div id="divComboColor1">
+                                                        <table class="table table-hover table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th style="width:10%;" ></th>
+                                                                    <th style="width:35%;" class="col-sm-4">Description (*)</th>
+                                                                    <th style="width:50%;" class="col-sm-4">Color (*)</th>                                                                                                                           
+                                                                    <th style="width:5%;" class="col-sm-1"></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="clstbodycombocolor"></tbody>
+                                                        </table>
+                                                    </div>                                               
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- FIN YA NO MOSTRAR ESTO-->
+                            </div>
+                        </div>
+
+                        <div id="tab-process" class="tab-pane">
+                            <div class="panel-body">
+                                <div id="divProceso" class="row">
+                                    <div class="col-sm-12">
+                                        <button class="btn btn-success" id="btnAddProcess">
+                                            <span class="fa fa-plus-square"></span>
+                                            Add
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <h4><strong>Se refiere a procesos adic. que se aplican en paneles o prenda tales como deep dye. NO se refiere a lavados en paño</strong></h4>
+                                    </div>
+                                </div>
+                                <!-- INI YA NO MOSTRAR ESTO-->
+
+                                <div class="row" id="divProcess">
+                                    <!-- COLUMNA 1-->
+                                    <div class="col-sm-6 _clsdivproceso divProcess hideproceso" id="divProcess1" data-divcolor="divProcesoColor1">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <div class="row" style="vertical-align: middle;">
+                                                    <div class="col-sm-6">
+                                                        <h3>Process 1</h3>
+                                                    </div>
+                                                    <div class="col-sm-6 text-right">
+                                                        <button class="btn btn-danger btn-sm" type="button" onclick='EliminarProceso(this)'>
+                                                            <span class="fa fa-trash-o"></span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="form-horizontal" data-type="">
+                                                    <div class="form-group clsgrupodescripcion_proceso">
+                                                        <div class="col-sm-3 control-label">
+                                                            <label>*Description:</label>
+                                                        </div>
+                                                        <div class="col-sm-8">
+                                                            <textarea name="txtDescription" onkeyup="Mayus(this)"  class="form-control ProcessDescription" rows="2" cols="8"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-3 control-label">
+                                                            <label>Supplier:</label>
+                                                        </div>
+                                                        <div class="col-sm-8">
+                                                            <select id="cboProcessSupplier" class="cboProcessSupplier ProcessSupplier form-control"><option value="">Select One</option></select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-3 control-label">
+                                                            <label>Status:</label>
+                                                        </div>
+                                                        <div class="col-sm-8">
+                                                            <select id="cboStatusProcess" class="form-control ProcessStatus">
+                                                                <option value="0">Select one</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-3 control-label">
+                                                            <label>Comment:</label>
+                                                        </div>
+                                                        <div class="col-sm-8">
+                                                            <input name="txtComent" onkeyup="Mayus(this)"  class="form-control ProcessComment" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-3 control-label">
+                                                            <label>Cost:</label>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input name="txtCost" value="0" onkeypress="return DigitimosDecimales(event,this)" onblur="ValidarNumero(this);" class="form-control ProcessCost" />
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <select id="cboProcessUnidadMedida" class="form-control ProcessCostType"></select>
+                                                        </div>
+                                                        <div class="col-sm-2">
+                                                            <select id="cboProcessMoneda" class="form-control ProcessMoneda"></select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-offset-2 col-sm-10">
+                                                            <button type="button" class="btn btn-primary" name="btnAddArtwokColor" data-divcolor="divProcesoColor1" onclick="AgregarColorProceso(this);">Add Color</button>
+                                                        </div>
+                                                    </div>
+                                                    <div id="divProcesoColor1">
+                                                        <table class="table table-hover table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="col-sm-4">Color (*)</th>
+                                                                    <th class="col-sm-3">Status</th>
+                                                                    <th class="col-sm-4">Comment</th>
+                                                                    <th class="col-sm-1"></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody></tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- FIN YA NO MOSTRAR ESTO-->
+                            </div>
+                        </div>
+                        <div id="tab-artwork" class="tab-pane">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <button class="btn btn-success" id="btnAddArtwork">
+                                            <span class="fa fa-plus-square"></span>
+                                            Add
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <h4><strong>Se refiere a estampados con ubicación, bordados, grinding (huecos con esmeril) etc que lleva la prenda.</strong></h4>
+                                    </div>
+                                </div>
+                                <div class="row" id="divArtwork">
+                                    <!-- COLUMNA 1-->
+                                    <div class="col-sm-6 _clsdivatwork divArtwork hideatwork" id="divArtwork1" data-divcolor="divArtworkColor1">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <div class="row" style="vertical-align: middle;">
+                                                    <div class="col-sm-6">
+                                                        <h3>Atwork 1</h3>
+                                                    </div>
+                                                    <div class="col-sm-6 text-right">
+                                                        <button class="btn btn-danger btn-sm" type="button" onclick='EliminarArtwork(this)'>
+                                                            <span class="fa fa-trash-o"></span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="form-horizontal" data-type="">
+                                                    <div class="form-group clsgrupodescripcion_artwork">
+                                                        <div class="col-sm-3 control-label">
+                                                            <label>*Description:</label>
+                                                        </div>
+                                                        <div class="col-sm-8">
+                                                            <textarea name="txtDescription" onkeyup="Mayus(this)"  class="form-control ArtworkDescription" rows="2" cols="8"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-3 control-label">
+                                                            <label>Technique:</label>
+                                                        </div>
+                                                        <div class="col-sm-8">
+                                                            <input name="txtTechnique" onkeyup="Mayus(this)"  class="form-control ArtworkTechnique" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-3 control-label">
+                                                            <label>Placement:</label>
+                                                        </div>
+                                                        <div class="col-sm-8">
+                                                            <input name="txtPlacement" onkeyup="Mayus(this)"  class="form-control ArtworkPlacement" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-3 control-label">
+                                                            <label>Supplier:</label>
+                                                        </div>
+                                                        <div class="col-sm-8">
+                                                            <select id="cboArtworkSupplier" class="cboArtworkSupplier form-control ArtworkSupplier"><option value="">Select One</option></select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-3 control-label">
+                                                            <label>Status:</label>
+                                                        </div>
+                                                        <div class="col-sm-8">
+                                                            <select id="cboStatusArtwork" class="form-control ArtworkStatus">
+                                                                <option value="0">Select one</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-3 control-label">
+                                                            <label>Comment:</label>
+                                                        </div>
+                                                        <div class="col-sm-8">
+                                                            <input name="txtComment" onkeyup="Mayus(this)"  class="form-control ArtworkComment" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-3 control-label">
+                                                            <label>Cost:</label>
+                                                        </div>
+                                                        <div class="col-sm-5">
+                                                            <input name="txtCost" value="0" onkeypress="return DigitimosDecimales(event,this)" onblur="ValidarNumero(this);" class="form-control ArtworkCost" />
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <select id="cboArtworkMoneda" class="form-control ArtworkMoneda"></select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-3 control-label">
+                                                            <label>Upload File:</label>
+                                                        </div>
+                                                        <div class="col-sm-8">
+                                                            <input type="file" class="form-control ArtworkFile" />
+                                                            <br>
+                                                            <a class="ArtworkFileD hide" id="btnDescargarArtworkFile" onclick="DescargarArtworkFile(this);" data-file="2018021310533974.docx" data-fileo="Peer Observation Sheet.docx">Peer Observation Sheet.docx</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-offset-2 col-sm-10">
+                                                            <button type="button" class="btn btn-primary" name="btnAddArtwokColor" data-divcolor="divArtworkColor1" onclick="AgregarColorArtwwork(this);">Add Color</button>
+                                                        </div>
+                                                    </div>
+                                                    <div id="divArtworkColor1">
+                                                        <table class="table table-hover table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Color (*)</th>
+                                                                    <th>Status</th>
+                                                                    <th>Comment</th>
+                                                                    <th></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody></tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="tab-trims" class="tab-pane">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <button class="btn btn-success" id="btnAddTrim">
+                                            <span class="fa fa-plus-square"></span>
+                                            Add
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <h4><strong>Se refiere a los avíos que lleva la prenda  etiquetas, tapetes, botones, cierres, telas para aplicaciones o piezas pequeñas en la prenda,  telas importadas,  hang tags,  tissue, bolsas.</strong></h4>
+                                    </div>
+                                </div>
+                                <div class="row" id="divTrim">
+                                    <!-- EDU: AQUI CARGAR LOS TRIMS-->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="tab-Sample" class="tab-pane">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-sm-12">
+
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <h4><strong> Lista de todos las muestras trabajadas para el estilo</strong></h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-sm-12">
+                                      <div id="divTableSample" style="position:relative; overflow-x:auto; overflow-y:auto; max-height:400px; min-height:0px;">
+                                          <table class="table table-bordered table-hover" id="tableSample">
+                                              <thead>
+                                                  <tr>                                                      
+                                                      <th class="text-center" style="width:10%;">
+                                                          Sample </br> Type
+                                                      </th>
+                                                      <th class="text-center" style="width:10%;vertical-align:middle;">
+                                                          # Req
+                                                      </th>
+                                                      <th class="text-center" style="width:20%;vertical-align:middle;">
+                                                          Status
+                                                      </th>
+                                                      <th class="text-center" style="width:10%;vertical-align:middle;">
+                                                          Factory
+                                                      </th>
+                                                      <th class="text-center" style="width:40%;vertical-align:middle;">
+                                                          Comment
+                                                      </th>
+                                                  </tr>
+                                              </thead>
+                                              <tbody id="tbody_tableSample"></tbody>
+                                          </table>
+                                      </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab-estilotechpack" class="tab-pane">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div style="width: 100px;">
+                                            <span class="btn btn-primary btn-sm btn-file input-group-addon" style="background-color: #0069d9; color: #fff; height: 30px;">
+                                                <span class="fa fa-cloud-upload"></span>
+                                                File
+                                                <input id="btn_addestilotechpack" type="file" multiple />
+                                            </span>
+
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-sm-12">
+                                        <h4><strong>Lista de archivos, techpack</strong></h4>
+                                    </div>
+                                </div>
+                                <div id="divtblestilotechpack" class="table-responsive m-t" style="position:relative; overflow-x:auto; overflow-y:auto; max-height:400px; min-height:0px;">
+                                    <table class="table table-bordered table-hover" id="table_estilotechpack">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center col-sm-1">
+
+                                                </th>
+                                                <th class="text-center col-sm-4" style="vertical-align:middle;">
+                                                    File
+                                                </th>
+                                                <th class="text-center col-sm-1" style="vertical-align:middle;">
+                                                    User
+                                                </th>
+                                                <th class="text-center col-sm-2" style="vertical-align:middle;">
+                                                    Date
+                                                </th>
+                                                <th class="text-center col-sm-3" style="vertical-align:middle;">
+                                                    Comments
+                                                </th>
+                                                <th class="text-center col-sm-1" style="vertical-align:middle;">
+
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbody_tableestilotechpack"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="display:none">
+    <select id="cboStatusColor"></select>
+    <select id="cboProveedor"></select>
+    <select id="cboTipoMoneda"></select>
+    <select id="cboUnidadMedida"></select>
+    <select id="cboFabricProcess"><option value="">Select One</option></select>
+    <select id="cboFabricProjectColorGeneral"><option value="0">Select One</option></select>
+</div>
+
+<input type="hidden" id="hfFabricContador" value="1" />
+<input type="hidden" id="hfFabricComboContador" value="1" />
+<input type="hidden" id="hfComboContador" value="1" />
+<input type="hidden" id="hfProcesoContador" value="1" />
+<input type="hidden" id="hfArtworkContador" value="1" />
+<input type="hidden" id="hfTrimContador" value="1" />
+

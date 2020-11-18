@@ -1,0 +1,303 @@
+﻿<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    th, td {
+        background: #fff;
+        /*padding: 8px 16px;*/
+    }
+
+    table tr:hover {
+        background-color: blue;
+    }
+
+    .dataTables_filter {
+        visibility: hidden;
+    }
+
+
+    /*.tableFixHead {
+            overflow: auto;
+            height: 660px;
+            overflow-y: hidden;
+        }
+
+        .theadNegri {
+            display: table;
+            table-layout: fixed;
+        }
+
+        .tbodyNegri {
+            display: block;
+            height: 600px;
+            overflow: auto;
+        }*/
+    /*#divContent #tblControlAsistencia td, th {
+        min-width: 130px;
+    }*/
+    .col-200 {
+        min-width: 200px !important;
+    }
+
+    .col-120 {
+        min-width: 120px !important;
+    }
+
+    .col-100 {
+        min-width: 100px !important;
+    }
+
+    .col-80 {
+        min-width: 80px !important;
+    }
+
+    .col-60 {
+        min-width: 60px !important;
+    }
+
+    .col-50 {
+        min-width: 50px !important;
+    }
+
+    .col-20 {
+        min-width: 20px !important;
+    }
+
+    .color-Area {
+        background-color: #f5f5f5 !important;
+    }
+
+    .color-Asistencia {
+        background-color: #afe8dd !important;
+    }
+
+    .center-vertical {
+        text-align: center;
+        padding: 5px 0 5px 0;
+        background: #206590 !important;
+        color: white !important;
+    }
+
+    #divContent table th {
+        background: #206590 !important;
+        color: white !important;
+    }
+
+    /*Padding style*/
+    .pd-t-0 {
+        padding-top: 0;
+    }
+
+    .pd-b-0 {
+        padding-bottom: 0;
+    }
+
+    .pd-l-0 {
+        padding-left: 0
+    }
+
+    .pd-r-0 {
+        padding-right: 0;
+    }
+
+    /* Fix para ultima columna jquery datatable */
+    table.table-bordered.dataTable {
+        border-collapse: collapse !important;
+    }
+
+    /* Sticky Table */
+    /*.view {
+        width: 100%;
+        max-height: 500px;
+    }
+
+    .sticky-wrapper {
+        position: relative;
+        overflow: auto;
+    }
+
+    .sticky-col {
+        position: sticky !important;
+        position: -webkit-sticky !important;
+        background-color: white !important;
+    }
+
+    .left-col {
+        left: 0px;
+    }
+
+    .second-col {
+        width: 150px;
+        min-width: 150px;
+        max-width: 150px;
+        left: 100px;
+    }*/
+</style>
+
+<div class="row wrapper white-bg page-heading">
+    <div id="content_header" class="ibox float-e-margins">
+        <div id="divtituloprincipal" class="col-sm-6">
+            <h2 class="font-bold">Reporte de Asistencia</h2>
+        </div>
+        <div id="divBotonesPrincipal" class="col-sm-6 text-right" style="vertical-align: middle;margin-top:15px;">
+            @*<button type="button" class="btn btn-success" id="btnSearch">
+                    <span class="fa fa-search"> </span>
+                    Buscar
+                </button>
+                <button type="button" class="btn btn-primary" id="btnExportarReporteLaboratorio" onclick="ExportarXl(this);">
+                    <span class="fa fa-file-o"> </span>
+                    Exportar
+                </button>*@
+        </div>
+    </div>
+</div>
+
+<div class="row wrapper-content gray-bg animated">
+    <div class="ibox">
+        @*<div class="ibox-title">
+                <div class="form-horizontal row ">
+                    <div id="divTitulo" class="col-sm-6">
+                        <h3 id="_title" class="text-navy bold"></h3>
+                    </div>
+                    <div id="divBotonesprimarios" class="col-sm-6 text-right">
+                        <button type="button" class="btn btn-success" id="btnSearch">
+                            <span class="fa fa-search"> </span>
+                            Buscar
+                        </button>
+                        <button type="button" class="btn btn-primary" id="btnExportarReporteLaboratorio" onclick="ExportarXl(this);">
+                            <span class="fa fa-file-o"> </span>
+                            Exportar
+                        </button>
+                    </div>
+                </div>
+            </div>*@
+        <div class="ibox-content">
+            <div class="form-group" style="margin-bottom: 0">
+                <div class="form-horizontal row">
+                    <div class="col-sm-5">
+                        <label class="control-label col-sm-5">Nombres y/o Apellidos</label>
+                        <div class="col-sm-7">
+                            <input type="text" id="txtNombre" class="form-control input-sm m-b-xs">
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <label class="control-label col-sm-5">Área y/o Sub Área</label>
+                        <div class="col-sm-7">
+                            <select data-placeholder="&nbsp" id="cboArea" multiple class="chosen-select"></select>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="col-sm-12">
+                            <button type="button" class="btn btn-success" id="btnSearch" style="width: 98px;">
+                                <span class="fa fa-search"> </span>
+                                Buscar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-horizontal row">
+                    <div class="col-sm-5" id="dtFI">
+                        <label class="control-label col-sm-5">Fecha Inicio</label>
+                        <div class="col-sm-7">
+                            <div class="input-group date">
+                                <span class="input-group-addon"> <i class="fa fa-calendar"> </i> </span>
+                                <input type="text" id="txtFI" class="form-control input-sm m-b-xs">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-5" id="dtFF">
+                        <label class="control-label col-sm-5">Fecha Fin</label>
+                        <div class="col-sm-7">
+                            <div class="input-group date">
+                                <span class="input-group-addon"> <i class="fa fa-calendar"> </i> </span>
+                                <input type="text" id="txtFF" class="form-control input-sm m-b-xs">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="col-sm-12">
+                            <button type="button" class="btn btn-primary" id="btnExportarReporteLaboratorio" onclick="ExportarXl(this);">
+                                <span class="fa fa-file-o"> </span>
+                                Exportar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ibox">
+        <div class="ibox-content">
+            <div id="divContent"></div>
+            @*<div class="view">
+                    <div class="sticky-wrapper" id="divContent"></div>
+                </div>*@
+        </div>
+    </div>
+</div>
+
+@*<div class="wrapper wrapper-content gray-bg animated fadeInRight">
+        <div class="ibox" id="formList">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="form-horizontal">
+                            <div class="col-sm-6">
+                                <div class="form-group" id="dtFI">
+                                    <label class="control-label col-sm-2">Nombres y/o Apellidos</label>
+                                    <div class="col-sm-10">
+                                        <div>
+                                            <input type='text' id="txtNombre" class='form-control'>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group" id="dtFI">
+                                    <label class="control-label col-sm-2">Área y/o Sub Área</label>
+                                    <div class="col-sm-10">
+                                        <div>
+                                            <select class="form-control">
+                                                <option>0</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-horizontal">
+                            <div class="col-sm-6">
+                                <div class="form-group" id="dtFI">
+                                    <label class="control-label col-sm-2">Fecha Inicio</label>
+                                    <div class="col-sm-10">
+                                        <div class='input-group date '>
+                                            <span class='input-group-addon'> <i class='fa fa-calendar'> </i> </span>
+                                            <input type='text' id="txtFI" class='form-control'>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group" id='dtFF'>
+                                    <label class="control-label col-sm-2">Fecha Fin</label>
+                                    <div class="col-sm-10">
+                                        <div class='input-group date'>
+                                            <span class='input-group-addon'> <i class='fa fa-calendar'> </i> </span>
+                                            <input type='text' id="txtFF" class='form-control'>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <div id="divContent" class="tableFixHead">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@

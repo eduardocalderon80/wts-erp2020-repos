@@ -1,0 +1,226 @@
+﻿<style>
+    #txt_fecha_solicitud[readonly] {
+        background-color: #ffffff;
+        border: 1px solid #e5e6e7;
+    }
+</style>
+<div id="pnl_ticket_nuevo">
+
+    <div id="pnl_ticket_nuevo_header" class="row wrapper white-bg page-heading">
+        <div class="ibox">
+            <div id="div_titulo_principal" class="col-sm-6">
+                <h2 class="font-bold">Mesa de Ayuda</h2>
+            </div>
+            @*<div id="div_botones_principal" class="col-sm-6 text-right">
+                <button id="btn_retornar" type="button" class="btn btn-outline btn-default">
+                    <span class="fa fa-reply-all"></span>
+                    Regresar
+                </button>
+            </div>*@
+        </div>
+    </div>
+
+    <div id="pnl_ticket_nuevo_body" class="row wrapper-content gray-bg animated">
+
+        <div id="pnl_ticket_nuevo_formulario" class="ibox">
+
+            <div class="ibox-title">
+                <div class="form-horizontal row ">
+                    <div class="col-sm-6">
+                        <h3 id="_title" class="text-success bold">Nuevo</h3>
+                    </div>
+                    <div id="div_botones_principal" class="col-sm-6 text-right">
+                        <button id="btn_guardar" title="Guardar" type="button" class="btn btn-outline btn-primary">
+                            <span class="fa fa-save"></span>
+                            Guardar
+                        </button>
+                        <button id="btn_retornar" type="button" class="btn btn-outline btn-default">
+                            <span class="fa fa-reply-all"></span>
+                            Regresar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ibox-content">
+                <div class="tabs-container">
+                    <ul class="nav nav-tabs">
+                        <li class="active bg-primary">
+                            <a id="tab_registro" data-toggle="tab" href="#tab-registro" aria-expanded="true"><label class="control-label">Registro</label></a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="tab-registro" class="tab-pane active">
+                            <div class="ibox">
+                                <div class="ibox-content">
+                                    <div class="form-horizontal row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3">Solicitante:</label>
+                                                <div class="col-sm-9">                                                    
+                                                    <select id="cbo_solicitante" class="form-control _select2 _enty" data-id="idsolicitante" data-required="true" style="width:100%"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3">Área:</label>
+                                                <div class="col-sm-9">
+                                                    <select id="cbo_area_solicitante" disabled class="form-control _select2 _enty" data-id="idareasolicitante" data-required="true" style="width:100%"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-horizontal row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3">Equipo TIC:</label>
+                                                <div class="col-sm-9">
+                                                    <select id="cbo_equipotic" class="form-control _select2 _enty" data-id="idequipotic" data-required="true" style="width:100%"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3">Tipo:</label>
+                                                <div class="col-sm-9">
+                                                    <select id="cbo_tiposolicitud" class="form-control _select2 _enty" data-id="idtiposolicitud" data-required="true" style="width:100%"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-horizontal row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3">Fecha:</label>
+                                                <div id="div_fecha_solicitud" class="col-sm-9">
+                                                    <div class='input-group date'>
+                                                        <input id="txt_fecha_solicitud" disabled type='text' class='form-control input-sm m-b-xs _enty' data-id="fechasolicitud" data-type="date" data-level="true" data-min="10" data-max="10">
+                                                        <div id="div_calendario_fecha_solicitud" disabled class="input-group-addon">
+                                                            <span class="fa fa-calendar"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3">Prioridad:</label>
+                                                <div class="col-sm-9">
+                                                    <select id="cbo_prioridad" class="form-control _select2 _enty" data-id="idprioridad" data-required="true" style="width:100%"></select>
+                                                </div>
+                                            </div>
+                                        </div>                                        
+                                    </div>
+                                    <div class="form-horizontal row">
+                                        <div class="col-sm-6">
+                                            <div class="ibox">
+                                                <div class="ibox-title">
+                                                    <h5 class="text-success">Información</h5>
+                                                </div>
+                                                <div class="ibox-content">
+                                                    <div id="div_categoria" class="form-horizontal row">                                                       
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-3">Categoria:</label>
+                                                            <div class="col-sm-9">
+                                                                <div class='input-group'>
+                                                                    <select id="cbo_categoria" class="form-control _select2 _enty" data-id="idcategoria" data-required="true" style="width:100%"></select>
+                                                                    <div id="div_descripcion_categoria" class="input-group-addon btn-outline btn-info">
+                                                                        <span class="fa fa-eye"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-horizontal row">
+                                                        <div id="div_sistema" class="form-group hide">
+                                                            <label class="control-label col-sm-3">Sistema:</label>
+                                                            <div class="col-sm-9">
+                                                                <select id="cbo_sistema" class="form-control _select2 _enty" data-id="idsistema" data-required="true" style="width:100%"></select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-horizontal row">
+                                                        <div id="div_modulo" class="form-group hide">
+                                                            <label class="control-label col-sm-3">Modulo:</label>
+                                                            <div class="col-sm-9">
+                                                                <select id="cbo_modulo" class="form-control _select2 _enty" data-id="idmodulo" data-required="true" style="width:100%"></select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="div_tabla_aprobador" class="form-horizontal row hide">
+                                                        <div class="table-responsive">
+                                                            <table id="tbl_aprobador" class="table table-bordered" data-page-size="10" data-filter=#filter >
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class='cols-sm-2 text-center'></th>
+                                                                        <th class='cols-sm-5 text-center' data-sort-ignore="true">Nombre Aprobador</th>
+                                                                        <th class='cols-sm-4 text-center' data-sort-ignore="true">Correo</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody></tbody>
+                                                            </table>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="ibox">
+                                                <div class="ibox-title">
+                                                    <h5 class="text-success">Detalle</h5>
+                                                </div>
+                                                <div class="ibox-content">
+                                                    <div id="div_categoria" class="form-horizontal row">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-3">Descripción:</label>
+                                                            <div class="col-sm-9">
+                                                                <textarea id="txt_descripcion" class="form-control _enty" data-id="descripcion" rows="6" style="resize:none" placeholder="Ingresar descripción" data-min="1" data-max="5000" data-required="true" maxlength="5000"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-horizontal row">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-12">* Puede subir como máximo dos archivos </label>
+                                                            <label class="control-label col-sm-12">* El peso máximo del total de archivos a subir no debe pasar los 3 MB. </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-horizontal row">
+                                                        <div class="form-group">
+                                                            <div class="col-sm-3 text-right">
+                                                                <span class="btn btn-outline btn-warning btn-file text-right" title="Cargar Archivo">
+                                                                    <span class="fa fa-upload"></span>
+                                                                    <input id="file_user" class="text-right" type="file" />
+                                                                </span>
+                                                            </div>
+                                                            <div class="col-sm-9">
+                                                                <table id="tbl_file_user" class="table table-bordered table-hover" >
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th class="col-sm-1"></th>
+                                                                            <th class="col-sm-9">Archivo</th>
+                                                                            <th class="col-sm-1"></th>
+                                                                            <th class="hide col-sm-1"></th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody></tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

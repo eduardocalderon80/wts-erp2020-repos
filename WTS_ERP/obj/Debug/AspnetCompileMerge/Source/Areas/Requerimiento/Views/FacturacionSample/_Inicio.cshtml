@@ -1,0 +1,216 @@
+﻿<div id="panelEncabezado_FacturacionSampleInicial">
+    <div class="hide">
+        <input type="text" id="txtpar_facturacionsampleinicial" value="DATA-PARAMETRO" />
+        @*<input type="text" id="rutaFileServerEstilo" value="@ViewBag.RutaFileServer" />*@
+    </div>
+    <div class="form-horizontal row">
+        <div class="text-right">
+            <button type="button" class="btn btn-default" id="btnModalClose" data-dismiss="modal">
+                <span class="fa fa-ban"></span>
+                Close
+            </button>
+            <button type="button" class="btn btn-primary" id="btnVerFacturaFabrica">
+                @*<span class="fa fa-save"></span>*@
+                Register Factory Invoice
+            </button>
+            <button type="button" class="btn btn-warning" id="btnVerOrdenPedido">
+                @*<span class="fa fa-repeat"></span>*@
+                Generate WTS Purchase Order
+            </button>
+            <button type="button" class="btn btn-success" id="btnVerFacturaCliente">
+                @*<span class="fa fa-repeat"></span>*@
+                Generate Sample Invoce
+            </button>
+            
+        </div>
+        <hr class="modal_hr">
+        <div class="col-sm-12 m-b">
+            <div class="float-left">
+                <ul class="nav nav-tabs _cls_ul_tab_inicial" role="tablist">
+                    <li class="active _cls_li_tab_inicial _cls_li_inicial_requerimiento"><a class="nav-link" data-toggle="tab" href="#tab-samplelist" aria-expanded="true">Sample List</a></li>
+                    <li class="_cls_li_tab_inicial _cls_li_inicial_ordenpedidodetalle"><a class="nav-link" data-toggle="tab" href="#tab-ordenpedidodetalle" aria-expanded="true">Purchase Order Detail</a></li>
+                    <li class="_cls_li_tab_inicial _cls_li_inicial_facturafabrica"><a class="nav-link" data-toggle="tab" href="#tab-facturafabricadetalle" aria-expanded="false">Factory Billing</a></li>
+                    <li class="_cls_li_tab_inicial _cls_li_inicial_facturaclientedetalle"><a class="nav-link" data-toggle="tab" href="#tab-facturaclientedetalle" aria-expanded="false">Billing Detail</a></li>
+                </ul>
+                
+            </div>
+            
+        </div>
+    </div>
+    <div class="form-horizontal row" style="max-height:405px; overflow-y: auto;">
+        <div class="tab-content">
+            <div role="tabpanel" id="tab-samplelist" class="tab-pane active _cls_tab_inicial _cls_div_tab_inicial_principal_requerimiento">
+                <div class="col-sm-12" >
+                    <div class="form-group">
+                        <div class="text-right">
+                            <button type="button" class="btn btn-success" id="btnUpdateRequerimiento_inicial">
+                                <span class="fa fa-floppy-o"></span>
+                                Update
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row" style="max-height: 360px; overflow-y: auto;">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="tbl_requerimientosample">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Style Code</th>
+                                        <th>Request</th>
+                                        <th>Sample</th>
+                                        @*<th>Total Req Samples</th>
+                                        <th>Total Invoiced Client</th>*@
+                                        <th>V</th>
+                                        <th>Ex Factory</th>
+                                        <th>In DC</th>
+                                        <th>Billable</th>
+                                        <th>It Will Cost</th>
+                                        <th>PO Number</th>
+                                        <th>Billing Status</th>
+                                    </tr>
+                                    <tr>
+                                        <th></th>
+                                        <th><input type="text" placeholder="Search" class="form-control _clsfilter" data-field="CodigoEstilo" /></th>
+                                        <th><input type="text" placeholder="Search" class="form-control _clsfilter" data-field="FechaCreacion" /></th>
+                                        <th><input type="text" placeholder="Search" class="form-control _clsfilter" data-field="NombreTipoMuestra" /></th>
+                                        <th><input type="text" placeholder="Search" class="form-control _clsfilter" data-field="Version" /></th>
+                                        <th><input type="text" placeholder="Search" class="form-control _clsfilter" data-field="ExFactoryInicial" /></th>
+                                        <th><input type="text" placeholder="Search" class="form-control _clsfilter" data-field="FechaInDC" /></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th><input type="text" placeholder="Search" class="form-control _clsfilter" data-field="PoNumber" /></th>
+                                        <th><input type="text" placeholder="Search" class="form-control _clsfilter" data-field="NombreEstadoFacturacionCatologo" /></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody_requerimientosample"></tbody>
+                            </table>
+                        </div>
+                        <div class="col-sm-12 text-center" id="foot_paginacion_ini_req">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" id="tab-ordenpedidodetalle" class="tab-pane _cls_tab_inicial _cls_div_tab_inicial_principal_ordenpedidodetalle">
+                <div class="col-sm-12" id="div_tbl_ordenpedido_detalle_inicial" style="max-height: 360px; overflow-y: auto;">
+                    <table class="table table-hover table-bordered" id="tbl_ordenpedidodetalle_inicial">
+                        <thead>
+                            <tr>
+                                <th style='width: 8%'></th>
+                                <th style='width: 12%'>Factory</th>
+                                <th style='width: 9%'>Style Code</th>
+                                <th style='width: 9%'>Sample</th>
+                                <th style='width: 6%'>V</th>
+                                <th style='width: 6%'>Combo Color</th>
+                                <th style='width: 6%'>Size</th>
+                                <th style='width: 6%'>Q</th>
+                                <th style='width: 6%'>Price</th>
+                                <th style='width: 5%'>Amount</th>
+                                <th style='width: 7%'>Factory Invoice</th>
+                                <th style='width: 7%'>Invoice Number</th>
+                                <th style='width: 6%'>Date Emission</th>
+                                <th style='width: 7%'>PO Number</th>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_op" data-field="NombreProveedor" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_op" data-field="CodigoEstilo" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_op" data-field="NombreTipoMuestra" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_op" data-field="Version" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_op" data-field="NombreClienteColor" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_op" data-field="NombreClienteTalla" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_op" data-field="CantidadMuestraFacturable" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_op" data-field="PrecioMuestra" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_op" data-field="SubTotal" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_op" data-field="NumeroFacturaFabrica" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_op" data-field="NumeroFacturaCliente" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_op" data-field="FechaCreacionOP" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_op" data-field="NumeroOrdenPedido" /></th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody_ordenpedidodetalle_inicial"></tbody>
+                    </table>
+                </div>
+                <div class="col-sm-12 text-center" id="foot_paginacion_ini_ordenpedido"></div>
+            </div>
+            <div role="tabpanel" id="tab-facturafabricadetalle" class="tab-pane _cls_tab_inicial _cls_div_tab_inicial_principal_facturafabrica">
+                <div class="col-sm-12" id="div_tbl_facturafabrica_detalle_inicial" style="max-height: 360px; overflow-y: auto;">
+                    <table class="table table-hover table-bordered" id="tbl_facturafabrica_detalle_inicial">
+                        <thead>
+                            <tr>
+                                <th style='width: 8%'></th>
+                                <th style='width: 12%'>Factory</th>
+                                <th style='width: 9%'>Style Code</th>
+                                <th style='width: 9%'>Sample</th>
+                                <th style='width: 6%'>V</th>
+                                <th style='width: 6%'>Combo Color</th>
+                                <th style='width: 6%'>Size</th>
+                                <th style='width: 6%'>Q</th>
+                                <th style='width: 6%'>Price</th>
+                                <th style='width: 5%'>Amount</th>
+                                <th style='width: 7%'>PO Number</th>
+                                <th style='width: 6%'>Date Emission</th>
+                                <th style='width: 7%'>Factory Invoice</th>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_ff" data-field="NombreProveedor" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_ff" data-field="CodigoEstilo" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_ff" data-field="NombreTipoMuestra" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_ff" data-field="Version" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_ff" data-field="NombreClienteColor" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_ff" data-field="NombreClienteTalla" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_ff" data-field="CantidadMuestraFacturable" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_ff" data-field="PrecioMuestra" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_ff" data-field="SubTotal" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_ff" data-field="NumeroOrdenPedido" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_ff" data-field="FechaGeneracion" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_ff" data-field="NumeroFacturaFabrica" /></th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody_facturafabrica_detalle_inicial"></tbody>
+                    </table>
+                </div>
+                <div class="col-sm-12 text-center" id="foot_paginacion_ini_facturafabrica"></div>
+            </div>
+            <div role="tabpanel" id="tab-facturaclientedetalle" class="tab-pane _cls_tab_inicial _cls_div_tab_inicial_principal_facturaclientedetalle">
+                <div class="col-sm-12" id="div_tbl_facturacliente_detalle_inicial" style="max-height: 360px; overflow-y: auto;">
+                    <table class="table table-hover table-bordered" id="tbl_facturaclientedetalle_inicial">
+                        <thead>
+                            <tr>
+                                <th style='width: 8%'></th>
+                                <th style='width: 9%'>Style Code</th>
+                                <th style='width: 9%'>Sample</th>
+                                <th style='width: 6%'>V</th>
+                                <th style='width: 6%'>Combo Color</th>
+                                <th style='width: 6%'>Size</th>
+                                <th style='width: 6%'>Q</th>
+                                <th style='width: 6%'>Price</th>
+                                <th style='width: 5%'>Amount</th>
+                                <th style='width: 7%'>PO Number</th>
+                                <th style='width: 6%'>Date Emission</th>
+                                <th style='width: 7%'>Invoice Number</th>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_fc" data-field="CodigoEstilo" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_fc" data-field="NombreTipoMuestra" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_fc" data-field="Version" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_fc" data-field="NombreClienteColor" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_fc" data-field="NombreClienteTalla" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_fc" data-field="CantidadMuestraFacturable" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_fc" data-field="PrecioMuestra" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_fc" data-field="SubTotal" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_fc" data-field="NumeroOrdenPedido" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_fc" data-field="FechaCreacionFC" /></th>
+                                <th><input type="text" placeholder="Search" class="form-control _clsfilter_fc" data-field="NumeroFacturaCliente" /></th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody_facturaclientedetalle_inicial"></tbody>
+                    </table>
+                </div>
+                <div class="col-sm-12 text-center" id="foot_paginacion_ini_facturacliente"></div>
+            </div>
+        </div>
+    </div>
+</div>

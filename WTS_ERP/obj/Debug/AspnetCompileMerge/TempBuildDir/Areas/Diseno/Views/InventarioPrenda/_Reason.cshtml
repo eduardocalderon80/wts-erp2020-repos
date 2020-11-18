@@ -1,0 +1,74 @@
+﻿<div id="panelEncabezado_Reason">
+    <div class="hide">
+        <input type="text" id="modal_txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="form-horizontal row">
+        <div class="col-sm-12 text-right m-b">
+            <button type="button" class="btn btn-default" id="btnModalClose" data-dismiss="modal">
+                <span class="fa fa-ban"></span>
+                Close
+            </button>
+            <button type="button" class="btn btn-primary" id="btnModalSave">
+                <span class="fa fa-save"></span> 
+                Save
+            </button>
+            <hr class="modal_hr">
+        </div>
+    </div>
+    <div class="form-horizontal row">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="has-float-label">
+                                <select class="form-control" id="cboMovimiento">
+                                    <option value="Inflow">Inflow</option>
+                                    <option value="Outflow">Outflow</option>
+                                </select>
+                                <label for="cboMovimiento">Movement</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="has-float-label">
+                                <input type="text" class="form-control" id="txtRazon" placeholder="Write something...">
+                                <label for="txtRazon">Reason</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <table class="table table-striped table-hover table-bordered" id="tbl_reasons">
+                        <thead>
+                            <tr>
+                                <th width="15%"></th>
+                                <th>Movement Type</th>
+                                <th>Reason</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="text-center">
+                                        <button type="button" class="btn btn-sm btn-info">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-danger">
+                                            <i class="fa fa-ban"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                                <td>Inflow</td>
+                                <td>Return</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

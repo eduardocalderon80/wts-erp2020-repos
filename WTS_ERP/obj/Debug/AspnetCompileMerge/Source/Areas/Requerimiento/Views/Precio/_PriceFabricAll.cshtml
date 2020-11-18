@@ -1,0 +1,41 @@
+﻿<div id="panelEncabezado_PriceFabricAll">
+    <div class="hide">
+        <input type="text" id="pricefabricall_txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="form-horizontal row">
+        <div class="col-sm-12 m-b">
+            <div class="text-right">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <span class="fa fa-reply-all"></span>
+                    Return
+                </button>
+                <button type="button" class="btn btn-primary" id="btnPriceFabricAllExport">
+                    <span class="fa fa-file-excel-o"></span>
+                    Export
+                </button>
+            </div>
+            <hr />
+        </div>
+    </div>
+    <div class="form-horizontal row">
+        <div class="col-sm-12" style="overflow: auto;">
+            <table class="table table-hover table-bordered table-vertical-center" id="tbl_prices_fabric_all">
+                <thead>
+                    <tr>
+                        <th>Origin</th>
+                        <th>Created Date</th>
+                        <th>Supplier</th>
+                        <th>WTS Fabric Code</th>
+                        <th width="18%">Fabric Description</th>
+                        <th>Quantity</th>
+                        <th>Unit</th>
+                        <th>Sample</th>
+                        <th>Productión</th>
+                        <th width="18%">Comments</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody_tbl_prices_fabric_all"></tbody>
+            </table>
+        </div>
+    </div>
+</div>

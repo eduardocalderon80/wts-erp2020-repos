@@ -1,0 +1,286 @@
+﻿<div id="panelEncabezado_NewStyle">
+    <div class="hide">
+        <input type="text" id="style_txtpar" value="DATA-PARAMETRO" />
+        <input type="text" id="rutaFileServerEstilo" value="@ViewBag.RutaFileServer" />
+    </div>
+    <div class="form-horizontal row">
+        <div class="col-sm-12 m-b">
+            <div class="float-left">
+                <ul class="nav nav-tabs" role="tablist" style="border-bottom: 0">
+                    <li class="active"><a class="nav-link" data-toggle="tab" href="#tab-1" aria-expanded="true"> SUMMARY</a></li>
+                    <li><a class="nav-link" data-toggle="tab" href="#tab-2" aria-expanded="true"> FILES</a></li>
+                    <li class=""><a class="nav-link" data-toggle="tab" href="#tab-3" aria-expanded="false"> E-MAIL</a></li>
+                </ul>
+            </div>
+            <div class="text-right">
+                <button type="button" class="btn btn-default" id="btnModalClose" data-dismiss="modal">
+                    <span class="fa fa-ban"></span>
+                    Close
+                </button>
+                <button type="button" class="btn btn-primary" id="btnSaveStyle">
+                    <span class="fa fa-save"></span>
+                    Save
+                </button>
+                <button type="button" class="btn btn-warning" id="btnHoldStyle" style="display: none;">
+                    <span class="fa fa-repeat"></span>
+                    On Hold
+                </button>
+                <button type="button" class="btn btn-danger" id="btnDropStyle" style="display: none;">
+                    <span class="fa fa-repeat"></span>
+                    Dropped
+                </button>
+                <button type="button" class="btn btn-success" id="btnSendStyle" style="display: none;">
+                    <span class="fa fa-send"></span>
+                    Send
+                </button>
+            </div>
+            <hr class="modal_hr">
+        </div>
+    </div>
+    <div class="form-horizontal row">
+        <div class="tab-content">
+            <div role="tabpanel" id="tab-1" class="tab-pane active">
+                <div class="col-sm-3">
+                    <div id="scrollSummary">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="box_size">
+                                    <h4>Sketch</h4>
+                                    <hr class="m-b-md">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <div class="img-frame-gray">
+                                                <img id="imgSketchEstilo" src="">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <label title="Upload image file" for="inputImage" class="btn btn-sm btn-primary btn-block btn-frame-gray" id="btnUpload">
+                                                <input type="file" accept="image/*" name="file" id="inputImage" style="display:none">
+                                                <i class="fa fa-upload"></i> Upload image
+                                            </label>
+                                            <button type="button" class="btn btn-danger btn-sm btn-block btn-frame-gray" id="btnDeleteUpload">
+                                                <i class="fa fa-trash"></i> Delete image
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <h4>Style Information</h4>
+                                <hr class="m-b-md">
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <input class="form-control" id="txtWTSCode" type="text" placeholder="WTS Code" disabled>
+                                            <label for="txtWTSCode">WTS Style Code</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <input class="form-control" id="cboStatus" type="text" placeholder="Status" disabled>
+                                            <label for="cboStatus">RQ Status</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <input class="form-control" id="cboRequestType" type="text" placeholder="Requirement Type" disabled>
+                                            <label for="cboRequestType">Requirement Type</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <input class="form-control _enty_style" id="txtClientNumber" type="text" placeholder="Client Style Number" data-required="true" data-min="1" data-max="254" data-id="CodigoEstilo">
+                                            <label for="txtClientNumber">Client Style Number</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <textarea class="form-control _enty_style" id="txtClientDes" placeholder="Client Description" data-required="true" data-min="1" data-max="254" data-id="Descripcion"></textarea>
+                                            <label for="txtClientDes">Client Description</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <textarea class="form-control" id="txtNotes" placeholder="Notes"></textarea>
+                                            <label for="txtNotes">Notes</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <select class="form-control _enty_style" id="txtSupplierType" data-required="true" data-min="1" data-max="254" data-id="IdTipoProveedor"></select>
+                                            <label for="txtSupplierType">Supplier Type</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <select class="form-control _enty_style" id="txtSupplierName" data-required="true" data-min="1" data-max="254" data-id="IdProveedor"></select>
+                                            <label for="txtSupplierName">Supplier Name</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h4>Main Fabric Information</h4>
+                                <hr class="m-b-md">
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <select class="form-control _enty_buscar" data-id="TipoTela" id="cboStyleFabricType">
+                                                <!-- YA NO VA
+                                                <option value="">Select</option>
+                                                <option value="A">Available</option>
+                                                <option value="C">Correct</option>
+                                                -->
+                                            </select>
+                                            <label for="cboStyleFabricType">Fabric Type</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="input-group">
+                                            <div class="has-float-label">
+                                                <input class="form-control _enty_buscar" data-id="CodigoTelaWTS" id="txtStyleFabricCode" type="text" placeholder="WTS Fabric Code" disabled/>
+                                                <label for="txtStyleFabricCode">WTS Fabric Code</label>
+                                            </div>
+                                            <div class="input-group-btn">
+                                                <button type="button" class="btn btn-primary" id="btnStyleFabricCode">
+                                                    <span class="fa fa-search"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <textarea class="form-control _enty_buscar" data-id="DescripcionTela" id="txtStyleFabricDes" rows="3" placeholder="Fabric Description" disabled></textarea>
+                                            <label for="txtStyleFabricDes">Fabric Description</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group" style="display: none;">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <select class="form-control" id="cboRequestTypeFabric"></select>
+                                            <label for="cboRequestTypeFabric">Request Type</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group" style="display: none;">
+                                    <div class="col-sm-12">
+                                        <div class="has-float-label">
+                                            <select class="form-control" id="cboFabricCode"></select>
+                                            <label for="cboFabricCode">WTS Fabric Code</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4>Samples Summary</h4>
+                            <hr class="m-b-md">
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <div class="has-float-label">
+                                        <input class="form-control" id="txtPdResponsable" type="text" placeholder="PD Responsable" disabled>
+                                        <label for="txtPdResponsable">PD Responsable</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <div class="has-float-label">
+                                        <input class="form-control" id="txtPdGroup" type="text" placeholder="PD Group" disabled>
+                                        <label for="txtPdGroup">PD Group</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12" id="div_tbl_samples">
+                            <table class="table table-vertical-center table-hover table-bordered" id="tbl_samples">
+                                <thead>
+                                    <tr>
+                                        <th width="12%"></th>
+                                        <th width="13%">Request Date</th>
+                                        <th width="18%">Sample Types</th>
+                                        <th width="6%">V.</th>
+                                        <th width="13%">Ex Factory</th>
+                                        <th width="13%">In DC</th>
+                                        <th>Client Status</th>
+                                        <th width="13%">Garment Workshop</th>
+                                        <th width="13%">Billable</th>
+                                        <th>It Will Cost</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td id="custom-tfoot-btn" colspan="10"><span class="fa fa-plus"></span> Add</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" id="tab-2" class="tab-pane">
+                <div class="col-sm-12" id="div_tbl_files_estilo">
+                    <table class="table table-hover table-bordered table-vertical" id="tbl_files">
+                        <thead>
+                            <tr>
+                                <th class="no-sort" width="6%"></th>
+                                <th width="25%">Name</th>
+                                <th>User</th>
+                                <th>Sample</th>
+                                <th>Type</th>
+                                <th>Upload Date</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div role="tabpanel" id="tab-3" class="tab-pane">
+                <div class="col-sm-3">
+                    <div class="feed-activity-list" id="mailbox_header_style"></div>
+                </div>
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="chat-discussion" id="mailbox_body_style"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,100 @@
+﻿<style>
+    .no-sort::after {
+        display: none !important;
+    }
+
+    .no-sort {
+        pointer-events: none !important;
+        cursor: default !important;
+    }
+
+    thead input {
+        width: 100%;
+    }
+</style>
+<div class="ibox" id="panelEncabezado_index_IC">
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div id="content_header">
+            <div class="col-lg-8">
+                <h2 id="_title" class="text-navy bold">Presentaciones</h2>
+                <ol class="breadcrumb">
+                    <li>
+
+                    </li>
+                </ol>
+            </div>
+            <div class="col-lg-4" style="text-align:right;padding:20px">
+                <button type="button" class="btn btn-success" id="btnRegistrarPresentacion">
+                    <span class="fa fa-file-text-o"> </span>
+                    Registrar Presentacion
+                </button>
+                <button type="button" class="btn btn-primary" id="btnSearch">
+                    <span class="fa fa-search"> </span>
+                    Buscar
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content gray-bg animated fadeInRight">
+        <div class="ibox" id="formList">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="form-horizontal">
+                            <div class="col-sm-6">
+                                <div class="form-group" id="dtFI">
+                                    <label class="control-label col-sm-2"> Fecha<br />Inicio</label>
+                                    <div class="col-sm-10">
+                                        <div class='input-group date '>
+                                            <span class='input-group-addon'> <i class='fa fa-calendar'> </i> </span>
+                                            <input type='text' id="txtFI" class='form-control'>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group" id='dtFF'>
+                                    <label class="control-label col-sm-2"> Fecha<br />Fin</label>
+                                    <div class="col-sm-10">
+                                        <div class='input-group date'>
+                                            <span class='input-group-addon'> <i class='fa fa-calendar'> </i> </span>
+                                            <input type='text' id="txtFF" class='form-control'>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-horizontal">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2"> Estado</label>
+                                    <div class="col-sm-10">
+                                        <select id="cboEstado" class="form-control">
+                                            <option value="">Todos</option>
+                                            <option value="CRE">Creado</option>
+                                            <option value="CER">Cerrado</option>
+                                            <option value="CAN">Cancelado</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox float-e-margins">
+                <div class="ibox" id="div_tabla_indeinventario">
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div id="div_tbl_presentaciones" style="height: 100%;">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

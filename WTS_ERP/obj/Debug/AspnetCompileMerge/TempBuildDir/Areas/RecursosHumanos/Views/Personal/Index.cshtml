@@ -1,0 +1,163 @@
+﻿<style type="text/css">
+    .row-selected {
+        background-color: #1ab394 !important;
+    }
+
+    .select2-container--open {
+        z-index: 9999999;
+    }
+
+    .has-error .select2-selection {
+        border-color: #ed5565 !important;
+    }
+
+    th {
+        padding: 8px;
+        border: 1px solid #e7e7e7;
+        text-align: center;
+        background: #206590 !important;
+        color: white;
+    }
+
+    td {
+        padding: 5px;
+        border-bottom: 1px solid #e7e7e7;
+        padding-left: 20px;
+    }
+
+    .columns .chosen-container, .column .chosen-container {
+        width: 100% !important;
+        margin-bottom: 1rem;
+    }
+</style>
+
+
+
+<div id="pnl_personal_list">
+
+    <div id="pnl_personal_index_header" class="row wrapper white-bg page-heading">
+        <div class="ibox">
+            <div class="col-sm-6">
+                <h2 class="font-bold">Maestro de Colaboradores</h2>
+            </div>
+            <div class="col-sm-6 text-right">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="pnl_personal_index_body" class="row wrapper-content gray-bg animated">
+
+        <div id="content_form" class="ibox">
+
+            <div class="ibox-title">
+                <div class="form-horizontal row ">
+                    <div class="col-sm-6">
+                        <h3 class="bold text-success">Listado</h3>
+                    </div>
+                    <div id="divBotonesPrincipal" class="col-sm-6 text-right">
+                        <button id="btn_print_pdf" type="button" class="btn btn-info hide">
+                            <span class="fa fa-file-pdf-o"></span>
+                            Print
+                        </button>
+                        <button id="btn_export_excel" type="button" class="btn btn-warning hide">
+                            <span class="fa fa-file-excel-o"></span>
+                            Export
+                        </button>
+                        <button id="btn_new" type="button" class="btn btn-default hide">
+                            <span class="fa fa-plus"></span>
+                            Nuevo
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ibox-content">
+
+                <div class="form-horizontal row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <input id="txt_personal" type="text" class="form-control input-sm m-b-xs" placeholder="Buscar por Nombres y/o Apellidos">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <select id="cbo_area" class="form-control _select2 _enty" data-id="idarea" style="width:100%"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <select id="cbo_sub_area" placeholder="Seleccione Sub Áreas" multiple class="chosen-select"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-horizontal row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <select id="cbo_equipo" class="form-control _select2 _enty" data-id="idequipo" style="width:100%"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <select id="cbo_cargo" class="form-control _select2 _enty" data-id="idcargo" style="width:100%"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <select id="cbo_estado" class="form-control _select2 _enty" data-id="estado" style="width:100%"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+                <div class="form-horizontal row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div id="divBotonesSecundarios" class="col-sm-12 text-left">
+                                <button id="btn_edit" type="button" title="Edit" class="btn btn-outline btn-success hide">
+                                    <span class="fa fa-edit"></span>
+                                </button>
+                                <button id="btn_delete" type="button" title="Delete" class="btn btn-outline btn-danger hide">
+                                    <span class="fa fa-trash-o"></span>
+                                </button>
+                                <button id="btn_view" type="button" title="View" class="btn btn-outline btn-primary hide">
+                                    <span class="fa fa-eye"></span>
+                                </button>
+                                <button id="btn_search" type="button" title="Search" class="btn btn-outline btn-info hide">
+                                    <span class="fa fa-search"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-horizontal row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div id="div_tabla_personal" class="col-sm-12">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

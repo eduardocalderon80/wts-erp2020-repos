@@ -1,0 +1,83 @@
+﻿@*<style>
+        ._wipmodal {
+            z-index: 1000000000 !important;
+        }
+    </style>*@
+<div id="divPadrePopupTallaColorPorDestinos" class="panel panel-default">
+    <div class="panel-heading">
+        <div class="text-right">
+            <div class="text-right">
+                <button id="btnCancelar_PopupTallaColor" type="button" class="btn btn-default">Cancel</button>
+                <button id="btnAceptar_PopupTallaColor" type="button" class="btn btn-primary">Accept</button>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Size:</label>
+
+                    <div class="col-sm-10" id="divCboClienteTalla">
+                        <!--input-group-->
+                        <select id="cboClienteTalla" multiple class="form-control" data-size="8">
+                            <option>--Select--</option>
+                        </select>
+                        @*<span class="punteromouse input-group-addon" id="spanRefrescarComboClienteTalla">
+                                <span class="fa fa-refresh punteromouse"></span>
+                            </span>*@
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Color:</label>
+                    <div class="col-sm-10" id="divCboClienteColor">
+                        <!--input-group-->
+                        <select id="cboClienteColor" multiple class="form-control">
+                            <option>--Select--</option>
+                        </select>
+                        @*btn btn-default*@
+                        @*<span class="punteromouse input-group-addon" id="spanRefrescarComboClienteColor">
+                                <span class="fa fa-refresh punteromouse"></span>
+                            </span>*@
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Color Type:</label>
+                    <div class="col-sm-10">
+                        <div id="divInputGroupTipoColor">
+                            <!--class="input-group"-->
+                            <select id="cboTipoColor" class="form-control">
+                                <option>--Select--</option>
+                            </select>
+                            @*<span class="input-group-addon punteromouse" id="spanRefrescarComboTipoColor">
+                                    <span class="fa fa-refresh punteromouse"></span>
+                                </span>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default no-borders">
+    <div id="divHijoMatrizTallaColor_Popup">
+        <table id="tblMatrizTallaColor_Popup" class="table table-bordered table-fixed">
+            <thead id="theadMatrizTallaColor_Popup">
+                <tr>
+                    <th class="text-center"></th> <!--col-sm-1-->
+                    <th class="text-center">Color Type</th> <!--col-sm-5-->
+                    <th class="text-center">Color</th> <!--col-sm-6-->
+                    <th class="text-center">
+                        Wip
+                        @*<input type='date' class='_datepicker_th' data-date="" data-date-format="MM/DD/YYYY" value='' />*@
+                    </th>
+                    <th class="text-center" width="50">SubTotal</th>
+                </tr>
+            </thead>
+            <tbody id="tbdoyMatrizTallaColor_Popup"></tbody>
+        </table>
+    </div>
+</div>

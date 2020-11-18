@@ -1,0 +1,84 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Registro de Programación Semanal</h2>
+            </div>
+            <div class="col-sm-6 text-right">
+                <button type="button" class="btn btn-w-m btn-primary hide" id="btnSave">
+                    <span class="fa fa-floppy-o" aria-hidden="true"></span>
+                    <span>Save</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="row" id="programacionsemanal">
+            <div class="col-sm-12">
+                <div class="panel panel-default no-borders">
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            <div class="col-sm-6">
+                                <div class="form-group" id="divfechainicio">
+                                    <label class="control-label col-sm-2">Inicio</label>
+                                    <div class="col-sm-10">
+                                        <div class="input-group date">
+                                            <input type="text" id="txtfechainicio" class="form-control _enty" data-min="10" data-max="10" data-required="true" data-level="true" data-id="fec_inicio" data-type="date"/>
+                                            <div class="input-group-addon">
+                                                <span class="fa fa-calendar"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Archivo:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control _enty" value="" id="txtruta" readonly="readonly" data-required="true" data-min="5" data-max="200" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <label class="col-xs-12 col-sm-5 btn btn-warning btn-sm col-sm-offset-2">
+                                            <input type="file" id="fuArchivo" class="hide">
+                                            <i class="fa fa-upload" aria-hidden="true"></i>
+                                            Subir archivo
+                                        </label>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group" id="divfechafin">
+                                    <label class="control-label col-sm-2">Fin</label>
+                                    <div class="col-sm-10">
+                                        <div class="input-group date">                                            
+                                            <input type="text" id="txtfechafin" class="form-control _enty" data-min="10" data-max="10" data-required="true" data-level="true" data-id="fec_fin" data-type="date" />
+                                            <div class="input-group-addon">
+                                                <span class="fa fa-calendar"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                      
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="panel-body col-sm-12" id="dprogramacion" style="overflow-x:auto;overflow-y:auto;max-height:500px">
+        </div>
+    </div>
+    <div class="panel-footer text-center">
+        <button type="button" class="btn btn-primary start hide" id="btnUpload">
+            <i class="fa fa-upload" aria-hidden="true"></i>
+            <span>upload</span>
+        </button>       
+    </div>
+</div>

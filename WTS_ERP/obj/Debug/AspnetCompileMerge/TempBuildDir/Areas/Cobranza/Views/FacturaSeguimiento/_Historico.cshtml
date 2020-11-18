@@ -1,0 +1,60 @@
+﻿<style type="text/css">
+
+    #panelEncabezado_Campo .ibox {
+        clear: both;
+        margin-bottom: 5px !important;
+        margin-top: 0;
+        padding: 0;
+    }
+
+    #panelEncabezado_Campo .ibox-content {
+        color: inherit;
+        padding: 5px 20px 5px 10px !important;
+        border-color: #e7eaec;
+        border-image: none;
+        border-style: solid solid none;
+        border-width: 1px 0;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 30% 10% 60%;
+        grid-gap: 10px;
+     
+    }
+     .wrapper-content {
+          padding: 20px 10px 0;
+    }
+</style>
+
+<div class="row wrapper-content gray-bg animated" id="panelPopup_Historico" style="width:99%;margin:0px">
+
+    <div class="ibox">
+        <div class="hide">
+            <input type="text" id="valorParamsHistorico" value="DATA-PARAMETRO" />
+        </div>
+        <div class="ibox-title">
+            <h2 id="titulohistorio" class="text-navy bold">List of Invoice</h2>
+        </div>       
+        <div class="ibox-content" id="div_contenidoHistorico">            
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div class="col-sm-12 table-responsive" id="divTablaDetalle">
+                        <table id="tblHistorico" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                  
+                                    <th class="text-center" style="width:15%;"></th>
+                                    <th class="text-center" style="width:15%;">WTS INV. AMOUNT</th>
+                                    <th class="text-center" style="width:15%;">TARDANZA POND</th>
+                                    <th class="text-center" style="width:15%;">TARDANZA POND <br/>CON FACTOR</th>                                    
+                                </tr>                                
+                            </thead>
+                            <tbody id="tbody_Historico"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

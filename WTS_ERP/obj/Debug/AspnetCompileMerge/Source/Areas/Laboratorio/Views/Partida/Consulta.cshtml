@@ -1,0 +1,103 @@
+﻿<div class="row wrapper border-bottom white-bg page-heading">
+    <div id="content_header">
+        <div class="col-lg-8">
+            <h2>Partidas Laboratorio</h2>
+            <ol class="breadcrumb">
+                <li>
+                    View all Partidas
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-4" style="text-align:right;padding:20px">
+            <button type="button" class="btn btn-success" id="btnSearch">
+                <span class="fa fa-search"></span>
+                Search
+            </button>
+
+            <button type="button" class="btn btn-primary" id="btnNew">
+                <span class="fa fa-file-o"></span>
+                New Partida
+            </button>
+            <button type="button" class="btn btn-primary" id="btnExportarReporteLaboratorio">
+                <span class="fa fa-file-o"></span>
+                Exportar
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content gray-bg animated fadeInRight">
+    <div class="ibox" id="formList">
+        <div class="ibox">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="form-horizontal">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">
+                                    Factory
+                                </label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" id="cboFabrica"></select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Customer</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" id="cboCliente"></select>
+                                </div>
+                            </div>
+                            <div class="form-group" id="dtFI">
+                                <label class="control-label col-sm-2">Start Date</label>
+                                <div class="col-sm-10">
+                                    <div class='input-group date '>
+                                        <span class='input-group-addon'><i class='fa fa-calendar'></i></span>
+                                        <input type='text' id="txtFI" class='form-control'>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2"> Reporte Tecnico</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" value="" id="txtCodigoReporteTecnico" onkeyup="BuscarOnEnter(event);"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-2"># Partida</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" value="" id="txtPartida" onkeyup="BuscarOnEnter(event);"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group" id='dtFF'>
+                                <label class="control-label col-sm-2">End Date</label>
+                                <div class="col-sm-10">
+                                    <div class='input-group date'>
+                                        <span class='input-group-addon'><i class='fa fa-calendar'></i></span>
+                                        <input type='text' id="txtFF" class='form-control'>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ibox">
+            <div class="ibox-content">
+                <div class="form-group">
+                    <div class="form-horizontal row">
+                        <div id="divContent" class="col-sm-12">
+
+                        </div>
+                    </div>
+                </div>
+                @*<div id="divContent" class="col-sm-12">
+                </div>*@
+            </div>
+        </div>
+    </div>
+</div>

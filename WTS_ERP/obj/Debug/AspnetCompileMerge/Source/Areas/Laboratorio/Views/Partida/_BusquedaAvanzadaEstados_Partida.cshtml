@@ -1,0 +1,81 @@
+﻿<div class="float-e-margins" id="panelEncabezado_busquedaavanzada_partida">
+    <div class="">
+        <div class="text-right">
+            <button id="_btnBuscar_busquedaavanzada_partida" class="btn btn-primary">
+                Search
+            </button>
+            <button id="_btnCancelar_busquedaavanzada_partida" class="btn btn-default" data-dismiss="modal">
+                Cancel
+            </button>
+        </div>
+    </div>
+    <div class="" style="overflow-y: auto; max-height: 850px;">
+        <div class="hide">
+            <input type="text" id="txtpar_busquedaavanzadapartida" value="DATA-PARAMETRO" />
+        </div>
+        <div class="float-e-margins">
+            <div class="">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">#Batch</label>
+                            <div class="col-sm-4">
+                                <!-- partida = #batch-->
+                                <input type="text" class="form-control _enty" id="_txt_partida_busquedaavanzadapartida" value="" data-min="1" data-max="50" data-id="partida" data-required="false" data-event="false" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Factory</label>
+                            <div class="col-sm-8">
+                                <select class="form-control _enty" id="_cbo_proveedor_busquedaavanzadapartida" data-min="1" data-max="20" data-id="idfabrica" data-default="0" data-event="false"></select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Customer</label>
+                            <div class="col-sm-8">
+                                <select class="form-control _enty" id="_cbo_cliente_busquedaavanzadapartida" data-min="1" data-max="20" data-id="idcliente" data-default="0" data-event="false"></select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Color</label>
+                            <div class="col-sm-8">
+                                <select class="form-control _enty" id="_cbo_color_busquedaavanzadapartida" data-min="1" data-max="20" data-id="idclientecolor" data-default="0" data-event="false"></select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Fabric code</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control _enty" id="_txt_codigotela_busquedaavanzadapartida" data-min="1" data-max="11" data-event="false" data-default="" data-id="codigotela" />
+                            </div>
+                        </div>
+                        <div class="form-group" id="div_grupo_padre_fechas_partida">
+                            <label class="control-label col-sm-3">Date</label>
+                            <div class="col-sm-4" id="div_group_fechainicio_busquedaavanzadapartida">
+                                <div class="input-group date">
+                                    <input type="text" id="txtfecha_inicio_busquedaavanzadapartida" class="form-control _enty" data-type="date" data-min="10" data-max="10" data-id="fechainicial" />
+                                    <div class="input-group-addon">
+                                        <span class="fa fa-calendar"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4" id="div_group_fechafin_busquedaavanzadapartida">
+                                <div class="input-group date">
+                                    <input type="text" id="txtfecha_fin_busquedaavanzadapartida" class="form-control _enty" data-type="date" data-min="10" data-max="10" data-id="fechafinal" />
+                                    <div class="input-group-addon">
+                                        <span class="fa fa-calendar"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">State</label>
+                            <div class="col-sm-8">
+                                <select class="form-control _enty" id="_cbo_estado_busquedaavanzadapartida" data-required="true" data-min="1" data-max="20" data-id="estado" data-default="0"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

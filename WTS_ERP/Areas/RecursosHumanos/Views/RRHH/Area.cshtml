@@ -1,0 +1,215 @@
+﻿<style>
+    table th {
+        background: #206590 !important;
+        color: white;
+    }
+</style>
+
+@*<div class="row wrapper border-bottom white-bg page-heading">
+        <div id="content_header">
+            <div class="col-lg-8">
+                <h2>Área</h2>
+            </div>
+            <div class="col-lg-4" style="text-align:right; padding:20px">
+                <div class="btn-group" id="btnCancel">
+                    <button class="btn btn-white " type="button" onclick="ReturnForm()">
+                        <i class="fa fa-mail-reply-all"></i>&nbsp;&nbsp;
+                        <span class="bold">Retornar</span>
+                    </button>
+                </div>
+                <div class="btn-group" id="btnNew">
+                    <button class="btn btn-success " type="button" data-animation="rotateIn" id="btnNew">
+                        <i class="fa fa-plus"></i>&nbsp;&nbsp;
+                        <span class="bold">Nuevo</span>
+                    </button>
+                </div>
+                <div class="btn-group" id="btnSave">
+                    <button class="btn btn-primary " type="button" onclick="SaveArea()" id="btnSave">
+                        <i class="fa fa-save"></i>&nbsp;&nbsp;
+                        <span class="bold">Grabar</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+<div class="row wrapper white-bg page-heading">
+    <div id="content_header" class="ibox float-e-margins">
+        <div id="divtituloprincipal" class="col-sm-6">
+            <h2 class="font-bold">Área</h2>
+        </div>
+        <div id="divBotonesPrincipal" class="col-sm-6 text-right" style="vertical-align: middle;margin-top:15px;">
+            <button class="btn btn-white " type="button" onclick="ReturnForm()" id="btnCancel">
+                <span class="fa fa-mail-reply-all"> </span>
+                Retornar
+            </button>
+            <button class="btn btn-success " type="button" data-animation="rotateIn" id="btnNew">
+                <span class="fa fa-plus"> </span>
+                Nuevo
+            </button>
+            <button class="btn btn-primary " type="button" onclick="SaveArea()" id="btnSave">
+                <span class="fa fa-save"> </span>
+                Grabar
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="row wrapper-content gray-bg animated">
+    <div class="ibox" id="formMante">
+        <div class="ibox">
+            <div class="ibox-title">
+                @*<h5>
+                        <span class="text-success"><b>Datos de Área</b></span>
+                    </h5>*@
+                <div class="form-horizontal row ">
+                    <div id="divTitulo" class="col-sm-6">
+                        <h3 id="_title" class="text-success bold">Datos de Área</h3>
+                    </div>
+                    <div id="divBotonesprimarios" class="col-sm-6 text-right"></div>
+                </div>
+            </div>
+            <div class="ibox-content">
+                @*<div id="animation_box" class="animated bounceIn" style="background-color:white;padding:0;width:100%">
+                        <form role="form" id="form" novalidate="novalidate" style="width:95%;">
+                            <input type="hidden" id="hf_IdArea" class="_enty" data-id="IdArea" data-default="0" value="0" />
+                            <div class="form-group">
+                                <div class="row">
+                                    <div>
+                                        <div class="form-group">
+                                            <label class="col-sm-1 control-label">Área:</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="form-control _enty" name="Email" id="txtArea" onkeyup="aMayusculas(this)" data-min="1" data-max="100" data-required="true" data-id="NombreArea" maxlength="200">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Responsable:</label>
+                                            <div class="col-sm-4">
+                                                <select class="select2_Personal form-control _enty" name="IdPersonal" id="selectPersonal" style="width:100%" data-min="1" data-max="100" data-id="IdPersonal"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>&nbsp;</div>
+                            </div>
+                            <div id="divPadre" style="display:none">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Sub Área:</label>
+                                                <div class="col-sm-5">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="js-switch" checked id="bHijo" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>&nbsp;</div>
+                                </div>
+                                <div class="form-group" id="divAreaPadre">
+                                    <div class="row">
+                                        <div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Área Padre:</label>
+                                                <div class="col-sm-5">
+                                                    <select class="select2_Personal form-control _enty" name="IdPadre" id="selectAreaPadre" style="width:100%" data-min="1" data-max="100" data-id="IdPadre"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>&nbsp;</div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>*@
+                <div class="row animated bounceIn">
+                    <input type="hidden" id="hf_IdArea" class="_enty" data-id="IdArea" data-default="0" value="0" />
+                    <div class="col-sm-6">
+                        <div class="ibox" style="margin-bottom: 0">
+                            <div class="ibox-content" style="border: none">
+                                <div class="form-horizontal row">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Área:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control _enty" name="Email" id="txtArea" onkeyup="aMayusculas(this)" data-min="1" data-max="100" data-required="true" data-id="NombreArea" maxlength="200">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-horizontal row">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Sub Área:</label>
+                                        <div class="col-sm-9">
+                                            <input type="checkbox" class="js-switch" checked id="bHijo" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-horizontal row">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Área Padre:</label>
+                                        <div class="col-sm-9">
+                                            <select class="select2_Personal form-control _enty" name="IdPadre" id="selectAreaPadre" style="width:100%" data-min="1" data-max="100" data-id="IdPadre"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="ibox" style="margin-bottom: 0">
+                            <div class="ibox-content" style="border: none">
+                                <div class="form-horizontal row">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Responsable:</label>
+                                        <div class="col-sm-9">
+                                            <select class="select2_Personal form-control _enty" name="IdPersonal" id="selectPersonal" style="width:100%" data-min="1" data-max="100" data-id="IdPersonal"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox" id="formList">
+        <div class="ibox-content">
+            <div class="row">
+                <div class="form-group">
+                    <div>
+                        <input type="text" class="form-control input-sm m-b-xs" id="filterE"
+                               placeholder="Nombre Área a buscar">
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="table-responsive">
+                    <table class="footable table table-stripped table-bordered" data-page-size="40" data-filter=#filterE>
+                        <thead>
+                            <tr>
+                                <th>Área</th>
+                                <th>Sub Área</th>
+                                <th>Responsable</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="contentTableArea"></tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="7">
+                                    <ul class="pagination pull-right"></ul>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

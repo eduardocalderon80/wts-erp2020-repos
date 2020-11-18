@@ -1,0 +1,171 @@
+﻿<style type="text/css">
+    /* 1 */
+    .row-selected {
+        background-color: #1ab394 !important;
+    }
+
+    th {
+        padding: 8px;
+        border: 1px solid #e7e7e7;
+        background-color: #F5F5F6;
+        text-align: center;
+    }
+
+    td {
+        padding: 5px;
+        border-bottom: 1px solid #e7e7e7;
+        padding-left: 20px;
+    }
+</style>
+
+<div class="row wrapper white-bg page-heading">
+    <div id="content_header" class="ibox float-e-margins">
+        <div id="divtituloprincipal" class="col-sm-6">
+            <h2 class="font-bold">Courier Guide</h2>
+        </div>
+        <div id="divBotonesPrincipal" class="col-sm-6 text-right" style="vertical-align: middle;margin-top:15px;">
+            @*<button id="btnprint" type="button" class="btn btn-info hide">
+                    <span class="fa fa-file-pdf-o"></span>
+                    Print
+                </button>
+                <button id="btnexport" type="button" class="btn btn-warning hide">
+                    <span class="fa fa-file-excel-o"></span>
+                    Nuevo 2
+                </button>*@
+            <button id="btnnew" type="button" class="btn btn-default">
+                <span class="fa fa-plus"></span>
+                Nuevo
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="row wrapper-content gray-bg animated">
+
+    <div id="content_form" class="ibox">
+
+        <div class="ibox-title">
+            <div class="form-horizontal row ">
+                <div class="col-sm-6">
+                    <h3 id="_title" class="text-navy bold">List of Courier Guide</h3>
+                </div>
+            </div>
+        </div>
+
+        <div id="tabledetails" class="ibox-content">
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div class="col-sm-3">
+                        <label class="control-label">Courier</label>
+                        <select id="cbocourier" class="form-control _enty select2_courier" style="width:100%" name="idcourier" data-id="idcourier" data-required="true"></select>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label class="control-label">Type Send</label>
+                        <select id="cbotipoenvio" class="form-control _enty select2_tipoenvio" style="width:100%" name="idtipoenvio" data-id="idtipoenvio" data-required="true"></select>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label class="control-label">Type</label>
+                        <select id="cbotipo" class="form-control _enty select2_tipo" style="width:100%" name="idtipo" data-id="idtipo" data-required="true"></select>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label class="control-label">Name</label>
+                        <select id="cbonombre" class="form-control _enty select2_nombre" style="width:100%" name="idtipodata" data-id="idtipodata" data-required="true"></select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div class="col-sm-3">
+                        <label class="control-label">N° Guide</label>
+                        <input type="text" id="txtnumeroguia" name="status" value="" placeholder="Number Guide" class="form-control" onkeyup="event_search(event)">
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="control-label">Responsible</label>
+                        <select id="cboresponsable" class="form-control _enty select2_responsable" style="width:100%" name="idpersonal" data-id="idreponsable" data-required="true"></select>
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="control-label">Since :</label>
+                        <div id="divfechadesde" class='input-group date'>
+                            <input id="txtfechadesde" type='text' class='form-control _enty' data-type="date" data-min="10" data-max="10" data-level="true" data-id="fechacese">
+                            <div id="divcalendariodesde" class="input-group-addon">
+                                <span class="fa fa-calendar"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="control-label">Until :</label>
+                        <div id="divfechahasta" class='input-group date'>
+                            <input id="txtfechahasta" type='text' class='form-control _enty' data-type="date" data-min="10" data-max="10" data-level="true" data-id="fechacese">
+                            <div id="divcalendariohasta" class="input-group-addon">
+                                <span class="fa fa-calendar"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div id="divBotonesSecundarios" class="col-sm-12  text-left">
+                        <button id="btnedit" type="button" title="Edit" class="btn btn-outline btn-success">
+                            <span class="fa fa-edit"></span>
+                        </button>
+                        <button id="btndelete" type="button" title="Delete" class="btn btn-outline btn-danger">
+                            <span class="fa fa-trash-o"></span>
+                        </button>
+                        <button id="btnview" type="button" title="View" class="btn btn-outline btn-primary">
+                            <span class="fa fa-eye"></span>
+                        </button>
+                        <button type="button" title="Search" class="btn btn-outline btn-info" id="btnsearch" onclick="req_search()">
+                            <span class="fa fa-search"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div id="tablaguiacourier" class="col-sm-12">
+
+                    </div>
+                </div>
+            </div>
+
+            <!--
+            <div class="form-group hide">
+                <div class="form-horizontal row">
+                    <div class="col-sm-12">
+                        <div class="table-responsive">
+                            <table id="tblpersonal" class="footable table table-hover table-stripped table-bordered " data-page-size="30" data-filter=#filter>
+                                <thead>
+                                    <tr>
+                                        <th class='col-sm-3 text-center' data-sort-ignore="true">Name</th>
+                                        <th class='col-sm-2 text-center' data-sort-ignore="true">Identity Document</th>
+                                        <th class='col-sm-3 text-center' data-sort-ignore="true">Area</th>
+                                        <th class='col-sm-3 text-center' data-sort-ignore="true">Job Position</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="9"><ul class="pagination pull-right"></ul></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+               -->
+
+        </div>
+
+    </div>
+
+</div>
+
+

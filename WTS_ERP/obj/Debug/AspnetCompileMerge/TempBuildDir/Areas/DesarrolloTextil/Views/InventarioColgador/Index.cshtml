@@ -1,0 +1,119 @@
+﻿<style>
+    .no-sort::after {
+        display: none !important;
+    }
+
+    .no-sort {
+        pointer-events: none !important;
+        cursor: default !important;
+    }
+    thead input {
+        width: 100%;
+    }
+
+</style>
+<div class="ibox" id="panelEncabezado_index_IC">
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div id="content_header">
+            <div class="col-lg-5">
+                <h2 id="_title" class="text-navy bold">Inventario de Colgadores</h2>
+                <ol class="breadcrumb">
+                    <li></li>
+                </ol>
+            </div>
+            <div class="col-lg-7" style="text-align:right;padding:20px">
+                <button type="button" class="btn btn-primary" id="btnReporteExcel" style="display: none;">
+                    <span class="fa fa-file-excel-o"> </span>
+                    Exportar Reporte Periodo en Excel
+                </button>
+                @*<button type="button" class="btn btn-warning" id="btnCandado">
+                    <span class="fa fa-unlock"> </span>
+                </button>*@
+                <button type="button" class="btn btn-success" id="btnRegistrarMovimiento">
+                    <span class="fa fa-file-text-o"> </span>
+                    Registrar Movimiento
+                </button>
+                <button type="button" class="btn btn-danger" id="btnCerrarPeriodo">
+                    <span class="fa fa-calendar"> </span>
+                    Cerrar Periodo
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content gray-bg animated fadeInRight">
+        <div class="ibox" id="formList">
+            <div class="ibox">
+                <div class="ibox-title text-right">
+                    <div class="ibox-tools">
+                        <button type="button" class="btn btn-primary" id="btnSearch">
+                            <span class="fa fa-search"> </span>
+                            Buscar
+                        </button>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="form-horizontal row">
+                            <div class="col-sm-4 hide">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3"> CódigoTela</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="txtcodigotela" placeholder="Buscar" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3"> Locación</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control" id="_cbolocacion_colgador"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 hide">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3"> Descripción de Tela</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="txtdescripcion" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3"> Estado</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control" id="_cboperiodo_Estado">
+                                            <option value="">Todos</option>
+                                            <option value="1" selected>Activo</option>
+                                            <option value="0">Inactivo</option>
+                                            <option value="2">Pendiente</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3"> Periodo</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control" id="_cboperiodo_colgador"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-horizontal row"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox float-e-margins">
+                <div class="ibox" id="div_tabla_indeinventario">
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div id="div_tbl_indexinventario" style="height: 100%;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

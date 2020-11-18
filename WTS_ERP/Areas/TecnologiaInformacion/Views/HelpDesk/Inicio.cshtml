@@ -1,0 +1,217 @@
+﻿<style type="text/css">
+    .row-selected {
+        background-color: #1ab394 !important;
+    }
+
+    .select2-container--open {
+        z-index: 9999999;
+    }
+
+    .has-error .select2-selection {
+        border-color: #ed5565 !important;
+    }
+
+
+    /*#div_tbl_solicitudes table th {
+        background: #F5F5F6;
+        color: white !important;
+        border: 1px solid #e7e7e7;
+    }*/
+
+
+    th {
+        padding: 8px;
+        border: 1px solid #e7e7e7;
+        text-align: center;
+         background-color: #F5F5F6;
+        /*background: #206590 !important;*/
+        /*color: white;*/
+    }
+
+    td {
+        padding: 5px;
+        border-bottom: 1px solid #e7e7e7;
+        padding-left: 20px;
+    }
+
+    /*.columns .chosen-container, .column .chosen-container {
+        width: 100% !important;
+        margin-bottom: 1rem;
+    }*/
+</style>
+
+<div id="pnl_helpdesk_inicio">
+
+    <div id="pnl_helpdesk_inicio_header" class="row wrapper white-bg page-heading">
+        <div class="ibox">
+            <div id="div_titulo_principal" class="col-sm-6">
+                <h2 class="font-bold">Mesa de Ayuda</h2>
+            </div>
+            <div id="div_botones_principal" class="col-sm-6 text-right" style="padding-top:20px">
+                <button id="btn_nuevo" title="Nuevo" type="button" class="btn btn-outline btn-success">
+                    <span class="fa fa-plus"></span>
+                    Nuevo
+                </button>
+                <button id="btn_buscar" title="Buscar" type="button" class="btn btn-outline btn-info">
+                    <span class="fa fa-search"></span>
+                    Buscar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="pnl_helpdesk_inicio_body" class="row wrapper-content gray-bg animated">
+
+        <div id="content_form_buscador" class="ibox">
+
+            <div class="ibox-title">
+                <div class="form-horizontal row ">
+                    <div class="col-sm-6">
+                        <h3 id="_title" class="bold text-navy">Lista de Ticket</h3>
+                    </div>
+                    <div id="div_botones_principal" class="col-sm-6 text-right">
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            @*<a class="fullscreen-link">
+                                <i class="fa fa-expand"></i>
+                            </a>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="pnl_helpdesk_inicio_buscador" class="ibox-content">
+
+                <div class="form-horizontal row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Buscador:</label>
+                            <div class="col-sm-9">
+                                <input id="txt_buscador" type="text" class="form-control" data-id="buscador" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Equipo TIC:</label>
+                            <div class="col-sm-9">
+                                <select id="cbo_equipotic" class="form-control _select2 _enty" data-id="idequipotic" data-required="true" style="width:100%"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Tipo:</label>
+                            <div class="col-sm-9">
+                                <select id="cbo_tiposolicitud" class="form-control _select2 _enty" data-id="idtiposolicitud" data-required="true" style="width:100%"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-horizontal row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Estado:</label>
+                            <div class="col-sm-9">
+                                <select id="cbo_estado" class="form-control _select2 _enty" data-id="codigoestado" data-required="true" style="width:100%"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Desde:</label>
+                            <div id="div_fecha_solicitud_desde" class="col-sm-9">
+                                <div class='input-group date'>
+                                    <input id="txt_fecha_solicitud_desde" disabled type='text' class='form-control input-sm m-b-xs _enty' data-id="fechadesde" data-type="date" data-level="true" data-min="10" data-max="10">
+                                    <div id="div_calendario_fecha_solicitud_desde" disabled class="input-group-addon">
+                                        <span class="fa fa-calendar"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Hasta:</label>
+                            <div id="div_fecha_solicitud_hasta" class="col-sm-9">
+                                <div class='input-group date'>
+                                    <input id="txt_fecha_solicitud_hasta" disabled type='text' class='form-control input-sm m-b-xs _enty' data-id="fechahasta" data-type="date" data-level="true" data-min="10" data-max="10">
+                                    <div id="div_calendario_fecha_solicitud_hasta" disabled class="input-group-addon">
+                                        <span class="fa fa-calendar"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                              
+
+            </div>
+
+        </div>    
+        
+
+        <div class="ibox">
+
+            <div class="ibox-title">
+                <div class="form-horizontal row ">
+                    <div class="col-sm-6">
+                        <h3 class="bold text-navy">Leyenda</h3>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <div id="leyenda" class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            @*<a class="fullscreen-link">
+                                <i class="fa fa-expand"></i>
+                            </a>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ibox-content">
+                <div class="form-horizontal row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+
+                            <div id="div_tabla_leyenda" class="col-sm-12">
+
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>   
+       
+        
+
+        <div id="content_form_listado" class="ibox">
+
+            <div class="ibox-content">
+                <div class="form-horizontal row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div id="div_tbl_solicitudes" class="table-responsive">
+                                <div id="div_tabla_ticket" class="col-sm-12">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+

@@ -1,0 +1,471 @@
+﻿<div class="ibox" id="panelEncabezado_Stages">
+    <div class="hide">
+        <input type="text" id="txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-8">
+            <h2 class="font-bold" id="txtNombrePrograma"></h2>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <i class="fa fa-home"></i>
+                </li>
+                <li class="breadcrumb-item">
+                    Commercial
+                </li>
+                <li class="breadcrumb-item">
+                    Programs
+                </li>
+                <li class="breadcrumb-item active">
+                    <strong>Stages</strong>
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-4 text-right" style="padding-top: 30px">
+            <button type="button" class="btn btn-default" id="btnReturn">
+                <span class="fa fa-reply-all"> </span>
+                Return
+            </button>
+            <button type="button" class="btn btn-success" id="btnUpdate">
+                <span class="fa fa-refresh"> </span>
+                Refresh
+            </button>
+        </div>
+    </div>
+    <div class="wrapper wrapper-less wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="tabs-container">
+                <div class="col-lg-12">
+                    <div class="ibox-tools float-right m-t-sm">
+                        <a class="fullscreen-link-custom" onclick="appStages.fn_fullscreen(this)">
+                            <i class="fa fa-expand"></i>
+                        </a>
+                    </div>
+                    <ul class="nav nav-tabs m-b-sm" role="tablist" id="tabfases">
+                        <li class="custom-tab-btn" data-id="PV"><a class="nav-link" data-toggle="tab" href="#custom-tab-1" >Pre - Sale</a></li>
+                        <li class="custom-tab-btn active" data-id="DS"><a class="nav-link" data-toggle="tab" href="#custom-tab-2">Development</a></li>
+                        <li class="custom-tab-btn" data-id="PR"><a class="nav-link" data-toggle="tab" href="#custom-tab-3">Production</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane" id="custom-tab-1">
+                    <div class="col-lg-4">
+                        <div class="ibox div_prices">
+                            <div class="ibox-content">
+                                <h3 class="col-sm-5" style="padding-left: 0;"><i class="fa fa-dollar"></i> Prices</h3>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Search" class="input input-sm form-control txtsearch">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-envelope"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <ul class="sortable-list connectList agile-list"></ul>
+                            </div>
+                        </div>
+                        <div class="ibox div_color">
+                            <div class="ibox-content">
+                                <h3 class="col-sm-5" style="padding-left: 0;"><i class="fa fa-tint"></i> Colors</h3>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Search" class="input input-sm form-control txtsearch">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-envelope"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <ul class="sortable-list connectList agile-list" id="inprogressColor">
+
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="ibox div_fabric">
+                            <div class="ibox-content">
+                                <h3 class="col-sm-5" style="padding-left: 0;"><i class="fa fa-tags"></i> Fabrics</h3>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Search" class="input input-sm form-control txtsearch">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-send"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-money"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-envelope"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <ul class="sortable-list connectList agile-list"></ul>
+                            </div>
+                        </div>
+                        <div class="ibox div_art">
+                            <div class="ibox-content">
+                                <h3 class="col-sm-5" style="padding-left: 0;"><i class="fa fa-paint-brush"></i> Ornaments</h3>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Search" class="input input-sm form-control txtsearch">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-white" onclick="appStages.fn_newart(0,0)">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-envelope"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <ul class="sortable-list connectList agile-list"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="ibox div_style">
+                            <div class="ibox-content">
+                                <h3 class="col-sm-5" style="padding-left: 0;"><i class="fa fa-thumb-tack"></i> Styles</h3>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Search" class="input input-sm form-control txtsearch">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-envelope"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <ul class="sortable-list connectList agile-list"></ul>
+                            </div>
+                        </div>
+                        <div class="ibox div_trim cls1">
+                            <div class="ibox-content">
+                                <h3 class="col-sm-5" style="padding-left: 0;"><i class="fa fa-plane"></i> Trims</h3>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Search" class="input input-sm form-control txtsearch">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-envelope"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <ul class="sortable-list connectList agile-list"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane active" id="custom-tab-2">
+                    <div class="col-lg-4">
+                        <div class="ibox div_prices">
+                            <div class="ibox-content">
+                                <h3 class="col-sm-5" style="padding-left: 0;"><i class="fa fa-dollar"></i> Prices</h3>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Search" class="input input-sm form-control txtsearch">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-white" onclick="appStages.fn_flash_costA()">
+                                            <b>A</b>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white" onclick="appStages.fn_prices_summary()">
+                                            <i class="fa fa-list"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white" onclick="appStages.fn_prices_search()">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <ul class="sortable-list connectList agile-list"></ul>
+                            </div>
+                        </div>
+                        <div class="ibox div_color">
+                            <div class="ibox-content">
+                                <h3 class="col-sm-5" style="padding-left: 0;"><i class="fa fa-tint"></i> Colors</h3>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Search" class="input input-sm form-control txtsearch">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-white" onclick="appStages.fn_newcolor(0,0)">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                        <button type="button" id="btn_buscar_color" class="btn btn-sm btn-white">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white" onclick="appStages.fn_sendemail_req('RC')">
+                                            <i class="fa fa-envelope"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <ul class="sortable-list connectList agile-list"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="ibox div_fabric">
+                            <div class="ibox-content">
+                                <h3 class="col-sm-5" style="padding-left: 0;"><i class="fa fa-tags"></i> Fabrics</h3>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Search" class="input input-sm form-control txtsearch">
+                                    <span class="input-group-btn">
+                                        <button id="btnNuevoTela" type="button" class="btn btn-sm btn-white" onclick="appStages.fn_newfabric(0,0)">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white" onclick="appStages.fn_fabric_copy()">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white" onclick="appStages.fn_enviar_multiple(this)">
+                                            <i class="fa fa-send"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white" onclick="appStages.fn_fabric_price_all()">
+                                            <i class="fa fa-money"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white" onclick="appStages.fn_sendemail_req('RT')">
+                                            <i class="fa fa-envelope"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <ul class="sortable-list connectList agile-list"></ul>
+                            </div>
+                        </div>
+                        <div class="ibox div_art">
+                            <div class="ibox-content">
+                                <h3 class="col-sm-5" style="padding-left: 0;"><i class="fa fa-paint-brush"></i> Ornaments</h3>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Search" class="input input-sm form-control txtsearch">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-white" onclick="appStages.fn_newart(0,0)">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                        <button type="button"  id="btn_buscar_arte" class="btn btn-sm btn-white">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white" onclick="appStages.fn_art_price()">
+                                            <i class="fa fa-money"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white" onclick="appStages.fn_sendemail_req('RO')">
+                                            <i class="fa fa-envelope"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <ul class="sortable-list connectList agile-list"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="ibox div_style">
+                            <div class="ibox-content">
+                                <h3 class="col-sm-5" style="padding-left: 0;"><i class="fa fa-thumb-tack"></i> Styles</h3>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Search" class="input input-sm form-control txtsearch">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-white" onclick="appStages.fn_newstyle()">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white" onclick="appStages.fn_style_copy()">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white" onclick="appStages.fn_style_price()">
+                                            <i class="fa fa-money"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white" onclick="appStages.fn_sendemail_req('RE')">
+                                            <i class="fa fa-envelope"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white" title="Sample Billing" id="btn_viewmodal_facturacionsample">
+                                            <i class="fa fa-btc"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <ul class="sortable-list connectList agile-list"></ul>
+                            </div>
+                        </div>
+                        <div class="ibox div_trim cls2" id="id_div_trim">
+                            <div class="ibox-content">
+                                <h3 class="col-sm-5" style="padding-left: 0;"><i class="fa fa-plane"></i> Trims</h3>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Search" class="input input-sm form-control txtsearch">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-white" onclick="appStages.fn_newtrim()">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white" id="btn_buscar_trim">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white" onclick="appStages.fn_trim_price()">
+                                            <i class="fa fa-money"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white" onclick="appStages.fn_sendemail_req('RA')">
+                                            <i class="fa fa-envelope"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <ul class="sortable-list connectList agile-list"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="custom-tab-3">
+                    <div class="col-lg-4">
+                        <div class="ibox div_prices">
+                            <div class="ibox-content">
+                                <h3 class="col-sm-5" style="padding-left: 0;"><i class="fa fa-dollar"></i> Prices</h3>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Search" class="input input-sm form-control txtsearch">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-envelope"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <ul class="sortable-list connectList agile-list"></ul>
+                            </div>
+                        </div>
+                        <div class="ibox div_color">
+                            <div class="ibox-content">
+                                <h3 class="col-sm-5" style="padding-left: 0;"><i class="fa fa-tint"></i> Colors</h3>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Search" class="input input-sm form-control txtsearch">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-envelope"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <ul class="sortable-list connectList agile-list"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="ibox div_fabric">
+                            <div class="ibox-content">
+                                <h3 class="col-sm-5" style="padding-left: 0;"><i class="fa fa-tags"></i> Fabrics</h3>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Search" class="input input-sm form-control txtsearch">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-send"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-money"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-envelope"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <ul class="sortable-list connectList agile-list"></ul>
+                            </div>
+                        </div>
+                        <div class="ibox div_art">
+                            <div class="ibox-content">
+                                <h3 class="col-sm-5" style="padding-left: 0;"><i class="fa fa-paint-brush"></i> Ornaments</h3>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Search" class="input input-sm form-control txtsearch">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-envelope"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <ul class="sortable-list connectList agile-list"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="ibox div_style">
+                            <div class="ibox-content">
+                                <h3 class="col-sm-5" style="padding-left: 0;"><i class="fa fa-thumb-tack"></i> Styles</h3>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Search" class="input input-sm form-control txtsearch">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-envelope"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <ul class="sortable-list connectList agile-list"></ul>
+                            </div>
+                        </div>
+                        <div class="ibox div_trim cls3">
+                            <div class="ibox-content">
+                                <h3 class="col-sm-5" style="padding-left: 0;"><i class="fa fa-plane"></i> Trims</h3>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Search" class="input input-sm form-control txtsearch">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-white">
+                                            <i class="fa fa-envelope"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <ul class="sortable-list connectList agile-list"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

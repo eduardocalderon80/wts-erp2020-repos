@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html class="md device-pixel-ratio-1 device-desktop support-position-sticky">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#2196f3">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>Confirmación de O/C</title>
+
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/fonts/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/css/plugins/datapicker/datepicker3-sandbox.css" rel="stylesheet" />
+    <link href="~/Content/css/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+    <link href="~/Content/css/plugins/dataTables/datatables.min.css" rel="stylesheet" />
+    <link href="~/Content/css/plugins/dataTables/fixedColumns.dataTables.min.css" rel="stylesheet" />
+    <link href="~/Content/css/plugins/dataTables/fixedColumns.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Aprobaciones/AprobacionesFabrica.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div>
+        @Html.Hidden("urlBase", Url.Content("~/"))
+    </div>
+
+    <div id="appConfimacion" style="margin-top:15px">
+        <div class="view view-main ios-edges">
+            <div class="page page-current" data-name="form">
+                <div class="col-sm-12 col-xs-12">
+                    <div class="page-content">
+                        <div class="row">
+                            <div class="pull-left col-xs-12 col-sm-10 hide">
+                                <p>Empty:</p>
+                            </div>
+                            <div class="pull-right col-xs-12 col-sm-2">
+                                <button class="btn btn-primary pull-right col-xs-12 col-sm-2 col-md-1 col-lg-1" style="width:100%" type="button" id="btnSave"><i class="fa fa-save"></i> Save</button>
+                            </div>
+                        </div>
+                        <div class="space-15" style="height:15px"></div>
+                        <div style="width:100%;"><h5 class="col-xs-12 col-sm-12 text-center font-bold" style="font-weight:bold; text-decoration:underline">Ventana de Confirmación de Fecha OC</h5></div>
+                        <div id="divContenedorAprobacion">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- :spinner -->
+    <div class="modal inmodal" id="myModalSpinner" style="position: absolute;display:none;top: 30%;left: 10%; z-index: 1000000000 !important;" data-backdrop="static" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content animated flipInY">
+                <div class="modal-header">
+                    <h4 class="modal-title">Wait!</h4><br><br>
+                    <div>
+                        <div id="searching_spinner_center" style="position: absolute;display: block;top: 50%;left: 45%;">
+                            <div class="sk-spinner sk-spinner-three-bounce">
+                                <div class="sk-bounce1"></div>
+                                <div class="sk-bounce2"></div>
+                                <div class="sk-bounce3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/js/jquery-2.1.1.js"></script>
+    <script src="~/Scripts/js/bootstrap.min.js"></script>
+    @*<script src="~/Scripts/js/plugins/datapicker/boostrap-datepicker-sandbox.js"></script>*@
+    <script src="~/Scripts/js/plugins/sweetalert/sweetalert.min.js"></script>
+    @*<script src="~/Scripts/js/plugins/dataTables/datatables.min.js"></script>*@
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/js/plugins/dataTables/dataTables.fixedColumns.min.js"></script>
+    <script src="~/Scripts/Home/Aprobacion.js"></script>
+    <script src="~/Scripts/Aprobacion/AprobacionFabrica/AprobacionOCxFabrica.js"></script>
+</body>
+</html>

@@ -1,0 +1,488 @@
+﻿<style>
+    #panelEncabezado_atxsolicitud .ibox {
+        clear: both;
+        /* EDU: LO MODIFIQUE PARA QUITAR MARGEN INFERIOR*/
+        /*margin-bottom: 25px;*/
+        /*edu: para quitar espacios entre div usando ibox*/
+        margin-bottom: 5px !important;
+        margin-top: 0;
+        padding: 0;
+    }
+
+    #panelEncabezado_atxsolicitud .ibox-content {
+        /*background-color: #ffffff;*/
+        color: inherit;
+        /* EDU: LO MODIFIQUE PARA QUITAR MARGEN INFERIOR*/
+        /*padding: 15px 20px 20px 20px;*/
+        /*edu: para quitar espacios entre div usando ibox*/
+        padding: 5px 20px 5px 10px !important;
+        border-color: #e7eaec;
+        border-image: none;
+        border-style: solid solid none;
+        border-width: 1px 0;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 30% 10% 60%;
+        grid-gap: 10px;
+        /*background-color: #2196F3;
+      padding: 10px;*/
+    }
+</style>
+<div class="ibox" id="panelEncabezado_atxsolicitud">
+    <div class="ibox-title">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 id="_title" class="text-navy bold">DATA-TITULO</h3>
+            </div>
+            <div class="col-sm-6 text-right">
+                <button type="button" class="btn btn-primary" id="btnSave">
+                    <span class="fa fa-save"></span>
+                    Save New
+                </button>
+                <button type="button" class="btn btn-info" id="btnUpdate">
+                    <span class="fa fa-save"></span>
+                    Save Update
+                </button>
+                <button type="button" class="btn btn-default" id="btnReturn">
+                    <span class="fa fa-ban"></span>
+                    Return
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="ibox-content wrapper wrapper-content gray-bg" style="overflow-y: auto; max-height: 850px;" id="div_cuerpoprincipal">
+        <div class="ibox">
+            <div class="hide">
+                <input type="text" id="txtpar_new" value="DATA-PARAMETRO" />
+                <input type="text" id="hf_actualizarArchivo" value="0" class="_enty_grabar" data-required="true" data-min="1" data-max="20" data-id="hf_actualizarArchivo" />
+                <input type="text" id="hf_estadosolicitud" class="_enty_grabar" data-required="true" data-min="1" data-max="20" value="" data-id="estadoATXSolicitud" />
+                <input type="text" id="hf_idanalisistextilsolicitud" class="_enty_grabar" data-required="false" data-min="1" data-max="20" data-id="IdAnalisisTextilSolicitud" />
+                <input type="text" id="hf_idsolicitud" class="_enty_grabar" data-required="false" data-min="1" data-max="20" data-id="IdSolicitud" />
+                <input type="text" id="hf_idsolicituddesarrollotela" class="_enty_grabar" data-required="false" data-min="1" data-max="20" data-id="idsolicituddesarrollotela" />
+                <input type="text" id="hf_idsolicituddetalledesarrollotela" class="_enty_grabar" data-required="false" data-min="1" data-max="20" data-id="idsolicituddetalledesarrollotela" />
+                <input type="text" id="hf_escomplemento" class="_enty_grabar" data-required="false" data-min="1" data-max="20" data-id="escomplemento" />
+            </div>
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <h5 class="text-navy bold">Origen</h5>
+                    <a class="collapse-link">
+                        <span class="fa fa-chevron-up icono_collapse"></span>
+                    </a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-wrench"></i>
+                    </a>
+                    <!--VER SI DEBE ESTAR PARA HACER MULTIPLES SOLICITUDES-->
+                    @*<ul id="submenuestado" class="dropdown-menu dropdown-user">
+                        <li class="_submenu">
+                            <input type="checkbox" id="chkATX" />ATX
+                        </li>
+                        <li class="_submenu">
+                            <input type="checkbox" id="chkCol" />Colgador
+                        </li>
+                        <li class="_submenu">
+                            <input type="checkbox" id="chkCoti" />Cotizacion
+                        </li>
+                    </ul>*@
+                </div>
+
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <!--COLUMNA 1-->
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Origen Muestra</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control _enty _enty_grabar" data-min="1" data-max="20" data-required="true" id="cboOrigen" data-id="tipomuestra"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <!--COLUMNA 2-->
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Motivo de la Solicitud</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control _enty _enty_grabar" data-min="1" data-max="20" data-required="true" id="cboMotivoSolicitud" data-id="idmotivosolicitud"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="ibox hide" id="div_datostelaestandar">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <h5 class="text-navy bold">Datos Tela Estándar</h5>
+                    <a class="collapse-link">
+                        <span class="fa fa-chevron-up icono_collapse"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <!--COLUMNA 1-->
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control _enty_grabar hide" id="txtcodigoreporteatxestandar" data-id="codigoreporte" />
+                            <div class="form-group" id="div_grupo_comparar_codigo_reporteatx_estandar">
+                                <label class="control-label col-sm-4">Código Reporte Atx Estandar</label>
+                                <div class="col-sm-8 grid-container">
+                                    <div>
+                                        <!--disabled="disabled"-->
+                                        <input type="text" id="txtanio_atx_estandar" class="form-control _enty_grabar" data-id="anio_atx_estandar"
+                                               placeholder="AÑO: 2019" onkeypress="return DigitimosDecimales(event,this)" maxlength="4" />
+                                    </div>
+                                    <div class="text-center"><label class="control-label">-</label></div>
+                                    
+                                    <div>
+                                        <div class="input-group">
+                                            <!--disabled="disabled"-->
+                                            <input type="text" class="form-control _enty_grabar" id="txtcontador_atx_estandar" data-id="contador_atx_estandar"
+                                                   placeholder="NÚMERO: 1545" onkeypress="return DigitimosDecimales(event,this)" maxlength="5" />
+                                            <div class="input-group-btn hide">
+                                                <button class="btn btn-primary" type="button" id="btnBuscarSolicitudDesarrollo_AtxEstandar">
+                                                    <span class="fa fa-search"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--COLUMNA 2-->
+                        <div class="col-sm-4">
+                            <!--PARA LA ADECUACION DE SOLICITUD DE ATX SIN SDT; SE OCULTARA POR EL MOMENTO YA QUE NO SE VA USAR TODAVIA LA SOLICITUD DE DESARROLLO DE TELA=SDT-->
+                            <!--OCULTAR TEMPORALMENTE-->
+                            <div class="form-group hide" id="div_grupo_idsolicituddesarrollotela">
+                                <label class="control-label col-sm-4">Solicitud Desarrollo Tela</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control _enty_grabar" id="txtsolicituddesarrollotela" disabled="disabled" />
+                                </div>
+                            </div>
+                            
+                            <!--OCULTO-->
+                            <div class="form-group hide" id="div_grupo_comparar_solicitudatx_estandar">
+                                <label class="control-label col-sm-4">Código Solicitud Atx Estandar</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control _enty_grabar" id="txtcodigosolicitudatxestandar" data-id="codigosolicitudestandar" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--COLUMNA 3-->
+                        <div class="col-sm-4">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ibox" id="div_muestrafisica">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <h5 class="text-navy bold">Muestra Física</h5>
+                    <a class="collapse-link">
+                        <span class="fa fa-chevron-up icono_collapse"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <!--COLUMNA 1-->
+                        <div class="col-sm-4">
+                            <div class="form-group hide" id="divcodigocolgador">
+                                <label class="col-sm-4 control-label">Código tela WTS</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control _enty_origencolgador _enty_grabar" id="txtcodigotela" data-required="true" data-min="1" data-max="20" data-id="codigotela" />
+                                        <div class="input-group-btn">
+                                            <button type="button" class="btn btn-primary" id="btn_buscar_by_codigotela">
+                                                <span class="fa fa-search"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group" id="divcboCliente">
+                                <label class="col-sm-4 control-label">Client</label>
+                                <div class="col-sm-8">
+                                    <select id="cboCliente" class="form-control _enty_origencliente _enty_origenproveedor _enty_origencolgador _enty_origenatxantiguo _enty_grabar" data-required="true" data-min="1" data-max="20" data-id="idcliente"></select>
+                                </div>
+                            </div>
+                            <div class="form-group" id="divtxtDensidad">
+                                <label class="col-sm-4 control-label">Densidad (gr/m2)</label>
+                                <div class="col-sm-8">
+                                    <input type="text" id="txtDensidad" class="form-control _enty_origenproveedor _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="densidad" />
+                                </div>
+                            </div>
+                            <div class="form-group" id="divtxtColorTela">
+                                <label class="col-sm-4 control-label">Color Tela</label>
+                                <div class="col-sm-8">
+                                    <input type="text" id="txtColorTela" class="form-control _enty_origenproveedor _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="color" />
+                                </div>
+                            </div>
+                            <div class="form-group hide" id="divtxtcodigoreporte">
+                                <label class="col-sm-4 control-label">Cod Reporte Atx Existente</label>
+                                <div class="col-sm-8">
+                                    <input type="text" id="txtcodigoreporteanalisistextilexistente" class="form-control _enty_grabar" data-required="false" data-min="1" data-max="254" data-id="codigoreporteanalisistextilexistente" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--COLUMNA 2-->
+                        <div class="col-sm-4">
+                            <div class="form-group" id="divtxtEstructura">
+                                <label class="col-sm-4 control-label">Estructura</label>
+                                <div class="col-sm-8">
+                                    <input id="txtEstructura" class="form-control _enty_origenproveedor _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="estructura" />
+                                </div>
+                            </div>
+                            <div class="form-group" id="divrbLavado">
+                                <label class="col-sm-4 control-label">Lavado</label>
+                                <div class="col-sm-8">
+                                    <input type="radio" name="rbLavado" id="rbLavado" class="cls_lavado" checked value="0" /> NO(BW)
+                                    <input type="radio" name="rbLavado" id="rbLavado" class="cls_lavado" value="1" /> SI(AW)
+                                </div>
+                            </div>
+                            <div class="form-group hide" id="divATX">
+                                <label class="col-sm-4 control-label">Old Atx Code</label>
+                                <div class="col-sm-8 grid-container">
+                                    <div>
+                                        <input type="text" id="txtanio" class="form-control _enty_origenatxantiguo _enty_grabar" data-id="anio" placeholder="15" data-required="true" data-min="1" data-max="99" data-type="int" onkeypress="return DigitimosDecimales(event,this)" disabled="disabled" />
+                                    </div>
+                                    <div class="text-center"><label class="control-label">-</label></div>
+                                    <div>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control _enty_origenatxantiguo _enty_grabar" id="txtCorrelativo" data-id="correlativo" data-required="true" placeholder="1545" data-min="1" data-max="9999" data-type="int" onkeypress="return DigitimosDecimales(event,this)" disabled="disabled" />
+                                            <div class="input-group-btn hide">
+                                                <button class="btn btn-primary" type="button" id="btnBuscarAtx">
+                                                    <span class="fa fa-search"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--COLUMNA 3-->
+                        <div class="col-sm-4">
+                            <div class="form-group" id="divtxtTitulo">
+                                <label class="col-sm-4 control-label">Titulo(s)</label>
+                                <div class="col-sm-8">
+                                    <input type="text" id="txtTitulo" class="form-control _enty_origenproveedor _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="titulo" />
+                                </div>
+                            </div>
+                            <div class="form-group" id="divrbLavado">
+                                <label class="col-sm-12 control-label">¿La muestra está siendo evaluada en Laboratorio?</label>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12 text-right">
+                                    <input type="radio" name="rbEvaluacion" id="rbEvaluacion" class="cls_evaluacion" checked value="0" /> NO
+                                    <input type="radio" name="rbEvaluacion" id="rbEvaluacion" class="cls_evaluacion" value="1" /> SI
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ibox hide" id="div_datosproveedor">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <h5 class="text-navy bold">Datos Proveedor</h5>
+                    <a class="collapse-link">
+                        <span class="fa fa-chevron-up icono_collapse"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="col-sm-4">
+                            <div class="form-group" id="divcboProveedor">
+                                <label class="col-sm-4 control-label">Fabrica</label>
+                                <div class="col-sm-8">
+                                    <select id="cboProveedor" class="form-control _enty_origenproveedor _enty_grabar" data-required="true" data-min="1" data-max="20" data-id="idproveedorfabrica"></select>
+                                </div>
+                            </div>
+                            <div class="form-group" id="divFichaTecnicaProveedor">
+                                <label class="col-sm-12 control-label">Seleccionar ficha técnica del proveedor</label>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-8 col-sm-offset-4">
+                                    <input type="text" class="form-control" id="txtArchivoSeleccionado" readonly="readonly" value="" />
+                                    <div style="padding-top:5px;">
+                                        <span class="input-group-btn">
+                                            <span class="btn btn-primary btn-sm btn-file">
+                                                <span class="fa fa-cloud-upload"></span> &nbsp;Upload File
+                                                <input type="file" id="filearchivo" />
+                                            </span>
+                                            &nbsp;
+                                            <button id="btneliminararchivo" class="btn btn-danger btn-sm btn-file" type="button"><span class="glyphicon glyphicon-trash"></span></button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group" id="divtxtProveedorFabrica">
+                                <label class="col-sm-4 control-label">Proveedor de Tela</label>
+                                <div class="col-sm-8">
+                                    <input type="text" id="txtProveedorFabrica" class="form-control _enty_origenproveedor _enty_grabar" data-min="1" data-max="50" data-id="proveedorfabrica" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group" id="divtxtCodigoTelaProveedor">
+                                <label class="col-sm-4 control-label">Cod Tela Proveedor</label>
+                                <div class="col-sm-8">
+                                    @*<input type="text" id="txtCodigoTelaProveedor" class="form-control _enty_origenproveedor _enty_grabar" data-required="true" data-min="1" data-max="50" data-id="codigotelaproveedor" />*@
+                                    <input type="text" id="txtCodigoTelaProveedor" class="form-control _enty_origenproveedor _enty_grabar" data-min="1" data-max="50" data-id="codigotelaproveedor" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group" id="divtxtPartidaTela">
+                                <label class="col-sm-4 control-label">Partida Tela</label>
+                                <div class="col-sm-8">
+                                    <input type="text" id="txtPartidaTela" class="form-control _enty_origenproveedor _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="partida" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ibox hide" id="div_testlaboratorio">
+            <div class="ibox-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h5 class="text-navy bold">Test Laboratorio</h5>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <label class="text-navy">
+                            <div class="icheckbox_square-green _clsdiv_chk_requiereanalisislaboratorio' style='position: relative;">
+                                <div class="icheckbox_square-green" style="position: relative;">
+                                    <input type="checkbox" id="chk_requiereanalisislaboratorio" class="i-checks _enty _cls_chk_requiereanalisislaboratorio" style="position: absolute; opacity: 0;" name="_chk_requiereanalisislaboratorio" value="" data-valor="" data-id="envio_requiereanalisislaboratorio">
+                                </div>
+                            </div>
+                            Requiere Análisis
+                        </label>
+                        &nbsp;&nbsp;
+                        <a class="collapse-link" data-nivel="4">
+                            <span class="fa fa-chevron-up icono_collapse"></span>
+                        </a>
+                    </div>
+                </div>
+                @*<div class="ibox-tools text-right">
+                    <h5 class="text-navy bold">Test Laboratorio</h5>
+                    <a class="collapse-link">
+                        <span class="fa fa-chevron-up icono_collapse"></span>
+                    </a>
+                </div>*@
+            </div>
+            <div class="ibox-content" id="div_content_testlaboratorio">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="col-sm-4">
+                            <div class="form-group" id="div_cboproveedor_tintoreria">
+                                <label class="col-sm-4 control-label">Tintorería</label>
+                                <div class="col-sm-8">
+                                    <input type="text" id="txt_tintoreria" class="form-control _enty_origenproveedor _enty_habilitar" list="dl_tintoreria" data-required="false" data-min="1" data-max="8000" disabled="disabled" />
+                                    <datalist id="dl_tintoreria">
+
+                                    </datalist>
+                                </div>
+                            </div>
+                            <div class="form-group" id="div_codigocolortintoreria">
+                                <label class="control-label col-sm-4">Código Color</label>
+                                <div class="col-sm-8">
+                                    <input type="text" id="txt_codigocolortintoreria" class="form-control _enty_origenproveedor _enty_grabar _enty_habilitar" data-required="false" data-min="1" data-max="8000" data-id="codigocolortintoreria" disabled="disabled" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group" id="div_laboratoriotest">
+                                <label class="col-sm-4 control-label">Prueba</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control _enty_origenproveedor _enty_grabar _enty_habilitar" id="cbo_prueba" data-required="false" data-min="1" data-max="20" data-id="tipoprueba" disabled="disabled"></select>
+                                </div>
+                            </div>
+                            <div class="form-group"  id="div_laboratorioproceso">
+                                <label class="col-sm-4 control-label">Proceso</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control _enty_origenproveedor _enty_grabar _enty_habilitar" id="cbo_proceso" data-required="false" data-min="1" data-max="200" data-id="proceso" disabled="disabled"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group" id="div_instruccioncuidado">
+                                <button type="button" class="btn btn-sm btn-info" id="btn_instruccioncuidado">Instrucción Cuidado</button>
+                            </div>
+                            <div class="form-group" id="div_comentario_instruccioncuidado">
+                                <textarea class="form-control cls_txt_comentario_instruccioncuidado _enty_origenproveedor _enty_grabar" id="txta_comentario_instruccioncuidado" 
+                                          style="resize: none;" disabled="disabled" rows="2" data-required="false" data-min="1" data-max="8000" data-id="cadena_instruccioncuidado"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ibox" id="div_contenidotela">
+            <div class="ibox-title">
+                <div class="ibox-tools text-right">
+                    <h5 class="text-navy bold">Contenido</h5>
+                    <a class="collapse-link">
+                        <span class="fa fa-chevron-up icono_collapse"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-sm-12" style="padding-bottom:20px;">
+                            <label class="col-sm-2 control-label">% de Contenido de Fibra </label>
+                            <div class="col-sm-6">
+                                <select id="cboMateriaPrima" class="form-control"></select>
+                            </div>
+                            <div class="col-sm-2">
+                                <button type="button" class="btn btn-primary" id="btnAddMateriaPrima">Add</button>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 table-responsive" id="divTablaDetalle">
+                            <table id="tblMateriaPrima" class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center" style="width:10%;"></th>
+                                        <th class="text-center" style="width:60%;">Materia Prima</th>
+                                        <th class="text-center" style="width:30%;">%</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody_MateriaPrima"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ibox">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <label class="col-sm-2 control-label">Comentario</label>
+                            <textarea class="form-control col-sm-10 _enty_grabar" rows="3" id="txtComentario" data-id="comentario" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

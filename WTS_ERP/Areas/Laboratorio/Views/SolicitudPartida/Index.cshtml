@@ -1,0 +1,141 @@
+﻿<style>
+    ::-webkit-scrollbar {width: 8px;}
+    ::-webkit-scrollbar-track {background: #f1f1f1;}
+    ::-webkit-scrollbar-thumb {background: #888;}
+    ::-webkit-scrollbar-thumb:hover {background: #676a6c;}
+</style>
+<div class="hide" id="div_solicitudpartida"></div>
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-12">
+        <div class="col-lg-10">            
+            <h2 class="text-navy bold">Departure request</h2>
+        </div>
+
+        <div class="col-lg-2">
+            <div class="title-action" id="divbotonera_encabezado">
+                <button type="button" class="dropdown-toggle btn btn-white" data-toggle="dropdown" aria-expanded="false">
+                    <span class="fa fa-wrench"></span>
+                </button>                
+                <ul id="submenuestado" class="dropdown-menu dropdown-user">
+                    <li class="_submenu">
+                        <a href="javascript:void(0)" data-estado="pending">Pending<span class="fa fa-check label-warning" aria-hidden="true" style="font-size:14px;margin-left:80px"></span></a>
+                    </li>
+                    <li class="_submenu">
+                        <a href="javascript:void(0)" data-estado="rejected">Rejected<span class="fa fa-check label-danger" aria-hidden="true" style="font-size:14px;margin-left:77px"></span></a>
+                    </li>
+                    <li class="_submenu">
+                        <a href="javascript:void(0)" data-estado="approved">Approved<span class="fa fa-check label-primary" aria-hidden="true" style="font-size:14px;margin-left:70px"></span></a>
+                    </li>
+                    <li class="_submenu">
+                        <a href="javascript:void(0)" data-estado="advanced">Advanced<span class="fa fa-filter" aria-hidden="true" style="font-size:14px;margin-left:77px"></span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="div_filtro_bandeja_solicitudpartida" class="col-sm-2">
+            <span class="input-group">
+                <input type="text" class="form-control" value="" id="txtfiltrobandeja_solicitudpartida" />
+                <span class="input-group-addon bg-primary" id="span_filtrobandeja_solicitudpartida" style="cursor:pointer;" title="Search">
+                    <span class="fa fa-search"></span>
+                </span>
+                <span class="input-group-addon bg-default" id="span_refresh_solicitudpartidaindex" style="cursor:pointer;" title="Refresh">
+                    <span class="fa fa-refresh"></span>
+                </span>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="fh-breadcrumb" style="max-height:850px !important;" id="divcontenedor_breadcrum">
+    <div class="fh-column" style="width:350px;max-height:850px !important; overflow-y: auto !important;" id="divmenu_breadcrum">
+        <div class="full-height-scroll">
+            <ul class="list-group elements-list" id="_menu">
+                <li class="list-group-item _item" data-id="1">
+                    <a data-toggle="tab" href="#tab-1">
+                        <small class="pull-right text-muted"> 16.02.2015</small>
+                        <strong>Customer-Code</strong>
+                        <div class="small m-t-xs">
+                            <p>
+                                Family - Fabric Code
+                            </p>
+                            <p class="m-b-none">
+                                <i class="fa fa-map-marker"></i>
+                                Type of departure
+                            </p>
+                        </div>
+                    </a>
+                </li>               
+            </ul>
+        </div>
+    </div>
+
+    <div class="full-height" style="max-height: 850px !important; overflow-y: auto !important" id="divdetalle_breadcrum">
+        <div class="full-height-scroll white-bg border-left">
+            <div class="element-detail-box">
+                <div class="tab-content">
+                    <div class="hide">
+                        <input type="text" id="txtpar_solicitudpartida_index" value="DATA-PARAMETRO" />
+                        <input type="text" id="hf_estadoactualbusqueda_index" value="" />
+                        <input type="text" id="hf_idsolicitudpartida_index" />
+                        <input type="text" id="hf_idpartida_index" value="" />
+                    </div>
+                    <div id="tab-1" class="tab-pane">
+                        <div class="pull-right">
+                            <div class="tooltip-demo" id="divbotonera">                                
+                            </div>
+                        </div>
+                        <div class="small text-muted" id="divtitulo_1"></div>
+                        <div class="small text-muted" id="divtitulo_2"></div>
+                        <h1 id="titulo_2"></h1>
+
+                        <div class="m-t-lg">
+                            <!-- :row -->
+                            <div class="row">                                
+                                <div class="col-sm-6 text-left" id="divpartida_row1">                                    
+                                </div>
+                                <div class="col-sm-6 text-left" id="divpartida_row1_2">
+                                </div>
+                            </div>
+                            <!-- :row DATOS DE LA TELA -->
+                            <div class="row">
+                                <div class="col-sm-6" id="div_padre_datostela">
+                                    <div class="col-sm-12 table-responsive m-t" id="div_titulo_tela">
+                                        <h4 class="text-navy"><strong id="titulo_tela_strong">FABRIC</strong></h4>
+                                        <hr class="hr-primary hr-line-dashed">
+                                    </div>
+                                    <div class="col-sm-12" id="div_data_tela">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="col-sm-12 text-left" id="divpartida_row3">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- DATOS DEL ESTILO-->
+                            <div class="table-responsive m-t" id="div_tbl_detalle">
+                                <h4 class="text-navy"><strong id="titulo_tbl_strong">STYLE</strong></h4>
+                                <hr class="hr-primary hr-line-dashed">
+                                <table class="table invoice-table" id="tabla_laboratorio_detalle">                                    
+                                </table>
+                                <br />
+                            </div>
+
+                            <!-- DATOS DE LA PO-->
+                            <div class="table-responsive m-t" id="div_tbl_po">
+                                <h4 class="text-navy"><strong id="titulo_po_tbl_strong">PO</strong></h4>
+                                <hr class="hr-primary hr-line-dashed">
+                                <table class="table invoice-table" id="tabla_laboratorio_po"></table>
+                                <br />
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

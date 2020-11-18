@@ -1,0 +1,446 @@
+﻿<style type="text/css">
+    /* 1 */
+   .row-selected {
+        background-color: #1ab394 !important;
+    }
+
+     .select2-container--open {
+        z-index: 9999999;
+    }
+
+    .has-error .select2-selection {
+        border-color: #ed5565 !important;
+    }
+
+    table._tablero_principal th {
+        padding: 8px;
+        border: 1px solid #e7e7e7;
+        background-color: #1c84c6;
+        color:white;
+        text-align: center;
+    }
+
+    table._tablero_principal td {
+        padding: 5px;
+        border-bottom: 1px solid #e7e7e7;
+        padding-left: 20px;
+    }
+    .columns .chosen-container, .column .chosen-container {
+        width: 100% !important;
+        margin-bottom: 1rem;
+    }
+
+</style>
+
+<div id="pnl_solicitud_textil_new">
+
+    <div id="pnl_courier_service_header" class="row wrapper white-bg page-heading">
+        <div class="ibox">
+            <div id="div_titulo_principal" class="col-sm-6">
+                <h2 class="font-bold">Servicios de Courier</h2>
+            </div>
+            <div id="div_botones_header" class="col-sm-6 text-right" style="padding-top:1%">
+                <button id="btn_return" type="button" class="btn btn-outline btn-default">
+                    <span class="fa fa-reply-all"></span>
+                    Regresar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="pnl_courier_service_body" class="row wrapper-content gray-bg animated">
+
+        <div id="pnl_courier_service_tablero" class="ibox">
+            <div class="ibox-title">
+                <div class="form-horizontal row ">
+                    <div class="col-sm-6">
+                        <h3 class="text-success bold">Información</h3>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <span class="fa fa-chevron-up _item_collapse"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="form-horizontal row">
+                    <div class="col-sm-12">
+                        <div id="tablero_principal" class="col-sm-12">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="pnl_courier_service_principal" class="ibox">
+            <div class="ibox-title">
+                <div class="form-horizontal row ">
+                    <div class="col-sm-6">
+                        <h3 id="_title" class="text-success bold">Registro</h3>
+                    </div>
+                    <div id="div_botones_primarios" class="col-sm-6 text-right">
+                        <button id="btn_save" type="button" class="btn  btn-outline btn-primary">
+                            <span class="fa fa-save"></span>
+                            Guardar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="form-group">
+
+                    <div class="form-horizontal row">
+                        <div class="col-sm-4">
+                            <label class="control-label">Enviado Por:</label>
+                            <input id="txt_usuario" disabled type="text" class="form-control hide">
+                            <select id="cbo_usuario" class="form-control hide" data-required="true" style="width:100%"></select>
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="control-label">Fecha:</label>
+                            <select id="cbo_dias_disponibles" class="form-control _select2 _enty" data-id="idfecha" data-required="true" style="width:100%"></select>
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="control-label">Servicio:</label>
+                            <select id="cbo_servicio" class="form-control _select2 _enty" data-id="idservicio" data-required="true" style="width:100%"></select>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="pnl_courier_service_courier" class="ibox _enty_main hide">
+            <div class="ibox-title">
+                <div class="form-horizontal row">
+                    <div class="col-sm-6">
+                        <h3 id="_title" class="text-success bold">Envío y Recojo</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ibox-content">
+
+                <div class="form-group">
+                    <div class="form-horizontal row">
+                        <div class="col-sm-4">
+                            <label class="control-label">Tipo Servicio:</label>
+                            <select id="cbo_courier_tipo_servicio" class="form-control _select2 _enty" data-id="idtiposervicio" data-required="true" style="width:100%"></select>
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="control-label">Turno:</label>
+                            <select id="cbo_courier_turno" class="form-control _select2 _enty" data-id="idturno" data-required="true" style="width:100%"></select>
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="control-label">Hora:</label>
+                            <select id="cbo_courier_hora" class="form-control _select2 _enty" data-id="idhora" data-required="true" style="width:100%"></select>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-horizontal row">
+                        <div class="col-sm-6">
+                            <label class="control-label">Vehiculo:</label>
+                            <select id="cbo_courier_vehiculo" class="form-control _select2 _enty" data-id="idvehiculo" data-required="true" style="width:100%"></select>
+                        </div>
+                        <div id="div_cbo_courier_cliente" class="col-sm-6">
+                            <label class="control-label">Cliente:</label>
+                            <div class="input-group">
+                                <select id="cbo_courier_cliente" class="form-control _two_items _select2 _enty" data-id="idcliente" data-required="true" style="width:100%"></select>
+                                <div id="btn_courier_cliente_activo" class="input-group-addon btn-outline btn-primary">
+                                    <span class="fa fa-chevron-down"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="div_txt_courier_cliente" class="col-sm-4 hide">
+                            <label class="control-label">Cliente:</label>
+                            <div class="input-group">
+                                <input id="txt_courier_cliente" type="text" class="form-control _two_items _enty" data-id="cliente" data-required="true">
+                                <div id="btn_courier_cliente_inactivo" class="input-group-addon btn-outline btn-success">
+                                    <span class="fa fa-chevron-up"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-horizontal row">
+                        <div id="div_cbo_courier_destino" class="col-sm-6">
+                            <label class="control-label">Destino:</label>
+                            <div class="input-group">
+                                <select id="cbo_courier_destino" class="form-control _select2 _two_items _enty" data-id="iddestino" data-required="true" style="width:100%"></select>
+                                <div id="btn_courier_destino_activo" class="input-group-addon btn-outline btn-primary">
+                                    <span class="fa fa-chevron-down"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="div_txt_courier_destino" class="col-sm-6 hide">
+                            <label class="control-label">Destino:</label>
+                            <div class="input-group">
+                                <input id="txt_courier_destino" type="text" class="form-control _two_items _enty" data-id="destino" data-required="true">
+                                <div id="btn_courier_destino_inactivo" class="input-group-addon btn-outline btn-success">
+                                    <span class="fa fa-chevron-up"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="div_cbo_courier_direccion" class="col-sm-6">
+                            <label class="control-label">Dirección:</label>
+                            <div class="input-group">
+                                <select id="cbo_courier_direccion" class="form-control _select2 _two_items _enty" data-id="iddestinodireccion" data-required="true" style="width:100%"></select>
+                                <div id="btn_courier_direccion_activo" class="input-group-addon btn-outline btn-primary">
+                                    <span class="fa fa-chevron-down"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="div_txt_courier_direccion" class="col-sm-6 hide">
+                            <label class="control-label">Dirección:</label>
+                            <div class="input-group">
+                                <input id="txt_courier_direccion" type="text" class="form-control _two_items _enty" data-id="destinodireccion" data-required="true">
+                                <div id="btn_courier_direccion_inactivo" class="input-group-addon btn-outline btn-success">
+                                    <span class="fa fa-chevron-up"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-horizontal row">
+                        <div class="col-sm-4">
+                            <label class="control-label">Contacto:</label>
+                            <input id="txt_courier_contacto" type="text" class="form-control _enty" data-id="contacto" data-required="true">
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="control-label">Celular de Contacto:</label>
+                            <input id="txt_courier_numero_contacto" type="text" class="form-control _enty" data-id="numerocontacto" data-required="true" data-type="int" data-min="9" data-max="9" maxlength="9" onKeyPress="return validators_keypress(event)">
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="control-label">Motivo:</label>
+                            <textarea id="txt_courier_descripcion" class="form-control _enty" data-id="motivo" data-required="true" rows="3" style="resize:none" data-min="1" data-max="200" maxlength="200"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="pnl_courier_service_reunion" class="ibox _enty_main hide">
+            <div class="ibox-title">
+                <div class="form-horizontal row ">
+                    <div class="col-sm-6">
+                        <h3 id="_title" class="text-success bold">Reunión</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox-content">
+
+                <div class="form-horizontal row">
+                    <div id="div_general" class="col-sm-12">
+                        <div class="ibox">
+                            <fieldset>
+                                <legend style="color:#1c84c6; font-size:16px">Información General:</legend>
+
+                                <div class="ibox">
+                                    <div class="form-horizontal row">
+                                        <div class="col-sm-3">
+                                            <label class="control-label">Responsable:</label>
+                                            <input id="txt_reunion_contacto" type="text" class="form-control _enty" data-id="contacto" data-required="true">
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label class="control-label">Celular de Responsable:</label>
+                                            <input id="txt_reunion_numero_contacto" type="text" class="form-control _enty" data-id="numerocontacto" data-required="true" data-type="int" data-min="9" data-max="9" maxlength="9" onKeyPress="return validators_keypress(event)">
+                                        </div>
+                                        <div id="div_cbo_reunion_cliente" class="col-sm-4">
+                                            <label class="control-label">Cliente:</label>
+                                            <div class="input-group">
+                                                <select id="cbo_reunion_cliente" class="form-control _select2 _two_items _enty" data-id="idcliente" data-required="true" style="width:100%"></select>
+                                                <div id="btn_reunion_cliente_activo" class="input-group-addon btn-outline btn-primary">
+                                                    <span class="fa fa-chevron-down"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="div_txt_reunion_cliente" class="col-sm-4 hide">
+                                            <label class="control-label">Cliente:</label>
+                                            <div class="input-group">
+                                                <input id="txt_reunion_cliente" type="text" class="form-control _two_items _enty" data-id="cliente" data-required="true">
+                                                <div id="btn_reunion_cliente_inactivo" class="input-group-addon btn-outline btn-success">
+                                                    <span class="fa fa-chevron-up"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label class="control-label">Con retorno?</label>
+                                            <div class='i-checks _divcontentchk'>
+                                                <div id="chkitem" class='icheckbox_square-green _chkitem' style='position: relative;'>
+                                                    <label>
+                                                        <input type='checkbox' class='i-checks' style='position: absolute; opacity: 0;'>
+                                                        <ins class='iCheck-helper' style='position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;'></ins>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="div_asistente" class="ibox">
+                                    <div class="form-horizontal row">
+                                        <div class="col-sm-12">
+                                            <label class="control-label">Asistentes</label>
+                                            <select id="cbo_asistente" placeholder="Seleccione Asistentes" multiple class="chosen-select"></select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-horizontal row">
+                    <div id="div_salida" class="col-sm-12">
+                        <div class="ibox">
+                            <fieldset>
+                                <legend style="color:#1c84c6; font-size:16px">Servicio de Ida:</legend>
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-4">
+                                        <label class="control-label">Turno:</label>
+                                        <select id="cbo_reunion_salida_turno" class="form-control _select2 _enty" data-id="idturnosalida" data-required="true" style="width:100%"></select>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label class="control-label">Hora:</label>
+                                        <select id="cbo_reunion_salida_hora" class="form-control _select2 _enty" data-id="idhorasalida" data-required="true" style="width:100%"></select>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label class="control-label">Movilidad:</label>
+                                        <select id="cbo_reunion_salida_vehiculo" class="form-control _select2 _enty" data-id="idvehiculosalida" data-required="true" style="width:100%"></select>
+                                    </div>
+                                </div>
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <label class="control-label">Salida:</label>
+                                        <select id="cbo_reunion_salida_destino_inicio" disabled class="form-control _select2 _enty" data-id="iddestinosalidainicio" style="width:100%"></select>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="control-label">Dirección Salida:</label>
+                                        <select id="cbo_reunion_salida_direccion_inicio" disabled class="form-control _select2 _enty" data-id="iddestinodireccionsalidainicio" style="width:100%"></select>
+                                    </div>
+                                </div>
+                                <div class="form-horizontal row">
+                                    <div id="div_cbo_reunion_salida_destino_fin" class="col-sm-6">
+                                        <label class="control-label">Destino:</label>
+                                        <div class="input-group">
+                                            <select id="cbo_reunion_salida_destino_fin" class="form-control _select2 _two_items _enty" data-id="iddestinosalidafin" data-required="true" style="width:100%"></select>
+                                            <div id="btn_reunion_salida_destino_activo" class="input-group-addon btn-outline btn-primary">
+                                                <span class="fa fa-chevron-down"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="div_txt_reunion_salida_destino_fin" class="col-sm-6 hide">
+                                        <label class="control-label">Destino:</label>
+                                        <div class="input-group">
+                                            <input id="txt_reunion_salida_destino_fin" type="text" class="form-control _two_items _enty" data-id="destinosalidafin" data-required="true">
+                                            <div id="btn_reunion_salida_destino_inactivo" class="input-group-addon btn-outline btn-success">
+                                                <span class="fa fa-chevron-up"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="div_cbo_reunion_salida_direccion_fin" class="col-sm-6">
+                                        <label class="control-label">Dirección Destino:</label>
+                                        <div class="input-group">
+                                            <select id="cbo_reunion_salida_direccion_fin" class="form-control _select2 _two_items _enty" data-id="iddestinodireccionsalidafin" data-required="true" style="width:100%"></select>
+                                            <div id="btn_reunion_salida_direccion_activo" class="input-group-addon btn-outline btn-primary">
+                                                <span class="fa fa-chevron-down"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="div_txt_reunion_salida_direccion_fin" class="col-sm-6 hide">
+                                        <label class="control-label">Dirección Destino:</label>
+                                        <div class="input-group">
+                                            <input id="txt_reunion_salida_direccion_fin" type="text" class="form-control _two_items _enty" data-id="destinodireccionsalidafin" data-required="true">
+                                            <div id="btn_reunion_salida_direccion_inactivo" class="input-group-addon btn-outline btn-success">
+                                                <span class="fa fa-chevron-up"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-12">
+                                        <label class="control-label">Motivo:</label>
+                                        <textarea id="txt_reunion_salida_razon" class="form-control _two_items _enty" data-id="motivo" data-required="true" rows="3" style="resize:none" data-min="1" data-max="200" maxlength="200"></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div id="div_retorno" class="col-sm-12">
+                        <div class="ibox">
+                            <fieldset>
+                                <legend style="color:#1c84c6; font-size:16px">Servicio de Retorno:</legend>
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-4">
+                                        <label class="control-label">Turno</label>
+                                        <select id="cbo_reunion_retorno_turno" class="form-control _select2 _enty_aditional" data-id="idturnoretorno" style="width:100%" data-required="true"></select>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label class="control-label">Hora:</label>
+                                        <select id="cbo_reunion_retorno_hora" class="form-control _select2 _enty_aditional" data-id="idhoraretorno" style="width:100%" data-required="true"></select>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label class="control-label">Mobilidad</label>
+                                        <select id="cbo_reunion_retorno_vehiculo" disabled class="form-control _select2 _enty_aditional" data-id="idvehiculoretorno" style="width:100%"></select>
+                                    </div>
+                                </div>
+                                <div class="form-horizontal row">
+                                    <div id="div_cbo_reunion_retorno_destino_inicio" class="col-sm-6">
+                                        <label class="control-label">Salida:</label>
+                                        <select id="cbo_reunion_retorno_destino_inicio" disabled class="form-control _select2 _enty_aditional" data-id="iddestinoretornoinicio" style="width:100%"></select>
+                                    </div>
+                                    <div id="div_txt_reunion_retorno_destino_inicio" class="col-sm-6 hide">
+                                        <label class="control-label">Salida:</label>
+                                        <input id="txt_reunion_retorno_destino_inicio" disabled type="text" class="form-control _enty_aditional" data-id="destinoretornoinicio">
+                                    </div>
+                                    <div id="div_cbo_reunion_retorno_direccion_inicio" class="col-sm-6">
+                                        <label class="control-label">Dirección Salida:</label>
+                                        <select id="cbo_reunion_retorno_direccion_inicio" disabled class="form-control _select2 _enty_aditional" data-id="iddestinodireccionretornoinicio" style="width:100%"></select>
+                                    </div>
+                                    <div id="div_txt_reunion_retorno_direccion_inicio" class="col-sm-6 hide">
+                                        <label class="control-label">Dirección Salida:</label>
+                                        <input id="txt_reunion_retorno_direccion_inicio" disabled type="text" class="form-control _enty_aditional" data-id="destinodireccionretornoinicio">
+                                    </div>
+                                </div>
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <label class="control-label">Destino:</label>
+                                        <select id="cbo_reunion_retorno_destino_fin" disabled class="form-control _select2 _enty_aditional" data-id="iddestinoretornofin" style="width:100%"></select>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="control-label">Dirección Destino</label>
+                                        <select id="cbo_reunion_retorno_direccion_fin" disabled class="form-control _select2 _enty_aditional" data-id="iddestinodireccionretornofin" style="width:100%"></select>
+                                    </div>
+                                </div>
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-12">
+                                        <label class="control-label">Motivo:</label>
+                                        <textarea id="txt_reunion_retorno_razon" class="form-control _enty_aditional" data-id="motivo" data-required="true" rows="3" style="resize:none" data-min="1" data-max="200" maxlength="200"></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    
+</div>
+

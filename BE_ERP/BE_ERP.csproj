@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8CEDE366-784A-42A4-9EA6-C8747C843B16}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BE_ERP</RootNamespace>
+    <AssemblyName>BE_ERP</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administracion\beMensajeriaReporte.cs" />
+    <Compile Include="Base.cs" />
+    <Compile Include="beCorreo.cs" />
+    <Compile Include="beLog.cs" />
+    <Compile Include="beMailSQL.cs" />
+    <Compile Include="beUser.cs" />
+    <Compile Include="beUtil.cs" />
+    <Compile Include="Contabilidad\BoletaGratificacion.cs" />
+    <Compile Include="Contabilidad\BoletaPago.cs" />
+    <Compile Include="Contabilidad\CertificadoCTS.cs" />
+    <Compile Include="Contabilidad\CertificadoUtilidad.cs" />
+    <Compile Include="CourierService\Solicitud.cs" />
+    <Compile Include="EDI\beASN.cs" />
+    <Compile Include="EDI\beCompany.cs" />
+    <Compile Include="EDI\beConfiguration.cs" />
+    <Compile Include="EDI\beConfigurationElement.cs" />
+    <Compile Include="EDI\beConfigurationSegment.cs" />
+    <Compile Include="EDI\beConfigurationSymbol.cs" />
+    <Compile Include="EDI\beEDIFile.cs" />
+    <Compile Include="EDI\beEDIFileData.cs" />
+    <Compile Include="EDI\beEDIFileLine.cs" />
+    <Compile Include="EDI\beItem.cs" />
+    <Compile Include="EDI\beOrder.cs" />
+    <Compile Include="EDI\bePack.cs" />
+    <Compile Include="EDI\beShipment.cs" />
+    <Compile Include="EDI\beShipmentGroup.cs" />
+    <Compile Include="Facturas\FacturaCliente\FacturaCliente.cs" />
+    <Compile Include="Facturas\FacturaCliente\FacturaClienteDetalle.cs" />
+    <Compile Include="Facturas\FacturaFabrica\FacturaFabrica.cs" />
+    <Compile Include="Facturas\FacturaFabrica\FacturaFabricaDetalle.cs" />
+    <Compile Include="Facturas\FacturaV\FacturaV.cs" />
+    <Compile Include="Facturas\FacturaV\FacturaVDetalle.cs" />
+    <Compile Include="FileMailAttachment.cs" />
+    <Compile Include="GestionProducto\Estilo\ArtworkFile.cs" />
+    <Compile Include="GestionProducto\Estilo\Callout.cs" />
+    <Compile Include="GestionProducto\Estilo\Estilo.cs" />
+    <Compile Include="GestionProducto\Estilo\EstiloxArte.cs" />
+    <Compile Include="GestionProducto\Estilo\EstiloxArteColor.cs" />
+    <Compile Include="GestionProducto\Estilo\EstiloxCombo.cs" />
+    <Compile Include="GestionProducto\Estilo\EstiloxComboColor.cs" />
+    <Compile Include="GestionProducto\Estilo\EstiloxFabricCombo.cs" />
+    <Compile Include="GestionProducto\Estilo\EstiloxFabricComboColor.cs" />
+    <Compile Include="GestionProducto\Estilo\EstiloxProceso.cs" />
+    <Compile Include="GestionProducto\Estilo\EstiloxProcesoColor.cs" />
+    <Compile Include="GestionProducto\Estilo\EstiloxTrim.cs" />
+    <Compile Include="GestionProducto\Estilo\EstiloxTrimColor.cs" />
+    <Compile Include="GestionProducto\Estilo\FichaTecnica.cs" />
+    <Compile Include="GestionProducto\Estilo\FichaTecnicaColor_LabDip.cs" />
+    <Compile Include="GestionProducto\Estilo\PdChart.cs" />
+    <Compile Include="GestionProducto\Estilo\ProyectoTela_Proceos.cs" />
+    <Compile Include="GestionProducto\Estilo\RequerimientoComentario_pdchart.cs" />
+    <Compile Include="GestionProducto\Estilo\RequerimientoDetalle_pdchart.cs" />
+    <Compile Include="GestionProducto\Estilo\Requerimiento_pdchart.cs" />
+    <Compile Include="GestionProducto\ReporteDDP\beReporte.cs" />
+    <Compile Include="GestionProducto\Requerimiento\Archivo.cs" />
+    <Compile Include="GestionProducto\ProyectoTela\ProyectoTela.cs" />
+    <Compile Include="GestionProducto\Requerimiento\DataGeneral.cs" />
+    <Compile Include="GestionProducto\Requerimiento\requerimiento.cs" />
+    <Compile Include="JsonResponse.cs" />
+    <Compile Include="Laboratorio\FontProperties.cs" />
+    <Compile Include="Laboratorio\Labdip.cs" />
+    <Compile Include="Laboratorio\ReporteBase.cs" />
+    <Compile Include="Laboratorio\ReporteConditions.cs" />
+    <Compile Include="Laboratorio\ReporteDetalle.cs" />
+    <Compile Include="Laboratorio\ReporteKeys.cs" />
+    <Compile Include="Laboratorio\ReporteLab.cs" />
+    <Compile Include="Laboratorio\ReporteLaboratorio.cs" />
+    <Compile Include="Laboratorio\SolicitudPartida.cs" />
+    <Compile Include="Parameter.cs" />
+    <Compile Include="ParametrosReporteExcel.cs" />
+    <Compile Include="Planeamiento\OrdenCompraTextil.cs" />
+    <Compile Include="PortalFactory\beCliente.cs" />
+    <Compile Include="PortalFactory\beDestino.cs" />
+    <Compile Include="PortalFactory\beFabrica.cs" />
+    <Compile Include="PortalFactory\PackingList\beASN.cs" />
+    <Compile Include="PortalFactory\PackingList\beCarton.cs" />
+    <Compile Include="PortalFactory\PackingList\beCartonDetail.cs" />
+    <Compile Include="PortalFactory\PackingList\bePackingList.cs" />
+    <Compile Include="PortalFactory\PackingList\bePackingListDetalle.cs" />
+    <Compile Include="PortalFactory\PackingList\bePackingListDetalleCarton.cs" />
+    <Compile Include="PortalFactory\PackingList\bePackingListDetalleSKU.cs" />
+    <Compile Include="PortalFactory\PackingList\bePackingListHeader.cs" />
+    <Compile Include="PortalFactory\ServicioPackingList\ServicioPackingList.cs" />
+    <Compile Include="PortalFactory\ServicioPackingList\ServicioPackingListBox.cs" />
+    <Compile Include="PortalFactory\ServicioPackingList\ServicioPackingListBoxDetail.cs" />
+    <Compile Include="PortalFactory\ServicioPackingList\ServicioPackingListPack.cs" />
+    <Compile Include="PortalFactory\ServicioPackingList\ServicioPackingListPackItem.cs" />
+    <Compile Include="PortalFactory\ServicioPackingList\ServicioPackingListReporteDetalle.cs" />
+    <Compile Include="Po\Po.cs" />
+    <Compile Include="Po\PoCliente.cs" />
+    <Compile Include="Po\PoClienteEstilo.cs" />
+    <Compile Include="Po\PoClienteEstiloDestino.cs" />
+    <Compile Include="Po\PoClienteEstiloDestinoTallaColor.cs" />
+    <Compile Include="Po\PoClienteEstiloTallaColor.cs" />
+    <Compile Include="Po\PoClienteProducto.cs" />
+    <Compile Include="Po\PoClienteProductoDestino.cs" />
+    <Compile Include="Po\Po_Sample\PoClienteEstiloDestinoSample.cs" />
+    <Compile Include="Po\Po_Sample\PoClienteEstiloDestinoTallaColorSample.cs" />
+    <Compile Include="Po\Po_Sample\PoClienteEstiloSample.cs" />
+    <Compile Include="Po\Po_Sample\PoClienteSample.cs" />
+    <Compile Include="Po\Po_Sample\PoSample.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecursosHumanos\Personal.cs" />
+    <Compile Include="Redirection.cs" />
+    <Compile Include="Seguridad\Empresa.cs" />
+    <Compile Include="TecnologiaInformacion\HelpDesk\Archivo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

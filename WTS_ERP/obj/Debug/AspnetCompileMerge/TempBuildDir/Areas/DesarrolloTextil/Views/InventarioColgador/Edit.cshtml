@@ -1,0 +1,200 @@
+﻿<style>
+    .no-sort::after {
+        display: none !important;
+    }
+
+    .no-sort {
+        pointer-events: none !important;
+        cursor: default !important;
+    }
+
+    thead input {
+        width: 100%;
+    }
+</style>
+<div class="ibox" id="panelEncabezado_inventarioEditar">
+    <div class="hide">
+        <input type="text" id="txtpar_new" value="DATA-PARAMETRO" />
+    </div>
+        <div class="ibox-title">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3 id="_title" class="text-navy bold">DATA-TITULO</h3>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <button type="button" class="btn btn-primary" id="btnSave">
+                        <span class="fa fa-save"></span>
+                        Grabar
+                    </button>
+                    <button type="button" class="btn btn-default" id="btnReturn">
+                        <span class="fa fa-ban"></span>
+                        Regresar
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="ibox-content wrapper wrapper-content gray-bg" style="overflow-y: auto; max-height: 850px;" id="div_cuerpoprincipal">
+            <div class="ibox">
+                <div class="hide">
+                    <input type="text" id="txtpar_new" value="DATA-PARAMETRO" />
+                    <input type="text" id="hf_idsolicitud" class="_enty_grabar" data-required="false" data-min="1" data-max="20" data-id="IdInventario" />
+                </div>
+                <div class="ibox-title">
+                    <div class="ibox-tools">
+                        <h5 class="text-navy bold">Datos del Colgador</h5>
+                    </div>
+
+                </div>
+                <div class="ibox-content">
+                    <div class="panel-body">
+                        <div class="form-horizontal col-sm-12">
+                            <!--COLUMNA 1-->
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">Código Tela</label>
+                                    <div class="col-sm-8">
+                                        <input id="txtcodigotela" class="form-control _enty_grabar" disabled data-required="true" data-min="1" data-max="254" data-id="codigotela">
+                                    </div>
+                                </div>
+                            </div>
+                            <!--COLUMNA 2-->
+                            <div class="col-sm-8">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">Período</label>
+                                    <div class="col-sm-4">
+                                        <select class="form-control _enty_grabar" disabled data-min="1" data-max="20" data-required="true" id="cboPeriodo" data-id="periodo"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-horizontal col-sm-12">
+                            <!--COLUMNA 1-->
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">Locación</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control _enty_grabar" disabled data-min="1" data-max="20" data-required="true" id="cboAlmacen" data-id="almacen"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--COLUMNA 2-->
+                            <div class="col-sm-8">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4"> Estado</label>
+                                    <div class="col-sm-4">
+                                        <select class="form-control" id="_cbo_Estado">
+                                            <option value="1">Activo</option>
+                                            <option value="0">Inactivo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group hide">
+                                    <label class="col-sm-4 control-label">Fecha de Registro</label>
+                                    <div class="col-sm-4">
+                                        <input id="txtfecharegistro" class="form-control  _enty_grabar" disabled data-required="true" data-min="1" data-max="254" data-id="fecharegistro">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-horizontal col-sm-12">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">Anaquel</label>
+                                    <div class="col-sm-8">
+                                        <select id="txtanaquel" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="anaquel">
+                                            <option value="1-A">1-A</option>
+                                            <option value="1-B">1-B</option>
+                                            <option value="1-C">1-C</option>
+                                            <option value="1-D">1-D</option>
+                                            <option value="1-E">1-E</option>
+                                            <option value="2-A">2-A</option>
+                                            <option value="2-B">2-B</option>
+                                            <option value="2-C">2-C</option>
+                                            <option value="2-D">2-D</option>
+                                            <option value="2-E">2-E</option>
+                                            <option value="3-A">3-A</option>
+                                            <option value="3-B">3-B</option>
+                                            <option value="3-C">3-C</option>
+                                            <option value="3-D">3-D</option>
+                                            <option value="3-E">3-E</option>
+                                            <option value="4-A">4-A</option>
+                                            <option value="4-B">4-B</option>
+                                            <option value="4-C">4-C</option>
+                                            <option value="4-D">4-D</option>
+                                            <option value="4-E">4-E</option>
+                                            <option value="5-A">5-A</option>
+                                            <option value="5-B">5-B</option>
+                                            <option value="5-C">5-C</option>
+                                            <option value="5-D">5-D</option>
+                                            <option value="5-E">5-E</option>
+                                            <option value="6-A">6-A</option>
+                                            <option value="6-B">6-B</option>
+                                            <option value="6-C">6-C</option>
+                                            <option value="6-D">6-D</option>
+                                            <option value="6-E">6-E</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                @*<div class="form-group">
+                                    <label class="control-label col-sm-4"> Estado</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" id="_cbo_Estado">
+                                            <option value="1">Activo</option>
+                                            <option value="0">Inactivo</option>
+                                        </select>
+                                    </div>
+                                </div>*@
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">Descripción</label>
+                                    <div class="col-sm-8">
+                                        <textarea id="txtdescripcion" disabled class="form-control _enty" data-id="descripcion"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="divdetallInventario">
+
+                    </div>
+                </div>
+            </div>
+            <div class="ibox" id="div_Movimientos">
+                <div class="ibox-title">
+                    <div class="ibox-tools">
+                        <h5 class="text-navy bold">Movimientos</h5>
+                        <a class="collapse-link">
+                            <span class="fa fa-chevron-up icono_collapse"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            <div id="div_tbl_Movimientos">
+                                @*stripe row-border order-column*@
+                                <table id="tbl_indexinventario_movimiento" class="table table-bordered" style="width: 100%; max-width: 100%;  padding-right: 0px;">
+                                    <thead>
+                                        <tr>
+                                            <th class="no-sort" style="width:3%"></th>
+                                            <th style="width:10%">Usuario Solicitante</th>
+                                            <th style="width:10%">Movimiento</th>
+                                            <th class="text-center" style="width:10%">Motivo</th>
+                                            <th class="text-center" style="width:10%">Cantidad</th>
+                                            <th class="text-center" style="width:10%">F.Registro</th>
+                                            <th style="width:20%">Observación</th>
+                                            <th class="text-center" style="width:10%">Comentario Eliminado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbody_indexinventario"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

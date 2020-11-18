@@ -1,0 +1,81 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Po Marmaxx</h2>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="control-label col-sm-4">Supplier</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="cboFabrica">
+                                        <option value="">All</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="control-label col-sm-4">PO #</label>
+                                <div class="col-sm-8">
+                                    <input type="text" id="txtPo" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer text-right">
+                    <button type="button" class="btn btn-success" id="btnSearch">
+                        <span class="fa fa-search"></span>
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Details</h5>
+            </div>
+            <div id="divContentTBL" class="ibox-content" style="position:relative; width:100%;">
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="modal inmodal in" id="mdPo" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 17px;">
+    <div class="modal-dialog" style="width:70%">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">PO Information</h4>
+            </div>
+            <div class="modal-body">
+                <div id="divPo" style="max-height:500px;overflow:auto;max-width:100%;">
+                    <h4>Po</h4>
+                    <table id='tblPo' class='table table-bordered table-hover'><thead><tr><th>Po</th><th>DepartmentCode (*)</th><th>VendorCode (*)</th><th>Buyer (*)</th><th>AddressInformation (*)</th><th>DivisionCode (*)</th></tr></thead><tbody></tbody></table>
+                    <h4>Lote</h4>
+                    <table id='tblLote' class='table table-bordered table-hover'  ><thead><tr><th>Po</th><th>Style</th><th>Lote</th><th>PointEntryFlag (*)</th><th>DCNumber (*)</th><th>PreTicket (*)</th><th>InnerPerPack (*)</th><th>StoreReadyFlag (*)</th><th>PoDc (*)</th></tr></thead><tbody></tbody></table>
+                    <h4>Lote Detail</h4>
+                    <table id='tblLoteDetalle' class='table table-bordered table-hover'><thead><tr><th>Po</th><th>Style</th><th>Lote</th><th>Color</th><th>Talla</th><th>Qty (*)</th><th>BuyerStyle (*)</th><th>SizeRatio (*)</th><th>Category (*)</th></tr></thead><tbody></tbody></table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" id="btnCloseFtyPrice" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="btnSave">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="display:none;">
+    <select id="cboStatus"><option value="">Select</option><option value="Y">Y</option><option value="N">N</option></select>
+</div>

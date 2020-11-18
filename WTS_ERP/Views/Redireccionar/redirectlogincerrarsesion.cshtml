@@ -1,0 +1,26 @@
+﻿<script>
+    var oURL = {
+        erp: {
+            preproduccion: 'http://172.16.1.22/erp/',
+            produccion: 'http://erp.wtsusa.us/',
+            desarrollo: 'http://192.168.0.3/erpdesarrollo/',
+            localhost: 'http://localhost:55659/'
+        }
+    }
+    var appURL = {
+        erp: oURL.erp.localhost
+        //erp: oURL.erp.preproduccion
+    }
+
+    window.onload = function () {
+        var localhost = oURL.erp.localhost,
+        app = appURL.erp;
+        if (localhost === app) {
+            window.location.href = urlBase() + "Home/LoginERP";
+        } else {
+            window.location.href = appURL.erp + "Login/login";  // localhost:4012; 192.168.0.3/erpdesarrollo; 172.16.1.22/erp
+        }
+
+        return false;
+    };
+</script>

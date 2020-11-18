@@ -1,0 +1,155 @@
+﻿<div id="panelEncabezado_FabricReqAdvance">
+    <div class="hide">
+        <input type="text" id="fabricreqadv_txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="form-horizontal row">
+        <div class="col-sm-12 m-b">
+            <div class="float-left">
+                <ul class="nav nav-tabs" role="tablist" style="border-bottom: 0">
+                    <li class="active"><a class="nav-link" data-toggle="tab" href="#tabadv-1" aria-expanded="true">1</a></li>
+                    <li><a class="nav-link" data-toggle="tab" href="#tabadv-2" aria-expanded="true">2</a></li>
+                    <li><a class="nav-link" data-toggle="tab" href="#tabadv-3" aria-expanded="true">3</a></li>
+                    <li><a class="nav-link" data-toggle="tab" href="#tabadv-4" aria-expanded="true">4</a></li>
+                </ul>
+            </div>
+            <div class="text-right">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <span class="fa fa-reply-all"></span>
+                    Return
+                </button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">
+                    <span class="fa fa-check"></span>
+                    Confirm
+                </button>
+            </div>
+            <hr />
+        </div>
+    </div>
+    <div class="form-horizontal row">
+        <div class="tab-content">
+            <div role="tabpanel" id="tabadv-1" class="tab-pane active">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <h4>Search for hangers by fabric code</h4>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="input-group">
+                                <div class="has-float-label">
+                                    <input class="form-control" id="txtRqFabricCode" type="text" placeholder="Fabric Code">
+                                    <label for="txtRqFabricCode">Fabric Code</label>
+                                </div>
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="fa fa-search"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="has-float-label">
+                                <textarea class="form-control" id="txtRQCommnents2_1" rows="2" placeholder="Commnents"></textarea>
+                                <label for="txtRQCommnents2_1">Commnents</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" id="tabadv-2" class="tab-pane">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <h4>Search for hangers by fabric description</h4>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="has-float-label">
+                                <textarea class="form-control" id="txtRQDescription" rows="2" placeholder="Description"></textarea>
+                                <label for="txtRQDescription">Description</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="has-float-label">
+                                <textarea class="form-control" id="txtRQCommnents2_2" rows="2" placeholder="Commnents"></textarea>
+                                <label for="txtRQCommnents2_2">Commnents</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" id="tabadv-3" class="tab-pane">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <h4>Assembling hangers with fabric from a supplier</h4>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="has-float-label">
+                                <select class="form-control" id="txtRQDescription"></select>
+                                <label for="txtRQSupplierType">Supplier Type</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="has-float-label">
+                                <select class="form-control" id="txtRQSupplierName"></select>
+                                <label for="txtRQSupplierName">Supplier Name</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="has-float-label">
+                                <input class="form-control" id="txtRQQuantity" type="text" placeholder="Hangers Quantity">
+                                <label for="txtRQQuantity">Hangers Quantity</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="has-float-label">
+                                <textarea class="form-control" id="txtRQCommnents2_3" rows="2" placeholder="Commnents"></textarea>
+                                <label for="txtRQCommnents2_3">Commnents</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" id="tabadv-4" class="tab-pane">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <h4>Search for a past analysis report (2011 - 2016)</h4>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="has-float-label">
+                                <input class="form-control" id="txtRQATXSearch" type="text" placeholder="ATX to Search">
+                                <label for="txtRQATXSearch">ATX to Search</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="has-float-label">
+                                <textarea class="form-control" id="txtRQCommnents2_4" rows="2" placeholder="Commnents"></textarea>
+                                <label for="txtRQCommnents2_4">Commnents</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

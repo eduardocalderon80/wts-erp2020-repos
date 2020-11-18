@@ -1,0 +1,72 @@
+﻿
+<style>
+    .row-selected {
+        background-color: #1ab394 !important;
+    }
+</style>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Busqueda de codigo de Tintoreria</h2>
+            </div>
+            <div class="col-sm-6 text-right" id="divBotonesPrincipal">
+
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="hide">
+            <input type="text" id="txtparBusquedaLabdip" data-par="DATA-PARAMETRO" value="" />            
+        </div>
+
+        <div class="form-horizontal">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="control-label col-sm-4">Codigo Color Tintoreria:</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="txt_codigocolor" />
+                                </div>
+                                <div class="col-sm-4" id="divBotonesSecundarios">
+                                    <button type="button" title="Edit" class="btn btn-outline btn-success" id="btnConsultarCodigoColor">
+                                        <span class="fa fa-search"></span>
+                                        Buscar
+                                    </button>
+                                </div>
+                            </div>                            
+                            
+                        </div>                       
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Detalles</h5>
+            </div>
+            <div class="ibox-content" style="position:relative; width:100%;overflow-x:auto; overflow-y: auto; max-height: 600px; min-height:0px;">
+                <table class="table table-bordered table-hover" id="tbl_CodigoColor">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Tintoreria</th>
+                            <th class="text-center">Cliente</th>
+                            <th class="text-center">Color</th>
+                            <th class="text-center">Codigo Color Tintoreria</th>
+                            <th class="text-center">Codigo de Tela</th>
+                            <th class="text-center">Descripción Composición</th>
+                            <th class="text-center">Temporada</th>
+                            <th class="text-center">Estado de Color</th>                            
+                        </tr>
+                    </thead>
+                    <tbody style="font-size:11px;"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

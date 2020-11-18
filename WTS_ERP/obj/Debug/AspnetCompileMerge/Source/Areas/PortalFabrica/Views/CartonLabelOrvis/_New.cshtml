@@ -1,0 +1,69 @@
+﻿<div class="ibox float-e-margins" id="panelEncabezado_newCartonLabelOrvis">
+    <div class="ibox-title">
+        <div class="ibox-tools">
+            <button id="_btnPreviewCartonLabelOrvis" class="btn btn-warning">
+                <span class="fa fa-play-circle"></span>
+                Preview
+            </button>
+            <button id="_btnSaveCartonLabelOrvis" class="btn btn-primary">
+                <span class="fa fa-save"></span>
+                Save
+            </button>
+            <button id="_btnCancelarCartonLavelOrvis" class="btn btn-default" data-dismiss="modal">
+                <span class="fa fa-reply-all"></span>
+                Cancel
+            </button>
+        </div>
+    </div>
+    <div class="ibox-content wrapper wrapper-content gray-bg" style="overflow-y: auto; max-height: 850px;">
+        <div class="hide">
+            <input type="text" id="txtpar_CartonLabelOrvis" value="DATA-PARAMETRO" />
+        </div>
+        <div class="ibox float-e-margins">
+            <div class="ibox-content">
+                <div class="form-horizontal" id="popCartonLabel">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Data:</label>
+                        <div class="col-sm-10">
+                            <!--<input type="text" class="form-control _enty" id="_txtdataCartonLabel" value="" data-min="1" data-max="50000" data-id="data" data-required="true"/>-->
+                            <textarea id="_txtdataCartonLabel" class="form-control" rows="2" data-min="1" data-max="50000" data-id="data" data-required="true"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">PO:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control _enty" id="_txtpoCartonLabel" value="" data-min="2" data-max="50" data-id="po"  data-required="true"/>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="table-responsive">
+                    <input type="text" class="form-control input-sm m-b-xs" id="_filter" placeholder="Search in table">
+                    <table class="footable table table-stripped table-bordered" data-page-size="10" data-filter=#_filter id="_tblcartonlabel">
+                        <thead>
+                            <tr>
+                                <th class='col-sm-1 text-center' data-sort-ignore="true">Color</th>
+                                <th class='col-sm-1 text-center' data-sort-ignore="true">Code</th>
+                                <th class='col-sm-1 text-center' data-sort-ignore="true">Size</th>
+                                <th class='col-sm-1 text-center' data-sort-ignore="true">Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4">
+                                    <ul class="pagination pull-right"></ul>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+

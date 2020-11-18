@@ -1,0 +1,301 @@
+﻿<style>
+    hr {
+        margin: 6.5px 0px 0px 0px;
+    }
+    .fix-select2 + .select2-container--default .select2-selection--single {
+        height: 34px !important;
+    }
+        .fix-select2 + .select2-container--default .select2-selection--single .select2-selection__rendered {
+            line-height: 34px !important;
+        }
+        .fix-select2 + .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: 34px !important;
+        }
+    .select2-container.select2-container--default.select2-container--open {
+        z-index: 99999;
+    }
+</style>
+<div class="ibox" id="panelEncabezado_QuestionsIndex">
+    <div class="hide">
+        <input type="text" id="txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-4">
+            <h2 class="font-bold">FAQ</h2>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <i class="fa fa-home"></i>
+                </li>
+                <li class="breadcrumb-item">
+                    FAQ
+                </li>
+                <li class="breadcrumb-item active">
+                    <strong>Preguntas más frecuentes</strong>
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-8 text-right m-t-md">
+            <button type="button" class="btn btn-success" id="btnRefresh">
+                <span class="fa fa-refresh"> </span>
+                Actualizar
+            </button>
+            <button type="button" class="btn btn-primary" id="btnNew" data-toggle="modal" data-target="#modal_nuevo">
+                <span class="fa fa-plus"> </span>
+                Añadir Pregunta
+            </button>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox-content m-b-sm border-bottom">
+                    <div class="form-horizontal row">
+                        <div class="col-sm-7">
+                            <input type="text" placeholder="Buscar por pregunta..." class="input form-control" id="txtSearch">
+                        </div>
+                        <div class="col-sm-2">
+                            <select class="form-control fix-select2" id="cboModule" style="height: 34px;"></select>
+                        </div>
+                        <div class="col-sm-3">
+                            <select class="form-control fix-select2" id="cboVentana" style="height: 34px;"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <a data-toggle="collapse" href="#faq1" class="faq-question">¿Cuántos días de vacaciones me corresponde por año laborado?</a>
+                            <small>Añadido por <strong>Karen Romero</strong> <i class="fa fa-clock-o"></i> Miercoles 06 de Noviembre - 17:43 pm</small>
+                        </div>
+                        <div class="col-md-5 text-right">
+                            <span class="tag-module small font-bold">Gestion Talento</span>
+                            <div class="tag-list">
+                                <span class="tag-item">Vacaciones</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div id="faq1" class="panel-collapse collapse ">
+                                <div class="faq-answer">
+                                    <p>
+                                        22 días útiles
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <a data-toggle="collapse" href="#faq2" class="faq-question">¿Qué requisitos debo cumplir para solicitar vacaciones fraccionadas (de 1 a 4 días)?</a>
+                            <small>Añadido por <strong>Karen Romero</strong> <i class="fa fa-clock-o"></i> Miercoles 06 de Noviembre - 17:43 pm</small>
+                        </div>
+                        <div class="col-md-5 text-right">
+                            <span class="tag-module small font-bold">Gestion Talento</span>
+                            <div class="tag-list">
+                                <span class="tag-item">Vacaciones</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div id="faq2" class="panel-collapse collapse">
+                                <div class="faq-answer">
+                                    <p>
+                                        Haber gozado 11 días útiles en periodos de cinco (5) o seis (6) días.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <a data-toggle="collapse" href="#faq3" class="faq-question">¿Quién aprueba mis vacaciones? </a>
+                            <small>Añadido por <strong>Karen Romero</strong> <i class="fa fa-clock-o"></i> Miercoles 06 de Noviembre - 17:43 pm</small>
+                        </div>
+                        <div class="col-md-5 text-right">
+                            <span class="tag-module small font-bold">Gestion Talento</span>
+                            <div class="tag-list">
+                                <span class="tag-item">Vacaciones</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div id="faq3" class="panel-collapse collapse">
+                                <div class="faq-answer">
+                                    <p>
+                                        Tu jefe inmediato, en caso no se encuentre tu jefe puede aprobar tu gerente.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <a data-toggle="collapse" href="#faq4" class="faq-question">¿Desde cuándo puedo solicitar vacaciones?</a>
+                            <small>Añadido por <strong>Karen Romero</strong> <i class="fa fa-clock-o"></i> Miercoles 06 de Noviembre - 17:43 pm</small>
+                        </div>
+                        <div class="col-md-5 text-right">
+                            <span class="tag-module small font-bold">Gestion Talento</span>
+                            <div class="tag-list">
+                                <span class="tag-item">Vacaciones</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div id="faq4" class="panel-collapse collapse">
+                                <div class="faq-answer">
+                                    <p>
+                                        Puedes solicitar vacaciones si laborado por un plazo mínimo de seis (6) meses en WTS.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <a data-toggle="collapse" href="#faq5" class="faq-question">¿Con cuánto tiempo de anticipación debo registrar mi solicitud de vacaciones?</a>
+                            <small>Añadido por <strong>Karen Romero</strong> <i class="fa fa-clock-o"></i> Miercoles 06 de Noviembre - 17:43 pm</small>
+                        </div>
+                        <div class="col-md-5 text-right">
+                            <span class="tag-module small font-bold">Gestion Talento</span>
+                            <div class="tag-list">
+                                <span class="tag-item">Vacaciones</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div id="faq5" class="panel-collapse collapse">
+                                <div class="faq-answer">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Si el período de vacaciones es:</th>
+                                                <th>Registrar su Solicitud de Vacaciones como máximo:</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1 o 2 días</td>
+                                                <td>1 día antes del inicio (1 día)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3 a 6 días</td>
+                                                <td>7 días antes del inicio (1 semana)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7 a más días</td>
+                                                <td>14 días antes del inicio (2 semanas)</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Nuevo -->
+    <div class="modal fade" id="modal_nuevo" role="dialog" data-keyboard="true" data-dismiss="modal" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-green">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Añadir Pregunta</h4>
+                </div>
+                <div class="modal-body" style="padding: 10px 30px 30px 30px;">
+                    <div class="form-horizontal row">
+                        <div class="col-sm-12 text-right m-b">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                <span class="fa fa-ban"></span>
+                                Cerrar
+                            </button>
+                            <button type="button" class="btn btn-primary" id="btnAddModal">
+                                <span class="fa fa-save"></span>
+                                Guardar
+                            </button>
+                            <hr />
+                        </div>
+                    </div>
+                    <div class="form-horizontal row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <label class="control-label">Pregunta:</label>
+                                    <input id="txtPreguntaModal" class="form-control _enty_faq" data-min="1" data-max="254" data-required="true" data-id="Pregunta">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <label class="control-label">Respuesta:</label>
+                                    <textarea id="txtRespuestaModal" class="form-control _enty_faq" rows="5" data-min="1" data-max="254" data-required="true" data-id="Respuesta"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <label class="control-label">Modulo:</label>
+                                    <select id="cboModuloModal" class="form-control _enty_faq" data-min="1" data-max="254" data-required="true" data-id="Modulo"></select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <label class="control-label">Ventana:</label>
+                                    <select id="cboVentanaModal" class="form-control _enty_faq" data-min="1" data-max="254" data-required="true" data-id="Ventana"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Enviar -->
+    <div class="modal fade" id="modal_enviar" tabindex="-1" role="dialog" data-keyboard="true" data-dismiss="modal" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-green">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Enviar Comentario</h4>
+                </div>
+                <div class="modal-body" style="padding: 10px 30px 30px 30px;">
+                    <div class="form-horizontal row">
+                        <div class="col-sm-12 text-right m-b">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                <span class="fa fa-ban"></span>
+                                Cerrar
+                            </button>
+                            <button type="button" class="btn btn-primary" id="btnSendModal">
+                                <span class="fa fa-send-o"></span>
+                                Enviar
+                            </button>
+                            <hr />
+                        </div>
+                    </div>
+                    <div class="form-horizontal row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <label class="control-label">Comentario:</label>
+                                    <textarea id="txtComentarioModal" class="form-control" rows="5"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

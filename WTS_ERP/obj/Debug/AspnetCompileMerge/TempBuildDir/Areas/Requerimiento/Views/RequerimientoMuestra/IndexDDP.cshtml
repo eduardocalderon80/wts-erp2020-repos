@@ -1,0 +1,392 @@
+﻿<style type="text/css">
+    .chosen-container {
+        width: 100% !important;
+    }
+
+    /*.daterangepicker .calendar-table th,
+    .daterangepicker .calendar-table td {
+        white-space: nowrap;
+        text-align: center;
+        vertical-align: middle;
+        min-width: 30px;
+        width: 30px;
+        height: 30px;
+        line-height: 4px;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        border-radius: 4px;
+        border: 1px solid transparent;
+        white-space: nowrap;
+        cursor: pointer;
+    }*/
+
+    .form-group {
+        margin-bottom: 5px;
+    }
+
+    table > tbody > tr > td {
+        vertical-align: middle !important;
+        text-align: left !important;
+    }
+
+    .btn-circle {
+        width: 25px;
+        height: 25px;
+        padding: 3px 0;
+        border-radius: 15px;
+        text-align: center;
+        font-size: 12px;
+        line-height: 1.428571429;
+    }
+
+    .note-editor {
+        height: auto !important;
+        min-height: 150px !important;
+        margin-bottom: 20px !important;
+    }
+
+    @@media (min-width: 768px) {
+        .modal-xl {
+            width: 90%;
+            max-width: 1200px;
+        }
+    }
+
+    @@media (min-width: 768px) {
+        .modal-xxl {
+            width: 90%;
+            max-width: 1500px;
+        }
+    }
+
+    .ocultar {
+        display: none;
+    }
+
+    .ibox-content-custom {
+        background-color: #ffffff;
+        color: inherit;
+        padding: 15px 20px 20px 20px;
+        /* border-color: #e7eaec; */
+        /* border-image: none; */
+        /* border-style: solid solid none; */
+        /* border-width: 1px 0; */
+    }
+
+    /* #tabdetalle_tblmuestras tbody tr.detmuestra td {
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-left: 8px;
+            padding-right: 8px;
+        } */
+    /* #tabdetalle_tblprogramacion tbody tr td {
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-left: 8px;
+            padding-right: 8px;
+        } */
+
+    .swal2-content {
+        font-size: 12pt !important;
+    }
+
+    .swal2-popup {
+        width: 50em !important;
+    }
+
+    .swal2-styled.swal2-confirm {
+        border: 0;
+        border-radius: .25em;
+        background: initial;
+        background-color: #3085d6;
+        color: #fff;
+        font-size: 12pt !important;
+    }
+
+    .swal2-styled.swal2-cancel {
+        border: 0;
+        border-radius: .25em;
+        background: initial;
+        background-color: #aaa;
+        color: #fff;
+        font-size: 12pt !important;
+    }
+
+    .swal2-container {
+        z-index: 2080 !important;
+    }
+
+    /* #tabdetalle_tblmuestras .detmuestra:nth-of-type(odd) {
+            background-color: transparent !important;
+        }
+
+        #tabdetalle_tblmuestras>tbody>tr.detmuestra:nth-child(even) {
+            background-color: transparent !important;
+        } */
+
+    tr.alert-warning {
+        color: #8a6d3b !important;
+        background-color: #fcf8e3 !important;
+        border-color: #faebcc !important;
+    }
+
+    tr.alert-info {
+        color: #31708f !important;
+        background-color: #d9edf7 !important;
+        border-color: #bce8f1 !important;
+    }
+
+    tr.new .alert-success {
+        color: #31708f !important;
+        background-color: #d9edf7 !important;
+        border-color: #bce8f1 !important;
+    }
+
+    tr.new .alert-danger {
+        color: #a94442 !important;
+        background-color: #f2dede !important;
+        border-color: #ebccd1 !important;
+    }
+
+    #modal_archivos_existentes {
+        z-index: 2060 !important;
+    }
+
+    .popover {
+        z-index: 2060 !important;
+        min-width: 27%;
+    }
+
+    .after_modal_appended {
+        position: relative;
+    }
+
+    .no-sort::after {
+        display: none !important;
+    }
+
+    .no-sort {
+        pointer-events: none !important;
+        cursor: default !important;
+    }
+
+    .form-control {
+        font-size: 13px !important;
+    }
+
+    /* Styles go here */
+    #outerDiv {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        border: 0px solid red;
+        background-color: #ffffff;
+        opacity: 0.7
+    }
+
+    #innerDiv {
+        position: absolute;
+        top: 25px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        margin: auto;
+        border: 0px solid green;
+    }
+</style>
+<div class="ibox" id="panelEncabezado_IndexDDP">
+    <div class="hide">
+        <input type="text" id="txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-4">
+            <h2 class="font-bold">Planificación Semanal</h2>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <i class="fa fa-home"></i>
+                </li>
+                <li class="breadcrumb-item">
+                    Operaciones
+                </li>
+                <li class="breadcrumb-item active">
+                    <strong>Requerimientos DDP</strong>
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-8 text-right" style="padding-top: 30px">
+            <button type="button" class="btn btn-success" id="btnBuscar">
+                <span class="fa fa-search"> </span>
+                Buscar
+            </button>
+            <button type="button" class="btn btn-primary" id="btnBuscarexportar">
+                <span class="fa fa-file-text-o"> </span>
+                Descargar
+            </button>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content wrapper-less animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5><i class="fa fa-filter"></i> Filtros de busqueda</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="form-group col-xs-12 col-sm-3">
+                                <label class="control-label">Equipo:</label>
+                                <select id="cboEquipos" data-id="cboEquipos" class="form-control  _enty_buscar">
+                                </select>
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-3">
+                                <label class="control-label">Responsables:</label>
+                                <select id="cboResponsables" multiple data-placeholder="SELECCIONE RESPONSABLES..."
+                                        class="form-control _enty_buscar chosen-select" tabindex="10" data-id="IdsAnalistasResponsables">
+                                </select>
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-3">
+                                <label class="control-label">Clientes:</label>
+                                <select id="cboClientes" data-id="IdsClientes" multiple data-placeholder="SELECCIONE CLIENTES..."
+                                        class="form-control _enty_buscar chosen-select" tabindex="1">
+                                </select>
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-3">
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <div class="col-sm-12" style="padding:0px">
+                                            <div id="div_fecha_inicial" class="form-group">
+                                                <label class="control-label">Prog. Inicio</label>
+                                                <div  class='input-group date'>
+                                                    <input id="txt_fecha_inicial" type='text' class='form-control _enty_buscar' data-date-format="dd/mm/yyyy" data-id="FechaProgramadaInicio" data-type="date" data-level="true" data-min="10" data-max="10">
+                                                    <div class="input-group-addon">
+                                                        <span class="fa fa-calendar"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="col-sm-12" style="padding:0px">
+                                            <div  id="div_fecha_fin" class="form-group">
+                                                <label class="control-label">Prog. Hasta</label>
+                                                <div  class='input-group date'>
+                                                    <input id="txt_fecha_fin" type='text' class='form-control _enty_buscar' data-date-format="dd/mm/yyyy" data-id="FechaProgramadaFin" data-type="date" data-level="true" data-min="10" data-max="10">
+                                                    <div class="input-group-addon">
+                                                        <span class="fa fa-calendar"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                               
+                            </div>
+
+                            <div class="input-group date hide">
+                                <input id="txtfechaprogramada" class="form-control" type="text" name="daterange" value="01/01/2015 - 01/31/2015" />
+                                <input id="hdnfechaprogramadainicio" class="form-control _enty_buscar" data-id="" type="hidden" />
+                                <input id="hdnfechaprogramadafin" class="form-control _enty_buscar" data-id="" type="hidden" />
+                                <span class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-12 col-sm-3">
+                                <label class="control-label">Marca:</label>
+                                <select id="cboMarca" class="form-control _enty_buscar" data-id="IdClienteMarca" tabindex="2">
+                                </select>
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-3">
+                                <label class="control-label">División:</label>
+                                <select class="form-control _enty_buscar" id="IdClienteDivision" data-id="IdClienteDivision" tabindex="2">
+                                </select>
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-3">
+                                <label class="control-label">Temporada:</label>
+                                <select class="form-control _enty_buscar" id="IdClienteTemporada" data-id="IdClienteTemporada" tabindex="2">
+                                </select>
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-3">
+                                <label class="control-label">
+                                    Estilo:
+                                </label>
+                                <select class="form-control _enty_buscar" id="IdEstilo" data-id="IdEstilo" tabindex="3">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-12 col-sm-3">
+                                <label class="control-label">Muestra:</label>
+                                <select class="form-control _enty_buscar" id="IdTipoMuestraxCliente" data-id="IdTipoMuestraxCliente" tabindex="1">
+                                </select>
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-3">
+                                <label class="control-label">Actividad:</label>
+                                <select class="form-control _enty_buscar" tabindex="2" id="cboActividades" data-id="IdActividad">
+                                </select>
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-3 ">
+                                <label class="control-label">Tipo Proveedor:</label>
+                                <select class="form-control _enty_buscar" tabindex="2" id="cboTiposProveedor" data-id="IdTipoProveedor">
+                                </select>
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-3 ">
+                                <label class="control-label">Proveedor:</label>
+                                <select class="form-control _enty_buscar" id="cboProveedores" data-id="IdProveedor" tabindex="2">
+                                    <option value="0">Todos</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="form-group col-xs-12 col-sm-3">
+                                <label class="control-label">
+                                    Estado de Requerimiento:
+                                </label>
+                                <select class="form-control _enty_buscar" data-id="IdEstadoEstilo_Status" tabindex="3" id="cboEstadosRequerimiento">
+                                    <option value="0">seleccione</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-3">
+                                <label class="control-label">
+                                    Estado de Actividad:
+                                </label>
+                                <select class="form-control _enty_buscar" data-id="IdEstadoActividad_IdCatalogo" tabindex="3" id="cboEstadosActividad">
+                                </select>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <h5><i class="fa fa-table"></i> Lista de resultados</h5>
+                        <div class="ibox-tools">
+                            <a class="fullscreen-link">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="outerDiv" class="text-center col-xs-12 col-sm-12 hide">
+                            <div id="innerDiv" class="text-center">
+                                <i class="fa fa-refresh fa-spin fa-2x fa-fw"></i>
+                            </div>
+                        </div>
+                        <div id="div_tbl_requerimientos" class="table-responsive">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,156 @@
+﻿<style>
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f7f7f7;
+    }
+    /*.button.dim {
+        margin-right: 0;
+        margin-bottom: 10px !important;
+    }*/
+    .bg-blue-solicitud {
+        background: #206590 !important;
+        color: white;
+    }
+
+    #div_tbl_solicitudes table th {
+        background: #206590 !important;
+        color: white !important;
+        border: 1px solid #e7e7e7;
+    }
+
+    
+</style>
+<div class="ibox" id="panelEncabezado_GoldenTicketIndex">
+    <div class="hide">
+        <input type="text" id="txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-6">
+            <h2 class="font-bold">Golden Tickets</h2>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <i class="fa fa-home"></i>
+                </li>
+                <li class="breadcrumb-item">
+                    Gestión de Talento
+                </li>
+                <li class="breadcrumb-item active">
+                    <strong>Golden Tickets</strong>
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-6 text-right" style="padding-top:20px">
+            <button type="button" class="btn btn-default" id="btnNew">
+                <span class="fa fa-plus"> </span>
+                Nuevo
+            </button>
+            <button type="button" class="btn btn-success" id="btnReporte">
+                <span class="fa fa-file-excel-o"> </span>
+                Reporte
+            </button>
+            <button type="button" class="btn btn-primary" id="btnSearch">
+                <span class="fa fa-refresh"> </span>
+                Actualizar
+            </button>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content">
+        <div class="row animated fadeInRight">
+            <div class="col-lg-12">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <div class="stat-percent font-bold text-success"><i class="fa fa-bookmark"></i></div>
+                        <h5>Políticas</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <span style="font-size: 11px;">
+                            - Puedes disfrutar tus Golden Tickets desde el 1° de Diciembre hasta el 31° de Marzo del siguiente año. Para las áreas de Calidad y PCP son válidos hasta el 30 de Noviembre del siguiente año. <br />
+                            - Cada Golden Ticket equivale a 1/2 día libre y puedes juntarlos para tomarte 1 o 2 días completos.
+                        </span>
+                        <!--<span style="font-size: 11px;">
+                        - Si el colaborador solicita de 1 a 2 días de vacaciones, esta se debe registrar con un mínimo de 24 horas antes de la fecha de inicio. <br />
+                        - Si el colaborador solicita de 3 a 7 días de vacaciones, esta se debe registrar como mínimo con (1) semana de anticipación. <br />
+                        - Si el colaborador solicita más de 7 días de vacaciones, este se debe registrar como mínimo, con (2) semanas de anticipación. <br />
+                    </span>-->
+                    </div>
+                </div>
+            </div>
+
+            <!--<div class="alert alert-warning alert-dismissable">
+            <button aria-hidden="true" data-dismiss="alert" class="close close-black" type="button">×</button>
+            <span style="font-size: 11px;">
+                Concideraciones: <br />
+                - Puedes solicitar el permiso desde 30 minutos hasta 4 horas, dependiendo del motivo y estará sujeto a evaluación. <br />
+                - Como mínimo se debe hacer la solicitud con un día de anticipación.
+            </span>
+        </div>-->
+        </div>        
+
+        <div class="row animated fadeInRight">
+            <div class="col-lg-12" id="div_colaboradores"></div>
+        </div>
+        <div class="row animated fadeInRight">
+            <div class="col-lg-6" id="ibox-graficobar">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5 id="h5-ibox-graficobar">Gráficos</h5>
+                        <div class="ibox-tools">
+                            <a class="fullscreen-link">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content" id="ibox-content-ibox-graficobar">
+                        <canvas id="barChart" height="140"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6" id="ibox-graficopie">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5 id="h5-ibox-graficopie">Gráficos</h5>
+                        <div class="ibox-tools">
+                            <a class="fullscreen-link">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content" id="ibox-content-ibox-graficopie">
+                        <canvas id="doughnutChart" height="140"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" id="ibox-2">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <h5>Golden Tickets Registrados</h5>
+                        <div class="ibox-tools">
+                            <a class="fullscreen-link">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="form-group">
+                            <div class="form-horizontal row">
+                                <div class="col-sm-10">
+                                    <input type="text" placeholder="Buscar Solicitud" class="input form-control" id="txtBuscar">
+                                </div>
+                                <div class="col-sm-2">
+                                    <select id="cboEstado" class="form-control">
+                                        <option value="">Todos</option>
+                                        <option value="Por Aprobar">Por Aprobar</option>
+                                        <option value="Aprobado">Aprobado</option>
+                                        <option value="Cancelado">Cancelado</option>
+                                        <option value="Rechazado">Rechazado</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="div_tbl_solicitudes" class="table-responsive"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

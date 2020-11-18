@@ -1,0 +1,159 @@
+﻿<style type="text/css">
+    .row-selected {
+        background-color: #1ab394;
+    }
+    .select2-container--open {
+        z-index: 9999999;
+    }
+
+    .has-error .select2-selection {
+        border-color: #ed5565 !important;
+    }
+</style>
+
+<div class="ibox float-e-margins" id="panelEncabezado_ReporteResumenLabdip">
+   
+    <div class="ibox">
+        <div class="ibox-title">
+            <div class="form-horizontal row ">
+                <div id="divbotonesprimarios" class="col-sm-6 text-right">
+                </div>
+                <div id="divbotonesprimarios" class="col-sm-6 text-right">
+                    <button id="btnadd" class="btn btn-success">
+                        <span class="fa fa-plus"></span>
+                        Add
+                    </button>
+                    <button id="btnsave" class="btn btn-primary">
+                        <span class="fa fa-save"></span>
+                        Save
+                    </button>                    
+                    <button id="btnclean" class="btn btn-info hide">
+                        <span class="fa fa-file"></span>
+                        Clean
+                    </button>                  
+                    <button id="_btnCancelarCartonLavelOrvis" class="btn btn-default" data-dismiss="modal">
+                        <span class="fa fa-reply-all"></span>
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="ibox-content" id="formulario">
+            <div class="hide">
+                <input type="text" id="txtpar_labdipdetail" value="DATA-PARAMETRO" />
+            </div>
+
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div class="col-sm-4">
+                        <label class="control-label">Color (*)</label>
+                        <input type="text" id="txtcolor" class="form-control _enty"  data-min="1" data-max="300" data-required="true">
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="control-label">Standard</label>
+                        <input type="text" id="txtstandard" name="status" value="" class="form-control" >
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="control-label">Type </label>
+                        <select id="cbotipo" class="form-control _enty m-b-xs _enty select2"  style="width:100%" name="idtipo" data-id="idtipo" data-required="true"></select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div class="col-sm-4">
+                        <label class="control-label">Approval By (*)</label>
+                        <select id="cboaprobacion" class="form-control _enty select2"  style="width:100%" name="idaprobacion" data-id="idaprobacion" data-required="true"></select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="control-label">Dyeing House (*)</label>
+                        <select id="cbotintoreria" class="form-control _enty select2"  style="width:100%" name="idtintoteria" data-id="idtintoteria" data-required="true"></select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="control-label">Season (*)</label>
+                        <select id="cbotemporada" class="form-control _enty select2"  style="width:100%" name="idtemporada" data-id="idtemporada" data-required="true"></select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div class="col-sm-4">
+                    </div>
+                    <div class="col-sm-4 text-right">
+                        <div id="idchildren" class='i-checks _radbtn'>
+                            <div class='iradio_square-green'  style='position: relative;'>
+                                <label>
+                                    <input id="children" value='1' name='radiobutton' type='radio' class='i-checks _radbtn' style='position: absolute; opacity: 0;'>
+                                    <ins class='iCheck-helper' style='position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;'></ins>
+                                </label>                               
+                            </div>
+                            <label class="_rad"> Last Version (*) </label>
+                        </div>
+                       
+                    </div>
+                    <div class="col-sm-4">
+                        <div id="idlink" class='i-checks _radbtn'>
+                            <div class='iradio_square-green' style='position: relative;'>
+                                <label>
+                                    <input id="link" value='2' name='radiobutton' type='radio' class='i-checks _radbtn' style='position: absolute; opacity: 0;'>
+                                    <ins class='iCheck-helper' style='position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;'></ins>
+                                </label>                               
+                            </div>
+                            <label class="_rad"> Link (*) </label>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="ibox">
+        <div class="ibox-content"  style="overflow-y: auto; max-height: 350px;">
+            <div id="tablageneral" class="form-group">
+                <div class='form-horizontal row'>
+                    <div class='col-sm-12'>
+                        <div class="table-responsive" id='tablecontaintlabdipdetailstempo'>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tablatemp" class="form-group hide">
+                <div class='form-horizontal row'>
+                    <div class='col-sm-12'>
+                        <div class="table-responsive" id='tablechk'>
+                            <table id='tablelabdiptempview' class='footable table table-stripped table-bordered'>
+                                <thead>
+                                    <tr>
+                                        <th class='text-center'>Color</th>
+                                        <th class='text-center'>Standard</th>
+                                        <th class='text-center'>Type</th>
+                                        <th class='text-center'>Approval By</th>
+                                        <th class='text-center'>Code DH</th>
+                                        <th class='text-center'>Dyeing House</th>
+                                        <th class='text-center'>Season</th>
+                                        <th class='text-center'>Origin</th>
+                                        <th class='text-center'>Status</th>
+                                        <th class='text-center'>Date Approved</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+

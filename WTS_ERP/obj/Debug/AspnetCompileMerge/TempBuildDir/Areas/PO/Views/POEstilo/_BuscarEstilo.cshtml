@@ -1,0 +1,104 @@
+﻿<style>
+    .alineacionVertical {
+        vertical-align: middle !important;
+    }
+</style>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="text-right">
+            <button type="button" id="btnCancelarBuscarProducto_Partial" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button id="btnAceptarEstiloBuscar" class="btn btn-primary" type="button">Accept</button>
+        </div>
+    </div>
+
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Style code</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="txtCodigoEstiloBuscarPartial" value="" />
+                    </div>
+                    <label class="control-label col-sm-2">Style description</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="txtDescripcionEstiloBuscarPartial" value="" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Fabric code</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="txtCodigoTelaBuscarPartial" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <!-- :edu 20171017-->
+        <div class="text-right">
+            <button type="button" class="btn btn-success" id="btnBuscarEstiloPartial">
+                <i class="fa fa-search"></i>
+                Search
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<div class="panel panel-default no-borders">
+    <div id="divGridPartialProducto" style="position:relative;width:100%;overflow-x:auto;overflow-y:auto; max-height:400px; min-height: 50px;">
+        <table id="tblGridProductoBuscar" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th class="hidden">
+
+                    </th>
+                    <th class="text-center col-sm-2">
+                        Style code
+                    </th>
+                    <th class="text-center col-sm-10">
+                        Style description
+                    </th>
+                    <th class="text-center col-sm-10">
+                        Fabric code
+                    </th>
+                    <th class="text-center col-sm-10">
+                        Fabric description
+                    </th>
+                    <th class="text-center col-sm-10">
+                        Family
+                    </th>
+                    <th class="text-center col-sm-10">
+                        Version
+                    </th>
+                    <th class="text-center col-sm-10">
+                        Main
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="tbodyGridBuscarEstilo">
+                @*<tr>
+                        <td class="text-center alineacionVertical">
+                            <input type="radio" name="rbSeleccionarProducto" id="rbSeleccionarProducto" value="" />
+                        </td>
+                        <td class="text-center">
+                            <div style="display: none">
+                                <input type="text" id="hndIdProductoBuscarProducto" name="hndIdProductoBuscarProducto" value="" />
+                                <input type="text" id="hdnIdPrecioClienteProducto" name="hdnIdPrecioProducto" value="" />
+                                <input type="text" id="hdnIdPrecioFabricaProducto" name="hdnIdPrecioProducto" value="" />
+                            </div>
+                            <div class="classCodigoProducto">
+                                @oItem.CodigoProducto
+                            </div>
+                        </td>
+                        <td>
+                            @oItem.NombreProducto
+                        </td>
+
+                    </tr>*@
+            </tbody>
+        </table>
+    </div>
+
+</div>

@@ -1,0 +1,483 @@
+﻿<style>
+    img, object {
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    img {
+        border: 0 none;
+        height: auto;
+        max-width: 100%;
+        vertical-align: middle;
+    }
+
+    a {
+        cursor: pointer;
+    }
+
+    .img-polaroid {
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        padding: 4px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .img-fondo {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background-color: #EEEEEE;
+    }
+
+    .table._cls_correomasivo {
+        margin-bottom: 0px !important;
+    }    
+</style>
+
+<div class="ibox float-e-margins" id="panelEncabezado_correomasivo">
+    <div class="ibox-title">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 id="_title" class="text-navy bold">Send Mail</h3>
+            </div>
+            <div class="col-sm-6 text-right">
+                <!-- BOTONES-->
+                <button type="button" class="btn btn-info dim hide" id="btnGenerarArchivoRequerimiento_masivo" title="Generate requirements file">
+                    <span class="fa fa-file-pdf-o"></span>
+                    Generate
+                </button>
+                <button type="button" class="btn btn-primary dim" id="btnEnviarCorreo">
+                    <span class="fa fa-envelope"></span>
+                    Send
+                </button>
+                <button type="button" class="btn btn-default dim" id="btnCancelarCorreo">
+                    <span class="fa fa-ban"></span>
+                    Return
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="ibox-content wrapper wrapper-content gray-bg" style="overflow-y: auto; max-height: 850px;" id="div_cuerpoprincipal_req_correomasivo">
+        <div class="hide">
+            <!--INPUTS HIDE-->
+            <input type="text" id="txtperfil" value="" />
+            <input type="text" id="txtRuta" value="" />
+            <input type="text" id="txtpar" class="cls_par_correomasivo" value="DATA-PARAMETRO" />
+        </div>
+
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h5 class="text-navy bold">Filters</h5>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <button type="button" class="btn btn-success" id="btnBuscarReq">
+                            <span class="fa fa-search"></span>
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox-content" id="div_filtro_req_correomasivo">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="col-sm-4">
+                            <!--COLUMNA 1-->
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Customer</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control _enty" id="cboCliente" data-required="true" data-min="1" data-max="20" data-id="idcliente"></select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Division</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control _enty" id="cboClienteDivision" data-required="false" data-min="1" data-max="20" data-id="idclientedivision"><option value="0">Select Client</option> </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <!--COLUMNA 2-->
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Sample Type</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control _enty" id="cboTipoMuestra" data-required="true" data-min="1" data-max="20" data-id="idtipomuestra" multiple><option value="0">Select Client</option> </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Factory</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control _enty" id="cboProveedor" data-required="true" data-min="1" data-max="20" data-id="idproveedor"><option value="0">Select Client</option> </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <!--COLUMNA 2-->
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Season</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control _enty" id="cboClienteTemporada" data-required="true" data-min="1" data-max="20" data-id="idclientetemporada"><option value="0">Select Client</option> </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Status</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control _enty" id="cboEstado" data-required="true" data-min="1" data-max="20" data-id="idestado"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ibox float-e-margins" id="div_req_mail">
+            <div class="ibox-title">
+                <h5 class="text-navy bold">Mail</h5>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body" id="panelbody_req_mail">
+                    <div class="form-horizontal">
+                        <!-- :aqui -->
+                        <div class="form-group">
+                            <label class="control-label col-sm-1">To</label>
+                            <div class="col-sm-11">
+                                <input class="form-control _enty validarCorreo" id="txtTo" data-required="true" data-min="1" data-max="1000" data-id="to_address_mail" />
+                                <span class="hide text-danger" id="_error_correomasivo_txtTo">Incorrrect Format</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-1">CC</label>
+                            <div class="col-sm-11">
+                                <input class="form-control _enty validarCorreo" id="txtCC" data-required="false" data-min="1" data-id="copy_recipients_mail" />
+                                <span class="hide text-danger" id="_error_correomasivo_txtCC">Incorrrect Format</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-1">Subject</label>
+                            <div class="col-sm-11">
+                                <input class="form-control _enty" id="txtSubject" disabled="disabled" data-required="true" data-min="1" data-max="8000" data-id="subject_mail" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control _enty" id="txt_bodymail_correomasivo" rows="4" style="resize: none;" data-required="false" data-min="1" data-id="body_mail"></textarea>
+                        </div>
+                    </div>
+                    <div class="cls_lbl_sizetotalarchivo"></div>
+                </div>
+                <!-- :AQUI PINTAR TODOS LOS REQUERIMIENTOS 2-->
+                <div class="form-group" id="divCorreo">
+                    <!--
+                    <div id="divReq1" style="overflow:auto;">
+                        <table class="table table-bordered" style="font-size:7px;">
+                            <tbody>
+                                <tr>
+                                    <td colspan="2">RQ18-00001</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%;">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td rowspan="3" style="width:90px;">
+                                                        <div style="width:80px;height:80px;">
+                                                            <img class="img-thumbnail" src="//WTS-FILESERVER/erp/style/thumbnail/SinImagen.jpg" width="80" height="80">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <label>Style </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label>Description </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label>Fabric </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <label>Additional instruction</label>
+                                                        <textarea class="form-control"></textarea>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Files </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <span style="color:red;cursor:pointer;" class="fa fa-remove"></span>
+                                                    </td>
+                                                    <td>
+                                                        Archivo.doc
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td style="width:50%;">
+                                        <table class="table table-condensed">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center" style="width:40%;">Color</th>
+                                                    <th class="text-center" style="width:20%;">Size</th>
+                                                    <th class="text-center" style="width:15%;">Quantity <br /> for Client </th>
+                                                    <th class="text-center" style="width:15%;">Counter <br /> Sample WTS</th>
+                                                    <th class="text-center" style="width:15%;">EX Factory</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>BLUE</td>
+                                                    <td>S</td>
+                                                    <td>10</td>
+                                                    <td>11</td>
+                                                    <td>07/18/2018</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>RED</td>
+                                                    <td>S</td>
+                                                    <td>10</td>
+                                                    <td>11</td>
+                                                    <td>07/18/2018</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>BLACK</td>
+                                                    <td>S</td>
+                                                    <td>10</td>
+                                                    <td>11</td>
+                                                    <td>07/18/2018</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="divReq1" style="overflow:auto;">
+                        <table class="table table-bordered" style="font-size:7px;">
+                            <tbody>
+                                <tr>
+                                    <td colspan="2">
+                                        RQ18-00001
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%;">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td rowspan="3" style="width:90px;">
+                                                        <div style="width:80px;height:80px;">
+                                                            <img class="img-thumbnail" src="//WTS-FILESERVER/erp/style/thumbnail/SinImagen.jpg" width="80" height="80">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <label>Style </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label>Description </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label>Fabric </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <label>Additional instruction</label>
+                                                        <textarea class="form-control"></textarea>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Files </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <span style="color:red;cursor:pointer;" class="fa fa-remove"></span>
+                                                    </td>
+                                                    <td>
+                                                        Archivo.doc
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td style="width:50%;">
+                                        <table class="table table-condensed">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center" style="width:40%;">Color</th>
+                                                    <th class="text-center" style="width:20%;">Size</th>
+                                                    <th class="text-center" style="width:15%;">Quantity <br /> for Client </th>
+                                                    <th class="text-center" style="width:15%;">Counter <br /> Sample WTS</th>
+                                                    <th class="text-center" style="width:15%;">EX Factory</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>BLUE</td>
+                                                    <td>S</td>
+                                                    <td>10</td>
+                                                    <td>11</td>
+                                                    <td>07/18/2018</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>RED</td>
+                                                    <td>S</td>
+                                                    <td>10</td>
+                                                    <td>11</td>
+                                                    <td>07/18/2018</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>BLACK</td>
+                                                    <td>S</td>
+                                                    <td>10</td>
+                                                    <td>11</td>
+                                                    <td>07/18/2018</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="divReq1" style="overflow:auto;">
+                        <table class="table table-bordered" style="font-size:7px;">
+                            <tbody>
+                                <tr>
+                                    <td colspan="2">RQ18-00001</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%;">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td rowspan="3" style="width:90px;">
+                                                        <div style="width:80px;height:80px;">
+                                                            <img class="img-thumbnail" src="//WTS-FILESERVER/erp/style/thumbnail/SinImagen.jpg" width="80" height="80">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <label>Style </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label>Description </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label>Fabric </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <label>Additional instruction</label>
+                                                        <textarea class="form-control"></textarea>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Files </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <span style="color:red;cursor:pointer;" class="fa fa-remove"></span>
+                                                    </td>
+                                                    <td>
+                                                        Archivo.doc
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td style="width:50%;">
+                                        <table class="table table-condensed">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center" style="width:40%;">Color</th>
+                                                    <th class="text-center" style="width:20%;">Size</th>
+                                                    <th class="text-center" style="width:15%;">Quantity <br /> for Client </th>
+                                                    <th class="text-center" style="width:15%;">Counter <br /> Sample WTS</th>
+                                                    <th class="text-center" style="width:15%;">EX Factory</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>BLUE</td>
+                                                    <td>S</td>
+                                                    <td>10</td>
+                                                    <td>11</td>
+                                                    <td>07/18/2018</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>RED</td>
+                                                    <td>S</td>
+                                                    <td>10</td>
+                                                    <td>11</td>
+                                                    <td>07/18/2018</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>BLACK</td>
+                                                    <td>S</td>
+                                                    <td>10</td>
+                                                    <td>11</td>
+                                                    <td>07/18/2018</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                        -->
+                </div>
+
+                <div class="form-group hide" id="divCorreo2">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

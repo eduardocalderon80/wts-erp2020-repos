@@ -1,0 +1,50 @@
+﻿<div id="panelEncabezado_PriceStyle">
+    <div class="hide">
+        <input type="text" id="pricestyle_txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="form-horizontal row">
+        <div class="col-sm-12 m-b">
+            <div class="text-right">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <span class="fa fa-reply-all"></span>
+                    Return
+                </button>
+                <button type="button" class="btn btn-success" id="btnPriceStyleSave">
+                    <span class="fa fa-save"></span>
+                    Save
+                </button>
+                <button type="button" class="btn btn-primary" id="btnPriceStyleExport">
+                    <span class="fa fa-file-excel-o"></span>
+                    Export
+                </button>
+            </div>
+            <hr />
+        </div>
+    </div>
+    <div class="form-horizontal row">
+        <div class="col-sm-12" style="overflow: auto; height: 420px;">
+            <table class="table table-hover table-bordered table-vertical-center" id="tbl_prices_style" style="width: 1500px;">
+                <thead>
+                    <tr>
+                        <th>WTS Style Code</th>
+                        <th>Client Style Number</th>
+                        <th>Client Description</th>
+                        <th>Fabric Description</th>
+                        <th>Fabric Complemetary Description</th>
+                        <th>Sample Type</th>
+                        <th width="6%">Color Combo</th>
+                        <th>FOB Factory $</th>
+                        <th>FOB Client $</th>
+                        <th>FOB Margin WTS (%)</th>
+                        <th>Fleight $</th>
+                        <th>DDP WTS</th>
+                        <th>DDP Client</th>
+                        <th>DDP Margin WTS (%)</th>
+                        <th width="10%">Comments</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody_tbl_prices_style"></tbody>
+            </table>
+        </div>
+    </div>
+</div>

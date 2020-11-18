@@ -1,0 +1,578 @@
+﻿<style>
+    img, object {
+        max-height: 100%;
+        max-width: 100%;
+    }
+    img {
+        border: 0 none;
+        height: auto;
+        max-width: 100%;
+        vertical-align: middle;
+    }
+    a {
+        cursor: pointer;
+    }
+    .img-polaroid {
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        padding: 4px;
+        width: 200px;
+        height: 180px;
+    }
+    .img-fondo {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background-color: #EEEEEE;
+    }
+    textarea {
+        resize: none;
+    }
+</style>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row" style="vertical-align: middle;">
+            <div class="col-sm-6" id="divtituloprincipal">
+                <h2>Sample Requirement</h2>
+            </div>
+            <div class="col-sm-6 text-right">              
+                <button type="button" class="btn btn-success dim" id="btnSendMail" data-boton="sendmail">Send Mail</button>
+                <button type="button" class="btn btn-default dim" id="btnNewRequerimiento">New</button>
+                <button type="button" class="btn btn-primary dim" id="btnInsertRequerimiento">Save</button>
+                <button type="button" class="btn btn-info dim" id="btnUpdateRequerimiento" data-boton="update">Save</button>
+                <button type="button" class="btn btn-primary dim" id="btn_Despacho">Register quantity</button>                
+                <button type="button" class="btn btn-danger dim" id="btnCancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="hide">
+            <input type="text" id="txtpar" value="DATA-PARAMETRO" />
+            <input type="text" id="hf_nombreimagenestilo" value="" />
+            <input type="text" id="hf_rutafileserver_imgestilo" value="" />
+            <input type="text" id="txtperfil" value="@ViewBag.perfil" />
+        </div>
+        <div class="row" id="panelgeneral_requerimiento">
+            <div class="col-sm-12">
+                <div class="tabs-container">
+                    <ul class="nav nav-tabs">
+                        <li class="active bg-primary">
+                            <a id="panStyle" data-toggle="tab" href="#tab-general" aria-expanded="true">General</a>
+                        </li>
+                        <li class="hide" id="div_li_tabcontent">
+                            <a id="panFabric" data-toggle="tab" href="#tab-extras" aria-expanded="false">Comments</a>
+                        </li>
+                        <li class="hide" id="div_li_tabStatus">
+                            <a id="panStatus" data-toggle="tab" href="#tab-status" aria-expanded="false">Final Status</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="tab-general" class="tab-pane active">
+                            <div class="panel-body">
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title hide">
+                                        <h5>General Info</h5>
+                                    </div>
+                                    <div class="" id="div_principal_encabezado">
+                                        <div class="form-horizontal" id="panelEncabezado">
+                                            <div class="hide">
+                                                <input type="text" id="hf_idestilo" value="" class="_enty" data-id="idestilo" data-required="true"/>
+                                                <input type="text" id="hf_idrequerimiento" class="_enty" data-id="idrequerimiento" />
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-4"># Req</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" disabled="disabled" id="txt_Codigo" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-4">Sample Type</label>
+                                                        <div class="col-sm-8">
+                                                            <select class="form-control _enty" id="cboTipoMuestra" data-min="1" data-max="100" data-required="true" data-id="idtipomuestraxcliente">
+                                                                <option value="">Select</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group hide">
+                                                        <label class="control-label col-sm-4">Register Date</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" disabled="disabled" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-4">Customer</label>
+                                                        <div class="col-sm-8">
+                                                            <select class="form-control _enty" id="cboCliente" data-min="1" data-max="100" data-required="true" data-id="idcliente">
+                                                                <option value="">Select</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-4"># Submit</label>
+                                                        <div class="col-sm-8">
+                                                            <select id="cboVersion" class="form-control _enty" data-min="1" data-max="100" data-required="true" data-id="version"></select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group hide">
+                                                        <label class="control-label col-sm-4">PO</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-4">Factory</label>
+                                                        <div class="col-sm-8">
+                                                            <select class="cboFabrica form-control _enty" id="cboFabrica" data-min="1" data-max="100" data-required="true" data-id="idproveedor">
+                                                                <option value="">Select</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <!--
+                                                    <div class="form-group">
+                                                        
+                                                        <label>
+                                                            <div class='icheckbox_square-green _clsdivcheck_enviadocompleto' style='position: relative;'>
+                                                                <input type='checkbox' class='i-checks _clscheck_enviadocompleto' style='position: absolute; opacity: 0;' name='_chk_enviadocompleto' />&nbsp
+                                                                <ins class='iCheck-helper' style='position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0'></ins>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                        -->
+                                                    <div class="form-group hide">
+                                                        <label class="control-label col-sm-4">Destination</label>
+                                                        <div class="col-sm-8">
+                                                            <select class="cboDestinos form-control" id="cboDestinos">
+                                                                <option value="">All</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-4">Team</label>
+                                                        <div class="col-sm-8">                                                             
+                                                            <select class="cboTeam form-control _enty" id="cboTeam" data-min="1" data-max="100" data-required="true" data-id="idgrupocomercial">
+                                                                <option value="0">Select</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>                                            
+                                        </div>
+
+                                        <div class="ibox float-e-margins" id="div_datosestilo">
+                                           
+                                                <div class="ibox-title">
+                                                    <div class="row" style="vertical-align: middle;">
+                                                        <div class="col-sm-6" id="divtituloprincipal">
+                                                            <h4>Style</h4>
+                                                        </div>
+                                                        <div class="col-sm-6 text-right">
+                                                            <button type="button" id="btn_buscarestilo" class="btn btn-success">
+                                                                <span class="fa fa-search"></span>
+                                                                Search
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="ibox-content">
+                                                    <div class="form-horizontal">
+                                                        <div class="col-sm-3">
+                                                            <div class="form-group">
+                                                                <center>
+                                                                    <div class="img-polaroid">
+                                                                        <div class="img-fondo">
+                                                                            <img class="_data" src="" id="imgEstilo" data-initial="" name="imgEstilo" data-id="imgEstilo" data-type="img" />
+                                                                        </div>
+                                                                    </div>
+                                                                </center>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-9">
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-sm-2">Season</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" id="txt_temporada" class="form-control _data" disabled="disabled" data-id="txt_temporada" data-type="text" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-sm-2">Style</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" title="Ir al estilo, hacer doble click" id="txt_codigoestilo" class="form-control _data _enty" readonly ondblclick="GoEstilo()" style="cursor:pointer;font-weight:bold;color:#3c8dbc" data-id="txt_codigoestilo" data-type="text" data-required="true" data-min="2" data-max="50" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-sm-2">Description</label>
+                                                                    <div class="col-sm-10">
+                                                                        <textarea class="form-control _data" id="txta_descripcionestilo" disabled="disabled" rows="3" data-id="txta_descripcionestilo" data-type="text"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-sm-2">Division</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" id="txt_division" disabled="disabled" class="form-control _data" data-id="txt_division" data-type="text" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-sm-2">Fabric 1</label>
+                                                                    <div class="col-sm-10">
+                                                                        <textarea class="form-control _data" id="txta_codigotela" disabled="disabled" rows="5" data-id="txta_codigotela" data-type="text"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                @*<h4>Style &nbsp;&nbsp;<span class="fa fa-search" style="cursor:pointer;" onclick="SearchStyle();"></span></h4>*@
+
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="ibox float-e-margins" id="div_datos_tallacolor" style="margin-bottom:0px;">
+                                    <div class="ibox-title">
+                                        <div class="col-sm-6">
+                                            <h4>Details</h4>
+                                        </div>
+                                        <div class="col-sm-6 text-right">
+                                            <button type="button" class="btn btn-success hide" id="btnUpdateTallacolor">
+                                                <span class="fa fa-check-circle-o"></span>
+                                                Accept
+                                            </button>
+                                            <button type="button" class="btn btn-info" id="btnAddTallaColor">
+                                                <span class="fa fa-plus-square"></span>
+                                                Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="ibox-content" style="padding-bottom:0px;">
+                                        <div class="hide">
+                                            <input type="text" class="_datatallacolor" id="hf_idrequerimientodetalle" value="" data-type="text" />
+                                            <input type="text" class="_datatallacolor" id="hf_fila_tallacolor" value="" data-type="text" />
+                                            <input type="text" class="_datatallacolor" id="hf_estadodetalle" value="" data-type="text" />
+                                            <input type="text" class="_datatallacolor" id="hf_cantidaddespachodetalle" value="" data-type="text" />
+                                            <input type="text" class="_datatallacolor" id="hf_cantidadcmdespachodetalle" value="" data-type="text" />
+                                        </div>
+                                        <div class="form-horizontal">
+                                            <div class="row">
+                                                <!-- COLUMNA 1-->
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-5">Client InHouse</label>
+                                                        <div class="col-sm-7" id="div_grupofecha_exclientdate">
+                                                            <div class='input-group date'>
+                                                                <input type='text' class='form-control _datatallacolor' id="txt_fechaexclientdate" data-type="date" data-min="10" data-max="10" data-required="true" data-level="true">
+                                                                <div class="input-group-addon">
+                                                                    <span class="fa fa-calendar"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-5">Qty</label>
+                                                        <div class="col-sm-7">
+                                                            <input type="text" class="form-control _datatallacolor" id="txt_cantidad" data-type='int' data-min='1' data-max='7' data-required="true" onKeyPress="return validators_keypress(event)" onBlur="validators_blur(event)" onKeyUp="validator_keyup(event)" />
+                                                        </div>
+                                                    </div>
+                                                 
+                                                </div>
+                                                <!-- COLUMNA 2-->
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-5">Ex Fty</label>
+                                                        <div class="col-sm-7" id="div_grupofecha_exftydate">
+                                                            <div class='input-group date'>
+                                                                <input type='text' class='form-control _datatallacolor' id="txt_fecha_exftydate" data-type="date" data-required="true" data-min="10" data-max="10" data-level="true">
+                                                                <div class="input-group-addon">
+                                                                    <span class="fa fa-calendar"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-5">Counter Sample</label>
+                                                        <div class="col-sm-7">
+                                                            <input type="text" class="form-control _datatallacolor" id="txt_cantidad_contramuestra" data-type='int' data-min='0' data-max='7'  onKeyPress="return validators_keypress(event)" onBlur="validators_blur(event)" onKeyUp="validator_keyup(event)" />
+                                                        </div>
+                                                    </div>
+                                                     
+                                                </div>
+                                                <!-- COLUMNA 3-->
+                                                <div class="col-sm-3">
+                                                    <div class="form-group" id="div_grupo_date_maxexfty">
+                                                        <label class="control-label col-sm-5">Max Ex Fty</label>
+                                                        <div class="col-sm-7" id="div_grupofecha_exftydatemax">
+                                                            <div class='input-group date'>
+                                                                <input type='text' class='form-control _datatallacolor' id="txt_fecha_exftydatemax" data-type="date" data-required="true" data-min="10" data-max="10" data-level="true">
+                                                                <div class="input-group-addon">
+                                                                    <span class="fa fa-calendar"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-5">Size</label>
+                                                        <div class="col-sm-7">
+                                                            <select class="form-control _datatallacolor" id="cboTalla" data-type="combo" data-required="true" data-min="1" data-max="100"></select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--COLUMNA 4-->
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-5">Color</label>
+                                                        <div class="col-sm-7">
+                                                            <select class="form-control _datatallacolor cboColor" id="cboColor" data-type="combo" data-required="true" data-min="0" data-max="100"></select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- COLUMNA 5 OCULTO-->
+                                                <div class="col-sm-4 hide">
+                                                    <div class="form-group" style="padding:1px;background-color:#D0E7FF;">
+                                                        <label class="control-label col-sm-3">Ex Actual Date </label>
+                                                        <div class="col-sm-9" id="div_grupofecha_exactualdate">
+                                                            <div id='dtExActualDate' class='input-group date'>
+                                                                <input type='text' class='form-control _datatallacolor' id="txt_fecha_exactualdate" data-type="date" data-required="true" data-min="10" data-max="10" data-level="true">
+                                                                <div class='input-group-addon'>
+                                                                    <span class='fa fa-calendar'></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group hide">
+                                                        <label class="control-label col-sm-3">Client IHD  </label>
+                                                        <div class="col-sm-9" id="div_grupofecha_clientihd">
+                                                            <div class='input-group date'>
+                                                                <input type='text' class='form-control _datatallacolor' id="txt_fecha_clientihd" data-type="date" data-min="10" data-max="10" data-level="true">
+                                                                <div class='input-group-addon'><span class='fa fa-calendar'></span></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                                
+                                            </div>                                          
+                                        </div>
+                                        <!-- TABLA DETALLE TALLA COLOR-->
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered table-hover" id="tblTallaColor">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="col-sm-1" style="vertical-align:middle;"></th>
+                                                        <th class="text-center col-sm-2" style="vertical-align:middle;">Color</th>
+                                                        <th class="text-center col-sm-2" style="vertical-align:middle;">Size</th>
+                                                        <th class="text-center col-sm-1" style="vertical-align:middle;">Quantity <br /> for Client</th>
+                                                        <th class="text-center col-sm-1" style="vertical-align:middle;">Counter Sample <br /> WTS </th>
+                                                        <th class="text-center col-sm-2" style="vertical-align:middle;">
+                                                            <div class="col-sm-12">Client InHouse</div>
+                                                            <div class="col-sm-1" style="vertical-align:middle;">
+                                                                <div class="text-center form-check"><input class='form-check-input' id="chkcid" name="chkcid" type="checkbox" /></div>
+                                                            </div>
+                                                            <div class="col-sm-9" id="div_gral_cid" style="padding:0px;">
+                                                                <div id='div_inputdate_cid' class='input-group date'>
+                                                                    <input type='text' style="padding:0px;" class='form-control' id="txt_gral_cid" data-type="date" data-required="true" data-min="10" data-max="10" data-level="true">
+                                                                    <div class='input-group-addon'>
+                                                                        <span class='fa fa-calendar'></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                        <th class="text-center col-sm-2" style="vertical-align:middle;">
+                                                            <div class="col-sm-12">Ex Fty</div>
+                                                            <div class="col-sm-1" style="vertical-align:middle;">
+                                                                <div class="text-center form-check"><input class='form-check-input' id="chkefd" name="chkefd" type="checkbox" /></div>
+                                                            </div>
+                                                            <div class="col-sm-9" id="div_gral_efd" style="padding:0px;">
+                                                                <div id='div_inputdate_efd' class='input-group date'>
+                                                                    <input type='text' style="padding:0px;" class='form-control' id="txt_gral_efd" data-type="date" data-required="true" data-min="10" data-max="10" data-level="true">
+                                                                    <div class='input-group-addon'>
+                                                                        <span class='fa fa-calendar'></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                        <th class="text-center col-sm-1" style="vertical-align:middle;">
+                                                            Max Ex Fty
+                                                        </th>
+                                                        <th class="text-center hide">Ex Actual Date</th>
+                                                        <th class="text-center hide">Client IHD</th> <!-- cliente in house date: fecha que debe estar en el almacen del cliente-->
+                                                       
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="tbody_tallacolor">
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                         
+                                    </div>
+                                </div>
+
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title hide">
+
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-1">Additional Instruction</label>
+                                                <div class="col-sm-11">
+                                                    <textarea class="form-control" rows="9" style="resize: none;" id="txta_comentario"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-1">Select file</label>
+                                                <div class="col-sm-11">
+
+                                                    <!--<input type="text" class="form-control" id="txtArchivoSeleccionado" readonly="readonly" />-->
+                                                    <div style="padding-top:5px;">
+                                                        <span class="input-group-btn">
+                                                            <span class="btn btn-success btn-sm btn-file">
+                                                                <span class="fa fa-upload"></span> &nbsp;Add File
+                                                                <input type="file" id="filearchivo" />
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-6 col-sm-offset-1">
+                                                    <table class="table table-bordered table-hover" id="tbl_archivos">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="col-sm-1"></th>
+                                                                <th class="col-sm-9">File</th>
+                                                                <th class="col-sm-1"></th>
+                                                                <th class="hide col-sm-1"></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="tbody_tabla_archivos"></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                         
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab-extras" class="tab-pane">
+                            <div class="panel-body" style="background-color:#D0E7FF">
+                                <div class="form-horizontal">
+                                   
+                                    <div class="ibox float-e-margins" id="div_Comentario"  >
+                                        <div class="ibox-title" style="background-color:#D0E7FF">                                          
+                                                    <div class="col-sm-3">
+                                                        <label class="control-label">WTS Comment</label>
+                                                    </div>
+                                                    <div class="col-sm-9 text-right">
+                                                        <button class="btn btn-success" type="button" id="BtnAddCom">Add</button>
+                                                        <button type="button" class="btn btn-success" id="btnSendMailComment" data-boton="sendmailcom">Send Mail Comment</button>
+                                                    </div>                                            
+                                        </div>
+                                        <div class="ibox-content" style="background-color:#D0E7FF">
+                                            <div class="row">
+                                              <table class="table table-bordered" id="tblComment">
+                                                  <thead>
+                                                      <tr class="text-center">
+                                                          <th class="text-center" style="width:2%;"></th>
+                                                          <th class="text-center" style="width:70%;">Comment</th>
+                                                          <th class="text-center" style="width:10%;">File</th>
+                                                          <th class="text-center" style="width:9%;">User</th>
+                                                          <th class="text-center" style="width:9%;">Date</th>
+                                                      </tr>
+                                                  </thead>
+                                                  <tbody id="tBody_Com">
+                                                    
+                                                  </tbody>
+                                              </table>
+                                            </div>
+                                        </div>
+                                    </div>                                     
+                                </div>                                
+                                @*<div class="container" style="float:left;padding-top:20px;">
+
+                                    <div class="form-horizontal">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-2">Additional Comments</label>
+                                                <div class="col-sm-10">
+                                                    <textarea class="form-control"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container" style="float:left;padding-top:10px;">
+                                    <h4>Files</h4>
+                                    <div class="form-horizontal">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <button class="btn btn-info"> + ADD</button>
+                                            </div>
+                                        </div>
+                                     </div>
+                                </div>*@
+                    </div>
+                </div>
+                        <div id="tab-status" class="tab-pane">
+                            <div class="panel-body" style="background-color:#D0E7FF">
+                                <div class="form-horizontal">
+                                    <div class="col-sm-12 hide" id="div_estados" style="padding-top:15px;margin-bottom:10px;">
+
+                                        <div class="form-group">
+                                            <!-- :EDU DATOS DEL CAMBIO DE ESTADO-->
+                                            <div class="col-sm-6" id="div_grupo_estado">
+                                                <label class="control-label col-sm-2">Status</label>
+                                                <div class="col-sm-10">
+                                                    <select class="form-control _enty" id="cboEstado" data-id="idestado">
+                                                        <option value="">Select</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6" id="div_grupo_fechaestado">
+                                                <label class="control-label col-sm-2">Date</label>
+                                                <div class="col-sm-10">
+                                                    <div class="input-group date">
+                                                        <input type="text" id="txt_fechaestado" class="form-control" />
+                                                        <div class="input-group-addon">
+                                                            <span class="fa fa-calendar"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                         
+                                            <!-- :EDU DATOS DEL CAMBIO DE ESTADO-->
+                                            <div class="form-group" id="div_grupo_estado_comentario">
+                                                <div class="col-sm-12">
+                                                    <label class="control-label col-sm-1">Client Comment</label>
+                                                    <div class="col-sm-11">
+                                                        <textarea class="form-control" id="txta_comentario_estado" rows="14" style="overflow: auto; resize: none;"></textarea>
+                                                    </div>
+                                                </div>                                             
+                                            </div>                                      
+                                    </div>                                     
+                                </div>                                
+                            </div>
+                        </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

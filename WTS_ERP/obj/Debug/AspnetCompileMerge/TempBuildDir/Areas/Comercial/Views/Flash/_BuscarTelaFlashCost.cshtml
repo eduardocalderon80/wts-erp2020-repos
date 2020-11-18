@@ -1,0 +1,123 @@
+﻿<style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: 15% 30% 5% 40%;
+        grid-gap: 10px;
+    }
+</style>
+<div class="ibox" id="panelencabezado_buscartelaflashcost">
+    <div class="ibox-title">
+        <div class="ibox-tools">
+            <button id="_btnAceptar_buscartelaflashcost" href="javascript:void(0)" class="btn btn-primary">
+                <span class="fa fa-check-circle"></span>
+                Search
+            </button>
+            <button id="_btnCancelar_buscartelaflashcost" href="javascript:void(0)" class="btn btn-default" data-dismiss="modal">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <div class="" style="overflow-y: auto; max-height: 850px;">
+        <div class="hide">
+            <input type="text" id="txtpar_buscartelaflashcost" value="DATA-PARAMETRO" />
+        </div>
+
+        <div class="ibox">
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        @*<div class="form-group">
+                            <label class="control-label col-sm-2">Structure</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control _cls_disabled_1 _cls_input" id="_txt_dl_familia" list="_dl_familia" />
+                                <datalist id="_dl_familia"></datalist>
+                            </div>
+                        </div>*@
+                        <div class="ibox">
+                            <div class="ibox-content" >
+                                <table class="table table-bordered table-hover" id="_tbl_buscartelaflashcost">
+                                    <thead>
+                                        <tr>
+
+                                            <td class="text-center col-sm-3" colspan="2">
+                                                Structure
+                                            </td>
+                                            <td class="text-center col-sm-7" colspan="2">
+                                                <div class="col-sm-12">
+                                                    <input type="text" class="form-control _cls_disabled_1 _cls_input" id="_txt_dl_familia" list="_dl_familia" />
+                                                    <datalist id="_dl_familia"></datalist>
+                                                </div>
+                                            </td>
+
+                                        </tr>
+
+                                        <tr>
+
+                                            <td class="text-center col-sm-3" colspan="2">
+                                                Fabric ID
+                                            </td>
+                                            <td class="text-center col-sm-7" colspan="2">
+                                                <div class="col-sm-12">
+                                                    <input type="text" class="form-control  _cls_input" id="_txt_idFabric" />
+
+                                                </div>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+
+                                            <td class="text-center col-sm-3" colspan="2">
+                                                ATX
+                                            </td>
+                                            <td class="text-center col-sm-3">
+                                                <div class="col-sm-12">
+                                                    <input type="text" id="txtanio" class="form-control _enty _cls_conatx _cls_datosoriginalatx  _cls_input" data-id="anio" placeholder="2019" data-required="false" data-min="1" data-max="99" onkeypress="return DigitimosDecimales(event,this)" />
+                                                </div>
+                                            </td>
+                                            <td class="text-center col-sm-4">
+                                                <div class="col-sm-12">
+                                                    <input type="text" class="form-control _enty _cls_conatx _cls_datosoriginalatx  _cls_input" id="txtCorrelativo" data-id="correlativo" data-required="false" placeholder="1545" data-min="1" data-max="9999" onkeypress="return DigitimosDecimales(event,this)" />
+                                                </div>
+                                            </td>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbody_buscartelaflashcost">
+                                        @*<tr>
+                                            <td>
+
+                                            </td>
+                                            <td>
+                                                Structure
+                                            </td>
+                                            <td>
+                                                <div class="col-sm-12">
+                                                    <input type="text" class="form-control _cls_disabled_1 _cls_input" id="_txt_dl_familia" list="_dl_familia" />
+                                                    <datalist id="_dl_familia"></datalist>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                        </tr>*@
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="ibox-footer">
+                                <div class="col-sm-12">
+                                    <button class="btn btn-sm btn-link _cls_disabled_1 _cls_input text-success" type="button" id="_btn_agregar_materiaprima">
+                                        <u><b>Add composition</b></u>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

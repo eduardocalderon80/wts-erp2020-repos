@@ -1,0 +1,301 @@
+﻿<style>
+    #txtFechaInicio[readonly], #txtFechaFin[readonly] {
+        background-color: #ffffff;
+        border: 1px solid #e5e6e7;
+    }
+
+    #txtFechaInicio.form-control[readonly], #txtFechaFin.form-control[readonly] {
+        background-color: #ffffff;
+        border-top: 1px solid #e5e6e7 !important;
+        border-left: 1px solid #e5e6e7 !important;
+        border-right: 1px solid #e5e6e7 !important;
+        border-bottom: 1px solid #e5e6e7 !important;
+    }
+</style>
+<div class="ibox" id="panelEncabezado_CumpleanosNew">
+    <div class="hide">
+        <input type="text" id="txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-6">
+            <h2 class="font-bold">Mi Cumpleaños</h2>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <i class="fa fa-home"></i>
+                </li>
+                <li class="breadcrumb-item">
+                    Gestion de Talento
+                </li>
+                <li class="breadcrumb-item">
+                    Mi Cumpleaños
+                </li>
+                <li class="breadcrumb-item active">
+                    <strong>Nuevo</strong>
+                </li>
+            </ol>
+        </div>
+        <div id="div_botones" class="col-lg-6 text-right" style="padding-top:20px;"></div>
+    </div>
+    <div class="no-aprobar">
+        <div class="wrapper wrapper-content">
+            <div class="row animated fadeInRight">
+                <div class="col-md-12" id="ibox-2">
+                    <div class="ibox ">
+                        <div class="ibox-title">
+                            <h5>Datos Generales</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                                <a class="fullscreen-link">
+                                    <i class="fa fa-expand"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="tabs-container">
+                                <ul class="nav nav-tabs">
+                                    <li class="bg-primary active">
+                                        <a id="tabRegistro" data-toggle="tab" href="#tab-registro" aria-expanded="true"><label class="control-label">Registro</label></a>
+                                    </li>
+                                    <li>
+                                        <a id="tabHistorial" data-toggle="tab" href="#tab-historial" aria-expanded="false"><label class="control-label">Historial</label></a>
+                                    </li>
+                                </ul>
+                                <div id="informacion" class="tab-content">
+                                    <div id="tab-registro" class="tab-pane active">
+                                        <div class="ibox">
+                                            <div class="ibox-content">
+                                                <div class="form-horizontal row">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-3">Fecha de Solicitud:</label>
+                                                            <div class="col-sm-9 ">
+                                                                <div class="input-group">
+                                                                    <input id="txtFechaSolicitud" type="text" class="form-control" disabled>
+                                                                    <div class="input-group-addon">
+                                                                        <span class="fa fa-calendar"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-3">Nombre:</label>
+                                                            <div class="col-sm-9">
+                                                                @*<select id="cboNombre" class="form-control"></select>*@
+                                                                <input id="txtNombre" type="text" class="form-control text-success font-bold" disabled>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-3">Fecha de cumpleaños:</label>
+                                                            <div class="col-sm-9 ">
+                                                                <div class="input-group">
+                                                                    <input id="txtFechaCumpleanos" type="text" class="form-control" disabled>
+                                                                    <div class="input-group-addon">
+                                                                        <span class="fa fa-calendar"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-3">Cargo:</label>
+                                                            <div class="col-sm-9">
+                                                                <input id="txtCargo" type="text" class="form-control" disabled>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-3">Jefe inmediato:</label>
+                                                            <div class="col-sm-9">
+                                                                <input id="txtJefe" type="text" class="form-control" disabled>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-3">Área:</label>
+                                                            <div class="col-sm-9">
+                                                                <input id="txtArea" type="text" class="form-control text-success font-bold" disabled>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-3">Sub Área:</label>
+                                                            <div class="col-sm-9">
+                                                                <input id="txtSubArea" type="text" class="form-control text-success font-bold" disabled>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-3">Equipo:</label>
+                                                            <div class="col-sm-9">
+                                                                <input id="txtEquipo" type="text" class="form-control text-success font-bold" disabled>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="ibox">
+                                                            <div class="ibox-title">
+                                                                <h4>Día de Cumpleaños:</h4>
+                                                            </div>
+                                                            <div class="ibox-content">
+                                                                <div class="form-horizontal row">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label col-sm-3">Fecha:</label>
+                                                                        <div class="col-sm-9">
+                                                                            <div class="input-group">
+                                                                                <input id="txtFechaInicio" type="text" class="form-control _enty_grabar" readonly placeholder="__/__/____" data-required="true" data-min="1" data-max="254" data-id="fechainicio">
+                                                                                <div class="input-group-addon">
+                                                                                    <span class="fa fa-calendar"></span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div id="tablaAprobador" class="row" hidden="" style="display: none;">
+                                                                    <div class="table-responsive">
+                                                                        <table class="table table-bordered" id="detalleTablaAprobador">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th class="cols-sm-2 text-center"></th>
+                                                                                    <th class="cols-sm-5 text-center" data-sort-ignore="true">Nombre Aprobador</th>
+                                                                                    <th class="cols-sm-4 text-center" data-sort-ignore="true">Correo</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td class="cols-sm-2 text-center"><button class="btn btn-outline btn-primary"><span class="fa fa-check-circle"></span></button></td>
+                                                                                    <td class="cols-sm-5">ARONE GUTIERREZ ISRAEL SAMUEL</td>
+                                                                                    <td class="cols-sm-4">sarone@wts.com.pe</td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="tab-historial" class="tab-pane">
+                                        <div class="ibox">
+                                            <div class="ibox-content">
+                                                <div class="table-responsive">
+                                                    <table class="table table-stripped table-bordered " id="contenTableHistory">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="col-sm-1 text-center">Fecha</th>
+                                                                <th class="col-sm-1 text-center">Hora</th>
+                                                                <th class="col-sm-1 text-center">Estado</th>
+                                                                <th class="col-sm-2 text-center">Autor</th>
+                                                                <th class="col-sm-1 text-center">Acción</th>
+                                                                <th class="col-sm-3 text-center">Descripción</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="tbody_historial">
+                                                            <tr>
+                                                                <td colspan="6" align="center">No se encontraron datos</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="si-aprobar fide">
+        <div class="wrapper wrapper-content">
+            <div class="row animated fadeInRight">
+                <div class="col-md-12" id="ibox-2">
+                    <div class="ibox " style="margin-top:0px; margin-bottom:0px">
+                        <div class="ibox-title">
+                            <h5>Aprobación de la Solicitud #: <span id="spnIdSolicitud"></span></h5>
+                            <div class="ibox-tools">
+                                <a class="fullscreen-link">
+                                    <i class="fa fa-expand"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content col-sm-12">
+                            <div class="no-margins" style="margin-top:0px; margin-bottom:0px">
+                                <div class="col-sm-6">
+                                    <div class="ibox-title">
+                                        <h4>Datos del Personal</h4>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3">Nombre Personal:</label>
+                                                <div class="col-sm-9">
+                                                    <input id="txtNombre_si-aprobar" type="text" class="form-control text-success font-bold" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3">Comentario:</label>
+                                                <div class="col-sm-9">
+                                                    <textarea id="txtComentario_si-aprobar" class="form-control _enty_grabar" rows="6" style="resize:none" placeholder="Ingrese comentario aqui..." maxlength="5000" data-required="false" data-min="1" data-max="254" data-id="comentario"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal">
+                                            <div class="" style="padding-left:0px; padding-right:0px;">
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered" id="detalleTablaFechas">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="cols-sm-3 text-center">Fecha</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="tbody_tablafechas">
+                                                            <tr>
+                                                                <td class="cols-sm-3 text-center"></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-horizontal">
+                                        <div class="ibox-title">
+                                            <h4>Coincidencia de Fechas</h4>
+                                        </div>
+                                        <div class="ibox-content">
+                                            <div id='divFechasCoincidentes_si-aprobar' class="table-responsive">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

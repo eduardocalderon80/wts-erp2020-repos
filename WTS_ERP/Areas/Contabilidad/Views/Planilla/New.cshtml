@@ -1,0 +1,107 @@
+﻿<div class="row wrapper white-bg page-heading">
+    <div id="content_header" class="ibox float-e-margins">
+        <div id="divtituloprincipal" class="col-sm-6">
+            <h2 class="font-bold">Planilla</h2>
+        </div>
+    </div>
+</div>
+
+<div class="row wrapper-content gray-bg animated">
+    <div id="content_form" class="ibox">
+        <div class="ibox-title">
+            <div class="form-horizontal row ">
+                <div class="col-sm-6">
+                    <h3 id="_title" class="text-navy bold">New</h3>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <button type="button" class="btn btn-primary" id="btnSave">
+                        <span class="fa fa-save"></span>
+                        Save
+                    </button>
+                    <button type="button" class="btn btn-default" id="btnReturn">
+                        <span class="fa fa-reply-all"></span>
+                        Return
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="ibox-content">
+            <div class="form-horizontal row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Document:</label>
+                        <div class="col-sm-9">
+                            <select class="select2_Documento form-control" name="IdDocumento" id="cboDocumento" style="width:100%" data-min="1" data-required="true" data-id="IdDocumento">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Month:</label>
+                        <div class="col-sm-9">
+                            <select class="select2_Month form-control" name="IdMes" id="cboMes" style="width:100%" data-min="1" data-required="true" data-id="IdMes">                               
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Year:</label>
+                        <div class="col-sm-9">
+                            @*<input  class="form-control _enty" name="IdAnio" id="txtAnio" data-min="" data-max="4" data-required="true" data-type="int" data-id="IdAnio" maxlength="4">*@
+                            <select class="select2_Month form-control" name="IdAnio" id="cboAnio" style="width:100%" data-min="1" data-required="true" data-id="IdAnio"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <div class="col-sm-3 text-right ">
+                            <span class="btn btn-warning btn-file text-right ">
+                                <span class="fa fa-upload"></span> Excel File
+                                <input class="text-right" type="file" id="inputFile" accept=".xlsx" onchange="fn_validfile(this);"/>
+                            </span>
+                        </div>                  
+                        <div class="col-sm-9">
+                            <input class="form-control" disabled="disabled" id="fileSelected" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content_form" class="ibox">
+        <div class="ibox-title hide">
+            <h5>Details</h5>
+        </div>
+        <div id="divContentTBL" class="ibox-content">
+            <div class="table-responsive">
+                <table style="width:100%" height="100" class="footable table table-stripped table-bordered " data-page-size="10" data-filter=#filter id="contenTableBoleta">
+                    <thead>
+                        <tr>
+                            <th class ='col-sm-2'></th>
+                            <th class ='col-sm-2'>Year</th>
+                            <th class ='col-sm-2'>Month</th>
+                            <th class ='col-sm-2'>Total Employee</th>
+                            <th class ='col-sm-2'>Total Discount</th>
+                            <th class ='col-sm-2'>Total Net</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="8">
+                                <ul class="pagination pull-right"></ul>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

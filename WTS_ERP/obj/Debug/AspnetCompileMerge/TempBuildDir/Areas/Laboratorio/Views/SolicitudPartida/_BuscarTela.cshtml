@@ -1,0 +1,49 @@
+﻿<div class="ibox float-e-margins" id="panelEncabezado_buscartela">
+    <div class="ibox-title">
+        <div class="ibox-tools">
+            <button id="btnAceptar_tela" href="javascript:void(0)" class="btn btn-primary">
+                <span class="fa fa-check-circle"></span>
+                Accept
+            </button>
+            <button id="btnCancelar_tela" href="javascript:void(0)" class="btn btn-default" data-dismiss="modal">
+                Cancel
+            </button>
+        </div>
+    </div>
+    <!-- class="ibox-content wrapper wrapper-content gray-bg" -->
+    <div class="" style="overflow-y: auto; max-height: 850px;">
+        <div class="ibox float-e-margins">
+            <div class="ibox-content">
+                <div class="row">
+                    <div id="div_tbl_buscartela" style="max-height:400px; overflow-y:auto;">
+                        <table class="table table-bordered table-hover" id="_tbl_tela_buscar">
+                            <thead>
+                                <tr>
+                                    <th class="hide"></th>
+                                    <th>Fabric Code</th>
+                                    <th>Fabric Name</th>
+                                    <th>Title</th>
+                                    <th>Composition</th>
+                                    <th>Family</th>
+                                </tr>
+                                <tr>
+                                    <th class="hide"></th>
+                                    <th><input type="text" placeholder="Search fabric code" id="_txtfiltercodigotela" class="form-control _clsfilter" data-field="codigotela" /></th>
+                                    <th><input type="text" placeholder="Search fabric name" id="_txtfilternombretela" class="form-control _clsfilter" data-field="nombretela" /></th>
+                                    <th><input type="text" placeholder="Search title" id="_txtfiltertitulotela" class="form-control _clsfilter" data-field="titulo" /></th>
+                                    <th><input type="text" placeholder="Search composition" id="_txtfiltercomposiciontela" class="form-control _clsfilter" data-field="composicion" /></th>
+                                    <th><input type="text" placeholder="Search family" id="_txtfilterfamilia" class="form-control _clsfilter" data-field="nombrefamilia" /></th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_tela_buscar"></tbody>
+                        </table>
+                    </div>
+                    <div class="text-center" id="foot_paginacion">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

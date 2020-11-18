@@ -1,0 +1,391 @@
+﻿<style>
+    .no-sort::after {
+        display: none !important;
+    }
+
+    .no-sort {
+        pointer-events: none !important;
+        cursor: default !important;
+    }
+
+    thead input {
+        width: 100%;
+    }
+
+    .modal-lg-1000 {
+        width: 1000px;
+    }
+</style>
+<div class="ibox" id="panelEncabezado_solicitudcotizar">
+    <div class="hide">
+        <input type="text" id="txtparametro" value="DATA-PARAMETRO" />
+    </div>
+    <div class="ibox-title">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 id="_title" class="text-navy bold"></h3>
+            </div>
+            <div class="col-sm-6 text-right">
+                <button type="button" class="btn btn-primary" id="btnSave">
+                    <span class="fa fa-save"></span>
+                    Grabar
+                </button>
+                <button type="button" class="btn btn-warning" id="btnClean">
+                    <span class="fa fa-save"></span>
+                    Limpiar Campos
+                </button>
+                <button type="button" class="btn btn-default" id="btnReturn">
+                    <span class="fa fa-ban"></span>
+                    Regresar
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="ibox-content wrapper wrapper-content gray-bg" id="div_datos">
+        <div class="ibox">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <h5 class="text-navy bold">Datos</h5>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal col-sm-12">
+                        <div class="col-sm-4">
+                            <div class="form-group" id="ddfechainicio">
+                                <label class="col-sm-4 control-label"> Fecha</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"> <i class="fa fa-calendar"> </i> </span>
+                                        <input id="txtfechainicio" class="form-control" disabled data-min="1" data-max="254">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Cliente</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control _enty_grabar" data-min="1" data-max="20" data-type="int" data-required="true" id="cbo_clientes" data-id="idcliente"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Temporada</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control _enty_grabar" data-min="1" data-max="20" data-type="int" data-required="false" id="cbo_temporada" data-id="idclientetemporada">
+                                        <option value="0">Seleccione...</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal col-sm-12">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Codigo Tela</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <input id="txtCodigoTela" class="form-control  _enty_grabar cls_filtro_tela_atx" data-required="false" data-min="1" data-max="254" data-id="codigotela">
+                                        <div class="input-group-btn">
+                                            <button type="button" class="btn btn-primary cls_filtro_tela_atx" id="btnBuscarxCodigoTela">
+                                                <span class="fa fa-search"></span>
+                                            </button>
+                                            <button type="button" class="btn btn-warning cls_filtro_tela_atx" id="btnBuscarCodigoEnLista" data-toggle="modal" data-target=".bd-example-modal-lg">
+                                                <span class="fa fa-plus"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> N° Reporte ATX</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <input id="txtnumero_reporteatx" class="form-control  _enty_grabar cls_filtro_tela_atx" data-required="false" data-min="1" data-max="254" data-id="nroatx">
+                                        <div class="input-group-btn">
+                                            <button type="button" class="btn btn-primary cls_filtro_tela_atx" id="btnBuscarxATX">
+                                                <span class="fa fa-search"></span>
+                                            </button>
+                                            <button type="button" class="btn btn-warning cls_filtro_tela_atx" id="btnBuscarATXEnLista" data-toggle="modal" data-target=".bd-example-modal-lg">
+                                                <span class="fa fa-plus"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Familia</label>
+                                <div class="col-sm-8">
+                                    <input id="txtfamilia" class="form-control _enty_grabar cls_filtro_tela_atx" data-required="false" data-min="1" data-max="254" data-id="familia">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal col-sm-12">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> % Contenido de Tela</label>
+                                <div class="col-sm-8">
+                                    <input id="txtporcentaje_contenido_tela" class="form-control _enty_grabar cls_filtro_tela_atx" data-required="false" data-min="1" data-max="254" data-id="contenido">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Densidad(g./m.²)</label>
+                                <div class="col-sm-8">
+                                    <input id="txtdensidad" class="form-control _enty_grabar cls_filtro_tela_atx" data-required="false" data-min="1" data-max="254" data-id="densidad">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> BW/AW</label>
+                                <div class="col-sm-8">
+                                    <label>
+                                        <input class="i-check-lavado cls_filtro_tela_atx" type="radio" value="BW" name="tipo_lavado" checked />
+                                        BW
+                                    </label>
+                                    <label>
+                                        <input class="i-check-lavado cls_filtro_tela_atx" type="radio" value="AW" name="tipo_lavado" />
+                                        AW
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal col-sm-12">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> TradeName</label>
+                                <div class="col-sm-8">
+                                    <input id="txtradename" class="form-control _enty_grabar" data-required="false" data-min="1" data-max="254" data-id="tradename">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Division</label>
+                                <div class="col-sm-8">
+                                    <input id="txtdivision" class="form-control _enty_grabar" data-required="false" data-min="1" data-max="254" data-id="division">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Modalidad</label>
+                                <div class="col-sm-8">
+                                    <label>
+                                        <input class="i-check-modalidad" type="checkbox" value="M" name="check-modalidad" checked />
+                                        Muestra
+                                    </label>
+                                    <label>
+                                        <input class="i-check-modalidad" type="checkbox" value="P" name="check-modalidad" />
+                                        Produccion
+                                    </label>
+                                </div>
+                                @*<div class="col-sm-8">
+                                    <select class="form-control _enty_grabar" data-min="1" data-max="20" data-type="int" data-required="true" id="cbo_modalidad" data-id="modalidad">
+                                        <option value="0">Seleccione ...</option>
+                                        <option value="M">Muestra</option>
+                                        <option value="P">Produccion</option>
+                                    </select>
+                                </div>*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal col-sm-12">
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> Descripción</label>
+                                <div class="col-sm-10">
+                                    <input id="txtdescripcion" class="form-control  _enty_grabar cls_filtro_tela_atx" data-required="true" data-min="1" data-max="254" data-id="descripcion">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> Comentario</label>
+                                <div class="col-sm-10">
+                                    <input id="txtcomentario" class="form-control  _enty_grabar" data-min="1" data-max="254" data-id="comentario">
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary hide-if-no-required" id="btnAgregarTela">
+                                <span class="fa fa-plus"></span>
+                                Agregar Tela
+                            </button>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Rango KG</label>
+                                <div class="col-sm-8">
+                                    <div id="div_rangokg" style="margin-bottom: 5px;">
+                                        <div class="input-group" style="margin-bottom: 2px;">
+                                            <input class="form-control _enty_grabar txtrango" type="number" min="0" data-required="true" data-min="1" data-max="254" data-id="rango">
+                                            <div class="input-group-btn">
+                                                <button type="button" class="btn btn-danger" onclick="appSolicitudCotizar.fn_eliminar_rangokg(this)">
+                                                    <span class="fa fa-trash"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-warning hide-if-no-required" id="btnNuevoRangoKG">
+                                        <span class="fa fa-plus"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="divRegistrados" class="ibox hide-if-no-required" style="display: none;">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <h5 class="text-navy bold">Telas Registradas</h5>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <table class="table table-bordered table-hover" style="width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Cliente</th>
+                                    <th>Temporada</th>
+                                    <th>Codigo Tela</th>
+                                    <th>N° Reporte ATX</th>
+                                    <th>Descripción</th>
+                                    <th>Trade Name</th>
+                                    <th>Division</th>
+                                    <th>Rango</th>
+                                    <th>Modalidad</th>
+                                    <th>Comentario</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_registrados"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ibox hide-if-no-required">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <h5 id="titleTelas" class="text-navy bold">Telas</h5>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal col-sm-12">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <button type="button" class="btn btn-sm btn-danger" id="btnCleanItemsTbl">
+                                    <span class="fa fa-trash-o"></span>
+                                    Borrar Todo
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal">
+                        <table id="tbl_solicitud" class="table table-bordered table-hover" style="width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Cliente</th>
+                                    <th>Temporada</th>
+                                    <th>Codigo Tela</th>
+                                    <th>N° Reporte ATX</th>
+                                    <th>Descripción</th>
+                                    <th>Trade Name</th>
+                                    <th>Division</th>
+                                    <th>Rango</th>
+                                    <th>Modalidad</th>
+                                    <th>Comentario</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_solicitud"></tbody>
+                            <tfoot>
+                                <tr>
+                                    <td id="row_initial" colspan="11" align="center">No se encontraron datos</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ibox hide-if-no-required">
+            <div class="ibox-title">
+                <h5 class="text-navy bold">Observaciones</h5>
+            </div>
+            <div class="ibox-content">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <textarea class="form-control" id="txta_observaciones" data-id="observaciones"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered modal-lg-1000">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header bg-primary">
+                <button type="button" class="close"
+                        data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Agregar Items
+                </h4>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="col-sm-8">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Filtrar x Anio</label>
+                                <div class="col-sm-8">
+                                    <select id="cboAnioATX" class="form-control"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-warning" id="btnBuscarItemsModal">
+                            <span class="fa fa-plus"></span>
+                            Buscar Items
+                        </button>
+                        <button type="button" class="btn btn-primary" id="btnAgregarItemsModal" data-dismiss="modal">
+                            <span class="fa fa-plus"></span>
+                            Agregar Item
+                        </button>
+                    </div>
+                </div>
+                <div id="div_tbl_Items" style="width: 100%; overflow-y: auto;"></div>
+                <div id="div_tbl_Items_pagination"></div>
+            </div>
+            <!-- Modal Footer -->
+            @*<div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">
+                    Close
+                </button>
+                <button type="button" class="btn btn-primary">
+                    Save changes
+                </button>
+            </div>*@
+        </div>
+    </div>
+</div>

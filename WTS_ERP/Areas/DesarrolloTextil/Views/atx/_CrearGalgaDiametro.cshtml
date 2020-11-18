@@ -1,0 +1,60 @@
+﻿ <div class="ibox" id="panelEncabezado_creargalgadiametro">
+    <div class="ibox-title">
+        <div class="ibox-tools">
+            <button id="_btnSave_creargalgadiametro" class="btn btn-primary">
+                Save
+            </button>
+            <button id="_btnCancelar_creargalgadiametro" class="btn btn-default" data-dismiss="modal">
+                Cancel
+            </button>
+        </div>
+    </div>
+    <div class="" style="overflow-y: auto; max-height: 850px;">
+        <div class="hide">
+            <input type="text" id="txtpar_creargalgadiametro" value="DATA-PARAMETRO" />
+        </div>
+        <div class="ibox">
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Gauge:</label>
+                            <div class="col-sm-6">
+                                <input class="form-control" id="txtGalga" placeholder='0' onkeypress='return DigitimosDecimales(event, this)' />
+                            </div>                            
+                        </div>
+                        <!--
+                        <div class="form-group">
+                            <label class="control-label">Add <span class="btn btn-sm btn-success fa fa-plus-square" id="_btn_addgalgadiametro"></span></label>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ibox">
+            <div class="ibox-title text-right">
+                <button class="btn btn-sm btn-success" id="_btn_addgalgadiametro">
+                    Add
+                    <span class="fa fa-plus"></span>
+                </button>
+            </div>
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="table-responsive" style="max-height:300px; overflow-y:auto;">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th class="text-center"> Diametro </th>
+                                    <th class="text-center"> # Agujas </th>
+                                </tr>
+                            </thead>
+                            <tbody id="tblBody_galgadiametro"></tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

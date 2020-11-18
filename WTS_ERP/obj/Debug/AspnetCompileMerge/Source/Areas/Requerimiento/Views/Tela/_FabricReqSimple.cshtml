@@ -1,0 +1,91 @@
+﻿<div id="panelEncabezado_FabricReqSimple">
+    <div class="hide">
+        <input type="text" id="fabricreqsimp_txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="form-horizontal row">
+        <div class="col-sm-12 m-b">
+            <div class="text-right">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <span class="fa fa-reply-all"></span>
+                    Return
+                </button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">
+                    <span class="fa fa-check"></span>
+                    Confirm
+                </button>
+            </div>
+            <hr />
+        </div>
+    </div>
+    <div class="form-horizontal row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <h4>Search for hangers by fabric code</h4>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <table class="table table-hover table-bordered table-vertical">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>WTS Code</th>
+                                <th>Stock</th>
+                                <th>Hangers</th>
+                                <th>Comments</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <button type="button" class="btn btn-xs btn-danger" onclick="app_FabricReqSimple.fn_remove(this)">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </td>
+                                <td>COD0001</td>
+                                <td>20</td>
+                                <td>
+                                    <input type="number" class="form-control input-sm" style="text-align: left !important;">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control input-sm" value="Comentario de ejemplo" style="text-align: left !important;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button type="button" class="btn btn-xs btn-danger" onclick="app_FabricReqSimple.fn_remove(this)">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </td>
+                                <td>COD0002</td>
+                                <td>12</td>
+                                <td>
+                                    <input type="number" class="form-control input-sm" style="text-align: left !important;">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control input-sm" value="prueba de comentario 12 3" style="text-align: left !important;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button type="button" class="btn btn-xs btn-danger" onclick="app_FabricReqSimple.fn_remove(this)">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </td>
+                                <td>COD0003</td>
+                                <td>6</td>
+                                <td>
+                                    <input type="number" class="form-control input-sm" style="text-align: left !important;">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control input-sm" value="Test de Comentario" style="text-align: left !important;">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

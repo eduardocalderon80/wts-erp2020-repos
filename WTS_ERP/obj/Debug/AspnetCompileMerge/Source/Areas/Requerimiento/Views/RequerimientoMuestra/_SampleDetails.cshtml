@@ -1,0 +1,135 @@
+﻿<div id="panelEncabezado_SampleDetails">
+    <div class="hide">
+        <input type="text" id="sampledetails_txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="form-horizontal row">
+        <div class="col-sm-12 m-b">
+            <div class="float-left">
+                <ul class="nav nav-tabs" role="tablist" style="border-bottom: 0" id="ul_tabs_det_req">
+                    <li class="active li_tab_det_req" data-label="cantidad"><a class="nav-link" data-toggle="tab" href="#tab-2_1" aria-expanded="true"> QUANTITIES</a></li>
+                    <li class="li_tab_det_req" data-label="techpack"><a class="nav-link" data-toggle="tab" href="#tab-2_2" aria-expanded="true"> TECHPACK</a></li>
+                    <li class="li_tab_det_req" data-label="comentario"><a class="nav-link" data-toggle="tab" href="#tab-2_3" aria-expanded="true"> COMMENTS</a></li>
+                </ul>
+            </div>
+            <div class="text-right">
+                <button type="button" class="btn btn-primary" id="btnSaveSampleDetails">
+                    <span class="fa fa-save"></span>
+                    Save
+                </button>
+            </div>
+            <hr />
+        </div>
+    </div>
+    <div class="form-horizontal row">
+        <div class="tab-content">
+            <div role="tabpanel" id="tab-2_1" class="tab-pane active">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4 id="title_programming"></h4>
+                            <hr class="m-b-md">
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-sm btn-primary" id="btnAddSampleDetails" style="width: 100%">
+                                <span class="fa fa-plus"></span>
+                                Add
+                            </button>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <div class="has-float-label">
+                                        <select class="form-control" id="cboColors" multiple="multiple"></select>
+                                        <label class="select2-label" for="cboColors">Insert Color(s)</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <div class="has-float-label">
+                                        <select class="form-control" id="cboSizes" multiple="multiple"></select>
+                                        <label class="select2-label" for="cboSizes">Insert Size(s)</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <div class="has-float-label">
+                                        <select class="form-control" id="cboDestination" multiple="multiple"></select>
+                                        <label class="select2-label" for="cboDestination">Insert Destination(s)</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12" id="div_tbl_samplesdetails">
+                            <table class="table table-hover table-bordered table-vertical-center" id="tbl_samplesdetails" style="margin-top: 20px">
+                                <thead>
+                                    <tr>
+                                        <th width="6%"></th>
+                                        <th width="11%">Colors</th>
+                                        <th width="5%">Size</th>
+                                        <th>Destination</th>
+                                        <th width="5%"># S. Req.</th>
+                                        <th width="5%"># C-S. Req.</th>
+                                        <th width="9%">Ex Factory (Initial)</th>
+                                        <th width="9%">Ex Factory (Updated)</th>
+                                        <th width="9%">Factory Date</th>
+                                        <th width="9%">In DC</th>
+                                        <th width="5%"># S. Del.</th>
+                                        <th width="5%"># C-S. Del.</th>
+                                        <th>Real Ex Factory</th>
+                                        <th width="8%">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody_detalle_requerimiento"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" id="tab-2_2" class="tab-pane">
+                <div class="col-sm-12">
+                    <label title="Upload image file" for="inputFileSampleDetails" class="btn btn-primary m-b-sm">
+                        <input type="file" id="inputFileSampleDetails" accept=".csv,.xls,.xlsx,.pdf,.doc,.docx,.txt" style="display:none">
+                        <span class="fa fa-upload"></span> Upload File
+                    </label>
+                    <table class="table table-hover table-bordered table-vertical-center" id="tblfilessampledetails">
+                        <thead>
+                            <tr>
+                                <th width="6%"></th>
+                                <th width="25%">Name</th>
+                                <th>User</th>
+                                <th>Sample</th>
+                                <th>Type</th>
+                                <th>Upload Date</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div role="tabpanel" id="tab-2_3" class="tab-pane">
+                <div class="col-md-12">
+                    @*<div class="chat-discussion" id="div_comments" style="height: 378px;"></div>*@
+                    <div class="chat-discussion chat-view iboxcomentarioschatview" id="div_comments" style="height: 378px;">
+                        @*<span class="col-xs-12 text-center spnchat-view" style="height:50px!important;">Seleccione una muestra</span>*@
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-chat">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="txtcommentsend">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" id="btnSendComment" type="button">Send</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

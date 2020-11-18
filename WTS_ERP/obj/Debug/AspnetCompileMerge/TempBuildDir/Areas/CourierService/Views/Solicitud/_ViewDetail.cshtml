@@ -1,0 +1,360 @@
+﻿<style type="text/css">
+    .row-selected {
+        background-color: #1ab394;
+    }
+
+    .select2-container--open {
+        z-index: 9999999;
+    }
+
+    .has-error .select2-selection {
+        border-color: #ed5565 !important;
+    }
+</style>
+
+<div id="pnl_view_detail" class="ibox float-e-margins">
+
+    <div class="hide">
+        <input type="text" id="txtpar_viewdetail" value="DATA-PARAMETRO" />
+    </div>
+
+    <div class="ibox">
+        
+        <div class="ibox-content">          
+
+            <div class="tabs-container">
+                <ul class="nav nav-tabs navbar-left">
+                    <li class="active bg-primary">
+                        <a id="tab_informacion" data-toggle="tab" href="#tab-informacion" aria-expanded="true"><label class="control-label">Información</label></a>
+                    </li>
+                    <li id="li_detalle_solicitud" class="hide">
+                        <a id="tab_detalle" data-toggle="tab" href="#tab-detalle" aria-expanded="false"><label class="control-label">Detalle</label></a>
+                    </li>
+                    <li class="">
+                        <a id="tab_historial" data-toggle="tab" href="#tab-historial" aria-expanded="false"><label class="control-label">Historial</label></a>
+                    </li>
+                </ul>
+                <div id="informacion" class="tab-content">
+
+                    <div id="tab-informacion" class="tab-pane active">
+
+                        <div class="ibox-content" style="overflow-y: auto; max-height: 380px;">
+                            <div class="form-horizontal row">
+                                <div class="col-sm-6">
+                                    <label class="control-label text-right">Enviado Por:</label>
+                                    <input id="txt_usuario" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>
+                            </div>
+                            <div class="form-horizontal row">
+                                <div class="col-sm-6">
+                                    <label class="control-label text-right">Fecha:</label>
+                                    <input id="txt_fecha" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="control-label text-right">Servicio:</label>
+                                    <input id="txt_servicio" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>
+                            </div>
+                            <div class="form-horizontal row">
+                                <div class="col-sm-6">
+                                    <label class="control-label text-right">Turno:</label>
+                                    <input id="txt_turno" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="control-label text-right">Hora:</label>
+                                    <input id="txt_hora" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>
+                            </div>
+                            <div class="form-horizontal row">
+                                <div class="col-sm-6">
+                                    <label class="control-label text-right">Vehiculo:</label>
+                                    <input id="txt_vehiculo" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="control-label text-right">Costo:</label>
+                                    <input id="txt_costo" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div> 
+                            </div>
+                            <div class="form-horizontal row">
+                                <div class="col-sm-6">
+                                    <label class="control-label text-right">Cliente:</label>
+                                    <input id="txt_cliente" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="control-label text-right">Destino:</label>
+                                    <input id="txt_destino" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>
+                            </div>
+                            <div class="form-horizontal row">
+                                <div class="col-sm-12">
+                                    <label class="control-label text-right">Dirección:</label>
+                                    <input id="txt_direccion" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>
+                            </div>                          
+
+                            <div class="form-horizontal row">
+                                <div class="col-sm-6">
+                                    <label class="control-label text-right">Responsable:</label>
+                                    <input id="txt_contacto" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="control-label text-right">Número Contacto:</label>
+                                    <input id="txt_numero_contacto" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>
+                            </div>
+                            <div class="form-horizontal row">
+                                <div class="col-sm-12">
+                                    <label class="control-label text-right">Motivo:</label>
+                                    <input id="txt_motivo" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>
+                            </div>
+                            <div id="div_row_asistente" class="form-horizontal row hide">
+                                <div class="col-sm-12">
+                                    <label class="control-label text-right">Asistentes:</label>
+                                    <input id="txt_asistente" disabled type="text" class="form-control input-sm m-b-xs">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="tab-detalle" class="tab-pane">
+                        <div class="ibox">
+                            <div class="ibox-content" style="overflow-y: auto; max-height: 380px;">
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <label class="control-label text-right">Terminada Por:</label>
+                                        <input id="txt_usuario_terminado" disabled type="text" class="form-control input-sm m-b-xs">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="control-label text-right">Hora Terminada:</label>
+                                        <input id="txt_hora_terminado" disabled type="text" class="form-control input-sm m-b-xs">
+                                    </div>
+                                </div>
+                                <div class="form-horizontal row">
+
+                                </div>
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-12">
+                                        <label class="control-label text-right">Observación:</label>
+                                        <input id="txt_observacion_terminado" disabled type="text" class="form-control input-sm m-b-xs">
+                                    </div>
+                                </div>
+                                <div id="div_row_receptor" class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <label class="control-label text-right">Tiempo Espera:(min)</label>
+                                        <input id="txt_tiempo_espera_terminado" disabled type="text" class="form-control input-sm m-b-xs">
+                                    </div>
+                                </div>
+                                <div id="div_row_receptor" class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <label class="control-label text-right">Nombre:</label>
+                                        <input id="txt_nombre_terminado" disabled type="text" class="form-control input-sm m-b-xs">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="control-label text-right">DNI:</label>
+                                        <input id="txt_dni_terminado" disabled type="text" class="form-control input-sm m-b-xs">
+                                    </div>
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tab-historial" class="tab-pane">
+                        <div class="ibox">
+                            <div class="ibox-content" style="overflow-y: auto; max-height: 380px;">
+                                <div class="table-responsive">
+
+                                    <table id="tbl_historial_solicitud" class="footable table table-stripped table-bordered " data-page-size="10" >
+                                        <thead>
+                                            <tr>
+                                                <th class='col-sm-1 text-center'>Fecha</th>
+                                                <th class='col-sm-1 text-center'>Hora</th>
+                                                <th class='col-sm-1 text-center'>Estado</th>
+                                                <th class='col-sm-2 text-center'>Acción</th>
+                                                <th class='col-sm-3 text-center'>Autor</th>
+                                                <th class='col-sm-4 text-center'>Observación</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                        <tfoot>
+                                            <tr></tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="ibox-footer">
+
+            <div id="div_cambiar_vehiculo_solicitud" class="form-horizontal row hide">
+                <div class="col-sm-6 text-right">
+                    <select id="cbo_vehiculo_solicitud" class="form-control _select2 _enty" data-id="idvehiculo" style="width:100%"></select>
+                </div>
+                <div class="col-sm-6 text-left">
+                    <button id="btn_cambiar_vehiculo_solicitud" class="btn btn-outline btn-primary">
+                        <span class="fa fa-arrows-alt"></span>
+                        Mover
+                    </button>
+                    <button class="btn btn-outline btn-default _retroceder_botones_detalle_solicitud">
+                        <span class="fa fa-reply-all"></span>
+                        Regresar
+                    </button>
+                </div>
+            </div>
+            
+            <div id="div_agregar_costo_solicitud" class="form-horizontal row hide">
+                <div class="col-sm-6 text-right">
+                    <input id="txt_costo_solicitud" type="text" placeholder="Agregar Costo" class="form-control input-sm m-b-xs _enty" data-required="true" value="0.00" />
+                </div>
+                <div class="col-sm-6 text-left">
+                    <button id="btn_agregar_costo_solicitud" class="btn btn-outline btn-success">
+                        <span class="fa fa-dollar"></span>
+                        Costo
+                    </button>
+                    <button class="btn btn-outline btn-default _retroceder_botones_detalle_solicitud">
+                        <span class="fa fa-reply-all"></span>
+                        Regresar
+                    </button>
+                </div>
+            </div>
+            
+            <div id="div_cancelar_solicitud" class="form-horizontal row hide">
+                <div class="col-sm-6 text-right">
+                    <input id="txt_motivo_cancelar_solicitud" type="text" placeholder="Motivo de cancelación" class="form-control input-sm m-b-xs _enty" data-required="true" />
+                </div>
+                <div class="col-sm-6 text-left">
+                    <button id="btn_cancelar_solicitud" class="btn btn-outline btn-danger">
+                        <span class="fa fa-power-off"></span>
+                        Cancelar
+                    </button>
+                    <button id="" class="btn btn-outline btn-default _retroceder_botones_detalle_solicitud">
+                        <span class="fa fa-reply-all"></span>
+                        Regresar
+                    </button>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div id="div_reprogramar_solicitud_datos" class="form-horizontal row hide">
+                    <div class="col-sm-4 text-right">
+                        <select id="cbo_vehiculo_reprogramar_solicitud" class="form-control _select2 _enty" data-id="idvehiculo" style="width:100%"></select>
+                    </div>
+                    <div class="col-sm-4 text-right">
+                        <select id="cbo_turno_reprogramar_solicitud" class="form-control _select2 _enty" data-id="idvehiculo" style="width:100%"></select>
+                    </div>
+                    <div class="col-sm-4 text-right">
+                        <select id="cbo_hora_reprogramar_solicitud" class="form-control _select2 _enty" data-id="idvehiculo" style="width:100%"></select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div id="div_reprogramar_solicitud" class="form-horizontal row hide">
+                    <div class="col-sm-6">
+                        <div id="div_fecha_desde_reprogramar_solicitud">
+                            <div class='input-group date'>
+                                <input id="txt_fecha_desde_reprogramar_solicitud" type='text' disabled class='form-control input-sm m-b-xs _enty' data-type="date" data-id="fechadesde" data-required="true">
+                                <div id="div_calendario_desde_reprogramar_solicitud" class="input-group-addon">
+                                    <span class="fa fa-calendar"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <button id="btn_reprogramar_solicitud" class="btn btn-outline btn-primary">
+                            <span class="fa fa-refresh"></span>
+                            Reprogramar
+                        </button>
+                        <button class="btn btn-outline btn-default _retroceder_botones_detalle_solicitud">
+                            <span class="fa fa-reply-all"></span>
+                            Regresar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_terminar_solicitud_observacion_solicitud" class="form-horizontal row hide">
+                <div class="col-sm-10 text-right">
+                    <input id="txt_observacion_terminar_solicitud" type="text" placeholder="Observación" class="form-control input-sm m-b-xs _enty" data-required="true" />
+                </div> 
+                <div class="col-sm-2 text-right">
+                    <input id="txt_costo_terminar_solicitud" type="text" placeholder="Agregar Costo" class="form-control input-sm m-b-xs _enty" data-required="true" />
+                </div>               
+            </div>
+
+            <div id="div_terminar_solicitud_campos_solicitud" class="form-horizontal row hide">               
+                <div class="col-sm-4 text-right">
+                    <input id="txt_nombre_terminar_solicitud" type="text" placeholder="Nombre de Receptor" class="form-control input-sm m-b-xs _enty"/>
+                </div>
+                <div class="col-sm-4 text-right">
+                    <input id="txt_dni_terminar_solicitud" type="text" placeholder="Dni de Receptor" class="form-control input-sm m-b-xs _enty"/>
+                </div>    
+                <div class="col-sm-4 text-right">
+                    <input id="txt_tiempo_espera_terminar_solicitud" type="number" placeholder="Tiempo de espera" class="form-control input-sm m-b-xs _enty" />
+                </div>           
+            </div>
+
+            <div id="div_terminar_solicitud" class="form-horizontal row hide">
+                <div class="col-sm-12 text-right">
+                    <button id="btn_terminar_solicitud" class="btn btn-outline btn-success">
+                        <span class="fa fa-save"></span>
+                        Terminar
+                    </button>
+                    <button class="btn btn-outline btn-default _retroceder_botones_detalle_solicitud">
+                        <span class="fa fa-reply-all"></span>
+                        Regresar
+                    </button>
+                </div>
+            </div>
+           
+            <div id="div_botones_detalle_solicitud" class="form-horizontal row">
+                <div class="col-sm-12 text-right">
+                    <button id="btn_visualizar_cambiar_vehiculo_solicitud" class="btn btn-outline btn-primary hide">
+                        <span class="fa fa-arrows-alt"></span>
+                        Mover
+                    </button>
+                    <button id="btn_visualizar_agregar_costo_solicitud" class="btn btn-outline btn-success hide">
+                        <span class="fa fa-dollar "></span>
+                        Costo
+                    </button>                   
+                    <button id="btn_visualizar_cancelar_solicitud" class="btn btn-outline btn-danger hide">
+                        <span class="fa fa-power-off"></span>
+                        Cancelar
+                    </button>
+                    <button id="btn_visualizar_reprogramar_solicitud" class="btn btn-outline btn-primary hide">
+                        <span class="fa fa-refresh"></span>
+                        Reprogramar
+                    </button>
+                    <button id="btn_visualizar_terminar_solicitud" class="btn btn-outline btn-success hide">
+                        <span class="fa fa-save"></span>
+                        Terminar
+                    </button>
+                    <button id="btn_print_solicitud" class="btn btn-outline btn-primary hide">
+                        <span class="fa fa-print"></span>
+                        Imprimir
+                    </button>
+                    <button id="btn_eliminar_solicitud" class="btn btn-danger hide">
+                        <span class="fa fa-trash"></span>
+                        Eliminar
+                    </button>
+                    <button id="btn_eliminar_solicitud_usuario" class="btn btn-danger hide">
+                        <span class="fa fa-trash"></span>
+                        Eliminar
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>

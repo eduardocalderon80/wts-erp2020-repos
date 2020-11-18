@@ -1,0 +1,267 @@
+﻿
+<link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
+<link href="~/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+<link href="~/Content/css/plugins/colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet">
+<link href="~/Content/css/plugins/switchery/switchery.css" rel="stylesheet">
+<link href="~/Content/css/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet">
+
+<link href="~/Content/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+<link href="~/Content/css/animate.css" rel="stylesheet">
+<link href="~/Content/css/style.css" rel="stylesheet">
+<link href="~/Content/css/plugins/switchery/switchery.css" rel="stylesheet" />
+<link href="~/Content/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+<link href="~/Content/css/animate.css" rel="stylesheet">
+<link href="~/Content/css/plugins/c3/c3.min.css" rel="stylesheet">
+
+
+<style>
+    #map1 {
+        height: 430px;
+        width: 100%;
+    }
+</style>
+
+
+
+<div class="col-lg-4">
+    <div class="widget lazur-bg p-xl">
+
+        <h2>
+            <span id="spnReporteTecnico"></span>
+        </h2>
+        <ul class="list-unstyled m-t-md">
+            <li>
+                <span class="fa fa-envelope m-r-xs"></span>
+                <label>Client</label>
+                <span id="spnCliente"></span>
+            </li>
+            <li>
+                <span class="fa fa-building m-r-xs"></span>
+                <label>Supplier:</label>
+                <span id="spnFabrica"></span>
+            </li>
+            <li>
+                <span class="fa fa-file-o m-r-xs"></span>
+                <label>Stage:</label>
+                <span id="spnStage"></span>
+            </li>
+            <li>
+                <span class="fa fa-flag m-r-xs"></span>
+                <label>Status:</label>
+                <span id="spnStatus"></span>
+            </li>
+            <li>
+                <span class="fa fa-code m-r-xs"></span>
+                <label>Batch:</label>
+                <span id="spnNumeroPartida"></span>
+            </li>
+            <li>
+                <span class="fa fa-shopping-cart m-r-xs"></span>
+                <label>Po:</label>
+                <span id="spnPo"></span>
+            </li>
+            <li>
+                <span class="fa fa-tags m-r-xs"></span>
+                <label>Style:</label>
+                <span id="spnStyle"></span>
+            </li>
+            <li>
+                <span class="fa fa-download m-r-xs"></span>
+                <b><a id="aDescargarReporte">Download Report</a></b>
+            </li>
+        </ul>
+
+
+        <div class="form-horizontal">
+            <div class="form-inline">
+                <div class="input-group">
+                    <input type="password" style="color:black;" id="txtCodigo" placeholder="Enter your code" class="form-control"> <span class="input-group-append">
+                        <button type="button" id="btnAprobar" class="btn btn-success">
+                            Approve!
+                        </button>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div id="divPanelMensajeGood" class="widget navy-bg p-lg text-center">
+            <div class="m-b-md">
+                <i class="fa fa-bell fa-4x"></i>
+                <h1 class="m-xs">47</h1>
+                <h3 class="font-bold no-margins">
+                    Notification
+                </h3>
+                <medium>
+                    Your transaction is complete
+                </medium>
+            </div>
+        </div>
+        <div id="divPanelMensajeFail" class="widget red-bg p-lg text-center">
+            <div class="m-b-md">
+                <i class="fa fa-bell fa-4x"></i>
+                <h1 class="m-xs">47</h1>
+                <h3 class="font-bold no-margins">
+                    Notification
+                </h3>
+                <medium>
+                    <span id="spnError">Your transaction cannot be completed</span>
+                </medium>
+            </div>
+        </div>
+        <div id="divPanelMensajeStatus" class="widget red-bg p-lg text-center">
+            <div class="m-b-md">
+                <i class="fa fa-bell fa-4x"></i>
+                <h1 class="m-xs">47</h1>
+                <h3 class="font-bold no-margins">
+                    Notification
+                </h3>
+                <medium>
+                   <b><span id="spnErrorStatus"></span></b> 
+                </medium>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="myModalSpinner">
+</div>
+
+
+@Html.Hidden("urlBase", Url.Content("~/"))
+
+<script src="~/Scripts/js/jquery-2.1.1.js"></script>
+<script src="~/Scripts/Home/Util.js"></script>
+<script src="~/Scripts/Home/Ruteador.js"></script>
+
+<input id="hfCodigoPartida" type="hidden" />
+<input id="hfIdProveedor" type="hidden" />
+<input id="hfIdCliente" type="hidden" />
+<input id="hfStatus" type="hidden" />
+
+<script>
+
+    $(document).ready(function () {
+
+        $("#divPanelMensajeGood").hide();
+        $("#divPanelMensajeFail").hide();
+        $("#divPanelMensajeStatus").hide();
+
+        $("#btnAprobar").click(function () {
+            AprobarPartida();
+        });
+
+        $("#aDescargarReporte").click(function () {
+            ExportarReporte();
+        });
+
+        var url = window.location.href.split('/');
+        var nrul = url.length;
+
+        var codigopartida = url[nrul - 1];
+
+
+        if (!isNaN(codigopartida)) {
+            var urlaccion = 'Laboratorio/Partida/GetPartidaReporte?par=' + codigopartida;
+            Get(urlaccion, LoadSolicitudPartida, false);
+        }
+
+    });
+
+    function LoadSolicitudPartida(data) {
+
+        if (data !== "" || data !== "[]") {
+            var Partida = JSON.parse(data)[0];
+
+            $("#spnReporteTecnico").text(Partida.ReporteTecnico);
+            $("#spnCliente").text(Partida.NombreCliente);
+            $("#spnFabrica").text(Partida.NombreFabrica);
+            $("#spnStage").text(Partida.Tipo);
+            $("#spnNumeroPartida").text(Partida.NumeroPartida);
+            $("#spnPo").text(Partida.POS);
+            $("#spnStyle").text(Partida.Estilos);
+            $("#spnStatus").text(Partida.StatusLit);
+
+            $("#hfCodigoPartida").val(Partida.CodigoPartida);
+
+
+            $("#hfIdProveedor").val(Partida.IdProveedor); 
+            $("#hfIdCliente").val(Partida.IdClienteERP);
+
+
+
+            $("#hfStatus").val(Partida.Status);
+
+
+            if (Partida.StatusLit != "Rejected") {
+    
+                $("#btnAprobar").attr("disabled", "disabled");
+                $("#spnErrorStatus").text("La partida se encuentra en estado " + Partida.StatusLit + " no puede ser concesionada");
+
+            }
+
+        }
+
+    }
+
+    function AprobarPartida() {
+
+        var Codigo = $("#txtCodigo").val();
+        var ReporteTecnico = $("#spnReporteTecnico").text();
+        var CodigoPartida = $("#hfCodigoPartida").val();
+        var numeropartida = $("#spnNumeroPartida").text();
+        var IdProveedor = $("#hfIdProveedor").val();
+        var IdClienteERP = $("#hfIdCliente").val();
+        var Status = $("#hfStatus").val();
+        var Cliente = $("#spnCliente").text();
+        var Fabrica = $("#spnFabrica").text();
+
+
+        var par = Codigo + "," + CodigoPartida + "," + IdProveedor + "," + IdClienteERP + "," + Status + "," + ReporteTecnico;
+
+        var frm = new FormData();
+        frm.append("codigo", Codigo);
+        frm.append("idpartida", CodigoPartida);        
+        frm.append("reportetecnico", ReporteTecnico);
+        frm.append("partida", numeropartida);
+        frm.append("idclienteerp", IdClienteERP);
+        frm.append("idproveedor", IdProveedor);
+        frm.append("status", Status);
+        frm.append("cliente", Cliente);
+        frm.append("fabrica", Fabrica);
+
+        Post('Laboratorio/Partida/AprobarPartidaComercial', frm, Alerta,false);
+        
+    }
+
+    function Alerta(rpta) {
+        var rows = parseInt(rpta);
+        if (rows > 0) {
+            $("#divPanelMensajeFail").hide();
+            $("#divPanelMensajeGood").show();
+        } else {
+            $("#divPanelMensajeGood").hide();
+            $("#divPanelMensajeFail").show();
+        }
+
+    }
+
+    function ExportarReporte() {
+
+        var CodigoPartida = $("#hfCodigoPartida").val();
+
+        let urlaccion = urlBase() + "Laboratorio/Partida/ReportePartida/" + CodigoPartida;
+        var link = document.createElement("a");
+        link.href = urlaccion;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        delete link;
+        return;
+
+    }
+
+</script>

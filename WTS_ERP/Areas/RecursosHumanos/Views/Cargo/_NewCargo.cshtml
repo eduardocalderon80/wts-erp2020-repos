@@ -1,0 +1,52 @@
+﻿<style type="text/css">
+    .row-selected {
+        background-color: #1ab394;
+    }
+
+    .select2-container--open {
+        z-index: 9999999;
+    }
+
+    .has-error .select2-selection {
+        border-color: #ed5565 !important;
+    }
+</style>
+
+<div id="pnl_cargo_new" class="ibox float-e-margins">
+
+    <div class="ibox">
+        <div id="div_cargo_new_titulo" class="ibox-title">
+            <div class="form-horizontal row">
+                <div class="col-sm-12 text-right">
+                    <button id="btn_new_cargo_guardar" class="btn btn-outline btn-primary">
+                        <span class="fa fa-save"></span>
+                        Guardar
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="div_cargo_new_formulario" class="ibox-content">
+            <div class="form-horizontal row">
+                <div class="col-sm-12">
+                    <label class="control-label">Cargo:</label>
+                    <input id="txt_new_cargo" type="text" class="form-control _enty input-sm m-b-xs" data-id="cargo" data-required="true">
+                </div>
+            </div>
+            <div class="form-horizontal row">
+                <div class="col-sm-6">
+                    <label class="control-label">Área:</label>
+                    <select id="cbo_new_cargo_area" class="form-control _select2 _enty" data-id="idarea" data-required="true" style="width:100%"></select>
+                </div>
+                <div class="col-sm-6">
+                    <label class="control-label">Sub Área:</label>
+                    <select id="cbo_new_cargo_sub_area" class="form-control _select2 _enty" data-id="idsubarea" style="width:100%"></select>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+

@@ -1,0 +1,161 @@
+﻿<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>PO - EDI</h2>
+    </div>
+    <div class="col-lg-10">
+        <div class="ibox-content">
+            <form role="form" class="form-inline">
+                <div class="form-group" style="padding-right:20px;">
+                    <label style="padding-right:5px;">Factory:</label>
+                    <select id="cboFactory" class="form-control" style="width:150px"><option value="">Select</option></select>
+                </div>
+                <div class="form-group" style="padding-right:20px;">
+                    <label style="padding-right:5px;">Division:</label>
+                    <select id="cboDivision" class="form-control" style="width:150px"><option value="">Select</option></select>
+                </div>
+                <div class="form-group" style="padding-right:20px;">
+                    <label style="padding-right:5px;">Season:</label>
+                    <select id="cboSeason" class="form-control" style="width:150px"><option value="">Select</option></select>
+                </div>
+                <div class="form-group" style="padding-right:20px;">
+                    <label style="padding-right:5px;">Price Type:</label>
+                    <select id="cboPrice" class="form-control" style="width:150px"><option value="">Select</option><option value="DDP">DDP</option><option value="FOB">FOB</option></select>
+                </div>
+                <div class="form-group" style="padding-right:20px;">
+                    <label style="padding-right:5px;">Freight:</label>
+                    <select id="cboFreight" class="form-control" style="width:150px"><option value="">Select</option><option value="AIR">AIR</option><option value="SEA">SEA</option></select>
+                </div>
+                <div class="form-group" style="padding-right:20px;">
+                    <label style="padding-right:5px;">Shipment:</label>
+                    <select id="cboShipment" class="form-control" style="width:150px"><option value="">Select</option><option value="AIR">AIR</option><option value="SEA">SEA</option></select>
+                </div>
+                <div class="form-group" style="padding-right:20px;">
+                    <label style="padding-right:5px;">Forwarder:</label>
+                    <select id="cboForwarder" class="form-control" style="width:150px"><option value="">Select</option></select>
+                </div>
+                <div class="form-group" style="padding-right:20px;">
+                    <label style="padding-right:5px;">Fty Dlv Date:</label>
+                    <div id='dtFactoryDeliveryDate' class='input-group date' style='width:150px;'>
+                        <span class='input-group-addon'><i class='fa fa-calendar'></i></span>
+                        <input type='text' class='form-control'>
+                    </div>
+                </div>
+                <div class="form-group" style="padding-right:20px;">
+                    <label style="padding-right:5px;">Cli Dlv Date:</label>
+                    <div id='dtClientDeliveryDate' class='input-group date' style='width:150px;'>
+                        <span class='input-group-addon'><i class='fa fa-calendar'></i></span>
+                        <input type='text' class='form-control'>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row" id="botones">
+        <div class="col-lg-7">
+            <button class="btn btn-default" type="button" id="btnExportar" style="display:none;">Exportar</button>
+            <button class="btn btn-primary" type="button" id="btnEnviar">Send</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mdFtyPrice">Bulk Fty Price</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mdStyle">Style</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mdColor">Color</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mdTalla">Talla</button>
+        </div>
+    </div>
+    <div class="row" id="detalle">
+        <div class="col-lg-12">
+            <div id="divTexto"></div>
+            <div id="divTableContent" class="ibox-content">
+            </div>
+        </div>
+    </div>
+</div> <!-- :fin -->
+<div class="modal inmodal in" id="mdFtyPrice" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 17px;">
+    <div class="modal-dialog">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Factory Price</h4>
+            </div>
+            <div class="modal-body">
+                <div id="divFtyPrice" style="max-height:400px;overflow:auto;max-width:100%;">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" id="btnCloseFtyPrice" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="btnSaveFtyPrice">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal inmodal in" id="mdStyle" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 17px;">
+    <div class="modal-dialog">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h5 class="modal-title">Create Style</h5>
+            </div>
+            <div class="modal-body">
+                <div class="form-inline">
+                    <div class="form-group" style="padding-right:20px;">
+                        <label style="padding-right:5px;">Family:</label>
+                        <select id="cboFamilia" class="form-control" style="width:150px"><option>Select</option></select>
+                    </div>
+                </div>
+                <br />
+                <div id="divStyle" style="max-height:400px;overflow:auto;max-width:100%;">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" id="btnCloseStyle" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="btnSaveStyle">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal inmodal in" id="mdColor" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 17px;">
+    <div class="modal-dialog">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h5 class="modal-title">Create Color</h5>
+            </div>
+            <div class="modal-body">
+                <div id="divColor" style="max-height:400px;overflow:auto;max-width:100%;">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" id="btnCloseColor" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="btnSaveColor">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal inmodal in" id="mdTalla" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 17px;">
+    <div class="modal-dialog">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h5 class="modal-title">Create Size</h5>
+            </div>
+            <div class="modal-body">
+                <div id="divTalla" style="max-height:400px;overflow:auto;max-width:100%;">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" id="btnCloseTalla" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="btnSaveTalla">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="display:none">
+    <datalist id="dtTelas"></datalist>
+</div>

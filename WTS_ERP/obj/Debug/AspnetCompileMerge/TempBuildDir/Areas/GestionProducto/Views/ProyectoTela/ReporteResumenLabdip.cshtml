@@ -1,0 +1,76 @@
+﻿<div class="ibox float-e-margins" id="panelEncabezado_ReporteResumenLabdip">
+    <div class="ibox-title">
+        <div class="ibox-tools">
+            <button id="_btnDescargarPDFLabdip_sticker" class="btn btn-warning">
+                <span class="fa fa-qrcode"></span>
+                Sticker
+            </button>
+            <button id="_btnDescargarPDFLabdip_documento" class="btn btn-warning">
+                <span class="fa fa-file-pdf-o"></span>
+                Resumen
+            </button>
+            <button id="_btnCancelarCartonLavelOrvis" class="btn btn-default" data-dismiss="modal">
+                <span class="fa fa-reply-all"></span>
+                Cancel
+            </button>
+        </div>
+    </div>
+    <div class="ibox-content wrapper wrapper-content gray-bg" style="overflow-y: auto; max-height: 850px;">
+        <div class="hide">
+            <input type="text" id="txtpar_Lapdip" value="DATA-PARAMETRO" />
+        </div>
+        <div class="ibox float-e-margins">
+            <div class="ibox-content">
+                <div class="form-horizontal" id="popReporteResumenLabdip">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Client:</label>
+                        <div class="col-sm-10">                            
+                            <input type="text" class="form-control" id="_txtClient" disabled="disabled" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Code:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="_txtCode"  disabled="disabled"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-responsive" id="_divlabdip">                    
+                    <table class="footable table table-stripped table-bordered" id="_tbllabdip">
+                        <thead>
+                            <tr>
+                                <th class="col-sm-1 text-left">
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2"></label>
+                                        <div class="col-sm-1" data-group="group_lapdip">
+                                            <div class="i-checks _chkall"><label class=""><div class="icheckbox_square-green" style="position: relative;">
+                                                <input type="checkbox" id="_chkall" class="i-checks group" value="all" style="position: absolute; opacity: 0;" data-group="group_lapdip" data-group-type="checkbox" data-default="empty"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0"></ins></div> <i></i>All</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </th>
+                                <th class='col-sm-1 text-center'>Color</th>
+                                <th class='col-sm-1 text-center'>Code</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3">
+                                    <ul class="pagination pull-right"></ul>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+

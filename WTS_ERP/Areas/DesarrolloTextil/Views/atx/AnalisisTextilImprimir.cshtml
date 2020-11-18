@@ -1,0 +1,461 @@
+﻿@{
+    string _parametro = ViewBag.parametro;
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Textile Analysis</title>
+    <style>
+        body {
+            font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif !important;
+            /*font-size: 8px;*/
+            overflow-x: hidden;
+            overflow-y: auto;
+            width: 100%;
+        }
+
+        .Small {
+            font-size: 8px !important;
+        }
+
+        img, object {
+            max-height: 100%;
+            max-width: 100%;
+        }
+
+        img {
+            border: 0 none;
+            height: auto;
+            max-width: 100%;
+            vertical-align: middle;
+        }
+
+        div.Small table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            font-size: 8px;
+        }
+
+        .Title {
+            font-size: 8pt;
+            background-color: #D9D9D9;
+            width: 100%;
+            height: auto;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .RowBorde {
+            width: 98%;
+            border: 1px solid;
+        }
+
+        .Row {
+            width: 99%;
+        }
+
+        @@media print {
+            tr.page-break {
+                page-break-inside: avoid !important;
+                display: table-row;
+            }
+        }
+    </style>
+    <script src="~/Scripts/js/jquery-2.1.1.js"></script>
+    <script src="~/Scripts/Home/Zoom.js"></script>
+</head>
+<body>
+    <div class="Small" id="div_contenedor_principal">
+        @Html.Hidden("urlBase", Url.Content("~/"))
+        <div style="display:none">
+            <input type="text" id="hf_parametro" value="@_parametro" />
+        </div>
+        <div style="clear:both;"></div>
+        <div id="divTituloFabricAnalisis" class="Row Title">FABRIC ANALYSIS</div>
+        <div id="divCabeceraPrincipal" class="Row" style="height:50px;">
+            <div style="text-align:left;float:left;">
+                <img src="~/images/WTSLogo.png" height="140" width="140" />
+            </div>
+            <div style="padding-top:5px;float:right; height: 40px;">
+                <div style="display: inline-block">
+                    <table border="0" cellpadding="1" cellspacing="1" style="font-size: 8px;">
+                        <tr>
+                            <td width="80" align="right">ANALYSIS REPORT:</td>
+                            <td style="width: 100px;" align="left" class="_cls_report_codigoatx"></td> <!--Model.Codigo-->
+                        </tr>
+                        <tr>
+                            <td width="80" align="right">DATE:</td>
+                            <td style="width: 100px;" align="left" class="_cls_report_fechaatx"></td> <!--fechacab-->
+                        </tr>
+                    </table>
+                </div>
+                <div style="display: inline-block">
+                    <table border="0" cellpadding="1" cellspacing="1" style="font-size: 8px;">
+                        <tr>
+                            <td width="100" align="right">
+                                CUSTOMER:
+                            </td>
+                            <td style="width: 100px;" align="left" class="_cls_report_cliente"></td> <!--Model.Cliente-->
+                        </tr>
+                        <tr>
+                            <td width="100" align="right">NUMBER OF REQUEST:</td>
+                            <td style="width: 100px;" align="left" class="_cls_report_idsolicitud"></td> <!--Model.IdSolicitud-->
+                        </tr>
+                    </table>
+                </div>
+                <div style="display: inline-block">
+                    <table border="0" cellpadding="1" cellspacing="1" style="font-size: 8px;">
+                        <tr>
+                            <td width="70" align="right">REQUESTED BY:</td>
+                            <td style="width: 100px;" align="left" class="_cls_report_solicitante"></td> <!--Model.Solicitante-->
+                        </tr>
+                        <tr>
+                            <td width="70" align="right">
+                                PREPARED BY:
+                            </td>
+                            <td style="width: 100px;" align="left" class="_cls_report_nombreoperadoratx"></td> <!--Model.Analista-->
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div style="clear:both;"></div>
+        <!--DETALLES DE HILADO(S)-->
+        <div id="divTituloDetalleHilado">
+            <div style="width: 50%; float: left" class="row Title">
+                DETAILS OF YARN(S)
+            </div>
+            <div style="width: 50%; float: left" class="row Title">
+                FABRIC DESCRIPTION
+            </div>
+        </div>
+
+        <div class="row">
+            <div style="font-size:8px">
+                <div id="divDetalleHiladoResumen" style="text-align:left;width:50%;float:left; height:100px;">
+                    <table id="tblHilado" width="100%" height="100%">
+                        <thead style="font-size: 7px;">
+                            <tr>
+                                <th width="5%" style="text-align:center;background-color: #D9D9D9 !important;border-right:1px solid;border-bottom:1px solid;border-top:1px solid;border-left:1px solid;">N°</th>
+                                <th width="10%" style="text-align:center;background-color: #D9D9D9 !important;border-right:1px solid;border-bottom:1px solid;border-top:1px solid;">Title</th>
+                                <th width="70%" style="text-align:center;background-color: #D9D9D9 !important;border-right:1px solid;border-bottom:1px solid;border-top:1px solid;">% MP Yarn</th>
+                                <th width="15%" style="text-align:center;background-color: #D9D9D9 !important;border-right:1px solid;border-bottom:1px solid;border-top:1px solid;">% Yarn Fabric</th>
+                            </tr>
+                        </thead>
+                        <tbody style="font-size: 8px;" id="tbody_report_hilado"></tbody>
+                    </table>
+                </div>
+                <div style="text-align:right;width:49.7%;float:right; height:100px;" id="div_report_datosatx">
+                    <table id="tblDescripcionTela" width="100%" height="100%" style="font-size: 7px;">
+                        <tbody>
+                            <tr>
+                                <td style='vertical-align:middle;padding-left:5px;padding-right:5px;text-align:left;font-weight:bold; width:19%;height:8%;'>Knit Type:</td>
+                                <td colspan="3" style='vertical-align:middle;text-align:left;' class="_cls_report_familia"></td> <!--Model.NombreFamilia-->
+                                <td style='vertical-align:middle;padding-left:5px;padding-right:5px;text-align:left;font-weight:bold;height:8%; width:19%'>Warp/Wales:</td>
+                                <td style='vertical-align:middle;text-align:left;' width="16%" class="_cls_report_columnas_porpulgada"></td> <!--Model.ColumnasPorPulgada.ToString("###.##") / tipoUnidadMedidaWales-->
+                            </tr>
+                            <tr>
+                                <td style='vertical-align:middle;padding-left:5px;padding-right:5px;text-align:left;font-weight:bold;height:8%; width:19%'>Tradename:</td>
+                                <td colspan="3" style='vertical-align:middle;text-align:left;' class="_cls_report_nombrecomercial"></td> <!--Model.NombreComercial-->
+                                <td style='vertical-align:middle;padding-left:5px;padding-right:5px;text-align:left;font-weight:bold;height:8%; width:19%'>Weft/Courses:</td>
+                                <td style='vertical-align:middle;text-align:left;' width="16%" class="_cls_report_cursas_porpulgada"></td> <!--Model.CursasPorPulgada.ToString("###.##") / tipoUnidadMedidaWeft-->
+                            </tr>
+                            <tr>
+                                <td style='vertical-align:middle;padding-left:5px;padding-right:5px;text-align:left;font-weight:bold;height:8%; width:19%'>Yarn Size:</td>
+                                <td colspan="3" style='vertical-align:middle;text-align:left;' class="_cls_report_titulo_tela"></td> <!--Model.Titulo-->
+                                <td style='vertical-align:middle;padding-left:5px;padding-right:5px;text-align:left;font-weight:bold;height:8%; width:18%'>Fabric Code:</td>
+                                <td style='vertical-align:middle;text-align:left;' width="16%" class="_cls_report_codigotela"></td> <!--Model.CodigoTela-->
+                            </tr>
+                            <tr>
+                                <td style='vertical-align:middle;padding-left:5px;padding-right:5px;text-align:left;font-weight:bold;height:8%; width:19%'>% Fiber Content:</td>
+                                <td colspan="3" style='vertical-align:middle;text-align:left;' class="_cls_report_contenidotela"></td> <!--Model.DescripcionPorcentajeContenidoTela-->
+                                <td style='vertical-align:middle;padding-left:5px;padding-right:5px;text-align:left;font-weight:bold;height:8%; width:18%'>Testing Code:</td>
+                                <td style='vertical-align:middle;text-align:left;' width="16%" class="_cls_report_codigolaboratorio"></td> <!--Model.CodigoLaboratorio-->
+                            </tr>
+                            <tr>
+                                <td style='vertical-align:middle;padding-left:5px;padding-right:5px;text-align:left;font-weight:bold;height:8%' width="19%">Weight(gr/m2):</td>
+                                <!--string tipoDensidad = string.Empty; if (Model.Lavado == 1){tipoDensidad = "AW";}else if (Model.Lavado == 2){tipoDensidad = "BW";}-->
+                                <td colspan="3" style='vertical-align:middle;text-align:left;' class="_cls_report_peso"></td> <!--Model.Densidad.ToString("###.##") tipoDensidad-->
+                                <td style='vertical-align:middle;padding-left:5px;padding-right:5px;text-align:left;font-weight:bold;height:8%; width:18%'>Supplier:</td>
+                                <td style='vertical-align:middle;text-align:left; font-size: 6px;' width="16%" class="_cls_report_proveedor"></td> <!--Model.AnalisisTextilNombreProveedor-->
+                            </tr>
+                            <tr>
+                                <td style='vertical-align:middle;padding-left:5px;padding-right:5px;text-align:left;font-weight:bold;height:8%' width="19%">Greige Width:</td>
+                                <td style='vertical-align:middle;text-align:left;' width="16%" class="_cls_report_anchototal"></td> <!--Model.AnchoAbiertoTotalEnMetrosCadena descripcionUnidadGreige-->
+                                <td style='vertical-align:middle;padding-left:5px;padding-right:5px;text-align:left;font-weight:bold;height:8%' width="19%">Cuttable Width:</td>
+                                <td style='vertical-align:middle;text-align:left;' width="12%" class="_cls_report_anchoutil"></td> <!--Model.AnchoAbiertoUtilEnMetrosCadena descripcionUnidadCuttable-->
+                                <td style='vertical-align:middle;padding-left:5px;padding-right:5px;text-align:left;font-weight:bold;height:8%; width:18%'>Mill Code:</td>
+                                <td style='vertical-align:middle;text-align:left;' width="16%" class="_cls_report_codigotelafabrica"></td> <!--Model.CodigoFabrica-->
+                            </tr>
+                            <tr>
+                                <td style='vertical-align:middle;padding-left:5px;padding-right:5px;text-align:left;font-weight:bold; height:8%' width="19%">Gauge:</td>
+                                <td colspan="3" style='vertical-align:middle;text-align:left;' class="_cls_report_galga"></td> <!--Model.NombreGalga-->
+
+                                <td style='vertical-align:middle;padding-left:5px;padding-right:5px;text-align:left;font-weight:bold;height:8%; width:18%'>Batch:</td>
+                                <td style='vertical-align:middle;text-align:left;' width="16%" class="_cls_report_partidalote"></td> <!--Model.PartidaLote-->
+                            </tr>
+                            <tr>
+                                <td style='vertical-align:middle;padding-left:5px;padding-right:5px;text-align:left;font-weight:bold; height:8%' width="19%">Diameter:</td>
+                                <td colspan="3" style='vertical-align:middle;text-align:left;' class="_cls_report_diametro"></td> <!--Model.Diametro.ToString("##0.##")-->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--int nColumnaEstructura = 20;int nFilaEstructura = 18;nFilaEstructura = Model.NumeroPasadas;nColumnaEstructura = Model.ColumnaEstructura;int nFilaEstructuraD = nFilaEstructura * 2;int cont = 0;-->
+        <div style="clear:both;"></div>
+
+        <div class="row Title">
+            <div>
+                FABRIC STRUCTURE
+            </div>
+        </div>
+        <div id="divPrincipalEstructura" class="row">
+            <!-- ACA DEPENDE DE LA CANTIDAD DE FILAS Y COLUMNAS DE LA MATRIZ DE LIGAMENTOS
+                if (totalNumeroPasadas > 18)
+                {
+                    Html.RenderPartial("~/Areas/DesarrolloTextil/Views/AnalisisTextil/GridAnalisisTextilEstructuraDisenioImprimirDobleColumna.cshtml", Model);
+                }
+                else
+                {
+                    Html.RenderPartial("~/Areas/DesarrolloTextil/Views/AnalisisTextil/GridAnalisisTextilEstructuraDisenioImprimir.cshtml", Model);
+                }
+            -->
+            <!--<div><img src='~/images/structuraimport/original/Model.ImagenNombre' style="width:100%;height:370px;" /></div>-->
+            <div style="display:none;" id="div_img_estructura_ligamento"><img id="img_report_estructura_ligamento" src='' style="width:100%;height:370px;" /></div>
+
+            <!--TABLA LIGAMENTOS MENOR A 18 PASADAS-->
+            <div style="font-size:6px; display:none;" id="div_ligamentos_menor_18pasadas">
+                <!--style="width:100%;height:auto;"  display:inline-block; para visualizar el div-->
+                <div style="white-space:nowrap; display:none; vertical-align: top" class="_cls_ligamentos_columna1_18pasadas">
+                    <div style="white-space:nowrap">
+                        <div style="display:inline-block;">
+                            <table id="tblImprimiDetalleTejidoEstructuraNumeracion" class="Page-Break" style="font-size: 6px;">
+                                <tbody id="tbodyImprimiDetalleTejidoEstructuraNumeracion">
+                                    <tr class="page-break" style="height:30px;"></tr>
+
+                                </tbody>
+                            </table>
+                        </div><!--
+                        --><div style="display:inline-block;">
+                            <table id="tblImprimiDetalleTejidoEstructuraImagen" border="0" cellpadding="0" cellspacing="0">
+                                <tbody id="tbodyImprimiDetalleTejidoEstructuraImagen">
+                                    <tr class="page-break" style="height:30px; border-bottom:1px solid;"></tr>
+
+                                </tbody>
+                            </table>
+                        </div><!--
+                        --><div style="display:inline-block;">
+                            <table id="tblImprimiDetalleTejidoEstructuraRepeticiones" style="text-align:center; font-size: 6px;">
+                                <thead>
+                                    <tr class="page-break" style="height:20px;">
+                                        <th style="border:1px solid;vertical-align:middle; width: 17px;">REP</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbodyImprimiDetalleTejidoEstructuraRepeticiones"></tbody>
+                            </table>
+                        </div><!--
+                        --><div style="display:inline-block;">
+                            <table id="tblImprimiDetalleTejidoEstructuraFilaAdicional" style="text-align:center; font-size: 6px;">
+                                <thead>
+                                    <tr class="page-break _cls_filahead1_report_hiladoporpasada" style="height:10px;"></tr>
+                                    <tr class="page-break _cls_filahead2_report_hiladoporpasada" style="height:10px;"></tr>
+                                </thead>
+                                <tbody id="tbodyImprimiDetalleTejidoEstructuraFilaAdicional"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--LIMITE PARA LA SEGUNDA COLUMNA MAS DE 18 FILAS-->
+                </div><!--INICIO PARA LA SEGUNDA COLUMNA MAS DE 18 FILAS;  display: inline-block; para visualizar el div
+                --><div style="white-space:nowrap; display:none; vertical-align: top;" class="_cls_ligamentos_columna2_18pasadas">
+                        <div style="display:inline-block;">
+                            <table id="tblImprimiDetalleTejidoEstructuraNumeracion2" class="Page-Break" style="font-size: 6px;">
+                                <tbody id="tbodyImprimiDetalleTejidoEstructuraNumeracionColumna2">
+                                    <tr class="page-break" style="height:30px;"></tr>
+                                </tbody>
+                            </table>
+                        </div><!--
+                        --><div style="display:inline-block;">
+                                <table id="tblImprimiDetalleTejidoEstructuraImagen2" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody id="tbodyImprimiDetalleTejidoEstructuraImagenColumna2">
+                                        <tr class="page-break" style="height:30px; border-bottom:1px solid;"></tr>
+                                        
+                                    </tbody>
+                                </table>
+                           </div><!--
+                           --><div style="display:inline-block;">
+                                <table id="tblImprimiDetalleTejidoEstructuraRepeticiones2" style="text-align:center; font-size: 6px;">
+                                    <thead>
+                                        <tr class="page-break" style="height:20px;">
+                                            <th style="border-bottom:1px solid;border-top:1px solid;border-left:1px solid;vertical-align:middle; width: 18px;">REP</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbodyImprimiDetalleTejidoEstructuraRepeticionesColumna2">
+                                        
+                                    </tbody>
+                                </table>
+                            </div><!--
+                            --><div style="display:inline-block;">
+                                    <table id="tblImprimiDetalleTejidoEstructuraFilaAdicional2" style="text-align:center; font-size: 6px;">
+                                        <thead>
+                                            <tr class="page-break _cls_filahead1_report_hiladoporpasada2" style="height:10px;"></tr>
+                                            <tr class="page-break _cls_filahead2_report_hiladoporpasada2" style="height:10px;"></tr>
+                                        </thead>
+                                        <tbody id="tbodyImprimiDetalleTejidoEstructuraFilaAdicionalColumna2">
+                                        </tbody>
+                                    </table>
+                                </div>
+                    </div>
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+        <div class="Row">
+            <div class="Row Title">
+                <!--MUESTRA FÍSICA DE TEJIDO ANALIZADO-->
+                PHYSICAL SAMPLE OF THE ANALIZED FABRIC
+            </div>
+        </div>
+        <div id="divMuestraFisica" class="RowBorde" style="vertical-align: middle;">
+            <div style="width:100%;position:relative;">
+                <div style="width:100%;" id="div_report_img_muestrafisica">
+                    <!-- ACA SE MUESTRA LA IMAGEN DE LA MUESTRA FISICA; CONDIFICIONAR SI TIENE O NO LA IMAGEN; LA IMAGEN SE TRAE DESDE FILESERVER
+                    if (!string.IsNullOrEmpty(Model.ImagenWebNombreMuestraFisica))
+                    {
+                        <div style="width:100%; height: 100%; text-align:center;vertical-align:middle;">
+                            <ul style="padding: 5px; margin: 0; position: relative;">
+                                <li class='col-sx-4' style="display: inline; list-style: none;">
+                                    <a class='thumbnail'>
+                                        <img id="imgMuestraFisica" class="img-responsive" style="width: 100%; height: 92%;" src='//urlFileServer/erp/textileanalysis/muestrasfisicas/original/Model.ImagenNombreMuestraFisica' />
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+                    else
+                    {
+                        <div style="width:100%; height:100%; text-align:center;vertical-align:middle;">
+                            <div id="divImagenCuadroBordeGrueso" style="width:50%;height:92%;border:4px solid;margin-left: 24%;margin-top: 5px;">
+                            </div>
+                        </div>
+                    }
+                    -->
+                </div>
+            </div>
+        </div>
+        <!--CRITERIOS DE APROBACION-->
+        <!--OCULTAR POR EL MOMENTO POR EL ATX SIN SDT-->
+        <div class="cls_div_criterio_aprobacion_atx" style="clear:both; display:none; display:none;"></div>
+        <div class="cls_div_criterio_aprobacion_atx" style="display:none; width:100%; margin-top:5px;" id="div_principal_criterioaprobacion">
+            <div class="Row Title">
+                <div>
+                    <!--RESUMEN DE DATOS COMPARADOS-->
+                    SUMMARY COMPARED DATA <span class="spn_text_atxestandar"></span>
+                </div>
+            </div>
+            <!--1-->
+            <div id="div_comentario_resumen_aprobacion" class="" style="width:100%">
+                <div style="width:99%">
+                    <table id="tbl_print_resumen_aprobacion" style="text-align:center; font-size: 8px; width:100%">
+                        <thead>
+                            <tr>
+                                <th style="text-align:center;background-color:#D9D9D9 !important;border-bottom:1px solid; border-left:1px solid; border-right:1px solid; border-top:1px solid;" width="20%">Criterion</th>
+                                <th style="text-align:center;background-color:#D9D9D9 !important;border-bottom:1px solid; border-left:1px solid; border-right:1px solid; border-top:1px solid;" width="70%">Comments</th>
+                                <th style="text-align:center;background-color:#D9D9D9 !important;border-bottom:1px solid; border-left:1px solid; border-right:1px solid; border-top:1px solid;" width="10%">Result</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody_print_resumen_aprobacion"></tbody>
+                    </table>
+                </div>
+            </div>
+            <!--2-->
+            <div id="div_resultado_resumen_criterioaprobacion" class="" style="margin-top:5px; width:100%">
+                <div style="width:20%">
+                    <table id="tbl_print_conclusion_tela" style="font-size: 8px; width:100%;">
+                        <thead>
+                            <tr>
+                                <th style="text-align:center;background-color:#D9D9D9 !important;border-bottom:1px solid; border-left:1px solid; border-right:1px solid; border-top:1px solid;" colspan="2">Conclusión Operador</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody_print_conclusion_tela">
+                            <tr>
+                                <td style="border-bottom:1px solid; border-left:1px solid; border-right:1px solid; width:20%">TELA:</td>
+                                <td class="_cls_td_conclusion_tela" style="border-bottom:1px solid; border-left:1px solid; border-right:1px solid; width:80%"><strong class="_cls_strong_texto_conclusion"></strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <label></label>
+            </div>
+            <!--3-->
+            <div id="div_comentario_final_aprobacionatx_operador" style="margin-top:5px; width:99%; display:none">
+                <table id="tbl_print_comentario_final_criterioaprobacion_atx_operador" style="width:100%; font-size: 8px;">
+                    <tr>
+                        <td style="vertical-align:text-top; width:10%">Operator Comment:</td>
+                        <td style="border:1px solid; height:25px; width:70%; vertical-align:text-top;" class="_cls_td_comentario_final_operador"></td>
+                    </tr>
+                </table>
+            </div>
+            <!--4-->
+            <div id="div_conclusion_consignador" class="_cls_print_consignador" style="margin-top:5px; width:99%; display:none;">
+                <div style="width:30%;">
+                    <table id="tbl_print_conclusion_consignador" style="width:100%; font-size: 8px;">
+                        <thead>
+                            <tr>
+                                <th style="text-align:center;background-color:#D9D9D9 !important;border-bottom:1px solid; width:70%">Concession by</th>
+                                <th style="text-align:center;background-color:#D9D9D9 !important;border-bottom:1px solid; width:30%">Conclusion</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody_print_datos_consignador"></tbody>
+                    </table>
+                </div>
+            </div>
+            <!--5-->
+            <div id="div_comentario_final_aprobacionatx_consignador" class="_cls_print_consignador" style="margin-top:5px; width:99%; display:none;">
+                <table id="tbl_print_comentario_final_criterioaprobacion_atx_consignador" style="width:100%; font-size: 8px;">
+                    <tr>
+                        <td style="vertical-align:text-top; width:10%;">Consignment Comment:</td>
+                        <td style="border:1px solid; height:25px; width:70%; vertical-align:text-top;" class="_cls_td_comentario_final_consignador"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!--OBSERVACIONES / COMENTARIOS-->
+        <div style="clear:both;"></div>
+        <div class="Row Title">
+            <div>
+                OBSERVATIONS / COMMENTS
+            </div>
+        </div>
+        <div id="divComentario" class="RowBorde">
+            <div style="width:100%;min-height:40px;">
+                <table>
+                    <tr class="_cls_report_comentario_pretratamiento">
+                        <!-- ACA SI HAY LA INFO DE LA RUTA DE LA TELA; PINTAR LA INFO
+                        if (Model.NombrePreTratamiento.Trim() != string.Empty || Model.NombreMetodoTenido.Trim() != string.Empty || Model.NombreTipoTenido != string.Empty)
+                        {
+                            <td>DYEING:</td>
+                            <td>Model.NombrePreTratamiento  Model.NombreMetodoTenido  Model.NombreTipoTenido</td>
+                        }
+                        -->
+                    </tr>
+                    <tr class="_cls_report_comentario_acabadofisicoquimico">
+                        <!-- ACA SI HAY LA INFO DE LA RUTA DE LA TELA; PINTAR LA INFO
+                        if (Model.DescripcionAcabadoReporte.Trim() != string.Empty)
+                        {
+                            <td>FINISH:</td>
+                            <td>Model.DescripcionAcabadoReporte</td>
+                        }
+                        -->
+                    </tr>
+                </table>
+                <div style="padding-top:1px;" id="_div_report_comentario_kendo" class="_cls_report_comentario_kendo"></div> <!--Html.Raw(Model.Comentario)-->
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/Home/Util.js"></script>
+    <script src="~/Scripts/DesarrolloTextil/Atx/analisistextilimprimir.js"></script>
+</body>
+</html>

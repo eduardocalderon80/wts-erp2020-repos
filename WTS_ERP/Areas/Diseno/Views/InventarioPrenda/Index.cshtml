@@ -1,0 +1,225 @@
+﻿<style>
+    .no-sort::after {
+        display: none !important;
+    }
+
+    .no-sort {
+        cursor: default !important;
+        padding: 8px !important;
+    }
+
+    thead input {
+        width: 100%;
+    }
+</style>
+<div class="ibox" id="panelEncabezado_DisenoIndex">
+    <div class="hide">
+        <input type="text" id="txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-4">
+            <h2 class="font-bold">Sample Inventory</h2>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <i class="fa fa-home"></i>
+                </li>
+                <li class="breadcrumb-item">
+                    Design
+                </li>
+                <li class="breadcrumb-item active">
+                    <strong>Sample Inventory</strong>
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-8 text-right" style="padding-top: 30px">
+            <button type="button" class="btn btn-primary" id="btnReporte">
+                <span class="fa fa-file-excel-o"> </span>
+                Report
+            </button>
+            <button type="button" class="btn btn-success" id="btnRegistrarMovimiento">
+                <span class="fa fa-file-text-o"> </span>
+                Register Movement
+            </button>
+            <button type="button" class="btn btn-danger" id="btnCerrarPeriodo">
+                <span class="fa fa-calendar"> </span>
+                Close Period
+            </button>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content wrapper-less animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5><i class="fa fa-table"></i> Sample List</h5>
+                        <div class="ibox-tools">
+                            <a class="fullscreen-link">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row m-b-md">
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <div class="has-float-label">
+                                        <select class="form-control" id="cboCompany">
+                                            <option value="All">All</option>
+                                            <option value="WTS Perú" selected>WTS Perú</option>
+                                            <option value="WTS USA">WTS USA</option>
+                                        </select>
+                                        <label for="cboCompany">Company</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <div class="has-float-label">
+                                        <select class="form-control" id="cboAlmacen">
+                                            <option value="All">All</option>
+                                            <option value="WTS DS" selected>WTS DS</option>
+                                            <option value="WTS PD">WTS PD</option>
+                                            <option value="WTS CM">WTS CM</option>
+                                        </select>
+                                        <label for="cboAlmacen">Warehouse</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <div class="has-float-label">
+                                        <select class="form-control" id="cboEstado">
+                                            <option value="">All</option>
+                                            <option value="Active">Active</option>
+                                            <option value="Inactive">Inactive</option>
+                                        </select>
+                                        <label for="cboEstado">Status</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <div class="has-float-label">
+                                        <select class="form-control" id="cboAnio">
+                                            <option value="">All</option>
+                                            <option value="2019">2019</option>
+                                            <option value="2020">2020</option>
+                                        </select>
+                                        <label for="cboAnio">Year</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <button type="button" class="btn btn-outline btn-danger" id="btnDelete">
+                                    <span class="fa fa-trash"> </span>
+                                </button>
+                                <button type="button" class="btn btn-outline btn-primary" id="btnSearch">
+                                    <span class="fa fa-search"> </span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row" style="margin: 0;">
+                            <table class="table table-bordered table-hover table-vertical-center dataTable" id="tbl_samples" style="width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <th>Status</th>
+                                        <th>WTS Garment Code</th>
+                                        <th>Client Style Number</th>
+                                        <th>Year</th>
+                                        <th>Style Description</th>
+                                        <th>WTS Fabric Code</th>
+                                        <th data-search="false" width="2%"><i class="fa fa-cubes" style="font-size: 25px;"></i></th>
+                                        <th data-search="false" width="2%"><i class="fa fa-history" style="font-size: 25px;"></i></th>
+                                        <th>Last Move Date</th>
+                                        <th>Reason</th>
+                                        <th>Shelf</th>
+                                        <th data-search="false" width="2%"><i class="fa fa-building" style="font-size: 25px;"></i></th>
+                                        <th data-search="false" width="2%"><i class="fa fa-building-o" style="font-size: 25px;"></i></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span class="badge badge-primary">ACTIVE</span>
+                                        </td>
+                                        <td>000000000002157-79</td>
+                                        <td>Fall 20 Style</td>
+                                        <td>2019</td>
+                                        <td class="text-left">Knit, Jersey, 40/1 De - 30/1 Ne, 140gr AW, 50% Cotton - 50% Spandex</td>
+                                        <td>003453-025-1</td>
+                                        <td>10</td>
+                                        <td>
+                                            <span style="color: green">+2</span>
+                                        </td>
+                                        <td>12/18/2019 17:35</td>
+                                        <td class="text-left">Return</td>
+                                        <td>1-A</td>
+                                        <td>WTS Perú</td>
+                                        <td>WTS DS</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge badge-danger">INACTIVE</span>
+                                        </td>
+                                        <td>000000000002157-79</td>
+                                        <td>Fall 20 Style</td>
+                                        <td>2019</td>
+                                        <td class="text-left">Knit, Jersey, 40/1 De - 30/1 Ne, 140gr AW, 50% Cotton - 50% Spandex</td>
+                                        <td>003453-025-1</td>
+                                        <td>10</td>
+                                        <td>
+                                            <span style="color: green">+2</span>
+                                        </td>
+                                        <td>12/18/2019 17:35</td>
+                                        <td class="text-left">Return</td>
+                                        <td>1-A</td>
+                                        <td>WTS Perú</td>
+                                        <td>WTS DS</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge badge-primary">ACTIVE</span>
+                                        </td>
+                                        <td>000000000002157-79</td>
+                                        <td>Fall 20 Style</td>
+                                        <td>2019</td>
+                                        <td class="text-left">Knit, Jersey, 40/1 De - 30/1 Ne, 140gr AW, 50% Cotton - 50% Spandex</td>
+                                        <td>003453-025-1</td>
+                                        <td>10</td>
+                                        <td>
+                                            <span style="color: green">+2</span>
+                                        </td>
+                                        <td>12/18/2019 17:35</td>
+                                        <td class="text-left">Return</td>
+                                        <td>1-A</td>
+                                        <td>WTS Perú</td>
+                                        <td>WTS DS</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge badge-danger">INACTIVE</span>
+                                        </td>
+                                        <td>000000000002157-79</td>
+                                        <td>Fall 20 Style</td>
+                                        <td>2019</td>
+                                        <td class="text-left">Knit, Jersey, 40/1 De - 30/1 Ne, 140gr AW, 50% Cotton - 50% Spandex</td>
+                                        <td>003453-025-1</td>
+                                        <td>10</td>
+                                        <td>
+                                            <span style="color: green">+2</span>
+                                        </td>
+                                        <td>12/18/2019 17:35</td>
+                                        <td class="text-left">Return</td>
+                                        <td>1-A</td>
+                                        <td>WTS Perú</td>
+                                        <td>WTS DS</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,330 @@
+﻿<style type="text/css">
+    /* 1 */
+    .row-selected {
+        background-color: #1ab394 !important;
+    }
+
+    .select2-container--open {
+        z-index: 9999999;
+    }
+
+    .has-error .select2-selection {
+        border-color: #ed5565 !important;
+    }
+
+    table._tablero_principal th {
+        padding: 8px;
+        border: 1px solid #e7e7e7;
+        background-color: #1c84c6;
+        color: white;
+        text-align: center;
+    }
+
+    table._tablero_principal td {
+        padding: 5px;
+        border-bottom: 1px solid #e7e7e7;
+        padding-left: 20px;
+    }
+
+    .columns .chosen-container, .column .chosen-container {
+        width: 100% !important;
+        margin-bottom: 1rem;
+    }
+</style>
+
+<div id="pnl_solicitud_emergencia_new">
+
+    <div id="pnl_solicitud_emergencia_header" class="row wrapper white-bg page-heading">
+        <div class="ibox">
+            <div id="div_titulo_principal" class="col-sm-6">
+                <h2 class="font-bold">Servicios de Courier</h2>
+            </div>
+            <div id="div_botones_header" class="col-sm-6 text-right" style="padding-top:1%">
+                <button id="btn_return_emergencia" type="button" class="btn btn-outline btn-default">
+                    <span class="fa fa-reply-all"></span>
+                    Regresar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="pnl_solicitud_emergencia_body" class="row wrapper-content gray-bg animated">
+        
+        <div id="pnl_solicitud_emergencia_principal" class="ibox">
+            <div class="ibox-title">
+                <div class="form-horizontal row ">
+                    <div class="col-sm-6">
+                        <h3 id="_title" class="text-success bold">Registro</h3>
+                    </div>
+                    <div id="div_botones_primarios" class="col-sm-6 text-right">
+                        <button id="btn_save_emergencia" type="button" class="btn  btn-outline btn-primary">
+                            <span class="fa fa-save"></span>
+                            Guardar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="form-group">
+                    <div class="form-horizontal row">
+                        <div class="col-sm-4">
+                            <label class="control-label">Enviado Por:</label>
+                            <input id="txt_usuario" disabled type="text" class="form-control">
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="control-label">Aprobado Por:</label>
+                            <input id="txt_aprobador" disabled type="text" class="form-control">
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="control-label">Servicio:</label>
+                            <select id="cbo_servicio" class="form-control _select2 _enty" data-id="idservicio" data-required="true" style="width:100%"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="pnl_solicitud_emergencia_courier" class="ibox _enty_main hide">
+            <div class="ibox-title">
+                <div class="form-horizontal row">
+                    <div class="col-sm-6">
+                        <h3 id="_title" class="text-success bold">Envios y Recojo</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ibox-content">
+
+                <div class="form-group">
+                    <div class="form-horizontal row">
+                        <div class="col-sm-4">
+                            <label class="control-label">Tipo Servicio:</label>
+                            <select id="cbo_solicitud_emergencia_courier_tipo_servicio" class="form-control _select2 _enty" data-id="idtiposervicio" data-required="true" style="width:100%"></select>
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="control-label">Turno:</label>
+                            <select id="cbo_solicitud_emergencia_courier_turno" class="form-control _select2 _enty" data-id="idturno" data-required="true" style="width:100%"></select>
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="control-label">Hora:</label>
+                            <select id="cbo_solicitud_emergencia_courier_hora" class="form-control _select2 _enty" data-id="idhora" data-required="true" style="width:100%"></select>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-horizontal row">                      
+                        <div id="div_cbo_solicitud_emergencia_courier_cliente" class="col-sm-6">
+                            <label class="control-label">Cliente:</label>
+                            <div class="input-group">
+                                <select id="cbo_solicitud_emergencia_courier_cliente" class="form-control _select2 _two_items _enty" data-id="idcliente" data-required="true" style="width:100%"></select>
+                                <div id="btn_solicitud_emergencia_courier_cliente_activo" class="input-group-addon btn-outline btn-primary">
+                                    <span class="fa fa-chevron-down"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="div_txt_solicitud_emergencia_courier_cliente" class="col-sm-6 hide">
+                            <label class="control-label">Cliente:</label>
+                            <div class="input-group">
+                                <input id="txt_solicitud_emergencia_courier_cliente" type="text" class="form-control _two_items _enty" data-id="cliente" data-required="true">
+                                <div id="btn_solicitud_emergencia_courier_cliente_inactivo" class="input-group-addon btn-outline btn-success">
+                                    <span class="fa fa-chevron-up"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-horizontal row">
+                        <div id="div_cbo_solicitud_emergencia_courier_destino" class="col-sm-6">
+                            <label class="control-label">Destino:</label>
+                            <div class="input-group">
+                                <select id="cbo_solicitud_emergencia_courier_destino" class="form-control _select2 _two_items _enty" data-id="iddestino" data-required="true" style="width:100%"></select>
+                                <div id="btn_solicitud_emergencia_courier_destino_activo" class="input-group-addon btn-outline btn-primary">
+                                    <span class="fa fa-chevron-down"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="div_txt_solicitud_emergencia_courier_destino" class="col-sm-6 hide">
+                            <label class="control-label">Destino:</label>
+                            <div class="input-group">
+                                <input id="txt_solicitud_emergencia_courier_destino" type="text" class="form-control _two_items _enty" data-id="destino" data-required="true">
+                                <div id="btn_solicitud_emergencia_courier_destino_inactivo" class="input-group-addon btn-outline btn-success">
+                                    <span class="fa fa-chevron-up"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="div_cbo_solicitud_emergencia_courier_direccion" class="col-sm-6">
+                            <label class="control-label">Dirección:</label>
+                            <div class="input-group">
+                                <select id="cbo_solicitud_emergencia_courier_direccion" class="form-control _select2 _two_items _enty" data-id="iddestinodireccion" data-required="true" style="width:100%"></select>
+                                <div id="btn_solicitud_emergencia_courier_direccion_activo" class="input-group-addon btn-outline btn-primary">
+                                    <span class="fa fa-chevron-down"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="div_txt_solicitud_emergencia_courier_direccion" class="col-sm-6 hide">
+                            <label class="control-label">Dirección:</label>
+                            <div class="input-group">
+                                <input id="txt_solicitud_emergencia_courier_direccion" type="text" class="form-control _two_items _enty" data-id="destinodireccion" data-required="true">
+                                <div id="btn_solicitud_emergencia_courier_direccion_inactivo" class="input-group-addon btn-outline btn-success">
+                                    <span class="fa fa-chevron-up"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-horizontal row">
+                        <div class="col-sm-4">
+                            <label class="control-label">Responsable:</label>
+                            <input id="txt_solicitud_emergencia_courier_contacto" type="text" class="form-control _enty" data-id="contacto" data-required="true">
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="control-label">Celular de Contacto:</label>
+                            <input id="txt_solicitud_emergencia_courier_numero_contacto" type="text" class="form-control _enty" data-id="numerocontacto" data-required="true" data-type="int" data-min="9" data-max="9" maxlength="9" onKeyPress="return validators_keypress(event)">
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="control-label">Motivo:</label>
+                            <textarea id="txt_solicitud_emergencia_courier_descripcion" class="form-control _enty" data-id="motivo" data-required="true" rows="3" style="resize:none" data-min="1" data-max="200" maxlength="200"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="pnl_solicitud_emergencia_reunion" class="ibox _enty_main hide">
+            <div class="ibox-title">
+                <div class="form-horizontal row ">
+                    <div class="col-sm-6">
+                        <h3 id="_title" class="text-success bold">Reuniones</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox-content">
+
+                <div class="form-group">
+                    <div class="form-horizontal row">
+                        <div class="col-sm-4">
+                            <label class="control-label">Tipo Servicio:</label>
+                            <select id="cbo_solicitud_emergencia_reunion_tipo_servicio" class="form-control _select2 _enty" data-id="idtiposervicio" data-required="true" style="width:100%"></select>
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="control-label">Turno:</label>
+                            <select id="cbo_solicitud_emergencia_reunion_turno" class="form-control _select2 _enty" data-id="idturno" data-required="true" style="width:100%"></select>
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="control-label">Hora:</label>
+                            <select id="cbo_solicitud_emergencia_reunion_hora" class="form-control _select2 _enty" data-id="idhora" data-required="true" style="width:100%"></select>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-horizontal row">
+                        <div id="div_cbo_solicitud_emergencia_reunion_cliente" class="col-sm-6">
+                            <label class="control-label">Cliente:</label>
+                            <div class="input-group">
+                                <select id="cbo_solicitud_emergencia_reunion_cliente" class="form-control _select2 _two_items _enty" data-id="idcliente" data-required="true" style="width:100%"></select>
+                                <div id="btn_solicitud_emergencia_reunion_cliente_activo" class="input-group-addon btn-outline btn-primary">
+                                    <span class="fa fa-chevron-down"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="div_txt_solicitud_emergencia_reunion_cliente" class="col-sm-6 hide">
+                            <label class="control-label">Cliente:</label>
+                            <div class="input-group">
+                                <input id="txt_solicitud_emergencia_reunion_cliente" type="text" class="form-control _two_items _enty" data-id="cliente" data-required="true">
+                                <div id="btn_solicitud_emergencia_reunion_cliente_inactivo" class="input-group-addon btn-outline btn-success">
+                                    <span class="fa fa-chevron-up"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-horizontal row">
+                        <div id="div_cbo_solicitud_emergencia_reunion_destino" class="col-sm-6">
+                            <label class="control-label">Destino:</label>
+                            <div class="input-group">
+                                <select id="cbo_solicitud_emergencia_reunion_destino" class="form-control _select2 _two_items _enty" data-id="iddestino" style="width:100%" data-required="true"></select>
+                                <div id="btn_solicitud_emergencia_reunion_destino_activo" class="input-group-addon btn-outline btn-primary">
+                                    <span class="fa fa-chevron-down"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="div_txt_solicitud_emergencia_reunion_destino" class="col-sm-6 hide">
+                            <label class="control-label">Destino:</label>
+                            <div class="input-group">
+                                <input id="txt_solicitud_emergencia_reunion_destino" type="text" class="form-control _two_items _enty" data-id="destino" data-required="true">
+                                <div id="btn_solicitud_emergencia_reunion_destino_inactivo" class="input-group-addon btn-outline btn-success">
+                                    <span class="fa fa-chevron-up"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="div_cbo_solicitud_emergencia_reunion_direccion" class="col-sm-6">
+                            <label class="control-label">Dirección:</label>
+                            <div class="input-group">
+                                <select id="cbo_solicitud_emergencia_reunion_direccion" class="form-control _select2 _two_items _enty" data-id="iddestinodireccion" style="width:100%" data-required="true"></select>
+                                <div id="btn_solicitud_emergencia_reunion_direccion_activo" class="input-group-addon btn-outline btn-primary">
+                                    <span class="fa fa-chevron-down"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="div_txt_solicitud_emergencia_reunion_direccion" class="col-sm-6 hide">
+                            <label class="control-label">Dirección:</label>
+                            <div class="input-group">
+                                <input id="txt_solicitud_emergencia_reunion_direccion" type="text" class="form-control _two_items _enty" data-id="destinodireccion" data-required="true">
+                                <div id="btn_solicitud_emergencia_reunion_direccion_inactivo" class="input-group-addon btn-outline btn-success">
+                                    <span class="fa fa-chevron-up"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+                <div id="div_asistente" class="form-group">
+                    <div class="form-horizontal row">
+                        <div class="col-sm-12">
+                            <label class="control-label">Asistentes</label>
+                            <select id="cbo_solicitud_emergencia_reunion_asistente" placeholder="Seleccione Asistentes" multiple class="chosen-select"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-horizontal row">
+                        <div class="col-sm-4">
+                            <label class="control-label">Responsable:</label>
+                            <input id="txt_solicitud_emergencia_reunion_contacto" type="text" class="form-control _enty" data-id="contacto" data-required="true">
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="control-label">Celular de Contacto:</label>
+                            <input id="txt_solicitud_emergencia_reunion_numero_contacto" type="text" class="form-control _enty" data-id="numerocontacto" data-required="true" data-type="int" data-min="9" data-max="9" maxlength="9" onKeyPress="return validators_keypress(event)">
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="control-label">Motivo:</label>
+                            <textarea id="txt_solicitud_emergencia_reunion_descripcion" class="form-control _enty" data-id="motivo" data-required="true" rows="3" style="resize:none" data-min="1" data-max="200" maxlength="200"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+          
+        
+    </div>
+
+</div>
+

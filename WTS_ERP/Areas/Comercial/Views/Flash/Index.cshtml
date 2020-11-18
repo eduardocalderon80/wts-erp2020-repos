@@ -1,0 +1,372 @@
+﻿<style type="text/css">
+    /* 1 */
+    .left {
+        float: left;
+        width: 50%;
+    }
+
+    .right {
+        float: right;
+        width: 50%;
+    }
+
+    .row-selected {
+        background-color: #1ab394 !important;
+    }
+
+    .clsefi {
+        display: none;
+    }
+
+    table.showefi .col1 {
+        display: table-cell;
+    }
+
+    .table {
+        margin-bottom: 5px;
+    }
+
+    table.show1 .col1 {
+        display: table-cell;
+    }
+
+    th {
+        padding: 5px;
+        border: 1px solid #e7e7e7;
+        background-color: #F5F5F6;
+        text-align: center;
+    }
+
+    td {
+        padding: 5px;
+        border-bottom: 1px solid #e7e7e7;
+        padding-left: 5px;
+    }
+
+    .altura td {
+        height: 20px;
+        padding: 1px;
+    }
+
+    table2 {
+        table-layout: fixed;
+    }
+
+    .btn-circle.btn-xl {
+        width: 70px;
+        height: 70px;
+        padding: 10px 16px;
+        border-radius: 35px;
+        font-size: 24px;
+        line-height: 1.33;
+    }
+
+    .btn-circle {
+        width: 30px;
+        height: 30px;
+        padding: 6px 0px;
+        border-radius: 15px;
+        text-align: center;
+        font-size: 12px;
+        line-height: 1.42857;
+    }
+
+    .ibox {
+        clear: both;
+        /* EDU: LO MODIFIQUE PARA QUITAR MARGEN INFERIOR*/
+        /*margin-bottom: 25px;*/
+        /*edu: para quitar espacios entre div usando ibox*/
+        margin-bottom: 5px !important;
+        margin-top: 0;
+        padding: 0;
+    }
+
+    #panelencabezado_Flash_list .ibox-content {
+        /*background-color: #ffffff;*/
+        color: inherit;
+        /* EDU: LO MODIFIQUE PARA QUITAR MARGEN INFERIOR*/
+        /*padding: 15px 20px 20px 20px;*/
+        /*edu: para quitar espacios entre div usando ibox*/
+        padding: 5px 20px 5px 10px !important;
+        border-color: #e7eaec;
+        border-image: none;
+        border-style: solid solid none;
+        border-width: 1px 0;
+    }
+
+    .div_tela {
+        background: #FFFFFF;
+        border: 1px solid #e7eaec;
+        height: 25px;
+        font-size: 12px;
+        font-weight: bold;
+        box-shadow: 2px 2px 10px #666;
+    }
+    
+    .select2-container--open {
+        z-index: 9999999;
+    }
+
+    .has-error .select2-selection {
+        border-color: #ed5565 !important;
+    }
+</style>
+<div class="ibox" id="panelencabezado_Flash_list">
+    <div class="row wrapper white-bg page-heading">
+        <div id="content_header" class="ibox float-e-margins">
+            <div id="divtituloprincipal" class="col-sm-10">
+                <h2 class="text-navy bold"><b>List of Flash</b></h2>
+            </div>
+        </div>
+        <div class="hide">
+            <input type="text" id="txtpar_index" value="DATA-PARAMETRO" />
+            <input type="text" id="txtpar_hide_requerimiento" value="DATA-PARAMETRO" />
+        </div>
+        @*<div id="content_header" class="ibox float-e-margins">
+            <div id="divtituloprincipal_a" class="col-sm-4">
+                <table width="100%">
+                    <tr>
+                        <td width="50%" style="vertical-align:top;text-align:right;"><button id="btnFlashA" type="button" class="btn btn-default btn-circle"><i class="fa fa-check"></i></button></td>
+                        <td width="50%" style="vertical-align:text-top"><h3><b>Flash A &nbsp;<span class="fa fa-info-circle" style="color:dodgerblue"></span></b></h3></td>
+                    </tr>
+                </table>
+
+            </div>
+            <div id="divtituloprincipal_b" class="col-sm-4">
+                <table width="100%">
+                    <tr>
+                        <td width="50%" style="vertical-align:top;text-align:right;"><button id="btnFlashB" type="button" class="btn btn-default btn-circle"><i class="fa fa-check"></i></button></td>
+                        <td width="50%" style="vertical-align:text-top"><h3><b>Flash B &nbsp;<span class="fa fa-info-circle" style="color:dodgerblue"></span></b></h3></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="divtituloprincipal_c" class="col-sm-4">
+                <table width="100%">
+                    <tr>
+                        <td width="50%" style="vertical-align:top;text-align:right;"><button id="btnFlashC" type="button" class="btn btn-default btn-circle"><i class="fa fa-check"></i></button></td>
+                        <td width="50%" style="vertical-align:text-top"><h3><b>Flash C &nbsp;<span class="fa fa-info-circle" style="color:dodgerblue"></span></b></h3></td>
+                    </tr>
+                </table>
+            </div>
+        </div>*@
+        <div id="content_header" class="ibox float-e-margins">
+            <div id="divtituloprincipal_a" class="col-sm-3">
+                <table width="100%" style="border-bottom-color:white">
+                    <tr>
+                        <td width="50%" style="vertical-align:top;text-align:right;border-bottom-color:white;"><button id="btnFlashA" type="button" class="btn btn-default btn-circle"><i class="fa fa-check"></i></button></td>
+                        <td width="50%" style="vertical-align:text-top;border-bottom-color:white;"><h3><b>Flash A &nbsp;<span id="btnUI01" class="fa fa-info-circle" style="color:darkblue"></span></b></h3></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="divtituloprincipal_b" class="col-sm-3">
+                <table width="100%">
+                    <tr>
+                        <td width="50%" style="vertical-align:top;text-align:right;border-bottom-color:white;"><button id="btnFlasB" type="button" class="btn btn-default btn-circle"><i class="fa fa-check"></i></button></td>
+                        <td width="50%" style="vertical-align:text-top;border-bottom-color:white;"><h3><b>Flash B &nbsp;<span id="btnUI02" class="fa fa-info-circle" style="color:darkblue"></span></b></h3></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="divtituloprincipal_c" class="col-sm-4">
+                <table width="100%">
+                    <tr>
+                        <td width="50%" style="vertical-align:top;text-align:right;border-bottom-color:white;"><button id="btnFlasC" type="button" class="btn btn-default btn-circle"><i class="fa fa-check"></i></button></td>
+                        <td width="50%" style="vertical-align:text-top;border-bottom-color:white;"><h3><b>Flash C &nbsp;<span id="btnUI03" class="fa fa-info-circle" style="color:darkblue"></span></b></h3></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="divtituloprincipal_t" class="col-sm-2">
+                <button type="button" class="btn btn-default" id="btnReturnRequerimiento" style="width: 100%; display: none;">
+                    Return
+                    <span class="fa fa-reply-all"> </span>
+                </button>
+                <button id="btnTutorial" style="width:100%" type="button" class="btn btn-primary">
+                    Tutorial&nbsp;&nbsp;<i class="fa fa-camera"></i>
+                </button>
+                <button id="btn_Export" style="width:100%" type="button" class="btn btn-success">
+                    Export&nbsp;&nbsp;<i id="btnUI05" class="fa fa-info-circle"></i>
+                </button>
+            </div>
+
+        </div>
+        <div class="ibox" id="div_datosReporte">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <a class="collapse-link left" style="width:40px">
+                        <span class="fa fa-chevron-circle-up fa-2x left icono_collapse"></span>
+                    </a>
+                    <h5 class="text-navy bold" style="margin-bottom:0px;margin-top:5px">Record</h5>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div id="divtituloprincipal_a" class="col-sm-4">
+                        <table width="100%" style="border-bottom-color:white">
+                            <tr>
+                                <td width="1%" style="vertical-align:top;text-align:right;border-bottom-color:white;"><button id="btnupdatereporte" type="button" class="btn btn-success btn-circle"><i class="fa fa-refresh"></i></button></td>
+                                <td width="50%" style="vertical-align:text-top;border-bottom-color:white;"><h3><b>Update &nbsp;<span id="btnUI06" class="fa fa-info-circle" style="color:darkblue"></span></b></h3></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="divtituloprincipal_b" class="col-sm-4">
+
+                    </div>
+                    <div id="divtituloprincipal_c" class="col-sm-4">
+                        <table width="100%" style="border-bottom-color:white">
+                            <tr>
+                                <td width="50%" style="vertical-align:text-top;border-bottom-color:white;"></td>
+                                <td width="1%" style="vertical-align:top;text-align:right;border-bottom-color:white;">
+                                    @*<button id="btnupdatereporte" type="button" class="btn btn-danger btn-circle" style="vertical-align:middle;text-align:center">
+                                            <i class="fa fa-ban fa-2x text-danger"></i>
+                                    </button>*@
+                                    <i id="btnRestaure" class="fa fa-ban fa-2x text-danger"></i>
+                                </td>
+                                <td width="1%" style="vertical-align:text-top;border-bottom-color:white;text-align:right;margin:0px;"><h3><b>Clear</b></h3></td>
+                                <td width="1%" style="vertical-align:text-top;border-bottom-color:white;text-align:right;margin:0px;"><span id="btnUI08" class="fa fa-info-circle" style="color:darkblue;font-size:16px"></span></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="form-group left" style="width:100%;">
+                        <div class="table-responsive" style="width:100%; overflow-x:auto;margin-right:0px;margin-left:0px">
+                            <table id="tbl_fabric" class="table2 table-bordered" style="table-layout:fixed;width:100%;">
+                                <thead>
+                                    <tr>
+                                        <th width="100"></th>
+                                        <th width="50">ID</th>
+                                        <th width="200">Flash Type</th>
+                                        <th width="200">Date</th>
+                                        <th width="200">leaderShip</th>
+                                        <th width="200">leader</th>
+                                        <th width="150">User</th>
+                                        <th width="200">Client</th>
+                                        <th width="200">Client Status</th>
+                                        <th width="150">Style</th>
+                                        <th width="150">Description</th>
+                                        <th width="150">Qty Fabric</th>
+                                        <th width="150">Qty Color</th>
+                                        <th width="150">Qty Style</th>
+                                        <th width="150">Structure</th>
+                                        <th width="150">Cost</th>
+                                        <th width="150">Weight</th>
+                                        <th width="150">Width</th>
+                                        <th width="150">Efficiency</th>
+                                        <th width="150">Code</th>
+                                        <th width="150">Content</th>
+                                        <th width="150">Wash</th>
+                                        <th width="150">Stock</th>
+                                        <th width="150">ATX</th>
+                                        <th width="150">Dye Method</th>
+                                        <th width="150">Observation</th>
+                                    </tr>
+                                    <tr>
+                                        <th style="vertical-align:top"></th>
+                                        <th style="vertical-align:top"></th>
+                                        <th style="vertical-align:top"><input type="text" placeholder="Search" id="_txttipo" class="form-control _clsfilter" data-field="_txtestructura" /></th>
+                                        <th style="vertical-align:top">
+                                            <table>
+                                                <tr>
+                                                    <td>Ini:</td>
+                                                    <td>
+                                                        <div id="divfechadesde" class='input-group date'>
+                                                            <input id="txtfechadesde" type='text' class='form-control _enty' data-type="date" data-min="10" data-max="10" data-level="true" data-id="fechacese">
+                                                            <div id="divcalendariodesde" class="input-group-addon">
+                                                                <span class="fa fa-calendar"></span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Fin:</td>
+                                                    <td>
+                                                        <div id="divfechahasta" class='input-group date'>
+                                                            <input id="txtfechahasta" type='text' class='form-control _enty' data-type="date" data-min="10" data-max="10" data-level="true" data-id="fechacese">
+                                                            <div id="divcalendariohasta" class="input-group-addon">
+                                                                <span class="fa fa-calendar"></span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+
+                                        </th>
+                                        <th style="vertical-align:top"><select id="_txtleadership" class="form-control _enty" name="_txtleadership" data-id="_txtleadership" data-required="true"></select></th>
+                                        <th style="vertical-align:top"><select id="_txtleader" class="form-control _enty" name="_txtleader" data-id="_txtleader" data-required="true"></select></th>
+                                        <th style="vertical-align:top"> <select id="cbousu" class="form-control _enty" name="cbousu" data-id="cbousu" data-required="true"></select></th>
+                                        <th style="vertical-align:top">
+                                            <select id="cbocli" class="form-control _enty" name="cbocli" data-id="cbocli" data-required="true"></select>
+                                            @*<select id="cbocli" placeholder="Selecct client" multiple class="chosen-select"></select>*@
+                                        </th>
+                                        <th style="vertical-align:top">
+                                            <select id="cbocliest" class="form-control _enty" name="cbocliest" data-id="cbocliest" data-required="true"></select>
+                                            @*<select id="cbocli" placeholder="Selecct client" multiple class="chosen-select"></select>*@
+                                        </th>
+                                        <th style="vertical-align:top"><input type="text" placeholder="Search" id="_txtstyle" class="form-control" data-field="CodigoBol" /></th>
+                                        <th style="vertical-align:top"><input type="text" placeholder="Search" id="_txtdescripcion" class="form-control" data-field="CodigoBol" /></th>
+                                        <th style="vertical-align:top">
+                                            <table>
+                                                <tr><td>Ini:</td><td><input type="text" placeholder="Ini" id="fabricini" class="form-control _clsfilter" data-field="CodigoBol" /></td></tr>
+                                                <tr><td>Fin:</td><td><input type="text" placeholder="Fin" id="fabricfin" class="form-control _clsfilter" data-field="CodigoBol" /></td></tr>
+                                            </table>
+                                        </th>
+                                        <th style="vertical-align:top">
+                                            <table>
+                                                <tr><td>Ini:</td><td><input type="text" placeholder="Ini" id="colorini" class="form-control _clsfilter" data-field="CodigoBol" /></td></tr>
+                                                <tr><td>Fin:</td><td><input type="text" placeholder="Fin" id="colorfin" class="form-control _clsfilter" data-field="CodigoBol" /></td></tr>
+                                            </table>
+                                        </th>
+                                        <th style="vertical-align:top">
+                                            <table>
+                                                <tr><td>Ini:</td><td><input type="text" placeholder="Ini" id="estiloini" class="form-control _clsfilter" data-field="CodigoBol" /></td></tr>
+                                                <tr><td>Fin:</td><td><input type="text" placeholder="Fin" id="estilofin" class="form-control _clsfilter" data-field="CodigoBol" /></td></tr>
+                                            </table>
+                                        </th>
+                                        <th style="vertical-align:top"><input type="text" placeholder="Search" id="_txtestructura" class="form-control _clsfilter" data-field="_txtestructura" /></th>
+                                        <th style="vertical-align:top">
+                                            <table>
+                                                <tr><td>Ini:</td><td><input type="text" placeholder="Ini" id="costini" class="form-control _clsfilter" data-field="CodigoBol" /></td></tr>
+                                                <tr><td>Fin:</td><td><input type="text" placeholder="Fin" id="costfin" class="form-control _clsfilter" data-field="CodigoBol" /></td></tr>
+                                            </table>
+                                        </th>
+                                        <th style="vertical-align:top">
+                                            <table>
+                                                <tr><td>Ini:</td><td><input type="text" placeholder="Ini" id="pesoini" class="form-control _clsfilter" data-field="CodigoBol" /></td></tr>
+                                                <tr><td>Fin:</td><td><input type="text" placeholder="Fin" id="pesofin" class="form-control _clsfilter" data-field="CodigoBol" /></td></tr>
+                                            </table>
+                                        </th>
+                                        <th style="vertical-align:top">
+                                            <table>
+                                                <tr><td>Ini:</td><td><input type="text" placeholder="Ini" id="anchoini" class="form-control _clsfilter" data-field="CodigoBol" /></td></tr>
+                                                <tr><td>Fin:</td><td><input type="text" placeholder="Fin" id="anchofin" class="form-control _clsfilter" data-field="CodigoBol" /></td></tr>
+                                            </table>
+                                        </th>
+                                        <th style="vertical-align:top">
+                                            <table>
+                                                <tr><td>Ini:</td><td><input type="text" placeholder="Ini" id="efiini" class="form-control _clsfilter" data-field="CodigoBol" /></td></tr>
+                                                <tr><td>Fin:</td><td><input type="text" placeholder="Fin" id="efifin" class="form-control _clsfilter" data-field="CodigoBol" /></td></tr>
+                                            </table>
+                                        </th>
+                                        <th style="vertical-align:top"><input type="text" placeholder="Search" maxlength="20" id="_txtcode" class="form-control" data-field="Code" /></th>
+                                        <th style="vertical-align:top"><input type="text" placeholder="Search" maxlength="300" id="_txtcontent" class="form-control" data-field="Content" /></th>
+                                        <th style="vertical-align:top"> <select id="cbowash" class="form-control _enty" name="cbowash" data-id="cbowash" data-required="true"></select></th>
+                                        <th style="vertical-align:top"> <select id="cbostock" class="form-control _enty" name="cbostock" data-id="cbostock" data-required="true"></select></th>
+                                        <th style="vertical-align:top"><input type="text" placeholder="Search" maxlength="300" id="_txtatx" class="form-control" data-field="atx" /></th>
+                                        <th style="vertical-align:top"> <select id="cbodye" class="form-control _enty" name="cbodye" data-id="cbodye" data-required="true"></select></th>
+                                        <th style="vertical-align:top"><input type="text" placeholder="Search" maxlength="20" id="_txtobs" class="form-control" data-field="Obs" /></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody_FlashList"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="foot_paginacion2">
+                    <span id="btnUI09" class="fa fa-info-circle" style="color:darkblue"></span><label id="lbldesRegistro"></label>
+                </div>
+
+                <div class="ibox-footer text-center" id="foot_paginacion">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>

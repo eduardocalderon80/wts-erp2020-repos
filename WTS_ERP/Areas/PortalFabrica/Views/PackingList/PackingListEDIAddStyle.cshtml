@@ -1,0 +1,1151 @@
+﻿<!DOCTYPE html>
+<html>
+@{
+    /**/
+
+    // OBTIENE LA URL DESDE EL ERP ANTIGUO
+    //string par = ViewBag.par;
+    //string rutaImagen = ViewBag.PathStyleWeb.ToString();
+
+    var preproduccion = "http://172.16.1.22/erp";
+    var produccion = "http://erp.wtsusa.us";
+    var localhost = "http://localhost:4012";
+    var desarrollo = "http://192.168.0.3/erpdesarrollo";
+    var erp = desarrollo;
+}
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>ERP WTS 2</title>
+
+    <!-- kendo-->
+    <link href="~/Content/kendo/2015.3.930/kendo.common-bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/kendo/2015.3.930/kendo.mobile.all.min.css" rel="stylesheet" />
+    <link href="~/Content/kendo/2015.3.930/kendo.dataviz.min.css" rel="stylesheet" />
+    <link href="~/Content/kendo/2015.3.930/kendo.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/kendo/2015.3.930/kendo.dataviz.bootstrap.min.css" rel="stylesheet" />
+    <!-- fin kendo-->
+
+    <link href="~/Content/css/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet">
+    @*<link href="~/Content/css/bootstrap.min.css" rel="stylesheet">*@
+    @*<link href="~/Content/css/bootstrapERP.min.css" rel="stylesheet">*@
+    <link href="@erp/Content/bootstrap.min.css" rel="stylesheet">
+
+    <link href="~/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/chosen/chosen.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/cropper/cropper.min.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/switchery/switchery.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/nouslider/jquery.nouislider.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/ionRangeSlider/ion.rangeSlider.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/clockpicker/clockpicker.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/select2/select2.min.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet">
+    <link href="~/Content/css/animate.css" rel="stylesheet">
+    <link href="~/Content/css/style.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/switchery/switchery.css" rel="stylesheet" />
+    <link href="~/Content/css/plugins/footable/footable.core.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+
+    <link href="~/Content/css/plugins/select2/select2.min.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/clockpicker/clockpicker.css" rel="stylesheet">
+    <link href="~/Content/css/animate.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/c3/c3.min.css" rel="stylesheet">
+
+    @*<script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWD48o78e4h4OVKnCOMqDaHUlNESUEQF8&callback=initMap">
+        </script>
+        <style>
+            #map1 {
+                height: 430px;
+                width: 100%;
+            }
+        </style>*@
+
+    <link href="~/Content/css/plugins/dataTables/datatables.min.css" rel="stylesheet" />
+    <link href="~/Content/css/plugins/dataTables/fixedColumns.dataTables.min.css" rel="stylesheet" />
+    <link href="~/Content/css/plugins/dataTables/fixedColumns.bootstrap.min.css" rel="stylesheet" />
+    <!--demo-->
+    @*<link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />*@
+
+    <style>
+        .btn-primary {
+            color: #fff;
+            background-color: #428bca;
+            border-color: #357ebd;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 1.428571429;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            cursor: pointer;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus,
+        .btn-primary:active,
+        .btn-primary.active,
+        .open
+        .dropdown-toggle.btn-primary,
+        .btn-primary:active:focus,
+        .btn-primary:active:hover,
+        .btn-primary.active:hover,
+        .btn-primary.active:focus {
+            /* background-color: #18a689; */
+            border-color: #18a689;
+            color: #FFFFFF;
+        }
+
+        .btn:focus {
+            outline: thin dotted #333;
+            outline: 5px auto -webkit-focus-ring-color;
+            outline-offset: -2px;
+        }
+
+        .btn:hover,
+        .btn:focus {
+            color: #333333;
+            text-decoration: none;
+        }
+
+        .btn:active,
+        .btn.active {
+            background-image: none;
+            outline: 0;
+            -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+            box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+        }
+
+        .btn.disabled,
+        .btn[disabled],
+        fieldset[disabled] .btn {
+            pointer-events: none;
+            cursor: not-allowed;
+            opacity: 0.65;
+            filter: alpha(opacity=65);
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+
+        .btn-default {
+            color: #333333;
+            background-color: #ffffff;
+            border-color: #cccccc;
+        }
+
+        .btn-primary {
+            color: #ffffff;
+            background-color: #428bca;
+            border-color: #357ebd;
+        }
+
+            .btn-primary:hover,
+            .btn-primary:focus,
+            .btn-primary:active,
+            .btn-primary.active,
+            .open .dropdown-toggle.btn-primary {
+                color: #ffffff;
+                background-color: #3276b1;
+                border-color: #285e8e;
+            }
+
+            .btn-primary:active,
+            .btn-primary.active,
+            .open .dropdown-toggle.btn-primary {
+                background-image: none;
+            }
+
+            .btn-primary.disabled,
+            .btn-primary[disabled],
+            fieldset[disabled] .btn-primary,
+            .btn-primary.disabled:hover,
+            .btn-primary[disabled]:hover,
+            fieldset[disabled] .btn-primary:hover,
+            .btn-primary.disabled:focus,
+            .btn-primary[disabled]:focus,
+            fieldset[disabled] .btn-primary:focus,
+            .btn-primary.disabled:active,
+            .btn-primary[disabled]:active,
+            fieldset[disabled] .btn-primary:active,
+            .btn-primary.disabled.active,
+            .btn-primary[disabled].active,
+            fieldset[disabled] .btn-primary.active {
+                background-color: #428bca !important;
+                border-color: #357ebd !important;
+            }
+
+
+
+                .btn-primary.disabled,
+                .btn-primary.disabled:hover,
+                .btn-primary.disabled:focus,
+                .btn-primary.disabled:active,
+                .btn-primary.disabled.active,
+                .btn-primary[disabled],
+                .btn-primary[disabled]:hover,
+                .btn-primary[disabled]:focus,
+                .btn-primary[disabled]:active,
+                .btn-primary.active[disabled],
+                fieldset[disabled] .btn-primary,
+                fieldset[disabled] .btn-primary:hover,
+                fieldset[disabled] .btn-primary:focus,
+                fieldset[disabled] .btn-primary:active,
+                fieldset[disabled] .btn-primary.active {
+                    background-color: #428bca;
+                    border-color: #357ebd;
+                }
+
+        .k-grid tr td {
+            border-style: solid;
+            border-color: #ccc;
+        }
+
+        .k-grid tr td {
+            border-width: 1px 0 0 1px;
+            border-style: solid;
+        }
+
+
+        #loader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 1;
+            width: 150px;
+            height: 150px;
+            margin: -75px 0 0 -75px;
+            border: 8px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 8px solid #000000;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        @@-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @@keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Add animation to "page content" */
+        .animate-bottom {
+            position: relative;
+            -webkit-animation-name: animatebottom;
+            -webkit-animation-duration: 1s;
+            animation-name: animatebottom;
+            animation-duration: 1s
+        }
+
+        @@-webkit-keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0
+            }
+
+            to {
+                bottom: 0px;
+                opacity: 1
+            }
+        }
+
+        @@keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0
+            }
+
+            to {
+                bottom: 0;
+                opacity: 1
+            }
+        }
+
+        #myDiv {
+            display: none;
+            text-align: center;
+        }
+
+        #pageload {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            visibility: visible;
+            background-color: #ffffff;
+            opacity: 0.8;
+            text-align: center;
+            z-index: 999999;
+        }
+
+
+        .swal2-content {
+            font-size: 12pt !important;
+        }
+
+        .swal2-popup {
+            width: 50em !important;
+        }
+
+        .swal2-styled.swal2-confirm {
+            border: 0;
+            border-radius: .25em;
+            background: initial;
+            background-color: #3085d6;
+            color: #fff;
+            font-size: 11pt !important;
+        }
+
+        .swal2-styled.swal2-cancel {
+            border: 0;
+            border-radius: .25em;
+            background: initial;
+            background-color: #aaa;
+            color: #fff;
+            font-size: 11pt !important;
+        }
+    </style>
+
+
+</head>
+
+<body style="background-color:#ffffff!important">
+    <div id="pageload">
+        <div id="loader"></div>
+    </div>
+
+    <div class="hidden">
+        <input type="text" id="txtparindex" data-par="PARAMETRO" />
+    </div>
+    @*<div id="page-wrapper" class="gray-bg dashbard-1">*@
+    <!-- :contenido -->
+    <div class="gray-bg" id="divContenido">
+        <div class="panel panel-default">
+            <div class="panel-heading" style="border-bottom: 3px solid #3c8dbc!important;margin-left:10px!important; margin-right:10px!important; background-color:#ffffff!important">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h3><strong>Packing List</strong></h3>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <button class="btn btn-primary btn-sm hide" onclick="return Validar();">
+                            Load Packing List
+                        </button>
+                        <button id="btnGrabarPackingList" type="button" class="btn btn-primary btn-sm hidden" onclick="return GrabarPackingList();">
+                            <span class="fa fa-file-o"></span>&nbsp; Guardar
+                        </button>
+                        <button id="btnPrintCarton" type="button" class="btn btn-primary btn-sm hidden" onclick="return PrintCarton();">
+                            <span class="fa fa-file-o"></span>&nbsp; Carton
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="panel-body">
+                <div class="form-horizontal">
+                    <div class="panel panel-default" style="margin-bottom:0px!important">
+                        <div class="panel-body">
+
+                            <input type="hidden" id="hfGuid" />
+                            <input type="hidden" id="hfDetalles" value="" />
+                            <input type="hidden" id="hfDetallesFiltro" value="" />
+                            <input type="hidden" id="hfItem" value="" />
+                            <input type="hidden" id="hfIdPackingList" value="" />
+                            <input type="hidden" id="hfDatos" />
+                            <input type="hidden" id="hfNoGrabar" />
+
+                            <input type="hidden" id="hfNPacking" value="@ViewBag.NPacking" />
+                            <input type="hidden" id="hfIdUsuarioFabrica" value="@ViewBag.IdUsuarioFabricaSession" />
+
+                            <div class="form-horizontal hidden" id="formulario">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2 ">N° Packing List</label>
+                                        <div class="col-sm-4">
+                                            @*<input type="text" class="form-control" value="" id="txtCodigoPackingList" />*@
+                                            <input type="hidden" id="hdnNumeroPackingList" name="hdnNumeroPackingList" value="@ViewBag.NumeroPackingList" />
+                                            <input type="hidden" id="hdnIdServicioPackingList" name="hdnIdServicioPackingList" value="@ViewBag.IdServicioPackinglist" />
+                                            <label class="form-control" id="lblIdPackingList" name="lblIdPackingList">
+                                                @ViewBag.IdServicioPackinglist
+                                            </label>
+                                        </div>
+                                        <label class="control-label col-sm-2">Número Referencia</label>
+                                        <div class="col-sm-4">
+                                            @*<input type="text" class="form-control" value="" id="txtPo" />*@
+                                            <input type="hidden" id="hdnPO" name="hdnPO" value=" @ViewBag.PO" />
+                                            <label class="form-control" id="lblNumeroPackingList" name="lblNumeroPackingList">
+                                                @ViewBag.PO
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2">
+                                            Fabrica
+                                        </label>
+                                        <div class="col-sm-4">
+                                            <input type="hidden" id="hdnCodFabrica" name="hdnCodFabrica" value=" @ViewBag.CodFabrica" />
+                                            <label class="form-control" id="lblFabrica">
+                                                @ViewBag.NombreProveedor
+                                            </label>
+                                            @*<select class="form-control" id="cboFabrica">
+                                                    <option value="">--seleccione</option>
+                                                    <option value="089"></option>
+                                                </select>*@
+                                        </div>
+                                        <label class="control-label col-sm-2">Cliente</label>
+                                        <div class="col-sm-4">
+                                            <input type="hidden" id="hdnCodCliente" name="hdnCodCliente" value=" @ViewBag.CodCliente" />
+                                            <label class="form-control" id="lblCliente">
+                                                @ViewBag.NombreCliente
+                                            </label>
+                                            @*<select class="form-control" id="cboCliente">
+                                                    <option value="">--seleccione</option>
+                                                    <option value="00186">SOFT SURROUNDINGS</option>
+                                                </select>*@
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2">Destino</label>
+                                        <div class="col-sm-4">
+                                            @Html.DropDownList("cboDestino", new SelectList(ViewBag.listadestinos, "cod_destino", "des_destino"), "--Select--", new { @id = "cboDestino", @class = "form-control" })
+                                            <!--<select class="form-control" id="cboDestino">
+                                                <option value="">--Select--</option>
+                                                <option value="ALE">ALEMANIA</option>
+                                                <option value="CAN">CANADA</option>
+                                                <option value="JAP">JAPON</option>
+                                                <option selected="selected" value="USA">USA</option>
+                                            </select>-->
+                                        </div>
+                                        <!--<label class="control-label col-sm-2">Date Packing List</label>
+                                        <div class='input-group date col-sm-4'>
+                                            <span class='input-group-addon'><i class='fa fa-calendar'></i></span>
+                                            <input type='text' id="txtFechaDespacho" class='form-control'>
+                                        </div>-->
+                                    </div>
+                                </div>
+                                @*<div class="col-xs-12 col-sm-12">
+                                        <div class="form-group">
+                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"></div>
+                                            <div class=' col-xs-12 col-sm-4'>
+                                                <input type='file' id="ifuPL">
+                                            </div>
+                                            <div class='col-xs-12 col-sm-12 col-md-2 col-lg-2'>
+                                                <button class="btn btn-primary btn-sm pull-right">Upload PL CSV</button>
+                                            </div>
+                                        </div>
+                                    </div>*@
+
+                            </div>
+                            <div class="col-xs-12 col-sm-12 space-20"></div>
+
+                        </div>
+                        @*<div class="col-xs-12 col-sm-12"><hr /></div>*@
+                        <div id="divdetalles">
+                            <div class="col100 col-xs-12 col-sm-12">
+                                <div id="divCarton" class="hidden">
+                                    <h3>Carton</h3>
+                                    <table class=" table table-striped" id="rptCarton" style="border: 1px solid #ccc!important;"></table>
+                                </div>
+                                <div id="divDetail" class="hidden">
+                                    <h3>Detail</h3>
+                                    <table class=" table table-striped" id="rptPrincipal" style="border: 1px solid #ccc!important;"></table>
+                                </div>
+                                <div id="divFile" class="hidden">
+                                    <h3>File Detail</h3>
+                                    <table class=" table table-striped" id="rptDetalleSKU" style="border: 1px solid #ccc!important;"></table>
+                                </div>
+                            </div>
+                            <br />
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="panel-footer text-right" style="background-color: #ffffff!important;">
+
+                    </div>
+                </div>
+            </div>
+            @*<div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Details</h5>
+                    </div>
+                    <div id="divContent" class="ibox-content">
+                    </div>
+                </div>*@
+        </div>
+    </div>
+    <br />
+    </div>
+    @*</div>*@
+
+    <!-- :modal -->
+    <!--tabindex="-1"-->
+    <!-- :edu z-index: 1000000000 !important para que el mensaje se muestre adelante de otro modal-->
+    <div class="modal inmodal" id="modal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; z-index: 1000000000 !important;">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <i class="fa fa-check-circle-o modal-icon" id="modal_icono"></i>
+                    <h4 class="modal-title" id="modal_titulo">Mensaje</h4>
+
+                </div>
+                <div class="modal-body">
+                    <p id="modal_mensaje">
+                        Se registro correctamente.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- :modal confirmar si; no -->
+    <div class="modal inmodal" id="modalConfirm" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <i class="fa fa-question-circle modal-icon" id="modal_icono"></i>
+                    <h4 class="modal-title" id="modal_titulo">Confirm</h4>
+
+                </div>
+                <div class="modal-body">
+                    <div id="modal_body_confirm">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btnYes_confirm" class="btn btn-success">Yes</button>
+                    <button type="button" id="btnNo_confirm" class="btn btn-default">No</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal - para ventanas generales -->
+    <!-- :edu 20171016 crear dinamicamente los modal-->
+    <div class="modal fade classmodalventanageneral" id="modal_ventanaGeneral" tabindex="-1" role="dialog" aria-labelledby="Titulo_" data-dismiss="modal" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog" id="modal_dialogVentanaGeneral" style="width: 900px;">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modal_titleVentanaGeneral">New message</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="modal_bodyVentanaGeneral">
+                        <!--aqui va la pagina parcial-->
+                        <div class="text-center">
+                            @*<img src="~/Content/img/wait/wait30x30.gif" alt="Cargando..." />*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- :edu 20171016 crear dinamicamente los modal-->
+    <div class="modal fade classmodalventanageneral2" id="modal_ventanaGeneral2" tabindex="-1" role="dialog" aria-labelledby="Titulo_" data-dismiss="modal" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog" id="modal_dialogVentanaGeneral2" style="width: 900px;">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modal_titleVentanaGeneral2">New message</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="modal_bodyVentanaGeneral2">
+                        <!--aqui va la pagina parcial-->
+                        <div class="text-center">
+                            @*<img src="~/Content/img/wait/wait30x30.gif" alt="Cargando..." />*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- :edu 20171024 crear dinamicamente los modal :para tallacolor; luego pasar a una funcion-->
+    <div class="modal fade classmodalventanageneral3" id="modal_ventanaGeneral3" tabindex="-1" role="dialog" aria-labelledby="Titulo_" data-dismiss="modal" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog" id="modal_dialogVentanaGeneral3" style="width: 900px;">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modal_titleVentanaGeneral3">New message</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="modal_bodyVentanaGeneral3">
+                        <!--aqui va la pagina parcial-->
+                        <div class="text-center">
+                            @*<img src="~/Content/img/wait/wait30x30.gif" alt="Cargando..." />*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal - para mensajes - alertas -->
+    <div class="modal fade classmodalalerta" id="modal_alerta" tabindex="-1" role="dialog" aria-labelledby="Titulo_" data-dismiss="modal" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog" id="modal_dialogalerta" style="width: 900px;">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modal_titlealerta">Alert!!</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="modal_bodyalerta">
+                        <!--aqui va el mensaje-->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-sm-12 text-right" id="modal_footeralerta">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- :modal para loader(spinner) -->
+    <div class="modal inmodal" id="myModalSpinner" style="position: absolute;display:none;top: 30%;left: 10%; z-index: 1000000000 !important;" data-backdrop="static" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content animated flipInY">
+                <div class="modal-header">
+                    <h4 class="modal-title">Wait!</h4><br><br>
+                    <div>
+                        <div id="searching_spinner_center" style="position: absolute;display: block;top: 50%;left: 45%;">
+                            <div class="sk-spinner sk-spinner-three-bounce">
+                                <div class="sk-bounce1"></div>
+                                <div class="sk-bounce2"></div>
+                                <div class="sk-bounce3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- menu contextual -->
+    <nav id="context-menu" class="context-menu" style="z-index: 1000000 !important;">
+        <ul class="context-menu__items">
+            <!--<li class="context-menu__item">
+                <a href="#" class="context-menu__link" data-action="View"><i class="fa fa-eye"></i> View Task</a>
+            </li>
+            <li class="context-menu__item">
+                <a href="#" class="context-menu__link" data-action="Edit"><i class="fa fa-edit"></i> Edit Task</a>
+            </li>
+            <li class="context-menu__item">
+                <a href="#" class="context-menu__link" data-action="Delete"><i class="fa fa-times"></i> Delete Task</a>
+            </li>-->
+        </ul>
+    </nav>
+
+    @Html.Hidden("urlBase", Url.Content("~/"))
+    <!-- Mainly scripts -->
+
+    <script src="~/Scripts/js/jquery-2.1.1.js"></script>
+    <script src="~/Scripts/js/plugins/dataTables/datatables.min.js"></script>
+    <script src="~/Scripts/js/plugins/dataTables/dataTables.fixedColumns.min.js"></script>
+    <script src="~/Scripts/Home/Util.js?v=1"></script>
+    <script src="~/Scripts/Home/Ruteador.js"></script>
+    <script src="~/Scripts/js/plugins/math/math.min.js"></script>
+    <script src="~/Scripts/js/jquery.scannerdetection.js"></script> <!--PARA EL LECTOR DE CODIGO DE BARRA-->
+
+    <script src="~/Scripts/PortalFabrica/PackingList/PackingListEDIAddStyle.js"></script> <!--PARA EL LECTOR DE CODIGO DE BARRA-->
+
+    <script type="text/javascript">
+        var verMap = "0";
+        var startRefresh = "0";
+        var viewroute = "";
+        var zoom_actual = "";
+
+        window.menu = "";
+        window.utilindex = {
+            usuario: '',
+            password: '',
+            menuState: 0,
+            usuarioAD: '',
+            tipoaccesousuario: '',
+            botones:[]
+        }
+
+        // activar :1 //carga de menu desde el erp1
+        // activar luego esto
+
+         @*var par = @Html.Raw(Json.Encode(@par));*@
+        //getmenu(par);
+
+        // activar :2 //carga de menu [manual]
+        // :activar esto cuando se requiere ver el menu harcodeado
+        /*
+        let menu = document.getElementById('menu'),
+                amenus = _Array(menu.getElementsByClassName('_menu_sub'));
+        amenus.forEach(fila=>fila.addEventListener('click', e=> { _Go(e); }));
+        */
+
+
+        function getmenu(par) {
+            let data = '';
+
+            $.ajax({
+                type: 'GET',
+                url: urlBase() + 'Home/getMenu',
+                data: null,
+                async: false
+            }).done(function (sdata) {
+                window.menu = sdata;
+                cargarmenu();
+                if (par !== '') {
+                    cargarvista(par);
+                }
+
+                clickderechoencualquierparte();
+                clickListener();
+                keyupListener();
+                resizeListener();
+
+                cambiardatoslogoperfil();
+            });
+        }
+
+        function cargarvista(url){
+            ////Get(url, res_view);
+
+            //_Go_Url(url, url, '');
+            $.ajax({
+                type: 'GET',
+                url: urlBase() + url,
+                data:null,
+                async: false
+            }).done(function (rsta) {
+                login = rsta.indexOf('Login') > 0;
+                let urlB = urlBase();
+                if (!login) {
+                    setTimeout(function () {
+                        var vista=par;
+                        var menu= _('menu');
+                        var alis= Array.from(menu.getElementsByTagName('li'));
+                        var index= alis.findIndex(x=>x.dataset.nav===vista);
+                        if(index>=0) alis[index].children[0].click();
+                    }, 2000);
+
+                    //contenido = (par !== null && par !== '') ? rsta.replace('DATA-PARAMETRO', par) : rsta;
+                    //_('divContenido').innerHTML = contenido;
+                    //checkloadjscssfile(urlB + `Scripts/${url}.js`, "js");
+                } else {
+                    window.location.href = urlB + "Home/LoginERP";
+                }
+            });
+        }
+
+        function res_view(res) {
+            _('divContenido').innerHTML = res;
+        }
+
+        function cargarmenu() {
+            let limenu = '', classcollapse = '', ulmenu = document.getElementById("side-menu");
+
+            //construccion del menu: erp=>, erp2
+            //Redirect to ERP **
+            let lista = JSON.parse(window.menu), total = lista.length, datausuario = JSON.parse(lista.usuario), arrbotones= JSON.parse(lista.botones);
+            window.utilindex.usuario = $.trim(datausuario.Usuario);
+            window.utilindex.password = $.trim(datausuario.Contrasena);
+            window.utilindex.botones = arrbotones;
+            window.utilindex.usuarioAD = $.trim(datausuario.UsuarioAD);
+            window.utilindex.tipoaccesousuario = $.trim(datausuario.tipoaccesousuario);
+
+            let listamodulo = JSON.parse(lista.modulos), totalmodulos = listamodulo.length, listaventanas = JSON.parse(lista.ventanas), totalventanas = listaventanas.length;
+
+            for (let i = 0; i < totalmodulos; i++) {
+                if ((i + 1) == totalmodulos) {
+                    limenu += `<li class='active'>`;
+                    classcollapse = 'collapse in';
+                } else {
+                    limenu += `<li>`;
+                    classcollapse = 'collapse';
+                }
+
+                limenu += `<a class='has-arrow' href="#"><i class="fa fa-th-large"></i> <span class="nav-label">${listamodulo[i].NombreModulo}</span> <span class="fa arrow"></span></a>`;
+                limenu += `     <ul class="nav nav-second-level _menu ${classcollapse}" data-nav="${listamodulo[i].ModuloIdentificador}">`;
+
+                let listatempventanas = listaventanas.filter(function (el) {
+                    return el.IdModulo == listamodulo[i].IdModulo;
+                });
+
+                let totalventanastemp = listatempventanas.length;
+
+
+                for (let j = 0; j < totalventanastemp; j++) {
+                    //listatempventanas[j].Area + "/" +
+                    // MODIFICADO PARA QUE SE PUEDA VER LA MISMA VENTANA DESDE DIFERENTES MODULOS
+                    let _url = listatempventanas[j].app === "" ? "" : listatempventanas[j].Area + '/' + listatempventanas[j].VentanaIdentificador + "/" + listatempventanas[j].nombrevista;
+                    // :EDU EJEMPLO: listatempventanas[j].par = 'tiulo:credit'; ESTE DATO VIENE DE LA TABLA VENTANA EN SEGURIDAD
+                    limenu += `     <li data-nav="${_url}" data-par="${typeof listatempventanas[j].par !== undefined ? listatempventanas[j].par : '' },idgrupocomercial:${datausuario.IdGrupoComercial},idmodulo:${listatempventanas[j].IdModulo},idventana:${listatempventanas[j].IdVentana},nombreventana:${listatempventanas[j].Ventana}"><a class="_menu_sub ${listatempventanas[j].app}" href="#">${listatempventanas[j].Ventana}</a></li>`;
+
+                    ////listatempventanas[j].Area + "/" +
+                    //let js = listatempventanas[j].app == "" ? "" : listatempventanas[j].VentanaIdentificador + "/" + listatempventanas[j].nombrevista;
+                    //// :EDU ANTERIOR SE CAMBIO POR MERGE limenu += `     <li data-nav="${js}"><a class="_menu_sub ${listatempventanas[j].app}" href="#">${listatempventanas[j].Ventana}</a></li>`;
+                    //// :EDU EJEMPLO: listatempventanas[j].par = 'tiulo:credit'; ESTE DATO VIENE DE LA TABLA VENTANA EN SEGURIDAD
+                    //limenu += `     <li data-nav="${js}" data-par="${typeof listatempventanas[j].par !== undefined ? listatempventanas[j].par : '' },idgrupocomercial:${datausuario.IdGrupoComercial}"><a class="_menu_sub ${listatempventanas[j].app}" href="#">${listatempventanas[j].Ventana}</a></li>`;
+                }
+                limenu += `     </ul>`;
+                limenu += `</li>`;
+            }
+
+            //document.getElementById('side-menu').innerHTML = limenu;
+            $("#side-menu").append(limenu);
+
+            let menu = document.getElementById('menu'),
+                amenus = _Array(menu.getElementsByClassName('_menu_sub'));
+            amenus.forEach(
+                    fila=>{
+                        fila.addEventListener('click', e=> { _Go(e); })
+                        fila.addEventListener('contextmenu', e=> { vermenucontextual(e); });
+                    }
+            );
+
+        }
+
+        // edu: para menu contextual - click derecho
+        function vermenucontextual(e) {
+            let taskItemInContext = clickInsideElement(e, "_menu_sub" );
+
+            if ( taskItemInContext ) {
+                e.preventDefault();
+                toggleMenuOn(e);
+                positionMenu(e);
+            } else {
+                taskItemInContext = null;
+                toggleMenuOff();
+            }
+        }
+
+        function clickderechoencualquierparte() {
+            document.addEventListener( "contextmenu", function(e) {
+                taskItemInContext = clickInsideElement( e, "_menu_sub" );
+
+                if ( taskItemInContext ) {
+                    //e.preventDefault();
+                    //toggleMenuOn();
+                    //positionMenu(e);
+                } else {
+                    taskItemInContext = null;
+                    toggleMenuOff();
+                }
+            });
+        }
+
+        function clickInsideElement( e, className ) {
+            var el = e.srcElement || e.target;
+
+            if ( el.classList.contains(className) ) {
+                return el;
+            } else {
+                while ( el = el.parentNode ) {
+                    if ( el.classList && el.classList.contains(className) ) {
+                        return el;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        /**
+        * Turns the custom context menu on.
+        */
+        function toggleMenuOn(e) {
+            //if ( window.utilindex.menuState !== 1 ) {
+            window.utilindex.menuState = 1;
+            //menu.classList.add( contextMenuActive );
+            _('context-menu').classList.add('context-menu--active');
+            let controller = e.currentTarget.parentNode.getAttribute('data-nav'), area = e.currentTarget.parentNode.parentNode.getAttribute('data-nav'), html = '',
+                url = window.appURL.erp + area + '/' + controller, classerp = ''; //localhost:4012 ; 192.168.0.3/erpdesarrollo; 172.16.1.22/erp
+
+            if (e.currentTarget.classList.contains('erp1')) {
+                classerp = 'erp1';
+            } else if (e.currentTarget.classList.contains('erp2')) {
+                classerp = 'erp2';
+            }
+
+            html += `<li class="context-menu__item">`;
+            html += `   <a href='javascript:void(0)' class="context-menu__link ${classerp}" data-nav='${url}'>Open link in a new tab</a>`;  // ${e.currentTarget.textContent}
+            html += `</li>`;
+
+            //document.getElementsByClassName('context-menu__items').innerHTML = html;
+            $(".context-menu__items").html('');
+            $(".context-menu__items").append(html);
+            //}
+        }
+
+
+        function positionMenu(e) {
+            let menu = _('context-menu');
+            let clickCoords = getPosition(e);
+            let clickCoordsX = clickCoords.x;
+            let clickCoordsY = clickCoords.y;
+            let menuWidth = menu.offsetWidth + 4;
+            let menuHeight = menu.offsetHeight + 4;
+            let windowWidth = window.innerWidth;
+            let windowHeight = window.innerHeight;
+
+            if ( (windowWidth - clickCoordsX) < menuWidth ) {
+                menu.style.left = windowWidth - menuWidth + "px";
+            } else {
+                menu.style.left = clickCoordsX + "px";
+            }
+
+            if ( (windowHeight - clickCoordsY) < menuHeight ) {
+                menu.style.top = windowHeight - menuHeight + "px";
+            } else {
+                menu.style.top = clickCoordsY + "px";
+            }
+        }
+
+        function getPosition(e) {
+            var posx = 0;
+            var posy = 0;
+
+            if (!e) var e = window.event;
+
+            if (e.pageX || e.pageY) {
+                posx = e.pageX;
+                posy = e.pageY;
+            } else if (e.clientX || e.clientY) {
+                posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+                posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+            }
+
+            return {
+                x: posx,
+                y: posy
+            }
+        }
+
+        /**
+       * Turns the custom context menu off.
+       */
+        function toggleMenuOff() {
+            if ( window.utilindex.menuState !== 0 ) {
+                window.utilindex.menuState = 0;
+                let menu = _('context-menu');
+                menu.classList.remove('context-menu--active');
+            }
+            $(document.body).removeAttr("style");
+        }
+
+        function clickListener() {
+            document.addEventListener( "click", function(e) {
+                var clickeElIsLink = clickInsideElement(e, "context-menu__link");
+
+                if ( clickeElIsLink ) {
+                    e.preventDefault();
+                    menuItemListener( clickeElIsLink );
+                } else {
+                    var button = e.which || e.button;
+                    if ( button === 1 ) {
+                        toggleMenuOff();
+                    }
+                }
+            });
+        }
+
+        function menuItemListener( element ) {
+            //console.log( "Task ID - " + taskItemInContext.getAttribute("data-id") + ", Task action - " + link.getAttribute("data-action"));
+            //console.log(link);
+            let urlaccion = element.getAttribute('data-nav'), link = document.createElement('a'), classerp = '';
+
+            if (element.classList.contains('erp2')) {
+                urlaccion = window.appURL.erpnew + 'Home/Index'; //localhost:55659 ; 192.168.0.3/erp_newarq; 172.16.1.22/erpnew
+            }
+
+            link.href = urlaccion;
+            link.target = '_blank';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            delete link;
+
+            toggleMenuOff();
+        }
+
+        /**
+       * Listens for keyup events.
+       */
+        function keyupListener() {
+            window.onkeyup = function(e) {
+                if ( e.keyCode === 27 ) {
+                    toggleMenuOff();
+                }
+            }
+        }
+
+        /**
+            * Window resize event listener
+            */
+        function resizeListener() {
+            window.onresize = function(e) {
+                toggleMenuOff();
+            };
+        }
+
+        @*function cambiardatoslogoperfil() {
+            let lista = JSON.parse(window.menu), datausuario = JSON.parse(lista.usuario), spannombreusuario = $(".block.m-t-xs")[0], spancargousuario = $(".text-muted.text-xs.block")[0];
+            spannombreusuario.children[0].textContent = datausuario.Nombre + " " + datausuario.Apellido;
+            spancargousuario.textContent = datausuario.Cargo;
+            var ruta = "";
+            var urlbase = urlBase();
+
+            if(datausuario.ImagenWebNombre!='')
+            {
+                var rutaImagen = @Html.Raw(@rutaImagen);
+                var NombreImagen= datausuario.ImagenWebNombre;
+                ruta = `${urlbase}${rutaImagen}${NombreImagen}`;
+
+                document.getElementById('side-menu').getElementsByClassName('img-circle')[0].setAttribute('src', ruta);
+                document.getElementById('side-menu').getElementsByClassName('img-circle')[0].setAttribute('data-initial', ruta);
+            }
+            else
+            {
+                ruta = urlbase + "Content/img/RRHH/personal/default.jpg";
+                document.getElementById('side-menu').getElementsByClassName('img-circle')[0].setAttribute('src', ruta);
+                document.getElementById('side-menu').getElementsByClassName('img-circle')[0].setAttribute('data-initial', ruta);
+            }
+
+        }*@
+    </script>
+
+</body>
+
+</html>
+
+<script src="~/Scripts/js/bootstrap.min.js"></script>
+<!-- activar luego esto 20171109-->
+<script src="~/Scripts/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="~/Scripts/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="~/Scripts/js/inspinia.js"></script>
+<script src="~/Scripts/js/plugins/pace/pace.min.js"></script>
+<script src="~/Scripts/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="~/Scripts/js/plugins/footable/footable.all.min.js"></script>
+<script src="~/Scripts/js/plugins/sweetalert/sweetalert.min.js"></script>
+<script src="~/Scripts/js/plugins/select2/select2.full.min.js"></script>
+<script src="~/Scripts/js/plugins/clockpicker/clockpicker.js"></script>
+<script src="~/Scripts/js/plugins/validate/jquery.validate.min.js"></script>
+<script src="~/Scripts/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<!--Para codigo de barra-->
+<script src="~/Scripts/jquery-barcode.min.js"></script>
+<!-- jQuery UI -->
+<script src="~/Scripts/js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+<!-- Chosen -->
+<script src="~/Scripts/js/plugins/chosen/chosen.jquery.js"></script>
+
+<!-- Select2 -->
+<script src="~/Scripts/js/plugins/select2/select2.full.min.js"></script>
+
+<!-- TouchSpin -->
+<script src="~/Scripts/js/plugins/touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+<!-- Datepicker -->
+<script src="~/Scripts/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+
+<!-- iCheck -->
+<script src="~/Scripts/js/plugins/iCheck/icheck.min.js"></script>
+
+<!-- iboxtools -->
+<script src="~/Scripts/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Date range use moment.js same as full calendar plugin -->
+<script src="~/Scripts/js/plugins/fullcalendar/moment.min.js"></script>
+
+
+<!-- Date range picker -->
+<script src="~/Scripts/js/plugins/daterangepicker/daterangepicker.js"></script>
+
+<!-- Extra -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autonumeric/1.9.46/autoNumeric.min.js" type="text/javascript"></script>
+
+<!--Animacion CSS-->
+<script src="~/Scripts/js/plugins/rickshaw/vendor/d3.v3.js"></script>
+<script src="~/Scripts/js/plugins/rickshaw/rickshaw.min.js"></script>
+
+<!--c3-->
+<script src="~/Scripts/js/plugins/d3/d3.min.js"></script>
+<script src="~/Scripts/js/plugins/c3/c3.min.js"></script>
+
+<!-- :General -->
+@*<script src="~/Scripts/Home/Home.js"></script>*@
+@*<script src="~/Scripts/Home/Util.js"></script>*@
+
+<!--combo multiselect-->
+<script src="~/Scripts/js/bootstrap-multiselect.js"></script>
+<script src="~/Scripts/js/plugins/switchery/switchery.js"></script>
+
+<!-- :edu ver si usar; para la fecha html5-->
+@*<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>*@
+<script src="~/Scripts/js/plugins/fullcalendar/moment.min.js"></script>
+<script src="~/Scripts/js/plugins/iCheck/icheck.min.js"></script>
+
+<!-- :JS EXTERNAS A INSPINIA SE USA EN PACKINGLIST YA NO USAR-->
+<script src="~/Scripts/moment-with-locales.min.js"></script>
+<script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+
+<!-- kendo-->
+<script src="~/Scripts/kendo/2015.3.930/jszip.min.js"></script>
+<script src="~/Scripts/kendo/2015.3.930/kendo.all.min.js"></script>
+<script src="~/Scripts/kendo/2015.3.930/kendo.aspnetmvc.min.js"></script>
+<script src="~/Scripts/kendo/2015.3.930/cultures/kendo.culture.es-PE.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
+<!--<script src="../JavaScript/validateSag.js" type="text/javascript"></script>-->

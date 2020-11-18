@@ -1,0 +1,62 @@
+﻿<div class="panel panel-default" id="despacho_header">
+    <div class="panel-heading">
+        <div class="text-right">
+            <button type="button" class="btn btn-primary" id="_btn_aceptarreq">
+                <span class="fa fa-check"></span>
+                Accept
+            </button>
+            <button type="button" class="btn btn-default" id="_btn_cancelarreq" data-dismiss="modal">
+                <span class="fa fa-ban"></span>
+                Cancel
+            </button>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <div  id="_div_TipoMuestra">
+                        <label class="control-label col-sm-2">Sample Type:</label>
+                        <div class="col-sm-4">
+                            <select class="form-control _enty" id="cboTipoMuestra" data-min="1" data-max="100" data-required="true" data-id="idtipomuestraxcliente">
+                                <option value="">Select</option>
+                            </select>
+                            <span class="hide text-danger" id="_span_error_TipoMuestra">Select sample type</span>
+                        </div>
+                    </div>                   
+                    <div id="_div_Version">
+                        <label class="control-label col-sm-2"># Submit</label>
+                        <div class="col-sm-2">
+                            <select id="cboVersion" class="form-control _enty" data-min="1" data-max="100" data-required="true" data-id="version"></select>
+                        </div>
+                        <span class="hide text-danger" id="_span_error_Version">Select #submit</span>
+                    </div>                    
+                </div>
+                
+                <div class="form-group">
+                    <div id="_div_Factory">
+                        <label class="control-label col-sm-2">Factory</label>
+                        <div class="col-sm-4">
+                            <select class="form-control _enty " id="cboFabrica" data-live-search="true" data-min="1" data-max="100" data-required="true" data-id="idproveedor">
+                                <option value="">Select</option>
+                            </select>
+                            <span class="hide text-danger" id="_span_error_Factory">Select factory</span>
+                        </div>
+                    </div>  
+                    <div id="_div_team_newreq">
+                        <label class="control-label col-sm-2">Team</label>
+                        <div class="col-sm-4">
+                            <select class="form-control _enty " id="cboTeam_newreq" data-live-search="true" data-min="1" data-max="100" data-required="true" data-id="idgrupopersonal_newreq">
+                                <option value="0">Select</option>
+                            </select>
+                            <span class="hide text-danger" id="_span_error_team_newreq">Select Team</span>
+                        </div>
+                    </div>                   
+                </div>                                
+            </div>
+        </div>
+    </div>
+</div>
+
+ 

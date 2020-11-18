@@ -1,0 +1,2100 @@
+﻿<style>
+      textarea {
+        resize: none;
+    }
+</style>
+<div class="hide">
+    <input type="text" id="txtpar" value='DATA-PARAMETRO' />
+    <input id="hfCodigoPartida" value="0" />
+</div>
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-8">
+        <h2>Análisis de Laboratorio</h2>
+    </div>
+    <div class="col-lg-4" style="text-align:right;padding:20px">
+        <button type="button" class="btn btn-success" id="btnReturn">
+            <span class="fa fa-backward"></span>
+            Return
+        </button>
+    </div>
+</div>
+<div class="wrapper wrapper-content gray-bg animated fadeInRight">
+    <div class="ibox">
+        <div class="ibox-title">
+            <h5>Datos Generales</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Reporte</label>
+                            <div class="col-lg-10">
+                                <input id="txtReporteTecnico" type="text" class="form-control" readonly tabindex="-1" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Partida</label>
+                            <div class="col-lg-10">
+                                <input id="txtPartida" class="form-control" data-id="0" data-initial="0" readonly tabindex="-1" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Descripcion Tela</label>
+                            <div class="col-lg-10">
+
+                                <textarea id="txtDescripcionTela" class="form-control" tabindex="-1" readonly></textarea>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Fabrica</label>
+                            <div class="col-lg-10">
+                                <input class="form-control" id="txtFabrica" readonly tabindex="-1" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Color</label>
+                            <div class="col-lg-10">
+                                <input type="text" id="txtColor" class="form-control" readonly tabindex="-1" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Tintoreria</label>
+                            <div class="col-lg-10">
+                                <input class="form-control" id="txtTintoreria" readonly tabindex="-1" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Cliente</label>
+                            <div class="col-lg-10">
+                                <input class="form-control" id="txtCliente" readonly tabindex="-1" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Codigo Tela</label>
+                            <div class="col-lg-10">
+                                <input id="txtCodigoTela" class="form-control" readonly tabindex="-1" />
+                            </div>
+                        </div>
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Instrucciones de Cuidado</label>
+                                <div class="col-lg-10">
+                                    <textarea id="txtInstruccionCuidadoSolicitud" class="form-control" rows="3" tabindex="3" readonly></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Partida Status</label>
+                            <div class="col-lg-10">
+                                <select id="cboPartidaStatus" class="form-control" disabled>
+                                    <option value='A'>Aprobado</option>
+                                    <option value='C'>Aprobado con comentarios</option>
+                                    <option value='Z'>Rechazado</option>
+                                    <option value='P'>Pendiente</option>
+                                    <option value='R'>Recibido</option>
+                                    <option value="E">Editado</option>
+                                    <option value='S'>Enviado por Fabrica</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Comercial Status</label>
+                            <div class="col-lg-10">
+                                <select id="cboAprobadoComercial" class="form-control" disabled>
+                                    <option value='0'>Pendiente</option>
+                                    <option value='1'>Aprobado</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Comentario Tono</label>
+                            <div class="col-lg-10">
+
+                                <textarea id="txtComentarioColorExterno" class="form-control" tabindex="-1" readonly></textarea>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox">
+        <div class="ibox-title">
+            <h5>Comentarios</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Comentario Color</label>
+                            <div class="col-lg-10">
+                                <textarea id="txtComentarioColor" class="form-control" rows="3" tabindex="1"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Comentario Testing</label>
+                            <div class="col-lg-10">
+                                <textarea id="txtComentarioTesting" class="form-control" rows="3" tabindex="2"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Instruccion Cuidado LAB</label>
+                            <div class="col-lg-10">
+                                <textarea id="txt_InstruccionesCuidado" class="form-control" rows="3" tabindex="2"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox" id="divEstabilidadDimensional">
+        <div class="ibox-title">
+            <h5>Estabilidad Dimensional &nbsp;&nbsp;&nbsp;<i style="font-size:medium;cursor:pointer" class="fa fa-tags" onclick="ShowEstabilidadDimensionalMetodos();" aria-hidden="true"></i></h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="divTela">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class='text-center' style="vertical-align:middle" rowspan="3">N°</th>
+                                    <th class='text-center' colspan="6">Muestra A</th>
+                                    <th class='text-center' colspan="6">Muestra B</th>
+                                </tr>
+                                <tr>
+                                    <th class='text-center' colspan="3">Ancho</th>
+                                    <th class='text-center' colspan="3">Largo</th>
+
+                                    <th class='text-center' colspan="3">Ancho</th>
+                                    <th class='text-center' colspan="3">Largo</th>
+
+                                </tr>
+                                <tr>
+                                    <th class='text-center'>1er. Lav.</th>
+                                    <th class='text-center'>3er. Lav.</th>
+                                    <th class='text-center'>5to. Lav.</th>
+                                    <th class='text-center'>1er. Lav.</th>
+                                    <th class='text-center'>3er. Lav.</th>
+                                    <th class='text-center'>5to. Lav.</th>
+
+                                    <th class='text-center'>1er. Lav.</th>
+                                    <th class='text-center'>3er. Lav.</th>
+                                    <th class='text-center'>5to. Lav.</th>
+                                    <th class='text-center'>1er. Lav.</th>
+                                    <th class='text-center'>3er. Lav.</th>
+                                    <th class='text-center'>5to. Lav.</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class='text-center' style="vertical-align:middle">1</td>
+                                    <td><input id="txtMuestraA_Ancho_1erLav_1" tabindex="101" data-lavado="1" data-muestra="a" onkeyup="CalcularEncogimientoAncho('encogimientoancho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientoancho' /></td>
+                                    <td><input id="txtMuestraA_Ancho_3erLav_1" tabindex="102" data-lavado="3" data-muestra="a" onkeyup="CalcularEncogimientoAncho('encogimientoancho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientoancho' /></td>
+                                    <td><input id="txtMuestraA_Ancho_5toLav_1" tabindex="103" data-lavado="5" data-muestra="a" onkeyup="CalcularEncogimientoAncho('encogimientoancho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientoancho' /></td>
+                                    <td><input id="txtMuestraA_Largo_1erLav_1" tabindex="104" data-lavado="1" data-muestra="a" onkeyup="CalcularEncogimientoLargo('encogimientolargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientolargo' /></td>
+                                    <td><input id="txtMuestraA_Largo_3erLav_1" tabindex="105" data-lavado="3" data-muestra="a" onkeyup="CalcularEncogimientoLargo('encogimientolargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientolargo' /></td>
+                                    <td><input id="txtMuestraA_Largo_5toLav_1" tabindex="106" data-lavado="5" data-muestra="a" onkeyup="CalcularEncogimientoLargo('encogimientolargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientolargo' /></td>
+                                    <td><input id="txtMuestraB_Ancho_1erLav_1" tabindex="107" type='text' data-lavado="1" data-muestra="b" onkeyup="CalcularEncogimientoAncho('encogimientoancho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control encogimientoancho' /></td>
+                                    <td><input id="txtMuestraB_Ancho_3erLav_1" tabindex="108" type='text' data-lavado="3" data-muestra="b" onkeyup="CalcularEncogimientoAncho('encogimientoancho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control encogimientoancho' /></td>
+                                    <td><input id="txtMuestraB_Ancho_5toLav_1" tabindex="109" type='text' data-lavado="5" data-muestra="b" onkeyup="CalcularEncogimientoAncho('encogimientoancho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control encogimientoancho' /></td>
+                                    <td><input id="txtMuestraB_Largo_1erLav_1" tabindex="110" type='text' data-lavado="1" data-muestra="b" onkeyup="CalcularEncogimientoLargo('encogimientolargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control encogimientolargo' /></td>
+                                    <td><input id="txtMuestraB_Largo_3erLav_1" tabindex="111" type='text' data-lavado="3" data-muestra="b" onkeyup="CalcularEncogimientoLargo('encogimientolargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control encogimientolargo' /></td>
+                                    <td><input id="txtMuestraB_Largo_5toLav_1" tabindex="112" type='text' data-lavado="5" data-muestra="b" onkeyup="CalcularEncogimientoLargo('encogimientolargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control encogimientolargo' /></td>
+                                </tr>
+                                <tr>
+                                    <td class='text-center' style="vertical-align:middle">2</td>
+                                    <td><input id="txtMuestraA_Ancho_1erLav_2" tabindex="113" data-lavado="1" data-muestra="a" onkeyup="CalcularEncogimientoAncho('encogimientoancho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientoancho' /></td>
+                                    <td><input id="txtMuestraA_Ancho_3erLav_2" tabindex="114" data-lavado="3" data-muestra="a" onkeyup="CalcularEncogimientoAncho('encogimientoancho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientoancho' /></td>
+                                    <td><input id="txtMuestraA_Ancho_5toLav_2" tabindex="115" data-lavado="5" data-muestra="a" onkeyup="CalcularEncogimientoAncho('encogimientoancho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientoancho' /></td>
+                                    <td><input id="txtMuestraA_Largo_1erLav_2" tabindex="116" data-lavado="1" data-muestra="a" onkeyup="CalcularEncogimientoLargo('encogimientolargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientolargo' /></td>
+                                    <td><input id="txtMuestraA_Largo_3erLav_2" tabindex="117" data-lavado="3" data-muestra="a" onkeyup="CalcularEncogimientoLargo('encogimientolargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientolargo' /></td>
+                                    <td><input id="txtMuestraA_Largo_5toLav_2" tabindex="118" data-lavado="5" data-muestra="a" onkeyup="CalcularEncogimientoLargo('encogimientolargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientolargo' /></td>
+                                    <td><input id="txtMuestraB_Ancho_1erLav_2" tabindex="119" data-lavado="1" data-muestra="b" onkeyup="CalcularEncogimientoAncho('encogimientoancho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientoancho' /></td>
+                                    <td><input id="txtMuestraB_Ancho_3erLav_2" tabindex="120" data-lavado="3" data-muestra="b" onkeyup="CalcularEncogimientoAncho('encogimientoancho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientoancho' /></td>
+                                    <td><input id="txtMuestraB_Ancho_5toLav_2" tabindex="121" data-lavado="5" data-muestra="b" onkeyup="CalcularEncogimientoAncho('encogimientoancho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientoancho' /></td>
+                                    <td><input id="txtMuestraB_Largo_1erLav_2" tabindex="122" data-lavado="1" data-muestra="b" onkeyup="CalcularEncogimientoLargo('encogimientolargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientolargo' /></td>
+                                    <td><input id="txtMuestraB_Largo_3erLav_2" tabindex="123" data-lavado="3" data-muestra="b" onkeyup="CalcularEncogimientoLargo('encogimientolargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientolargo' /></td>
+                                    <td><input id="txtMuestraB_Largo_5toLav_2" tabindex="124" data-lavado="5" data-muestra="b" onkeyup="CalcularEncogimientoLargo('encogimientolargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientolargo' /></td>
+                                </tr>
+                                <tr>
+                                    <td class='text-center' style="vertical-align:middle">3</td>
+                                    <td><input id="txtMuestraA_Ancho_1erLav_3" tabindex="125" data-lavado="1" data-muestra="a" onkeyup="CalcularEncogimientoAncho('encogimientoancho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientoancho' /></td>
+                                    <td><input id="txtMuestraA_Ancho_3erLav_3" tabindex="126" data-lavado="3" data-muestra="a" onkeyup="CalcularEncogimientoAncho('encogimientoancho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientoancho' /></td>
+                                    <td><input id="txtMuestraA_Ancho_5toLav_3" tabindex="127" data-lavado="5" data-muestra="a" onkeyup="CalcularEncogimientoAncho('encogimientoancho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientoancho' /></td>
+                                    <td><input id="txtMuestraA_Largo_1erLav_3" tabindex="128" data-lavado="1" data-muestra="a" onkeyup="CalcularEncogimientoLargo('encogimientolargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientolargo' /></td>
+                                    <td><input id="txtMuestraA_Largo_3erLav_3" tabindex="129" data-lavado="3" data-muestra="a" onkeyup="CalcularEncogimientoLargo('encogimientolargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientolargo' /></td>
+                                    <td><input id="txtMuestraA_Largo_5toLav_3" tabindex="130" data-lavado="5" data-muestra="a" onkeyup="CalcularEncogimientoLargo('encogimientolargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientolargo' /></td>
+                                    <td><input id="txtMuestraB_Ancho_1erLav_3" tabindex="131" data-lavado="1" data-muestra="b" onkeyup="CalcularEncogimientoAncho('encogimientoancho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientoancho' /></td>
+                                    <td><input id="txtMuestraB_Ancho_3erLav_3" tabindex="132" data-lavado="3" data-muestra="b" onkeyup="CalcularEncogimientoAncho('encogimientoancho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientoancho' /></td>
+                                    <td><input id="txtMuestraB_Ancho_5toLav_3" tabindex="133" data-lavado="5" data-muestra="b" onkeyup="CalcularEncogimientoAncho('encogimientoancho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientoancho' /></td>
+                                    <td><input id="txtMuestraB_Largo_1erLav_3" tabindex="134" data-lavado="1" data-muestra="b" onkeyup="CalcularEncogimientoLargo('encogimientolargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientolargo' /></td>
+                                    <td><input id="txtMuestraB_Largo_3erLav_3" tabindex="135" data-lavado="3" data-muestra="b" onkeyup="CalcularEncogimientoLargo('encogimientolargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientolargo' /></td>
+                                    <td><input id="txtMuestraB_Largo_5toLav_3" tabindex="136" data-lavado="5" data-muestra="b" onkeyup="CalcularEncogimientoLargo('encogimientolargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control encogimientolargo' /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--<div id="divTela">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class='text-center' style="vertical-align:middle" rowspan="3">N°</th>
+                                    <th class='text-center' colspan="4">Muestra A</th>
+                                    <th class='text-center' colspan="4">Muestra B</th>
+                                </tr>
+                                <tr>
+                                    <th class='text-center' colspan="2">Ancho</th>
+                                    <th class='text-center' colspan="2">Largo</th>
+
+                                    <th class='text-center' colspan="2">Ancho</th>
+                                    <th class='text-center' colspan="2">Largo</th>
+
+                                </tr>
+                                <tr>
+                                    <th class='text-center'>1er. Lav.</th>
+                                    <th class='text-center'>3er. Lav.</th>
+                                    <th class='text-center'>1er. Lav.</th>
+                                    <th class='text-center'>3er. Lav.</th>
+
+                                    <th class='text-center'>1er. Lav.</th>
+                                    <th class='text-center'>3er. Lav.</th>
+                                    <th class='text-center'>1er. Lav.</th>
+                                    <th class='text-center'>3er. Lav.</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class='text-center' style="vertical-align:middle">1</td>
+                                    <td><input id="txtMuestraA_Ancho_1erLav_1" tabindex="101" data-lavado="1" data-muestra="A" onkeyup="CalcularEncogimientoAncho('EncogimientoAncho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control EncogimientoAncho' /></td>
+                                    <td><input id="txtMuestraA_Ancho_3erLav_1" tabindex="104" data-lavado="3" data-muestra="A" onkeyup="CalcularEncogimientoAncho('EncogimientoAncho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control EncogimientoAncho' /></td>
+                                    <td><input id="txtMuestraA_Largo_1erLav_1" tabindex="107" data-lavado="1" data-muestra="A" onkeyup="CalcularEncogimientoLargo('EncogimientoLargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control EncogimientoLargo' /></td>
+                                    <td><input id="txtMuestraA_Largo_3erLav_1" tabindex="110" data-lavado="3" data-muestra="A" onkeyup="CalcularEncogimientoLargo('EncogimientoLargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control EncogimientoLargo' /></td>
+                                    <td><input id="txtMuestraB_Ancho_1erLav_1" tabindex="112" type='text' data-lavado="1" data-muestra="B" onkeyup="CalcularEncogimientoAncho('EncogimientoAncho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control EncogimientoAncho' /></td>
+                                    <td><input id="txtMuestraB_Ancho_3erLav_1" tabindex="115" type='text' data-lavado="3" data-muestra="B" onkeyup="CalcularEncogimientoAncho('EncogimientoAncho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control EncogimientoAncho' /></td>
+                                    <td><input id="txtMuestraB_Largo_1erLav_1" tabindex="118" type='text' data-lavado="1" data-muestra="B" onkeyup="CalcularEncogimientoLargo('EncogimientoLargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control EncogimientoLargo' /></td>
+                                    <td><input id="txtMuestraB_Largo_3erLav_1" tabindex="121" type='text' data-lavado="3" data-muestra="B" onkeyup="CalcularEncogimientoLargo('EncogimientoLargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control EncogimientoLargo' /></td>
+                                </tr>
+                                <tr>
+                                    <td class='text-center' style="vertical-align:middle">2</td>
+                                    <td><input id="txtMuestraA_Ancho_1erLav_2" tabindex="102" data-lavado="1" data-muestra="A" onkeyup="CalcularEncogimientoAncho('EncogimientoAncho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control EncogimientoAncho' /></td>
+                                    <td><input id="txtMuestraA_Ancho_3erLav_2" tabindex="105" data-lavado="3" data-muestra="A" onkeyup="CalcularEncogimientoAncho('EncogimientoAncho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control EncogimientoAncho' /></td>
+                                    <td><input id="txtMuestraA_Largo_1erLav_2" tabindex="108" data-lavado="1" data-muestra="A" onkeyup="CalcularEncogimientoLargo('EncogimientoLargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control EncogimientoLargo' /></td>
+                                    <td><input id="txtMuestraA_Largo_3erLav_2" tabindex="111" data-lavado="3" data-muestra="A" onkeyup="CalcularEncogimientoLargo('EncogimientoLargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control EncogimientoLargo' /></td>
+                                    <td><input id="txtMuestraB_Ancho_1erLav_2" tabindex="113" data-lavado="1" data-muestra="B" onkeyup="CalcularEncogimientoAncho('EncogimientoAncho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control EncogimientoAncho' /></td>
+                                    <td><input id="txtMuestraB_Ancho_3erLav_2" tabindex="116" data-lavado="3" data-muestra="B" onkeyup="CalcularEncogimientoAncho('EncogimientoAncho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control EncogimientoAncho' /></td>
+                                    <td><input id="txtMuestraB_Largo_1erLav_2" tabindex="119" data-lavado="1" data-muestra="B" onkeyup="CalcularEncogimientoLargo('EncogimientoLargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control EncogimientoLargo' /></td>
+                                    <td><input id="txtMuestraB_Largo_3erLav_2" tabindex="122" data-lavado="3" data-muestra="B" onkeyup="CalcularEncogimientoLargo('EncogimientoLargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control EncogimientoLargo' /></td>
+                                </tr>
+                                <tr>
+                                    <td class='text-center' style="vertical-align:middle">3</td>
+                                    <td><input id="txtMuestraA_Ancho_1erLav_3" tabindex="103" data-lavado="1" data-muestra="A" onkeyup="CalcularEncogimientoAncho('EncogimientoAncho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control EncogimientoAncho' /></td>
+                                    <td><input id="txtMuestraA_Ancho_3erLav_3" tabindex="106" data-lavado="3" data-muestra="A" onkeyup="CalcularEncogimientoAncho('EncogimientoAncho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control EncogimientoAncho' /></td>
+                                    <td><input id="txtMuestraA_Largo_1erLav_3" tabindex="109" data-lavado="1" data-muestra="A" onkeyup="CalcularEncogimientoLargo('EncogimientoLargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control EncogimientoLargo' /></td>
+                                    <td><input id="txtMuestraA_Largo_3erLav_3" tabindex="111" data-lavado="3" data-muestra="A" onkeyup="CalcularEncogimientoLargo('EncogimientoLargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control EncogimientoLargo' /></td>
+                                    <td><input id="txtMuestraB_Ancho_1erLav_3" tabindex="114" data-lavado="1" data-muestra="B" onkeyup="CalcularEncogimientoAncho('EncogimientoAncho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control EncogimientoAncho' /></td>
+                                    <td><input id="txtMuestraB_Ancho_3erLav_3" tabindex="117" data-lavado="3" data-muestra="B" onkeyup="CalcularEncogimientoAncho('EncogimientoAncho','txtEncogimientoAncho');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control EncogimientoAncho' /></td>
+                                    <td><input id="txtMuestraB_Largo_1erLav_3" tabindex="120" data-lavado="1" data-muestra="B" onkeyup="CalcularEncogimientoLargo('EncogimientoLargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control EncogimientoLargo' /></td>
+                                    <td><input id="txtMuestraB_Largo_3erLav_3" tabindex="123" data-lavado="3" data-muestra="B" onkeyup="CalcularEncogimientoLargo('EncogimientoLargo','txtEncogimientoLargo');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" type='text' class='form-control EncogimientoLargo' /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>-->
+                </div>
+                <div class="col-lg-12">
+                    <div class="col-lg-3">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Encogimiento Largo</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="txtEncogimientoLargo" tabindex="124" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Encogimiento Ancho</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="txtEncogimientoAncho" tabindex="125" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Encogimiento Status</label>
+                                <div class="col-lg-9">
+                                    <select id="cboEncogimientoStatus" class="form-control" tabindex="126">
+                                        <option value="2">No Aplica</option>
+                                        <option value="1">Aprobado</option>
+                                        <option value="0">Rechazado</option>
+                                        <option value="3">Información</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox" id="divEstabilidadDimensionalGarment">
+        <div class="ibox-title">
+            <h5>Estabilidad Dimensional &nbsp;&nbsp;&nbsp;<i style="font-size:medium;cursor:pointer" class="fa fa-tags" onclick="ShowEstabilidadDimensionalMetodos();" aria-hidden="true"></i></h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="divPrenda">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class='text-center'></th>
+                                    <th class='text-center'>Original</th>
+                                    <th class='text-center'>One Cycle</th>
+                                    <th class='text-center'>% Change</th>
+                                    <th class='text-center'>Three Cycles</th>
+                                    <th class='text-center'>% Change</th>
+                                    <th class='text-center'>Five Cycles</th>
+                                    <th class='text-center'>% Change</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="vertical-align:middle">Across chest</td>
+                                    <td><input type="text" id="txtAcrossChestOriginal" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtAcrossChestOneCyleChange','txtAcrossChestOriginal','txtAcrossChestOneCyle');" class="form-control" tabindex="201" /></td>
+                                    <td><input type="text" id="txtAcrossChestOneCyle" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtAcrossChestOneCyleChange','txtAcrossChestOriginal','txtAcrossChestOneCyle');" class="form-control" tabindex="202" /></td>
+                                    <td><input type="text" id="txtAcrossChestOneCyleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtAcrossChestThreeCyles" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtAcrossChestThreeCylesChange','txtAcrossChestOriginal','txtAcrossChestThreeCyles');" class="form-control" tabindex="203" /></td>
+                                    <td><input type="text" id="txtAcrossChestThreeCylesChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtAcrossChestFiveCycle" onkeypress="return DigitosFracciones(event, this)" onkeyup="CalcularPorcentajeCambioPrenda('txtAcrossChestFiveCycleChange', 'txtAcrossChestOriginal', 'txtAcrossChestFiveCycle');" class="form-control" tabindex="203" /></td>
+                                    <td><input type="text" id="txtAcrossChestFiveCycleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align:middle">Bottom width</td>
+                                    <td><input type="text" id="txtBottomWidthOriginal" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtBottomWidthOneCyleChange','txtBottomWidthOriginal','txtBottomWidthOneCyle');" class="form-control" tabindex="204" /></td>
+                                    <td><input type="text" id="txtBottomWidthOneCyle" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtBottomWidthOneCyleChange','txtBottomWidthOriginal','txtBottomWidthOneCyle');" class="form-control" tabindex="205" /></td>
+                                    <td><input type="text" id="txtBottomWidthOneCyleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtBottomWidthThreeCyles" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtBottomWidthThreeCylesChange','txtBottomWidthOriginal','txtBottomWidthThreeCyles');" class="form-control" tabindex="206" /></td>
+                                    <td><input type="text" id="txtBottomWidthThreeCylesChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtBottomWidthFiveCycle" onkeypress="return DigitosFracciones(event, this)" onkeyup="CalcularPorcentajeCambioPrenda('txtBottomWidthFiveCycleChange', 'txtBottomWidthOriginal', 'txtBottomWidthFiveCycle');" class="form-control" tabindex="206" /></td>
+                                    <td><input type="text" id="txtBottomWidthFiveCycleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align:middle">Body from length</td>
+                                    <td><input type="text" id="txtBodyFromLenOriginal" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtBodyFromLeOneCyleChange','txtBodyFromLenOriginal','txtBodyFromLeOneCyle');" class="form-control" tabindex="207" /></td>
+                                    <td><input type="text" id="txtBodyFromLeOneCyle" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtBodyFromLeOneCyleChange','txtBodyFromLenOriginal','txtBodyFromLeOneCyle');" class="form-control" tabindex="208" /></td>
+                                    <td><input type="text" id="txtBodyFromLeOneCyleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtBodyFromLeThreeCyles" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtBodyFromLeThreeCylesChange','txtBodyFromLenOriginal','txtBodyFromLeThreeCyles');" class="form-control" tabindex="209" /></td>
+                                    <td><input type="text" id="txtBodyFromLeThreeCylesChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtBodyFromLeFiveCycle" onkeypress="return DigitosFracciones(event, this)" onkeyup="CalcularPorcentajeCambioPrenda('txtBodyFromLeFiveCycleChange', 'txtBodyFromLenOriginal', 'txtBodyFromLeFiveCycle');" class="form-control" tabindex="209" /></td>
+                                    <td><input type="text" id="txtBodyFromLeFiveCycleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align:middle">Sleeve length</td>
+                                    <td><input type="text" id="txtSleeveLenOriginal" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtSleeveLenOneCyleChange','txtSleeveLenOriginal','txtSleeveLenOneCyle');" class="form-control" tabindex="210" /></td>
+                                    <td><input type="text" id="txtSleeveLenOneCyle" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtSleeveLenOneCyleChange','txtSleeveLenOriginal','txtSleeveLenOneCyle');" class="form-control" tabindex="211" /></td>
+                                    <td><input type="text" id="txtSleeveLenOneCyleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtSleeveLenThreeCyles" onkeypress="return DigitosFracciones(event,this)" class="form-control" onkeyup="CalcularPorcentajeCambioPrenda('txtSleeveLenThreeCylesChange','txtSleeveLenOriginal','txtSleeveLenThreeCyles');" tabindex="212" /></td>
+                                    <td><input type="text" id="txtSleeveLenThreeCylesChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtSleeveLenFiveCycle" onkeypress="return DigitosFracciones(event, this)" class="form-control" onkeyup="CalcularPorcentajeCambioPrenda('txtSleeveLenFiveCycleChange', 'txtSleeveLenOriginal', 'txtSleeveLenFiveCycle');" tabindex="212" /></td>
+                                    <td><input type="text" id="txtSleeveLenFiveCycleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align:middle">Waistband width - half</td>
+                                    <td><input type="text" id="txtWaistbandWidthHalfOriginal" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtWaistbandWidthHalfOneCyleChange','txtWaistbandWidthHalfOriginal','txtWaistbandWidthHalfOneCyle');" class="form-control" tabindex="213" /></td>
+                                    <td><input type="text" id="txtWaistbandWidthHalfOneCyle" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtWaistbandWidthHalfOneCyleChange','txtWaistbandWidthHalfOriginal','txtWaistbandWidthHalfOneCyle');" class="form-control" tabindex="214" /></td>
+                                    <td><input type="text" id="txtWaistbandWidthHalfOneCyleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtWaistbandWidthHalfThreeCyles" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtWaistbandWidthHalfThreeCylesChange','txtWaistbandWidthHalfOriginal','txtWaistbandWidthHalfThreeCyles');" class="form-control" tabindex="215" /></td>
+                                    <td><input type="text" id="txtWaistbandWidthHalfThreeCylesChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtWaistbandWidthHalfFiveCycle" onkeypress="return DigitosFracciones(event, this)" onkeyup="CalcularPorcentajeCambioPrenda('txtWaistbandWidthHalfFiveCycleChange', 'txtWaistbandWidthHalfOriginal', 'txtWaistbandWidthHalfFiveCycle');" class="form-control" tabindex="215" /></td>
+                                    <td><input type="text" id="txtWaistbandWidthHalfFiveCycleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align:middle">Leg opening - half</td>
+                                    <td><input type="text" id="txtLegOpeningHalfOriginal" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtLegOpeningHalfOneCyleChange','txtLegOpeningHalfOriginal','txtLegOpeningHalfOneCyle');" class="form-control" tabindex="216" /></td>
+                                    <td><input type="text" id="txtLegOpeningHalfOneCyle" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtLegOpeningHalfOneCyleChange','txtLegOpeningHalfOriginal','txtLegOpeningHalfOneCyle');" class="form-control" tabindex="217" /></td>
+                                    <td><input type="text" id="txtLegOpeningHalfOneCyleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtLegOpeningHalfThreeCyles" onkeypress="return DigitosFracciones(event,this)" class="form-control" onkeyup="CalcularPorcentajeCambioPrenda('txtLegOpeningHalfThreeCylesChange','txtLegOpeningHalfOriginal','txtLegOpeningHalfThreeCyles');" tabindex="218" /></td>
+                                    <td><input type="text" id="txtLegOpeningHalfThreeCylesChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtLegOpeningHalfFiveCycle" onkeypress="return DigitosFracciones(event, this)" class="form-control" onkeyup="CalcularPorcentajeCambioPrenda('txtLegOpeningHalfFiveCycleChange', 'txtLegOpeningHalfOriginal', 'txtLegOpeningHalfFiveCycle');" tabindex="218" /></td>
+                                    <td><input type="text" id="txtLegOpeningHalfFiveCycleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align:middle">Outseam below waistband</td>
+                                    <td><input type="text" id="txtOutseambelowOriginal" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtOutseambelowOneCyleChange','txtOutseambelowOriginal','txtOutseambelowOneCyle');" class="form-control" tabindex="219" /></td>
+                                    <td><input type="text" id="txtOutseambelowOneCyle" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtOutseambelowOneCyleChange','txtOutseambelowOriginal','txtOutseambelowOneCyle');" class="form-control" tabindex="220" /></td>
+                                    <td><input type="text" id="txtOutseambelowOneCyleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtOutseambelowThreeCyles" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtOutseambelowThreeCylesChange','txtOutseambelowOriginal','txtOutseambelowThreeCyles');" class="form-control" tabindex="221" /></td>
+                                    <td><input type="text" id="txtOutseambelowThreeCylesChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtOutseambelowFiveCycle" onkeypress="return DigitosFracciones(event, this)" onkeyup="CalcularPorcentajeCambioPrenda('txtOutseambelowFiveCycleChange', 'txtOutseambelowOriginal', 'txtOutseambelowFiveCycle');" class="form-control" tabindex="221" /></td>
+                                    <td><input type="text" id="txtOutseambelowFiveCycleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align:middle">Inseam length</td>
+                                    <td><input type="text" id="txtInseamLenOriginal" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtInseamLenOneCyleChange','txtInseamLenOriginal','txtInseamLenOneCyle');" class="form-control" tabindex="222" /></td>
+                                    <td><input type="text" id="txtInseamLenOneCyle" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtInseamLenOneCyleChange','txtInseamLenOriginal','txtInseamLenOneCyle');" class="form-control" tabindex="223" /></td>
+                                    <td><input type="text" id="txtInseamLenOneCyleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtInseamLenThreeCyles" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtInseamLenThreeCylesChange','txtInseamLenOriginal','txtInseamLenThreeCyles');" class="form-control" tabindex="224" /></td>
+                                    <td><input type="text" id="txtInseamLenThreeCylesChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtInseamLenFiveCycle" onkeypress="return DigitosFracciones(event, this)" onkeyup="CalcularPorcentajeCambioPrenda('txtInseamLenFiveCycleChange', 'txtInseamLenOriginal', 'txtInseamLenFiveCycle');" class="form-control" tabindex="224" /></td>
+                                    <td><input type="text" id="txtInseamLenFiveCycleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--<div id="divPrenda">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class='text-center'></th>
+                                    <th class='text-center'>Original</th>
+                                    <th class='text-center'>One Cycle</th>
+                                    <th class='text-center'>% Change</th>
+                                    <th class='text-center'>Three Cycles</th>
+                                    <th class='text-center'>% Change</th>
+                                    <th class='text-center'>Five Cycles</th>
+                                    <th class='text-center'>% Change</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="vertical-align:middle">Across chest</td>
+                                    <td><input type="text" id="txtAcrossChestOriginal" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtAcrossChestOneCyleChange','txtAcrossChestOriginal','txtAcrossChestOneCyle');" class="form-control" tabindex="201" /></td>
+                                    <td><input type="text" id="txtAcrossChestOneCyle" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtAcrossChestOneCyleChange','txtAcrossChestOriginal','txtAcrossChestOneCyle');" class="form-control" tabindex="202" /></td>
+                                    <td><input type="text" id="txtAcrossChestOneCyleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtAcrossChestThreeCyles" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtAcrossChestThreeCylesChange','txtAcrossChestOriginal','txtAcrossChestThreeCyles');" class="form-control" tabindex="203"/></td>
+                                    <td><input type="text" id="txtAcrossChestThreeCylesChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtAcrossChestFiveCycle" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtAcrossChestThreeCylesChange','txtAcrossChestOriginal','txtAcrossChestThreeCyles');" class="form-control" tabindex="203" /></td>
+                                    <td><input type="text" id="txtAcrossChestFiveCycleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align:middle">Bottom width</td>
+                                    <td><input type="text" id="txtBottomWidthOriginal" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtBottomWidthOneCyleChange','txtBottomWidthOriginal','txtBottomWidthOneCyle');" class="form-control" tabindex="204" /></td>
+                                    <td><input type="text" id="txtBottomWidthOneCyle" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtBottomWidthOneCyleChange','txtBottomWidthOriginal','txtBottomWidthOneCyle');" class="form-control" tabindex="205" /></td>
+                                    <td><input type="text" id="txtBottomWidthOneCyleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtBottomWidthThreeCyles" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtBottomWidthThreeCylesChange','txtBottomWidthOriginal','txtBottomWidthThreeCyles');" class="form-control" tabindex="206" /></td>
+                                    <td><input type="text" id="txtBottomWidthThreeCylesChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtBottomWidthFiveCycle" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtBottomWidthThreeCylesChange','txtBottomWidthOriginal','txtBottomWidthThreeCyles');" class="form-control" tabindex="206" /></td>
+                                    <td><input type="text" id="txtBottomWidthFiveCycleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align:middle">Body from length</td>
+                                    <td><input type="text" id="txtBodyFromLenOriginal" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtBodyFromLeOneCyleChange','txtBodyFromLenOriginal','txtBodyFromLeOneCyle');" class="form-control" tabindex="207"/></td>
+                                    <td><input type="text" id="txtBodyFromLeOneCyle" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtBodyFromLeOneCyleChange','txtBodyFromLenOriginal','txtBodyFromLeOneCyle');" class="form-control" tabindex="208"/></td>
+                                    <td><input type="text" id="txtBodyFromLeOneCyleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtBodyFromLeThreeCyles" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtBodyFromLeThreeCylesChange','txtBodyFromLenOriginal','txtBodyFromLeThreeCyles');" class="form-control" tabindex="209"/></td>
+                                    <td><input type="text" id="txtBodyFromLeThreeCylesChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtBodyFromLeFiveCycle" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtBodyFromLeThreeCylesChange','txtBodyFromLenOriginal','txtBodyFromLeThreeCyles');" class="form-control" tabindex="209" /></td>
+                                    <td><input type="text" id="txtBodyFromLeFiveCycleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align:middle">Sleeve length</td>
+                                    <td><input type="text" id="txtSleeveLenOriginal" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtSleeveLenOneCyleChange','txtSleeveLenOriginal','txtSleeveLenOneCyle');" class="form-control" tabindex="210" /></td>
+                                    <td><input type="text" id="txtSleeveLenOneCyle" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtSleeveLenOneCyleChange','txtSleeveLenOriginal','txtSleeveLenOneCyle');" class="form-control" tabindex="211" /></td>
+                                    <td><input type="text" id="txtSleeveLenOneCyleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtSleeveLenThreeCyles" onkeypress="return DigitosFracciones(event,this)" class="form-control" onkeyup="CalcularPorcentajeCambioPrenda('txtSleeveLenThreeCylesChange','txtSleeveLenOriginal','txtSleeveLenThreeCyles');" tabindex="212" /></td>
+                                    <td><input type="text" id="txtSleeveLenThreeCylesChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtSleeveLenFiveCycle" onkeypress="return DigitosFracciones(event,this)" class="form-control" onkeyup="CalcularPorcentajeCambioPrenda('txtSleeveLenThreeCylesChange','txtSleeveLenOriginal','txtSleeveLenThreeCyles');" tabindex="212" /></td>
+                                    <td><input type="text" id="txtSleeveLenFiveCycleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align:middle">Waistband width - half</td>
+                                    <td><input type="text" id="txtWaistbandWidthHalfOriginal" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtWaistbandWidthHalfOneCyleChange','txtWaistbandWidthHalfOriginal','txtWaistbandWidthHalfOneCyle');" class="form-control" tabindex="213" /></td>
+                                    <td><input type="text" id="txtWaistbandWidthHalfOneCyle" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtWaistbandWidthHalfOneCyleChange','txtWaistbandWidthHalfOriginal','txtWaistbandWidthHalfOneCyle');" class="form-control" tabindex="214" /></td>
+                                    <td><input type="text" id="txtWaistbandWidthHalfOneCyleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtWaistbandWidthHalfThreeCyles" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtWaistbandWidthHalfThreeCylesChange','txtWaistbandWidthHalfOriginal','txtWaistbandWidthHalfThreeCyles');" class="form-control" tabindex="215" /></td>
+                                    <td><input type="text" id="txtWaistbandWidthHalfThreeCylesChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtWaistbandWidthHalfFiveCycle" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtWaistbandWidthHalfThreeCylesChange','txtWaistbandWidthHalfOriginal','txtWaistbandWidthHalfThreeCyles');" class="form-control" tabindex="215" /></td>
+                                    <td><input type="text" id="txtWaistbandWidthHalfFiveCycleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align:middle">Leg opening - half</td>
+                                    <td><input type="text" id="txtLegOpeningHalfOriginal" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtLegOpeningHalfOneCyleChange','txtLegOpeningHalfOriginal','txtLegOpeningHalfOneCyle');" class="form-control" tabindex="216" /></td>
+                                    <td><input type="text" id="txtLegOpeningHalfOneCyle" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtLegOpeningHalfOneCyleChange','txtLegOpeningHalfOriginal','txtLegOpeningHalfOneCyle');" class="form-control" tabindex="217" /></td>
+                                    <td><input type="text" id="txtLegOpeningHalfOneCyleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtLegOpeningHalfThreeCyles" onkeypress="return DigitosFracciones(event,this)" class="form-control" onkeyup="CalcularPorcentajeCambioPrenda('txtLegOpeningHalfThreeCylesChange','txtLegOpeningHalfOriginal','txtLegOpeningHalfThreeCyles');" tabindex="218" /></td>
+                                    <td><input type="text" id="txtLegOpeningHalfThreeCylesChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtLegOpeningHalfThreeCycle" onkeypress="return DigitosFracciones(event,this)" class="form-control" onkeyup="CalcularPorcentajeCambioPrenda('txtLegOpeningHalfThreeCylesChange','txtLegOpeningHalfOriginal','txtLegOpeningHalfThreeCyles');" tabindex="218" /></td>
+                                    <td><input type="text" id="txtLegOpeningHalfThreeCycleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align:middle">Outseam below waistband</td>
+                                    <td><input type="text" id="txtOutseambelowOriginal" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtOutseambelowOneCyleChange','txtOutseambelowOriginal','txtOutseambelowOneCyle');" class="form-control" tabindex="219" /></td>
+                                    <td><input type="text" id="txtOutseambelowOneCyle" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtOutseambelowOneCyleChange','txtOutseambelowOriginal','txtOutseambelowOneCyle');" class="form-control" tabindex="220" /></td>
+                                    <td><input type="text" id="txtOutseambelowOneCyleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtOutseambelowThreeCyles" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtOutseambelowThreeCylesChange','txtOutseambelowOriginal','txtOutseambelowThreeCyles');" class="form-control" tabindex="221" /></td>
+                                    <td><input type="text" id="txtOutseambelowThreeCylesChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtOutseambelowThreeCycle" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtOutseambelowThreeCylesChange','txtOutseambelowOriginal','txtOutseambelowThreeCyles');" class="form-control" tabindex="221" /></td>
+                                    <td><input type="text" id="txtOutseambelowThreeCycleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align:middle">Inseam length</td>
+                                    <td><input type="text" id="txtInseamLenOriginal" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtInseamLenOneCyleChange','txtInseamLenOriginal','txtInseamLenOneCyle');" class="form-control" tabindex="222" /></td>
+                                    <td><input type="text" id="txtInseamLenOneCyle" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtInseamLenOneCyleChange','txtInseamLenOriginal','txtInseamLenOneCyle');" class="form-control" tabindex="223" /></td>
+                                    <td><input type="text" id="txtInseamLenOneCyleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtInseamLenThreeCyles" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtInseamLenThreeCylesChange','txtInseamLenOriginal','txtInseamLenThreeCyles');" class="form-control" tabindex="224" /></td>
+                                    <td><input type="text" id="txtInseamLenThreeCylesChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                    <td><input type="text" id="txtInseamLenThreeCycle" onkeypress="return DigitosFracciones(event,this)" onkeyup="CalcularPorcentajeCambioPrenda('txtInseamLenThreeCylesChange','txtInseamLenOriginal','txtInseamLenThreeCyles');" class="form-control" tabindex="224" /></td>
+                                    <td><input type="text" id="txtInseamLenThreeCycleChange" tabindex="-1" onkeypress="return DigitosFracciones(event,this)" class="form-control" readonly /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>-->
+                </div>
+                <div class="col-lg-12">
+                    <div class="col-lg-3">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Encogimiento Status</label>
+                                <div class="col-lg-9">
+                                    <select id="cboEncogimientoGarmentStatus" class="form-control" tabindex="225">
+                                        <option value="2">No Aplica</option>
+                                        <option value="1">Aprobado</option>
+                                        <option value="0">Rechazado</option>
+                                        <option value="3">Información</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Unit of Measure</label>
+                                <div class="col-lg-9">
+                                    <select id="cboUOM" class="form-control" tabindex="226">                                        
+                                        <option value="Inches">Inches</option>
+                                        <option value="Centimeters">Centimeters</option>                                        
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="ibox" id="divEstabilidadDimensional_EP">
+        <div class="ibox-title">
+            <h5>Estabilidad Dimensional - Drycleaning in PerchLoroethylene</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class='text-center' style="vertical-align:middle" rowspan="3">N°</th>
+                                    <th class='text-center' colspan="4">Muestra A</th>
+                                    <th class='text-center' colspan="4">Muestra B</th>
+                                </tr>
+                                <tr>
+                                    <th class='text-center' colspan="2">Ancho</th>
+                                    <th class='text-center' colspan="2">Largo</th>
+                                    <th class='text-center' colspan="2">Ancho</th>
+                                    <th class='text-center' colspan="2">Largo</th>
+                                </tr>
+                                <tr>
+                                    <th class='text-center'>1er. Lav.</th>
+                                    <th class='text-center'>3er. Lav.</th>
+                                    <th class='text-center'>1er. Lav.</th>
+                                    <th class='text-center'>3er. Lav.</th>
+                                    <th class='text-center'>1er. Lav.</th>
+                                    <th class='text-center'>3er. Lav.</th>
+                                    <th class='text-center'>1er. Lav.</th>
+                                    <th class='text-center'>3er. Lav.</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class='text-center' style="vertical-align:middle">1</td>
+                                    <td><input id="txtMuestraA_Ancho_1erLav_1_EP" tabindex="301" data-lavado="1" data-muestra="A" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoAncho('EncogimientoAnchoEP','txtEncogimientoAncho_EP');" type='text' class='form-control EncogimientoAnchoEP' /></td>
+                                    <td><input id="txtMuestraA_Ancho_3erLav_1_EP" tabindex="304" data-lavado="3" data-muestra="A" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoAncho('EncogimientoAnchoEP','txtEncogimientoAncho_EP');" type='text' class='form-control EncogimientoAnchoEP' /></td>
+                                    <td><input id="txtMuestraA_Largo_1erLav_1_EP" tabindex="307" data-lavado="1" data-muestra="A" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoLargo('EncogimientoLargoEP','txtEncogimientoLargo_EP');" type='text' class='form-control EncogimientoLargoEP' /></td>
+                                    <td><input id="txtMuestraA_Largo_3erLav_1_EP" tabindex="310" data-lavado="3" data-muestra="A" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoLargo('EncogimientoLargoEP','txtEncogimientoLargo_EP');" type='text' class='form-control EncogimientoLargoEP' /></td>
+                                    <td><input id="txtMuestraB_Ancho_1erLav_1_EP" tabindex="313" type='text' data-lavado="1" data-muestra="B" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoAncho('EncogimientoAnchoEP','txtEncogimientoAncho_EP');" class='form-control EncogimientoAnchoEP' /></td>
+                                    <td><input id="txtMuestraB_Ancho_3erLav_1_EP" tabindex="316" type='text' data-lavado="3" data-muestra="B" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoAncho('EncogimientoAnchoEP','txtEncogimientoAncho_EP');" class='form-control EncogimientoAnchoEP' /></td>
+                                    <td><input id="txtMuestraB_Largo_1erLav_1_EP" tabindex="319" type='text' data-lavado="1" data-muestra="B" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoLargo('EncogimientoLargoEP','txtEncogimientoLargo_EP');" class='form-control EncogimientoLargoEP' /></td>
+                                    <td><input id="txtMuestraB_Largo_3erLav_1_EP" tabindex="322" type='text' data-lavado="3" data-muestra="B" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoLargo('EncogimientoLargoEP','txtEncogimientoLargo_EP');" class='form-control EncogimientoLargoEP' /></td>
+                                </tr>
+                                <tr>
+                                    <td class='text-center' style="vertical-align:middle">2</td>
+                                    <td><input id="txtMuestraA_Ancho_1erLav_2_EP" tabindex="302" type='text' data-lavado="1" data-muestra="A" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoAncho('EncogimientoAnchoEP','txtEncogimientoAncho_EP');" class='form-control EncogimientoAnchoEP' /></td>
+                                    <td><input id="txtMuestraA_Ancho_3erLav_2_EP" tabindex="305" type='text' data-lavado="3" data-muestra="A" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoAncho('EncogimientoAnchoEP','txtEncogimientoAncho_EP');" class='form-control EncogimientoAnchoEP' /></td>
+                                    <td><input id="txtMuestraA_Largo_1erLav_2_EP" tabindex="308" type='text' data-lavado="1" data-muestra="A" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoLargo('EncogimientoLargoEP','txtEncogimientoLargo_EP');" class='form-control EncogimientoLargoEP' /></td>
+                                    <td><input id="txtMuestraA_Largo_3erLav_2_EP" tabindex="311" type='text' data-lavado="3" data-muestra="A" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoLargo('EncogimientoLargoEP','txtEncogimientoLargo_EP');" class='form-control EncogimientoLargoEP' /></td>
+                                    <td><input id="txtMuestraB_Ancho_1erLav_2_EP" tabindex="314" type='text' data-lavado="1" data-muestra="B" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoAncho('EncogimientoAnchoEP','txtEncogimientoAncho_EP');" class='form-control EncogimientoAnchoEP' /></td>
+                                    <td><input id="txtMuestraB_Ancho_3erLav_2_EP" tabindex="317" type='text' data-lavado="3" data-muestra="B" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoAncho('EncogimientoAnchoEP','txtEncogimientoAncho_EP');" class='form-control EncogimientoAnchoEP' /></td>
+                                    <td><input id="txtMuestraB_Largo_1erLav_2_EP" tabindex="320" type='text' data-lavado="1" data-muestra="B" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoLargo('EncogimientoLargoEP','txtEncogimientoLargo_EP');" class='form-control EncogimientoLargoEP' /></td>
+                                    <td><input id="txtMuestraB_Largo_3erLav_2_EP" tabindex="323" type='text' data-lavado="3" data-muestra="B" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoLargo('EncogimientoLargoEP','txtEncogimientoLargo_EP');" class='form-control EncogimientoLargoEP' /></td>
+                                </tr>
+                                <tr>
+                                    <td class='text-center' style="vertical-align:middle">3</td>
+                                    <td><input id="txtMuestraA_Ancho_1erLav_3_EP" tabindex="303" type='text' data-lavado="1" data-muestra="A" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoAncho('EncogimientoAnchoEP','txtEncogimientoAncho_EP');" class='form-control EncogimientoAnchoEP' /></td>
+                                    <td><input id="txtMuestraA_Ancho_3erLav_3_EP" tabindex="306" type='text' data-lavado="3" data-muestra="A" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoAncho('EncogimientoAnchoEP','txtEncogimientoAncho_EP');" class='form-control EncogimientoAnchoEP' /></td>
+                                    <td><input id="txtMuestraA_Largo_1erLav_3_EP" tabindex="309" type='text' data-lavado="1" data-muestra="A" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoLargo('EncogimientoLargoEP','txtEncogimientoLargo_EP');" class='form-control EncogimientoLargoEP' /></td>
+                                    <td><input id="txtMuestraA_Largo_3erLav_3_EP" tabindex="312" type='text' data-lavado="3" data-muestra="A" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoLargo('EncogimientoLargoEP','txtEncogimientoLargo_EP');" class='form-control EncogimientoLargoEP' /></td>
+                                    <td><input id="txtMuestraB_Ancho_1erLav_3_EP" tabindex="315" type='text' data-lavado="1" data-muestra="B" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoAncho('EncogimientoAnchoEP','txtEncogimientoAncho_EP');" class='form-control EncogimientoAnchoEP' /></td>
+                                    <td><input id="txtMuestraB_Ancho_3erLav_3_EP" tabindex="318" type='text' data-lavado="3" data-muestra="B" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoAncho('EncogimientoAnchoEP','txtEncogimientoAncho_EP');" class='form-control EncogimientoAnchoEP' /></td>
+                                    <td><input id="txtMuestraB_Largo_1erLav_3_EP" tabindex="321" type='text' data-lavado="1" data-muestra="B" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoLargo('EncogimientoLargoEP','txtEncogimientoLargo_EP');" class='form-control EncogimientoLargoEP' /></td>
+                                    <td><input id="txtMuestraB_Largo_3erLav_3_EP" tabindex="324" type='text' data-lavado="3" data-muestra="B" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoLargo('EncogimientoLargoEP','txtEncogimientoLargo_EP');" class='form-control EncogimientoLargoEP' /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="col-lg-3">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Encogimiento Largo</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="txtEncogimientoLargo_EP" tabindex="325" />
+                                </div>
+                            </div>                           
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Encogimiento Ancho</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="txtEncogimientoAncho_EP" tabindex="326" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Encogimiento Status</label>
+                                <div class="col-lg-9">
+                                    <select id="cboEncogimientoStatus_EP" class="form-control" tabindex="327">
+                                        <option value="2">No Aplica</option>
+                                        <option value="1">Aprobado</option>
+                                        <option value="0">Rechazado</option>
+                                        <option value="3">Información</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox" id="divEstabilidadDimensional_HW">
+        <div class="ibox-title">
+            <h5>Estabilidad Dimensional - Hand wash Laundering</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class='text-center' style="vertical-align:middle" rowspan="3">N°</th>
+                                    <th class='text-center' colspan="4">Muestra A</th>
+                                    <th class='text-center' colspan="4">Muestra B</th>
+                                </tr>
+                                <tr>
+                                    <th class='text-center' colspan="2">Ancho</th>
+                                    <th class='text-center' colspan="2">Largo</th>
+                                    <th class='text-center' colspan="2">Ancho</th>
+                                    <th class='text-center' colspan="2">Largo</th>
+                                </tr>
+                                <tr>
+                                    <th class='text-center'>1er. Lav.</th>
+                                    <th class='text-center'>3er. Lav.</th>
+                                    <th class='text-center'>1er. Lav.</th>
+                                    <th class='text-center'>3er. Lav.</th>
+                                    <th class='text-center'>1er. Lav.</th>
+                                    <th class='text-center'>3er. Lav.</th>
+                                    <th class='text-center'>1er. Lav.</th>
+                                    <th class='text-center'>3er. Lav.</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class='text-center' style="vertical-align:middle">1</td>
+                                    <td><input id="txtMuestraA_Ancho_1erLav_1_HW" tabindex="401" data-lavado="1" data-muestra="A" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoAncho('EncogimientoAnchoHW','txtEncogimientoAncho_HW');" type='text' class='form-control EncogimientoAnchoHW' /></td>
+                                    <td><input id="txtMuestraA_Ancho_3erLav_1_HW" tabindex="404" data-lavado="3" data-muestra="A" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoAncho('EncogimientoAnchoHW','txtEncogimientoAncho_HW');" type='text' class='form-control EncogimientoAnchoHW' /></td>
+                                    <td><input id="txtMuestraA_Largo_1erLav_1_HW" tabindex="407" data-lavado="1" data-muestra="A" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoLargo('EncogimientoLargoHW','txtEncogimientoLargo_HW');" type='text' class='form-control EncogimientoLargoHW' /></td>
+                                    <td><input id="txtMuestraA_Largo_3erLav_1_HW" tabindex="410" data-lavado="3" data-muestra="A" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoLargo('EncogimientoLargoHW','txtEncogimientoLargo_HW');" type='text' class='form-control EncogimientoLargoHW' /></td>
+                                    <td><input id="txtMuestraB_Ancho_1erLav_1_HW" tabindex="413" type='text' data-lavado="1" data-muestra="B" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoAncho('EncogimientoAnchoHW','txtEncogimientoAncho_HW');" class='form-control EncogimientoAnchoHW' /></td>
+                                    <td><input id="txtMuestraB_Ancho_3erLav_1_HW" tabindex="416" type='text' data-lavado="3" data-muestra="B" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoAncho('EncogimientoAnchoHW','txtEncogimientoAncho_HW');" class='form-control EncogimientoAnchoHW' /></td>
+                                    <td><input id="txtMuestraB_Largo_1erLav_1_HW" tabindex="419" type='text' data-lavado="1" data-muestra="B" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoLargo('EncogimientoLargoHW','txtEncogimientoLargo_HW');" class='form-control EncogimientoLargoHW' /></td>
+                                    <td><input id="txtMuestraB_Largo_3erLav_1_HW" tabindex="422" type='text' data-lavado="3" data-muestra="B" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoLargo('EncogimientoLargoHW','txtEncogimientoLargo_HW');" class='form-control EncogimientoLargoHW' /></td>
+                                </tr>
+                                <tr>
+                                    <td class='text-center' style="vertical-align:middle">2</td>
+                                    <td><input id="txtMuestraA_Ancho_1erLav_2_HW" type='text' tabindex="402" data-lavado="1" data-muestra="A" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoAncho('EncogimientoAnchoHW','txtEncogimientoAncho_HW');" class='form-control EncogimientoAnchoHW' /></td>
+                                    <td><input id="txtMuestraA_Ancho_3erLav_2_HW" type='text' tabindex="405" data-lavado="3" data-muestra="A" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoAncho('EncogimientoAnchoHW','txtEncogimientoAncho_HW');" class='form-control EncogimientoAnchoHW' /></td>
+                                    <td><input id="txtMuestraA_Largo_1erLav_2_HW" type='text' tabindex="408" data-lavado="1" data-muestra="A" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoLargo('EncogimientoLargoHW','txtEncogimientoLargo_HW');" class='form-control EncogimientoLargoHW' /></td>
+                                    <td><input id="txtMuestraA_Largo_3erLav_2_HW" type='text' tabindex="411" data-lavado="3" data-muestra="A" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoLargo('EncogimientoLargoHW','txtEncogimientoLargo_HW');" class='form-control EncogimientoLargoHW' /></td>
+                                    <td><input id="txtMuestraB_Ancho_1erLav_2_HW" type='text' tabindex="414" data-lavado="1" data-muestra="B" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoAncho('EncogimientoAnchoHW','txtEncogimientoAncho_HW');" class='form-control EncogimientoAnchoHW' /></td>
+                                    <td><input id="txtMuestraB_Ancho_3erLav_2_HW" type='text' tabindex="417" data-lavado="3" data-muestra="B" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoAncho('EncogimientoAnchoHW','txtEncogimientoAncho_HW');" class='form-control EncogimientoAnchoHW' /></td>
+                                    <td><input id="txtMuestraB_Largo_1erLav_2_HW" type='text' tabindex="420" data-lavado="1" data-muestra="B" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoLargo('EncogimientoLargoHW','txtEncogimientoLargo_HW');" class='form-control EncogimientoLargoHW' /></td>
+                                    <td><input id="txtMuestraB_Largo_3erLav_2_HW" type='text' tabindex="423" data-lavado="3" data-muestra="B" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoLargo('EncogimientoLargoHW','txtEncogimientoLargo_HW');" class='form-control EncogimientoLargoHW' /></td>
+                                </tr>
+                                <tr>
+                                    <td class='text-center' style="vertical-align:middle">3</td>
+                                    <td><input id="txtMuestraA_Ancho_1erLav_3_HW" type='text' tabindex="403" data-lavado="1" data-muestra="A" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoAncho('EncogimientoAnchoHW','txtEncogimientoAncho_HW');" class='form-control EncogimientoAnchoHW' /></td>
+                                    <td><input id="txtMuestraA_Ancho_3erLav_3_HW" type='text' tabindex="406" data-lavado="3" data-muestra="A" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoAncho('EncogimientoAnchoHW','txtEncogimientoAncho_HW');" class='form-control EncogimientoAnchoHW' /></td>
+                                    <td><input id="txtMuestraA_Largo_1erLav_3_HW" type='text' tabindex="409" data-lavado="1" data-muestra="A" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoLargo('EncogimientoLargoHW','txtEncogimientoLargo_HW');" class='form-control EncogimientoLargoHW' /></td>
+                                    <td><input id="txtMuestraA_Largo_3erLav_3_HW" type='text' tabindex="412" data-lavado="3" data-muestra="A" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoLargo('EncogimientoLargoHW','txtEncogimientoLargo_HW');" class='form-control EncogimientoLargoHW' /></td>
+                                    <td><input id="txtMuestraB_Ancho_1erLav_3_HW" type='text' tabindex="415" data-lavado="1" data-muestra="B" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoAncho('EncogimientoAnchoHW','txtEncogimientoAncho_HW');" class='form-control EncogimientoAnchoHW' /></td>
+                                    <td><input id="txtMuestraB_Ancho_3erLav_3_HW" type='text' tabindex="418" data-lavado="3" data-muestra="B" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoAncho('EncogimientoAnchoHW','txtEncogimientoAncho_HW');" class='form-control EncogimientoAnchoHW' /></td>
+                                    <td><input id="txtMuestraB_Largo_1erLav_3_HW" type='text' tabindex="421" data-lavado="1" data-muestra="B" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoLargo('EncogimientoLargoHW','txtEncogimientoLargo_HW');" class='form-control EncogimientoLargoHW' /></td>
+                                    <td><input id="txtMuestraB_Largo_3erLav_3_HW" type='text' tabindex="424" data-lavado="3" data-muestra="B" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularEncogimientoLargo('EncogimientoLargoHW','txtEncogimientoLargo_HW');" class='form-control EncogimientoLargoHW' /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="col-lg-3">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Encogimiento Largo</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="txtEncogimientoLargo_HW" tabindex="425" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Encogimiento Ancho</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="txtEncogimientoAncho_HW" tabindex="426" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Encogimiento Status</label>
+                                <div class="col-lg-9">
+                                    <select id="cboEncogimientoStatus_HW" class="form-control" tabindex="427">
+                                        <option value="2">No Aplica</option>
+                                        <option value="1">Aprobado</option>
+                                        <option value="0">Rechazado</option>
+                                        <option value="3">Información</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox" id="divRevirado">
+        <div class="ibox-title">
+            <h5>Revirado</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class='text-center' colspan="6">Muestra A</th>
+                                <th class='text-center' colspan="6">Muestra B</th>
+                            </tr>
+                            <tr>
+                                <th class='text-center' colspan="2">1er. Lavado</th>
+                                <th class='text-center' colspan="2">3er. Lavado</th>
+                                <th class='text-center' colspan="2">5to. Lavado</th>
+                                <th class='text-center' colspan="2">1er. Lavado</th>
+                                <th class='text-center' colspan="2">3er. Lavado</th>
+                                <th class='text-center' colspan="2">5to. Lavado</th>
+                            </tr>
+                            <tr>
+                                <th class='text-center'>AC</th>
+                                <th class='text-center'>BD</th>
+                                <th class='text-center'>AC</th>
+                                <th class='text-center'>BD</th>
+                                <th class='text-center'>AC</th>
+                                <th class='text-center'>BD</th>
+                                <th class='text-center'>AC</th>
+                                <th class='text-center'>BD</th>
+                                <th class='text-center'>AC</th>
+                                <th class='text-center'>BD</th>
+                                <th class='text-center'>AC</th>
+                                <th class='text-center'>BD</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan='3'><input id="txtMuestraA_1erLav_AC" tabindex="501" type='text' data-lavado="1" data-muestra="A" data-par="AC" onkeyup="CalcularRevirado('txtRevirado','EncogimientoRevirado');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control EncogimientoRevirado' /></td>
+                                <td rowspan='3'><input id="txtMuestraA_1erLav_BD" tabindex="502" type='text' data-lavado="1" data-muestra="A" data-par="BD" onkeyup="CalcularRevirado('txtRevirado','EncogimientoRevirado');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control EncogimientoRevirado' /></td>
+                                <td rowspan='3'><input id="txtMuestraA_3erLav_AC" tabindex="503" type='text' data-lavado="3" data-muestra="A" data-par="AC" onkeyup="CalcularRevirado('txtRevirado','EncogimientoRevirado');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control EncogimientoRevirado' /></td>
+                                <td rowspan='3'><input id="txtMuestraA_3erLav_BD" tabindex="504" type='text' data-lavado="3" data-muestra="A" data-par="BD" onkeyup="CalcularRevirado('txtRevirado','EncogimientoRevirado');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control EncogimientoRevirado' /></td>
+                                <td rowspan='3'><input id="txtMuestraA_5toLav_AC" tabindex="506" type='text' data-lavado="5" data-muestra="A" data-par="AC" onkeyup="CalcularRevirado('txtRevirado','EncogimientoRevirado');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control EncogimientoRevirado' /></td>
+                                <td rowspan='3'><input id="txtMuestraA_5toLav_BD" tabindex="507" type='text' data-lavado="5" data-muestra="A" data-par="BD" onkeyup="CalcularRevirado('txtRevirado','EncogimientoRevirado');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control EncogimientoRevirado' /></td>
+                                <td rowspan='3'><input id="txtMuestraB_1erLav_AC" tabindex="508" type='text' data-lavado="1" data-muestra="B" data-par="AC" onkeyup="CalcularRevirado('txtRevirado','EncogimientoRevirado');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control EncogimientoRevirado' /></td>
+                                <td rowspan='3'><input id="txtMuestraB_1erLav_BD" tabindex="509" type='text' data-lavado="1" data-muestra="B" data-par="BD" onkeyup="CalcularRevirado('txtRevirado','EncogimientoRevirado');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control EncogimientoRevirado' /></td>
+                                <td rowspan='3'><input id="txtMuestraB_3erLav_AC" tabindex="510" type='text' data-lavado="3" data-muestra="B" data-par="AC" onkeyup="CalcularRevirado('txtRevirado','EncogimientoRevirado');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control EncogimientoRevirado' /></td>
+                                <td rowspan='3'><input id="txtMuestraB_3erLav_BD" tabindex="511" type='text' data-lavado="3" data-muestra="B" data-par="BD" onkeyup="CalcularRevirado('txtRevirado','EncogimientoRevirado');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control EncogimientoRevirado' /></td>
+                                <td rowspan='3'><input id="txtMuestraB_5toLav_AC" tabindex="512" type='text' data-lavado="5" data-muestra="B" data-par="AC" onkeyup="CalcularRevirado('txtRevirado','EncogimientoRevirado');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control EncogimientoRevirado' /></td>
+                                <td rowspan='3'><input id="txtMuestraB_5toLav_BD" tabindex="513" type='text' data-lavado="5" data-muestra="B" data-par="BD" onkeyup="CalcularRevirado('txtRevirado','EncogimientoRevirado');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control EncogimientoRevirado' /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--<table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class='text-center' colspan="4">Muestra A</th>
+                                <th class='text-center' colspan="4">Muestra B</th>
+                            </tr>
+                            <tr>
+                                <th class='text-center' colspan="2">1er. Lavado</th>
+                                <th class='text-center' colspan="2">3er. Lavado</th>
+                                <th class='text-center' colspan="2">1er. Lavado</th>
+                                <th class='text-center' colspan="2">3er. Lavado</th>
+                            </tr>
+                            <tr>
+                                <th class='text-center'>AC</th>
+                                <th class='text-center'>BD</th>
+                                <th class='text-center'>AC</th>
+                                <th class='text-center'>BD</th>
+                                <th class='text-center'>AC</th>
+                                <th class='text-center'>BD</th>
+                                <th class='text-center'>AC</th>
+                                <th class='text-center'>BD</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan='3'><input id="txtMuestraA_1erLav_AC" tabindex="501" type='text' data-lavado="1" data-muestra="A" data-par="AC" onkeyup="CalcularRevirado('txtRevirado','EncogimientoRevirado');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control EncogimientoRevirado' /></td>
+                                <td rowspan='3'><input id="txtMuestraA_1erLav_BD" tabindex="502" type='text' data-lavado="1" data-muestra="A" data-par="BD" onkeyup="CalcularRevirado('txtRevirado','EncogimientoRevirado');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control EncogimientoRevirado' /></td>
+                                <td rowspan='3'><input id="txtMuestraA_3erLav_AC" tabindex="503" type='text' data-lavado="3" data-muestra="A" data-par="AC" onkeyup="CalcularRevirado('txtRevirado','EncogimientoRevirado');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control EncogimientoRevirado' /></td>
+                                <td rowspan='3'><input id="txtMuestraA_3erLav_BD" tabindex="504" type='text' data-lavado="3" data-muestra="A" data-par="BD" onkeyup="CalcularRevirado('txtRevirado','EncogimientoRevirado');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control EncogimientoRevirado' /></td>
+                                <td rowspan='3'><input id="txtMuestraB_1erLav_AC" tabindex="505" type='text' data-lavado="1" data-muestra="B" data-par="AC" onkeyup="CalcularRevirado('txtRevirado','EncogimientoRevirado');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control EncogimientoRevirado' /></td>
+                                <td rowspan='3'><input id="txtMuestraB_1erLav_BD" tabindex="506" type='text' data-lavado="1" data-muestra="B" data-par="BD" onkeyup="CalcularRevirado('txtRevirado','EncogimientoRevirado');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control EncogimientoRevirado' /></td>
+                                <td rowspan='3'><input id="txtMuestraB_3erLav_AC" tabindex="507" type='text' data-lavado="3" data-muestra="B" data-par="AC" onkeyup="CalcularRevirado('txtRevirado','EncogimientoRevirado');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control EncogimientoRevirado' /></td>
+                                <td rowspan='3'><input id="txtMuestraB_3erLav_BD" tabindex="508" type='text' data-lavado="3" data-muestra="B" data-par="BD" onkeyup="CalcularRevirado('txtRevirado','EncogimientoRevirado');" onkeypress="return DigitimosDecimalesConNegativo(event,this)" class='form-control EncogimientoRevirado' /></td>
+                            </tr>
+                        </tbody>
+                    </table>-->
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="col-lg-3">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Revirado</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="txtRevirado" tabindex="509" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Revirado Status</label>
+                                <div class="col-lg-9">
+                                    <select id="cboReviradoStatus" class="form-control" tabindex="510">
+                                        <option value="2">No Aplica</option>
+                                        <option value="1">Aprobado</option>
+                                        <option value="0">Rechazado</option>
+                                        <option value="3">Información</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox" id="divApariencia">
+        <div class="ibox-title">
+            <h5>Apariencia</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Color Change</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtApariencia" tabindex="601" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Apariencia Status </label>
+                            <div class="col-lg-9">
+                                <select id="cboAparienciaStatus" class="form-control" tabindex="605">
+                                    <option value="2">No Aplica</option>
+                                    <option value="1">Aprobado</option>
+                                    <option value="0">Rechazado</option>
+                                    <option value="3">Información</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Grado de pilling</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtPilling" tabindex="602" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Grado SA</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtGradoSA" tabindex="603" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Evaluacion Apariencia</label>
+                            <div class="col-lg-9">
+                                <select id="cboEvaluacionApariencia" class="form-control" tabindex="604">
+                                    <option value="">Seleccione</option>
+                                    <option value="Approved">Aceptable</option>
+                                    <option value="Rejected">Rechazado</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="ibox" id="divSeamTwist">
+        <div class="ibox-title">
+            <h5>Seam twist in garment before and after home laundering</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Before AA'</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtAABefore" onkeyup="CalcularSeamResultado('Before');" tabindex="701" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">After AA'</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtAAAfter" onkeyup="CalcularSeamResultado('After');" tabindex="703" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Change</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtSeamChange" readonly  />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Before A'B</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtABBefore" onkeyup="CalcularSeamResultado('Before');" tabindex="702" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">After A'B</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtABAfter" onkeyup="CalcularSeamResultado('After');" tabindex="704" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Status</label>
+                            <div class="col-lg-9">
+                                <select id="cboSeamTwistStatus" class="form-control" tabindex="705">
+                                    <option value="2">No Aplica</option>
+                                    <option value="1">Aprobado</option>
+                                    <option value="0">Rechazado</option>
+                                    <option value="3">Información</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Before Resultado</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtSeamResultadoBefore" tabindex="-1" readonly />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">After Resultado</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtSeamResultadoAfter" tabindex="-1" readonly />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox" id="divDensidadTela">
+        <div class="ibox-title">
+            <h5>Densidad de Tela</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Muestra 1 - Densidad</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control Densidad" id="txtMuestra1Densidad" tabindex="801" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularDensidad();" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Muestra 1 - Ancho</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control Densidad" id="txtMuestra1Ancho" tabindex="805" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularAncho();" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Desviacion</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtDesviacion" readonly />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Muestra 2 - Densidad</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control Densidad" id="txtMuestra2Densidad" tabindex="802" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularDensidad();" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Muestra 2 - Ancho</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control Densidad" id="txtMuestra2Ancho" tabindex="806" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularAncho();" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Densidad Status</label>
+                            <div class="col-lg-9">
+                                <select id="cboDensidadStatus" class="form-control" tabindex="809">
+                                    <option value="2">No Aplica</option>
+                                    <option value="1">Aprobado</option>
+                                    <option value="0">Rechazado</option>
+                                    <option value="3">Información</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Muestra 3 - Densidad</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control Densidad" id="txtMuestra3Densidad" tabindex="803" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularDensidad();" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Muestra 3 - Ancho</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control Densidad" id="txtMuestra3Ancho" tabindex="807" onkeypress="return DigitimosDecimalesConNegativo(event,this)" onkeyup="CalcularAncho();" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Densidad</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtDensidad" tabindex="804" onkeyup="CalcularDesviacion();" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Ancho Acabado</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtAnchoAcabado" tabindex="808" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox" id="divSolidezFrote">
+        <div class="ibox-title">
+            <h5>Solidez al Frote</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Seco</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtSeco" tabindex="901" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Humedo</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtHumedo" tabindex="902" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Solidez al Frote Status</label>
+                            <div class="col-lg-9">
+                                <select id="cboSolidezFroteStatus" class="form-control" tabindex="903">
+                                    <option value="2">No Aplica</option>
+                                    <option value="1">Aprobado</option>
+                                    <option value="0">Rechazado</option>
+                                    <option value="3">Información</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox" id="divSolidezLavado">
+        <div class="ibox-title">
+            <h5>Solidez al Lavado &nbsp;&nbsp;&nbsp;<i style="font-size:medium;cursor:pointer" class="fa fa-tags" onclick="ShowSolidezLavadoMetodos();" aria-hidden="true"></i></h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Cambio de Color</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtCambioColorSL" tabindex="1001" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Acetato</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtAcetatoSL" tabindex="1005" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Algodon</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtAlgodonSL" tabindex="1009" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Nylon</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtNylonSL" tabindex="1002" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Silk</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtSilkSL" tabindex="1006" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Poliester</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtPoliesterSL" tabindex="1010" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Acrilico</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtAcrilicoSL" tabindex="1003" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Lana</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtLanaSL" tabindex="1007" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Viscose</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtViscosaSL" tabindex="1011" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Solidez al Lavado Status</label>
+                            <div class="col-lg-9">
+                                <select id="cboSolidezLavadoStatus" class="form-control" tabindex="1004">
+                                    <option value="2">No Aplica</option>
+                                    <option value="1">Aprobado</option>
+                                    <option value="0">Rechazado</option>
+                                    <option value="3">Información</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox" id="divSolidezLavadoModificado">
+        <div class="ibox-title">
+            <h5>Solidez al Lavado Modificado</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Cambio de Color</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control _move" id="txtCambioColorSLM" onkeyup="move_right(event)" tabindex="5000" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Acetato</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control _move" id="txtAcetatoSLM" onkeyup="move_right(event)" tabindex="5001" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Algodon</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control _move" id="txtAlgodonSLM" onkeyup="move_right(event)" tabindex="5002" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Nylon</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control _move" id="txtNylonSLM" onkeyup="move_right(event)" tabindex="5003" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Silk</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control _move" id="txtSilkSLM" onkeyup="move_right(event)" tabindex="5004" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Poliester</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control _move" id="txtPoliesterSLM" onkeyup="move_right(event)" tabindex="5005" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Acrilico</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control _move" id="txtAcrilicoSLM" onkeyup="move_right(event)" tabindex="5006" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Lana</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control _move" id="txtLanaSLM" onkeyup="move_right(event)" tabindex="5007" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Viscose</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control _move" id="txtViscosaSLM" onkeyup="move_right(event)" tabindex="5008" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Solidez al Lavado Modificado Status</label>
+                            <div class="col-lg-9">
+                                <select id="cboSolidezLavadoModificadoStatus" class="form-control" tabindex="1004">
+                                    <option value="2">No Aplica</option>
+                                    <option value="1">Aprobado</option>
+                                    <option value="0">Rechazado</option>
+                                    <option value="3">Información</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox" id="divResistenciaPilling">
+        <div class="ibox-title">
+            <h5>Resistencia al Pilling</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Resultado</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtPillingResultado" tabindex="1101" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Min</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtPillingMin" tabindex="1102" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Resitencia al Pilling Status</label>
+                            <div class="col-lg-9">
+                                <select id="cboPillingStatus" class="form-control" tabindex="1103">
+                                    <option value="2">No Aplica</option>
+                                    <option value="1">Aprobado</option>
+                                    <option value="0">Rechazado</option>
+                                    <option value="3">Información</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox" id="divBursting">
+        <div class="ibox-title">
+            <h5>Bursting</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Resultado</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtBurstingResultado" tabindex="1201" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Min</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtBurstingMin" tabindex="1202" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Bursting Status</label>
+                            <div class="col-lg-9">
+                                <select id="cboBurstingStatus" class="form-control" tabindex="1203">
+                                    <option value="2">No Aplica</option>
+                                    <option value="1">Aprobado</option>
+                                    <option value="0">Rechazado</option>
+                                    <option value="3">Información</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox" id="divSolidezTranspiracion">
+        <div class="ibox-title">
+            <h5>Solidez a la Transpiracion</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Cambio de Color</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtCambioColorST" tabindex="1301" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Acetato</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtAcetatoST" tabindex="1305" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Algodon</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtAlgodonST" tabindex="1309" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Nylon</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtNylonST" tabindex="1302" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Silk</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtSilkST" tabindex="1306" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Poliester</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtPoliesterST" tabindex="1310" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Acrilico</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtAcrilicoST" tabindex="1303" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Lana</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtLanaST" tabindex="1307" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Viscose</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtViscosaST" tabindex="1311" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Solidez Transpiracion Status</label>
+                            <div class="col-lg-9">
+                                <select id="cboSolidezTranspiracionStatus" class="form-control" tabindex="1304">
+                                    <option value="2">No Aplica</option>
+                                    <option value="1">Aprobado</option>
+                                    <option value="0">Rechazado</option>
+                                    <option value="3">Información</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox" id="divSolidezAgua">
+        <div class="ibox-title">
+            <h5>Solidez al Agua</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Cambio de Color</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtCambioColorSA" tabindex="1401" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Acetato</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtAcetatoSA" tabindex="1405" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Algodon</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtAlgodonSA" tabindex="1409" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Nylon</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtNylonSA" tabindex="1402" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Silk</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtSilkSA" tabindex="1406" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Poliester</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtPoliesterSA" tabindex="1410" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Acrilico</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtAcrilicoSA" tabindex="1403" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Lana</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtLanaSA" tabindex="1407" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Viscose</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtViscosaSA" tabindex="1411" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Solidez al Agua Status</label>
+                            <div class="col-lg-9">
+                                <select id="cboSolidezAguaStatus" class="form-control" tabindex="1404">
+                                    <option value="2">No Aplica</option>
+                                    <option value="1">Aprobado</option>
+                                    <option value="0">Rechazado</option>
+                                    <option value="3">Información</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox" id="divAlmacenamiento">
+        <div class="ibox-title">
+            <h5>Almacenamiento</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Cambio de Color</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtCambioColorAlmacenamiento" tabindex="1501" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Acetato</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtAcetatoAlmacenamiento" tabindex="1505" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Algodon</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtAlgodonAlmacenamiento" tabindex="1509" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Nylon</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtNylonAlmacenamiento" tabindex="1502" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Silk</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtSilkAlmacenamiento" tabindex="1506" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Poliester</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtPoliesterAlmacenamiento" tabindex="1510" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Acrilico</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtAcrilicoAlmacenamiento" tabindex="1503" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Lana</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtLanaAlmacenamiento" tabindex="1507" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Viscose</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtViscosaAlmacenamiento" tabindex="1511" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Staining White Cloth</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtStainingWhiteCloth" tabindex="1504" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Almacenamiento Status</label>
+                            <div class="col-lg-9">
+                                <select id="cboAlmacenamientoStatus" class="form-control" tabindex="1508">
+                                    <option value="2">No Aplica</option>
+                                    <option value="1">Aprobado</option>
+                                    <option value="0">Rechazado</option>
+                                    <option value="3">Información</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox" id="divBlanqueadorSinCloro">
+        <div class="ibox-title">
+            <h5>Blanqueador sin Cloro</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-lg-3">
+                    <h5>Sodium Perborate</h5>
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Cambio de Color</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtCambioColorBlanqueadorSinCloroSodiumPerborate" tabindex="1601" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h5>Hydrogen Peroxide</h5>
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Cambio de Color</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtCambioColorBlanqueadorSinCloroHydrogenPeroxide" tabindex="1602" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Blanqueador sin Cloro Status</label>
+                            <div class="col-lg-9">
+                                <select id="cboBlanqueadorSinClaroStatus" class="form-control" tabindex="1603">
+                                    <option value="2">No Aplica</option>
+                                    <option value="1">Aprobado</option>
+                                    <option value="0">Rechazado</option>
+                                    <option value="3">Información</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox" id="divBlanqueadorConCloro">
+        <div class="ibox-title">
+            <h5>Blanqueador con Cloro</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Cambio de Color</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtCambioColorBlanqueadorConCloro" tabindex="1701" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Blanqueador con Cloro Status</label>
+                            <div class="col-lg-9">
+                                <select id="cboBlanqueadorConCloroStatus" class="form-control" tabindex="1702">
+                                    <option value="2">No Aplica</option>
+                                    <option value="1">Aprobado</option>
+                                    <option value="0">Rechazado</option>
+                                    <option value="3">Información</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox" id="divPHValue">
+        <div class="ibox-title">
+            <h5>PH Value</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Resultado</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtResultadoPH" tabindex="1801" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Requerido</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtRequeridoPH" tabindex="1802" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">PH Value Status</label>
+                            <div class="col-lg-9">
+                                <select id="cboPHStatus" class="form-control" tabindex="1803">
+                                    <option value="2">No Aplica</option>
+                                    <option value="1">Aprobado</option>
+                                    <option value="0">Rechazado</option>
+                                    <option value="3">Información</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox" id="divWicking">
+        <div class="ibox-title">
+            <h5>Wicking</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Pulgadas</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtWikingPulgadas" tabindex="1901" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Wiking Status</label>
+                            <div class="col-lg-9">
+                                <select id="cboWikingStatus" class="form-control" tabindex="1905">
+                                    <option value="2">No Aplica</option>
+                                    <option value="1">Aprobado</option>
+                                    <option value="0">Rechazado</option>
+                                    <option value="3">Información</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Minutos</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="txtWikingMinutes" tabindex="1902" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Wales 30 minutos</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control" id="txtWikingMin30Wales" tabindex="1903" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Courses 30 minutos</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtWikingMin30Courses" tabindex="1904" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+<input type="hidden" id="hdGramajeAcabado" />
+
+
+<div class="modal inmodal in" id="mdEstabilidadMetodos" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <i class="fa fa-check-o modal-icon"></i>
+                <h4 class="modal-title">Condiciones de Lavado y secado</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <span>Ciclo de la Lavadora</span>
+                        <br />
+                        <ul class="list-group">
+                            <li class="list-group-item"><input type="radio" name="radCicloLavadora" value="(1)" />&nbsp;(1) Normal</li>
+                            <li class="list-group-item"><input type="radio" name="radCicloLavadora" value="(2)" />&nbsp;(2) Delicate</li>
+                            <li class="list-group-item"><input type="radio" name="radCicloLavadora" value="(3)" />&nbsp;(3) Permanent Press</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+                        <span>Temperatura del Lavado</span>
+                        <br />
+                        <ul class="list-group">
+                            <li class="list-group-item"><input type="radio" name="radTemperaturaLavado" value="II" />&nbsp;(II) 27 ± 3°C (80 ± 5°F) Cold</li>
+                            <li class="list-group-item"><input type="radio" name="radTemperaturaLavado" value="III" />&nbsp;(III) 41 ± 3°C (105 ± 5°F) Warm</li>
+                            <li class="list-group-item"><input type="radio" name="radTemperaturaLavado" value="IV" />&nbsp;(IV) 49 ± 3°C (120 ± 5°F) Hot</li>
+                            <li class="list-group-item"><input type="radio" name="radTemperaturaLavado" value="V" />&nbsp;(V) 60 ± 3°C (140 ± 5°F) Very Hot</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+                        <span>Procedimiento de Secado</span>
+                        <br />
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <input type="radio" name="radProcedimientoSecado" value="A" /> (A) Tumble dry
+                                <ul>
+                                    <li class="list-group-item-text"><input type="radio" name="radProcedimientoSecadoA" value="(i)" />&nbsp;i. Cotton (Medium)</li>
+                                    <li class="list-group-item-text"><input type="radio" name="radProcedimientoSecadoA" value="(ii)" />&nbsp;ii. Delicate (Low)</li>
+                                    <li class="list-group-item-text"><input type="radio" name="radProcedimientoSecadoA" value="(iii)" />&nbsp;iii. Permanent Press (Medium)</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item"><input type="radio" name="radProcedimientoSecado" value="B" />&nbsp;(B) Line dry (Colgado)</li>
+                            <li class="list-group-item"><input type="radio" name="radProcedimientoSecado" value="C" />&nbsp;(C) Drip dry (Sin exprimir)</li>
+                            <li class="list-group-item"><input type="radio" name="radProcedimientoSecado" value="D" />&nbsp;(D) Screen dry (Tendido Plano)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal inmodal in" id="mdSolidezLavadoMetodos" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <i class="fa fa-check-o modal-icon"></i>
+                <h4 class="modal-title">Condiciones Solidez de Lavado</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="list-group">
+                            <li class="list-group-item"><input type="radio" name="radSolidezLavadoMetodos" value="1" />&nbsp;2A-49±3°C-0.15%-50</li>
+                            <li class="list-group-item"><input type="radio" name="radSolidezLavadoMetodos" value="2" />&nbsp;1A-41±3°C-0.37%-10</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

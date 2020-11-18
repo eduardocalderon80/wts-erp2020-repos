@@ -1,0 +1,352 @@
+﻿<style>
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f7f7f7;
+    }
+    /*.button.dim {
+        margin-right: 0;
+        margin-bottom: 10px !important;
+    }*/
+    .close-black {
+        color: #000 !important;
+        opacity: .5 !important;
+    }
+
+    #txtFechaInicioCalcular[readonly], #txtFechaInicioCalcular[readonly] {
+        background-color: #ffffff;
+        border: 1px solid #e5e6e7;
+    }
+
+    .bg-blue-solicitud {
+        background: #206590 !important;
+        color: white;
+    }
+
+    #div_tbl_solicitudes table th {
+        background: #206590 !important;
+        color: white !important;
+        border: 1px solid #e7e7e7;
+    }
+
+    .tabrecomendacion > tbody > tr > td {
+        padding-top: 2px;
+        padding-left: 2px;
+        padding-bottom: 2px;
+        padding-right: 2px;
+    }
+    .tabrecomendacion > thead > tr > th {
+        padding-top: 2px;
+        padding-left: 2px;
+        padding-bottom: 2px;
+        padding-right: 2px;
+    }
+    /*#chart_gantt {
+        width: 100%;
+        height:500px;
+        max-height: 500px;
+    }*/
+</style>
+<div class="ibox" id="panelEncabezado_VacacionesIndex">
+    <div class="hide">
+        <input type="text" id="txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-6">
+            <h2 class="font-bold">Vacaciones</h2>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <i class="fa fa-home"></i>
+                </li>
+                <li class="breadcrumb-item">
+                    Gestion de Talento
+                </li>
+                <li class="breadcrumb-item active">
+                    <strong>Vacaciones</strong>
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-6 text-right" style="padding-top:20px">
+            <button type="button" class="btn btn-default" id="btnNew">
+                <span class="fa fa-plus"> </span>
+                Nuevo
+            </button>
+            <button type="button" class="btn btn-success" id="btnReporte">
+                <span class="fa fa-file-excel-o"> </span>
+                Reporte
+            </button>
+            <button type="button" class="btn btn-primary" id="btnSearch">
+                <span class="fa fa-refresh"> </span>
+                Actualizar
+            </button>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content">
+
+        <div class="row animated fadeInRight">
+            <div class="col-lg-9">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <div class="stat-percent font-bold text-success"><i class="fa fa-info-circle text-danger"></i></div>
+                        <h5>Políticas</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <table class="table table-condensed tabrecomendacion" style="font-size: 11px;">
+                            <thead>
+                                <tr>
+                                    <th class="col-sm-3">Si el periodo de vacaciones es:</th>
+                                    <th class="col-sm-9">Registrar su solicitud de vacaciones como mínimo:</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1 o 2 dias</td>
+                                    <td>1 día antes del inicio (1 día)</td>
+                                </tr>
+                                <tr>
+                                    <td>3 a 6 dias</td>
+                                    <td>7 días antes del inicio (1 semana)</td>
+                                </tr>
+                                <tr>
+                                    <td>7 a más dias</td>
+                                    <td>14 días antes del inicio (2 semanas)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!--<span style="font-size: 11px;">
+                            - Si el colaborador solicita de 1 a 2 días de vacaciones, esta se debe registrar con un mínimo de 24 horas antes de la fecha de inicio. <br />
+                            - Si el colaborador solicita de 3 a 7 días de vacaciones, esta se debe registrar como mínimo con (1) semana de anticipación. <br />
+                            - Si el colaborador solicita más de 7 días de vacaciones, este se debe registrar como mínimo, con (2) semanas de anticipación. <br />
+                        </span>-->
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <div class="stat-percent font-bold text-success"><i class="fa fa-calendar-o"></i></div>
+                        <h5 class="font-bold">Saldo de Vacaciones</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins font-bold" style="padding-left:50px" id="lblSaldoVacaciones"></h1>
+                        <button type="button" class="btn btn-md btn-success btn-outline float-right font-bold" id="btnCalc">
+                            <span class="fa fa-calculator"> </span>
+                            Calcular Saldo
+                        </button>
+                        <small class="font-bold">Saldo hasta hoy <span id="fecha_hoy"></span></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row animated fadeInRight">
+            <div class="col-lg-12" id="div_colaboradores"></div>
+        </div>
+
+        <div class="row animated fadeInRight hide" id="div_gantt">
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5 id="h5_gantt">Itinerario de Vacaciones Programadas</h5>
+                        <div class="ibox-tools">
+                            <a class="fullscreen-link">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="chart_gantt"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row animated fadeInRight">
+            <div class="col-lg-6 hide" id="ibox-topten">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5 id="title_grafico_tabla">Cantidad de Vacaciones acumuladas por colaborador</h5>
+                        <div class="ibox-tools">
+                            <a class="fullscreen-link">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content" id="ibox-content_top">
+                        <div id="div_grafico_tabla">
+                            <table class="table table-hover" style="margin-bottom: 0;">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 1%" class="text-center">No.</th>
+                                        <th>Nombre</th>
+                                        <th class="text-center">Dias</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody_top"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 hide" id="ibox-graficobar">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5 id="h5-ibox-graficobar">Gráficos</h5>
+                        <div class="ibox-tools">
+                            <a class="fullscreen-link">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content" id="ibox-content-ibox-graficobar">
+                        <canvas id="barChart" height="140"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 hide" id="ibox-graficopie">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5 id="h5-ibox-graficopie">Gráficos</h5>
+                        <div class="ibox-tools">
+                            <a class="fullscreen-link">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content" id="ibox-content-ibox-graficopie">
+                        <canvas id="doughnutChart" height="140"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 hide" id="ibox-todosgraficos">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        @*<h5 id="h5">Gráficos</h5>*@
+                        <div class="ibox-tools">
+                            <h5>Gráficos</h5>
+                            <a class="fullscreen-link">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content" id="ibox-content_graficos">
+                        <div id="ggeneral">
+                            <div data-toggle="buttons" class="btn-group text-center" style="margin-bottom:10px" id="divbotonesgrafico">
+                                <span class="btn btn-sm btn-white gbar active"><i class="fa fa-bar-chart-o"></i> <input type="radio" id="option1" name="options"> Días de Vacaciones por Año <span class="actual_year"></span> </span>
+                                <span class="btn btn-sm btn-white gpie"><i class="fa fa-pie-chart"></i> <input type="radio" id="option2" name="options"> Número de Solicitudes por Estado </span>
+                            </div>
+                            <div id="gbar">
+                                <canvas id="barChartJefe" height="140"></canvas>
+                            </div>
+                            <div id="gpie" class="hide">
+                                <canvas id="doughnutChartJefe" height="140"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" id="ibox-2">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <h5>Vacaciones Registradas</h5>
+                        <div class="ibox-tools">
+                            <a class="fullscreen-link">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="form-group">
+                            <div class="form-horizontal row">
+                                <div class="col-sm-10">
+                                    <input type="text" placeholder="Buscar Solicitud" class="input form-control" id="txtBuscar">
+                                </div>
+                                <div class="col-sm-2">
+                                    <select id="cboEstado" class="form-control"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="div_tbl_solicitudes" class="table-responsive"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Oculto -->
+<div id="modal_calcular" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Modal Header background-color: #18a689;-->
+            <div class="modal-header bg-white" style="">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                @*<h4 class="modal-title" id="myModalLabel">
+                        Calcular Saldo Restante de Vacaciones
+                    </h4>*@
+                <div class="col-lg-11">
+                    <h3 class="font-bold"><i class="fa fa-calculator"></i> Calcular saldo de Vacaciones</h3>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active">
+                            <strong>
+                                Calcule el saldo de vacaciones colocando
+                                una fecha futura
+                            </strong>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body" style="padding-bottom: 10px!important">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <div class="form-horizontal row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4">Nombre Personal:</label>
+                                    <div class="col-sm-8">
+                                        <label id="lblPersonal" class="form-control disabled"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4">Saldo restante a la fecha:</label>
+                                    <div class="col-sm-8">
+                                        <label id="lblsaldoactual" class="form-control disabled"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4">Fecha futura:<br /><small class="text-success">formato: día/mes/año</small></label>
+                                    <div class="col-sm-8">
+                                        <div class="input-group date date-es">
+                                            <input id="txtFechaInicioCalcular" type="text" class="form-control _enty_grabar" placeholder="__/__/____" data-required="true" data-min="1" data-max="254" data-id="fechainicio" readonly>
+                                            <div class="input-group-addon">
+                                                <span class="fa fa-calendar"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4">Saldo restante a fecha futura:</label>
+                                    <div class="col-sm-8">
+                                        <label id="lblsaldocalculado" class="form-control"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,313 @@
+﻿<style>
+    .no-sort::after {
+        display: none !important;
+    }
+
+    .no-sort {
+        pointer-events: none !important;
+        cursor: default !important;
+    }
+
+    thead input {
+        width: 100%;
+    }
+</style>
+<div class="ibox" id="panelEncabezado_inventarioEditar">
+    <div class="hide">
+        <input type="text" id="txtpar_new" value="DATA-PARAMETRO" />
+    </div>
+    <div class="ibox-title">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 id="_title" class="text-navy bold">DATA-TITULO</h3>
+            </div>
+            <div class="col-sm-6 text-right">
+                <button type="button" class="btn btn-primary" id="btnSave">
+                    <span class="fa fa-save"></span>
+                    Grabar
+                </button>
+                <button type="button" class="btn btn-default" id="btnReturn">
+                    <span class="fa fa-ban"></span>
+                    Regresar
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="ibox-content wrapper wrapper-content gray-bg" >
+        <div class="ibox">
+            <div class="hide">
+                <input type="text" id="hf_idsolicitud" class="_enty_grabar" data-required="false" data-min="1" data-max="20" data-id="IdInventario" />
+            </div>
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <h5 class="text-navy bold">Información del Movimiento</h5>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal row">
+                        <!--COLUMNA 1-->
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Usuario Solicitante</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control _enty_grabar" data-min="1" data-max="999999" data-required="true" id="_cbo_usuario_solicitante" data-id="idusuariosolicitante" disabled style="-webkit-appearance: none;"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <!--COLUMNA 2-->
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Movimiento</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control _enty_grabar" data-min="1" data-max="20" data-required="true" id="_cbo_movimiento" data-id="idtipomovimiento"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Período</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control _enty_grabar" disabled data-min="1" data-max="20" data-required="true" id="_cbo_periodo" data-id="idperiodo"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-4"> Motivo</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <select class="form-control _enty_grabar" id="_cbo_motivo" data-required="true" data-min="1" data-max="20" data-id="idtipomotivo"></select>
+                                        <span class="btn btn-sm btn-success input-group-addon" id="_btn_crear_motivo" title="Crear Motivo">
+                                            <span class="fa fa-plus-circle"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal row">
+                        <!--COLUMNA 1-->
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Locación</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control _enty_grabar" data-min="1" data-max="20" data-required="true" id="_cbo_Almacen" data-id="idalmacen"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <!--COLUMNA 2-->
+                        <div class="col-sm-6 " id="div_contenedor_entregado_a">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Entregado a</label>
+                                <div class="col-sm-8">
+                                    <input type="text" id="txtentregadoa" class="form-control _enty_grabar" list="dl_entregadoa" data-required="true" data-min="1" data-max="2000" />
+                                    <datalist id="dl_entregadoa">
+                                    </datalist>
+                                </div>
+                            </div>
+                            <!-- SES OCULTA LA FECHA DE REGISTRO-->
+                            <div class="form-group hide">
+                                <label class="col-sm-4 control-label"> Fecha de Registro</label>
+                                <div class="col-sm-8">
+                                    <input id="txtfecharegistro" disabled class="form-control  _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="fecharegistro">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal row">
+                        <div class="col-sm-6">
+                            <!-- SE OCULTA EL COMENTARIO-->
+                            <div class="form-group hide">
+                                <label class="col-sm-4 control-label"> Comentario</label>
+                                <div class="col-sm-8">
+                                    <textarea id="txtcomentario" class="form-control _enty_grabar" data-required="false" data-min="1" data-max="8000" data-id="observacion"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6" id="div_contenedor_entregado_a">
+                            @*<div class="form-group">
+                                <label class="col-sm-4 control-label">Entregado a</label>
+                                <div class="col-sm-8">
+                                    <input type="text" id="txtentregadoa" class="form-control _enty_grabar" list="dl_entregadoa" data-required="true" data-min="1" data-max="2000" />
+                                    <datalist id="dl_entregadoa">
+                                    </datalist>
+                                </div>
+                            </div>*@
+                        </div>
+                    </div>
+                    <div class="form-horizontal row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Anaquel</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="_cbo_Anaquel">
+                                        <option value="1-A">1-A</option>
+                                        <option value="1-B">1-B</option>
+                                        <option value="1-C">1-C</option>
+                                        <option value="1-D">1-D</option>
+                                        <option value="1-E">1-E</option>
+                                        <option value="2-A">2-A</option>
+                                        <option value="2-B">2-B</option>
+                                        <option value="2-C">2-C</option>
+                                        <option value="2-D">2-D</option>
+                                        <option value="2-E">2-E</option>
+                                        <option value="3-A">3-A</option>
+                                        <option value="3-B">3-B</option>
+                                        <option value="3-C">3-C</option>
+                                        <option value="3-D">3-D</option>
+                                        <option value="3-E">3-E</option>
+                                        <option value="4-A">4-A</option>
+                                        <option value="4-B">4-B</option>
+                                        <option value="4-C">4-C</option>
+                                        <option value="4-D">4-D</option>
+                                        <option value="4-E">4-E</option>
+                                        <option value="5-A">5-A</option>
+                                        <option value="5-B">5-B</option>
+                                        <option value="5-C">5-C</option>
+                                        <option value="5-D">5-D</option>
+                                        <option value="5-E">5-E</option>
+                                        <option value="6-A">6-A</option>
+                                        <option value="6-B">6-B</option>
+                                        <option value="6-C">6-C</option>
+                                        <option value="6-D">6-D</option>
+                                        <option value="6-E">6-E</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 hide" id="div_presentacion">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Presentacion</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control _enty_grabar" data-min="1" data-max="20" data-required="true" id="_cbo_Presentacion" data-id="idpresentacion"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 hide" id="div_destino">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Destino</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control _enty_grabar" data-min="1" data-max="20" data-required="true" id="_cbo_AlmacenDestino" data-id="idalmacendestino"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="divdetallInventario">
+
+                </div>
+            </div>
+        </div>
+        <div class="ibox" id="div_Movimientos">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <h5 class="text-navy bold">Agregar Item</h5>
+                    <a class="collapse-link">
+                        <span class="fa fa-chevron-up icono_collapse"></span>
+                    </a>
+                </div>                
+            </div>
+            <div class="ibox-content" style="overflow-y: auto; max-height: 850px;">
+                <div class="panel-body">
+                    <div class="ibox">
+                        <div class="form-horizontal">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">Codigo Tela</label>
+                                    <div class="input-group">
+                                        <input id="txtcodigotela" class="form-control">
+                                        <div class="input-group-btn">
+                                            <button type="button" class="btn btn-primary" id="btnAgregarItem">
+                                                <span class="fa fa-plus"></span>
+                                                Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="form-group">
+                                    <div class="col-sm-8">
+                                        <button type="button" class="btn btn-primary" id="btnBuscarCodigoTela">
+                                            <span class="fa fa-plus"></span>
+                                            Buscar Codigo Tela
+                                        </button>
+                                        <button type="button" class="btn btn-warning" id="btnInterval">
+                                            <span class="fa fa-refresh"></span>
+                                            Iniciar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="div_tbl_Movimientos" >
+                        <table id="tbl_indexinventario_movimiento" class="table table-bordered table-hover" style="width: 100%; max-width: 100%;  padding-right: 0px;">
+                            <thead>
+                                <tr>
+                                    <th class="text-center" style="width:10%">Locación</th>
+                                    <th class="text-center" style="width:10%">Código Tela</th>
+                                    <th class="text-center" style="width:10%">Descripcion de Tela</th>
+                                    <th class="text-center" style="width:10%">Anaquel</th>
+                                    <th class="text-center" style="width:10%">Saldo Disponible</th>
+                                    <th class="text-center" style="width:10%">Cantidad</th>
+                                    <th class="text-center" style="width:20%">Observación</th>
+                                    <th style="width:3%"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_indexinventario"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal_items" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header bg-primary">
+                <button type="button" class="close"
+                        data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Buscar Código de Tela
+                </h4>
+                <br />
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="col-sm-12 text-right">
+                        <button type="button" class="btn btn-primary" id="btnAgregarItemsModal" data-dismiss="modal">
+                            <span class="fa fa-plus"></span>
+                            Agregar Item
+                        </button>
+                        <button id="_btnCerrarAgregarItemModal" class="btn btn-default" data-dismiss="modal">
+                            <span class="fa fa-ban"></span>
+                            Cancelar
+                        </button>
+                    </div>
+                </div>
+                <div id="div_tbl_Items" style="padding-top:30px;"></div>
+            </div>
+            <!-- Modal Footer -->
+            @*<div class="modal-footer">
+            <button type="button" class="btn btn-default"
+                    data-dismiss="modal">
+                Close
+            </button>
+            <button type="button" class="btn btn-primary">
+                Save changes
+            </button>
+        </div>*@
+        </div>
+    </div>
+</div>

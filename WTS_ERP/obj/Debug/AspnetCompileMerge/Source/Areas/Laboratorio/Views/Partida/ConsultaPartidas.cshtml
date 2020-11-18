@@ -1,0 +1,222 @@
+﻿<style>
+    .modal-open {
+        overflow: auto;
+        padding-right: 0 !important;
+    }
+      th {
+        /*white-space: nowrap;*/
+        padding: 8px;
+        border: 1px solid #e7e7e7;
+        background-color: #F5F5F6;
+        text-align:center;
+    }
+
+    td {
+        /*white-space: nowrap;*/
+        padding: 5px;
+         border-bottom: 1px solid #e7e7e7;
+         padding-left: 20px;
+    }
+     textarea {
+        resize: none;
+    }
+</style>
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div id="content_header">
+        <div class="col-lg-8">
+            <h2>Partidas Laboratorio</h2>
+            <ol class="breadcrumb">
+                <li>
+                    View all Partidas
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-4" style="text-align:right;padding:20px">          
+            <button type="button" class="btn btn-success" id="btnSearch">
+                <span class="fa fa-search"></span>
+                Search
+            </button>
+            <button type="button" class="btn btn-primary" id="btnExportarReporteLaboratorio">
+                <span class="fa fa-file-o"></span>
+                Exportar
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content gray-bg animated fadeInRight">
+    <div class="ibox" id="formList">
+        <div class="ibox">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="form-horizontal">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">
+                                    Factory
+                                </label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" id="cboFabrica"></select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Customer</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" id="cboCliente"></select>
+                                </div>
+                            </div>
+                            <div class="form-group" id="dtFI">
+                                <label class="control-label col-sm-2">Start Date</label>
+                                <div class="col-sm-10">
+                                    <div class='input-group date '>
+                                        <span class='input-group-addon'><i class='fa fa-calendar'></i></span>
+                                        <input type='text' id="txtFI" class='form-control'>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2"> Reporte Tecnico</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" value="" id="txtCodigoReporteTecnico" onkeyup="BuscarOnEnter(event);"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-2"># Partida</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" value="" id="txtPartida" onkeyup="BuscarOnEnter(event);"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group" id='dtFF'>
+                                <label class="control-label col-sm-2">End Date</label>
+                                <div class="col-sm-10">
+                                    <div class='input-group date'>
+                                        <span class='input-group-addon'><i class='fa fa-calendar'></i></span>
+                                        <input type='text' id="txtFF" class='form-control'>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Fabric Code</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="txtcodigotela" value="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ibox">
+            <div class="ibox-content">
+                <div class="form-group">
+                    <div class="form-horizontal row">
+                        <div id="divContent" class="col-sm-12">
+
+                        </div>
+                    </div>
+                </div>
+                @*<div id="divContent" class="col-sm-12">
+                </div>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal inmodal in" id="mdAprobarTono" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <i class="fa fa-check-o modal-icon"></i>
+                <h4 class="modal-title">Aprobar / Rechazar - Tono Reporte Tecnico # <span id="lblReporteTecnicoTono"></span></h4>                
+            </div>
+            <div class="modal-body">
+                <div id="tono" class="row">
+                    <div class="col-lg-10" hidden>
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Reporte Tecnico</label>
+                                <div class="col-lg-10">
+                                    <input id="txt_reportetecnico" disabled class="form-control" tabindex="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Status Final</label>
+                                <div class="col-lg-10">
+                                    <input id="txtstatusfinal" disabled class="form-control" tabindex="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">IdCliente</label>
+                                <div class="col-lg-10">
+                                    <input id="txt_idcliente" disabled class="form-control" tabindex="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">IdProveedor</label>
+                                <div class="col-lg-10">
+                                    <input id="txt_idproveedor" disabled class="form-control" tabindex="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="col-lg-10">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Comentario Laboratorio</label>
+                                <div class="col-lg-10">
+                                    <textarea id="txtComentarioColor" disabled class="form-control" rows="3" tabindex="1"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="col-lg-10">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Comentario Comercial</label>
+                                <div class="col-lg-10">
+                                    <textarea id="txtComentarioColorComercial" class="form-control _enty" rows="3" tabindex="1"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="col-lg-10">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Status Tono</label>
+                                <div class="col-lg-10">
+                                    <select class="form-control _enty" id="cboestadotono">
+                                        <option value="">Seleccione</option>
+                                        <option value="Aprobado">Aprobado</option>
+                                        <option value="Rechazado">Rechazado</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="req_aprobar_tono();">Save</button>
+                <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" id="hfUsuario"  value="@ViewBag.Usuario"/>
+<input type="hidden" id="hfIdProveedor" value="@ViewBag.IdProveedor" />
+<input type="hidden" id="hfUsuarioComercial" value="@ViewBag.UsuarioComercial" />
+
+<input type="hidden" id="hfIdPartidaTono" value="@ViewBag.Usuario" />

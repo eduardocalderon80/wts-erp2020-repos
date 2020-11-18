@@ -1,0 +1,58 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Search Program</h2>
+            </div>
+            <div class="col-sm-6 text-right">
+                <button type="button" class="btn btn-primary dim" id="btnNewStyle">
+                    <span class="fa fa-file-o"></span>
+                    New   
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="control-label col-sm-4">Customer</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="cboCliente">
+                                        <option value="">All</option>
+                                    </select>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <div class="col-sm-4">                          
+                            <div class="form-group">
+                                <label class="control-label col-sm-4">Name</label>
+                                <div class="col-sm-8">
+                                    <input type="text" id="txtName" onkeyup="Mayus(this)"  class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer text-right">
+                    <button type="button" class="btn btn-success" id="btnSearch">
+                        <span class="fa fa-search"></span>
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="ibox float-e-margins">
+            <div class="ibox-title hide">
+                <h5>Details</h5>
+            </div>
+            <div id="divContentTBL" class="ibox-content" style="position:relative; width:100%;">
+               
+            </div>
+        </div>
+    </div>
+</div>

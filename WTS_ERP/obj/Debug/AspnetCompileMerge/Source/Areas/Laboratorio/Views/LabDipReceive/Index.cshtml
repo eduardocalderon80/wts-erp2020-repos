@@ -1,0 +1,117 @@
+﻿<style type="text/css">
+    /* 1 */
+    .row-selected {
+        background-color: #1ab394 !important;
+    }
+
+    th {
+        padding: 8px;
+        border: 1px solid #e7e7e7;
+        background-color: #F5F5F6;
+        text-align: center;
+    }
+
+    td {
+        padding: 5px;
+        border-bottom: 1px solid #e7e7e7;
+        padding-left: 20px;
+    }
+</style>
+
+<div class="row wrapper white-bg page-heading">
+    <div id="content_header" class="ibox float-e-margins">
+        <div id="divtituloprincipal" class="col-sm-6">
+            <h2 class="font-bold">LabDip</h2>
+        </div>
+        <div id="divBotonesPrincipal" class="col-sm-6 text-right" style="vertical-align: middle;margin-top:15px;">
+        </div>
+    </div>
+</div>
+
+<div class="hide">
+    <input type="text" id="txtpar" data-par="DATA-PARAMETRO" value="" />
+</div>
+
+<div class="row wrapper-content gray-bg animated">
+
+    <div id="content_form" class="ibox">
+
+        <div class="ibox-title">
+            <div class="form-horizontal row ">
+                <div class="col-sm-6">
+                    <h3 id="_title" class="text-navy bold">List of LabDip</h3>
+                </div>
+                <div id="divbotonesprimarios" class="col-sm-6 text-right">
+                 
+                    <button id="btnreceive" type="button" class="btn btn-primary">
+                        <span class="fa fa-envelope-o"></span>
+                        Receive
+                    </button>
+                    <button id="btnexport" type="button" class="btn btn-primary">
+                        <span class="fa fa-file-excel-o"></span>
+                        Export
+                    </button>
+                    <button id="btnrejected" type="button" class="btn btn-danger">
+                        <span class="fa fa-ban"></span>
+                        Rejected
+                    </button>
+                    <button id="btnedit" type="button" class="btn btn-success">
+                        <span class="fa fa-edit"></span>
+                        Edit
+                    </button>
+                    <button id="btndelete" type="button" class="btn btn-outline btn-danger">
+                        <span class="fa fa-remove"></span>
+                        Remove
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="tabledetails" class="ibox-content">
+
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div class="col-sm-4">
+                        <label class="control-label">Client</label>
+                        <select id="cbocliente" class="form-control _enty select2_cliente" style="width:100%" name="idcliente" data-id="idcliente" data-required="true"></select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label class="control-label">Status</label>
+                        <select id="cboestadolab" class="form-control _enty select2_estadolab" style="width:100%" name="idestadolab" data-id="idestadolab" data-required="true">
+                            <option value="1" selected>Send</option>
+                            <option value="2" >Received</option>
+                            <option value="3">Rejected</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label class="control-label">Search</label>
+                        <input type="text" id="txtfilter" name="status" value="" placeholder="Search" class="form-control" onkeyup="event_search(event)">
+                    </div>
+                </div>
+            </div>           
+
+            <div class="form-horizontal row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <div id="tablelabdipcontent" class="col-sm-12">
+
+                        </div>
+                        <div class="col-sm-12 text-center ">
+                            <label id="datos" class="hide">No hay datos</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+

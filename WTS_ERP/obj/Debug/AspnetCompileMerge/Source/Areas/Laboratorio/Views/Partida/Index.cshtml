@@ -1,0 +1,112 @@
+﻿<style>
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #676a6c;
+        }
+    /*.table-borderless td,.table-borderless th {border: 0 !important}*/
+    tbody tr td:first-child {
+        font-weight: bold;
+    }
+</style>
+<!--parametro vista-->
+<div class="hide" id="div_partida"></div>
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-12">
+        <div class="col-lg-10">
+            <h2 class="text-navy bold">Departure</h2>
+        </div>
+
+        <!-- :filtro avanzado -->
+        <div class="col-lg-2">
+            <div class="title-action" id="divbotonera_encabezado">
+                <button type="button" class="dropdown-toggle btn btn-white" data-toggle="dropdown" aria-expanded="false">
+                    <span class="fa fa-wrench"></span>
+                </button>
+                <ul id="submenuestado" class="dropdown-menu dropdown-user">
+                    <li class="_submenu">
+                        <a href="javascript:void(0)" data-estado="pending">Pending<span class="fa fa-check label-warning" aria-hidden="true" style="font-size:14px;margin-left:80px"></span></a>
+                    </li>
+                    <li class="_submenu">
+                        <a href="javascript:void(0)" data-estado="rejected">Rejected<span class="fa fa-check label-danger" aria-hidden="true" style="font-size:14px;margin-left:77px"></span></a>
+                    </li>
+                    <li class="_submenu">
+                        <a href="javascript:void(0)" data-estado="approved">Approved<span class="fa fa-check label-primary" aria-hidden="true" style="font-size:14px;margin-left:70px"></span></a>
+                    </li>
+                    <li class="_submenu">
+                        <a href="javascript:void(0)" data-estado="advanced">Advanced<span class="fa fa-filter" aria-hidden="true" style="font-size:14px;margin-left:77px"></span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- :filtro basico -->
+        <div id="div_filtro_bandeja_partida" class="col-sm-2">
+            <span class="input-group">
+                <input type="text" class="form-control" value="" id="txtfiltrobandeja_partida" />
+                <span class="input-group-addon bg-primary" id="span_filtrobandeja_partida" style="cursor:pointer;" title="Search">
+                    <span class="fa fa-search"></span>
+                </span>
+                <span class="input-group-addon bg-default" id="span_refresh_partidaindex" style="cursor:pointer;" title="Refresh">
+                    <span class="fa fa-refresh"></span>
+                </span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<!-- :contenido -->
+<div class="fh-breadcrumb" style="max-height:850px !important;" id="divcontenedor_breadcrum">
+    <!-- :menu -->
+    <div class="fh-column" style="width:350px;max-height:850px !important; overflow-y: auto !important;" id="divmenu_breadcrum">
+        <div class="full-height-scroll">
+            <ul class="list-group elements-list" id="_menu">
+                <li class="list-group-item _item" data-id="1">
+                    <a data-toggle="tab" href="#tab-1">
+                        <small class="pull-right text-muted"> 06.10.2018</small>
+                        <strong>Customer-Code</strong>
+                        <div class="small m-t-xs">
+                            <p>
+                                Factory - #Batch
+                            </p>
+                            <p class="m-b-none">
+                                <i class="fa fa-map-marker"></i>
+                                Type of departure
+                            </p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- :detalle -->
+    <div class="full-height" style="max-height: 850px !important; overflow-y: auto !important" id="divdetalle_breadcrum">
+        <div class="full-height-scroll white-bg border-left">
+            <div class="element-detail-box">
+                <div class="tab-content">
+                    <!-- :parametro detalle -->
+                    <div class="hide">
+                        <input type="text" id="txtpar_partida_index" value="DATA-PARAMETRO" />
+                        <input type="text" id="hf_estadoactualbusqueda_partida_index" value="" />
+                        <input type="text" id="hf_idpartida_index" />
+                    </div>
+                    <!-- :tab detalle -->
+                    <div id="tab-1" class="tab-pane"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

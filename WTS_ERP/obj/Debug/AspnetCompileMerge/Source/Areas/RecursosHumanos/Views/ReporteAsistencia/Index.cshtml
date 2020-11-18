@@ -1,0 +1,182 @@
+﻿<style>
+    #txtFechaInicio.form-control[readonly], #txtFechaFin.form-control[readonly] {
+        background-color: #ffffff;
+        border: 1px solid #e5e6e7 !important;
+    }
+
+    /* Custom Cols & Color for Report Table */
+    .col-200 {
+        min-width: 200px !important;
+    }
+
+    .col-120 {
+        min-width: 120px !important;
+    }
+
+    .col-100 {
+        min-width: 100px !important;
+    }
+
+    .col-80 {
+        min-width: 80px !important;
+    }
+
+    .col-60 {
+        min-width: 60px !important;
+    }
+
+    .col-50 {
+        min-width: 50px !important;
+    }
+
+    .col-20 {
+        min-width: 20px !important;
+    }
+
+    .color-Area {
+        background-color: #f5f5f5 !important;
+    }
+
+    .color-Asistencia {
+        background-color: #afe8dd !important;
+    }
+
+    .center-vertical {
+        text-align: center;
+        padding: 5px 0 5px 0;
+        background: #206590 !important;
+        color: white !important;
+    }
+
+    #div_tbl_asistencia table th {
+        background: #206590 !important;
+        color: white !important;
+    }
+</style>
+<div class="ibox" id="panelEncabezado_ReporteAsistenciaIndex">
+    <div class="hide">
+        <input type="text" id="txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-6">
+            <h2 class="font-bold">Reporte de Asistencia</h2>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <i class="fa fa-home"></i>
+                </li>
+                <li class="breadcrumb-item">
+                    Gestion de Talento
+                </li>
+                <li class="breadcrumb-item active">
+                    <strong>Reporte de Asistencia</strong>
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-6 text-right" style="padding-top:20px">
+            <button type="button" class="btn btn-success" id="btnSearch">
+                <span class="fa fa-search"> </span>
+                Buscar
+            </button>
+            <button type="button" class="btn btn-primary" id="btnReport">
+                <span class="fa fa-file-excel-o"> </span>
+                Reporte
+            </button>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content">
+        <div class="row animated fadeInRight">
+            <div class="col-md-12" id="ibox-2">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <h5>Marcaciones Registradas (Ultimos 30 dias)</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="fullscreen-link">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="form-group">
+                            <div class="form-horizontal row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-3">Nombres y/o Apellidos:</label>
+                                        <div class="col-sm-9">
+                                            <div class="input-group">
+                                                <input id="txtNombre" type="text" class="form-control">
+                                                <div class="input-group-btn">
+                                                    <button type="button" class="btn btn-primary" id="btnSearchList">
+                                                        <span class="fa fa-search"></span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-3">Área, Sub-Área o Equipo:</label>
+                                        <div class="col-sm-9">
+                                            <select id="cboArea" class="form-control" multiple="multiple"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-horizontal row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-3">Fecha Inicio:</label>
+                                        <div class="col-sm-9">
+                                            <div class="input-group date date-es">
+                                                <input id="txtFechaInicio" type="text" class="form-control _enty_grabar" data-id="fechainicio" readonly>
+                                                <div class="input-group-addon">
+                                                    <span class="fa fa-calendar"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-3">Fecha Fin:</label>
+                                        <div class="col-sm-9">
+                                            <div class="input-group date date-es">
+                                                <input id="txtFechaFin" type="text" class="form-control _enty_grabar" data-id="fechafin" readonly>
+                                                <div class="input-group-addon">
+                                                    <span class="fa fa-calendar"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="div_tbl_asistencia" class="table-responsive" style="height: 500px; margin-bottom: 10px;"></div>
+                        <div class="form-group">
+                            <div class="form-horizontal row">
+                                <div class="col-sm-6">
+                                    <label class="control-label">Leyenda:</label>
+                                    <table class="table table-hover">
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center" style="background-color: #23c6c8; color: #ffffff;">Vacaciones</td>
+                                                <td class="text-center" style="background-color: #1c84c6; color: #ffffff;">Descanso Medico</td>
+                                                <td class="text-center" style="background-color: #1ab394; color: #ffffff;">Permisos</td>
+                                                <td class="text-center" style="background-color: #f8ac59; color: #ffffff;">Golden Ticket</td>
+                                                <td class="text-center" style="background-color: #808080; color: #ffffff;">Licencias</td>
+                                                <td class="text-center" style="background-color: #ed5565; color: #ffffff;">Cumpleaños</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

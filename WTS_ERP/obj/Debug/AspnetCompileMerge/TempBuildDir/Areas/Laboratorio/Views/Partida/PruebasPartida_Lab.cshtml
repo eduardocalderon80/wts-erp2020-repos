@@ -1,0 +1,2008 @@
+﻿<div id="pnl_pruebas_partida_lab_edit">
+
+    <div class="hide">
+        <input type="text" id="" value="DATA-PARAMETRO" />
+    </div>
+
+    <div id="pnl_pruebas_partida_lab_edit_header" class="row wrapper white-bg page-heading">
+        <div class="ibox">
+            <div id="div_titulo_principal" class="col-sm-6">
+                <h2 class="font-bold">Analisis de Laboratorio</h2>
+            </div>
+            <div id="div_botones_principal" class="col-sm-6 text-right m-t-md">
+                <button id="btn_guardar" title="Guardar" type="button" class="btn btn-outline btn-primary">
+                    <span class="fa fa-save"></span>
+                    Guardar
+                </button>
+                <button id="btn_retornar" title="Retornar" type="button" class="btn btn-outline btn-default">
+                    <span class="fa fa-reply-all"></span>
+                    Retornar
+                </button>
+                <button id="btn_modal" title="Guardar" type="button" class="btn btn-outline btn-success">
+                    <span class="fa fa-save"></span>
+                    Modal
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="pnl_pruebas_partida_lab_edit_body" class="row wrapper-content gray-bg">
+
+        <div id="div_row" class="ibox">
+
+            <!-- Datos General -->
+            <div id="div_datos_generales" class="ibox">
+
+                <div class="ibox-title">
+                    <div class="form-horizontal row">
+                        <div id="div_titulo" class="col-sm-6">
+                            <h5>Datos Generales</h5>
+                        </div>
+                        <div class="col-sm-6 text-right">
+                            <div class="ibox-tools _class_tool">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ibox-content">
+                    <div class="form-group">
+                        <div class="form-horizontal row">
+                            <div class="col-sm-3">
+                                <label class="control-label">Reporte Técnico</label>
+                                <input id="txt_reporte_tecnico" type="text" disabled class="form-control" data-id="reporte_tecnico">
+                            </div>
+                            <div class="col-sm-3">
+                                <label class="control-label">Número Partida</label>
+                                <input id="txt_numero_partida" type="text" disabled class="form-control" data-id="numero_partida">
+                            </div>
+                            <div class="col-sm-3">
+                                <label class="control-label">Paquete Prueba</label>
+                                <input id="txt_paquete_prueba" type="text" disabled class="form-control" data-id="paquete_prueba" />
+                            </div>
+                            <div class="col-sm-3">
+                                <label class="control-label">Estado</label>
+                                <select id="cbo_estado_solicitud" class="form-control" disabled data-id="estado_solicitud">
+                                    <option>Enviado</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-horizontal row">
+                            <div class="col-sm-3">
+                                <label class="control-label">Cliente</label>
+                                <input id="txt_cliente" type="text" disabled class="form-control" data-id="cliente">
+                            </div>
+                            <div class="col-sm-3">
+                                <label class="control-label">Fábrica</label>
+                                <input id="txt_fabrica" type="text" disabled class="form-control" data-id="fabrica">
+                            </div>
+                            <div class="col-sm-3">
+                                <label class="control-label">Tintoreria</label>
+                                <input id="txt_tintoreria" type="text" disabled class="form-control" data-id="tintoreria">
+                            </div>
+                            <div class="col-sm-3">
+                                <label class="control-label">Color</label>
+                                <input id="txt_color" type="text" disabled class="form-control" data-id="color">
+                            </div>
+                        </div>
+                        <div class="form-horizontal row">
+                            <div class="col-sm-3">
+                                <label class="control-label">Codigo Tela</label>
+                                <input id="txt_codigo_tela" type="text" disabled class="form-control" data-id="codigo_tela">
+                            </div>
+                            <div class="col-sm-3">
+                                <label class="control-label">Descripción Tela</label>
+                                <textarea id="txt_descripcion_tela" class="form-control" disabled data-id="descripcion_tela" rows="2" style="resize:none" data-min="1" data-max="5000" data-required="true" maxlength="5000"></textarea>
+                            </div>
+                            <div class="col-sm-3">
+                                <label class="control-label">Instrucciones de Cuidado</label>
+                                <textarea id="txt_instruccion_cuidado" class="form-control" disabled data-id="instruccion_cuidado" rows="2" style="resize:none" data-min="1" data-max="5000" data-required="true" maxlength="5000"></textarea>
+                            </div>
+                            <div class="col-sm-3">
+                                <label class="control-label">Comentario</label>
+                                <textarea id="txt_comentario_solicitud" class="form-control" disabled data-id="comentario_solicitud" rows="2" style="resize:none" data-min="1" data-max="5000" data-required="true" maxlength="5000"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Tono - Test -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <div id="div_tono" class="ibox">
+
+                        <div class="ibox-title">
+                            <div class="form-horizontal row">
+                                <div id="div_titulo" class="col-sm-6">
+                                    <h5>Tono</h5>
+                                </div>
+                                <div class="col-sm-6 text-right">
+                                    <div class="ibox-tools _class_tool">
+                                        <a class="collapse-link">
+                                            <i class="fa fa-chevron-up"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ibox-content">
+                            <div class="form-group">
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <label class="control-label">Comentario</label>
+                                        <textarea id="txt_comentario_tono" class="form-control" data-id="comentario_tono" rows="2" style="resize:none" data-min="1" data-max="5000" data-required="true" maxlength="5000"></textarea>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="control-label">Estado</label>
+                                        <select id="cbo_estado_tono" class="form-control" data-id="estado_tono">
+                                            <option>No Aplica</option>
+                                            <option>Aprobado</option>
+                                            <option>Rechazado</option>
+                                            <option>Pendiente</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div id="div_informe_test" class="ibox">
+
+                        <div class="ibox-title">
+                            <div class="form-horizontal row">
+                                <div id="div_titulo" class="col-sm-6">
+                                    <h5>Informe Test</h5>
+                                </div>
+                                <div class="col-sm-6 text-right">
+                                    <div class="ibox-tools _class_tool">
+                                        <a class="collapse-link">
+                                            <i class="fa fa-chevron-up"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ibox-content">
+                            <div class="form-group">
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <label class="control-label">Comentario</label>
+                                        <textarea id="txt_comentario_test" class="form-control" data-id="comentario_test" rows="2" style="resize:none" data-min="1" data-max="5000" data-required="true" maxlength="5000"></textarea>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="control-label">Estado</label>
+                                        <select id="cbo_estado_test" class="form-control" data-id="estado_test">
+                                            <option>Pendiente</option>
+                                            <option>Aprobado</option>
+                                            <option>Aprobado con Comentarios</option>
+                                            <option>Recibido</option>
+                                            <option>Rechazado</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+                      
+            <!-- Instruccion Cuidado -->
+            <div id="div_instruccion_cuidado" class="ibox">
+
+                <div class="ibox-title">
+                    <div class="form-horizontal row">
+                        <div id="div_titulo" class="col-sm-6">
+                            <h5>Instruccion Cuidado</h5>
+                        </div>
+                        <div class="col-sm-6 text-right">
+                            <div class="ibox-tools _class_tool">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="div_instruccion_cuidado_content" class="ibox-content">
+                    <div class="form-group">
+                        <div class="form-horizontal row">
+                            <div class="col-sm-3">
+                                <table id="Lavado" class="table table-bordered table-hover _enty">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2">Lavado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr data-par="idinstruccioncuidado:29,idcategoriainstruccioncuidado:1,instruccioncuidadoingles:Delicate cycle">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label class="">
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Delicate cycle</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:7,idcategoriainstruccioncuidado:1,instruccioncuidadoingles:Gentle cycle">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Gentle cycle</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:8,idcategoriainstruccioncuidado:1,instruccioncuidadoingles:Hand wash cold">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Hand wash cold</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:38,idcategoriainstruccioncuidado:1,instruccioncuidadoingles:Inside out">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Inside out</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:1,idcategoriainstruccioncuidado:1,instruccioncuidadoingles:Machine wash cold">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Machine wash cold</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:48,idcategoriainstruccioncuidado:1,instruccioncuidadoingles:Machine wash cold separately">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Machine wash cold separately</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:30,idcategoriainstruccioncuidado:1,instruccioncuidadoingles:Machine wash cool">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Machine wash cool</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:2,idcategoriainstruccioncuidado:1,instruccioncuidadoingles:Machine wash warm">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Machine wash warm</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:6,idcategoriainstruccioncuidado:1,instruccioncuidadoingles:Remove promptly">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Remove promptly</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:5,idcategoriainstruccioncuidado:1,instruccioncuidadoingles:Separately">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Separately</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:37,idcategoriainstruccioncuidado:1,instruccioncuidadoingles:Turn garment inside out">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Turn garment inside out</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:32,idcategoriainstruccioncuidado:1,instruccioncuidadoingles:Turn garment inside out before washing">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Turn garment inside out before washing</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:28,idcategoriainstruccioncuidado:1,instruccioncuidadoingles:Turn inside out">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Turn inside out</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:34,idcategoriainstruccioncuidado:1,instruccioncuidadoingles:Use Gentle Cycle">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Use Gentle Cycle</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:47,idcategoriainstruccioncuidado:1,instruccioncuidadoingles:Wash garment separately before wearing">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Wash garment separately before wearing</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:4,idcategoriainstruccioncuidado:1,instruccioncuidadoingles:Wash inside out">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Wash inside out</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:31,idcategoriainstruccioncuidado:1,instruccioncuidadoingles:Wash Separately">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Wash Separately</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:3,idcategoriainstruccioncuidado:1,instruccioncuidadoingles:Wash with like colors">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Wash with like colors</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:33,idcategoriainstruccioncuidado:1,instruccioncuidadoingles:With like colors">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">With like colors</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:42,idcategoriainstruccioncuidado:1,instruccioncuidadoingles:With similar color">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">With similar color</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-sm-3">
+                                <table id="Secado" class="table table-bordered table-hover _enty">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2">Secado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr data-par="idinstruccioncuidado:25,idcategoriainstruccioncuidado:2,instruccioncuidadoingles:Do not tumble dry low">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Do not tumble dry low</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:11,idcategoriainstruccioncuidado:2,instruccioncuidadoingles:Lay flat to dry">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Lay flat to dry</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:10,idcategoriainstruccioncuidado:2,instruccioncuidadoingles:Line dry">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Line dry</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:49,idcategoriainstruccioncuidado:2,instruccioncuidadoingles:Tumble dry at low temperature">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Tumble dry at low temperature</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:9,idcategoriainstruccioncuidado:2,instruccioncuidadoingles:Tumble dry low">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Tumble dry low</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-sm-3">
+                                <table id="Cloro" class="table table-bordered table-hover _enty">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2">Cloro</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr data-par="idinstruccioncuidado:13,idcategoriainstruccioncuidado:3,instruccioncuidadoingles:Do not bleach">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Do not bleach</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:41,idcategoriainstruccioncuidado:3,instruccioncuidadoingles:Do not use bleach">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Do not use bleach</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:43,idcategoriainstruccioncuidado:3,instruccioncuidadoingles:Non chlorine bleach only">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Non chlorine bleach only</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:24,idcategoriainstruccioncuidado:3,instruccioncuidadoingles:Non chlorine bleach when needed">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Non chlorine bleach when needed</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:36,idcategoriainstruccioncuidado:3,instruccioncuidadoingles:Only non chlorine bleach if needed">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Only non chlorine bleach if needed</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:12,idcategoriainstruccioncuidado:3,instruccioncuidadoingles:Only non chlorine bleach when needed">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Only non chlorine bleach when needed</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-sm-3">
+                                <table id="Planchado" class="table table-bordered table-hover _enty">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2">Planchado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr data-par="idinstruccioncuidado:40,idcategoriainstruccioncuidado:4,instruccioncuidadoingles:Cool Iron">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Cool Iron</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:14,idcategoriainstruccioncuidado:4,instruccioncuidadoingles:Cool iron if needed">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Cool iron if needed</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:27,idcategoriainstruccioncuidado:4,instruccioncuidadoingles:Cool Iron Inside Out">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Cool Iron Inside Out</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:44,idcategoriainstruccioncuidado:4,instruccioncuidadoingles:Cool iron on reverse side">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Cool iron on reverse side</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:16,idcategoriainstruccioncuidado:4,instruccioncuidadoingles:Do not iron decoration">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Do not iron decoration</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:39,idcategoriainstruccioncuidado:4,instruccioncuidadoingles:Do not iron on decoration">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Do not iron on decoration</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:50,idcategoriainstruccioncuidado:4,instruccioncuidadoingles:Iron at low temperature">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Iron at low temperature</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:23,idcategoriainstruccioncuidado:4,instruccioncuidadoingles:Iron on Lowest Setting">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Iron on Lowest Setting</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:21,idcategoriainstruccioncuidado:4,instruccioncuidadoingles:Low Iron">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Low Iron</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:22,idcategoriainstruccioncuidado:4,instruccioncuidadoingles:Low Iron if needed">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Low Iron if needed</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:26,idcategoriainstruccioncuidado:4,instruccioncuidadoingles:Medium iron 150°">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Medium iron 150°</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:15,idcategoriainstruccioncuidado:4,instruccioncuidadoingles:Warm iron if needed">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Warm iron if needed</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:35,idcategoriainstruccioncuidado:4,instruccioncuidadoingles:Warm Iron Inside Out">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Warm Iron Inside Out</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="form-horizontal row">
+                            <div class="col-sm-3">
+                                <table id="Lavado en Seco" class="table table-bordered table-hover _enty">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2">Lavado en Seco</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr data-par="idinstruccioncuidado:20,idcategoriainstruccioncuidado:5,instruccioncuidadoingles:Can be dry clean">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Can be dry clean</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:45,idcategoriainstruccioncuidado:5,instruccioncuidadoingles:Can be dry cleaned">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Can be dry cleaned</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:19,idcategoriainstruccioncuidado:5,instruccioncuidadoingles:Do not dry clean">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label>
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Do not dry clean</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:18,idcategoriainstruccioncuidado:5,instruccioncuidadoingles:Dry clean">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label class="">
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Dry clean</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:46,idcategoriainstruccioncuidado:5,instruccioncuidadoingles:May be dry cleaned">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label class="">
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">May be dry cleaned</td>
+                                        </tr>
+
+                                        <tr data-par="idinstruccioncuidado:17,idcategoriainstruccioncuidado:5,instruccioncuidadoingles:Only dry clean">
+                                            <td class="col-sm-1">
+                                                <div class="i-checks _clsdivlabdip">
+                                                    <div class="icheckbox_square-green _chkitem" style="position: relative;">
+                                                        <label class="">
+                                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks _clschklabdip" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-sm-11">Only dry clean</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Estabilidad Dimensional - Tela -->
+            <div id="div_estabilidad_dimensional_tela" class="ibox">
+
+                <div class="ibox-title">
+                    <div class="form-horizontal row">
+                        <div class="col-sm-6">
+                            <h5>Estabilidad Dimensional - (AATCC 135-2018)</h5>
+                        </div>
+                        <div class="col-sm-6 text-right">
+                            <div class="ibox-tools _class_tool">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ibox-content">
+                    <div class="form-group">
+                        <div class="form-horizontal row">
+                            <div class="col-sm-12">
+                                <div class="table-responsive">
+                                    <table id="tbl_estabilidad_dimensional_tela" class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center" style="vertical-align:middle" rowspan="3">N°</th>
+                                                <th class="text-center" colspan="6">Muestra A</th>
+                                                <th class="text-center" colspan="6">Muestra B</th>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-center" colspan="3">Ancho</th>
+                                                <th class="text-center" colspan="3">Largo</th>
+
+                                                <th class="text-center" colspan="3">Ancho</th>
+                                                <th class="text-center" colspan="3">Largo</th>
+
+                                            </tr>
+                                            <tr>
+                                                <th class="text-center">1er. Lav.</th>
+                                                <th class="text-center">3er. Lav.</th>
+                                                <th class="text-center">5to. Lav.</th>
+                                                <th class="text-center">1er. Lav.</th>
+                                                <th class="text-center">3er. Lav.</th>
+                                                <th class="text-center">5to. Lav.</th>
+
+                                                <th class="text-center">1er. Lav.</th>
+                                                <th class="text-center">3er. Lav.</th>
+                                                <th class="text-center">5to. Lav.</th>
+                                                <th class="text-center">1er. Lav.</th>
+                                                <th class="text-center">3er. Lav.</th>
+                                                <th class="text-center">5to. Lav.</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center" style="vertical-align:middle">1</td>
+                                                <td><input id="txt_muestraA_ancho_1erlav_1_edt" type="text" class="form-control _data_tbl" tabindex="5000"></td>
+                                                <td><input id="txt_muestraA_ancho_3erlav_1_edt" type="text" class="form-control _data_tbl" tabindex="5003"></td>
+                                                <td><input id="txt_muestraA_ancho_5tolav_1_edt" type="text" class="form-control _data_tbl" tabindex="5006"></td>
+
+                                                <td><input id="txt_muestraA_largo_1erlav_1_edt" type="text" class="form-control _data_tbl" tabindex="5009"></td>
+                                                <td><input id="txt_muestraA_largo_3erlav_1_edt" type="text" class="form-control _data_tbl" tabindex="5012"></td>
+                                                <td><input id="txt_muestraA_largo_5tolav_1_edt" type="text" class="form-control _data_tbl" tabindex="5015"></td>
+
+                                                <td><input id="txt_muestraB_ancho_1erlav_1_edt" type="text" class="form-control _data_tbl" tabindex="5018"></td>
+                                                <td><input id="txt_muestraB_ancho_3erlav_1_edt" type="text" class="form-control _data_tbl" tabindex="5021"></td>
+                                                <td><input id="txt_muestraB_ancho_5tolav_1_edt" type="text" class="form-control _data_tbl" tabindex="5024"></td>
+
+                                                <td><input id="txt_muestraB_largo_1erlav_1_edt" type="text" class="form-control _data_tbl" tabindex="5027"></td>
+                                                <td><input id="txt_muestraB_largo_3erlav_1_edt" type="text" class="form-control _data_tbl" tabindex="5030"></td>
+                                                <td><input id="txt_muestraB_largo_5tolav_1_edt" type="text" class="form-control _data_tbl" tabindex="5033"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center" style="vertical-align:middle">2</td>
+                                                <td><input id="txt_muestraA_ancho_1erlav_2_edt" type="text" class="form-control _data_tbl" tabindex="5001"></td>
+                                                <td><input id="txt_muestraA_ancho_3erlav_2_edt" type="text" class="form-control _data_tbl" tabindex="5004"></td>
+                                                <td><input id="txt_muestraA_ancho_5tolav_2_edt" type="text" class="form-control _data_tbl" tabindex="5007"></td>
+
+                                                <td><input id="txt_muestraA_largo_1erlav_2_edt" type="text" class="form-control _data_tbl" tabindex="5010"></td>
+                                                <td><input id="txt_muestraA_largo_3erlav_2_edt" type="text" class="form-control _data_tbl" tabindex="5013"></td>
+                                                <td><input id="txt_muestraA_largo_5tolav_2_edt" type="text" class="form-control _data_tbl" tabindex="5016"></td>
+
+                                                <td><input id="txt_muestraB_ancho_1erlav_2_edt" type="text" class="form-control _data_tbl" tabindex="5019"></td>
+                                                <td><input id="txt_muestraB_ancho_3erlav_2_edt" type="text" class="form-control _data_tbl" tabindex="5022"></td>
+                                                <td><input id="txt_muestraB_ancho_5tolav_2_edt" type="text" class="form-control _data_tbl" tabindex="5025"></td>
+
+                                                <td><input id="txt_muestraB_largo_1erlav_2_edt" type="text" class="form-control _data_tbl" tabindex="5028"></td>
+                                                <td><input id="txt_muestraB_largo_3erlav_2_edt" type="text" class="form-control _data_tbl" tabindex="5031"></td>
+                                                <td><input id="txt_muestraB_largo_5tolav_2_edt" type="text" class="form-control _data_tbl" tabindex="5034"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center" style="vertical-align:middle">3</td>
+                                                <td><input id="txt_muestraA_ancho_1erlav_3_edt" type="text" class="form-control _data_tbl" tabindex="5002"></td>
+                                                <td><input id="txt_muestraA_ancho_3erlav_3_edt" type="text" class="form-control _data_tbl" tabindex="5005"></td>
+                                                <td><input id="txt_muestraA_ancho_5tolav_3_edt" type="text" class="form-control _data_tbl" tabindex="5008"></td>
+
+                                                <td><input id="txt_muestraA_largo_1erlav_3_edt" type="text" class="form-control _data_tbl" tabindex="5011"></td>
+                                                <td><input id="txt_muestraA_largo_3erlav_3_edt" type="text" class="form-control _data_tbl" tabindex="5014"></td>
+                                                <td><input id="txt_muestraA_largo_5tolav_3_edt" type="text" class="form-control _data_tbl" tabindex="5017"></td>
+
+                                                <td><input id="txt_muestraB_ancho_1erlav_3_edt" type="text" class="form-control _data_tbl" tabindex="5020"></td>
+                                                <td><input id="txt_muestraB_ancho_3erlav_3_edt" type="text" class="form-control _data_tbl" tabindex="5023"></td>
+                                                <td><input id="txt_muestraB_ancho_5tolav_3_edt" type="text" class="form-control _data_tbl" tabindex="5026"></td>
+
+                                                <td><input id="txt_muestraB_largo_1erlav_3_edt" type="text" class="form-control _data_tbl" tabindex="5029"></td>
+                                                <td><input id="txt_muestraB_largo_3erlav_3_edt" type="text" class="form-control _data_tbl" tabindex="5032"></td>
+                                                <td><input id="txt_muestraB_largo_5tolav_3_edt" type="text" class="form-control _data_tbl" tabindex="5035"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-horizontal row">
+                            <div class="col-lg-3">
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-8">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Encogimiento Ancho</label>
+                                                <input id="txt_encogimiento_ancho_edt" class="form-control _data" data-id="encogimiento_ancho_edt" tabindex="5000">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Req.</label>
+                                                <input id="txt_encogimiento_ancho_edt" class="form-control _req" data-id="txt_encogimiento_ancho_req_edt" tabindex="5000">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                               
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-8">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Encogimiento Largo</label>
+                                                <input id="txt_encogimiento_largo_edt" class="form-control _data" data-id="encogimiento_largo_edt" tabindex="5001">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Req.</label>
+                                                <input id="txt_encogimiento_largo_req_edt" class="form-control _req" data-id="encogimiento_largo_req_edt" tabindex="5001">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-12">
+                                        <label class="control-label">Estado</label>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <select id="cbo_estado_edt" class="form-control" data-id="estado_edt">
+                                                    <option>No Aplica</option>
+                                                    <option>Aprobado</option>
+                                                    <option>Rechazado</option>
+                                                    <option>Informado</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Estabilidad Dimensional - Lavado en Seco -->
+            <div id="div_estabilidad_dimensional_lavado_seco" class="ibox">
+
+                <div class="ibox-title">
+                    <div class="form-horizontal row">
+                        <div class="col-sm-6">
+                            <h5>Estabilidad Dimensional - Lavado en Seco - (AATCC 158-2016)</h5>
+                        </div>
+                        <div class="col-sm-6 text-right">
+                            <div class="ibox-tools _class_tool">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ibox-content">
+                    <div class="form-group">
+                        <div class="form-horizontal row">
+                            <div class="col-sm-12">
+                                <div class="table-responsive">
+                                    <table id="tbl_estabilidad_dimensionalt" class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center" style="vertical-align:middle" rowspan="3">N°</th>
+                                                <th class="text-center" colspan="6">Muestra A</th>
+                                                <th class="text-center" colspan="6">Muestra B</th>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-center" colspan="3">Ancho</th>
+                                                <th class="text-center" colspan="3">Largo</th>
+
+                                                <th class="text-center" colspan="3">Ancho</th>
+                                                <th class="text-center" colspan="3">Largo</th>
+
+                                            </tr>
+                                            <tr>
+                                                <th class="text-center">1er. Lav.</th>
+                                                <th class="text-center">3er. Lav.</th>
+                                                <th class="text-center">5to. Lav.</th>
+                                                <th class="text-center">1er. Lav.</th>
+                                                <th class="text-center">3er. Lav.</th>
+                                                <th class="text-center">5to. Lav.</th>
+
+                                                <th class="text-center">1er. Lav.</th>
+                                                <th class="text-center">3er. Lav.</th>
+                                                <th class="text-center">5to. Lav.</th>
+                                                <th class="text-center">1er. Lav.</th>
+                                                <th class="text-center">3er. Lav.</th>
+                                                <th class="text-center">5to. Lav.</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center" style="vertical-align:middle">1</td>
+                                                <td><input id="txt_muestraA_ancho_1erlav_1_ed_ls" type="text" class="form-control _data_tbl" tabindex="5000"></td>
+                                                <td><input id="txt_muestraA_ancho_3erlav_1_ed_ls" type="text" class="form-control _data_tbl" tabindex="5003"></td>
+                                                <td><input id="txt_muestraA_ancho_5tolav_1_ed_ls" type="text" class="form-control _data_tbl" tabindex="5006"></td>
+
+                                                <td><input id="txt_muestraA_largo_1erlav_1_ed_ls" type="text" class="form-control _data_tbl" tabindex="5009"></td>
+                                                <td><input id="txt_muestraA_largo_3erlav_1_ed_ls" type="text" class="form-control _data_tbl" tabindex="5012"></td>
+                                                <td><input id="txt_muestraA_largo_5tolav_1_ed_ls" type="text" class="form-control _data_tbl" tabindex="5015"></td>
+
+                                                <td><input id="txt_muestraB_ancho_1erlav_1_ed_ls" type="text" class="form-control _data_tbl" tabindex="5018"></td>
+                                                <td><input id="txt_muestraB_ancho_3erlav_1_ed_ls" type="text" class="form-control _data_tbl" tabindex="5021"></td>
+                                                <td><input id="txt_muestraB_ancho_5tolav_1_ed_ls" type="text" class="form-control _data_tbl" tabindex="5024"></td>
+
+                                                <td><input id="txt_muestraB_largo_1erlav_1_ed_ls" type="text" class="form-control _data_tbl" tabindex="5027"></td>
+                                                <td><input id="txt_muestraB_largo_3erlav_1_ed_ls" type="text" class="form-control _data_tbl" tabindex="5030"></td>
+                                                <td><input id="txt_muestraB_largo_5tolav_1_ed_ls" type="text" class="form-control _data_tbl" tabindex="5033"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center" style="vertical-align:middle">2</td>
+                                                <td><input id="txt_muestraA_ancho_1erlav_2_ed_ls" type="text" class="form-control _data_tbl" tabindex="5001"></td>
+                                                <td><input id="txt_muestraA_ancho_3erlav_2_ed_ls" type="text" class="form-control _data_tbl" tabindex="5004"></td>
+                                                <td><input id="txt_muestraA_ancho_5tolav_2_ed_ls" type="text" class="form-control _data_tbl" tabindex="5007"></td>
+
+                                                <td><input id="txt_muestraA_largo_1erlav_2_ed_ls" type="text" class="form-control _data_tbl" tabindex="5010"></td>
+                                                <td><input id="txt_muestraA_largo_3erlav_2_ed_ls" type="text" class="form-control _data_tbl" tabindex="5013"></td>
+                                                <td><input id="txt_muestraA_largo_5tolav_2_ed_ls" type="text" class="form-control _data_tbl" tabindex="5016"></td>
+
+                                                <td><input id="txt_muestraB_ancho_1erlav_2_ed_ls" type="text" class="form-control _data_tbl" tabindex="5019"></td>
+                                                <td><input id="txt_muestraB_ancho_3erlav_2_ed_ls" type="text" class="form-control _data_tbl" tabindex="5022"></td>
+                                                <td><input id="txt_muestraB_ancho_5tolav_2_ed_ls" type="text" class="form-control _data_tbl" tabindex="5025"></td>
+
+                                                <td><input id="txt_muestraB_largo_1erlav_2_ed_ls" type="text" class="form-control _data_tbl" tabindex="5028"></td>
+                                                <td><input id="txt_muestraB_largo_3erlav_2_ed_ls" type="text" class="form-control _data_tbl" tabindex="5031"></td>
+                                                <td><input id="txt_muestraB_largo_5tolav_2_ed_ls" type="text" class="form-control _data_tbl" tabindex="5034"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center" style="vertical-align:middle">3</td>
+                                                <td><input id="txt_muestraA_ancho_1erlav_3_ed_ls" type="text" class="form-control _data_tbl" tabindex="5002"></td>
+                                                <td><input id="txt_muestraA_ancho_3erlav_3_ed_ls" type="text" class="form-control _data_tbl" tabindex="5005"></td>
+                                                <td><input id="txt_muestraA_ancho_5tolav_3_ed_ls" type="text" class="form-control _data_tbl" tabindex="5008"></td>
+
+                                                <td><input id="txt_muestraA_largo_1erlav_3_ed_ls" type="text" class="form-control _data_tbl" tabindex="5011"></td>
+                                                <td><input id="txt_muestraA_largo_3erlav_3_ed_ls" type="text" class="form-control _data_tbl" tabindex="5014"></td>
+                                                <td><input id="txt_muestraA_largo_5tolav_3_ed_ls" type="text" class="form-control _data_tbl" tabindex="5017"></td>
+
+                                                <td><input id="txt_muestraB_ancho_1erlav_3_ed_ls" type="text" class="form-control _data_tbl" tabindex="5020"></td>
+                                                <td><input id="txt_muestraB_ancho_3erlav_3_ed_ls" type="text" class="form-control _data_tbl" tabindex="5023"></td>
+                                                <td><input id="txt_muestraB_ancho_5tolav_3_ed_ls" type="text" class="form-control _data_tbl" tabindex="5026"></td>
+
+                                                <td><input id="txt_muestraB_largo_1erlav_3_ed_ls" type="text" class="form-control _data_tbl" tabindex="5029"></td>
+                                                <td><input id="txt_muestraB_largo_3erlav_3_ed_ls" type="text" class="form-control _data_tbl" tabindex="5032"></td>
+                                                <td><input id="txt_muestraB_largo_5tolav_3_ed_ls" type="text" class="form-control _data_tbl" tabindex="5035"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-horizontal row">
+                            <div class="col-lg-3">
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-8">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Encogimiento Ancho</label>
+                                                <input id="txt_encogimiento_ancho_ed_ls" class="form-control _data" data-id="encogimiento_ancho_ed_ls" tabindex="5000">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Req.</label>
+                                                <input id="txt_encogimiento_ancho_ed_ls" class="form-control _req" data-id="txt_encogimiento_ancho_req_ed_ls" tabindex="5000">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-8">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Encogimiento Largo</label>
+                                                <input id="txt_encogimiento_largo_ed_ls" class="form-control _data" data-id="encogimiento_largo_ed_ls" tabindex="5001">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Req.</label>
+                                                <input id="txt_encogimiento_largo_req_ed_ls" class="form-control _req" data-id="encogimiento_largo_req_ed_ls" tabindex="5001">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-12">
+                                        <label class="control-label">Estado</label>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <select id="cbo_estado_ed_ls" class="form-control" data-id="estado_ed_ls">
+                                                    <option>No Aplica</option>
+                                                    <option>Aprobado</option>
+                                                    <option>Rechazado</option>
+                                                    <option>Informado</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Estabilidad Dimensional - Lavado a Mano -->
+            <div id="div_estabilidad_dimensional_lavado_mano" class="ibox">
+
+                <div class="ibox-title">
+                    <div class="form-horizontal row">
+                        <div class="col-sm-6">
+                            <h5>Estabilidad Dimensional - Lavado a Mano - (AATCC TS-006)</h5>
+                        </div>
+                        <div class="col-sm-6 text-right">
+                            <div class="ibox-tools _class_tool">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ibox-content">
+                    <div class="form-group">
+                        <div class="form-horizontal row">
+                            <div class="col-sm-12">
+                                <div class="table-responsive">
+                                    <table id="tbl_estabilidad_dimensional_lm" class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center" style="vertical-align:middle" rowspan="3">N°</th>
+                                                <th class="text-center" colspan="6">Muestra A</th>
+                                                <th class="text-center" colspan="6">Muestra B</th>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-center" colspan="3">Ancho</th>
+                                                <th class="text-center" colspan="3">Largo</th>
+
+                                                <th class="text-center" colspan="3">Ancho</th>
+                                                <th class="text-center" colspan="3">Largo</th>
+
+                                            </tr>
+                                            <tr>
+                                                <th class="text-center">1er. Lav.</th>
+                                                <th class="text-center">3er. Lav.</th>
+                                                <th class="text-center">5to. Lav.</th>
+                                                <th class="text-center">1er. Lav.</th>
+                                                <th class="text-center">3er. Lav.</th>
+                                                <th class="text-center">5to. Lav.</th>
+
+                                                <th class="text-center">1er. Lav.</th>
+                                                <th class="text-center">3er. Lav.</th>
+                                                <th class="text-center">5to. Lav.</th>
+                                                <th class="text-center">1er. Lav.</th>
+                                                <th class="text-center">3er. Lav.</th>
+                                                <th class="text-center">5to. Lav.</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center" style="vertical-align:middle">1</td>
+                                                <td><input id="txt_muestraA_ancho_1erlav_1_ed_lm" type="text" class="form-control _data_tbl" tabindex="5000"></td>
+                                                <td><input id="txt_muestraA_ancho_3erlav_1_ed_lm" type="text" class="form-control _data_tbl" tabindex="5003"></td>
+                                                <td><input id="txt_muestraA_ancho_5tolav_1_ed_lm" type="text" class="form-control _data_tbl" tabindex="5006"></td>
+
+                                                <td><input id="txt_muestraA_largo_1erlav_1_ed_lm" type="text" class="form-control _data_tbl" tabindex="5009"></td>
+                                                <td><input id="txt_muestraA_largo_3erlav_1_ed_lm" type="text" class="form-control _data_tbl" tabindex="5012"></td>
+                                                <td><input id="txt_muestraA_largo_5tolav_1_ed_lm" type="text" class="form-control _data_tbl" tabindex="5015"></td>
+
+                                                <td><input id="txt_muestraB_ancho_1erlav_1_ed_lm" type="text" class="form-control _data_tbl" tabindex="5018"></td>
+                                                <td><input id="txt_muestraB_ancho_3erlav_1_ed_lm" type="text" class="form-control _data_tbl" tabindex="5021"></td>
+                                                <td><input id="txt_muestraB_ancho_5tolav_1_ed_lm" type="text" class="form-control _data_tbl" tabindex="5024"></td>
+
+                                                <td><input id="txt_muestraB_largo_1erlav_1_ed_lm" type="text" class="form-control _data_tbl" tabindex="5027"></td>
+                                                <td><input id="txt_muestraB_largo_3erlav_1_ed_lm" type="text" class="form-control _data_tbl" tabindex="5030"></td>
+                                                <td><input id="txt_muestraB_largo_5tolav_1_ed_lm" type="text" class="form-control _data_tbl" tabindex="5033"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center" style="vertical-align:middle">2</td>
+                                                <td><input id="txt_muestraA_ancho_1erlav_2_ed_lm" type="text" class="form-control _data_tbl" tabindex="5001"></td>
+                                                <td><input id="txt_muestraA_ancho_3erlav_2_ed_lm" type="text" class="form-control _data_tbl" tabindex="5004"></td>
+                                                <td><input id="txt_muestraA_ancho_5tolav_2_ed_lm" type="text" class="form-control _data_tbl" tabindex="5007"></td>
+
+                                                <td><input id="txt_muestraA_largo_1erlav_2_ed_lm" type="text" class="form-control _data_tbl" tabindex="5010"></td>
+                                                <td><input id="txt_muestraA_largo_3erlav_2_ed_lm" type="text" class="form-control _data_tbl" tabindex="5013"></td>
+                                                <td><input id="txt_muestraA_largo_5tolav_2_ed_lm" type="text" class="form-control _data_tbl" tabindex="5016"></td>
+
+                                                <td><input id="txt_muestraB_ancho_1erlav_2_ed_lm" type="text" class="form-control _data_tbl" tabindex="5019"></td>
+                                                <td><input id="txt_muestraB_ancho_3erlav_2_ed_lm" type="text" class="form-control _data_tbl" tabindex="5022"></td>
+                                                <td><input id="txt_muestraB_ancho_5tolav_2_ed_lm" type="text" class="form-control _data_tbl" tabindex="5025"></td>
+
+                                                <td><input id="txt_muestraB_largo_1erlav_2_ed_lm" type="text" class="form-control _data_tbl" tabindex="5028"></td>
+                                                <td><input id="txt_muestraB_largo_3erlav_2_ed_lm" type="text" class="form-control _data_tbl" tabindex="5031"></td>
+                                                <td><input id="txt_muestraB_largo_5tolav_2_ed_lm" type="text" class="form-control _data_tbl" tabindex="5034"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center" style="vertical-align:middle">3</td>
+                                                <td><input id="txt_muestraA_ancho_1erlav_3_ed_lm" type="text" class="form-control _data_tbl" tabindex="5002"></td>
+                                                <td><input id="txt_muestraA_ancho_3erlav_3_ed_lm" type="text" class="form-control _data_tbl" tabindex="5005"></td>
+                                                <td><input id="txt_muestraA_ancho_5tolav_3_ed_lm" type="text" class="form-control _data_tbl" tabindex="5008"></td>
+
+                                                <td><input id="txt_muestraA_largo_1erlav_3_ed_lm" type="text" class="form-control _data_tbl" tabindex="5011"></td>
+                                                <td><input id="txt_muestraA_largo_3erlav_3_ed_lm" type="text" class="form-control _data_tbl" tabindex="5014"></td>
+                                                <td><input id="txt_muestraA_largo_5tolav_3_ed_lm" type="text" class="form-control _data_tbl" tabindex="5017"></td>
+
+                                                <td><input id="txt_muestraB_ancho_1erlav_3_ed_lm" type="text" class="form-control _data_tbl" tabindex="5020"></td>
+                                                <td><input id="txt_muestraB_ancho_3erlav_3_ed_lm" type="text" class="form-control _data_tbl" tabindex="5023"></td>
+                                                <td><input id="txt_muestraB_ancho_5tolav_3_ed_lm" type="text" class="form-control _data_tbl" tabindex="5026"></td>
+
+                                                <td><input id="txt_muestraB_largo_1erlav_3_ed_lm" type="text" class="form-control _data_tbl" tabindex="5029"></td>
+                                                <td><input id="txt_muestraB_largo_3erlav_3_ed_lm" type="text" class="form-control _data_tbl" tabindex="5032"></td>
+                                                <td><input id="txt_muestraB_largo_5tolav_3_ed_lm" type="text" class="form-control _data_tbl" tabindex="5035"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-horizontal row">
+                            <div class="col-lg-3">
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-8">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Encogimiento Ancho</label>
+                                                <input id="txt_encogimiento_ancho_ed_lm" class="form-control _data" data-id="encogimiento_ancho_ed_lm" tabindex="5000">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Req.</label>
+                                                <input id="txt_encogimiento_ancho_ed_lm" class="form-control _req" data-id="txt_encogimiento_ancho_req_ed_lm" tabindex="5000">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-8">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Encogimiento Largo</label>
+                                                <input id="txt_encogimiento_largo_ed_lm" class="form-control _data" data-id="encogimiento_largo_ed_lm" tabindex="5001">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Req.</label>
+                                                <input id="txt_encogimiento_largo_req_ed_lm" class="form-control _req" data-id="encogimiento_largo_req_ed_lm" tabindex="5001">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-12">
+                                        <label class="control-label">Estado</label>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <select id="cbo_estado_ed_lm" class="form-control" data-id="estado_ed_lm">
+                                                    <option>No Aplica</option>
+                                                    <option>Aprobado</option>
+                                                    <option>Rechazado</option>
+                                                    <option>Informado</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Revirado en Tela -->
+            <div id="div_revirado_tela" class="ibox">
+                <div class="ibox-title">
+                    <div class="form-horizontal row">
+                        <div class="col-sm-6">
+                            <h5>Revirado en Tela - (AATCC 179-2017)</h5>
+                        </div>
+                        <div class="col-sm-6 text-right">
+                            <div class="ibox-tools _class_tool">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ibox-content">
+                    <div class="form-group">
+                        <div class="form-horizontal row">
+                            <div class="col-sm-12">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center" colspan="6">Muestra A</th>
+                                                <th class="text-center" colspan="6">Muestra B</th>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-center" colspan="2">1er. Lavado</th>
+                                                <th class="text-center" colspan="2">3er. Lavado</th>
+                                                <th class="text-center" colspan="2">5to. Lavado</th>
+                                                <th class="text-center" colspan="2">1er. Lavado</th>
+                                                <th class="text-center" colspan="2">3er. Lavado</th>
+                                                <th class="text-center" colspan="2">5to. Lavado</th>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-center">AC</th>
+                                                <th class="text-center">BD</th>
+                                                <th class="text-center">AC</th>
+                                                <th class="text-center">BD</th>
+                                                <th class="text-center">AC</th>
+                                                <th class="text-center">BD</th>
+                                                <th class="text-center">AC</th>
+                                                <th class="text-center">BD</th>
+                                                <th class="text-center">AC</th>
+                                                <th class="text-center">BD</th>
+                                                <th class="text-center">AC</th>
+                                                <th class="text-center">BD</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td rowspan="3"><input id="txt_muestraA_1erlav_ac" type="text" class="form-control _data_tbl" tabindex="5000"></td>
+                                                <td rowspan="3"><input id="txt_muestraA_1erlav_bd" type="text" class="form-control _data_tbl" tabindex="5001"></td>
+                                                <td rowspan="3"><input id="txt_muestraA_3erlav_ac" type="text" class="form-control _data_tbl" tabindex="5002"></td>
+                                                <td rowspan="3"><input id="txt_muestraA_3erlav_bd" type="text" class="form-control _data_tbl" tabindex="5003"></td>
+                                                <td rowspan="3"><input id="txt_muestraA_5tolav_ac" type="text" class="form-control _data_tbl" tabindex="5004"></td>
+                                                <td rowspan="3"><input id="txt_muestraA_5tolav_bd" type="text" class="form-control _data_tbl" tabindex="5005"></td>
+
+                                                <td rowspan="3"><input id="txt_muestraB_1erlav_ac" type="text" class="form-control _data_tbl" tabindex="5006"></td>
+                                                <td rowspan="3"><input id="txt_muestraB_1erlav_bd" type="text" class="form-control _data_tbl" tabindex="5007"></td>
+                                                <td rowspan="3"><input id="txt_muestraB_3erlav_ac" type="text" class="form-control _data_tbl" tabindex="5008"></td>
+                                                <td rowspan="3"><input id="txt_muestraB_3erlav_bd" type="text" class="form-control _data_tbl" tabindex="5009"></td>
+                                                <td rowspan="3"><input id="txt_muestraB_5tolav_ac" type="text" class="form-control _data_tbl" tabindex="5010"></td>
+                                                <td rowspan="3"><input id="txt_muestraB_5tolav_bd" type="text" class="form-control _data_tbl" tabindex="5011"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-horizontal row">
+                            <div class="col-lg-3">
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-8">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Revirado</label>
+                                                <input id=">" class="form-control _data" data-id="revirado_tela" tabindex="5000">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Req.</label>
+                                                <input id="txt_revirado_tela_req" class="form-control _req" data-id="revirado_tela_req" tabindex="5000">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                           
+                            <div class="col-lg-3">
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-12">
+                                        <label class="control-label">Estado</label>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <select id="cbo_estado_rt" class="form-control" data-id="estado_rt">
+                                                    <option>No Aplica</option>
+                                                    <option>Aprobado</option>
+                                                    <option>Rechazado</option>
+                                                    <option>Informado</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Apariencia -->
+            <div id="div_apariencia" class="ibox">
+
+                <div class="ibox-title">
+                    <div class="form-horizontal row">
+                        <div class="col-sm-6">
+                            <h5>Apariencia - (AATCC 124-2014)</h5>
+                        </div>
+                        <div class="col-sm-6">
+
+                        </div>
+                    </div>
+                </div>                
+
+                <div id="div_aparencia_content" class="ibox-content">
+                    <div class="form-group">
+                        <div class="form-horizontal row">
+                            <div class="col-sm-3">
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-8">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Cambio Color</label>
+                                                <input id="" class="form-control input-sm _data" data-id="" tabindex="5000">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Req.</label>
+                                                <input id="" class="form-control input-sm _req" data-id="" tabindex="5000">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-8">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Pilling</label>
+                                                <input id="" class="form-control input-sm _data" data-id="" tabindex="5001">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Req.</label>
+                                                <input id="" class="form-control input-sm _req" data-id="" tabindex="5001">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-8">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label xs">Grado SA</label>
+                                                <input id="" class="form-control input-sm _data" data-id="" tabindex="5002">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Req.</label>
+                                                <input id="" class="form-control input-sm _req" data-id="" tabindex="5002">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-8">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">CC Color S. UV.</label>
+                                                <input id="" class="form-control input-sm _data" data-id="" tabindex="5003">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Req.</label>
+                                                <input id="" class="form-control input-sm _req" data-id="" tabindex="5003">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                        <div class="form-horizontal row">
+                            <div class="col-sm-3">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Evaluación Apariencia</label>
+                                        <select id="" class="form-control input-sm" data-id="">
+                                            <option>No Aplica</option>
+                                            <option>Aprobado</option>
+                                            <option>Rechazado</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Estado</label>
+                                        <select id="" class="form-control input-sm" data-id="">
+                                            <option>No Aplica</option>
+                                            <option>Aprobado</option>
+                                            <option>Rechazado</option>
+                                            <option>Informado</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Solidez Lavado -->
+            <div id="div_solidez_lavado" class="ibox">
+
+                <div class="ibox-title">
+                    <div class="form-horizontal row">
+                        <div id="div_titulo" class="col-sm-6">
+                            <h5>Solidez al Lavado - (AATCC 61-2013)</h5>
+                        </div>
+                        <div class="col-sm-6">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="div_solidez_lavado_content" class="ibox-content">
+                    <div class="form-group">
+                        <div class="form-horizontal row">
+
+                            <div class="col-lg-3">
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-8">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Cambio Color</label>
+                                                <input id="" class="form-control input-sm _data" data-id="" tabindex="5000">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Req.</label>
+                                                <input id="" class="form-control input-sm _req" data-id="" tabindex="5000">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-8">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Acetato</label>
+                                                <input id="" class="form-control input-sm _data" data-id="" tabindex="5001">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Req.</label>
+                                                <input id="" class="form-control input-sm _req" data-id="" tabindex="5001">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-8">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Algodon</label>
+                                                <input id="" class="form-control input-sm _data" data-id="" tabindex="5002">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Req.</label>
+                                                <input id="" class="form-control input-sm _req" data-id="" tabindex="5002">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-8">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Nylon</label>
+                                                <input id="" class="form-control input-sm _data" data-id="" tabindex="5003">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Req.</label>
+                                                <input id="" class="form-control input-sm _req" data-id="" tabindex="5003">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-8">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Seda</label>
+                                                <input id="" class="form-control input-sm _data" data-id="" tabindex="5004">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Req.</label>
+                                                <input id="" class="form-control input-sm _req" data-id="" tabindex="5004">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-8">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Poliester</label>
+                                                <input id="" class="form-control input-sm _data" data-id="" tabindex="5005">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Req.</label>
+                                                <input id="" class="form-control input-sm _req" data-id="" tabindex="5005">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-8">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Acrilico</label>
+                                                <input id="" class="form-control input-sm _data" data-id="" tabindex="5006">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Req.</label>
+                                                <input id="" class="form-control input-sm _req" data-id="" tabindex="5006">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-8">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Lana</label>
+                                                <input id="" class="form-control input-sm _data" data-id="" tabindex="5007">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Req.</label>
+                                                <input id="" class="form-control input-sm _req" data-id="" tabindex="5007">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-8">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Viscosa</label>
+                                                <input id="" class="form-control input-sm _data" data-id="" tabindex="5008">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Req.</label>
+                                                <input id="" class="form-control input-sm _req" data-id="" tabindex="5008">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Estado</label>
+                                        <select id="" class="form-control input-sm" data-id="">
+                                            <option>No Aplica</option>
+                                            <option>Aprobado</option>
+                                            <option>Rechazado</option>
+                                            <option>Informado</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+

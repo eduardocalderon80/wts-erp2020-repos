@@ -1,0 +1,402 @@
+﻿<style>
+    .zoomtags:hover {
+        background-color: aliceblue;
+        color: #000000;
+    }
+
+    #txtFechas[readonly], #txtFechaInicio[readonly], #txtFechaFin[readonly] {
+        background-color: #ffffff;
+        border: 1px solid #e5e6e7;
+    }
+
+    #txtFechas.form-control[readonly], #txtFechaInicio.form-control[readonly], #txtFechaFin.form-control[readonly] {
+        background-color: #ffffff;
+        border-top: 1px solid #e5e6e7 !important;
+        border-left: 1px solid #e5e6e7 !important;
+        border-right: 1px solid #e5e6e7 !important;
+        border-bottom: 1px solid #e5e6e7 !important;
+    }
+</style>
+<div class="ibox" style="margin-top:0px; margin-bottom:0px" id="panelEncabezado_ViajesNew">
+    <div class="hide">
+        <input type="text" id="txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-6">
+            <h2 class="font-bold">Viajes</h2>
+            <ol class="breadcrumb">
+                <li> <i class="fa fa-home"></i></li>
+                <li class="breadcrumb-item">
+                    Gestion de Talento
+                </li>
+                <li class="breadcrumb-item">
+                    Viajes
+                </li>
+                <li class="breadcrumb-item active">
+                    <strong>Nuevo</strong>
+                </li>
+            </ol>
+        </div>
+        <div id="div_botones" class="col-lg-6 text-right" style="padding-top:20px;"></div>
+    </div>
+    <div class="no-aprobar">
+        <div class="wrapper wrapper-content">
+            <div class="row animated fadeInRight">
+                <div class="col-md-12" id="ibox-2">
+                    <div class="ibox " style="margin-top:0px; margin-bottom:0px">
+                        <div class="ibox-title">
+                            <h5>Datos Generales</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                                <a class="fullscreen-link">
+                                    <i class="fa fa-expand"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="tabs-container">
+                                <ul class="nav nav-tabs">
+                                    <li class="bg-primary active">
+                                        <a id="tabRegistro" data-toggle="tab" href="#tab-registro" aria-expanded="true"><label class="control-label">Registro</label></a>
+                                    </li>
+                                    <li>
+                                        <a id="tabHistorial" data-toggle="tab" href="#tab-historial" aria-expanded="false"><label class="control-label">Historial</label></a>
+                                    </li>
+                                </ul>
+                                <div id="informacion" class="tab-content">
+                                    <div id="tab-registro" class="tab-pane active">
+                                        <div class="ibox no-margins" style="margin-top:0px; margin-bottom:0px">
+                                            <div class="ibox-content">
+                                                <div class="form-horizontal row">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-3">Fecha solicitud:</label>
+                                                            <div class="col-sm-9 ">
+                                                                <div class="input-group">
+                                                                    <input id="txtFechaSolicitud" type="text" class="form-control" disabled data-mask="99/99/9999">
+                                                                    <div class="input-group-addon">
+                                                                        <span class="fa fa-calendar"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-3">Nombre:</label>
+                                                            <div class="col-sm-9">
+                                                                <input id="txtNombre" type="text" class="form-control text-success font-bold" disabled>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-3">Fecha incorporación:</label>
+                                                            <div class="col-sm-9 ">
+                                                                <div class="input-group">
+                                                                    <input id="txtFechaIncorporacion" type="text" class="form-control" disabled data-mask="99/99/9999">
+                                                                    <div class="input-group-addon">
+                                                                        <span class="fa fa-calendar"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-3">Cargo:</label>
+                                                            <div class="col-sm-9">
+                                                                <input id="txtCargo" type="text" class="form-control" disabled>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-3">Jefe inmediato:</label>
+                                                            <div class="col-sm-9">
+                                                                <input id="txtJefe" type="text" class="form-control" disabled>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-3">Área:</label>
+                                                            <div class="col-sm-9">
+                                                                <input id="txtArea" type="text" class="form-control text-success font-bold" disabled>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-3">Sub área:</label>
+                                                            <div class="col-sm-9">
+                                                                <input id="txtSubArea" type="text" class="form-control text-success font-bold" disabled>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-3">Equipo:</label>
+                                                            <div class="col-sm-9">
+                                                                <input id="txtEquipo" type="text" class="form-control text-success font-bold" disabled>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                                                        <div class="ibox" style="margin-top:0px; margin-bottom:0px">
+                                                            <div class="ibox-title">
+                                                                <h4 class="col-lg-12">Período de Viajes:</h4>
+                                                                <input type="hidden" id="hdnRdFechas" value="2" class="_enty_grabar" data-id="rdfechas" />
+                                                            </div>
+                                                            <div class="ibox-content">
+                                                                <div class="form-horizontal row">
+                                                                    <div class="col-sm-3"></div>
+                                                                    <div class="col-sm-9">
+                                                                        <div class="radio radio-green col-sm-6 no-margins" style="height:10px!important">
+                                                                            <input type="radio" id="rangofechas2" value="2" name="rangofechas" checked />
+                                                                            <label for="rangofechas2">Rango de fechas</label>
+                                                                        </div>                                                                        
+                                                                    </div>
+                                                                    <div class="col-sm-12" style="height:10px!important"></div>
+                                                                </div>
+                                                                <div class="form-horizontal row">
+                                                                    <div class="form-group rangecalendario" id="rangecalendario">
+                                                                        <label class="control-label col-sm-3">Fechas:</label>
+                                                                        <div class="col-sm-9">
+                                                                            <div class="input-group input-daterange" id="datepicker" style="width:100%">
+                                                                                <input id="txtFechaInicio" type="text" class="form-control _enty_grabar border-top border-left-right border-bottom" name="start" data-mask="99/99/9999" placeholder="__/__/____" data-id="fechainicio" readonly />
+                                                                                <div class="input-group-addon" style="padding:6px 9px;">
+                                                                                    <span class="fa fa-calendar"></span>
+                                                                                </div>
+                                                                                <input id="txtFechaFin" type="text" class="form-control _enty_grabar border-top border-left-right border-bottom" name="end" data-mask="99/99/9999" placeholder="__/__/____" data-id="fechafin" readonly />
+                                                                                <div class="input-group-addon" style="padding:6px 9px;">
+                                                                                    <span class="fa fa-calendar"></span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group calendario hide">
+                                                                        <label class="control-label col-sm-3">Fechas:</label>
+                                                                        <div class="col-sm-9">
+                                                                            <div class="input-group date date.es">
+                                                                                <input type="hidden" id="hdnFechas" name="hdnFechas" class="_enty_grabar" data-id="fechas" />
+                                                                                <input id="txtFechas" type="text" class="form-control border-top border-left-right border-bottom" placeholder="__/__/____" readonly />
+                                                                                <div class="input-group-addon">
+                                                                                    <span class="fa fa-calendar"></span>
+                                                                                </div>
+                                                                                <div class="input-group-addon red-bg" onclick="appVacacionesNew.removetags();">
+                                                                                    <span class="fa fa-trash"></span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-3"></div>
+                                                                        <div id="taginputspan" class="col-sm-9">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-horizontal row">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label col-sm-3">N° Días Solicitados:</label>
+                                                                        <div class="col-sm-9">
+                                                                            <input id="txtDias" type="text" class="form-control _enty_grabar" disabled data-id="numdias">
+                                                                        </div>
+                                                                        <label class="control-label col-sm-3 hide">N° Días Restantes:</label>
+                                                                        <div class="col-sm-3 hide">
+                                                                            <input id="txtDiasAcumulados" type="text" class="form-control" disabled>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                                                        <div class="ibox" style="margin-top:0px; margin-bottom:0px">
+                                                            <div class="ibox-title">
+                                                                <h4 class="col-lg-12">Aprobador:</h4>
+                                                            </div>
+                                                            <div class="ibox-content no-padding">
+                                                                <div class="row" style="padding-top:15px">
+                                                                    <div class="col-sm-12">
+                                                                        <div id="tablaAprobador" class="" hidden="" style="display: block;">
+                                                                            <div class="table-responsive">
+                                                                                <table class="table table-bordered" id="detalleTablaAprobador">
+                                                                                    <thead>
+                                                                                        <tr>
+                                                                                            <th class="cols-sm-2 text-center"></th>
+                                                                                            <th class="cols-sm-5 text-center">Aprobado por</th>
+                                                                                            <th class="cols-sm-4 text-center">Correo</th>
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <td class="cols-sm-2 text-center"></td>
+                                                                                            <td class="cols-sm-5"></td>
+                                                                                            <td class="cols-sm-4"></td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="ibox-title hide">
+                                                                <h4>Detalle:</h4>
+                                                            </div>
+                                                            <div class="ibox-content hide">
+                                                                <div class="form-horizontal row">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label col-sm-3">Comentario:</label>
+                                                                        <div class="col-sm-9">
+                                                                            <textarea id="txtComentario" class="form-control _enty_grabar" rows="6" style="resize:none" placeholder="Ingrese comentario aqui..." maxlength="5000" data-required="false" data-min="1" data-max="254"></textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div id="rowfileuser" class="form-horizontal row hide">
+                                                                    <div class="form-group">
+                                                                        <div id="divfiluser_active" class="col-sm-3 text-right">
+                                                                            <span id="spanfileuser" class="btn btn-warning btn-file text-right">
+                                                                                <span class="fa fa-upload"></span> Cargar Archivo
+                                                                                <input id="fileuser" class="text-right" type="file">
+                                                                            </span>
+                                                                        </div>
+                                                                        <div id="divfiluser_desactive" class="col-sm-3 text-right hide"></div>
+                                                                        <div class="col-sm-9">
+                                                                            <table id="tblfileuser" class="table table-bordered table-hover">
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th class="col-sm-1"></th>
+                                                                                        <th class="col-sm-9">Archivo</th>
+                                                                                        <th class="col-sm-1"></th>
+                                                                                        <th class="hide col-sm-1"></th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody></tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="tab-historial" class="tab-pane">
+                                        <div class="ibox">
+                                            <div class="ibox-content">
+                                                <div class="table-responsive">
+                                                    <table class="table table-stripped table-bordered " id="contenTableHistory">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="col-sm-1 text-center">Fecha</th>
+                                                                <th class="col-sm-1 text-center">Hora</th>
+                                                                <th class="col-sm-1 text-center">Estado</th>
+                                                                <th class="col-sm-2 text-center">Autor</th>
+                                                                <th class="col-sm-1 text-center">Acción</th>
+                                                                <th class="col-sm-3 text-center">Descripción</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="tbody_historial">
+                                                            <tr>
+                                                                <td colspan="6" align="center">No se encontraron datos</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="si-aprobar">
+        <div class="wrapper wrapper-content">
+            <div class="row animated fadeInRight">
+                <div class="col-md-12" id="ibox-2">
+                    <div class="ibox " style="margin-top:0px; margin-bottom:0px">
+                        <div class="ibox-title">
+                            <h5>Aprobación de la Solicitud #: <span id="spnIdSolicitud"></span></h5>
+                            <div class="ibox-tools">
+                                <a class="fullscreen-link">
+                                    <i class="fa fa-expand"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content col-sm-12">
+                            <div class="no-margins" style="margin-top:0px; margin-bottom:0px">
+                                <div class="col-sm-6">
+                                    <div class="ibox-title">
+                                        <h4>Datos del Personal</h4>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3">Nombre Personal:</label>
+                                                <div class="col-sm-9">
+                                                    <input id="txtNombre_si-aprobar" type="text" class="form-control text-success font-bold" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3">Comentario:</label>
+                                                <div class="col-sm-9">
+                                                    <textarea id="txtComentario_si-aprobar" class="form-control _enty_grabar" rows="6" style="resize:none" placeholder="Ingrese comentario aqui..." maxlength="5000" data-required="false" data-min="1" data-max="254" data-id="comentario"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered" id="detalleTablaFechas">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="cols-sm-3 text-center"></th>
+                                                            <th class="cols-sm-3 text-center">Fecha Inicio</th>
+                                                            <th class="cols-sm-3 text-center">Fecha Fin</th>
+                                                            <th class="cols-sm-3 text-center">Dias</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="tbody_tablafechas">
+                                                        <tr>
+                                                            <td class="cols-sm-3 text-center"></td>
+                                                            <td class="cols-sm-3 text-center"></td>
+                                                            <td class="cols-sm-3 text-center"></td>
+                                                            <td class="cols-sm-3 text-center"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-horizontal">
+                                        <div class="ibox-title">
+                                            <h4>Coincidencia de Fechas</h4>
+                                        </div>
+                                        <div class="ibox-content">
+                                            <div id='divFechasCoincidentes_si-aprobar' class="table-responsive">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

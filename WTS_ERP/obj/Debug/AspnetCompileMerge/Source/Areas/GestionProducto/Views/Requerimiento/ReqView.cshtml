@@ -1,0 +1,217 @@
+﻿<style type="text/css">
+    .row-selected {
+        background-color: #1ab394 !important;
+    }
+
+    .select2-container--open {
+        z-index: 9999999;
+    }
+
+    .has-error .select2-selection {
+        border-color: #ed5565 !important;
+    }
+
+    th {
+        padding: 8px;
+        border: 1px solid #e7e7e7;
+        text-align: center;
+        background: #206590 !important;
+        color: white;
+    }
+
+    td {
+        padding: 5px;
+        border-bottom: 1px solid #e7e7e7;
+        padding-left: 20px;
+    }
+
+    .columns .chosen-container, .column .chosen-container {
+        width: 100% !important;
+        margin-bottom: 1rem;
+    }
+</style>
+
+<div id="pnl_requerimiento_view">
+
+    <div id="pnl_requerimiento_view_header" class="row wrapper white-bg page-heading">
+        <div class="ibox">
+            <div class="col-sm-6">
+                <h2 class="font-bold">Requerimiento</h2>
+            </div>
+            <div class="col-sm-6 text-right">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="pnl_requerimiento_view_body" class="row wrapper-content gray-bg animated">
+
+        <div id="content_form" class="ibox">
+
+            <div class="ibox-title">
+                <div class="form-horizontal row ">
+                    <div class="col-sm-6">
+                        <h3 class="bold text-success">Buscador</h3>
+                    </div>
+                    <div id="divBotonesPrincipal" class="col-sm-6 text-right">
+                        <div class="ibox-tools">
+                            <a class="fullscreen-link">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ibox-content">
+
+                <div class="form-horizontal row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <label class="control-label">Cliente:</label>                                
+                                @*<select id="cbo_cliente" placeholder="Seleccione Cliente" multiple class="chosen-select"></select>*@
+                                <select id="cbo_cliente" data-placeholder="Seleccione Cliente" multiple class="chosen-select"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <label class="control-label">Temporada:</label>
+                                <select id="cbo_temporada" class="form-control _select2 _enty" data-id="idtemporada" style="width:100%"></select>                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <label class="control-label">Fabrica:</label>
+                                <select id="cbo_fabrica" class="form-control _select2 _enty" data-id="idfabrica" style="width:100%"></select>                               
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-horizontal row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <label class="control-label">Estilo:</label>
+                                @*<select id="cbo_estilo" class="form-control _select2 _enty" data-id="idestilo" style="width:100%"></select>*@
+                                <select id="cbo_estilo" data-placeholder="Seleccione Estilo" multiple class="chosen-select"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <label class="control-label">Muestra:</label>
+                                <select id="cbo_tipomuestra" class="form-control _select2 _enty" data-id="idtipomuestra" style="width:100%"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <label class="control-label">Actividad:</label>
+                                <select id="cbo_actividad" class="form-control _select2 _enty" data-id="idactividad" style="width:100%"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-horizontal row">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <label class="control-label">Estado:</label>
+                                <select id="cbo_estado" class="form-control _select2 _enty" data-id="codigoestado" style="width:100%"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <label class="control-label">Fec. Prog. Inicial:</label>
+                                <div id="div_fecha_inicial">
+                                    <div class='input-group date'>
+                                        <input id="txt_fecha_inicial" disabled type='text' class='form-control input-sm m-b-xs' data-id="fechainicial" data-type="date" data-level="true" data-min="10" data-max="10">
+                                        <div id="div_calendario_fecha_inicial" class="input-group-addon">
+                                            <span class="fa fa-calendar"></span>
+                                        </div>
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <label class="control-label">Fec. Prog. Final:</label>
+                                <div id="div_fecha_fin">
+                                    <div class='input-group date'>
+                                        <input id="txt_fecha_fin" disabled type='text' class='form-control input-sm m-b-xs' data-id="fechafin" data-type="date" data-level="true" data-min="10" data-max="10">
+                                        <div id="div_calendario_fecha_fin" class="input-group-addon">
+                                            <span class="fa fa-calendar"></span>
+                                        </div>
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <div class="col-sm-6">
+                                <label class="control-label">Fecha Indeterminada:</label>
+                                <div class='i-checks _clsdivfecinde'>
+                                    <div class='icheckbox_square-green _chkitem' style='position: relative;'>
+                                        <label>
+                                            <input type='checkbox' class='i-checks _clschkfecinde' style='position: absolute; opacity: 0;'>
+                                            <ins class='iCheck-helper' style='position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;'></ins>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        @*</div>
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="form-group">*@
+                            <div id="divBotonesSecundarios" class="col-sm-6 text-left" style="padding-top:1%">
+                                <button id="btn_search" type="button" title="Search" class="btn btn-outline btn-info">
+                                    <span class="fa fa-search"></span>
+                                    Buscar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div  class="ibox">
+            <div class="ibox-content">
+
+                <div class="form-horizontal row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div id="div_tabla_requerimiento" class="col-sm-12">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+      
+    </div>
+
+</div>
+

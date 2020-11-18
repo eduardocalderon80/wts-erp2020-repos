@@ -1,0 +1,235 @@
+﻿@{ 
+    string _parametro = ViewBag.parametro;
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Hangtag Style</title>
+    <style>
+        body {
+            margin: 0px !important;
+            padding: 0px !important;
+            border: 0px !important;
+            height: 100% !important;
+            max-height: 100% !important;
+            top: 0px !important;
+            bottom: 0px !important;
+            background-color: white;
+            position: static;
+        }
+
+        .Sheet {
+            height: 100%;
+            min-height: 100%;
+            max-height: 100%;
+            position: relative;
+            padding: 0px;
+            border: 0px;
+            margin: 0px;
+            top: 0px;
+            bottom: 0px;
+            display: flex !important;
+        }
+
+        /*CARTONSIZE ES EL TAMAÑO DEL PAPEL; 10 ES EL ANCHO DEL PAPEL ETIQUETERA; 7.5 ES EL ALTO DEL PAPEL ETIQUETERA*/
+        .CartonSize {
+            width: 10cm; /*15.5cm;*/ /*10cm;*/ /*3.54in;*/
+            height: 7.5cm; /*10cm;*/ /*15.5cm;*/ /*5.55in;*/
+            margin: 0px;
+            padding-left: 0.5cm; /*0.1cm;*/ /*0.38cm;*/ /*0.15in;*/
+            padding-top: 1.5cm; /*1cm;*/ /*2cm;*/ /*1cm;*/ /*0.38cm;*/ /*0.15in;*/
+            font-family: Arial;
+        }
+
+        /*COLGADOR ES EL TAMAÑO DEL CUADRO PINTADO; 6.5 ES EL ANCHO AL REVES CUANDO SE IMPRIMI EN HORIZONTAL; 9 ES EL ALTO AL REVES CONTRARIO AL TAMAÑO DEL PAPEL*/
+        .Colgador {
+            width: 6.5cm; /*9cm;*/ /*6.5cm;*/ /*3.7in;*/
+            height: 8.5cm; /*9cm;  CON LOGO*/ /*7.5cm;*/ /*9cm;*/ /*2.7in;*/
+            margin: 0px;
+            border: 1px solid;
+            padding-top: 5px;
+        }
+
+        .Colgador2 {
+            width: 6.5cm; /*3.7in;*/
+            height: 9cm; /*2.7in;*/
+            margin-top: 40px; /*30px;*/
+            border: 1px solid;
+        }
+
+        .tblColgador {
+            width: 100%;
+            font-weight: bold;
+            font-size: 7pt; /*8pt;*/
+        }
+
+            .tblColgador td {
+                padding-left: 5px;
+            }
+
+        .PrintMessage {
+            display: none;
+            font-weight: bold;
+            color: red;
+            font-size: 14pt;
+        }
+
+        .ErrorMessage {
+            color: red;
+            font-weight: bold;
+            font-size: 20pt;
+            padding-left: 20px;
+            margin-top: 20px;
+            padding-top: 20px;
+        }
+
+        .altoFila {
+            height: 15px;
+        }
+
+        .altoFilaComentario {
+            height: 25px;
+        }
+
+        .altoFilaCabeceraIntermedio {
+            height: 13px;
+        }
+
+        .paddingColumnasCabeceraIntermedio {
+            padding-top: 1px;
+            padding-bottom: 1px;
+        }
+
+        .espacio_entrefilas {
+            border-collapse: separate;
+            border-spacing: 0 4px;
+        }
+    </style>
+    <script src="~/Scripts/js/jquery-2.1.1.js"></script>
+    <script src="~/Scripts/kendo/2015.3.930/kendo.all.min.js"></script>
+</head>
+<body>
+    @Html.Hidden("urlBase", Url.Content("~/"))
+    <div style="display:none;">
+        <input type="text" id="hf_parametro" value="@_parametro" />
+    </div>
+    <div id="div_printhangtabestilos">
+        <div class="Sheet">
+            <div class="CartonSize">
+                <div class="Colgador row">
+                    <div style="height:70%;">
+                        <div id="divPadreTablaCabeceraIntermedio" style="text-align:left;width:100%;float:left;">
+                            <!--CONTENIDO DEL COLGADOR-->
+                            <div id="divHijoTablaCabeceraIntermedio">
+                                <table cellpadding="0" cellspacing="0" class="tblColgador">
+                                    <tr class="altoFilaCabeceraIntermedio">
+                                        <td style="width: 80px;">FACTORY:</td>
+                                        <td colspan="3" class="paddingColumnasCabeceraIntermedio cls_proveedor"></td> <!--Model.Familia-->
+                                    </tr>
+                                    <tr class="altoFilaCabeceraIntermedio">
+                                        <td style="width: 80px;">Tradename:</td>
+                                        <td colspan="3" class="paddingColumnasCabeceraIntermedio"></td> <!--Model.NombreComercial-->
+                                    </tr>
+                                    <tr class="altoFilaCabeceraIntermedio">
+                                        <td style="width: 80px;">Yarn Size:</td>
+                                        <td colspan="3" class="paddingColumnasCabeceraIntermedio"></td> <!--Model.Titulo-->
+                                    </tr>
+                                    <tr class="altoFilaCabeceraIntermedio">
+                                        <td style="width: 80px;">Density:</td>
+                                        <!-- VARIABLES{
+                                            string tipoDensidad = string.Empty;
+                                            string textoUnidaMedida = string.Empty;
+                                            if (Model.Lavado == 1)
+                                            {
+                                                tipoDensidad = "AW";
+                                                textoUnidaMedida = "gr/m2";
+                                            }
+                                            else if (Model.Lavado == 2)
+                                            {
+                                                tipoDensidad = "BW";
+                                                textoUnidaMedida = "gr/m2";
+                                            }
+                                        }-->
+                                        <td colspan="3" class="paddingColumnasCabeceraIntermedio"></td> <!--Model.Densidad.ToString("###.##") textoUnidaMedida tipoDensidad-->
+
+                                    </tr>
+
+                                    <tr class="altoFilaCabeceraIntermedio">
+                                        <td style="width: 80px;">Content:</td>
+                                        <td colspan="3" class="paddingColumnasCabeceraIntermedio"></td> <!--Model.Composicion-->
+                                    </tr>
+
+                                    <tr class="altoFilaCabeceraIntermedio">
+                                        <td style="width: 80px;">Width:</td>
+                                        <!--VARIABLES {
+                                            string descripcionUnidadMedidaCuttable = "";
+                                            if (Model.AnchoAbiertoUtil > 0)
+                                            {
+                                                descripcionUnidadMedidaCuttable = "m.";
+                                            }
+                                        }-->
+
+                                        <td colspan="3" class="paddingColumnasCabeceraIntermedio">
+                                            <!--Model.AnchoAbiertoUtilEnMetrosCadena descripcionUnidadMedidaCuttable-->
+                                        </td>
+                                    </tr>
+                                    @*DESDE AQUI BAJAR*@
+                                    <tr class="altoFilaCabeceraIntermedio">
+                                        <td style="width: 80px;">Stich Count:</td>
+
+                                        <!--{
+                                            var idUnidad = Model.IdUnidadMedida;
+                                            string descripcionUnidadMedida = "";
+                                            if (idUnidad == Utils.UnidadMedia.Pulgada.GetHashCode())
+                                            {
+                                                descripcionUnidadMedida = "In";
+                                            }
+                                            else if (idUnidad == Utils.UnidadMedia.Centimetro.GetHashCode())
+                                            {
+                                                descripcionUnidadMedida = "3 Cm";
+                                            }
+                                        }-->
+
+                                        <td colspan="3" class="paddingColumnasCabeceraIntermedio">Wales: </td> <!--Model.ColumnasPorPulgada.Value.ToString("###.##") / descripcionUnidadMedida X Courses: Model.CursasPorPulgada.Value.ToString("###.##") / descripcionUnidadMedida-->
+                                    </tr>
+
+                                    <tr class="altoFilaCabeceraIntermedio">
+                                        <td style="width: 80px;">Report Code:</td>
+                                        <td style="width: 91px;" class="paddingColumnasCabeceraIntermedio"></td> <!--Model.CodigoReporte-->
+
+                                        <td style="width: 68px;">Mill Code:</td>
+                                        <td style="width: 103px;" class="paddingColumnasCabeceraIntermedio"></td> <!--Model.CodigoFabrica-->
+                                    </tr>
+
+                                    <tr class="altoFilaCabeceraIntermedio">
+                                        <td style="width: 80px;">Testing Code:</td>
+                                        <td style="width: 91px;" class="paddingColumnasCabeceraIntermedio"></td> <!--Model.TestingCode-->
+
+                                        <td style="width: 68px;">Batch:</td>
+                                        <td style="width: 103px;" class="paddingColumnasCabeceraIntermedio"></td> <!--Model.PartidaLote-->
+                                    </tr>
+
+                                    <tr class="altoFilaCabeceraIntermedio">
+                                        <td style="width: 80px;">Comments:</td>
+                                        <td colspan="3" style="vertical-align: top;" class="paddingColumnasCabeceraIntermedio"></td> <!--Model.CareLabel-->
+                                    </tr>
+
+                                </table>
+                            </div>
+                            <!--FIN CONTENIDO COLGADOR-->
+                        </div>
+                    </div>
+
+                    <div style="height:30%;">
+                        <div id="divcodigobarra">
+
+                        </div>
+                    </div>
+                </div>
+                <!--ACA VIENE EL SEGUNDO COLGADOR PERO LO QUITE-->
+
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/Home/Util.js"></script>
+    <script src="~/Scripts/GestionProducto/Estilo/printhangtagestilos.js"></script>
+</body>

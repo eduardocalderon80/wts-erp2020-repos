@@ -1,0 +1,42 @@
+﻿<div id="panelEncabezado_CopyFabric">
+    <div class="hide">
+        <input type="text" id="copyfabric_txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="form-horizontal row">
+        <div class="col-sm-12 m-b">
+            <div class="text-right">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <span class="fa fa-reply-all"></span>
+                    Cancel
+                </button>
+                <button type="button" class="btn btn-primary" id="btnCopyFabricSave">
+                    <span class="fa fa-save"></span>
+                    Save
+                </button>
+            </div>
+            <hr />
+        </div>
+    </div>
+    <div class="form-horizontal row">
+        <div class="col-sm-12">
+            <div class="has-float-label m-b-sm">
+                <input class="form-control" id="txtCopyFabricCode" type="text" placeholder="WTS Fabric Code" disabled>
+                <label for="txtCopyFabricCode">WTS Fabric Code</label>
+            </div>
+            <div class="has-float-label m-b-sm">
+                <input class="form-control" id="txtCopyFabricSupplierName" type="text" placeholder="Fabric Supplier Name" disabled>
+                <label for="txtCopyFabricSupplierName">Fabric Supplier Name</label>
+            </div>
+            <div class="treeview_container" id="treeview_fabric">
+                <div class="pt-5">
+                    <span class="fa fa-minus"></span> Colors
+                    <div class="pl-20" id="div_fabric_color"></div>
+                </div>
+                <div class="pt-5">
+                    <span class="fa fa-minus"></span> Ornaments
+                    <div class="pl-20" id="div_fabric_art"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

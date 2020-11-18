@@ -1,0 +1,1488 @@
+﻿<!DOCTYPE html>
+<html>
+@{
+    // OBTIENE LA URL DESDE EL ERP ANTIGUO
+    string par = ViewBag.par;
+    string rutaImagen = ViewBag.PathStyleWeb.ToString();
+}
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>ERP WTS 2</title>
+
+    <!-- kendo-->
+    <link href="~/Content/kendo/2015.3.930/kendo.common-bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/kendo/2015.3.930/kendo.mobile.all.min.css" rel="stylesheet" />
+    <link href="~/Content/kendo/2015.3.930/kendo.dataviz.min.css" rel="stylesheet" />
+    <link href="~/Content/kendo/2015.3.930/kendo.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/kendo/2015.3.930/kendo.dataviz.bootstrap.min.css" rel="stylesheet" />
+    <!-- fin kendo-->
+
+    <link href="~/Content/css/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet">
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/css/bootstrap-float-label.min.css" rel="stylesheet">
+    <link href="~/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/chosen/chosen.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/cropper/cropper.min.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/switchery/switchery.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/nouslider/jquery.nouislider.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/ionRangeSlider/ion.rangeSlider.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/clockpicker/clockpicker.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/select2/select2.min.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+    <link href="~/Content/css/plugins/touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet">
+    <!-- Full Calendar -->
+    <link href="~/Content/css/plugins/fullcalendar/fullcalendar.css" rel="stylesheet" />
+    <link href="~/Content/css/animate.css" rel="stylesheet">
+    <link href="~/Content/css/style.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/switchery/switchery.css" rel="stylesheet" />
+    <link href="~/Content/css/plugins/footable/footable.core.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/select2/select2.min.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/clockpicker/clockpicker.css" rel="stylesheet">
+    <link href="~/Content/css/animate.css" rel="stylesheet">
+    <link href="~/Content/css/plugins/c3/c3.min.css" rel="stylesheet">
+    <!-- SummerNote -->
+    <link href="~/Content/css/plugins/summernote/summernote.css" rel="stylesheet">
+    <!-- jquery-confirm -->
+    <link href="~/Content/css/plugins/jquery-confirm/jquery-confirm.min.css" rel="stylesheet" />
+
+    @*<script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWD48o78e4h4OVKnCOMqDaHUlNESUEQF8&callback=initMap">
+        </script>*@
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTxSFmcUGxW10Xp0suom2xJTGEiOEVmFg&callback=initMap">
+    </script>
+
+    <style>
+        #map1 {
+            height: 430px;
+            width: 100%;
+        }
+        /*#map2 {
+            height: 430px;
+            width: 100%;
+        }*/
+    </style>
+
+    <link href="~/Content/css/plugins/dataTables/datatables.min.css" rel="stylesheet" />
+    <link href="~/Content/css/plugins/dataTables/fixedColumns.dataTables.min.css" rel="stylesheet" />
+    <link href="~/Content/css/plugins/dataTables/fixedColumns.bootstrap.min.css" rel="stylesheet" />
+    <!--demo-->
+    @*<link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />*@
+
+    <!-- DashBoard AmCharts -->
+    @*<script src="~/Scripts/js/amcharts/amcharts.js"></script>
+        <script src="~/Scripts/js/amcharts/serial.js"></script>
+        <script src="~/Scripts/js/amcharts/gantt.js"></script>
+        <script src="~/Scripts/js/amcharts/themes/light.js"></script>
+        <script src="~/Scripts/js/amcharts/plugins/export/export.min.js"></script>
+        <script src="~/Scripts/js/amcharts/plugins/export/examples/export.config.default.js"></script>*@
+    <link href="~/Content/amchart/plugins/export/export.css" rel="stylesheet" type="text/css" media="all" />
+
+
+    @*<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+         <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+         <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+         <script src="https://www.amcharts.com/lib/3/plugins/export/examples/export.config.default.js"></script>
+         <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+        <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>*@
+
+</head>
+
+<body>
+    <div class="hidden">
+        <input type="text" id="txtparindex" data-par="PARAMETRO" />
+    </div>
+
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse" id="menu">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <span>
+                                @*<img alt="image" class="img-circle" src="~/Content/img/profile_small.jpg" />*@
+                                <img src="~/Content/img/RRHH/personal/default.jpg" id="imgFoto" class="img-circle" data-initial="" name="imgFoto" width="60" height="60" />
+                            </span>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="clear">
+                                    <span class="block m-t-xs">
+                                        <strong class="font-bold">Miryam Caceres</strong>
+                                    </span>
+                                    <span class="text-muted text-xs block">Art Director <b class="caret"></b></span>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a href="#">Home</a></li>
+                                <li data-nav="RecursosHumanos/PerfilUsuario/Index"><a class="_menu_sub" href="#">Profile</a></li>
+                                <li class="divider"></li>
+                                <li><a href="void">Logout</a></li>
+                            </ul>
+                        </div>
+                        <div class="logo-element">
+                            WTS
+                        </div>
+                    </li>
+                    <!-- este codigo es solo de prueba luego borrar -->
+                    <!--
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-th-large"></i>
+                            <span class="nav-label">WorkFlow</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level _menu collapse" data-nav="WorkFlow">
+                            <li data-nav="">
+                                <a class="_menu_sub" href="#">
+                                    Solicitudes
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-th-large"></i>
+                            <span class="nav-label">Maestra</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level _menu collapse" data-nav="Maestra">
+                            <li data-nav="">
+                                <a class="_menu_sub" href="#">Cliente Temporada</a>
+                            </li>
+                            <li data-nav="">
+                                <a class="_menu_sub" href="#">Cliente División</a>
+                            </li>
+                            <li data-nav="">
+                                <a class="_menu_sub" href="#">Cliente Division Asociado</a>
+                            </li>
+                            <li data-nav="">
+                                <a class="_menu_sub" href="#">Proveedor Grupo Correo</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-th-large"></i>
+                            <span class="nav-label">Cotización</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level _menu collapse" data-nav="Cotizacion">
+                            <li data-nav=""><a class="_menu_sub" href="#">Programa</a></li>
+                            <li data-nav=""><a class="_menu_sub" href="#">Consultas</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-th-large"></i>
+                            <span class="nav-label">Gestión de Producto</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level _menu collapse" data-nav="GestionProducto">
+                            <li data-nav="">
+                                <a class="_menu_sub" href="#">Estilo</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-th-large"></i>
+                            <span class="nav-label">Project Management</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level _menu collapse" data-nav="Proyecto">
+                            <li data-nav="">
+                                <a class="_menu_sub" href="#">Project</a>
+                            </li>
+                            <li data-nav="">
+                                <a class="_menu_sub" href="#">Commercial Project</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-th-large"></i>
+                            <span class="nav-label">Laboratorio</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level _menu collapse" data-nav="Laboratorio">
+                            <li data-nav="">
+                                <a class="_menu_sub" href="#">Solicitud Partida</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-th-large"></i>
+                            <span class="nav-label">Product Development</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level _menu collapse" data-nav="DesarrolloProducto">
+                            <li data-nav="">
+                                <a class="_menu_sub" href="#">Sample</a>
+                            </li>
+                            <li data-nav="">
+                                <a class="_menu_sub" href="#">Factory Invoice</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class='active'>
+                        <a href="#">
+                            <i class="fa fa-th-large"></i>
+                            <span class="nav-label">Purchase Order</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level _menu " data-nav="PO">
+                            <li data-nav="POProducto/Index">
+                                <a class="_menu_sub" href="#">PO Producto</a>
+                            </li>
+                            <li data-nav="POEstilo/Index">
+                                <a class="_menu_sub" href="#">PO Estilo</a>
+                            </li>
+                        </ul>
+                    </li>
+                    -->
+                </ul>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                                <i class="fa fa-envelope"></i>  <span class="label label-warning">2</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-messages">
+                                <li>
+                                    <div class="dropdown-messages-box">
+                                        <a href="#" class="pull-left">
+                                            <img alt="image" class="img-circle" src="~/Content/img/RRHH/personal/10151583.jpg">
+                                        </a>
+                                        <div class="media-body">
+                                            <small class="pull-right">46h ago</small>
+                                            <strong>Claudia Aspillaga</strong> send an email. <br>
+                                            <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <div class="dropdown-messages-box">
+                                        <a href="#" class="pull-left">
+                                            <img alt="image" class="img-circle" src="~/Content/img/RRHH/personal/10151583.jpg">
+                                        </a>
+                                        <div class="media-body ">
+                                            <small class="pull-right text-navy">5h ago</small>
+                                            <strong>Claudia Aspillaga</strong> send an email. <br>
+                                            <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <div class="text-center link-block">
+                                        <a href="#">
+                                            <i class="fa fa-envelope"></i> <strong>Read All Messages</strong>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <div class="text-center link-block">
+                                        <a href="#" id="SignIn" onclick="signIn()">
+                                            <i class="fa fa-sign-in"></i> <strong>Sign in</strong>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#" aria-expanded="false">
+                                <i class="fa fa-bell"></i>
+                                <span class="label label-primary" id="spn_numero_notificaciones">2</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-alerts" id="ul_campana_notificacion">
+                                <li class="cls_li_notificacion">
+                                    <div class="dropdown-messages-box">
+                                        <a href="profile.html" class="pull-left cls_a_foto_notificacion">
+                                            <img alt="image" class="img-circle" src="~/images/WTSLogo.png">
+                                        </a>
+                                        <div class="media-body cls_div_mensaje_notificacion">
+                                            @*<small class="pull-right">46h ago</small>*@
+                                            Mike Loreipsum started following Monica Smith. <br>
+                                            <small class="text-muted">30 de Agosto 2019</small>
+                                        </div>
+                                    </div>
+                                    @*<a>
+                                            <div>
+                                                <i class="fa fa-info-circle fa-fw"></i> Solicitud rechazado 7980
+                                                <span class="pull-right text-muted small">4 minutes ago</span>
+                                            </div>
+                                        </a>*@
+                                </li>
+                                <li class="divider"></li>
+                                <li class="cls_li_notificacion">
+                                    <div class="dropdown-messages-box">
+                                        <a href="profile.html" class="pull-left cls_a_foto_notificacion">
+                                            <img alt="image" class="img-circle" src="~/images/WTSLogo.png">
+                                        </a>
+                                        <div class="media-body cls_div_mensaje_notificacion">
+                                            <small class="pull-right text-navy">5h ago</small>
+                                            Chris Johnatan Overtunk started following Monica Smith. <br>
+                                            <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
+                                        </div>
+                                    </div>
+                                    @*<a>
+                                            <div>
+                                                <i class="fa fa-info-circle fa-fw"></i> Solicitud rechazado 7981
+                                                <span class="pull-right text-muted small">4 minutes ago</span>
+                                            </div>
+                                        </a>*@
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" onclick="logOut()">
+                                <i class="fa fa-sign-out"></i> Log out
+                            </a>
+                        </li>
+                        <li class="divider" style="padding-right:20px"></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- :contenido -->
+            <div class="gray-bg" id="divContenido"></div>
+            <div class="footer">
+                <div class="pull-right">
+
+                </div>
+                <div>
+                    <strong>WTS ERP</strong> 2017
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <!-- :modal -->
+    <!--tabindex="-1"-->
+    <!-- :edu z-index: 1000000000 !important para que el mensaje se muestre adelante de otro modal-->
+    <div class="modal inmodal" id="modal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; z-index: 1000000000 !important;">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <i class="fa fa-check-circle-o modal-icon" id="modal_icono"></i>
+                    <h4 class="modal-title" id="modal_titulo">Mensaje</h4>
+
+                </div>
+                <div class="modal-body">
+                    <p id="modal_mensaje">
+                        Se registro correctamente.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- :modal confirmar si; no -->
+    <div class="modal inmodal" id="modalConfirm" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <i class="fa fa-question-circle modal-icon" id="modal_icono"></i>
+                    <h4 class="modal-title" id="modal_titulo">Confirm</h4>
+
+                </div>
+                <div class="modal-body">
+                    <div id="modal_body_confirm">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btnYes_confirm" class="btn btn-success">Yes</button>
+                    <button type="button" id="btnNo_confirm" class="btn btn-default">No</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal - para ventanas generales -->
+    <!-- :edu 20171016 crear dinamicamente los modal-->
+    <div class="modal fade classmodalventanageneral" id="modal_ventanaGeneral" tabindex="-1" role="dialog" aria-labelledby="Titulo_" data-dismiss="modal" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog" id="modal_dialogVentanaGeneral" style="width: 900px;">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modal_titleVentanaGeneral">New message</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="modal_bodyVentanaGeneral">
+                        <!--aqui va la pagina parcial-->
+                        <div class="text-center">
+                            @*<img src="~/Content/img/wait/wait30x30.gif" alt="Cargando..." />*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- :edu 20171016 crear dinamicamente los modal-->
+    <div class="modal fade classmodalventanageneral2" id="modal_ventanaGeneral2" tabindex="-1" role="dialog" aria-labelledby="Titulo_" data-dismiss="modal" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog" id="modal_dialogVentanaGeneral2" style="width: 900px;">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modal_titleVentanaGeneral2">New message</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="modal_bodyVentanaGeneral2">
+                        <!--aqui va la pagina parcial-->
+                        <div class="text-center">
+                            @*<img src="~/Content/img/wait/wait30x30.gif" alt="Cargando..." />*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- :edu 20171024 crear dinamicamente los modal :para tallacolor; luego pasar a una funcion-->
+    <div class="modal fade classmodalventanageneral3" id="modal_ventanaGeneral3" tabindex="-1" role="dialog" aria-labelledby="Titulo_" data-dismiss="modal" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog" id="modal_dialogVentanaGeneral3" style="width: 900px;">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modal_titleVentanaGeneral3">New message</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="modal_bodyVentanaGeneral3">
+                        <!--aqui va la pagina parcial-->
+                        <div class="text-center">
+                            @*<img src="~/Content/img/wait/wait30x30.gif" alt="Cargando..." />*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal - para mensajes - alertas -->
+    <div class="modal fade classmodalalerta" id="modal_alerta" tabindex="-1" role="dialog" aria-labelledby="Titulo_" data-dismiss="modal" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog" id="modal_dialogalerta" style="width: 900px;">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modal_titlealerta">Alert!!</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="modal_bodyalerta">
+                        <!--aqui va el mensaje-->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-sm-12 text-right" id="modal_footeralerta">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- :modal para loader(spinner) -->
+    <div class="modal inmodal" id="myModalSpinner" style="position: absolute;display:none;top: 30%;left: 10%; z-index: 1000000000 !important;" data-backdrop="static" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content animated flipInY">
+                <div class="modal-header">
+                    <h4 class="modal-title">Wait!</h4><br><br>
+                    <div>
+                        <div id="searching_spinner_center" style="position: absolute;display: block;top: 50%;left: 45%;">
+                            <div class="sk-spinner sk-spinner-three-bounce">
+                                <div class="sk-bounce1"></div>
+                                <div class="sk-bounce2"></div>
+                                <div class="sk-bounce3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- custom spinner with dot animation -->
+    <div class="custom-spinner hide" id="custom-spinner">
+        <div class="spinner-container">
+            <h4>Loading<span>.</span><span>.</span><span>.</span></h4>
+            <div class="sk-spinner sk-spinner-chasing-dots">
+                <div class="sk-dot1"></div>
+                <div class="sk-dot2"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- menu contextual -->
+    <nav id="context-menu" class="context-menu" style="z-index: 1000000 !important;">
+        <ul class="context-menu__items">
+            <!--<li class="context-menu__item">
+                <a href="#" class="context-menu__link" data-action="View"><i class="fa fa-eye"></i> View Task</a>
+            </li>
+            <li class="context-menu__item">
+                <a href="#" class="context-menu__link" data-action="Edit"><i class="fa fa-edit"></i> Edit Task</a>
+            </li>
+            <li class="context-menu__item">
+                <a href="#" class="context-menu__link" data-action="Delete"><i class="fa fa-times"></i> Delete Task</a>
+            </li>-->
+        </ul>
+    </nav>
+
+    @Html.Hidden("urlBase", Url.Content("~/"))
+    <!-- Mainly scripts -->
+
+    <script src="~/Scripts/js/jquery-2.1.1.js"></script>
+    <script src="~/Scripts/js/plugins/toastr/toastr.min.js"></script>
+    <script src="~/Scripts/js/plugins/dataTables/datatables.min.js"></script>
+    <script src="~/Scripts/js/plugins/dataTables/dataTables.fixedColumns.min.js"></script>
+    <script src="~/Scripts/Home/Util.js"></script>
+    <script src="~/Scripts/Home/Ruteador.js"></script>
+    <script src="~/Scripts/js/plugins/math/math.min.js"></script>
+    <script src="~/Scripts/js/jquery.scannerdetection.js"></script> <!--PARA EL LECTOR DE CODIGO DE BARRA-->
+    <script src="~/Scripts/jquery.signalR-2.4.1.js"></script>
+    <script src="~/signalr/hubs"></script>
+
+    <script>
+        var verMap = "0";
+        var startRefresh = "0";
+        var viewroute = "";
+        var zoom_actual = "";
+        var erpwtshub_principal;
+
+        //$(function () {
+        //    // Reference the auto-generated proxy for the hub.
+        //    erpwtshub_principal = $.connection.erpwtshub;
+        //    // Create a function that the hub can call back to display messages.
+        //    erpwtshub_principal.client.mostrarMensajeToCliente = function (name, message) {
+        //        alert("mi websocket");
+        //        //// Add the message to the page.
+        //        //$('#discussion').append('<li><strong>' + htmlEncode(name)
+        //        //    + '</strong>: ' + htmlEncode(message) + '</li>');
+
+
+        //        //let html = message;
+        //        //let titulo = 'Notification!', opciones = {
+        //        //    icon: '',
+        //        //    body: html
+        //        //};
+
+        //        //notifyMe(titulo, opciones);
+        //    };
+
+        //    //// Get the user name and store it to prepend to messages.
+        //    //$('#displayname').val(prompt('Enter your name:', ''));
+        //    //// Set initial focus to message input box.
+        //    //$('#message').focus();
+        //    //// Start the connection.
+        //    $.connection.hub.start().done(function () {
+        //        erpwtshub_principal.server.connect("EDUARDO");
+        //        //$('#sendmessage').click(function () {
+        //        //    // Call the Send method on the hub.
+        //        //    erpwtshub_principal.server.send($('#displayname').val(), $('#message').val());
+        //        //    // Clear text box and reset focus for next comment.
+        //        //    $('#message').val('').focus();
+        //        //});
+        //    });
+        //});
+
+
+        window.menu = "";
+        window.utilindex = {
+            usuario: '',
+            password: '',
+            menuState: 0,
+            usuarioAD: '',
+            tipoaccesousuario: '',
+            botones: [],
+            idgrupocomercial: '',
+            idusuario: '',
+            idpersonal: ''
+        }
+
+        // activar :1 //carga de menu desde el erp1
+        // activar luego esto
+        var par = @Html.Raw(Json.Encode(@par));
+        getmenu(par);
+
+        // activar :2 //carga de menu [manual]
+        // :activar esto cuando se requiere ver el menu harcodeado
+        /*
+        let menu = document.getElementById('menu'),
+                amenus = _Array(menu.getElementsByClassName('_menu_sub'));
+        amenus.forEach(fila=>fila.addEventListener('click', e=> { _Go(e); }));
+        */
+
+
+        function getmenu(par) {
+            let data = '';
+
+            $.ajax({
+                type: 'GET',
+                url: urlBase() + 'Home/getMenu',
+                data: null,
+                async: false
+            }).done(function (sdata) {
+                window.menu = sdata;
+                cargarmenu();
+                if (par !== '') {
+                    cargarvista(par);
+                }
+
+                clickderechoencualquierparte();
+                clickListener();
+                keyupListener();
+                resizeListener();
+
+                cambiardatoslogoperfil();
+                //fn_get_notificaciones_byusuario_ini();
+            });
+        }
+
+        function cargarvista(url){
+            ////Get(url, res_view);
+
+            //_Go_Url(url, url, '');
+            $.ajax({
+                type: 'GET',
+                url: urlBase() + url,
+                data:null,
+                async: false
+            }).done(function (rsta) {
+                login = rsta.indexOf('Login') > 0;
+                let urlB = urlBase();
+                if (!login) {
+                    setTimeout(function () {
+                        var vista=par;
+                        var menu= _('menu');
+                        var alis= Array.from(menu.getElementsByTagName('li'));
+                        var index= alis.findIndex(x=>x.dataset.nav===vista);
+                        if(index>=0) alis[index].children[0].click();
+                    }, 2000);
+
+                    //contenido = (par !== null && par !== '') ? rsta.replace('DATA-PARAMETRO', par) : rsta;
+                    //_('divContenido').innerHTML = contenido;
+                    //checkloadjscssfile(urlB + `Scripts/${url}.js`, "js");
+                } else {
+                    window.location.href = urlB + "Home/LoginERP";
+                }
+            });
+        }
+
+        function res_view(res) {
+            _('divContenido').innerHTML = res;
+        }
+
+        function cargarmenu() {
+            let limenu = '', classcollapse = '', ulmenu = document.getElementById("side-menu");
+
+            //construccion del menu: erp=>, erp2
+            //Redirect to ERP **
+            let lista = JSON.parse(window.menu), total = lista.length, datausuario = JSON.parse(lista.usuario), arrbotones= JSON.parse(lista.botones);
+
+            window.utilindex.idusuario = $.trim(datausuario.IdUsuario);
+            window.utilindex.idpersonal = $.trim(datausuario.IdPersonal);
+
+            window.utilindex.usuario = $.trim(datausuario.Usuario);
+            window.utilindex.password = $.trim(datausuario.Contrasena);
+            window.utilindex.botones = arrbotones;
+            window.utilindex.usuarioAD = $.trim(datausuario.UsuarioAD);
+            window.utilindex.tipoaccesousuario = $.trim(datausuario.tipoaccesousuario);
+            window.utilindex.idgrupocomercial = $.trim(datausuario.IdGrupoComercial);
+            let rutaImagen = @Html.Raw(@rutaImagen);
+            window.utilindex.ruta_imagen_foto_perfil = `${urlBase()}${rutaImagen}${datausuario.ImagenWebNombre}`;
+
+            let listamodulo = JSON.parse(lista.modulos), totalmodulos = listamodulo.length, listaventanas = JSON.parse(lista.ventanas), totalventanas = listaventanas.length;
+            let lista_submodulos = lista.submodulos !== '' ? JSON.parse(lista.submodulos) : [];
+
+            //// ${classcollapse} ////PENDIENTE PONER ESTO
+            limenu = listamodulo.filter(x => x.nivelmenu === '1').map((x, indice) => {
+                return `
+                    <li>
+                        <a class='has-arrow' href="#">
+                            <i class="fa fa-th-large"></i>
+                            <span class="nav-label">${x.NombreModulo}</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level _menu" data-nav="${x.ModuloIdentificador}">
+                            ${ lista_submodulos.filter(y => parseInt(y.idmoduloorigen) === x.IdModulo).map(z => {
+                                return `
+                                    <li data-nav="" data-par="">
+                                        <a class="_menu_submenu" href="#">${z.nombremodulo}
+                                            <span class="fa arrow"></span>
+                                        </a>
+                                        <ul class="nav nav-third-level collapse" style="">
+                                            ${ listaventanas.filter(f => parseInt(f.idsubmoduloreferencia) === parseInt(z.idmodulo)).map(g => {
+                                                let _url = g.app === "" ? "" : g.Area + '/' + g.VentanaIdentificador + "/" + g.nombrevista;
+                                                return `
+                                                    <li data-nav="${_url}" data-par="${typeof g.par !== undefined ? g.par : '' },idgrupocomercial:${datausuario.IdGrupoComercial},idmodulo:${g.IdModulo},idventana:${g.IdVentana},nombreventana:${g.Ventana}"><a class="_menu_sub ${g.app}" href="#">${g.Ventana}</a></li>
+                                                `
+                                            }).join('') }
+                                        </ul>
+                                    </li>
+                                `
+                            }).join('') }
+                            ${ listaventanas.filter(f => { return f.idsubmoduloreferencia === '' && parseInt(f.IdModulo) === parseInt(x.IdModulo) } ).map(z => {
+                                let _url = z.app === "" ? "" : z.Area + '/' + z.VentanaIdentificador + "/" + z.nombrevista;
+                                return `
+                                    <li data-nav="${_url}" data-par="${typeof z.par !== undefined ? z.par : ''},idgrupocomercial:${datausuario.IdGrupoComercial},idmodulo:${z.IdModulo},idventana:${z.IdVentana},nombreventana:${z.Ventana}">
+                                        <a class="_menu_sub ${z.app}" href="#">${z.Ventana}</a>
+                                    </li>
+                                `
+                            }).join('') }
+                        </ul>
+                    </li>
+                `
+            }).join('');
+
+
+            //// ESTO VALE DEL CODIGO ANTERIOR
+            //for (let i = 0; i < totalmodulos; i++) {
+            //    if ((i + 1) == totalmodulos) {
+            //        limenu += `<li class='active'>`;
+            //        classcollapse = 'collapse in';
+            //    } else {
+            //        limenu += `<li>`;
+            //        classcollapse = 'collapse';
+            //    }
+
+            //    limenu += `<a class='has-arrow' href="#"><i class="fa fa-th-large"></i> <span class="nav-label">${listamodulo[i].NombreModulo}</span> <span class="fa arrow"></span></a>`;
+            //    limenu += `     <ul class="nav nav-second-level _menu ${classcollapse}" data-nav="${listamodulo[i].ModuloIdentificador}">`;
+
+            //    let listatempventanas = listaventanas.filter(function (el) {
+            //        return el.IdModulo == listamodulo[i].IdModulo;
+            //    });
+
+            //    let totalventanastemp = listatempventanas.length;
+
+
+            //    for (let j = 0; j < totalventanastemp; j++) {
+            //        //listatempventanas[j].Area + "/" +
+            //        // MODIFICADO PARA QUE SE PUEDA VER LA MISMA VENTANA DESDE DIFERENTES MODULOS
+            //        let _url = listatempventanas[j].app === "" ? "" : listatempventanas[j].Area + '/' + listatempventanas[j].VentanaIdentificador + "/" + listatempventanas[j].nombrevista;
+            //        // :EDU EJEMPLO: listatempventanas[j].par = 'tiulo:credit'; ESTE DATO VIENE DE LA TABLA VENTANA EN SEGURIDAD
+            //        limenu += `     <li data-nav="${_url}" data-par="${typeof listatempventanas[j].par !== undefined ? listatempventanas[j].par : '' },idgrupocomercial:${datausuario.IdGrupoComercial},idmodulo:${listatempventanas[j].IdModulo},idventana:${listatempventanas[j].IdVentana},nombreventana:${listatempventanas[j].Ventana}"><a class="_menu_sub ${listatempventanas[j].app}" href="#">${listatempventanas[j].Ventana}</a></li>`;
+
+            //        ////listatempventanas[j].Area + "/" +
+            //        //let js = listatempventanas[j].app == "" ? "" : listatempventanas[j].VentanaIdentificador + "/" + listatempventanas[j].nombrevista;
+            //        //// :EDU ANTERIOR SE CAMBIO POR MERGE limenu += `     <li data-nav="${js}"><a class="_menu_sub ${listatempventanas[j].app}" href="#">${listatempventanas[j].Ventana}</a></li>`;
+            //        //// :EDU EJEMPLO: listatempventanas[j].par = 'tiulo:credit'; ESTE DATO VIENE DE LA TABLA VENTANA EN SEGURIDAD
+            //        //limenu += `     <li data-nav="${js}" data-par="${typeof listatempventanas[j].par !== undefined ? listatempventanas[j].par : '' },idgrupocomercial:${datausuario.IdGrupoComercial}"><a class="_menu_sub ${listatempventanas[j].app}" href="#">${listatempventanas[j].Ventana}</a></li>`;
+            //    }
+            //    limenu += `     </ul>`;
+            //    limenu += `</li>`;
+            //}
+
+            //document.getElementById('side-menu').innerHTML = limenu;
+            $("#side-menu").append(limenu);
+
+            let menu = document.getElementById('menu'),
+                amenus = _Array(menu.getElementsByClassName('_menu_sub'));
+            amenus.forEach(
+                    fila=>{
+                        fila.addEventListener('click', e=> { _Go(e); })
+                        fila.addEventListener('contextmenu', e=> { vermenucontextual(e); });
+                    }
+            );
+
+            //// HABILITAR LUEGO ESTO ; SIRVE
+            //ini_hub();
+        }
+
+        function ini_hub() {
+            // Reference the auto-generated proxy for the hub.
+            erpwtshub_principal = $.connection.erpwtshub;
+
+            erpwtshub_principal.client.mostrarMensajeToCliente = function (name, message) {
+                let objmsg = message !== '' ? JSON.parse(message) : null;
+
+                if (objmsg !== null) {
+
+                    //alert(objmsg.mensaje_para_erp);
+                    let html = objmsg.mensaje_para_erp; //message;
+                    let titulo = 'Notification!', opciones = {
+                        icon: objmsg.url_foto_perfil_usuario_origen,
+                        body: html
+                    };
+
+                    notifyMe(titulo, opciones);
+                    if (objmsg.arr_obj !== undefined) {
+                        let odata_detalle = objmsg.arr_obj[0].data_detalle !== '' ? JSON.parse(objmsg.arr_obj[0].data_detalle) : null;
+                        fn_add_alerta_notificaciones(odata_detalle, objmsg);
+                        fn_handler_campana_notificaciones_add();
+                    }
+                }
+            };
+
+            //// Start the connection.
+            $.connection.hub.start().done(function () {
+                erpwtshub_principal.server.connect(window.utilindex.usuarioAD, window.utilindex.idgrupocomercial);
+                let obj_mensaje = {
+                    plataforma: 'web',
+                    tipomensaje: 'notificar',
+                    usuario_destino: '',
+                    mensaje_para_app: "",
+                    usuario_origen: window.utilindex.usuario,
+                    mensaje_para_erp: "Bienvenido " + window.utilindex.usuario,
+                    url_foto_perfil_usuario_origen: window.utilindex.ruta_imagen_foto_perfil
+                };
+                //erpwtshub_principal.server.sendMessage(window.utilindex.usuario, "Bienvenido " + window.utilindex.usuario);
+                erpwtshub_principal.server.sendMessageAll(window.utilindex.usuarioAD, JSON.stringify(obj_mensaje));
+                //$('#sendmessage').click(function () {
+                //    // Call the Send method on the hub.
+                //    erpwtshub_principal.server.send($('#displayname').val(), $('#message').val());
+                //    // Clear text box and reset focus for next comment.
+                //    $('#message').val('').focus();
+                //});
+            });
+        }
+
+        //// ESTO PONER LUEGO EN UTIL
+        function fn_handler_campana_notificaciones_add() {
+            _('ul_campana_notificacion').getElementsByClassName('cls_li_notificacion')[0].addEventListener('click', e => { let o = e.currentTarget; fn_click_notificacion(o); });
+        }
+
+        function fn_handler_campana_notificaciones_ini() {
+            Array.from(_('ul_campana_notificacion').getElementsByClassName('cls_li_notificacion')).forEach(x => x.addEventListener('click', e => { let o = e.currentTarget; fn_click_notificacion(o); }));
+        }
+
+        function fn_click_notificacion(o) {
+            let datapar = o.getAttribute('data-par'), url_modulo = _par(datapar, 'url_modulo');
+            let idnotificacion = _par(datapar, 'idnotificacion');
+            //document.location.href = url_modulo;
+            let filter = Array.from(_('side-menu').getElementsByClassName('_menu')).filter(x => { return x.getAttribute('data-nav') === 'DesarrolloTextil' });
+            let tagname = filter.map(x => { return x.getElementsByTagName('li') });
+            let datanav1 = Array.from(tagname[0]).filter(x => { return x.getAttribute('data-nav') === url_modulo });
+            let datapar_menu = datanav1.map(x => { return x.getAttribute('data-par') }).join('');
+            let frm = new FormData();
+
+            frm.append('par', idnotificacion);
+            _Post('DesarrolloTextil/Solicitud/Save_Leer_Notificacion', frm)
+                .then((data) => {
+                    let odata = data !== '' ? JSON.parse(data) : null;
+                    if (odata) {
+                        if (odata.id > 0) {
+                            _Go_Url(url_modulo, url_modulo, datapar_menu);
+                            let data_notify = odata.data !== '' ? CSVtoJSON(odata.data) : null;
+                            fn_pintar_campana_notificaciones_ini(data_notify);
+                            if (data_notify) {
+                                fn_handler_campana_notificaciones_ini();
+                            }
+                        }
+                    }
+
+                });
+        }
+
+        function fn_get_notificaciones_byusuario_ini() {
+            let url = 'DesarrolloTextil/Solicitud/GetNotificaciones_ByUsuario?par=' + window.utilindex.usuario;
+            _Get(url)
+                .then((data) => {
+                    let odata = data !== '' ? CSVtoJSON(data) : null;
+                    fn_pintar_campana_notificaciones_ini(odata);
+                    fn_handler_campana_notificaciones_ini();
+                });
+        }
+
+        function fn_pintar_campana_notificaciones_ini(odata) {
+            let ul_campana = _('ul_campana_notificacion');
+            let spn_numero_notificacion = _('spn_numero_notificaciones');
+            if (odata) {
+                let html = odata.map((x, indice) => {
+                    ///images/WTSLogo.png
+                    return `
+                            <li class="cls_li_notificacion" data-par='idnotificacion:${x.idbandejanotificaciones},url_modulo:${x.url_modulo}'>
+                                <div class="dropdown-messages-box">
+                                    <a href="profile.html" class="pull-left cls_a_foto_notificacion">
+                                        <img alt="image" class="img-circle" src="${x.url_foto_perfil_usuario_origen}">
+                                    </a>
+                                    <div class="media-body cls_div_mensaje_notificacion" style='cursor:pointer;'>
+                                        ${x.mensajenotificacion.replace(/\\n/gi, '</br>')}
+                                        </br>
+                                        <small class="text-muted">${x.fechacreacion_larga}</small>
+                                    </div>
+                                </div>
+                            </li>
+                            ${(odata.length - 1) === indice ? `` : `<li class="divider"></li>` }
+                    `
+                }).join('');
+                ul_campana.innerHTML = '';
+                ul_campana.innerHTML = html;
+                spn_numero_notificacion.innerText = parseInt(odata.length);
+            } else {
+                ul_campana.innerHTML = '';
+                spn_numero_notificacion.innerText = ''
+            }
+        }
+
+        function fn_add_alerta_notificaciones(odata_detalle, omensaje) {
+            if (odata_detalle) {
+                let usuario_filter = odata_detalle.filter(x => x.usuario.toLowerCase().trim() === window.utilindex.usuario.toLowerCase().trim());
+                if (usuario_filter.length > 0) {
+                    let ul_campana = _('ul_campana_notificacion');
+                    let arr_li_mensaje = Array.from(ul_campana.getElementsByClassName('cls_li_notificacion'));
+                    ///images/WTSLogo.png
+                    let html = `
+                            <li class="cls_li_notificacion" data-par='idnotificacion:${usuario_filter[0].idbandejanotificaciones},url_modulo:${omensaje.url_modulo}'>
+                                <div class="dropdown-messages-box">
+                                    <a href="profile.html" class="pull-left cls_a_foto_notificacion">
+                                        <img alt="image" class="img-circle" src="${omensaje.url_foto_perfil_usuario_origen}">
+                                    </a>
+                                    <div class="media-body cls_div_mensaje_notificacion" style='cursor:pointer;'>
+                                        ${usuario_filter[0].mensajenotificacion.replace(/\\n/gi, '</br>')}
+                                        </br>
+                                        <small class="text-muted">${usuario_filter[0].fechacreacion_larga}</small>
+                                    </div>
+                                </div>
+                            </li>
+                            ${arr_li_mensaje.length > 0 ? `<li class="divider"></li>` : ``}
+                    `;
+                    ul_campana.insertAdjacentHTML('afterbegin', html);
+                    _('spn_numero_notificaciones').innerText = parseInt(arr_li_mensaje.length) + 1;
+                }
+            }
+        }
+
+        // edu: para menu contextual - click derecho
+        function vermenucontextual(e) {
+            let taskItemInContext = clickInsideElement(e, "_menu_sub" );
+
+            if ( taskItemInContext ) {
+                e.preventDefault();
+                toggleMenuOn(e);
+                positionMenu(e);
+            } else {
+                taskItemInContext = null;
+                toggleMenuOff();
+            }
+        }
+
+        function clickderechoencualquierparte() {
+            document.addEventListener( "contextmenu", function(e) {
+                taskItemInContext = clickInsideElement( e, "_menu_sub" );
+
+                if ( taskItemInContext ) {
+                    //e.preventDefault();
+                    //toggleMenuOn();
+                    //positionMenu(e);
+                } else {
+                    taskItemInContext = null;
+                    toggleMenuOff();
+                }
+            });
+        }
+
+        function clickInsideElement( e, className ) {
+            var el = e.srcElement || e.target;
+
+            if ( el.classList.contains(className) ) {
+                return el;
+            } else {
+                while ( el = el.parentNode ) {
+                    if ( el.classList && el.classList.contains(className) ) {
+                        return el;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        /**
+        * Turns the custom context menu on.
+        */
+        function toggleMenuOn(e) {
+            //if ( window.utilindex.menuState !== 1 ) {
+            window.utilindex.menuState = 1;
+            //menu.classList.add( contextMenuActive );
+            _('context-menu').classList.add('context-menu--active');
+            let controller = e.currentTarget.parentNode.getAttribute('data-nav'), area = e.currentTarget.parentNode.parentNode.getAttribute('data-nav'), html = '',
+                url = window.appURL.erp + area + '/' + controller, classerp = ''; //localhost:4012 ; 192.168.0.3/erpdesarrollo; 172.16.1.22/erp
+
+            if (e.currentTarget.classList.contains('erp1')) {
+                classerp = 'erp1';
+            } else if (e.currentTarget.classList.contains('erp2')) {
+                classerp = 'erp2';
+            }
+
+            html += `<li class="context-menu__item">`;
+            html += `   <a href='javascript:void(0)' class="context-menu__link ${classerp}" data-nav='${url}'>Open link in a new tab</a>`;  // ${e.currentTarget.textContent}
+            html += `</li>`;
+
+            //document.getElementsByClassName('context-menu__items').innerHTML = html;
+            $(".context-menu__items").html('');
+            $(".context-menu__items").append(html);
+            //}
+        }
+
+
+        function positionMenu(e) {
+            let menu = _('context-menu');
+            let clickCoords = getPosition(e);
+            let clickCoordsX = clickCoords.x;
+            let clickCoordsY = clickCoords.y;
+            let menuWidth = menu.offsetWidth + 4;
+            let menuHeight = menu.offsetHeight + 4;
+            let windowWidth = window.innerWidth;
+            let windowHeight = window.innerHeight;
+
+            if ( (windowWidth - clickCoordsX) < menuWidth ) {
+                menu.style.left = windowWidth - menuWidth + "px";
+            } else {
+                menu.style.left = clickCoordsX + "px";
+            }
+
+            if ( (windowHeight - clickCoordsY) < menuHeight ) {
+                menu.style.top = windowHeight - menuHeight + "px";
+            } else {
+                menu.style.top = clickCoordsY + "px";
+            }
+        }
+
+        function getPosition(e) {
+            var posx = 0;
+            var posy = 0;
+
+            if (!e) var e = window.event;
+
+            if (e.pageX || e.pageY) {
+                posx = e.pageX;
+                posy = e.pageY;
+            } else if (e.clientX || e.clientY) {
+                posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+                posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+            }
+
+            return {
+                x: posx,
+                y: posy
+            }
+        }
+
+        /**
+       * Turns the custom context menu off.
+       */
+        function toggleMenuOff() {
+            if ( window.utilindex.menuState !== 0 ) {
+                window.utilindex.menuState = 0;
+                let menu = _('context-menu');
+                menu.classList.remove('context-menu--active');
+            }
+            $(document.body).removeAttr("style");
+        }
+
+        function clickListener() {
+            document.addEventListener( "click", function(e) {
+                var clickeElIsLink = clickInsideElement(e, "context-menu__link");
+
+                if ( clickeElIsLink ) {
+                    e.preventDefault();
+                    menuItemListener( clickeElIsLink );
+                } else {
+                    var button = e.which || e.button;
+                    if ( button === 1 ) {
+                        toggleMenuOff();
+                    }
+                }
+            });
+        }
+
+        function menuItemListener( element ) {
+            //console.log( "Task ID - " + taskItemInContext.getAttribute("data-id") + ", Task action - " + link.getAttribute("data-action"));
+            //console.log(link);
+            let urlaccion = element.getAttribute('data-nav'), link = document.createElement('a'), classerp = '';
+
+            if (element.classList.contains('erp2')) {
+                urlaccion = window.appURL.erpnew + 'Home/Index'; //localhost:55659 ; 192.168.0.3/erp_newarq; 172.16.1.22/erpnew
+            }
+
+            link.href = urlaccion;
+            link.target = '_blank';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            delete link;
+
+            toggleMenuOff();
+        }
+
+        /**
+       * Listens for keyup events.
+       */
+        function keyupListener() {
+            window.onkeyup = function(e) {
+                if ( e.keyCode === 27 ) {
+                    toggleMenuOff();
+                }
+            }
+        }
+
+        /**
+            * Window resize event listener
+            */
+        function resizeListener() {
+            window.onresize = function(e) {
+                toggleMenuOff();
+            };
+        }
+
+        function cambiardatoslogoperfil() {
+            let lista = JSON.parse(window.menu), datausuario = JSON.parse(lista.usuario), spannombreusuario = $(".block.m-t-xs")[0], spancargousuario = $(".text-muted.text-xs.block")[0];
+            spannombreusuario.children[0].textContent = datausuario.Nombre + " " + datausuario.Apellido;
+            spancargousuario.textContent = datausuario.Cargo;
+            var ruta = "";
+            var urlbase = urlBase();
+
+            if(datausuario.ImagenWebNombre!='')
+            {
+                var rutaImagen = @Html.Raw(@rutaImagen);
+                var NombreImagen= datausuario.ImagenWebNombre;
+                ruta = `${urlbase}${rutaImagen}${NombreImagen}`;
+
+                document.getElementById('side-menu').getElementsByClassName('img-circle')[0].setAttribute('src', ruta);
+                document.getElementById('side-menu').getElementsByClassName('img-circle')[0].setAttribute('data-initial', ruta);
+            }
+            else
+            {
+                ruta = urlbase + "Content/img/RRHH/personal/default.jpg";
+                document.getElementById('side-menu').getElementsByClassName('img-circle')[0].setAttribute('src', ruta);
+                document.getElementById('side-menu').getElementsByClassName('img-circle')[0].setAttribute('data-initial', ruta);
+            }
+        }
+
+        function fn_redirect() {
+            if (localStorage.getItem('redirect') !== null && localStorage.getItem('redirect') !== "null") {
+                let _json = JSON.parse(localStorage.getItem('redirect'));
+                if (_json.Modulo !== null) {
+                    let modulo = _json.Modulo;
+                    let controlador = _json.Controlador;
+                    let vista = _json.Vista;
+                    let accion = _json.Accion;
+                    let parametro = _json.Parametro;
+                    // Go Url
+                    let urlAccion = `${modulo}/${controlador}/${vista}`;
+                    _Go_Url(urlAccion, urlAccion, `accion:${accion},id:${parametro}`);
+                    // Clear localstorage
+                    localStorage.removeItem('redirect');
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
+
+<!-- DashBoard AmCharts -->
+
+<script src="~/Scripts/js/amcharts/amcharts.js"></script>
+<script src="~/Scripts/js/amcharts/serial.js"></script>
+<script src="~/Scripts/js/amcharts/gantt.js"></script>
+<script src="~/Scripts/js/amcharts/themes/light.js"></script>
+<script src="~/Scripts/js/amcharts/plugins/export/export.min.js"></script>
+<script src="~/Scripts/js/amcharts/plugins/export/examples/export.config.default.js"></script>
+
+<script src="~/Scripts/js/am4charts/core.js"></script>
+<script src="~/Scripts/js/am4charts/charts.js"></script>
+<script src="~/Scripts/js/am4charts/themes/animated.js"></script>
+<script src="~/Scripts/js/am4charts/es_ES.js"></script>
+
+
+<!-- Custom and plugin javascript -->
+<script src="~/Scripts/js/inspinia.js"></script>
+<script src="~/Scripts/js/plugins/pace/pace.min.js"></script>
+<script src="~/Scripts/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="~/Scripts/js/plugins/footable/footable.all.min.js"></script>
+<script src="~/Scripts/js/plugins/sweetalert/sweetalert.min.js"></script>
+<script src="~/Scripts/js/plugins/select2/select2.full.min.js"></script>
+<script src="~/Scripts/js/plugins/clockpicker/clockpicker.js"></script>
+<script src="~/Scripts/js/plugins/validate/jquery.validate.min.js"></script>
+<script src="~/Scripts/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<!--Para codigo de barra-->
+<script src="~/Scripts/jquery-barcode.min.js"></script>
+<!-- jQuery UI -->
+<script src="~/Scripts/js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+<!-- Chosen -->
+<script src="~/Scripts/js/plugins/chosen/chosen.jquery.js"></script>
+
+<!-- Select2 -->
+<script src="~/Scripts/js/plugins/select2/select2.full.min.js"></script>
+
+<!-- Tags Input -->
+<script src="~/Scripts/js/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+
+<!-- SummerNote -->
+<script src="~/Scripts/js/plugins/summernote/summernote.min.js"></script>
+
+<!-- TouchSpin -->
+<script src="~/Scripts/js/plugins/touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+<!-- Datepicker -->
+<script src="~/Scripts/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+@*<script src="~/Scripts/js/plugins/datapicker/new_bootstrap_datepicker/bootstrap-datepicker.js"></script>*@
+
+<!-- iCheck -->
+<script src="~/Scripts/js/plugins/iCheck/icheck.min.js"></script>
+
+<!-- iboxtools -->
+<script src="~/Scripts/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Date range use moment.js same as full calendar plugin -->
+<script src="~/Scripts/js/plugins/fullcalendar/moment.min.js"></script>
+
+<!-- Full Calendar -->
+<script src="~/Scripts/js/plugins/fullcalendar/fullcalendar.min.js"></script>
+<script src="~/Scripts/js/plugins/fullcalendar/es.js"></script>
+<script src="~/Scripts/js/plugins/fullcalendar/popper.min.js"></script>
+
+<!-- ChartJS -->
+<script src="~/Scripts/js/plugins/chartJs/Chart.min.js"></script>
+
+<!-- Date range picker -->
+<script src="~/Scripts/js/plugins/daterangepicker/daterangepicker.js"></script>
+
+<!-- jquery-confirm-->
+<script src="~/Scripts/js/plugins/jquery-confirm/jquery-confirm.min.js"></script>
+
+<!-- Extra -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autonumeric/1.9.46/autoNumeric.min.js" type="text/javascript"></script>
+
+<!--Animacion CSS-->
+<script src="~/Scripts/js/plugins/rickshaw/vendor/d3.v3.js"></script>
+<script src="~/Scripts/js/plugins/rickshaw/rickshaw.min.js"></script>
+
+<!--c3-->
+<script src="~/Scripts/js/plugins/d3/d3.min.js"></script>
+<script src="~/Scripts/js/plugins/c3/c3.min.js"></script>
+
+<!-- :General -->
+@*<script src="~/Scripts/Home/Home.js"></script>*@
+@*<script src="~/Scripts/Home/Util.js"></script>*@
+
+<!--combo multiselect-->
+<script src="~/Scripts/js/bootstrap-multiselect.js"></script>
+<script src="~/Scripts/js/plugins/switchery/switchery.js"></script>
+
+<!-- :edu ver si usar; para la fecha html5-->
+@*<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>*@
+<script src="~/Scripts/js/plugins/fullcalendar/moment.min.js"></script>
+<script src="~/Scripts/js/plugins/iCheck/icheck.min.js"></script>
+
+<!-- :JS EXTERNAS A INSPINIA SE USA EN PACKINGLIST YA NO USAR-->
+<script src="~/Scripts/moment-with-locales.min.js"></script>
+<script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+
+<!-- kendo-->
+<script src="~/Scripts/kendo/2015.3.930/jszip.min.js"></script>
+<script src="~/Scripts/kendo/2015.3.930/kendo.all.min.js"></script>
+<script src="~/Scripts/kendo/2015.3.930/kendo.aspnetmvc.min.js"></script>
+<script src="~/Scripts/kendo/2015.3.930/cultures/kendo.culture.es-PE.min.js"></script>
+
+<!-- PARA EL LOGUEO DE OUTLOOK -->
+<script src="~/Scripts/js/plugins/microsoft-graph/msal.js"></script>
+
+<script src="~/Scripts/js/bootstrap.min.js"></script>
+<!-- activar luego esto 20171109-->
+<script src="~/Scripts/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="~/Scripts/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script>
+    am4core.addLicense("CH199926964");
+    // Redirect to view
+    fn_redirect();
+
+    // PARA PERMISOS
+    _setUserInfo();
+    _setUserPermissions("Programa", "Index");
+
+    // PARA EL LOGUEO DE OUTLOOK
+    var msalConfig = {
+        auth: {
+            clientId: "@System.Web.Configuration.WebConfigurationManager.AppSettings["ClientId"]",
+            authority: "@System.Web.Configuration.WebConfigurationManager.AppSettings["Authority"]",
+            redirectUri: "@System.Web.Configuration.WebConfigurationManager.AppSettings["redirectUri"]"
+        },
+        cache: {
+            cacheLocation: "localStorage",
+            storeAuthStateInCookie: true
+        }
+    };
+
+    var graphConfig = {
+        graphMeEndpoint: "https://graph.microsoft.com/v1.0/me"
+    };
+
+    // create a request object for login or token request calls
+    // In scenarios with incremental consent, the request object can be further customized
+    var requestObj = {
+        scopes: ["user.read", "email"]
+    };
+
+    var myMSALObj = new Msal.UserAgentApplication(msalConfig);
+
+    // Register Callbacks for redirect flow
+    // myMSALObj.handleRedirectCallbacks(acquireTokenRedirectCallBack, acquireTokenErrorRedirectCallBack);
+    myMSALObj.handleRedirectCallback(authRedirectCallBack);
+
+    function signIn() {
+        myMSALObj.loginPopup(requestObj).then(function (loginResponse) {
+            //Successful login
+            showWelcomeMessage();
+            //Call MS Graph using the token in the response
+            acquireTokenPopupAndCallMSGraph();
+        }).catch(function (error) {
+            //Please check the console for errors
+            console.log(error);
+        });
+    }
+
+    function signOut() {
+        // Remove token in localstorage
+        localStorage.removeItem("accessToken");
+
+        myMSALObj.logout();
+    }
+
+    function acquireTokenPopupAndCallMSGraph() {
+        //Always start with acquireTokenSilent to obtain a token in the signed in user from cache
+        myMSALObj.acquireTokenSilent(requestObj).then(function (tokenResponse) {
+            callMSGraph(graphConfig.graphMeEndpoint, tokenResponse.accessToken, graphAPICallback);
+        }).catch(function (error) {
+            console.log(error);
+            // Upon acquireTokenSilent failure (due to consent or interaction or login required ONLY)
+            // Call acquireTokenPopup(popup window)
+            if (requiresInteraction(error.errorCode)) {
+                myMSALObj.acquireTokenPopup(requestObj).then(function (tokenResponse) {
+                    callMSGraph(graphConfig.graphMeEndpoint, tokenResponse.accessToken, graphAPICallback);
+                }).catch(function (error) {
+                    console.log(error);
+                });
+            }
+        });
+    }
+
+    function callMSGraph(theUrl, accessToken, callback) {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200)
+                callback(JSON.parse(this.responseText));
+        }
+
+        // Save token in localstorage
+        localStorage.setItem("accessToken", accessToken);
+
+        xmlHttp.open("GET", theUrl, true); // true for asynchronous
+        xmlHttp.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+        xmlHttp.send();
+    }
+
+    function graphAPICallback(data) {
+        // Return data and save in localstorage
+        localStorage.setItem("graph", JSON.stringify(data, null, 2));
+        console.log(JSON.stringify(data, null, 2));
+    }
+
+    function showWelcomeMessage() {
+        var loginbutton = document.getElementById('SignIn');
+        loginbutton.innerHTML = '<i class="fa fa-sign-out"></i> <strong>Sign Out</strong>';
+        loginbutton.setAttribute('onclick', 'signOut();');
+    }
+
+    //This function can be removed if you do not need to support IE
+    function acquireTokenRedirectAndCallMSGraph() {
+        //Always start with acquireTokenSilent to obtain a token in the signed in user from cache
+        myMSALObj.acquireTokenSilent(requestObj).then(function (tokenResponse) {
+            callMSGraph(graphConfig.graphMeEndpoint, tokenResponse.accessToken, graphAPICallback);
+        }).catch(function (error) {
+            console.log(error);
+            // Upon acquireTokenSilent failure (due to consent or interaction or login required ONLY)
+            // Call acquireTokenRedirect
+            if (requiresInteraction(error.errorCode)) {
+                myMSALObj.acquireTokenRedirect(requestObj);
+            }
+        });
+    }
+
+    function authRedirectCallBack(error, response) {
+        if (error) {
+            console.log(error);
+        } else {
+            if (response.tokenType === "access_token") {
+                callMSGraph(graphConfig.graphMeEndpoint, response.accessToken, graphAPICallback);
+            } else {
+                console.log("token type is:" + response.tokenType);
+            }
+        }
+    }
+
+    function requiresInteraction(errorCode) {
+        if (!errorCode || !errorCode.length) {
+            return false;
+        }
+        return errorCode === "consent_required" ||
+            errorCode === "interaction_required" ||
+            errorCode === "login_required";
+    }
+
+    // Browser check variables
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf('MSIE ');
+    var msie11 = ua.indexOf('Trident/');
+    var msedge = ua.indexOf('Edge/');
+    var isIE = msie > 0 || msie11 > 0;
+    var isEdge = msedge > 0;
+
+    //If you support IE, our recommendation is that you sign-in using Redirect APIs
+    //If you as a developer are testing using Edge InPrivate mode, please add "isEdge" to the if check
+
+    // can change this to default an experience outside browser use
+    var loginType = isIE ? "REDIRECT" : "POPUP";
+
+    // runs on page load, change config to try different login types to see what is best for your application
+    if (loginType === 'POPUP') {
+        if (myMSALObj.getAccount()) {// avoid duplicate code execution on page load in case of iframe and popup window.
+            showWelcomeMessage();
+            acquireTokenPopupAndCallMSGraph();
+        }
+    }
+    else if (loginType === 'REDIRECT') {
+        document.getElementById("SignIn").onclick = function () {
+            myMSALObj.loginRedirect(requestObj);
+        };
+
+        if (myMSALObj.getAccount() && !myMSALObj.isCallback(window.location.hash)) {// avoid duplicate code execution on page load in case of iframe and popup window.
+            showWelcomeMessage();
+            acquireTokenRedirectAndCallMSGraph();
+        }
+    } else {
+        console.error('Please set a valid login type');
+    }
+</script>

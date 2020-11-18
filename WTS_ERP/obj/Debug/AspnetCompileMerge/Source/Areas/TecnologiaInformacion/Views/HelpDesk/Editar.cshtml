@@ -1,0 +1,551 @@
+﻿<div id="pnl_ticket_editar">
+
+    <div class="hide">
+        <input type="text" id="txt_ticket_edit_par" value="DATA-PARAMETRO" />
+    </div>
+
+    <div id="pnl_ticket_editar_header" class="row wrapper white-bg page-heading">
+        <div class="ibox">
+            <div id="div_titulo_principal" class="col-sm-6">
+                <h2 class="font-bold">Mesa de Ayuda</h2>
+            </div>
+        </div>
+    </div>
+
+    <div id="pnl_ticket_editar_body" class="row wrapper-content gray-bg animated">
+
+        <div id="pnl_ticket_editar_formulario" class="ibox">
+
+            <div class="ibox-title">
+                <div class="form-horizontal row ">
+                    <div id="div_titulo" class="col-sm-5">
+                        @*<label id="_title" class="form-control" style="background-color:#f8ac59; color: white"></label>*@
+                        <label id="_title" class="form-control"></label>
+                    </div>
+                    <div id="div_ticket_botonera_principal" class="col-sm-7 text-right">
+                        @*<button id="btn_aprobar" type="button" class="btn btn-outline btn-primary">
+                                <span class="fa fa-thumbs-up"></span>
+                                Aprobar
+                            </button>
+                            <button id="btn_rechazar" type="button" class="btn btn-outline btn-danger">
+                                <span class="fa fa-thumbs-down"></span>
+                                Rechazar
+                            </button>
+                            <button id="btn_asignar" type="button" class="btn btn-outline btn-warning" onclick="app_Ticket_Editar.fn_hola()">
+                                <span class="fa fa-user"></span>
+                                Asignar
+                            </button>
+                            <button id="btn_evaluar" type="button" class="btn btn-outline btn-info">
+                                <span class="fa fa-calendar"></span>
+                                Evaluar
+                            </button>
+                            <button id="btn_enproceso" type="button" class="btn btn-outline btn-default">
+                                <span class="fa fa-thumbs-up"></span>
+                                En Proceso
+                            </button>
+                            <button id="btn_atender" type="button" class="btn btn-outline btn-primary">
+                                <span class="fa fa-check"></span>
+                                Atender
+                            </button>
+                            <button id="btn_terminar" type="button" class="btn btn-outline btn-success">
+                                <span class="fa fa-gavel"></span>
+                                Terminar
+                            </button>
+                            <button id="btn_enespera" type="button" class="btn btn-outline btn-warning">
+                                <span class="fa fa-clock-o"></span>
+                                En Espera
+                            </button>
+                            <button id="btn_cancelar" type="button" class="btn btn-outline btn-danger">
+                                <span class="fa fa-close"></span>
+                                Cancelar
+                            </button>
+                            <button id="btn_regresar" type="button" class="btn btn-outline btn-default">
+                                <span class="fa fa-reply-all"></span>
+                                Regresar
+                            </button>*@
+                    </div>
+                    <div id="div_ticket_botonera_editar" class="col-sm-7 text-right hide">
+                        <button id="btn_guardar_editar" type="button" class="btn btn-outline btn-primary">
+                            <span class="fa fa-save"></span>
+                            Guardar
+                        </button>
+                        <button id="btn_regresar_editar" type="button" class="btn btn-outline btn-default">
+                            <span class="fa fa-reply-all"></span>
+                            Regresar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ibox-content">
+                <div class="tabs-container">
+                    <ul class="nav nav-tabs">
+                        <li class="active bg-primary">
+                            <a id="tab_registro" data-toggle="tab" href="#tab-registro" aria-expanded="true"><label class="control-label">Registro</label></a>
+                        </li>
+                        <li class="">
+                            <a id="tab_tic" data-toggle="tab" href="#tab-tic" aria-expanded="false"><label class="control-label">TIC</label></a>
+                        </li>
+                        <li class="">
+                            <a id="tab_detalle" data-toggle="tab" href="#tab-detalle" aria-expanded="false"><label class="control-label">Detalle</label></a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="tab-registro" class="tab-pane active">
+                            <div class="ibox">
+                                <div class="ibox-content">
+                                    <div class="form-horizontal row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3">Solicitante:</label>
+                                                <div class="col-sm-9">
+                                                    <input id="txt_solicitante" disabled class="form-control" data-id="solicitante">
+                                                </div>
+                                                <div class="col-sm-9 hide">
+                                                    <select id="cbo_solicitante" class="form-control _select2 _cbo" data-id="idsolicitante" data-required="true" style="width:100%"></select>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3">Área:</label>
+                                                <div class="col-sm-9">
+                                                    <input id="txt_area_solicitante" disabled class="form-control" data-id="areasolicitante">
+                                                </div>
+                                                <div class="col-sm-9 hide">
+                                                    <select id="cbo_area_solicitante" class="form-control _select2" data-id="idareasolicitante" data-required="true" style="width:100%"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-horizontal row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3">Equipo TIC:</label>
+                                                <div class="col-sm-9 _text">
+                                                    <input id="txt_equipotic" disabled class="form-control" data-id="equipotic">
+                                                </div>
+                                                <div class="col-sm-9 _cbo hide">
+                                                    <select id="cbo_equipotic" class="form-control _select2 _enty" data-id="idequipotic" data-required="true" style="width:100%"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3">Tipo:</label>
+                                                <div class="col-sm-9 _text">
+                                                    <input id="txt_tiposolicitud" disabled class="form-control" data-id="tiposolicitud">
+                                                </div>
+                                                <div class="col-sm-9 _cbo hide">
+                                                    <select id="cbo_tiposolicitud" class="form-control _select2 _enty" data-id="idtiposolicitud" data-required="true" style="width:100%"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-horizontal row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3">Fecha:</label>
+                                                <div id="div_fecha_solicitud" class="col-sm-9">
+                                                    <div class='input-group date'>
+                                                        <input id="txt_fecha_solicitud" disabled type='text' class='form-control input-sm m-b-xs _enty' data-id="fechasolicitud" data-type="date" data-level="true" data-min="10" data-max="10">
+                                                        <div id="div_calendario_fecha_solicitud" disabled class="input-group-addon">
+                                                            <span class="fa fa-calendar"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3">Prioridad:</label>
+                                                <div class="col-sm-9 _text">
+                                                    <input id="txt_prioridad" disabled class="form-control" data-id="prioridad">
+                                                </div>
+                                                <div class="col-sm-9 _cbo hide">
+                                                    <select id="cbo_prioridad" class="form-control _select2 _enty" data-id="idprioridad" data-required="true" style="width:100%"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-horizontal row">
+                                        <div class="col-sm-6">
+                                            <div class="ibox">
+                                                <div class="ibox-title">
+                                                    <h5 class="text-success">Información</h5>
+                                                </div>
+                                                <div class="ibox-content">
+                                                    <div id="div_categoria" class="form-horizontal row">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-3">Categoria:</label>
+                                                            <div class="col-sm-9 _text">
+                                                                <div class='input-group'>
+                                                                    <input id="txt_categoria" disabled class="form-control" data-id="categoria">
+                                                                    <div id="div_descripcion_categoria_ini" class="input-group-addon btn-outline btn-info">
+                                                                        <span class="fa fa-eye"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-9 _cbo hide">
+                                                                <div class='input-group'>
+                                                                    <select id="cbo_categoria" class="form-control _select2 _enty" data-id="idcategoria" data-required="true" style="width:100%"></select>
+                                                                    <div id="div_descripcion_categoria" class="input-group-addon btn-outline btn-info">
+                                                                        <span class="fa fa-eye"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-horizontal row">
+                                                        <div id="div_sistema" class="form-group hide">
+                                                            <label class="control-label col-sm-3">Sistema:</label>
+                                                            <div class="col-sm-9 _text">
+                                                                <input id="txt_sistema" disabled class="form-control" data-id="sistema">
+                                                            </div>
+                                                            <div class="col-sm-9 _cbo hide">
+                                                                <select id="cbo_sistema" class="form-control _select2 _enty" data-id="idsistema" data-required="true" style="width:100%"></select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-horizontal row">
+                                                        <div id="div_modulo" class="form-group hide">
+                                                            <label class="control-label col-sm-3">Modulo:</label>
+                                                            <div class="col-sm-9 _text">
+                                                                <input id="txt_modulo" disabled class="form-control" data-id="modulo">
+                                                            </div>
+                                                            <div class="col-sm-9 _cbo hide">
+                                                                <select id="cbo_modulo" class="form-control _select2 _enty" data-id="idmodulo" data-required="true" style="width:100%"></select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="div_tabla_aprobador" class="form-horizontal row hide">
+                                                        <div class="table-responsive">
+                                                            <table id="tbl_aprobador" class="table table-bordered" data-page-size="10" data-filter=#filter>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class='cols-sm-2 text-center'></th>
+                                                                        <th class='cols-sm-5 text-center' data-sort-ignore="true">Nombre Aprobador</th>
+                                                                        <th class='cols-sm-4 text-center' data-sort-ignore="true">Correo</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody></tbody>
+                                                            </table>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="ibox">
+                                                <div class="ibox-title">
+                                                    <h5 class="text-success">Detalle</h5>
+                                                </div>
+                                                <div class="ibox-content">
+                                                    <div class="form-horizontal row">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-3">Descripción:</label>
+                                                            <div class="col-sm-9">
+                                                                <textarea id="txt_descripcion" disabled class="form-control _enty" data-id="descripcion" rows="6" style="resize:none" placeholder="Ingresar descripción" data-min="1" data-max="5000" data-required="true" maxlength="5000"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="div_file_user" class="form-horizontal row hide">
+                                                        <div class="form-group">
+                                                            <div class="col-sm-3 text-right">
+                                                            </div>
+                                                            <div class="col-sm-9">
+                                                                <table id="tbl_file_user" class="table table-bordered table-hover">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th class="col-sm-1"></th>
+                                                                            <th class="col-sm-9">Archivo</th>
+                                                                            <th class="col-sm-1"></th>
+                                                                            <th class="hide col-sm-1"></th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody></tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab-tic" class="tab-pane">
+                            <div class="ibox">
+                                <div class="ibox-content">
+                                    <div class="form-horizontal row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3">Responsable:</label>
+                                                <div class="col-sm-9 _text">
+                                                    <input id="txt_responsable" disabled class="form-control" data-id="responsable">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3">Tipo Atención:</label>
+                                                <div class="col-sm-9 _cbo">
+                                                    <select id="cbo_tipo_atencion" class="form-control _select2 _enty" data-id="idtipoatencion" data-required="true" style="width:100%"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="div_tabla_sub_responsable" class="form-horizontal row">
+                                        <div class="col-sm-6">
+                                            <div class="table-responsive">
+                                                <table id="tbl_sub_responsable" class="table table-bordered" data-page-size="10" data-filter=#filter>
+                                                    <thead>
+                                                        <tr>
+                                                            <th class='cols-sm-2 text-center'></th>
+                                                            <th class='cols-sm-5 text-center' data-sort-ignore="true">Sub Responsable</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-horizontal row">
+                                        <div class="ibox-title">
+                                            <h5 class="text-success">Tiempo Tentativo</h5>
+                                        </div>
+                                        <div class="ibox-content">
+                                            <div class="form-horizontal row">
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-3">Inicio:</label>
+                                                        <div id="div_fecha_inicio_tentativo" class="col-sm-9">
+                                                            <div class='input-group date'>
+                                                                <input id="txt_fecha_inicio_tentativo" disabled type='text' class='form-control input-sm m-b-xs _enty _evaluar' data-id="fechainiciotentativo" data-type="date" data-level="true" data-min="10" data-max="10">
+                                                                <div id="div_calendario_fecha_inicio_tentativo" disabled class="input-group-addon">
+                                                                    <span class="fa fa-calendar"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-3">Fin:</label>
+                                                        <div id="div_fecha_fin_tentativo" class="col-sm-9">
+                                                            <div class='input-group date'>
+                                                                <input id="txt_fecha_fin_tentativo" disabled type='text' class='form-control input-sm m-b-xs _enty _evaluar' data-id="fechafintentativo" data-type="date" data-level="true" data-min="10" data-max="10">
+                                                                <div id="div_calendario_fecha_fin_tentativo" disabled class="input-group-addon">
+                                                                    <span class="fa fa-calendar"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="div_hora_tentativa" class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-3">Horas:</label>
+                                                        <div class="col-sm-9 _text">
+                                                            <input id="txt_hora_tentativo" class="form-control _enty _evaluar" data-id="horatentativo" data-type="int" maxlength="3" onKeyPress="return validators_keypress(event)">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="div_minuto_tentativa" class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-3">Minutos:</label>
+                                                        <div class="col-sm-9 _text">
+                                                            <input id="txt_minuto_tentativo" class="form-control _enty _evaluar" data-id="minutotentativo" data-type="int" maxlength="2" onKeyPress="return validators_keypress(event)">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-horizontal row">
+                                        <div class="ibox-title">
+                                            <h5 class="text-success">Tiempo Real</h5>
+                                        </div>
+                                        <div class="ibox-content">
+                                            <div class="form-horizontal row">
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-3">Inicio:</label>
+                                                        <div id="div_fecha_inicio_real" class="col-sm-9">
+                                                            <div class='input-group date'>
+                                                                <input id="txt_fecha_inicio_real" disabled type='text' class='form-control input-sm m-b-xs _enty _atender' data-id="fechainicioreal" data-required="true" data-type="date" data-level="true" data-min="10" data-max="10">
+                                                                <div id="div_calendario_fecha_inicio_real" disabled class="input-group-addon">
+                                                                    <span class="fa fa-calendar"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-3">Fin:</label>
+                                                        <div id="div_fecha_fin_real" class="col-sm-9">
+                                                            <div class='input-group date'>
+                                                                <input id="txt_fecha_fin_real" disabled type='text' class='form-control input-sm m-b-xs _enty' data-id="fechafinreal" data-type="date" data-level="true" data-min="10" data-max="10">
+                                                                <div id="div_calendario_fecha_fin_real" disabled class="input-group-addon">
+                                                                    <span class="fa fa-calendar"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="div_hora_real" class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-3">Hora:</label>
+                                                        <div class="col-sm-9 _text">
+                                                            <input id="txt_hora_real" class="form-control _enty _atender" data-id="horareal" data-type="int" maxlength="3" onKeyPress="return validators_keypress(event)">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="div_minuto_real" class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-3">Minutos:</label>
+                                                        <div class="col-sm-9 _text">
+                                                            <input id="txt_minuto_real" class="form-control _enty _atender" data-id="minutoreal" data-type="int" maxlength="2" onKeyPress="return validators_keypress(event)" >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-horizontal row">
+                                        <div class="ibox-title">
+                                            <h5 class="text-success">Informe</h5>
+                                        </div>
+                                        <div class="ibox-content">
+                                            <div class="form-horizontal row">
+                                                <div class="col-sm-6">
+                                                    <div class="ibox">
+                                                        <div class="form-horizontal row">
+                                                            <div class="form-group">
+                                                                <label class="control-label col-sm-3">Detalle:</label>
+                                                                <div class="col-sm-9">
+                                                                    <textarea id="txt_informe" class="form-control _enty _atender" data-id="informe" rows="6" style="resize:none" placeholder="Ingresar descripción" data-min="1" data-max="5000" data-required="true" maxlength="5000"></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="ibox">
+                                                        <div class="form-horizontal row">
+                                                            <div class="form-group">
+                                                                <label class="control-label col-sm-12">* Puede subir como máximo dos archivos </label>
+                                                                <label class="control-label col-sm-12">* El peso máximo del total de archivos a subir no debe pasar los 3 MB. </label>
+                                                            </div>
+                                                        </div>
+                                                        <div id="div_file_tic" class="form-horizontal row">
+                                                            <div class="form-group">
+                                                                <div id="div_ticket_span_tic" class="col-sm-3 text-right">
+                                                                    @*<span id="span_file_tic" class="btn btn-outline btn-warning btn-file text-right hide" title="Cargar Archivo">
+                                                                            <span class="fa fa-upload"></span>
+                                                                            <input id="file_tic" class="text-right" type="file" />
+                                                                        </span>*@
+                                                                </div>
+                                                                <div class="col-sm-9">
+                                                                    <table id="tbl_file_tic" class="table table-bordered table-hover">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th class="col-sm-1"></th>
+                                                                                <th class="col-sm-9">Archivo</th>
+                                                                                <th class="col-sm-1"></th>
+                                                                                <th class="hide col-sm-1"></th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody></tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab-detalle" class="tab-pane">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <div class="ibox">
+                                        <div class="ibox-content">
+                                            <div class="form-horizontal row">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <textarea id="txt_comentario" class="form-control _enty _comentar" data-id="descripcion" rows="6" style="resize:none" placeholder="Ingresa Comentario" data-min="1" data-max="5000" data-required="true" maxlength="5000"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-horizontal row">
+                                                <div class="form-group">
+                                                    <div id="div_ticket_botonera_comentario" class="col-sm-12">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-horizontal row">
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-6 text-left">Archivo</label>
+                                                    <div id="div_ticket_span_comentario" class="col-sm-6 text-left">
+                                                        @*<span id="span_file_comentario" class="btn btn-outline btn-warning btn-file text-left" title="Cargar Archivo">
+                                                                <span class="fa fa-upload"></span>
+                                                                <input id="file_comentario" class="text-right" type="file" />
+                                                            </span>*@
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-horizontal row">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <table id="tbl_file_comentario" class="table table-bordered table-hover">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="col-sm-1"></th>
+                                                                    <th class="col-sm-9">Archivo</th>
+                                                                    <th class="col-sm-1"></th>
+                                                                    <th class="hide col-sm-1"></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody></tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-9">
+                                    <div class="ibox">
+                                        <div class="ibox-content">
+                                            <div class="form-horizontal row">
+                                                <div class="col-sm-12">
+                                                    <div id="div_ticket_comentario" class="chat-discussion">
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

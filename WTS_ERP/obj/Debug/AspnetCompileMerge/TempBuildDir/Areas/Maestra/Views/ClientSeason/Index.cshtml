@@ -1,0 +1,186 @@
+﻿<div class="row wrapper border-bottom white-bg page-heading">
+    <div id="content_header">
+        <div class="col-lg-8">
+            <h2>Creating Client Season</h2>
+            <ol class="breadcrumb">
+                <li>
+                    View of Active Client Season
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-4" style="text-align:right;padding:20px">
+
+            <div class="btn-group hide" id="btnExportPDF">
+                <button class="btn btn-info" data-animation="rotateIn" id="btnExportPDF">
+                    <i class="fa fa-print"></i>
+                    <span class="bold">Print</span>
+                </button>
+            </div>
+            <div class="btn-group hide" id="btnExportExcel">
+                <button class="btn btn-warning" data-animation="rotateIn" id="btnExportExcel">
+                    <i class="fa fa-download"></i>
+                    <span class="bold">Export</span>
+                </button>
+            </div>
+            <div class="btn-group" id="btnReturn" style="padding:1px">
+                <button class="btn btn-white" data-animation="rotateIn" id="btnReturn">
+                    <i class="fa fa-mail-reply-all"></i>
+                    <span class="bold">Return</span>
+                </button>
+            </div>
+            <div class="btn-group" id="btnNew" style="padding:1px">
+                <button class="btn btn-success" data-animation="rotateIn" id="btnNew">
+                    <i class="fa fa-file-o"></i>
+                    <span class="bold">New</span>
+                </button>
+            </div>
+            <div class="btn-group" id="btnSave" style="padding:1px">
+                <button class="btn btn-primary" data-animation="rotateIn" id="btnSave">
+                    <i class="fa fa-save"></i>
+                    Save
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="hide">
+    <input type="text" id="txtpar" data-par="DATA-PARAMETRO" value="" />
+</div>
+
+<div class="wrapper wrapper-content gray-bg animated fadeInRight">
+
+    <div class="ibox" id="formMante">
+
+        <div class="ibox">
+
+            <div class="ibox-title">
+                <h5>
+                    <span class="text-success"><b>Information</b></span>
+                    @*<label class="text-success" id="User"></label>*@
+                </h5>               
+            </div>
+
+            <div class="ibox-content">
+                <div class="animated bounceIn panel-body">
+
+                    <input type="hidden" id="hf_IdUsuario" class="_enty" data-id="IdClientSeason" data-default="0" value="0" />
+
+                    <div class="form-group">
+                        <div class="form-horizontal row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Client:</label>
+                                    <div class="col-sm-10">
+                                        <select class="select2_Cliente form-control _enty" name="IdCliente" data-required="true" id="cboClient" style="width:100%" data-min="1" data-max="100" data-id="IdCliente"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Year:</label>
+                                    <div class="col-sm-10">
+                                        <input type="numBer" class="form-control _enty" name="Year" id="txtYear" data-min="1" data-max="50" data-required="true" data-type="int" data-id="Year" maxlength="4">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-horizontal row">
+                            <div class="col-sm-12">
+                                <div class="ibox-title">
+                                    <h8>
+                                        <span class="text-success"><b>Season</b></span>
+                                    </h8>
+                                </div>
+                                <div class="ibox-content" id="tableSeason">
+                                    <div class="form-horizontal">
+                                        <input type="text" class="form-control input-sm m-b-xs" id="filterSeason" placeholder="Search in table">
+                                    </div>
+                                    <div class="form-horizontal">
+                                        <div class="table-responsive">
+                                            <table class="footable table table-stripped table-bordered" data-page-size="15" data-filter=#filterSeason id="contentTableSeason">
+                                                <thead>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th>Code Season</th>
+                                                        <th>Name Season</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody></tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td colspan="8">
+                                                            <ul class="pagination pull-right"></ul>
+                                                        </td>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="ibox" id="formList">
+
+        <div class="ibox-title">
+            <h5>
+                <span id="txtTituloTabla" class="text-success"><b>List Cliente Season</b></span>
+            </h5>
+            <div class="text-right">
+                <label id="NumRegistros" class="text-success"><b>0</b></label>
+            </div>
+        </div>
+
+        <div class="ibox-content">
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control input-sm m-b-xs" id="filterE"
+                               placeholder="Search in table">
+                    </div>                 
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div class="col-sm-13">
+                        <div class="table-responsive">
+                            <table class="footable table table-stripped table-bordered" data-page-size="30" data-filter=#filterE id="contentTableClientSeason">
+                                <thead>
+                                    <tr>
+                                        <th>Code</th>
+                                        <th>Season</th>
+                                        <th>Year</th>
+                                        <th>Cliente</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="8">
+                                            <ul class="pagination pull-right"></ul>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

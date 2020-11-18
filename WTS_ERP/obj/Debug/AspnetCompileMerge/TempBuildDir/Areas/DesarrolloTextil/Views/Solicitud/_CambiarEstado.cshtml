@@ -1,0 +1,85 @@
+﻿<div class="ibox float-e-margins" id="panelencabezado_cambiarestado">
+    <div class="ibox-title">
+        <div class="row">
+            <div class="col-sm-6 text-left">
+                <div class="i-checks _group_busqueda">
+                    <label class="">
+                        <input type="radio" id="chk_solicitud" class="_clschk_solicitud" value="1" name="name_chk_busqueda" data-valor="0" style="position: absolute; opacity: 0;">
+                        <i></i>N° Solicitud
+                    </label>
+                    <label class="">
+                        <input type="radio" id="chk_atx" class="_clschk_atx" value="2" name="name_chk_busqueda" data-valor="1" style="position: absolute; opacity: 0;">
+                        <i></i>Código ATX
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-6 text-right">
+                <button id="_btnaprobar_cambiarestado" class="btn btn-primary">
+                    <span class="fa fa-thumbs-o-up"></span>
+                    Accept
+                </button>
+                <button id="_btncancelar_cambiarestado" class="btn btn-default" data-dismiss="modal">
+                    <span class="fa"></span>
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox-content wrapper wrapper-content gray-bg" style="overflow-y: auto; max-height: 850px;">
+        <div class="hide">
+            <input type="text" id="txtpar_cambiarestado" value="DATA-PARAMETRO" />
+        </div>
+        <div class="ibox float-e-margins" id="div_float_cambiarestado">
+            <div class="ibox-content">
+                <div class="form-horizontal">
+                    <div class="form-group" id="">
+                        <div>
+                            <label class="control-label col-sm-2" id="lblbusqueda">N° Solicitud</label>
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <div id="divsolicitud">
+                                        <input class="form-control _enty" type="text" data-min="1" data-max="999999" data-required="true" data-id="_idsolicitudcambiarestado" onkeypress="return DigitimosDecimales(event,this)" id="_txtnumerosolicitud" placeholder="0" data-type="int" />
+                                    </div>
+                                    <div id="divatx" class="hide">
+                                        <div class="row">
+                                            <div class="col-xs-5">
+                                                <input class="form-control" id="_txtanio" placeholder="2019" type="text">
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <div class="input-group">
+                                                    <input class="form-control" id="_txtcontador" placeholder="1545" type="text">
+                                                    <div class="input-group-btn">
+                                                        <button class="btn btn-primary" type="button" id="_btnbuscarsolicitud">
+                                                            <span class="fa fa-search"></span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <input class="form-control" disabled id="_txtestadonumerosolicitud" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Status</label>
+                        <div class="col-sm-10">
+                            <select class="form-control _enty" data-min="1" data-max="20" data-required="true" data-id="idstatus" id="_cbostatus"><option value="">Select</option></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Comment</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control _enty" data-required="false" id="_txtcomentario" rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,55 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Consulta de Programación Semanal</h2>
+            </div>
+            <div class="col-sm-6 text-right">
+                <button type="button" class="btn btn-default dim" id="btnNuevaProgramacion">
+                    <span class="fa fa-plus"></span>
+                    Nuevo
+                </button>
+
+
+            </div>
+        </div>
+        
+    </div>
+    <div class="panel-body">
+        <div class="row" id="programacionsemanal_consulta">
+            <div class="col-sm-12">
+                <div class="panel panel-default no-borders">
+                    <div class="panel-body">
+
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <div class="col-sm-2">
+                                    <label class="control-label">Semana:</label>
+                                </div>
+                                <div class="col-sm-5">
+                                    <input type="week" id="txtsemana" data-required="true" data-min="8" data-max="8" class="form-control _enty" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-5">
+                                    <button type="button" class="col-xs-12 col-sm-5 btn btn-primary btn-sm" id="btnConsultar_Programacion">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                        Consultar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="panel-body col-sm-12" id="divProgramacion" style="overflow-x:auto;overflow-y:auto;max-height:500px">
+        </div>
+    </div>
+</div>

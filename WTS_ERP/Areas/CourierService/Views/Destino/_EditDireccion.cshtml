@@ -1,0 +1,58 @@
+﻿<div id="pnl_direccion_edit" class="ibox float-e-margins">
+
+    <div class="hide">
+        <input type="text" id="txtpar_direccion" value="DATA-PARAMETRO" />
+    </div>
+
+    <div class="ibox">       
+        <div class="ibox-title">
+            <div class="form-horizontal row">
+                <div id="div_botones_principal" class="col-sm-12 text-right">
+                    <button id="btn_edit_guardar" class="btn btn-outline btn-primary">
+                        <span class="fa fa-save"></span>
+                        Guardar
+                    </button>
+                    <button id="btn_edit_retornar" class="btn btn-default" data-dismiss="modal">
+                        <span class="fa fa-reply-all"></span>
+                        Regresar
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="div_direccion_edit_formulario" class="ibox-content">
+            <div class="form-horizontal row">
+                <div class="col-sm-12">
+                    <label class="control-label">Dirección:</label>
+                    <input id="txt_edit_direccion" type="text" class="form-control _enty" data-id="direccion" data-required="true">
+                </div>
+            </div>
+            <div class="form-horizontal row">              
+                <div class="col-sm-6">
+                    <label class="control-label">Referencia:</label>
+                    <input id="txt_edit_referencia" type="text" class="form-control _enty" data-id="referencia">
+                </div>
+                <div class="col-sm-6">
+                    <label class="control-label">Distrito:</label>
+                    <select id="cbo_edit_distrito" class="form-control _select2 _enty" data-id="iddistrito" style="width:100%"></select>
+                </div>
+            </div>
+            <div class="form-horizontal row">
+                <div class="col-sm-4">
+                    <label class="control-label">Ruta:</label>
+                    <select id="cbo_edit_ruta" class="form-control _select2 _enty" data-id="idruta" data-required="true" style="width:100%"></select>
+                </div>
+                <div class="col-sm-4">
+                    <label class="control-label">Latitud:</label>
+                    <input id="txt_edit_latitud" type="text" class="form-control _enty" data-id="latitud" data-required="true">
+                </div>
+                <div class="col-sm-4">
+                    <label class="control-label">Longitud:</label>
+                    <input id="txt_edit_longitud" type="text" class="form-control _enty" data-id="longitud" data-required="true">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

@@ -1,0 +1,87 @@
+﻿<style>
+    .no-sort::after {
+        display: none !important;
+    }
+
+    .no-sort {
+        pointer-events: none !important;
+        cursor: default !important;
+    }
+
+    thead input {
+        width: 100%;
+    }
+</style>
+<div class="ibox" id="panelEncabezado_inventarioMotivo">
+    <div class="ibox-title">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 id="_title" class="text-navy bold">Añadir/Editar Motivo</h3>
+            </div>
+            <div class="col-sm-6 text-right">
+                <button type="button" class="btn btn-primary" id="btnSave">
+                    <span class="fa fa-save"></span>
+                    Grabar
+                </button>
+                <button type="button" class="btn btn-default" id="btnReturn">
+                    <span class="fa fa-ban"></span>
+                    Regresar
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="ibox-content wrapper wrapper-content gray-bg">
+        <div class="ibox">
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Movimiento</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control _enty_grabar" data-min="1" data-max="20" data-required="true" id="_cbo_movimiento" data-id="idmovimiento"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Motivo</label>
+                                <div class="col-sm-10">
+                                    <input id="txtmotivo" class="form-control _enty_grabar" data-required="true" data-min="1" data-max="254" data-id="motivo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ibox" id="div_Movimientos">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <h5 class="text-navy bold">Ver Motivos</h5>
+                    <a class="collapse-link">
+                        <span class="fa fa-chevron-up icono_collapse"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content" style="overflow-y: auto; max-height: 850px;">
+                <div class="panel-body">
+                    <div class="ibox">
+                        <div class="form-horizontal">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label class="col-sm-5 control-label">Filtar x Movimiento</label>
+                                    <div class="col-sm-7">
+                                        <select class="form-control" id="_filtro_tipo"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="div_tbl_motivo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

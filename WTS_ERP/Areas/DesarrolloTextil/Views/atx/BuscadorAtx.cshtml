@@ -1,0 +1,208 @@
+﻿<style>
+    ._small {
+        font-size: 12px !important;
+    }
+
+    .no-sort::after {
+        display: none !important;
+    }
+
+    .no-sort {
+        cursor: default !important;
+        padding: 8px !important;
+    }
+</style>
+
+<div class="ibox" id="panelEncabezado_buscadoratx">
+    <div class="hide">
+        <input type="text" id="txtpar_buscadoratx" value="DATA-PARAMETRO" />
+    </div>
+
+    <div class="ibox-title">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 id="_title" class="text-navy bold">Buscador Atx</h3>
+            </div>
+
+            <div class="col-sm-6 text-right">
+                @*<button class="btn btn-sm btn-primary" id="btnfiltro_buscadoratx" title="Filter">
+                        <span class="fa fa-search"></span>
+                    </button>*@
+                <button class="btn btn-sm btn-primary" id="btn_BuscarATX" title="Buscar">
+                    <span class="fa fa-search"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox-content wrapper wrapper-content gray-bg" @*style="overflow-y: auto; max-height: 850px;"*@ id="div_cuerpoprincipal">
+        <div class="ibox">
+            <div class="ibox-title">
+                @*<div class="col-sm-12 cls_titulo_filtro_buscadoratx"></div>*@
+                <div class="row">
+                    <div class="form-horizontal">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Proveedor</label>
+                                <div class="col-sm-10">
+                                    <select id="cboproveedor" class="form-control"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Cliente</label>
+                                <div class="col-sm-10">
+                                    <select id="cbocliente" class="form-control"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label class="control-label col-sm-3">Fecha Inicio</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group date date-es">
+                                        <input type="text" id="txtFechaInicio" class="form-control">
+                                        <span class="input-group-addon"> <i class="fa fa-calendar"> </i> </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label class="control-label col-sm-3">Fecha Fin</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group date date-es">
+                                        <input type="text" id="txtFechaFin" class="form-control">
+                                        <span class="input-group-addon"> <i class="fa fa-calendar"> </i> </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="hide">
+                    <input type="text" id="hf_filtro_buscadoratx" />
+                </div>
+
+                <div id="div_tbl_buscaratx" style="height: 100%; overflow-y: auto;"></div>
+                <div id="div_tbl_buscaratx_pagination" style="padding-top: 5px;"></div>
+                @*<div class="table-responsive" style="max-height:700px; overflow: auto;">
+                        <table class="table table-bordered table-hover" id="tbl_buscadoratx">
+                            <thead>
+                                <tr>
+                                    <th class="text-center" style="width: 30% !important;">
+                                        ATX Code
+                                    </th>
+                                    <th class="text-center" style="width: 10%;">
+                                        <!--link para ver atx-->
+                                    </th>
+                                    <th class="text-center" style="width: 20%;">
+                                        Request Number
+                                    </th>
+                                    <th class="text-center" style="width: 10%;">
+                                        Date Update
+                                    </th>
+                                    <th class="text-center" style="width: 10%;">
+                                        WTS Fabric Code
+                                    </th>
+                                    <th class="text-center" style="width: 10%;">
+                                        Testing Code
+                                    </th>
+                                    <th class="text-center" style="width: 30%;">
+                                        Tradename
+                                    </th>
+                                    <th class="text-center" style="width: 30%;">
+                                        <!--Family-->
+                                        Knit Type
+                                    </th>
+                                    <th class="text-center" style="width: 10%;">
+                                        <!--title-->
+                                        Yarn Size
+                                    </th>
+                                    <th class="text-center" style="width: 30%;">
+                                        Content
+                                    </th>
+                                    <th class="text-center" style="width: 10%;">
+                                        Density
+                                    </th>
+                                    <th class="text-center" style="width: 30% !important;">
+                                        Client Name
+                                    </th>
+
+                                    <th class="text-center" style="width: 20%;">
+                                        Applicant Name
+                                    </th>
+                                    <th class="text-center" style="width: 20%;">
+                                        Operator Name
+                                    </th>
+
+                                    <th class="text-center" style="width: 10%;">
+                                        Cuttable Width
+                                    </th>
+                                    <th class="text-center" style="width: 10%;">
+                                        Galga
+                                    </th>
+                                    <th class="text-center" style="width: 10%;">
+                                        Diameter
+                                    </th>
+
+                                    <!--<th class="text-center hide" style="width: 10%;">
+                                        Washed
+                                    </th>-->
+
+                                    <th class="text-center" style="width: 20%;">
+                                        Warp/Wales
+                                    </th>
+
+                                    <th class="text-center" style="width: 10%;">
+                                        Weft/Courses
+                                    </th>
+                                    <th class="text-center" style="width: 30%;">
+                                        Supplier
+                                    </th>
+                                    <th class="text-center" style="width: 10%;">
+                                        Mill Code
+                                    </th>
+                                    <th class="text-center" style="width: 10%;">
+                                        Batch
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th><input type="text" placeholder="Search" id="_txtfiltercodigoatx" class="form-control _clsfilter" data-field="codigo" /></th>
+                                    <th></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfilternumerosolicitud" class="form-control _clsfilter" data-field="idsolicitud" /></th>
+                                    <th></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfiltercodigotela" class="form-control _clsfilter" data-field="codigotela" /></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfiltercodigolaboratorio" class="form-control _clsfilter" data-field="codigolaboratorio" /></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfilternombrecomercial" class="form-control _clsfilter" data-field="nombrecomercial" /></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfilterfamilia" class="form-control _clsfilter" data-field="nombrefamilia" /></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfiltertitulo" class="form-control _clsfilter" data-field="titulo" /></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfiltercontenido" class="form-control _clsfilter" data-field="descripcionporcentajecontenidotela" /></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfilterdensidad" class="form-control _clsfilter" data-field="densidad" /></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfiltercliente" class="form-control _clsfilter" data-field="nombrecliente" /></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfiltersolicitante" class="form-control _clsfilter" data-field="nombresolicitante" /></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfilteranalistatextil" class="form-control _clsfilter" data-field="nombreoperador" /></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <!--<th><input type="text" placeholder="Search" id="_txtfilterlavado" class="form-control _clsfilter hide" data-field="lavado" /></th>-->
+                                    <th></th>
+                                    <th></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfilterproveedor" class="form-control _clsfilter" data-field="nombreproveedor" /></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfiltercodigotelafabrica" class="form-control _clsfilter" data-field="codigofabrica" /></th>
+                                    <th><input type="text" placeholder="Search" id="_txtfilterpartidalote" class="form-control _clsfilter" data-field="partidalote" /></th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_buscaratx"></tbody>
+                        </table>
+                    </div>*@
+                <!--<div class="text-center" id="foot_paginacion">
+                    demo
+                </div>-->
+            </div>
+        </div>
+    </div>
+</div>

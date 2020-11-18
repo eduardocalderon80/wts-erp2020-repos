@@ -1,0 +1,96 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2>PO-Producto</h2>
+    </div>
+    <div class="panel-body">
+        <div class="row" id="programacionsemanal">
+            <div class="col-md-12">
+                <div class="panel panel-default no-borders">
+                    <div class="panel-body">
+                        <!--Form-->
+                        <fieldset class="scheduler-border">
+                            <legend class="scheduler-border">Header</legend>
+
+                            <div class="form-horizontal" id="grupo_head">
+                                <!-- :columna1 -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="cbocliente" class="col-md-4 control-label">Cliente:</label>
+                                        <div class="col-md-8">
+                                            <div class="input-group">
+                                                <select id="cbocliente" class="form-control _enty" data-level="true" data-required="true" data-min="1" data-max="1"></select>
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-refresh"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cbotypepo" class="col-md-4 control-label">Type PO:</label>
+                                        <div class="col-md-8">
+                                            <select id="cbotypepo" class="form-control _enty" data-required="true" data-min="1" data-max="1"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- :columna2 -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="cboseason" class="col-md-4 control-label">Season:</label>
+                                        <div class="col-md-8">
+                                            <div class="input-group">
+                                                <select id="cboseason" class="form-control _enty" data-level="true"  data-required="true" data-min="1" data-max="1"></select>
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-refresh"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txtarrivalpo" class="col-md-4 control-label">Arrival PO:</label>
+                                        <div class="col-md-8">
+                                            <input id="txtarrivalpo" class="form-control _enty" type="text" data-required="true" data-min="5" data-max="10">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txtmonto" class="col-md-4 control-label">Monto:</label>
+                                        <div class="col-md-8">
+                                            <input id="txtmonto" class="form-control _enty" type="text" data-required="true" data-min="1" data-max="15" data-type="dec">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txtqrequerida" class="col-md-4 control-label">requerida:</label>
+                                        <div class="col-md-8">
+                                            <input id="txtqrequerida" class="form-control _enty" type="text" data-required="true" data-min="1" data-max="12" data-type="int">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txtDescripcion" class="col-md-4 control-label">descripcion:</label>
+                                        <div class="col-md-8">
+                                            <input id="txtDescripcion" class="form-control _enty" type="text" data-required="true" data-min="3" data-max="12">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="btnvalida" class="col-md-4 control-label">Validate</label>
+                                        <div class="col-md-8">
+                                            <button id="btnvalida">Next</button>
+                                            <button id="btntrae">Trae</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Fin Form-->
+                            </div>
+                            </fieldset>
+
+</div>       
+                </div>
+
+            </div>
+
+        </div>
+        <div class="panel-body col-md-12" id="dprogramacion" style="overflow-x:auto;overflow-y:auto;max-height:500px">
+        </div>
+    </div>
+    
+</div>

@@ -1,0 +1,73 @@
+﻿<div class="ibox float-e-margins" id="panelEncabezado_newhilado">
+    <div class="ibox-title">
+        <div class="ibox-tools">
+            <button id="_btnSave_newhilado" class="btn btn-primary">
+                Save
+            </button>
+            <button id="_btnCancelar_newhilado" class="btn btn-default" data-dismiss="modal">
+                Cancel
+            </button>
+        </div>
+    </div>
+    <div class="ibox-content wrapper wrapper-content gray-bg" style="overflow-y: auto; max-height: 850px;">
+        <div class="hide">
+            <input type="text" id="txtpar_newhilado" value="DATA-PARAMETRO" />
+        </div>
+        <div class="ibox float-e-margins">
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">System</label>
+                            <div class="col-sm-4">
+                                <select class="form-control _enty" id="_cbo_sistema_newhilado" data-required="true" data-min="1" data-max="20" data-id="IdSistemaTitulacion"></select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Title</label>
+                            <div class="col-sm-4">
+                                <select class="form-control _enty" id="_cbo_titulo_newhilado" data-required="true" data-min="1" data-max="20" data-id="IdTituloHiladoTela"></select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Shapped yarn</label>
+                            <div class="col-sm-4">
+                                <select class="form-control _enty" id="_cbo_formahilado_newhilado" data-required="true" data-min="1" data-max="20" data-id="IdFormaHilado"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h4>Raw material</h4>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <button class="btn btn-sm btn-primary" id="_btn_add_item_materiaprima_newhilado">Add</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="row">
+                    <div id="div_tbl_newhilado" style="max-height:300px; overflow-y:auto;">
+                        <table class="table table-bordered table-hover" id="_tbl_newhilado">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th class="text-center">Raw Material</th>
+                                    <th class="text-center">%</th>
+                                    <th class="text-center">Yarn type</th>
+                                    <th class="text-center">Color</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_newhilado"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,547 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">
+        @*<h2>PO-Style</h2>*@
+        <div class="row" style="vertical-align: middle;">
+            <div class="col-sm-6" id="divtituloprincipal">
+                <h2>PO-Style</h2>
+            </div>
+            <div class="col-sm-6 text-right">
+                <button id="btnNewPO" type="button" class="btn btn-default dim" style="margin-top: 4px;">
+                    <span class="fa fa-plus"></span>
+                    New PO
+                </button>
+                <button id="btnConsumirBuy" type="button" class="btn btn-info dim hide" style="margin-top: 4px;">
+                    <span class="fa fa-search"></span>
+                    Get Buy
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="hide">
+        <input type="text" id="txtpar" value="DATA-PARAMETRO" />
+        <input type="hidden" id="hf_PopRespuesta" value="0" /><!--OK-->
+        <!-- :edu contador que se actualiza al agregar destinos-->
+        <input type="hidden" id="hf_POClienteDestino_Contador" value="0" /><!--OK-->
+    </div>
+
+    <div class="panel-body">
+        <div class="row" id="poproducto">
+            <div class="panel panel-default no-borders">
+                <div class="panel-body" id="panelEncabezado">
+                    <!--Form-->
+
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>Style</h5>
+                            <div class="ibox-tools">
+                                <a id="btnnext1" href="javascript:void(0)" class="btn btn-success _next" style="color: white !important;" data-next="1">Next <i class="fa fa-forward"></i></a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="form-horizontal">
+                                @*columna0*@
+                                <input type="hidden" id="hf_IdPo" class="_enty" data-id="idpo" data-default="0" value="0" />
+                                <div class="hide">
+                                    <input type="hidden" id="hf_IdTipo" class="_enty" data-id="idtipo" data-default="1" value="1" data-note="Codigo para Estilo?" />
+                                    <input type="hidden" id="hf_Codigo" class="_enty" data-id="codigo" data-default=" " data-note="Codigo de la PO Original" />
+                                    <input type="hidden" id="hf_CodigoLST" class="_enty" data-id="codigolst" data-default=" " data-note="Codigo de la PO Ultima" />
+                                    <input type="hidden" id="hf_IdPoCliente" class="_enty" data-id="idpocliente" data-default="0" />
+                                    <!-- :edu 20171031 DATO HARDCODEADO LUEGO CAMBIAR CUANDO FUNCIONE SEGURIDAD-->
+                                    @*<input type="hidden" id="hf_IdEmpresa" class="_enty" data-id="idempresa" data-default="1" data-note="Empresa Andes Food ? " />*@
+                                </div>
+
+                                @*columna1*@
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="cbocliente" class="col-md-2 control-label">Cliente:</label>
+                                        <div class="col-md-10">
+                                            <div class="input-group">
+                                                <select id="cboClientePo" class="form-control _enty" data-min="1" data-max="100" data-required="true" data-level="true" data-id="idcliente"></select>
+                                                <span class="input-group-addon _refresh cursor" id="spanRefrescarCboCliente" data-method="name:cliente,id:cboClientePo">
+                                                    <span class="fa fa-refresh"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cboseason" class="col-md-2 control-label">Season:</label>
+                                        <div class="col-md-10">
+                                            <div class="input-group">
+                                                <select id="cboTemporadaCliente" class="form-control _enty" data-min="1" data-max="100" data-required="true" data-level="true" data-id="idclientetemporada"></select>
+                                                <span class="input-group-addon _refresh cursor" id="spanRefrescarCboSeason" data-method="name:temporada,id:cboTemporadaCliente">
+                                                    <span class="fa fa-refresh"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                @*columna2*@
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="cboTipoPo" class="col-md-2 control-label">Type PO:</label>
+                                        <div class="col-md-10">
+                                            <select id="cboTipoPo" class="form-control _enty" data-min="1" data-max="100" data-required="true" data-id="idtipopo">
+                                                <option value="2">PO</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="grupoFechaArrivalPO">
+                                        <label class="control-label col-md-2">Arrival PO:</label>
+                                        <div class="col-md-10">
+                                            <div class="input-group date">
+                                                <input id="txtArrivalPO" class="form-control _enty" type="text" data-min="10" data-max="10" data-required="true" data-level="true" data-id="arrivalpo" data-type="date">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-calendar"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-sm-12" id="panelDetalle">
+                <div class="hide">
+                    <input type="hidden" class="_enty" id="hf_IdPoClienteProducto" value="0" />
+                </div>
+                <div class="tabs-container">
+                    <ul class="nav nav-tabs">
+                        <li class="active bg-primary">
+                            <a data-toggle="tab" href="#tab-detail" aria-expanded="true">Detail</a>
+                        </li>
+                        <li class="">
+                            <a data-toggle="tab" href="#tab-comment" aria-expanded="false">Comment</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="tab-detail" class="tab-pane active">
+                            <div class="panel-body">
+                                <div class="form-horizontal" id="panelData">
+                                    <div class="hidden" id="divHideCamposConsumirBuy">
+                                        <input type="text" id="hf_IdPo_Buy" class="_enty" data-id="idpo_buy" data-default="0" value="0" />
+                                        <input type="text" id="hf_IdPoCliente_Buy" class="_enty" data-id="idpocliente_buy" data-default="0" value="0" />
+                                        <input type="text" id="hf_IdPoClienteProducto_Buy" class="_enty" data-id="idpoclienteproducto_buy" data-default="0" value="0" />
+                                        <input type="text" id="hf_IdProducto_Buy" class="_enty" data-id="idpoclienteproducto_buy" data-default="0" value="0" />
+                                        <input type="text" id="hf_CodigoPoCliente_Buy" class="_enty" data-id="codigopocliente_buy" data-default=" " value=" " />
+                                        <input type="text" id="hf_NobreProducto_Buy" class="_enty" data-id="nombreproducto_buy" data-default=" " value=" " />
+                                        <input type="text" id="hf_cantidadconsumir_buy" value="0" />
+                                        <input type="text" id="hf_estadocerrar_buy" value="0" />
+                                        <input type="text" id="hf_cantidadrequerida_original_buy" value="0" />
+                                    </div>
+                                    <!--:edu 20171017 inicio-->
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <div class="col-sm-12 text-right">
+                                                <!-- :edu 20171017-->
+                                                <a id="btnnext2" href="javascript:void(0)" class="btn btn-success _next" data-next="2">
+                                                    Next
+                                                    <i class="fa fa-forward"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--:edu 20171017 fin-->
+                                    @*columna1*@
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2">Client Po</label>
+                                            <div class="col-sm-10">
+                                                <input id="txtPoCliente" type="text" class="form-control _enty" data-required="true" data-id="codigo" data-min="2" data-max="12" data-level="true" /> <!-- :sam -->
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2">Style</label>
+                                            <div class="col-sm-10">
+                                                <div class="input-group">
+                                                    <input type="hidden" id="hf_IdProducto" class="_enty" data-id="idproducto" />
+
+                                                    <input id="txtCodigoEstiloProducto" type="text" class="form-control _enty" data-required="true" data-level="true" data-min="2" data-max="100" data-id="codigoproducto" /><!-- :sam -->
+                                                    <span class="input-group-btn" id="spanBtnBuscarProducto">
+                                                        <button id="btnbuscarproducto" type="button" class="btn btn-primary">
+                                                            <span class="fa fa-search"></span>
+                                                        </button>
+                                                    </span>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2">Description</label>
+                                            <div class="col-sm-10">
+                                                <textarea id="txtdescription" class="form-control" rows="2"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2">Factory</label>
+                                            <div class="col-sm-10">
+                                                <div class="input-group">
+                                                    <select id="cboProveedor" class="form-control _enty" data-min="1" data-max="100" data-required="true" data-level="true" data-id="idproveedor">
+                                                        <option>Select</option>
+                                                    </select>
+                                                    <span id="spanRefrescarCboFactory _refresh cursor" class="input-group-addon" data-method="name:proveedor,id:cboProveedor">
+                                                        <span class="fa fa-refresh"></span>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2">Division</label>
+                                            <div class="col-sm-10">
+                                                <div class="input-group">
+                                                    <select id="cboDivision" class="form-control _enty" data-min="1" data-max="100" data-required="true" data-level="true" data-id="iddivisioncliente">
+                                                        <option value="">--Select--</option>
+                                                    </select>
+                                                    <span class="input-group-addon _refresh cursor" id="spanRefrescarCboDivision" data-method="name:division,id:cboDivision">
+                                                        <span class="fa fa-refresh"></span>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2">Associated Division</label>
+                                            <div class="col-sm-10">
+                                                <div class="input-group">
+                                                    <select id="cboDivisionAsociado" class="form-control _enty" data-min="1" data-max="100" data-required="true" data-level="true" data-id="iddivisionasociado">
+                                                        <option value="">--Select--</option>
+                                                    </select>
+                                                    <span class="input-group-addon _refresh cursor" id="spanRefrescarCboDivisionAsociado" data-method="name:asociado,id:cboDivisionAsociado">
+                                                        <span class="fa fa-refresh"></span>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    @*columna2*@
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2">Price Type</label>
+                                            <div class="col-sm-10">
+                                                <div class="input-group">
+                                                    <select id="cboTipoPrecio" class="form-control _enty" data-min="1" data-max="100" data-required="true" data-level="true" data-id="">
+                                                        <option value="">--Select--</option>
+                                                        <option value="1">DDP</option>
+                                                        <option value="2">FOB</option>
+                                                    </select>
+                                                    <span class="input-group-addon _refresh cursor" id="spanRefrescarCboPriceType" data-method="name:tipoprecio,id:cboTipoPrecio">
+                                                        <span class="fa fa-refresh"></span>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2">Freight</label>
+                                            <div class="col-sm-10">
+                                                <div class="input-group">
+                                                    <select id="cboFlete" class="form-control _enty" data-min="1" data-max="100" data-required="true" data-level="true" data-id="idflete" data-exception="cboTipoPrecio=2?empty" data-default=" ">
+                                                        @*flete*@
+                                                        <option value="">NONE</option>
+                                                        <option value="1">AIR</option>
+                                                        <option value="2">SEA</option>
+                                                    </select>
+                                                    <span class="input-group-addon _refresh cursor" id="spanRefrescarCboFreight" data-method="name:tipoflete,id:cboFlete">
+                                                        <span class="fa fa-refresh"></span>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2">Ship Mode</label>
+                                            <div class="col-sm-10">
+                                                <div class="input-group">
+                                                    <select id="cboFormaEnvio" class="form-control _enty" data-min="1" data-max="100" data-required="true" data-level="true" data-id="idformaenvio">
+                                                        <option value="">--Select--</option>
+                                                        <option value="1">AIR</option>
+                                                        <option value="2">SEA</option>
+                                                    </select>
+                                                    <span class="input-group-addon _refresh cursor" id="spanRefrescarCboShipmode" data-method="name:tipoenvio,id:cboFormaEnvio">
+                                                        <span class="fa fa-refresh"></span>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2">Factory Price</label>
+                                            <div class="col-sm-10">
+                                                <input id="txtPrecioFabrica" class="form-control _enty" type="text" data-min="1" data-max="12" data-required="true" data-id="preciofabrica" data-type="dec" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2">Client Price</label>
+                                            <div class="col-sm-10">
+                                                <input id="txtPrecioCliente" type="text" class="form-control _enty" data-min="1" data-max="12" data-required="true" data-id="preciocliente" data-type="dec" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2">Hts</label>
+                                            <div class="col-sm-10">
+                                                <input id="txtHTS" type="text" class="form-control _enty" data-id="hts" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2">Forwarder</label>
+                                            <div class="col-sm-10">
+                                                <select id="cboforwarder" class="form-control _enty" data-min="1">
+                                                    <option value=" ">None</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2">Comments Forwarder</label>
+                                            <div class="col-sm-10">
+                                                <textarea id="txtcommentsforwarder" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <div class="checkbox checkbox-primary col-sm-offset-2">
+                                                    <input id="chkCartonLabel" type="checkbox" class="_enty" data-id="cartonlabel" />
+                                                    <label for="chkCartonLabel">Carton Label</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="ibox float-e-margins" id="panelFechas">
+                                    <div class="ibox-title">
+                                        <h5>Dates</h5>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div class="form-horizontal">
+                                            @*columna1*@
+                                            <div class="col-sm-4">
+                                                <div class="form-group" id="grupoFechaFactory">
+                                                    <label class="control-label col-sm-3">Factory Delivery Date</label>
+                                                    <div class="col-sm-9">
+                                                        <div class="input-group date">
+                                                            <input id="txtFechaDespachoFabrica" type="text" class="form-control _enty" data-min="10" data-max="10" data-required="true" data-level="true" data-id="fechadespachofabrica" />
+                                                            <div class="input-group-addon">
+                                                                <i class="fa fa-calendar"></i>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @*columna2*@
+                                            <div class="col-sm-4">
+                                                <div class="form-group" id="grupoFechaCliente1">
+                                                    <label class="control-label col-sm-3">Client Delivery Date</label>
+                                                    <div class="col-sm-9">
+                                                        <div class="input-group date">
+                                                            <input id="txtFechaDespachoCliente" type="text" class="form-control _enty" data-min="10" data-max="10" data-required="true" data-level="true" data-id="fechaentregacliente" />
+                                                            <div class="input-group-addon">
+                                                                <i class="fa fa-calendar"></i>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @*columna3*@
+                                            <div class="col-sm-4">
+                                                <div class="form-group" id="grupoFechaCliente2">
+                                                    <label class="control-label col-sm-3">Client in Whs Date</label>
+                                                    <div class="col-sm-9">
+                                                        <div class="input-group date">
+                                                            <input id="txtFechaEntregaCliente" type="text" class="form-control _enty" data-min="10" data-max="10" data-required="true" data-level="true" data-id="fechadespachocliente" />
+                                                            <div class="input-group-addon">
+                                                                <i class="fa fa-calendar"></i>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="ibox float-e-margins" id="panelDestinos">
+                                    <div class="ibox-title">
+                                        <h5>Quantity per destination</h5>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div class="form-horizontal">
+                                            <div class="hidden">
+                                                <input type="text" id="hf_IdPoClienteEstilo_PopupTallaColor" value="0" />
+                                                <input type="text" id="hf_IdPoClienteEstiloDestino_PopupTallaColor" value="0" />
+                                                <input type="text" id="hf_hdnCantidadRequerida_PopupTallaColor" value="0" />
+                                            </div>
+                                            <div class="form-group" id="divCantidadRequerida">
+                                                <label class="control-label col-sm-2 col-sm-offset-8">Quantity:</label>
+                                                <div class="col-sm-2">
+                                                    <input id="txtCantidadRequerida" type="text" class="form-control _enty" data-min="1" data-max="12" data-required="true" data-id="cantidadrequerida" data-type="dec" disabled />
+                                                </div>
+                                            </div>
+                                            <div class="hr-line-dashed"></div>
+                                            <div class="form-group">
+                                                <div class="col-sm-12 text-right">
+                                                    <button type="button" class="btn btn-primary" id="btnAddDestination">
+                                                        <span class="fa fa-plus"></span>
+                                                        Add Destination
+                                                    </button>
+                                                    <button type="button" class="btn btn-info" id="btnCleanDestination">
+                                                        <span class="fa fa-trash-o"></span>
+                                                        Clean Destination
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                            <div class="hr-line-dashed"></div>
+                                            <div id="divTablaCantidadxDestino" class="row">
+
+                                                <table id="tblClienteDireccionDestino" class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="text-center col-sm-1" data-gcolum="IdPoClienteProductoDestino"></th>
+                                                            <th class="text-center col-sm-9" data-gcolum="IdClienteDireccion">
+                                                                <div class="col-sm-12">
+                                                                    Destination
+                                                                    <div style="float: right; position: relative;">
+                                                                        <a class="punteromouse" href="javascript:void(0)" title="Refresh Destination" id="arefrescardireccion">Refresh</a>
+                                                                    </div>
+                                                                </div>
+                                                            </th>
+                                                            <th class="text-center col-sm-2" data-gcolum="CantidadRequerida">Required quantity</th>
+                                                            @*<th class="col-sm-1"></th>*@
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="tbodyClienteDireccionDestino"></tbody>
+                                                </table>
+                                            </div>
+                                            <div class="hr-line-dashed"></div>
+                                            <div id="divTablaTallaColor" class="row">
+                                                <div id="divMatrizTallaColor" style="display: inline-block">
+                                                    <!--style="display: inline-block"-->
+                                                    <div>
+                                                        <div id="divHijoMatrizTallaColor">
+                                                            <table id="tblMatrizTallaColor" class="table table-bordered table-fixed">
+                                                                <thead id="theadMatrizTallaColor">
+                                                                    <tr>
+                                                                        <th class="text-center" width='1'></th>
+                                                                        <th class="text-center" width='200'>Color Type</th>
+                                                                        <th class="text-center" width='300'>Color</th>
+                                                                        <th class="text-center" width="50">SubTotal</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody id="tbdoyMatrizTallaColor"></tbody>
+                                                            </table>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab-comment" class="tab-pane">
+                            <div class="panel-body">
+                                <div class="form-horizontal" id="panelData2">
+                                    @*columna1*@
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-4">Factory Comment</label>
+                                            <div class="col-sm-8">
+                                                <textarea id="txtComentarioFabrica" class="form-control _enty _textarea" rows="3" data-required="false" data-id="comentariofabrica"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*columna2*@
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-4">Packing Instruction</label>
+                                            <div class="col-sm-8">
+                                                <textarea id="txtInstruccionEmpaque" class="form-control _enty _textarea" rows="3" data-required="false" data-id="instruccionempaque"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- :edu 20171017-->
+            <div class="col-sm-12" style="margin-top: 1%;">
+            </div>
+            <!-- panel Result -->
+            <div class="col-sm-12" id="panelResult">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>PO-Products</h5>
+                        <div class="ibox-tools">
+                            <!--:EDU 20171014-->
+                            <button id="btnAddPo" class="btn btn-primary dim " style="color: white;">
+                                <i class="fa fa-file-o"></i>
+                                Add PO
+                            </button>
+
+                            <button id="btnUpdataPo" class="btn btn-success dim  hidden" style="color: white;">
+                                <i class="fa fa-pencil"></i>
+                                Update Po
+                            </button>
+                            <button id="btnAdd" class="btn btn-info hidden dim" style="color: white;">
+                                <i class="fa fa-file-archive-o"></i>
+                                Add
+                            </button>
+                            <button id="btnCancelarUpdate" class="btn btn-info hidden dim" style="color: white">
+                                <i class="fa fa-undo"></i>
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row" id="divTblPoEstiloCliente" style="position: relative; width: 100%; overflow-x: auto; overflow-y: auto; max-height:400px; min-height:0px;">
+                            <table class="table table-bordered table-hover" id="tblPo">
+                                <thead>
+                                    <tr>
+                                        <th class="col-sm-1"></th>
+                                        <th class="hide"></th>
+                                        <th class="hide"></th>
+                                        <th class="hide"></th>
+                                        <th class='text-center col-sm-1'>PO</th>
+                                        <th class='text-center col-sm-2'>Producto</th>
+                                        <th class='text-center col-sm-1'>Factory</th>
+                                        <th class='text-center col-sm-1'>Ex Factory <br />Date</th>
+                                        <th class='text-center col-sm-1'>Max Factory <br />Date</th>
+                                        <th class='text-center col-sm-1'>In Whs Date</th>
+                                        <th class='text-center col-sm-1'>Type Price</th>
+                                        <th class='text-center col-sm-1'>Factory Price</th>
+                                        <th class='text-center col-sm-1'>Client Price</th>
+                                        <th class='text-center col-sm-1'>Quantity</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tblpodetalle"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- fin -->
+        </div>
+
+    </div>
+
+</div>
+
+

@@ -1,0 +1,229 @@
+﻿<div class="row wrapper white-bg page-heading">
+    <div id="content_header" class="ibox float-e-margins">
+        <div id="divtituloprincipal" class="col-sm-6">
+            <h2 class="font-bold">Botones por Usuario</h2>
+        </div>
+        <div class="col-sm-6 text-right position_right" style="vertical-align: middle;margin-top:15px;">
+            @*<button id="btnNew" type="button" class="btn btn-default">
+                <span class="fa fa-plus"></span>
+                Nuevo
+            </button>*@
+        </div>
+    </div>
+</div>
+
+<div class="row wrapper-content gray-bg animated">
+
+    <div id="idformulario" class="ibox">
+
+        <div class="ibox-title">
+            <div class="form-horizontal row ">
+                <div id="divTitulo" class="col-sm-6">
+                    <h3 id="_title" class="text-navy bold">Nuevo</h3>
+                </div>
+                <div id="divBotones" class="col-sm-6 text-right">
+                    <button id="btnSave" type="button" class="btn btn-primary">
+                        <span class="fa fa-save"></span>
+                        Guardar
+                    </button>
+                    @*<button id="btnReturn" type="button" class="btn btn-default">
+                        <span class="fa fa-reply-all"></span>
+                        Retornar
+                    </button>*@
+                </div>
+            </div>
+        </div>
+
+        <div class="ibox-content">
+            
+            <div class="form-horizontal row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Usuario:</label>
+                        <div class="col-sm-9">
+                            <select id="cboUsuario" class="form-control _enty" name="IdUsuario" data-id="IdUsuario" data-required="true" data-min="1"></select>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+
+            <div class="form-horizontal row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Ventana:</label>
+                        <div class="col-sm-9">
+                            <select id="cboVentana" class="form-control _enty" name="IdVentana" data-id="IdVentana" data-required="true" data-min="1"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Función:</label>
+                        <div class="col-sm-9">
+                            <select id="cboFuncion" class="form-control _enty" name="IdFuncion" data-id="IdFuncion" data-required="true" data-min="1"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        
+        </div>
+
+    </div>
+
+    <div id="content_form" class="ibox">
+        <div id="divContentTBL" class="ibox-content">
+            <div class="table-responsive">
+                <table id="tblbotones" class="footable table table-bordered table-hover" data-page-size="10" data-filter=#filterarea>
+                    <thead>
+                        <tr>
+                            <th class="col-sm-1" data-sort-ignore='true'></th>
+                            <th class='col-sm-2 text-center' data-sort-ignore="true">Preview</th>
+                            <th class="col-sm-2" data-sort-ignore='true'>IdBóton</th>
+                            <th class='col-sm-2 text-center' data-sort-ignore="true">Agrupador</th>
+                            <th class='col-sm-1 text-center' data-sort-ignore="true">Acción</th>
+                            <th class='col-sm-2 text-center' data-sort-ignore="true">Método</th>
+                            <th class='col-sm-2 text-center' data-sort-ignore="true">Ubicación</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="8"><ul class="pagination pull-right"></ul></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<div class="row wrapper-content gray-bg animated">
+
+    <div id="idformulario" class="ibox">
+        <div class="ibox-title">
+            <div class="form-horizontal row ">
+                <div id="divTitulo" class="col-sm-6">
+                    <h3 id="_title" class="text-navy bold">Nuevo</h3>
+                </div>
+                <div id="divBotones" class="col-sm-6 text-right">
+                    <button id="btnSave" type="button" class="btn btn-primary">
+                        <span class="fa fa-save"></span>
+                        Save
+                    </button>
+                    <button id="btnReturn" type="button" class="btn btn-default">
+                        <span class="fa fa-reply-all"></span>
+                        Return
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="ibox-content">
+            <div class="row ">
+                <div class="col-sm-6">
+                    <div class="ibox">
+                        <label class="form-control bg-success">Listado</label>
+                        <div class="ibox-content">
+                            <div id="rowfileuser" class="form-horizontal row">
+                                <div class="form-group">
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control m-b-xs" id="filteraprobador" placeholder="Buscar en tabla">
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <select id="cboEstadoAprobador" class="form-control _enty" name="IdEquipoTIC" data-id="IdEquipoTIC" data-required="true">
+                                            <option value='0'>Activo</option>
+                                            <option value='1'>Inactivo</option>
+                                        </select>
+                                    </div>
+                                    <div class="table-responsive col-sm-12">
+                                        <table id="tblaprobador" class="footable table table-stripped table-bordered" data-page-size="10" data-filter=#filteraprobador>
+                                            <thead>
+                                                <tr>
+                                                    <th class="col-sm-2" data-sort-ignore='true'>Codigo</th>
+                                                    <th class="col-sm-4" data-sort-ignore='true'>Nombre</th>
+                                                    <th class="col-sm-2" data-sort-ignore='true'>Correo</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="4"><ul class="pagination pull-right"></ul></td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="ibox">
+                        <label class="form-control bg-success">Detalle</label>
+                        <div class="ibox-content">
+                            <input type="hidden" id="hf_IdAprobador" data-id="IdAprobador" data-default="0" value="0" />
+                            <input type="hidden" id="hf_IdPersonal" data-id="IdPersonal" data-default="0" value="0" />
+                            <div class="form-horizontal row">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3">Usuario:</label>
+                                    <div class="col-sm-9">
+                                        <select id="cboUsuario" class="form-control _enty" name="IdUsuario" data-id="IdUsuario" data-required="true" data-min="1"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-horizontal row">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3">Ventana:</label>
+                                    <div class="col-sm-9">
+                                        <select id="cboVentana" class="form-control _enty" name="IdVentana" data-id="IdVentana" data-required="true" data-min="1"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-horizontal row">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3">Función:</label>
+                                    <div class="col-sm-9">
+                                        <select id="cboFuncion" class="form-control _enty" name="IdFuncion" data-id="IdFuncion" data-required="true" data-min="1"></select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="tablaarea" class="form-horizontal row">
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control m-b-xs" id="filterarea" placeholder="Buscar Área">
+                                    </div>
+                                    <div class="table-responsive col-sm-12">
+                                        <table id="tblbotones" class="footable table table-bordered table-hover" data-page-size="10" data-filter=#filterarea>
+                                            <thead>
+                                                <tr>
+                                                    <th class="col-sm-1" data-sort-ignore='true'></th>
+                                                    <th class='col-sm-2 text-center' data-sort-ignore="true">Preview</th>
+                                                    <th class="col-sm-2" data-sort-ignore='true'>IdBóton</th>
+                                                    <th class='col-sm-2 text-center' data-sort-ignore="true">Agrupador</th>
+                                                    <th class='col-sm-1 text-center' data-sort-ignore="true">Acción</th>
+                                                    <th class='col-sm-2 text-center' data-sort-ignore="true">Titulo</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="8"><ul class="pagination pull-right"></ul></td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>*
+        </div>
+
+
+    </div>
+</div>*@

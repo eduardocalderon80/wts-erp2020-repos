@@ -1,0 +1,57 @@
+﻿<style type="text/css">
+    .row-selected {
+        background-color: #1ab394;
+    }
+
+    .select2-container--open {
+        z-index: 9999999;
+    }
+
+    .has-error .select2-selection {
+        border-color: #ed5565 !important;
+    }
+</style>
+
+<div id="pnl_assign_driver" class="ibox float-e-margins">
+
+    <div class="hide">
+        <input type="text" id="txtpar_assigndriver" value="DATA-PARAMETRO" />
+    </div>
+
+    <div class="ibox">       
+        <div class="ibox-title">
+            <div class="form-horizontal row">
+                <div id="divbotonesprimarios" class="col-sm-12 text-right">                   
+                    <button id="btn_guardar_asignar_chofer" class="btn btn-outline btn-primary">
+                        <span class="fa fa-save"></span>
+                        Guardar
+                    </button>
+                    <button id="btn_retroceder" class="btn btn-outline btn-default" data-dismiss="modal">
+                        <span class="fa fa-reply-all"></span>
+                        Regresar
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="ibox-content">
+            <div class="form-horizontal row">
+                <div class="col-sm-4">
+                    <label class="control-label">Fecha: </label>
+                    <input id="txt_fecha_asignar_chofer" disabled type="text" class="form-control">
+                </div>
+                <div class="col-sm-4">
+                    <label class="control-label">Vehiculo:</label>
+                    <input id="txt_vehiculo_asignar_chofer" disabled type="text" class="form-control">
+                </div>
+                <div class="col-sm-4">
+                    <label class="control-label">Chofer:</label>
+                    <select id="cbo_chofer_asignar_chofer" class="form-control _select2 _enty" data-id="idchofer" style="width:100%"></select>
+                </div>               
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

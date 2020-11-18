@@ -1,0 +1,612 @@
+﻿<div id="panelEncabezado_FabricReqs">
+    <div class="hide">
+        <input type="text" id="fabricreqs_txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="form-horizontal row">
+        <div class="col-sm-12 m-b">
+            <div class="float-left">
+                <ul id="ul_fa_reqs" class="nav nav-tabs" role="tablist" style="border-bottom: 0">
+                    <li class="hide"><a class="nav-link" data-toggle="tab" href="#tabfabr-1" aria-expanded="true">Textile analysis</a></li>
+                    <li class="hide"><a class="nav-link" data-toggle="tab" href="#tabfabr-2" aria-expanded="true">Laboratory testing</a></li>
+                    <li class="hide"><a class="nav-link" data-toggle="tab" href="#tabfabr-3" aria-expanded="true">Search for hangers by fabric description</a></li>
+                    <li class="hide"><a class="nav-link" data-toggle="tab" href="#tabfabr-4" aria-expanded="true">Projected textile analysis</a></li>
+                    <li class="hide"><a class="nav-link" data-toggle="tab" href="#tabfabr-5" aria-expanded="true">Fabric quotation</a></li>
+                    <li class="hide"><a class="nav-link" data-toggle="tab" href="#tabfabr-7" aria-expanded="true">Search for a past analysis report (2011 - 2016)</a></li>
+                </ul>
+            </div>
+            <div class="text-right">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <span class="fa fa-reply-all"></span>
+                    Return
+                </button>
+                <button type="button" class="btn btn-primary" id="btn_guardar">
+                    <span class="fa fa-check"></span>
+                    Confirm
+                </button>
+            </div>
+            <hr />
+        </div>
+    </div>
+    <div class="form-horizontal row">
+        <div class="tab-content" id="tab_fa_reqs">
+            <div role="tabpanel" id="tabfabr-1" class="tab-pane">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3 text-left">Is Comparative:</label>
+                        <div class="col-sm-4">
+                            <div class="col-sm-6">
+                                <div class="radio radio-green">
+                                    <input id="radio_req_1" type="radio" name="comparative_radio" checked="">
+                                    <label for="radio_req_1">
+                                        <b>Yes</b>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="radio radio-green">
+                                    <input id="radio_req_2" type="radio" name="comparative_radio">
+                                    <label for="radio_req_2">
+                                        <b>No</b>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="input-group">
+                                <div class="has-float-label">
+                                    <input class="form-control" id="txtRQATX" type="text" placeholder="Standart ATX">
+                                    <label for="txtRqATX">Standart ATX</label>
+                                </div>
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="fa fa-search"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="has-float-label">
+                                <textarea class="form-control" id="txtRQCommnents" rows="2" placeholder="Commnents"></textarea>
+                                <label for="txtRQCommnents">Commnents</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" id="tabfabr-2" class="tab-pane">
+
+                <div id="div_formulario" class="col-sm-12">
+
+                    <div class="col-lg-6">
+                        @*<div id="div_datos" class="ibox">*@
+                            @*<div class="col-sm-12">*@
+
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-6">Reproceso:</label>
+                                            <div class="col-sm-6">
+                                                <div class="col-sm-6">
+                                                    <div class="radio radio-green">
+                                                        <input id="radio1" type="radio" name="detail_reproceso" class="_rad">
+                                                        <label for="radio1">
+                                                            <b>Si</b>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="radio radio-green">
+                                                        <input id="radio2" type="radio" name="detail_reproceso" class="_rad">
+                                                        <label for="radio2">
+                                                            <b>No</b>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+
+                                    </div>
+                                </div>
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <div class="has-float-label">
+                                                    <input id="txt_partida" class="form-control _enty_grabar" type="text" placeholder="Número Partida" data-id="numeropartida" data-required="true">
+                                                    <label for="txt_partida">Número Partida</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <div class="has-float-label">
+                                                    <select id="cbo_paqueteprueba" disabled class="form-control _enty_grabar" data-id="idpaqueteprueba" data-required="true"></select>
+                                                    <label for="cbo_paqueteprueba">Paquete Prueba</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <div class="has-float-label">
+                                                    <select id="cbo_fabrica" disabled class="form-control _enty_grabar" data-id="idfabrica" data-required="true"></select>
+                                                    <label for="cbo_fabrica">Fabrica</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <div class="has-float-label">
+                                                    <select id="cbo_tintoreria" class="form-control _enty_grabar _select2" style="width:100%" data-id="idtintoreria" data-required="true"></select>
+                                                    <label for="cbo_tintoreria">Tintoreria</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <div class="has-float-label">
+                                                    <select id="cbo_cliente" disabled class="form-control _enty_grabar" data-id="idcliente"></select>
+                                                    <label for="cbo_cliente">Cliente</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <div class="has-float-label">
+                                                    <select id="cbo_temporada" disabled class="form-control _enty_grabar" data-id="idclientetemporada"></select>
+                                                    <label for="cbo_temporada">Temporada</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <div class="has-float-label">
+                                                    <input id="txt_codigotela" disabled class="form-control _enty_grabar" type="text" placeholder="Código de Tela" data-id="codigotela">
+                                                    <label for="txt_codigotela">Código de Tela</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="div_cbo_color" class="col-sm-6 hide">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <div class="has-float-label">
+                                                    <select id="cbo_color" class="form-control _enty_grabar_color _select2" data-id="idcolor" data-required="true"></select>
+                                                    <label for="cbo_color">Color</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="div_txt_color" class="col-sm-6 hide">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <div class="has-float-label">
+                                                    <input id="txt_color" class="form-control _enty_grabar_color" type="text" placeholder="Color" data-id="color" data-required="true">
+                                                    <label for="txt_color">Color</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <div class="has-float-label">
+                                                    <textarea id="txt_descripcion_tela" disabled class="form-control _enty_grabar" rows="2" placeholder="Commnents" data-id="descripciontela" style="resize:none"></textarea>
+                                                    <label for="txt_descripcion_tela">Descripción Tela</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <div class="has-float-label">
+                                                    <input id="txt_densidad" disabled class="form-control _enty_grabar" type="text" placeholder="Densidad" data-id="densidad">
+                                                    <label for="txt_densidad">Densidad</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <div class="has-float-label">
+                                                    <select id="cbo_lavado" disabled class="form-control _enty_grabar" data-id="idlavado"></select>
+                                                    <label for="cbo_lavado">Lavado</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <div class="has-float-label">
+                                                    <select id="cbo_proceso" class="form-control _enty_grabar _select2" data-id="idproceso" data-required="true"></select>
+                                                    <label for="cbo_proceso">Proceso</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-horizontal row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <div class="has-float-label">
+                                                    <textarea id="txt_comentario" class="form-control _enty_grabar" rows="2" placeholder="Comentario" data-id="comentario" style="resize:none"></textarea>
+                                                    <label for="txt_comentario">Comentario</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            @*</div>*@
+                        @*</div>*@
+                    </div>
+
+                    <div class="col-lg-6">
+                        @*<div class="ibox">*@
+
+
+                            <div class="form-horizontal row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label class="control-label">Instruccion de Cuidado:</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <div class="has-float-label">
+                                                <input id="txt_buscador" class="form-control" type="text" placeholder="Buscador">
+                                                <label for="txt_buscador">Buscador</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-horizontal row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <div class="has-float-label">
+                                                <textarea id="txt_instruccioncuidado" disabled class="form-control _enty_grabar" rows="2" placeholder="Instrucción de Cuidado" data-id="instruccioncuidado" style="resize:none"></textarea>
+                                                <label for="txst_instruccioncuidado">Instrucción de Cuidado</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-horizontal row hide">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <div class="has-float-label">
+                                                <input id="txt_buscador" class="form-control" type="text" placeholder="Buscador">
+                                                <label for="txt_buscador">Buscador</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 hide">
+                                    <div class="form-group ">
+                                        <div class="col-sm-12">
+                                            <div class="has-float-label">
+                                                <select id="cbo_categoria_ic" class="form-control" data-id="idcategoriainstruccioncuidado"></select>
+                                                <label for="cbo_categoria_ic">Categoria</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-horizontal row">
+                                <div id="div_tbl_ic" class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <div class="table-responsive">
+                                                <table id="tbl_instruccioncuidado" class="footable table table-striped table-bordered table-hover _enty" data-page-size="20" data-filter=#txt_buscador>
+                                                    <thead>
+                                                        <tr>
+                                                            <th data-sort-ignore="true"></th>
+                                                            <th data-sort-ignore="true">Categoria</th>
+                                                            <th data-sort-ignore="true">Instrucción de Cuidado</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td colspan="8">
+                                                                <ul class="pagination pull-right"></ul>
+                                                            </td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        @*</div>*@
+                    </div>
+
+                    <div class="col-lg-12">
+                        @*<div class="col-sm-12">*@
+
+                            <div class="form-horizontal row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label class="control-label">Partida Reproceso:</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-horizontal row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <div class="has-float-label">
+                                                <textarea id="txst_solicitud_lab" disabled class="form-control _enty_grabar" rows="2" placeholder="Solicitud de Laboratorio" data-id="instruccioncuidado" style="resize:none"></textarea>
+                                                <label for="txst_solicitud_lab">Solicitud de Laboratorio</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-horizontal row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <div class="has-float-label">
+                                                <input id="txt_buscador_solicitud" class="form-control" type="text" placeholder="Buscador">
+                                                <label for="txt_buscador_solicitud">Buscador</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 hide">
+                                    <div class="form-group ">
+                                        <div class="col-sm-12">
+                                            <div class="has-float-label">
+                                                <select id="cbo_categoria_ic" class="form-control" data-id="idcategoriainstruccioncuidado"></select>
+                                                <label for="cbo_categoria_ic">Categoria</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-horizontal row">
+                                <div id="div_tbl_solicitud" class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <div class="table-responsive">
+                                                <table id="tbl_solicitud" class="footable table table-striped table-bordered table-hover _enty" data-page-size="10" data-filter=#txt_buscador_solicitud>
+                                                    <thead>
+                                                        <tr>
+                                                            <th data-sort-ignore="true"></th>
+                                                            <th data-sort-ignore="true">Reporte Tecnico</th>
+                                                            <th data-sort-ignore="true">Numero Partida</th>
+                                                            <th data-sort-ignore="true">Cliente</th>
+                                                            <th data-sort-ignore="true">Fabrica</th>
+                                                            <th data-sort-ignore="true">Estado</th>
+                                                            <th data-sort-ignore="true">Estado Lab</th>
+                                                            <th data-sort-ignore="true">Estado Tono</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td colspan="8">
+                                                                <ul class="pagination pull-right"></ul>
+                                                            </td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        @*</div>*@
+                    </div>
+
+                </div>
+            </div>
+            <div role="tabpanel" id="tabfabr-3" class="tab-pane">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="has-float-label">
+                                <textarea class="form-control" id="txtRQDescription" rows="2" placeholder="Description"></textarea>
+                                <label for="txtRQDescription">Description</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="has-float-label">
+                                <textarea class="form-control" id="txtRQCommnents2_2" rows="2" placeholder="Commnents"></textarea>
+                                <label for="txtRQCommnents2_2">Commnents</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" id="tabfabr-4" class="tab-pane">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3 text-left">Is Comparative:</label>
+                        <div class="col-sm-4">
+                            <div class="col-sm-6">
+                                <div class="radio radio-green">
+                                    <input id="radio_req_3" type="radio" name="comparative_radio2" checked="">
+                                    <label for="radio_req_3">
+                                        <b>Yes</b>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="radio radio-green">
+                                    <input id="radio_req_4" type="radio" name="comparative_radio2">
+                                    <label for="radio_req_4">
+                                        <b>No</b>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="input-group">
+                                <div class="has-float-label">
+                                    <input class="form-control" id="txtRQATX2" type="text" placeholder="Standart ATX">
+                                    <label for="txtRQATX2">Standart ATX</label>
+                                </div>
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="fa fa-search"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="has-float-label">
+                                <textarea class="form-control" id="txtRQCommnents2" rows="2" placeholder="Commnents"></textarea>
+                                <label for="txtRQCommnents2">Commnents</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" id="tabfabr-5" class="tab-pane">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3 text-left">Modalidad:</label>
+                        <div class="col-sm-4">
+                            <div class="col-sm-6">
+                                <div class="checkbox checkbox-green">
+                                    <input id="checkbox_mod_1" type="checkbox" name="modalidad_checkbox" checked="">
+                                    <label for="checkbox_mod_1">
+                                        <b>Sample</b>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="checkbox checkbox-green">
+                                    <input id="checkbox_mod_2" type="checkbox" name="modalidad_checkbox">
+                                    <label for="checkbox_mod_2">
+                                        <b>Production</b>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="has-float-label">
+                                <select class="form-control" id="txtRQUnidad">
+                                    <option>Kilograms</option>
+                                    <option>Meters</option>
+                                    <option>Yards</option>
+                                </select>
+                                <label for="txtRQUnidad">Unidad</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="input-group">
+                                <div class="has-float-label">
+                                    <input class="form-control" id="txtRQQuantity" type="number" placeholder="Quantity">
+                                    <label for="txtRQQuantity">Quantity</label>
+                                </div>
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-warning" onclick="app_FabricReqs.fn_add()">
+                                        <span class="fa fa-plus"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <table class="table table-hover table-bordered table-vertical-center" id="tbl_cotizacion">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Quantity</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody_cantidades"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="has-float-label">
+                                <textarea class="form-control" id="txtRQCommnents1_1" rows="2" placeholder="Commnents"></textarea>
+                                <label for="txtRQCommnents1_1">Commnents</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" id="tabfabr-7" class="tab-pane">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="has-float-label">
+                                <input class="form-control" id="txtRQATXSearch" type="text" placeholder="ATX to Search">
+                                <label for="txtRQATXSearch">ATX to Search</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="has-float-label">
+                                <textarea class="form-control" id="txtRQCommnents2_4" rows="2" placeholder="Commnents"></textarea>
+                                <label for="txtRQCommnents2_4">Commnents</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

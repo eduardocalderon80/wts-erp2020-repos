@@ -1,0 +1,482 @@
+﻿<div class="row wrapper border-bottom white-bg page-heading">
+    <div id="content_header">
+        <div class="col-lg-8">
+            <h2>
+                @*<i class="fa fa-car"></i>*@
+                Messenger Service
+            </h2>
+            <ol class="breadcrumb">
+                <li>
+                    View of Active Shipments
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-4" style="text-align:right;">
+            <h2 class="font-bold" id="contador">
+                S/. 390,00
+            </h2>
+            <ol class="breadcrumb">
+                <li>
+                    Time Remaining Next Today Shipment
+                </li>
+            </ol>
+        </div>
+
+    </div>
+    <div class="col-lg-8">
+        <ol class="breadcrumb">
+            <li>
+                &nbsp;
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-12" style="text-align:right;">
+        <ol class="breadcrumb">
+            <li>
+                <button class="btn btn-success btn-xs">Ruta A</button>
+                <button class="btn btn-primary btn-xs" type="button">Ruta B</button>
+                <button class="btn btn-danger btn-xs" type="button">Emergecy</button>
+                <button class="btn btn-sucess btn-xs" type="button">Others</button>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content gray-bg animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>
+                        <span class="text-success" id="titleTablaMananaHoy"><b>Location on Map <span id="routeTittle"></span></b></span>
+                    </h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link" onclick="viewMap()">
+                            <i id="flechaHoy" class="fa fa-chevron-up"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content" id="contentMap">
+                    <div class="google-map" id="map1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="ibox">
+
+            <div class="col-md-6">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <div class="col-md-2">
+                            <h5>MOTO A</h5>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="choferA">
+                                <a href="#" class="btn btn-xs btn-outline btn-danger" data-toggle="modal" data-target="#myModa_ChoferRouteA0">Assign Driver</a>
+                            </div>
+                            <div id="txtChoferA">
+                                <span class="text-success" id="nomChoferA"></span>&nbsp;&nbsp;&nbsp;
+                                <span id="spanchoferrutaa" class="hide" style="color:red;display:inline;cursor:pointer;" onclick="EliminarAsignacion('Ruta A')"><i class="fa fa-times"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-7" id="statusChoferA"></div>
+                    </div>
+                    <div class="ibox-content">
+                        <div>
+                            <div>
+                                <div class="row">
+                                    <div class="table-responsive">
+                                        <input type="text" class="form-control input-sm m-b-xs" id="filterA"
+                                               placeholder="Search in table">
+                                        <table style="width:100%" height="100" class="footable table table-stripped table-bordered " data-page-size="4" data-filter=#filterA>
+                                            <thead>
+                                                <tr>
+                                                    <th>Destination</th>
+                                                    <th>Contact</th>
+                                                    <th>Service</th>
+                                                    <th>Delivery Time</th>
+                                                    <th>Ship by</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="contentTableA"></tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="6">
+                                                        <ul class="pagination pull-right"></ul>
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group">
+                            <a href="#" class="btn btn-primary btn-sm" id="btn_viewmap1"><i class="fa fa-car"></i> View Map</a>
+                            <a href="#" class="btn btn-success btn-sm" id="btn_newroute1"><i class="fa fa-plus"></i> Add Route</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <div class="col-md-2">
+                            <h5>MOTO B</h5>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="choferB">
+                                <a href="#" class="btn btn-xs btn-outline btn-danger" data-toggle="modal" data-target="#myModa_ChoferRouteB0">Assign Driver</a>
+                            </div>
+                            <div id="txtChoferB">
+                                <span class="text-success" id="nomChoferB"></span>&nbsp;&nbsp;&nbsp;
+                                <span id="spanchoferrutab" class="hide" style="color:red;display:inline;cursor:pointer;" onclick="EliminarAsignacion('Ruta B')"><i class="fa fa-times"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-7" id="statusChoferB"></div>
+                    </div>
+                    <div class="ibox-content">
+                        <div>
+                            <div>
+                                <div class="row">
+                                    <div class="table-responsive">
+                                        <input type="text" class="form-control input-sm m-b-xs" id="filterB"
+                                               placeholder="Search in table">
+                                        <table style="width:100%" height="100" class="footable table table-stripped table-bordered " data-page-size="4" data-filter=#filterB>
+                                            <thead>
+                                                <tr>
+                                                    <th>Destination</th>
+                                                    <th>Contact</th>
+                                                    <th>Service</th>
+                                                    <th>Delivery Time</th>
+                                                    <th>Ship by</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="contentTableB"></tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="6">
+                                                        <ul class="pagination pull-right"></ul>
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group">
+                            <a href="#" class="btn btn-primary btn-sm" id="btn_viewmap2"><i class="fa fa-car"></i> View Map</a>
+                            <a href="#" class="btn btn-success btn-sm" id="btn_newroute2"><i class="fa fa-plus"></i> Add Route</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="ibox">
+            <div class="col-md-6">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <div class="col-md-2">
+                            <h5>VAN</h5>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="choferVAN">
+                                <a href="#" class="btn btn-xs btn-outline btn-danger" data-toggle="modal" data-target="#myModa_ChoferRouteC0">Assign Driver</a>
+                            </div>
+                            <div id="txtChoferVAN">
+                                <span class="text-success" id="nomChoferVAN"></span>&nbsp;&nbsp;&nbsp;
+                                <span id="spanchofervan" class="hide" style="color:red;display:inline;cursor:pointer;" onclick="EliminarAsignacion('VAN')"><i class="fa fa-times"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-7" id="statusChoferC"></div>
+                    </div>
+                    <div class="ibox-content">
+                        <div>
+                            <div>
+                                <div class="row">
+                                    <div class="table-responsive">
+                                        <input type="text" class="form-control input-sm m-b-xs" id="filterC"
+                                               placeholder="Search in table">
+                                        <table style="width:100%" height="100" class="footable table table-stripped table-bordered " data-page-size="4" data-filter=#filterC>
+                                            <thead>
+                                                <tr>
+                                                    <th>Destination</th>
+                                                    <th>Contact</th>
+                                                    <th>Service</th>
+                                                    <th>Delivery Time</th>
+                                                    <th>Ship by</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="contentTableC"></tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="6">
+                                                        <ul class="pagination pull-right"></ul>
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group">
+                            <a href="#" class="btn btn-primary btn-sm" id="btn_viewmap3"><i class="fa fa-car"></i> View Map</a>
+                            <a href="#" class="btn btn-success btn-sm" id="btn_newroute3"><i class="fa fa-plus"></i> Add Route</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <div class="col-md-2">
+                            <h5>AUTO</h5>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="choferAUTO">
+                                <a href="#" class="btn btn-xs btn-outline btn-danger" data-toggle="modal" data-target="#myModa_ChoferRouteD0">Assign Driver</a>
+                            </div>
+                            <div id="txtChoferAUTO">
+                                <span class="text-success" id="nomChoferAUTO"></span>&nbsp;&nbsp;&nbsp;
+                                <span id="spanchoferauto" class="hide" style="color:red;display:inline;cursor:pointer;" onclick="EliminarAsignacion('AUTO')"><i class="fa fa-times"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-7" id="statusChoferD"></div>
+                    </div>
+                    <div class="ibox-content">
+                        <div>
+                            <div>
+                                <div class="row">
+                                    <div class="table-responsive">
+                                        <input type="text" class="form-control input-sm m-b-xs" id="filterD"
+                                               placeholder="Search in table">
+                                        <table style="width:100%" height="100" class="footable table table-stripped table-bordered " data-page-size="4" data-filter=#filterD>
+                                            <thead>
+                                                <tr>
+                                                    <th>Destination</th>
+                                                    <th>Contact</th>
+                                                    <th>Service</th>
+                                                    <th>Delivery Time</th>
+                                                    <th>Ship by</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="contentTableD"></tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="6">
+                                                        <ul class="pagination pull-right"></ul>
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group">
+                            <a href="#" class="btn btn-primary btn-sm" id="btn_viewmap4"><i class="fa fa-car"></i> View Map</a>
+                            <a href="#" class="btn btn-success btn-sm" id="btn_newroute4"><i class="fa fa-plus"></i> Add Route</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="ibox">
+
+            <div class="col-md-12">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>Emergency Mobility TAXI</h5>
+                        <span style="float:right" class="text-navy"></span>
+                    </div>
+                    <div class="ibox-content">
+                        <div>
+                            <div>
+                                <div class="row">
+                                    <div class="table-responsive">
+                                        <input type="text" class="form-control input-sm m-b-xs" id="filterE"
+                                               placeholder="Search in table">
+                                        <table style="width:100%" height="100" class="footable table table-stripped table-bordered " data-page-size="4" data-filter=#filterE>
+                                            <thead>
+                                                <tr>
+                                                    <th>Destination</th>
+                                                    <th>Contact</th>
+                                                    <th>Service</th>
+                                                    <th>Delivery Time</th>
+                                                    <th>Ship by</th>
+                                                    <th>Approved by</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="contentTableE"></tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="8">
+                                                        <ul class="pagination pull-right"></ul>
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modales">
+        <div id="modalesRouteA"></div>
+        <div id="modalesRouteB"></div>
+        <div id="modalesRouteC"></div>
+        <div id="modalesRouteD"></div>
+        <div id="modalesRouteE"></div>
+        <div id="modalesChoferRouteA">
+            <div class="modal inmodal" id="myModa_ChoferRouteA0" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog">
+                    <div class="modal-content animated flipInY">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title">Assign Driver</h4>
+                            <small class="font-bold">Select the driver assigned today for Route A</small>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                <select id="cboChoferA" class="form-control" name="servicio">
+                                    <option value="213">JORGE ALACUTE</option>
+                                    <option value="215">WILFREDO AQUISE</option>
+                                    <option value="241">JORGE MEDINA</option>
+                                    <option value="248">CARLOS NAVARRO</option>
+                                </select>
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-success" onclick="asignaChofer('Ruta A');" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="modalesChoferRouteB">
+            <div class="modal inmodal" id="myModa_ChoferRouteB0" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog">
+                    <div class="modal-content animated flipInY">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title">Assign Driver</h4>
+                            <small class="font-bold">Select the driver assigned today for Route B</small>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                <select id="cboChoferB" class="form-control" name="servicio">
+                                    <option value="213">JORGE ALACUTE</option>
+                                    <option value="215">WILFREDO AQUISE</option>
+                                    <option value="241">JORGE MEDINA</option>
+                                    <option value="248">CARLOS NAVARRO</option>
+                                </select>
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-success" onclick="asignaChofer('Ruta B');" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="modalesChoferRouteC">
+            <div class="modal inmodal" id="myModa_ChoferRouteC0" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog">
+                    <div class="modal-content animated flipInY">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title">Assign Driver</h4>
+                            <small class="font-bold">Select the driver assigned today for VAN</small>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                <select id="cboChoferVAN" class="form-control" name="servicio">
+                                    <option value="213">JORGE ALACUTE</option>
+                                    <option value="215">WILFREDO AQUISE</option>
+                                    <option value="241">JORGE MEDINA</option>
+                                    <option value="248">CARLOS NAVARRO</option>
+                                </select>
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-success" onclick="asignaChofer('VAN');" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="modalesChoferRouteD">
+            <div class="modal inmodal" id="myModa_ChoferRouteD0" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog">
+                    <div class="modal-content animated flipInY">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title">Assign Driver</h4>
+                            <small class="font-bold">Select the driver assigned today for AUTO</small>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                <select id="cboChoferAUTO" class="form-control" name="servicio">
+                                    <option value="213">JORGE ALACUTE</option>
+                                    <option value="215">WILFREDO AQUISE</option>
+                                    <option value="241">JORGE MEDINA</option>
+                                    <option value="248">CARLOS NAVARRO</option>
+                                </select>
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-success" onclick="asignaChofer('AUTO');" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@*<div style="display:none;" id="divContentss">
+
+        <div class="modal-footer">
+
+            <div class="row">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="input-group"><select class="form-control" style="width:150px;"><option value="' + route + '">Route B</option><option value="' + route + '">VAN</option><option value="' + route + '">AUTO</option></select><span class="input-group-append"><button type="button" class="btn btn-primary" onclick="moveMobility(\'' + idmensaje + '\',\'' + route + '\')">Move!</button></span></div>
+                            <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-success" onclick="asignaChofer('AUTO');" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>*@

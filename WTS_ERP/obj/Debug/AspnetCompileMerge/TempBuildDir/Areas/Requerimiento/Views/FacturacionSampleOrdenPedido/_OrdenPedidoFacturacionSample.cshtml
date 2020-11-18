@@ -1,0 +1,209 @@
+﻿<style>
+    #panelEncabezado_OrdenPedidoFacturacionSample ._cls_row_selected {
+        background-color: #1ab394;
+    }
+</style>
+
+<div id="panelEncabezado_OrdenPedidoFacturacionSample" tabindex="0" style="outline:none;">
+    <div class="hide">
+        <input type="text" id="txtpar_OrdenPedidoFacturacionSample" value="DATA-PARAMETRO" />
+        <input type="text" id="hf_idordenpedido" value="0" data-required="false" data-id="IdOrdenPedido" data-min="1" data-max="20" />
+        @*<input type="text" id="rutaFileServerEstilo" value="@ViewBag.RutaFileServer" />*@
+    </div>
+    <div class="form-horizontal row">
+        <div class="text-right">
+            <button type="button" class="btn btn-default" id="btnGenerarOP_Return">
+                <span class="fa fa-ban"></span>
+                Return
+            </button>
+            <button type="button" class="btn btn-primary" id="btnGenerarOP_Previous">
+                <span class="fa fa-chevron-left"></span>
+                Previous
+            </button>
+            <button type="button" class="btn btn-primary" id="btnGenerarOP_Next">
+                <span class="fa fa-chevron-right"></span>
+                Next
+            </button>
+            <button type="button" class="btn btn-success" id="btnGenerarOP_Save">
+                <span class="fa fa-save"></span>
+                Save
+            </button>
+
+        </div>
+        <hr class="modal_hr">
+        <div class="col-sm-12 m-b">
+            <div class="float-left">
+                <ul class="nav nav-tabs" role="tablist" id="ul_tabs_generarordenpedido">
+                    <li class="active cls_tab_generarop cls_li_op_requerimientomuestra" data-tag="op_requerimientomuestra"><a class="nav-link" data-toggle="tab" href="#tab-samplelist_op" aria-expanded="true">Samples</a></li>
+                    <li class="cls_tab_generarop cls_li_op_detalle" data-tag="op_detalle"><a class="nav-link" data-toggle="tab" href="#tab-ordenpedidodetalle_op" aria-expanded="true">Purchase Order Detail</a></li>
+                    <li class="cls_tab_generarop cls_li_op_datosadicionales" data-tag="op_datosadicionales"><a class="nav-link" data-toggle="tab" href="#tab-datosadicionales_op" aria-expanded="true">Additional Data</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="form-horizontal row" style="max-height:405px; overflow-y: auto;">
+        <div class="tab-content">
+            <div role="tabpanel" id="tab-samplelist_op" class="tab-pane active">
+                <div class="col-sm-12">
+                    <div class="form-horizontal">
+                        <div class="col-sm-12">
+                            <div class="form-group" id="div_grupo_proveedor">
+                                <label class="control-label col-sm-2">Supplier</label>
+                                <div class="col-sm-6">
+                                    <select class="form-control _cls_disabled_edit" id="cbo_proveedor_op">
+
+                                    </select>
+                                    @*<input type="text" id="txt_proveedor_op" list="_dl_proveedor_op" value="" />*@
+                                    @*<datalist id="_dl_proveedor_op"></datalist>*@
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Client</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="txt_cliente_op" value="" disabled />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="tbl_requerimientosample_op">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Style Code</th>
+                                        <th>Request</th>
+                                        <th>Sample</th>
+                                        <th>V</th>
+                                        <th>Ex Factory</th>
+                                        <th>In DC</th>
+                                        <th>Billable</th>
+                                        <th>It Will Cost</th>
+                                        <th>PO Number</th>
+                                        <th>Billing Status</th>
+                                    </tr>
+                                    <tr>
+                                        <th></th>
+                                        <th><input type="text" placeholder="Search" class="form-control _clsfilter" data-field="CodigoEstilo" /></th>
+                                        <th><input type="text" placeholder="Search" class="form-control _clsfilter" data-field="FechaCreacion" /></th>
+                                        <th><input type="text" placeholder="Search" class="form-control _clsfilter" data-field="NombreTipoMuestra" /></th>
+                                        <th><input type="text" placeholder="Search" class="form-control _clsfilter" data-field="Version" /></th>
+                                        <th><input type="text" placeholder="Search" class="form-control _clsfilter" data-field="ExFactoryInicial" /></th>
+                                        <th><input type="text" placeholder="Search" class="form-control _clsfilter" data-field="FechaInDC" /></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th><input type="text" placeholder="Search" class="form-control _clsfilter" data-field="PoNumber" /></th>
+                                        <th><input type="text" placeholder="Search" class="form-control _clsfilter" data-field="NombreEstadoFacturacionCatologo" /></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody_requerimientosample_op"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" id="tab-ordenpedidodetalle_op" class="tab-pane">
+                <div class="col-sm-12">
+                    <div class="form-horizontal">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <div class="col-sm-1 col-sm-offset-7">
+                                    <input type="text" class="form-control _cls_disabled_edit" id="txt_updateprecio" />
+                                </div>
+                                <div class="col-sm-1">
+                                    <button type="button" class="btn btn-sm btn-info _cls_disabled_edit" id="btn_updateprecio">Price Update</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-12" id="div_tbl_files_estilo">
+                    <table class="table table-hover table-bordered table-vertical" id="tbl_RequerimientoDetalle_op">
+                        <thead>
+                            <tr>
+                                <th>Style Code</th>
+                                <th>Sample</th>
+                                <th>V</th>
+                                <th>Color Combo</th>
+                                <th>Size</th>
+                                <th>Sample Required</th>
+                                <th>Counter Sample Will be Billed</th>
+                                <th>Sample to be Billed</th>
+                                <th>Sample Price</th>
+                                <th>Counter Sample to be Billed</th>
+                                <th>Counter Sample Price</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody_RequerimientoDetalle_op"></tbody>
+                    </table>
+                </div>
+                <div class="col-sm-12 text-right">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-sm-1 col-sm-offset-9">Total</label>
+                            <div class="col-sm-2 text-right">
+                                <input type="text" class="form-control font-bold" id="txt_total_op" disabled />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" id="tab-datosadicionales_op" class="tab-pane">
+                <div class="col-sm-12">
+                    <div class="form-horizontal">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                @*_cls_disabled_edit*@
+                                <label title="Upload File" for="file_archivo_op" class="col-sm-2 btn btn-warning">
+                                    @*_cls_disabled_edit*@
+                                    <input type="file" id="file_archivo_op" class="hide">
+                                    <i class="fa fa-upload"></i>
+                                    <span class="hidden-xs">Attach Cost Sheet</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-12">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered" id="tbl_adjuntararchivo_op">
+                            <thead>
+                                <tr>
+                                    <th class="hide"></th><!--COLUMNA OCULTA PARA EL INPUT FILE OCULTO-->
+                                    <th></th>
+                                    <th>Name</th>
+                                    <th>User Name</th>
+                                    <th>Upload Date</th>
+
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_adjuntararchivo_op">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-horizontal">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="control-label col-sm-1">Comment</label>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" id="txta_comentario_op" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

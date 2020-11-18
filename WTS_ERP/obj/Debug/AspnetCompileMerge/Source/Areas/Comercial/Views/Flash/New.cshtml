@@ -1,0 +1,906 @@
+﻿<style type="text/css">
+    /* 1 */
+    .left {
+        float: left;
+        width:50%;
+    }
+
+    .right {
+        float: right;
+        width: 50%;
+    }
+    .row-selected {
+        background-color: #1ab394 !important;
+
+    }
+    .clsefi {
+        display: none;
+    }
+
+    table.showefi .col1 {
+        display: table-cell;
+    }
+
+    .table {
+        margin-bottom:5px;
+    } 
+
+    table.show1 .col1 {
+        display: table-cell;
+    }   
+
+    th {
+        padding: 5px;
+        border: 1px solid #e7e7e7;
+        background-color: #F5F5F6;
+        text-align: center;
+    }
+
+    td {
+        padding: 5px;
+        border-bottom: 1px solid #e7e7e7;
+        padding-left: 5px;
+    }
+
+    .altura td {
+        height: 20px;
+        padding: 1px;
+    }
+
+    table2 {
+        table-layout: fixed;
+    }
+
+    .btn-circle.btn-xl {
+        width: 70px;
+        height: 70px;
+        padding: 10px 16px;
+        border-radius: 35px;
+        font-size: 24px;
+        line-height: 1.33;
+    }
+
+    .btn-circle {
+        width: 30px;
+        height: 30px;
+        padding: 6px 0px;
+        border-radius: 15px;
+        text-align: center;
+        font-size: 12px;
+        line-height: 1.42857;
+    }
+
+    .ibox {
+        clear: both;
+        /* EDU: LO MODIFIQUE PARA QUITAR MARGEN INFERIOR*/
+        /*margin-bottom: 25px;*/
+        /*edu: para quitar espacios entre div usando ibox*/
+        margin-bottom: 5px !important;
+        margin-top: 0;
+        padding: 0;
+    }
+
+    #panelencabezado_Flash .ibox-content {
+        /*background-color: #ffffff;*/
+        color: inherit;
+        /* EDU: LO MODIFIQUE PARA QUITAR MARGEN INFERIOR*/
+        /*padding: 15px 20px 20px 20px;*/
+        /*edu: para quitar espacios entre div usando ibox*/
+        padding: 5px 20px 5px 10px !important;
+        border-color: #e7eaec;
+        border-image: none;
+        border-style: solid solid none;
+        border-width: 1px 0;
+    }
+
+    .div_tela {
+        background: #FFFFFF;
+        border: 1px solid #e7eaec;
+        height: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        box-shadow: 2px 2px 10px #666;
+        vertical-align:middle;
+    }
+
+
+</style>
+<div class="ibox" id="panelencabezado_Flash">
+
+    <div class="row wrapper white-bg page-heading">
+        <div id="content_header" class="ibox float-e-margins">
+            <div id="divtituloprincipal" class="col-sm-10">
+                <h2 class="text-navy bold"><b>New Flash Cost</b></h2>
+            </div>
+        </div>
+        <div class="hide">
+            <input type="text" id="txtpar_new" value="DATA-PARAMETRO" />
+        </div>
+        <div id="content_header" class="ibox float-e-margins">
+            <div id="divtituloprincipal_a" class="col-sm-3">
+                <table width="100%" style="border-bottom-color:white">
+                    <tr>
+                        <td width="50%" style="vertical-align:top;text-align:right;border-bottom-color:white;"><button id="btnFlasA" type="button" class="btn btn-primary btn-circle"><i class="fa fa-check"></i></button></td>
+                        <td width="50%" style="vertical-align:text-top;border-bottom-color:white;"><h3><b>Flash A &nbsp;<span id="btnUI01" class="fa fa-info-circle" style="color:darkblue"></span></b></h3></td>
+                    </tr>
+                </table>
+
+            </div>
+            <div id="divtituloprincipal_b" class="col-sm-3">
+                <table width="100%">
+                    <tr>
+                        <td width="50%" style="vertical-align:top;text-align:right;border-bottom-color:white;"><button id="btnFlasB" type="button" class="btn btn-default btn-circle"><i class="fa fa-check"></i></button></td>
+                        <td width="50%" style="vertical-align:text-top;border-bottom-color:white;"><h3><b>Flash B &nbsp;<span id="btnUI02" class="fa fa-info-circle" style="color:darkblue"></span></b></h3></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="divtituloprincipal_c" class="col-sm-4">
+                <table width="100%">
+                    <tr>
+                        <td width="50%" style="vertical-align:top;text-align:right;border-bottom-color:white;"><button id="btnFlasC" type="button" class="btn btn-default btn-circle"><i class="fa fa-check"></i></button></td>
+                        <td width="50%" style="vertical-align:text-top;border-bottom-color:white;"><h3><b>Flash C &nbsp;<span id="btnUI03" class="fa fa-info-circle" style="color:darkblue"></span></b></h3></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="divtituloprincipal_t" class="col-sm-2">
+                <button type="button" class="btn btn-default" id="btnReturnRequerimiento" style="width: 100%; display: none;">
+                    Return
+                    <span class="fa fa-reply-all"> </span>
+                </button>
+                <button id="btnTutorial" style="width:100%" type="button" class="btn btn-primary">
+                    Tutorial&nbsp;&nbsp;<i class="fa fa-camera"></i>
+                </button>
+                <button id="btn_save" style="width:100%" type="button" class="btn btn-success">
+                    Save&nbsp;&nbsp;<i class="fa fa-save"></i>
+                </button>
+            </div>
+        </div>
+        <div class="ibox" id="div_datosGeneral">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <a class="collapse-link left" style="width:40px">
+                        <span class="fa fa-chevron-circle-up fa-2x left icono_collapse"></span>
+                    </a>
+                    <h5 class="text-navy bold" style="margin-bottom:0px;margin-top:5px">General Data</h5>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-group left">
+                        <div class="form-horizontal row">
+                            <div class="col-sm-5">
+                                <label class="control-label">Date</label>
+                                <input type="text" autocomplete="off" id="txtdate" name="status" disabled placeholder="style" class="form-control">
+                            </div>
+                            <div class="col-sm-5">
+                                <label class="control-label">Style</label>
+                                <input type="text" autocomplete="off" id="txtstyle" name="status" maxlength="100" value="" placeholder="style" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-horizontal row">
+                            <div class="col-sm-5">
+                                <label class="control-label">Client</label>
+                                <select id="cboCli" class="form-control _enty" name="cboCli" data-id="cboCli" data-required="true"></select>
+
+                            </div>
+
+                            <div class="col-sm-5">
+                                <label class="control-label">Description</label>
+                                <input type="text" autocomplete="off" id="txtdescripcion" name="status" maxlength="300" value="" placeholder="Description" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group right">
+                        <div class="form-group left" style="width:20%">
+                            <h3>Minimum</h3>
+                            <h3>Quantity &nbsp;<span  id="btnUI12"  class="fa fa-info-circle" style="color:darkblue"></span></h3>
+                        </div>
+                        <div class="form-group right" style="width:80%">
+                            <div class="col-sm-4 col-xs-4 col-md-4 col-lg-4">
+                                <label class="control-label">Per Fabric</label>
+                                <input type="text" autocomplete="off" id="txtnroFabric" name="status" onkeypress="return DigitosEnterosFlash(event, this)" value="" class="form-control">
+                                <select id="cboNroFabric" class="form-control _enty" style="text-align:right" name="cboNroFabric"  data-id="cboNroFabric" data-required="true"></select>
+                            </div>
+                            <div class="col-sm-4 col-xs-4 col-md-4 col-lg-4">
+                                <label class="control-label">Per Color</label>
+                                <input type="text" autocomplete="off" id="txtnroColor" name="status" value="" maxlength="5" class="form-control">
+                                <select id="cboNroColor" class="form-control _enty" style="text-align:right" name="cboNroColor" onkeypress="return DigitosEnterosFlash(event, this)" data-id="cboNroColor" data-required="true"></select>
+                            </div>
+                            <div class="col-sm-4 col-xs-4 col-md-4 col-lg-4">
+                                <label class="control-label">Per Style</label>
+                                <input type="text" autocomplete="off" id="txtnroStyle" name="status" value="" maxlength="5" class="form-control">
+                                <select id="cboNroStyle" class="form-control _enty" style="text-align:right" name="cboNroStyle" onkeypress="return DigitosEnterosFlash(event, this)" data-id="cboNroStyle" data-required="true"></select>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ibox" id="div_datosFabric">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <a class="collapse-link left" style="width:40px">
+                        <span class="fa fa-chevron-circle-up fa-2x left icono_collapse"></span>
+                    </a>
+                    <h5 class="text-navy bold" style="margin-bottom:0px;margin-top:5px">Fabric details</h5>
+
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-group left" style="width:100%;">
+                        <div class="table-responsive" style="width:100%; overflow-x:auto;margin-right:0px;margin-left:0px">
+                            <table id="tbl_fabric" class="table2 table-bordered" style="table-layout:fixed;width:100%;">
+                                <thead id="th_fabric">
+                                    <tr id="h">
+                                        <th width="30"></th>
+                                        <th width="150">Location</th>
+                                        <th width="200">Structure</th>
+                                        <th width="120">Cost ($/Kg)</th>
+                                        <th width="120" id="costdy_h" style="display:none">Cost ($/Yd)</th>
+                                        <th width="120">Weight</th>
+                                        <th width="120">Unit</th>
+                                        <th width="120">Width</th>
+                                        <th width="120">Unit</th>
+                                        <th width="120">Efficiency</th>
+                                        <th width="120">Unit</th>
+                                        <th width="120" id="code_h" style="display:none">Code</th>
+                                        <th width="140" id="content_h" style="display:none">Content</th>
+                                        <th width="120" id="wash_h" style="display:none">Wash</th>
+                                        <th width="120" id="stock_h" style="display:none">Stock</th>
+                                        <th width="120" id="atx_h" style="display:none">ATX</th>
+                                        <th width="120" id="dye_h" style="display:none">Dye Method</th>
+                                        <th width="300" id="obs_h" style="display:none">Observation</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody_fabric">
+                                    <tr id="mf">
+                                        <td style=""></td>
+                                        <td id="tdf_mf" style=""><button id="btncandado_mf" type="button" style="display:none" class="btn btn-warning btn-circle _borrarfabric" data-toggle="tooltip" data-placement="top" title="Delete main data"><i class="fa fa-lock"></i></button><button id="btnbusqueda_mf" type="button" class="btn btn-success btn-circle _borrarfabric" data-toggle="tooltip" data-placement="top" title="Delete main data"><i class="fa fa-search"></i></button>&nbsp;&nbsp;Main fabric</td>
+                                        <td style=""> <input id="txtstruc_mf" name="mf" maxlength="30" type="text" autocomplete="off" value="" class="form-control"> </td>
+                                        <td style=""> <input id="txtcostdk_mf" name="mf" onkeypress="return DigitimosDosDecimales(event,this);" type="text" autocomplete="off" value="" class="form-control" style="text-align:right;background-color:#F8ECE0;"> </td>
+                                        <td id="costdy_mf" style="display:none;"> <input id="txtcostdy_mf" name="status" onkeypress="return DigitimosDosDecimales(event,this);" type="text"  autocomplete="off" disabled class="form-control" style="text-align:right;"></td>
+                                        <td style=""> <input id="txtwht_mf" name="mf" onkeypress="return DigitimosDosDecimales(event,this);" type="text"  autocomplete="off" value="" sufijo="mf" class="form-control" style="text-align:right;background-color:#F8ECE0;"> </td>
+                                        <td style=""> <select id="cbowht_mf" name="mf" data-required="true" class="form-control _enty"></select> </td>
+                                        <td style=""> <input id="txtwith_mf" name="mf" onkeypress="return DigitimosDosDecimales(event,this);" type="text"  autocomplete="off" value="" class="form-control" style="text-align:right;background-color:#F8ECE0;"> </td>
+                                        <td style=""> <select id="cbowith_mf" name="mf" data-required="true" class="form-control _enty"></select> </td>
+                                        <td> <input id="txtefi_mf" name="status" type="number" autocomplete="off"  value="" class="form-control" style="text-align:right;" disabled> </td>
+                                        <td style="text-align:center;vertical-align:middle"> <select id="cboefi_mf" name="cbo" data-required="true" class="form-control _enty"></select></td>
+                                        <td id="code_mf" style="display:none;"> <input id="txtcode_mf" name="status" type="text" autocomplete="off"  disabled value="" class="form-control"></td>
+                                        <td id="content_mf" style="display:none;"> <textarea id="txtcontent_mf" name="" rows="4" cols="15" class="form-control"></textarea></td>
+                                        <td id="wash_mf" style="text-align:center;vertical-align:middle;display:none"> <select id="cbowash_mf" name="cbo" data-required="true" class="form-control _enty"></select> </td>
+                                        <td id="stock_mf" style="display:none;"> <input id="txtstock_mf" name="status" type="number" autocomplete="off" disabled value="" class="form-control" /> </td>
+                                        <td id="atx_mf" style="display:none;"> <input id="txtatx_mf" name="status" type="text" autocomplete="off"  disabled value="" class="form-control"></td>
+                                        <td id="dye_mf" style="text-align:center;vertical-align:middle;display:none"> <select id="cbodye_mf" name="cbo" data-required="true" class="form-control _enty"></select> </td>
+                                        <td id="obs_mf" style="display:none;">  <textarea id="txtobserva_mf" name="" rows="4" cols="37" class="form-control"></textarea> </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div style="text-align:left" class="left"><a id="btnAddcomplementIcon" class="fa fa-plus" style="color:darkgreen"></a>&nbsp;<a id="btnAddcomplement" class="snippet-expand-link" style="color:darkgreen"><u><i><b>Add complement</b></i></u></a></div>
+                        <div style="text-align:right" class="right"><a id="btnPersonalizarFabric" class="snippet-expand-link"><u><i><b>Customize view </b></i></u></a><span  id="btnUI14"  class="fa fa-info-circle" style="color:darkblue"></span></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="ibox" id="div_datosDimension">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <a class="collapse-link left" style="width:40px">
+                        <span class="fa fa-chevron-circle-up fa-2x left icono_collapse"></span>
+                    </a>
+                    <h5 class="text-navy bold" style="margin-bottom:0px;margin-top:5px">Garment details</h5>
+
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div style="text-align:right;padding-bottom:5px;width:100%" class="right"><a id="btnPersonalizarMargin" class="snippet-expand-link"><u><i><b>Customize Margin </b></i></u></a><span  id="btnUI15"  class="fa fa-info-circle" style="color:darkblue"></span></div>
+                <div class="panel-body">
+                    <div class="form-group left" style="width:49%;">
+                        <div class="form-group div_tela" style="width:100%;text-align:center;">MAIN FABRIC</div>
+                        <div class="form-group left" style="width:100%">
+                            <div class="form-group left" style="width:49%;">
+                                <div class="table-responsive" style="width:100%; overflow-x:auto;margin-right:0px;margin-left:0px">
+                                    <table id="tbl_Garment" class="table table-bordered" style="width:100%;">
+                                        <thead id="th_Garment_mf">
+                                            <tr>
+                                                <th style="width:10px"></th>
+                                                <th style="width:50px" colspan="3">WIDTH</th>
+                                            </tr>
+                                            <tr id="h">
+                                                <th style="width:10px"></th>
+                                                <th style="width:40px">Concept</th>
+                                                <th style="width:50px">Value</th>
+                                                <th style="width:70px">Unit</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbody_Garment_mf">
+                                            <tr id="mfb" class="altura">
+                                                <td></td>
+                                                <td id="td_mfb">Body <span id="btnUI16" class="fa fa-info-circle" style="color:darkblue"></span></td>
+                                                <td><input id="txw_mfb" name="tbody_Garment_mf" maxlength="20" style="text-align:right" type="text" onkeypress="return DigitimosDosDecimales(event,this);" autocomplete="off"  value="" class="form-control cls_tbody_Garment_mf"> </td>
+                                                <td><select id="cbow_mfb" name="tbody_Garment_mf" data-required="true" class="form-control _enty cls_tbody_Garment_mf"></select> </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table id="tbl_Garment_tt" class="table" style="width:100%;">
+                                        <tbody id="tbody_Garment_mf_tt">
+                                            <tr id="mf_tw" class="altura">
+                                                <td>Total width</td>
+                                                <td id="tdmf_ttw" width="36%" style="border-top-color:black;text-align:right" name="mf"></td>
+                                                <td width="31%"><select id="cbow_mfb_tw" name="cbo" data-required="true" class="form-control _enty"></select> </td>
+                                                @*<td width="31%">meters</td>*@
+                                            </tr>
+                                            <tr id="mf_tc">
+                                                <td><b>Consumption</b></td>
+                                                <td id="tdmf_ttc" style="text-align:right"></td>
+                                                <td>garments</td>
+                                            </tr>
+                                            <tr id="mf_ta">
+                                                <td style="color:red">Adjusment</td>
+                                                <td id="tdmf_tta" style="border-top-color:black;text-align:right"></td>
+                                                <td>garments</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="form-group right" style="width:49%;">
+                                <div class="table-responsive" style="width:100%; overflow-x:auto;margin-right:0px;margin-left:0px">
+                                    <table id="tbl_Garmentfabric" class="table table-bordered" style="width:100%;">
+                                        <thead id="th_Garmentfabric">
+                                            <tr>
+                                                <th style="width:10px"></th>
+                                                <th style="width:50px" colspan="3">LENGTH</th>
+                                            </tr>
+                                            <tr id="h">
+                                                <th style="width:10px"></th>
+                                                <th style="width:40px">Concept</th>
+                                                <th style="width:50px">Value</th>
+                                                <th style="width:70px">Unit</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbody_length_Garmentfabric"></tbody>
+                                    </table>
+                                    <div style="text-align:left;padding:0px 0px 0px 0px" class="left"><span class="fa fa-plus-circle fa-2x" style="color:darkcyan" tabla="tbody_length_Garmentfabric" id="btnAddLen"></span> <a id="btnAddLenDes" tabla="tbody_length_Garmentfabric" class="snippet-expand-link"><b>Add concept</b></a></div>
+                                </div>
+                                <div>
+                                    <table id="tbl_Garment_tt" class="table" style="width:100%;">
+                                        <tbody id="tbody_ttlength_Garmentfabric">
+                                            <tr id="mf_tw" class="altura">
+                                                <td width="35%">Total length</td>
+                                                <td width="34%" style="border-top-color:black;text-align:right"></td>
+                                                <td width="31%"><select id="cbow_tl_mf" name="cbo" data-required="true" class="form-control _enty"></select> </td>
+                                            </tr>
+                                            <tr id="mf_tc">
+                                                <td><b>Consumption</b></td>
+                                                <td style="border-top-color:black;text-align:right"></td>
+                                                <td><select id="cbow_cs_mf" name="cbo" data-required="true" class="form-control _enty"></select> </td>
+                                            </tr>
+                                            <tr id="mf_ta">
+                                                <td style="color:red">Waste(??%)</td>
+                                                <td style="border-bottom-color:red"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr id="mf_ta">
+                                                <td><b>Total consumption</b></td>
+                                                <td style="border-top-color:black;text-align:right"></td>
+                                                <td><select id="cbow_tcs_mf" name="cbo" data-required="true" class="form-control _enty"></select> </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="listComplements" class="form-group right" style="width:49%;">
+                        <div class="form-group div_tela" style="width:100%;text-align:center;">COMPLEMENTS</div>
+                        @*<div id="div_C1" class="form-group left" style="width:100%;">
+                            <div class="form-group div_tela" style="width:100%;text-align:center;">COMPLEMENT C1</div>
+                            <div class="form-group left" style="width:100%;overflow-y:auto;height:600px">
+                                <div class="form-group left" style="width:49%;">
+                                    <div class="table-responsive" style="width:100%; overflow-x:auto;margin-right:0px;margin-left:0px">
+                                        <table id="tb_width_C1" class="table table-bordered" style="width:100%;">
+                                            <thead id="">
+                                                <tr>
+                                                    <th style="width:10px"></th>
+                                                    <th style="width:50px" colspan="3">WIDTH</th>
+                                                </tr>
+                                                <tr id="h">
+                                                    <th style="width:10px"></th>
+                                                    <th style="width:40px">Concept</th>
+                                                    <th style="width:50px">Value</th>
+                                                    <th style="width:70px">Unit</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tbody_width_C1"></tbody>
+                                        </table>
+                                        <table id="tb_ttwidth_C1" class="table" style="width:100%;">
+                                            <tbody id="tbody_ttwidth_C1">
+                                                <tr id="mf_tw" class="altura">
+                                                    <td width="42%">Total width</td>
+                                                    <td width="30%" style="border-top-color:black">??</td>
+                                                    <td width="28%"><select id="cbo_tw_C1" name="cbo" data-required="true" class="form-control _enty"></select> </td>
+                                                </tr>
+                                                <tr id="mf_tc">
+                                                    <td><b>Consumption</b></td>
+                                                    <td>??</td>
+                                                    <td>garments</td>
+                                                </tr>
+                                                <tr id="mf_ta">
+                                                    <td style="color:red">Adjusment</td>
+                                                    <td>??</td>
+                                                    <td>garments</td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="form-group right" style="width:49%;">
+                                    <div class="table-responsive" style="width:100%; overflow-x:auto;margin-right:0px;margin-left:0px">
+                                        <table id="tb_length_C1" class="table table-bordered" style="width:100%;">
+                                            <thead id="">
+                                                <tr>
+                                                    <th style="width:10px"></th>
+                                                    <th style="width:50px" colspan="3">LENGTH</th>
+                                                </tr>
+                                                <tr id="h">
+                                                    <th style="width:10px"></th>
+                                                    <th style="width:40px">Concept</th>
+                                                    <th style="width:50px">Value</th>
+                                                    <th style="width:70px">Unit</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tbody_length_C1"></tbody>
+                                        </table>
+                                        <div style="text-align:left" class="left"><span class="fa fa-plus-circle fa-2x" style="color:darkcyan" tabla="tbody_length_C1" id="btnAddLen_c1"></span> <a id="btnAddLenDes_c1" tabla="tbody_length_C1" class="snippet-expand-link"><b>Add concept</b></a></div>
+                                    </div>
+                                    <div>
+                                        <table id="tb_ttlength_C1" class="table" style="width:100%;">
+                                            <tbody id="tbody_ttlength_C1">
+                                                <tr id="mf_tw" class="altura">
+                                                    <td width="35%">Total length</td>
+                                                    <td width="34%" style="border-top-color:black">??</td>
+                                                    <td width="31%"><select id="cbow_tl_C1" name="cbo" data-required="true" class="form-control _enty"></select> </td>
+                                                </tr>
+                                                <tr id="mf_tc">
+                                                    <td><b>Consumption</b></td>
+                                                    <td>??</td>
+                                                    <td><select id="cbow_cs_C1" name="cbo" data-required="true" class="form-control _enty"></select> </td>
+                                                </tr>
+                                                <tr id="mf_ta">
+                                                    <td style="color:red">Margin(??%)</td>
+                                                    <td style="border-bottom-color:red"></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr id="mf_ta">
+                                                    <td><b>Total consumption</b></td>
+                                                    <td>??</td>
+                                                    <td><select id="cbow_tcs_C1" name="cbo" data-required="true" class="form-control _enty"></select> </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+                    </div>
+                    <div id="div_modelo" style="display:none">
+                        <div id="div_Cm" class="form-group left" style="width:100%;">
+                            <div class="form-group div_tela" style="width:100%;text-align:center;">
+                                <a class="collapse-link left" style="width:40px;color:#c4c4c4" nombrediv="Cm" id="btnocultar_Cm">
+                                    <span class="fa fa-chevron-circle-up fa-2x left icono_collapse"></span>
+                                </a>
+                                <a class="collapse-link left" style="width:40px;color:#c4c4c4;display:none" nombrediv="Cm" id="btnver_Cm">
+                                    <span class="fa fa-chevron-circle-down fa-2x left icono_collapse"></span>
+                                </a>
+                                <label id="lbl_Cm"> COMPLEMENT ttC</label>
+                            </div>
+                            <div id="div_ocultar_Cm" class="form-group left" style="width:100%;">
+                                <div class="form-group left" style="width:49%;">
+                                    <div class="table-responsive" style="width:100%; overflow-x:auto;margin-right:0px;margin-left:0px">
+                                        <table id="tb_width_Cm" class="table table-bordered" style="width:100%;">
+                                            <thead id="">
+                                                <tr>
+                                                    <th style="width:10px"></th>
+                                                    <th style="width:50px" colspan="3">WIDTH</th>
+                                                </tr>
+                                                <tr id="h">
+                                                    <th style="width:10px"></th>
+                                                    <th style="width:40px">Concept</th>
+                                                    <th style="width:50px">Value</th>
+                                                    <th style="width:70px">Unit</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tbody_Garment_Cm"></tbody>
+                                        </table>
+                                        <table id="tb_ttwidth_Cm" class="table" style="width:100%;">
+                                            <tbody id="tbody_ttwidth_Cm">
+                                                <tr id="mf_tw" class="altura">
+                                                    <td width="42%">Total width</td>
+                                                    <td id="tdmf_ttw" width="30%" style="border-top-color:black;text-align:right" name="mf"></td>
+                                                    <td width="28%"><select id="cbow_Cmb_tw" name="cbo" data-required="true" class="form-control _enty"></select> </td>
+                                                    @*<td width="28%">meters</td>*@
+
+                                                </tr>
+                                                <tr id="mf_tc">
+                                                    <td><b>Consumption</b></td>
+                                                    <td id="tdmf_ttc" style="border-top-color:black;text-align:right"></td>
+                                                    <td>garments</td>
+                                                </tr>
+                                                <tr id="mf_ta">
+                                                    <td style="color:red">Adjusment</td>
+                                                    <td id="tdmf_tta" style="border-top-color:black;text-align:right"></td>
+                                                    <td>garments</td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="form-group right" style="width:49%;">
+                                    <div class="table-responsive" style="width:100%; overflow-x:auto;margin-right:0px;margin-left:0px">
+                                        <table id="tb_length_Cm" class="table table-bordered" style="width:100%;">
+                                            <thead id="">
+                                                <tr>
+                                                    <th style="width:10px"></th>
+                                                    <th style="width:50px" colspan="3">LENGTH</th>
+                                                </tr>
+                                                <tr id="h">
+                                                    <th style="width:10px"></th>
+                                                    <th style="width:40px">Concept</th>
+                                                    <th style="width:50px">Value</th>
+                                                    <th style="width:70px">Unit</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tbody_length_Cm"></tbody>
+                                        </table>
+                                        <div style="text-align:left" class="left"><span class="fa fa-plus-circle fa-2x" style="color:darkcyan" tabla="tbody_length_Cm" id="btnAddLen_Cm"></span> <a id="btnAddLenDes_Cm" tabla="tbody_length_Cm" class="snippet-expand-link"><b>Add concept</b></a></div>
+                                    </div>
+                                    <div>
+                                        <table id="tb_ttlength_Cm" class="table" style="width:100%;">
+                                            <tbody id="tbody_ttlength_Cm">
+                                                <tr id="mf_tw" class="altura">
+                                                    <td width="35%">Total length</td>
+                                                    <td width="34%" style="border-top-color:black;text-align:right"></td>
+                                                    <td width="31%"><select id="cbow_tl_Cm" name="cbo" data-required="true" class="form-control _enty"></select> </td>
+                                                </tr>
+                                                <tr id="mf_tc">
+                                                    <td><b>Consumption</b></td>
+                                                    <td style="border-top-color:black;text-align:right"></td>
+                                                    <td><select id="cbow_cs_Cm" name="cbo" data-required="true" class="form-control _enty"></select> </td>
+                                                </tr>
+                                                <tr id="mf_ta">
+                                                    <td style="color:red">Waste(??%)</td>
+                                                    <td style="border-bottom-color:red"></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr id="mf_ta">
+                                                    <td><b>Total consumption</b></td>
+                                                    <td style="border-top-color:black;text-align:right"></td>
+                                                    <td><select id="cbow_tcs_Cm" name="cbo" data-required="true" class="form-control _enty"></select> </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ibox" id="div_datosCostosDetails">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <a class="collapse-link left" style="width:40px">
+                        <span class="fa fa-chevron-circle-up fa-2x left icono_collapse"></span>
+                    </a>
+                    <h5 class="text-navy bold" style="margin-bottom:0px;margin-top:5px">Cost details</h5>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div id="div_trims" class="form-group left" style="width:33%;margin-right:1%;">
+                        <div class="form-group div_tela" style="width:100%;text-align:center;">TRIMS</div>
+                        <div class="form-group left" style="width:100%;overflow-y:auto;height:600px">
+
+                            <div class="table-responsive" style="width:100%; overflow-x:auto;margin-right:0px;margin-left:0px">
+                                <table id="tbl_trim" class="table table-bordered" style="width:100%;">
+                                    <thead id="">
+                                        <tr id="h">
+                                            <th style="width:7%"></th>
+                                            <th style="width:38%">Concept</th>
+                                            <th style="width:30%">Value</th>
+                                            <th style="width:25%">Unit</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbody_trim"></tbody>
+                                </table>
+                                <div style="text-align:left;padding:0px 0px 0px 0px" class="left"><span class="fa fa-plus-circle fa-2x" style="color:darkcyan" tabla="tbody_trim" id="btnAddtrim"></span> <a id="btnAddtrim_Desc" tabla="tbody_trim" class="snippet-expand-link"><b>Add trims</b></a></div>
+                                <table id="" class="table" style="width:100%;">
+                                    <tbody id="">
+                                        <tr id="">
+                                            <th style="width:45%"><b>Total Cost</b></th>
+                                            <th id="td_tbody_trim" style="border-top-color:black;text-align:right;width:30%"></th>
+                                            <th style="width:25%">$/Garment</th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="div_manu" class="form-group left" style="width:32%;">
+                        <div class="form-group div_tela" style="width:100%;text-align:center;">MANUFACTURING</div>
+                        <div class="form-group left" style="width:100%;overflow-y:auto;height:600px">
+
+                            <div class="table-responsive" style="width:100%; overflow-x:auto;margin-right:0px;margin-left:0px">
+                                <table id="tbl_manu" class="table table-bordered" style="width:100%;">
+                                    <thead id="">
+                                        <tr id="h">
+                                            <th style="width:7%"></th>
+                                            <th style="width:38%">Concept</th>
+                                            <th style="width:30%">Value</th>
+                                            <th style="width:25%">Unit</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbody_manu"></tbody>
+                                </table>
+                                <div style="text-align:left;padding:0px 0px 0px 0px" class="left"><span class="fa fa-plus-circle fa-2x" style="color:darkcyan" tabla="tbody_manu" id="btnAddmanu"></span> <a id="btnAddmanu_Desc" tabla="tbody_manu" class="snippet-expand-link"><b>Add concept</b></a></div>
+                                <table id="" class="table" style="width:100%;">
+                                    <tbody id="">
+                                        <tr id="">
+                                            <th style="width:45%"><b>Total Cost</b></th>
+                                            <th id="td_tbody_manu" style="border-top-color:black;text-align:right;width:30%"></th>
+                                            <th style="width:25%">$/Garment</th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="div_service" class="form-group right" style="width:32%;margin-left:1%;">
+                        <div class="form-group div_tela" style="width:100%;text-align:center;">ADDITIONAL SERVICES</div>
+                        <div class="form-group left" style="width:100%;overflow-y:auto;height:600px">
+
+                            <div class="table-responsive" style="width:100%; overflow-x:auto;margin-right:0px;margin-left:0px">
+                                <table id="tbl_servi" class="table table-bordered" style="width :100%;">
+                                    <thead id="">
+                                        <tr id="h">
+                                            <th style="width:7%"></th>
+                                            <th style="width:38%">Concept</th>
+                                            <th style="width:30%">Value</th>
+                                            <th style="width:25%">Unit</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbody_servi"></tbody>
+                                </table>
+                                <div style="text-align:left;padding:0px 0px 0px 0px" class="left"><span class="fa fa-plus-circle fa-2x" style="color:darkcyan" tabla="tbody_servi" id="btnAddservi"></span> <a id="btnAddservi_Desc" tabla="tbody_servi" class="snippet-expand-link"><b>Add service</b></a></div>
+                                <table id="" class="table" style="width:100%;">
+                                    <tbody id="">
+                                        <tr id="">
+                                            <th style="width:45%"><b>Total Cost</b></th>
+                                            <th id="td_tbody_servi" style="border-top-color:black;text-align:right;width:30%"></th>
+                                            <th style="width:25%">$/Garment</th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="ibox" id="div_summary">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <a class="collapse-link left" style="width:40px">
+                        <span class="fa fa-chevron-circle-up fa-2x left icono_collapse"></span>
+                    </a>
+                    <h5 class="text-navy bold" style="margin-bottom:0px;margin-top:5px">Summary of costs <span id="btnUI18" class="fa fa-info-circle" style="color:darkblue"></span></h5>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div id="div_sumcost" class="form-group left" style="width:33%;margin-right:1%;">
+                        <div class="form-group left" style="width:100%;overflow-y:auto;height:1000px">
+
+                            <div class="table-responsive" style="width:100%; overflow-x:auto;margin-right:0px;margin-left:0px">
+                                <table id="tbl_cost" class="table table-bordered" style="width:100%;">
+                                    <thead id="">
+                                        <tr id="h">
+                                            <th style="width:7%"></th>
+                                            <th style="width:38%">Concept</th>
+                                            <th style="width:30%">Value</th>
+                                            <th style="width:25%">Unit</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbody_costFabric">
+                                        <tr>
+                                            <td></td>
+                                            <td>Main Fabric</td>
+                                            <td id="txt_tt_mf"><input id="txw_cost_mf" name="nametabla" disabled style="text-align:right" type="number" autocomplete="off"  value="" class="form-control cls_cost_total"></td>
+                                            <td>$/Garment</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div style="text-align:left;padding:0px 0px 0px 0px" class="left"><span class="fa fa-plus-circle fa-2x" style="color:darkcyan" tabla="tbody_costFabric" id="btnAddcost_compl"></span> <a id="btnAddcost_compl_Desc" tabla="tbody_costFabric" class="snippet-expand-link"><b>Add complement</b></a></div>
+                                <table id="" class="table table-bordered" style="width:100%;">
+                                    <tbody id="tbody_costAdic">
+                                        <tr id="">
+                                            <td style="width:7%"></td>
+                                            <td style="width:38%">Trims</td>
+                                            <td style="width:30%"><input id="txt_tt_tbody_trim" name="tbody_trim" style="text-align:right" type="text" onkeypress="return DigitimosDosDecimales(event,this);" autocomplete="off"  value="" class="form-control cls_cost_total"></td>
+                                            <td style="width:25%">$/Garment</td>
+                                        </tr>
+                                        <tr id="">
+                                            <td style="width:7%"></td>
+                                            <td style="width:38%">Manufacturing</td>
+                                            <td style="width:30%"><input id="txt_tt_tbody_manu" name="tbody_manu" style="text-align:right" type="text" onkeypress="return DigitimosDosDecimales(event,this);" autocomplete="off" value="" class="form-control cls_cost_total"></td>
+                                            <td style="width:25%">$/Garment</td>
+                                        </tr>
+                                        <tr id="">
+                                            <td style="width:7%"></td>
+                                            <td style="width:38%">Aditionals services</td>
+                                            <td style="width:30%"><input id="txt_tt_tbody_servi" name="tbody_servi" style="text-align:right" type="text" onkeypress="return DigitimosDosDecimales(event,this);" autocomplete="off" value="" class="form-control cls_cost_total"></td>
+                                            <td style="width:25%">$/Garment</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div style="text-align:left;padding:0px 0px 0px 0px" class="left"><span class="fa fa-plus-circle fa-2x" style="color:darkcyan" tabla="tbody_costAdic" id="btnAddcost_cost"></span> <a id="btnAddcost_cost_Desc" tabla="tbody_costAdic" class="snippet-expand-link"><b>Add cost</b></a></div>
+                                <table id="" class="table table-bordered" style="width:100%;">
+                                    <tbody id="tbody_cost2">
+                                        <tr id="">
+                                            <td style="width:45%">Production cost</td>
+                                            <td style="width:30%;border-top-color:black;border-top-width:2px;"><input id="txt_tt_PrdCost_2" name="" disabled style="text-align:right" type="number" autocomplete="off" value="" class="form-control"></td>
+                                            <td style="width:25%">$/Garment</td>
+                                        </tr>                                        
+                                    </tbody>
+                                </table>
+                                @*<table id="" class="table table-bordered" style="width:100%;">
+                                    <tbody id="tbody_cost">
+
+                                        <tr id="">
+                                            <td style="width:45%">Production cost</td>
+                                            <td style="width:30%;border-top-color:black;border-top-width:2px;"><input id="txt_tt_PrdCost" name="" disabled style="text-align:right" type="number" value="" class="form-control"></td>
+                                            <td style="width:25%">$/Garment</td>
+                                        </tr>
+                                        <tr id="">
+                                            <td id="td_facMargin" style="width:45%;color:red"><b>Factory margin (%%)</b></td>
+                                            <td style="border-bottom-color:red;border-bottom-width:2px;"></td>
+                                            <td style="width:25%"></td>
+                                        </tr>
+                                        <tr id="">
+                                            <td style="width:45%"><b>Price factory (FOB)</b></td>
+                                            <td style="width:30%"><input id="txt_tt_PrcFob" name="" disabled style="text-align:right" type="number" value="" class="form-control"></td>
+                                            <td style="width:25%">$/Garment</td>
+                                        </tr>
+
+                                        <tr id="">
+                                            <td style="width:45%">Estimated freight</td>
+                                            <td style="width:30%;border-bottom-color:black;border-bottom-width:2px;"><input id="txt_tt_freight" style="text-align:right" name="status" type="number" value="" class="form-control"></td>
+                                            <td style="width:25%">$/Garment</td>
+                                        </tr>
+
+                                        <tr id="">
+                                            <td style="width:45%"><b>Total cost (WTS)</b></td>
+                                            <td style="width:30%"><input id="txt_tt_prcwts" name="" disabled style="text-align:right" type="number" value="" class="form-control"></td>
+                                            <td style="width:25%">$/Garment</td>
+                                        </tr>
+                                        <tr id="">
+                                            <td id="td_netMargin" style="width:45%;color:red"><b>Net margin (??%)</b></td>
+                                            <td style="width:30%"><input id="txt_tt_Marginprcwts" name="" disabled style="text-align:right" type="number" value="" class="form-control"></td></td>
+                                            <td style="width:25%"></td>
+                                        </tr>
+                                        <tr id="">
+                                            <td style="width:45%">Non-marginal cost</td>
+                                            <td style="width:30%;border-bottom-color:black;border-bottom-width:2px;"><input id="txt_nom_marginal" name="status" type="number" value="" style="text-align:right" class="form-control"></td>
+                                            <td style="width:25%">$/Garment</td>
+                                        </tr>
+                                        <tr id="">
+                                            <td style="width:45%"><b>Price WTS (DDP)</b></td>
+                                            <td style="width:30%"><input id="txt_tt_prcddp" name="" disabled style="text-align:right" type="number" value="" class="form-control"></td>
+                                            <td style="width:25%">$/Garment</td>
+                                        </tr>
+                                        <tr id="">
+                                            <td style="width:45%;color:red"><b>Adjustment</b></td>
+                                            <td style="width:30%"><input id="txt_adjust" name="status" type="number" style="text-align:right" value="" class="form-control"></td>
+                                            <td style="width:25%">$/Garment</td>
+                                        </tr>
+                                    </tbody>
+                                </table>*@
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="div_sumcost2" class="form-group right" style="width:33%;margin-right:1%;">
+                        <div class="form-group left" style="width:100%;overflow-y:auto;height:1000px">
+
+                            <div class="table-responsive" style="width:100%; overflow-x:auto;margin-right:0px;margin-left:0px">
+                                <table id="" class="table table-bordered" style="width:100%;">
+                                    <thead id="">
+                                        <tr >
+                                         
+                                            <th style="width:45%">Concept</th>
+                                            <th style="width:30%">Value</th>
+                                            <th style="width:25%">Unit</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbody_cost">
+
+                                        <tr id="">
+                                            <td style="width:45%">Production cost</td>
+                                            <td style="width:30%;border-top-color:black;border-top-width:2px;"><input id="txt_tt_PrdCost" name="" disabled style="text-align:right" type="number" autocomplete="off" value="" class="form-control"></td>
+                                            <td style="width:25%">$/Garment</td>
+                                        </tr>
+                                        <tr id="">
+                                            <td id="td_facMargin" style="width:45%;color:red"><b>Factory margin (%%)</b></td>
+                                            <td style="border-bottom-color:red;border-bottom-width:2px;"></td>
+                                            <td style="width:25%"></td>
+                                        </tr>
+                                        <tr id="">
+                                            <td style="width:45%"><b>Price factory (FOB)</b></td>
+                                            <td style="width:30%"><input id="txt_tt_PrcFob" name="" disabled style="text-align:right" type="number" autocomplete="off" value="" class="form-control"></td>
+                                            <td style="width:25%">$/Garment</td>
+                                        </tr>
+
+                                        <tr id="">
+                                            <td style="width:45%">Estimated freight</td>
+                                            <td style="width:30%;border-bottom-color:black;border-bottom-width:2px;"><input id="txt_tt_freight" onkeypress="return DigitimosDosDecimales(event,this)"  style="text-align:right" name="status" type="text" autocomplete="off" value="" class="form-control"></td>
+                                            <td style="width:25%">$/Garment</td>
+                                        </tr>
+
+                                        <tr id="">
+                                            <td style="width:45%"><b>Total cost (WTS)</b></td>
+                                            <td style="width:30%"><input id="txt_tt_prcwts" name="" disabled style="text-align:right" type="number" autocomplete="off" value="" class="form-control"></td>
+                                            <td style="width:25%">$/Garment</td>
+                                        </tr>
+                                        <tr id="">
+                                            <td id="td_netMargin" style="width:45%;color:red"><b>Net margin (??%)</b></td>
+                                            <td style="width:30%"><input id="txt_tt_Marginprcwts" name="" disabled style="text-align:right" type="number" autocomplete="off" value="" class="form-control"></td>
+                                            <td style="width:25%"></td>
+                                        </tr>
+                                        <tr id="">
+                                            <td style="width:45%">Non-marginal cost</td>
+                                            <td style="width:30%;border-bottom-color:black;border-bottom-width:2px;"><input id="txt_nom_marginal"  onkeypress="return DigitimosDosDecimales(event,this)"  name="status" type="text" autocomplete="off" value="" style="text-align:right" class="form-control"></td>
+                                            <td style="width:25%">$/Garment</td>
+                                        </tr>
+                                        <tr id="">
+                                            <td style="width:45%"><b>Price WTS (DDP)</b></td>
+                                            <td style="width:30%"><input id="txt_tt_prcddp" name="" disabled style="text-align:right" type="number" autocomplete="off" value="" class="form-control"></td>
+                                            <td style="width:25%">$/Garment</td>
+                                        </tr>
+                                        <tr id="">
+                                            <td style="width:45%;color:red"><b>Adjustment</b></td>
+                                            <td style="width:30%"><input id="txt_adjust" name="status" type="number" autocomplete="off"  style="text-align:right" value="" class="form-control"></td>
+                                            <td style="width:25%">$/Garment</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="form-group left" style="width:100%;overflow-y:auto;height:100px"></div>
+
+    </div>
+</div>

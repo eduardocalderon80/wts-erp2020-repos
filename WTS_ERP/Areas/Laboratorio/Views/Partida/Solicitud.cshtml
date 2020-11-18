@@ -1,0 +1,448 @@
+﻿<style>
+    .modal-open {
+        overflow: auto;
+        padding-right: 0 !important;
+    }
+
+    th {
+        padding: 8px;
+        border: 1px solid #e7e7e7;
+        background-color: #F5F5F6;
+        text-align: center;
+    }
+
+    td {
+        padding: 5px;
+        border-bottom: 1px solid #e7e7e7;
+        padding-left: 20px;
+    }
+
+    textarea {
+        resize: none;
+    }
+</style>
+
+<div class="hide">
+    <input type="text" id="txtpar" value='DATA-PARAMETRO' />
+</div>
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-8">
+        <h2>Solicitud Partida</h2>
+        <ol class="breadcrumb">
+            <li><span id="spnPageStatus">Creating</span></li>
+        </ol>
+    </div>
+    <div class="col-lg-4" style="text-align:right;padding:20px">
+        <button type="button" class="btn btn-success" id="btnReturn">
+            <span class="fa fa-backward"></span>
+            Return
+        </button>
+        <button type="button" class="btn btn-primary" id="btnSave">
+            <span class="fa fa-save"></span>
+            Save
+        </button>
+
+
+    </div>
+</div>
+
+<div class="wrapper wrapper-content gray-bg animated fadeInRight">
+
+    <div id="formulario" class="ibox">
+        <div class="ibox-title">
+            <h5>Bulk Fabric</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-horizontal">
+                        <div class="col-lg-4">
+                            <div id="Div_ReporteTecnico" class="form-group">
+                                <label class="col-lg-2 control-label">Reporte</label>
+                                <div class="col-lg-10">
+                                    <input id="txtReporteTecnico" type="text" class="form-control" readonly />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                        </div>
+                        <div class="col-lg-4">
+                            <div id="Div_Reposicion" class="form-group">
+                                <label class="col-lg-2 control-label">Reproceso</label>
+                                <div class="col-lg-10">
+                                    <select  id="cboReproceso" class="form-control _enty" data-required="true">
+                                        <option value="">Seleccione</option>
+                                        <option value="S">SI</option>
+                                        <option value="N">NO</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-horizontal">                      
+                        <!-- :1 -->
+                        <div class="col-lg-4">                         
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Partida</label>
+                                <div class="col-lg-10">
+                                    <input id="txtPartida" class="form-control _enty" data-required="true"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Fabrica</label>
+                                <div class="col-lg-10">
+                                    <select  id="cboFabrica" class="form-control _enty" data-required="true" style="display:none"></select>
+                                    <input class="form-control" id="txtFabrica" style="display:none" readonly />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Color</label>
+                                <div class="col-lg-10">
+                                    <input type="text" id="txtColor" class="form-control _enty" data-required="true" style="display:none" />
+                                    <select id="cboColor" class="form-control _enty" data-required="true" style="display:none"></select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Tela</label>
+                                <div class="col-lg-10">
+                                    <div class="input-group">
+                                        <input id="txtTela" class="form-control" data-id="0" readonly data-initial="0" />
+                                        <span id="spnModalTela" class="input-group-addon" style="cursor:pointer"><i class="fa fa-plus"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Lavado</label>
+                                <div class="col-lg-10">
+                                    <select id="cboLavado" class="form-control">
+                                        <option value="">Seleccione</option>
+                                        <option value="Lavado">Lavado</option>
+                                        <option value="SinLavar">Sin Lavar</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Descripcion Tela</label>
+                                <div class="col-lg-10">
+                                    <textarea id="txtDescripcionTela" class="form-control _enty" data-required="true"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Fecha</label>
+                                <div class="col-sm-10">
+                                    <div id="dtFechaSolicitud" class='input-group date'>
+                                        <span class='input-group-addon'><i class='fa fa-calendar'></i></span>
+                                        <input type='text' id="txtFechaSolicitud" class='form-control _enty' data-required="true">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Tintoreria</label>
+                                <div class="col-lg-10">
+                                    <select id="cboTintoreria"  class="form-control _enty" data-required="true" style="display:none"></select>
+                                    <input class="form-control" id="txtTintoreria" style="display:none" readonly />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Codigo Color</label>
+                                <div class="col-lg-10">
+                                    <div class="input-group">
+                                        <input id="txtCodigoColor" class="form-control" data-id="0" readonly="" data-initial="0">
+                                        <span id="spnModalCodigoColor" class="input-group-addon" style="cursor:pointer"><i class="fa fa-search"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Weight</label>
+                                <div class="col-lg-10">
+                                    <input id="txtWeight" type="text" class="form-control _enty" data-required="true" onkeypress="return DigitimosDecimales(event,this)" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Complemento</label>
+                                <div class="col-lg-10">
+                                    <select id="cboComplemento" class="form-control">
+                                        <option value="No">No</option>
+                                        <option value="Si">Si</option>
+                                    </select>
+                                </div>
+                            </div>
+                            @*<div class="form-group">
+                                <label class="col-lg-2 control-label">Instrucciones de Cuidado Asignada</label>
+                                <div class="col-lg-10">
+                                    <textarea id="txtInstruccionesCuidadoAsignada" class="form-control"></textarea>
+                                </div>
+                            </div>*@
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Prueba</label>
+                                <div class="col-sm-10">
+                                    <select  id="cboPrueba" class="form-control _enty" data-required="true">
+                                        <option value="">Seleccione</option>
+                                        <option value="gf">Prenda - Todas las Pruebas</option>
+                                        <option value="gi">Prenda - Instrucciones de Cuidado</option>
+                                        <option value="gp">Prenda - Producción</option>
+                                        <option value="pp">Tela - 1ra Partida</option>
+                                        <option value="f">Tela - Todas las Pruebas</option>
+                                        <option value="p">Tela - Producción</option>
+                                        <option value="d">Tela - Desarrollo</option>
+                                        <option value="m">Tela - Muestra de Ventas</option>
+                                        <option value="a">Tela - Pruebas Adicionales</option>
+                                    </select>
+                                    <!--<select class="form-control" id="cboPrueba">
+                                    <option value="">Seleccione</option>
+                                    <option value="gf">Garment - Full</option>
+                                    <option value="gi">Garment - Intruccion de Cuidado</option>
+                                    <option value="gp">Garment - Produccion</option>
+                                    <option value="pp">Primera Partida Produccion</option>
+                                    <option value="f">Fabric - Full Test</option>
+                                    <option value="p">Fabric - Production</option>
+                                    <option value="d">Fabric - Development</option>
+                                    <option value="m">Fabric - Sales Sample</option>
+                                    <option value="a">Fabric - Additional Test</option>
+                                </select>-->
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Cliente</label>
+                                <div class="col-lg-10">
+                                    <select id="cboCliente" class="form-control _enty" data-required="true" style="display:none"></select>
+                                    <input class="form-control" id="txtCliente" style="display:none" readonly />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Material</label>
+                                <div class="col-lg-10">
+                                    <select class="form-control" id="cboMaterial">
+                                        <option value="">Seleccione</option>
+                                        <option value="Tela">Tela</option>
+                                        <option value="Prenda">Prenda</option>
+                                        <option value="Hilado">Hilado</option>
+                                        <option value="Avios">Avios</option>
+                                        <option value="Otros">Otros</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Proceso</label>
+                                <div class="col-lg-10">
+                                    <select class="form-control" id="cboProceso">
+                                        <option value="">Seleccione</option>
+                                        <option value="PPT">PPT/PPE</option>
+                                        <option value="TeñidoPrenda">Teñido en Prenda</option>
+                                        <option value="TeñidoPieza">Teñido en Pieza</option>
+                                        <option value="EstampadoCobertura">Estampado Full Cobertura</option>
+                                        <option value="AcabadosEspeciales">Acabados Especiales</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Temporada</label>
+                                <div class="col-lg-10">
+                                    <select class="form-control" id="cboTemporada">
+                                        <option value="">Seleccione</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Comentarios</label>
+                                <div class="col-lg-10">
+                                    <textarea id="txtComentarios" class="form-control"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox" id="div_po">
+        <div class="ibox-title">
+            <h5>PO &nbsp;&nbsp;<i style="font-size:medium;cursor:pointer" class="fa fa-plus" onclick="ShowModalPo();" aria-hidden="true"></i></h5>
+        </div>
+        <div class="ibox-content">
+            <div id="divContentPoRelated">
+                <table class='table table-bordered'><thead><tr><td></td><td>Po</td><td>Style</td><td>Lote</td><td></td></tr></thead><tbody id="tbodyPO"></tbody></table>
+            </div>
+        </div>
+    </div>
+
+    <div id="instruccioncuidado" class="ibox">
+        <div class="ibox-title">
+            <h5>Care Instruction</h5>
+        </div>
+        <div id="tabla_content_instruccioncuidado" class="ibox-content">
+
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div class="col-sm-6">
+                        <label class="control-label col-sm-3">Instrucciones de Cuidado</label>
+                        <div class="col-sm-9">
+                            <textarea id="txt_InstruccionesCuidadoFabrica" disabled class="form-control" data-min="1" data-max="500"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="ibox" id="div_estilo">
+        <div class="ibox-title">
+            <h5>Style</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="col-lg-4">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Codigo Estilo</label>
+                                <div class="col-lg-10">
+                                    <div class="input-group m-b">
+                                        <input id="txtCodigoEstilo" type="text" class="form-control">
+                                        <span id="spnBuscarPO" class="input-group-addon" onclick="AddStyle();" style="cursor:pointer"><i class="fa fa-plus"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <table class='table table-bordered'><thead><tr><td></td><td>Codigo Estilo</td></thead> <tbody id="tbodyStyle"></tbody></table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox">
+        <div class="ibox-title">
+            <h5>Partida Reproceso &nbsp;&nbsp;<i style="font-size:medium;cursor:pointer" class="fa fa-plus" onclick="ShowModalPartida();" aria-hidden="true"></i></h5>
+        </div>
+        <div class="ibox-content">
+            <div id="divContentPartidaReproceso">
+                <table class='table table-bordered'><thead><tr><td></td><td>Reporte Tecnico</td><td>Numero Partida</td><td>Status</td><td>Fabrica</td><td>Cliente</td></tr></thead><tbody id="tbodyPartidaRelacion"></tbody></table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="modal inmodal in" id="mdPo" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <i class="fa fa-check-o modal-icon"></i>
+                <h4 class="modal-title">PO</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>PO Number</label>
+                    <div class="input-group m-b">
+                        <input id="txtNumeroPO" type="text" class="form-control">
+                        <span id="spnBuscarPO" class="input-group-addon" onclick="SearchPo();" style="cursor:pointer"><i class="fa fa-search"></i></span>
+                    </div>
+                </div>
+                <div id="divModalPo">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="LoadSelectedPos();">Save</button>
+                <button type="button" class="btn btn-white" id="btnCloseModalPO" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal inmodal in" id="mdTela" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <i class="fa fa-check-o modal-icon"></i>
+                <h4 class="modal-title">Telas</h4>
+                <small class="font-bold">Searching fabric</small>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Familia</label>
+                                <div class="col-lg-10">
+                                    <select id="cboFamilia" class="form-control"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Codigo Tela</label>
+                                <div class="col-lg-10">
+                                    <input type="text" id="txtCodigoTelaMD" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-success" onclick="SearchTela();">
+                        <span class="fa fa-search"></span>
+                        Search
+                    </button>
+                    <br />
+                    <div class="col-lg-12">
+                        <div id="divModalTela">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal inmodal in" id="mdPartida" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <i class="fa fa-check-o modal-icon"></i>
+                <h4 class="modal-title">Partidas Relacionadas</h4>
+                <small class="font-bold">Searching related partidas</small>
+            </div>
+            <div class="modal-body">
+                <div id="divPartidaRelacionada"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="LoadSelectedPartidas();">Save</button>
+                <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" id="hfCodigoPartida" value="0" />
+<input type="hidden" id="hfCodigoCliente" value="" />
+<input type="hidden" id="hfCodigoFabrica" value="" />
+<input type="hidden" id="hfCodigoTintoreria" value="" />
+<input type="hidden" id="hfCodigoTemporada" value="" />

@@ -1,0 +1,477 @@
+﻿<div class="hide">
+    <input type="text" id="txtpar_editarpartida" value="DATA-PARAMETRO" />
+</div>
+
+
+<div class="ibox float-e-margins" id="panelEncabezado_partida">
+    <div class="ibox-title">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="col-sm-2">
+                    <h3 id="_title" class="text-navy bold">DATA-TITULO</h3>
+                </div>
+                <div class="col-sm-3">
+                    <h2 class="label" id="h2_tituloestado_partida"><strong id="strong_tituloestado_partida"></strong></h2>
+                </div>
+            </div>
+            <div class="col-sm-6 text-right">
+                <button id="_btn_save_edit_partida" href="javascript:void(0)" class="btn btn-primary">
+                    <span class="fa fa-save"></span>
+                    Save
+                </button>
+                <button type="button" class="btn btn-default" id="_btnreturn_partida">
+                    <span class="fa fa-ban" aria-hidden="true"></span>
+                    Return
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox-content wrapper wrapper-content gray-bg" style="overflow-y: auto; max-height: 850px;" id="div_cuerpoprincipal_partida">
+        <div class="hide">
+            <input type="text" id="hf_estadosolicitudpartida" value="" />
+            <input type="text" id="hf_estadopartida" value="" class="_enty" data-id="estado" data-required="true" />
+            <input type="text" id="hf_idpartida" value="" class="_enty" data-id="idpartida" data-min="1" data-max="20" data-required="true" data-default="0" />
+            <input type="text" id="hf_densidad_gramaje" value="" />
+        </div>
+
+        <!-- CABECERA -->
+        <div class="ibox float-e-margins" id="div_content_cabecera_partida">
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">#Technical Report</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" type="text" maxlength="11" id="txt_reportetecnico" data-id="reportetecnico" data-min="2" data-max="11" data-default="empty" disabled="disabled">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Client</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" type="text" maxlength="50" id="txt_nombrecliente" data-id="nombrecliente" data-min="2" data-max="50" data-default="empty" disabled="disabled">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Factory</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" type="text" maxlength="50" id="txt_nombreproveedor" data-id="nombreproveedor" data-min="2" data-max="50" data-default="empty" disabled="disabled">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Batch</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" type="text" maxlength="50" id="txt_partida" data-id="partida" data-min="2" data-max="50" data-default="empty" disabled="disabled">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Yarn</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="text" maxlength="50" id="txt_descripciontela" data-id="DescripcionTela" disabled="disabled">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">State of color</label>
+                                <div class="col-sm-10">
+                                    <select id="cbo_estadocolor" data-id="EstadoColor" data-min="1" data-max="10" class="form-control _enty" data-required="true"></select>
+                                </div>
+                            </div>
+                            <div class="form-group" id="grupo_comentariocolor">
+                                <label class="control-label col-sm-2">Color Comment</label>
+                                <div class="col-sm-10">
+                                    <textarea id="txt_comentariocolor" data-id="comentariocolor" data-min="2" cols="40" rows="4" class="form-control _enty" data-required="false" style="resize: none;"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Test Method</label>
+                                <div class="col-sm-10">
+                                    <select id="cbo_idtestmetodo" data-id="idtestmetodo" data-min="1" class="form-control _enty" data-required="true"></select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Composition</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="text" maxlength="500" id="txt_composicionporcentajetela" data-id="composicionporcentajetela" disabled="disabled">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Color</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="text" id="txt_nombreclientecolor" data-id="nombreclientecolor" disabled="disabled">
+                                </div>
+                            </div>
+
+                            <div class="form-group hide">
+                                <label class="control-label col-sm-2">Dyeing Type</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="text" id="txt_nombreclientecolor_xd">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Request Departure Date</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="text" id="txt_fechasolicitudpartida" disabled="disabled">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                
+                            </div>
+                            <div class="form-group">
+
+                            </div>
+                            <div class="form-group">
+
+                            </div>
+                            <div class="form-group">
+
+                            </div>
+                            <div class="form-group">
+
+                            </div>
+                            <div class="form-group">
+
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Testing Comment</label>
+                                <div class="col-sm-10">
+                                    <textarea id="txt_comentariotesting" data-id="comentariotesting" data-min="2" cols="40" rows="4" class="form-control _enty" style="resize: none;"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DIV Dimensional stability-->
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5 class="text-navy bold">Dimensional stability</h5>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Long shrink</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" type="text" maxlength="10" id="txt_edencogimientolargo" data-id="edencogimientolargo" data-min="2" data-max="10" data-default="0" data-type="dec">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Reversed</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" type="text" maxlength="10" id="txt_edrevirado" data-id="edrevirado" data-min="2" data-max="10" data-default="empty" data-type="dec">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Appearance - Color change</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" type="text" maxlength="10" id="txt_edaparienciacambiocolor" data-id="edaparienciacambiocolor" data-min="2" data-max="10" data-default="empty" data-type="dec">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Shrink width</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" type="text" maxlength="10" id="txt_edencogimientoancho" data-id="edencogimientoancho" data-min="2" data-max="10" data-default="empty" data-type="dec">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Pilling</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" type="text" maxlength="100" id="txt_edpilling" data-id="edpilling" data-min="2" data-max="100" data-default="empty">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Appearence Evaluation</label>
+                                <div class="col-sm-10">
+                                    <select id="cbo_edevaluacionapariencia" data-id="edevaluacionapariencia" data-min="1" class="form-control _enty">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- DIV Fabric Density-->
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5 class="text-navy bold">Fabric Density</h5>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Density</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" type="text" maxlength="10" id="txt_dtdensidad" data-id="dtdensidad" data-min="2" data-max="10" data-default="empty" data-type="dec" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Deviation</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" type="text" maxlength="10" id="txt_dtdesviacion" data-id="dtdesviacion" data-min="2" data-max="10" data-default="empty" data-type="dec" disabled="disabled" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Finished width</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" type="text" maxlength="10" id="txt_dtanchoacabado" data-id="dtanchoacabado" data-min="2" data-max="10" data-default="empty" data-type="dec" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DIV Fastness to rub-->
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5 class="text-navy bold">Fastness to rub</h5>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Dry</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" type="text" maxlength="10" id="txt_sfseco" data-id="sfseco" data-min="2" data-max="10" data-default="empty" data-type="dec">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Wet</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" type="text" maxlength="10" id="txt_sfhumedo" data-id="sfhumedo" data-min="2" data-max="10" data-default="empty" data-type="dec">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DIV Washability-->
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5 class="text-navy bold">Washability</h5>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Color Change</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" type="text" maxlength="10" id="txt_slcambiocolor" data-id="slcambiocolor" data-min="2" data-max="10" data-default="empty" data-type="dec">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Acetate</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" type="text" maxlength="10" id="txt_slacetato" data-id="slacetato" data-min="2" data-max="10" data-default="empty" data-type="dec">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Cotton</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" type="text" maxlength="10" id="txt_slalgodon" data-id="slalgodon" data-min="2" data-max="10" data-default="empty" data-type="dec">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Nylon</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" type="text" maxlength="10" id="txt_slnylon" data-id="slnylon" data-min="2" data-max="10" data-default="empty" data-type="dec">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Viscose</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" type="text" maxlength="10" id="txt_slviscosa" data-id="slviscosa" data-min="2" data-max="10" data-default="empty" data-type="dec">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Polyester</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" type="text" maxlength="10" id="txt_slpoliester" data-id="slpoliester" data-min="2" data-max="10" data-default="empty" data-type="dec">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Acrylic</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" type="text" maxlength="10" id="txt_slacrilico" data-id="slacrilico" data-min="2" data-max="10" data-default="empty" data-type="dec">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Wool</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" type="text" maxlength="10" id="txt_sllana" data-id="sllana" data-min="2" data-max="10" data-default="empty" data-type="dec">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Silk</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" type="text" maxlength="10" id="txt_slsilk" data-id="slsilk" data-min="2" data-max="10" data-default="empty" data-type="dec">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DIV Resistencia al Pilling-->
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5 class="text-navy bold">Resistencia al Pilling</h5>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Result</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" type="text" maxlength="10" id="txt_rpresultado" data-id="rpresultado" data-min="2" data-max="10" data-default="empty" data-type="dec">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Min</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" type="text" maxlength="10" id="txt_rpmin" data-id="rpmin" data-min="2" data-max="10" data-default="empty" data-type="dec">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DIV RADIO BUTTONS-->
+        <div class="ibox float-e-margins" id="div_ibox_resumen">
+            <div class="ibox-title">
+                <h5 class="text-navy bold">Summary</h5>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="form-group _group_radio _enty" id="div_encongimientoestado" data-group="encongimientoestado" data-group-type="radio" data-required="true">
+                            <label class="control-label col-sm-2">Shrinkage</label>
+                            <div class="col-sm-10">
+                                <div class="i-checks _group_encongimientoestado">
+                                    <label class="col-sm-2"> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_encongimientoestado _group_reviradoestado" value="1" name="encongimientoestado" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Approved</label>
+                                    <label class="col-sm-2"> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_encongimientoestado _group_reviradoestado" value="2" name="encongimientoestado" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Reject </label>
+                                    <label class="col-sm-2"> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_encongimientoestado _group_reviradoestado" value="3" name="encongimientoestado" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Does not apply </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group _group_radio _enty" id="div_reviradoestado" data-group="reviradoestado" data-group-type="radio" data-required="true">
+                            <label class="control-label col-sm-2">Reversed</label>
+                            <div class="col-sm-10">
+                                <div class="i-checks _group_reviradoestado">
+                                    <label class="col-sm-2"> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_reviradoestado _group_reviradoestado" value="1" name="reviradoestado" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Approved</label>
+                                    <label class="col-sm-2"> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_reviradoestado _group_reviradoestado" value="2" name="reviradoestado" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Reject </label>
+                                    <label class="col-sm-2"> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_reviradoestado _group_reviradoestado" value="3" name="reviradoestado" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Does not apply </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group _group_radio _enty" id="div_aparienciaestado" data-group="aparienciaestado" data-group-type="radio" data-required="true">
+                            <label class="control-label col-sm-2">Appearence</label>
+                            <div class="col-sm-10">
+                                <div class="i-checks _group_aparienciaestado">
+                                    <label class="col-sm-2"> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_aparienciaestado _group_reviradoestado" value="1" name="aparienciaestado" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Approved</label>
+                                    <label class="col-sm-2"> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_aparienciaestado _group_reviradoestado" value="2" name="aparienciaestado" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Reject </label>
+                                    <label class="col-sm-2"> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_aparienciaestado _group_reviradoestado" value="3" name="aparienciaestado" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Does not apply </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group _group_radio _enty" id="div_densidadestado" data-group="densidadestado" data-group-type="radio" data-required="true">
+                            <label class="control-label col-sm-2">Density</label>
+                            <div class="col-sm-10">
+                                <div class="i-checks _group_densidadestado">
+                                    <label class="col-sm-2"> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_densidadestado _group_reviradoestado" value="1" name="densidadestado" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Approved</label>
+                                    <label class="col-sm-2"> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_densidadestado _group_reviradoestado" value="2" name="densidadestado" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Reject </label>
+                                    <label class="col-sm-2"> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_densidadestado _group_reviradoestado" value="3" name="densidadestado" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Does not apply </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group _group_radio _enty" id="div_solidezfroteestado" data-group="solidezfroteestado" data-group-type="radio" data-required="true">
+                            <label class="control-label col-sm-2">Fastness to rub</label>
+                            <div class="col-sm-10">
+                                <div class="i-checks _group_solidezfroteestado">
+                                    <label class="col-sm-2"> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_solidezfroteestado _group_reviradoestado" value="1" name="solidezfroteestado" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Approved</label>
+                                    <label class="col-sm-2"> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_solidezfroteestado _group_reviradoestado" value="2" name="solidezfroteestado" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Reject </label>
+                                    <label class="col-sm-2"> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_solidezfroteestado _group_reviradoestado" value="3" name="solidezfroteestado" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Does not apply </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group _group_radio _enty" id="div_solidezlavadoestado" data-group="solidezlavadoestado" data-group-type="radio" data-required="true">
+                            <label class="control-label col-sm-2">Washability</label>
+                            <div class="col-sm-10">
+                                <div class="i-checks _group_solidezlavadoestado">
+                                    <label class="col-sm-2"> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_solidezlavadoestado _group_reviradoestado" value="1" name="solidezlavadoestado" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Approved</label>
+                                    <label class="col-sm-2"> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_solidezlavadoestado _group_reviradoestado" value="2" name="solidezlavadoestado" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Reject </label>
+                                    <label class="col-sm-2"> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_solidezlavadoestado _group_reviradoestado" value="3" name="solidezlavadoestado" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Does not apply </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group _group_radio _enty" id="div_resistenciapillingestado" data-group="resistenciapillingestado" data-group-type="radio" data-required="true">
+                            <label class="control-label col-sm-2">Resistencia al Pilling</label>
+                            <div class="col-sm-10">
+                                <div class="i-checks _group_resistenciapillingestado">
+                                    <label class="col-sm-2"> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_resistenciapillingestado _group_reviradoestado" value="1" name="resistenciapillingestado" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Approved</label>
+                                    <label class="col-sm-2"> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_resistenciapillingestado _group_reviradoestado" value="2" name="resistenciapillingestado" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Reject </label>
+                                    <label class="col-sm-2"> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_resistenciapillingestado _group_reviradoestado" value="3" name="resistenciapillingestado" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Does not apply </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RADIO BUTTO PARA ESTADOS DE LA PARTIDA-->
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5 class="text-navy bold">Conclusion</h5>
+            </div>
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="form-group _group_radio _group_radio_conclusion text-right _enty" id="div_conclusion" data-group="estado" data-group-type="radio" data-required="true">
+                            <!--class="col-sm-12 text-right"-->
+                            <div class="col-sm-12 text-right">
+                                <div class="i-checks _group_conclusion">
+                                    <label class="col-sm-2"> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_estadopartida" value="1" data-bandeja="approved" name="conclusion_estadopartida" class="_cls_radio_conclusion" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Approved</label>
+                                    <label class="col-sm-2"> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_estadopartida" value="2" data-bandeja="rejected" name="conclusion_estadopartida" class="_cls_radio_conclusion" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Reject </label>
+                                    <label class="col-sm-2"> <div class="iradio_square-green" style="position: relative;"><input type="radio" class="_clschk_estadopartida" value="3" data-bandeja="pending" name="conclusion_estadopartida" class="_cls_radio_conclusion" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Pending </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

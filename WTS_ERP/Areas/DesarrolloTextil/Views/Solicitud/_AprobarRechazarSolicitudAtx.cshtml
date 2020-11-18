@@ -1,0 +1,62 @@
+﻿<div class="ibox float-e-margins" id="panelEncabezado_aprobarrechazar_solicitudatx">
+    <div class="ibox-title">
+        <div class="ibox-tools">
+            <div class="row">
+                <div class="col-sm-6 text-left">
+                    <h3 class="text-navy _titulo_aprobarrechazarsolicitud">DEMO XD</h3>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <button id="_btn_aprobar_solicitudatx" class="btn btn-primary hide">
+                        <span class="fa fa-thumbs-o-up"></span>
+                        Approve
+                    </button>
+                    <button id="_btn_rechazar_solicitudatx" class="btn btn-danger hide">
+                        <span class="fa fa-thumbs-o-down"></span>
+                        Reject
+                    </button>
+                    <button id="_btnCancelar_aprobarrechazar" class="btn btn-default" data-dismiss="modal">
+                        <span class="fa"></span>
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ibox-content wrapper wrapper-content gray-bg" style="overflow-y: auto; max-height: 850px;">
+        <div class="hide">
+            <input type="text" id="txtpar_aprobarrechazar_solicitudatx" value="DATA-PARAMETRO" />
+            <input type="text" id="hf_chk_solicitudrecibida" value="0" />
+            <input type="text" id="hf_esnecesario_recibirsolicitud" value="" />
+        </div>
+        <div class="ibox float-e-margins" id="div_float_aprobarrechazar_solicitudatx">
+            <div class="ibox-content">
+                <div class="form-horizontal">
+                    <div class="form-group hide" id="div_grupo_motivo">
+                        <label class="control-label col-sm-2">Motivo:</label>
+                        <div class="col-sm-10"><select class="form-control _clsmotivo" id="_cbomotivorechazo"><option>Select </option></select></div>
+                    </div>
+                    <div class="form-group hide" id="div_grupo_recibirsolicitud">
+                        <label class="control-label col-sm-2">Recibir Solicitud</label>
+                        <div class="col-sm-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Codigo Solicitud" id="txtbarcode" readonly="readonly" />
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-danger" id="_btn_check_solicitudrecibida">
+                                        <span class="fa fa-remove" id="_span_check_solicitudrecibida"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" id="div_grupo_comentario_aprobarrechazar_solicitudatx">
+                        <label class="control-label col-sm-2">Commentary</label>
+                        <div class="col-sm-12">
+                            <textarea id="_txta_comentario_aprobarrechazar_solicitudatx" rows="2" class="form-control _enty" style="resize: none;" data-min="1" data-ng-max="8000" data-required="false" data-level="false"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

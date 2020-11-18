@@ -1,0 +1,928 @@
+﻿<style>
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f7f7f7;
+    }
+
+    #txtFechaModal[readonly] {
+        background-color: #ffffff;
+        border: 1px solid #e5e6e7;
+    }
+
+    #txtFechaModal.form-control[readonly] {
+        background-color: #ffffff;
+        border-top: 1px solid #e5e6e7 !important;
+        border-left: 1px solid #e5e6e7 !important;
+        border-right: 1px solid #e5e6e7 !important;
+        border-bottom: 1px solid #e5e6e7 !important;
+    }
+
+    .select2-container {
+        z-index: 99999;
+    }
+
+    /* Select2 one fix */
+    #cboArea2 + .select2-container--default .select2-selection--single {
+        height: 34px !important;
+    }
+
+        #cboArea2 + .select2-container--default .select2-selection--single .select2-selection__rendered {
+            line-height: 34px !important;
+        }
+
+        #cboArea2 + .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: 34px !important;
+        }
+
+    #cboArea3 + .select2-container--default .select2-selection--single {
+        height: 34px !important;
+    }
+
+        #cboArea3 + .select2-container--default .select2-selection--single .select2-selection__rendered {
+            line-height: 34px !important;
+        }
+
+        #cboArea3 + .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: 34px !important;
+        }
+
+    .select2-container.select2-container--default.select2-container--open {
+        z-index: 99999;
+    }
+
+    .bg-blue-solicitud {
+        background: #206590 !important;
+        color: white;
+    }
+
+    #div_tbl_area table th {
+        background: #206590 !important;
+        color: white !important;
+        border: 1px solid #e7e7e7;
+    }
+
+    #div_tbl_usuario table th {
+        background: #206590 !important;
+        color: white !important;
+        border: 1px solid #e7e7e7;
+    }
+
+    #div_tbl_usuario_reportes table th {
+        background: #206590 !important;
+        color: white !important;
+        border: 1px solid #e7e7e7;
+    }
+
+    #div_tbl_feriado table th {
+        background: #206590 !important;
+        color: white !important;
+        border: 1px solid #e7e7e7;
+    }
+
+    #div_tbl_vacaciones table th {
+        background: #206590 !important;
+        color: white !important;
+        border: 1px solid #e7e7e7;
+    }
+    /*.control-label {
+    font-size:11pt;
+    }*/
+
+</style>
+<div class="ibox" id="panelEncabezado_ConfiguracionIndex">
+    <div class="hide">
+        <input type="text" id="txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-6">
+            <h2 class="font-bold">Configuracion</h2>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <i class="fa fa-home"></i>
+                </li>
+                <li class="breadcrumb-item">
+                    Gestion de Talento
+                </li>
+                <li class="breadcrumb-item active">
+                    <strong>Configuracion</strong>
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-6 text-right" style="padding-top:20px"></div>
+    </div>
+    <div class="wrapper wrapper-content">
+        <div class="row animated fadeInRight">
+            <div class="col-lg-12">
+                <div class="tabs-container">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="active">
+                            <a class="nav-link" data-toggle="tab" href="#tab-vacaciones">Vacaciones</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" data-toggle="tab" href="#tab-masivo">Asignar Masivamente</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" data-toggle="tab" href="#tab-permisos">Permisos</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" data-toggle="tab" href="#tab-descansomedico">Descanso Médico</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" data-toggle="tab" href="#tab-licencias">Licencias</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" data-toggle="tab" href="#tab-cumpleanios">Cumpleaños</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" data-toggle="tab" href="#tab-feriados">Feriados</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" data-toggle="tab" href="#tab-visualizacion">Visualización</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div role="tabpanel" id="tab-vacaciones" class="tab-pane active">
+                            <div class="ibox">
+                                <div class="ibox-content">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="ibox">
+                                                <h4>Políticas:</h4>
+                                                <div class="ibox-content">
+                                                    <div class="form-horizontal row">
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="control-label col-sm-6">Plazo Minimo Laborado:</label>
+                                                                <div class="col-sm-2">
+                                                                    <input type="number" id="txtplazominimolaborado" class="_enty_vacaciones allow-int form-control text-success font-bold text-center" data-required="true" data-min="1" data-max="254" data-id="plazo_minimo">
+                                                                </div>
+                                                                <label class="control-label col-sm-4 no-margins text-left" style="padding-left:0px; padding-right:0px">Meses</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="control-label col-sm-6">El Año tiene</label>
+                                                                <div class="col-sm-2">
+                                                                    <input type="number" id="txtdiasxanio" class="_enty_vacaciones allow-int form-control text-success font-bold text-center" data-required="true" data-min="1" data-max="254" data-id="dias_por_anio">
+                                                                </div>
+                                                                <label class="control-label col-sm-4 no-margins text-left" style="padding-left:0px; padding-right:0px">Dias Calendario</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="control-label col-sm-6">De 1 a 2 dias, se debe registrar la solicitud con</label>
+                                                                <div class="col-sm-2">
+                                                                    <input type="number" id="txtusominimo" class="_enty_vacaciones allow-int form-control text-success font-bold text-center" data-required="true" data-min="1" data-max="254" data-id="uso_minimo">
+                                                                </div>
+                                                                <label class="control-label col-sm-4 no-margins text-left" style="padding-left:0px; padding-right:0px">Dias de anticipación como mínimo</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="control-label col-sm-6">El Mes tiene</label>
+                                                                <div class="col-sm-2">
+                                                                    <input type="number" id="txtdiasxmes" class="_enty_vacaciones allow-int form-control text-success font-bold text-center" data-required="true" data-min="1" data-max="254" data-id="dias_por_mes">
+                                                                </div>
+                                                                <label class="control-label col-sm-4 no-margins text-left" style="padding-left:0px; padding-right:0px">Dias Calendario</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6 hide">
+                                                            <div class="form-group">
+                                                                <label class="control-label col-sm-6">Condicion para solicitar minimo de Vacaciones:</label>
+                                                                <div class="col-sm-2">
+                                                                    <input type="number" id="txtcondicionminimo" class="_enty_vacaciones allow-int form-control text-success font-bold text-center" data-required="true" data-min="1" data-max="254" data-id="condicion_dias_minimo">
+                                                                    <!--<small>Si previamente han gozado de los primeros (x) día(s) de vacaciones</small>-->
+                                                                </div>
+                                                                <label class="control-label col-sm-4 no-margins text-left" style="padding-left:0px; padding-right:0px">Dias</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="control-label col-sm-6">De 3 a 6 dias, se debe registrar la solicitud con</label>
+                                                                <div class="col-sm-2">
+                                                                    <input type="number" id="txtplazominimo" class="_enty_vacaciones allow-int form-control text-success font-bold text-center" data-required="true" data-min="1" data-max="254" data-id="plazo_minimo_especial">
+                                                                    <!--<small>Si el colaborador solicita (x) día(s) de vacaciones</small>-->
+                                                                </div>
+                                                                <label class="control-label col-sm-4 no-margins text-left" style="padding-left:0px; padding-right:0px">Dias de anticipación como mínimo</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="control-label col-sm-6">Los Colaboradores tienen</label>
+                                                                <div class="col-sm-2">
+                                                                    <input type="number" id="txtdiasvacacionesanio" class="_enty_vacaciones allow-int form-control text-success font-bold text-center" data-required="true" data-min="1" data-max="254" data-id="vacaciones_por_anio">
+                                                                </div>
+                                                                <label class="control-label col-sm-4 no-margins text-left" style="padding-left:0px; padding-right:0px">Dias útiles por año laborado.</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="control-label col-sm-6">De 7 dias a más, se debe registrar la solicitud con</label>
+                                                                <div class="col-sm-2">
+                                                                    <input type="number" id="txtplazonormal" class="_enty_vacaciones allow-int form-control text-success font-bold text-center" data-required="true" data-min="1" data-max="254" data-id="plazo_minimo_normal">
+                                                                    <!--<small>Si el colaborador solicita mas de (x) día(s) de vacaciones</small>*-->
+                                                                </div>
+                                                                <label class="control-label col-sm-4 no-margins text-left" style="padding-left:0px; padding-right:0px">Dias de anticipación como mínimo</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6 hide">
+                                                            <div class="form-group">
+                                                                <label class="control-label col-sm-6">Formula Calculo de Vacaciones:</label>
+                                                                <div class="col-sm-2">
+                                                                    <input type="text" id="txtformula" class="_enty_vacaciones allow-int form-control text-center" disabled>
+                                                                    <!--<small>Dias Laborados * Días de Vacaciones x Año / Dias x Año</small>-->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6 hide">
+                                                            <div class="form-group">
+                                                                <label class="control-label col-sm-6">Comunicación por inicio de vacaciones:</label>
+                                                                <div class="col-sm-2">
+                                                                    <input type="number" id="txtnotificacion" class="_enty_vacaciones allow-int form-control text-success font-bold text-center" data-required="true" data-min="1" data-max="254" data-id="notificacion">
+                                                                    <!--<small>Notificacion automatica del ERP via E-Mail al Coolaborador y Jefe Directo</small>-->
+                                                                </div>
+                                                                <label class="control-label col-sm-4 no-margins text-left" style="padding-left:0px; padding-right:0px">Dias</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <div class="form-group">
+                                                                <div id="divBotones" class="col-sm-12 text-left">
+                                                                    <button type="button" id="btnSaveConfigVaca" class="btn btn-sm btn-success">
+                                                                        <span class="fa fa-save"></span>
+                                                                        Guardar
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="tab-masivo" class="tab-pane">
+                            <div class="ibox">
+                                <div class="ibox-content">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="tabs-container">
+                                                <ul class="nav nav-tabs" role="tablist" style="margin-bottom: 20px;">
+                                                    <li class="active">
+                                                        <a class="nav-link" data-toggle="tab" href="#tab-masivo_golden">Golden Ticket</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nav-link" data-toggle="tab" href="#tab-masivo_permiso">Permisos</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nav-link" data-toggle="tab" href="#tab-masivo_vaca">Vacaciones</a>
+                                                    </li>
+                                                </ul>
+                                                <div class="tab-content">
+                                                    <div role="tabpanel" id="tab-masivo_golden" class="tab-pane active">
+                                                        <div class="form-horizontal">
+                                                            <div class="col-sm-3">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-sm-4">Cantidad:</label>
+                                                                    <div class="col-sm-8">
+                                                                        <input type="number" id="txtCantidadGolden" class="allow-int form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-sm-4">Tipo:</label>
+                                                                    <div class="col-sm-8">
+                                                                        <select id="cboTipo" class="form-control">
+                                                                            <option value="ASIGNAR">ASIGNAR</option>
+                                                                            <option value="QUITAR">QUITAR</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-sm-4">Motivo:</label>
+                                                                    <div class="col-sm-8">
+                                                                        <input type="text" id="txtMotivo" class="form-control text-success font-bold">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-2">
+                                                                <div class="form-group">
+                                                                    <div id="divBotones" class="col-sm-12 text-right">
+                                                                        <button type="button" id="btnAddGolden" class="btn btn-success">
+                                                                            <span class="fa fa-save"></span>
+                                                                            Guardar
+                                                                        </button>
+                                                                        <button type="button" id="btnSelectAll" class="btn btn-warning">
+                                                                            <span class="fa fa-check"></span>
+                                                                        </button>
+                                                                        <button type="button" id="btnRemoveAll" class="btn btn-danger">
+                                                                            <span class="fa fa-close"></span>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-horizontal">
+                                                            <div class="form-group">
+                                                                <div class="col-sm-8">
+                                                                    <input type="text" placeholder="Buscar Personal" class="input form-control" id="txtBuscar">
+                                                                </div>
+                                                                <div class="col-sm-4">
+                                                                    <select id="cboArea" class="form-control" multiple="multiple"></select>
+                                                                </div>
+                                                                <div id="div_tbl_area" class="table-responsive col-sm-12"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div role="tabpanel" id="tab-masivo_permiso" class="tab-pane">
+                                                        <div class="form-horizontal">
+                                                            <div class="col-sm-5">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-sm-3">Fecha:</label>
+                                                                    <div class="col-sm-3">
+                                                                        <div class="input-group date date-es">
+                                                                            <input id="txtFechaPermiso" type="text" class="form-control" placeholder="__/__/____" readonly>
+                                                                            <div class="input-group-addon">
+                                                                                <span class="fa fa-calendar"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-sm-3">
+                                                                        <div class="form-group">
+                                                                            <div class="input-group">
+                                                                                <input id="txtHoraInicio" type="time" class="form-control" min="08:30" max="18:30" title="Hora inicial" />
+                                                                                <div class="input-group-addon">
+                                                                                    <span class="fa fa-clock-o"></span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-sm-3">
+                                                                        <div class="form-group">
+                                                                            <div class="input-group">
+                                                                                <input id="txtHoraFin" type="time" class="form-control" min="08:30" max="18:30" title="Hora final" />
+                                                                                <div class="input-group-addon">
+                                                                                    <span class="fa fa-clock-o"></span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-5">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-sm-4">Motivo:</label>
+                                                                    <div class="col-sm-8">
+                                                                        <input type="text" id="txtMotivoPermiso" class="form-control text-success font-bold">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-2">
+                                                                <div class="form-group">
+                                                                    <div id="divBotones" class="col-sm-12 text-right">
+                                                                        <button type="button" id="btnSavePermiso" class="btn btn-success" style="width: 100%;">
+                                                                            <span class="fa fa-save"></span>
+                                                                            Guardar
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-horizontal">
+                                                            <div class="form-group">
+                                                                <div class="col-sm-8">
+                                                                    <input type="text" placeholder="Buscar Personal" class="input form-control" id="txtBuscar2">
+                                                                </div>
+                                                                <div class="col-sm-4">
+                                                                    <select id="cboArea2" class="form-control"></select>
+                                                                </div>
+                                                                <div id="div_tbl_permisos" class="table-responsive col-sm-12"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div role="tabpanel" id="tab-masivo_vaca" class="tab-pane">
+                                                        <div class="form-horizontal">
+                                                            <div class="col-sm-3">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-sm-4">Fecha:</label>
+                                                                    <div class="col-sm-8">
+                                                                        <div class="input-group">
+                                                                            <input id="txtFechaVacaciones" type="text" class="form-control" placeholder="__/__/____" readonly>
+                                                                            <div class="input-group-addon">
+                                                                                <span class="fa fa-calendar"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-7">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-sm-4">Motivo:</label>
+                                                                    <div class="col-sm-8">
+                                                                        <input type="text" id="txtMotivoVacaciones" class="form-control text-success font-bold">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-2">
+                                                                <div class="form-group">
+                                                                    <div id="divBotones" class="col-sm-12 text-right">
+                                                                        <button type="button" id="btnSaveVacaciones" class="btn btn-success" style="width: 100%;">
+                                                                            <span class="fa fa-save"></span>
+                                                                            Guardar
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-horizontal">
+                                                            <div class="form-group">
+                                                                <div class="col-sm-8">
+                                                                    <input type="text" placeholder="Buscar Personal" class="input form-control" id="txtBuscar3">
+                                                                </div>
+                                                                <div class="col-sm-4">
+                                                                    <select id="cboArea3" class="form-control"></select>
+                                                                </div>
+                                                                <div id="div_tbl_vacaciones" class="table-responsive col-sm-12"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="tab-permisos" class="tab-pane">
+                            <div class="ibox">
+                                <div class="ibox-content">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="ibox">
+                                                <h4>Políticas y Condiciones Generales Permisos:</h4>
+                                                <div class="ibox-content">
+                                                    <div class="form-horizontal row">
+                                                        <div class="col-sm-12">
+                                                            <div class="form-group">
+                                                                <label class="control-label col-sm-4">Como mínimo su Permiso puede ser de</label>
+                                                                <div class="col-sm-3">
+                                                                    <input type="number" step="0.5" id="txthoraminimopermiso" class="_enty_permisos form-control text-success font-bold text-center" data-required="true" data-min="0.5" data-max="10" data-id="hora_minimo">
+                                                                </div>
+                                                                <label class="control-label col-sm-4 text-left " style="padding-left:0px">Horas</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <div class="form-group">
+                                                                <label class="control-label col-sm-4">Como máximo su Permiso puede ser de</label>
+                                                                <div class="col-sm-3">
+                                                                    <input type="number" step="0.5" id="txthoramaximopermiso" class="_enty_permisos form-control text-success font-bold text-center" data-required="true" data-min="0.5" data-max="10" data-id="hora_maximo">
+                                                                </div>
+                                                                <label class="control-label col-sm-4 text-left" style="padding-left:0px">Horas</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <div class="form-group">
+                                                                <div id="divBotones" class="col-sm-12 text-left">
+                                                                    <button type="button" id="btnSaveConfigPermi" class="btn btn-sm btn-success">
+                                                                        <span class="fa fa-save"></span>
+                                                                        Guardar
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="tab-descansomedico" class="tab-pane">
+                            <div class="ibox">
+                                <div class="ibox-content">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="ibox">
+                                                <h4>Políticas y Condiciones Generales para Descanso Médico:</h4>
+                                                <div class="ibox-content">
+                                                    <div class="form-horizontal row">
+                                                        <div class="col-sm-12">
+                                                            <div class="form-group">
+                                                                <label class="control-label col-sm-4">Se conciderara subsidio si supera los</label>
+                                                                <div class="col-sm-3">
+                                                                    <input type="number" id="txtdiassubsidio" class="_enty_descansomedico allow-int form-control text-success font-bold text-center" data-required="true" data-min="1" data-max="254" data-id="dias_minimo">
+                                                                </div>
+                                                                <label class="control-label col-sm-4 text-left " style="padding-left:0px">Dias</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <div class="form-group">
+                                                                <div id="divBotones" class="col-sm-12 text-left">
+                                                                    <button type="button" id="btnSaveConfigDescMed" class="btn btn-sm btn-success">
+                                                                        <span class="fa fa-save"></span>
+                                                                        Guardar
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="tab-licencias" class="tab-pane">
+                            <div class="ibox">
+                                <div class="ibox-content">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="ibox">
+                                                <h4>Políticas y Condiciones Generales para Licencias:</h4>
+                                                <div class="ibox-content">
+                                                    <div class="form-horizontal row">
+                                                        <div class="col-sm-12">
+                                                            <div class="form-group">
+                                                                <label class="control-label col-sm-4">Licencia por Paternidad</label>
+                                                                <div class="col-sm-3">
+                                                                    <input type="number" id="txtpaternidad" class="_enty_licencias allow-int form-control text-success font-bold text-center" data-required="true" data-min="1" data-max="254" data-id="paternidad">
+                                                                </div>
+                                                                <label class="control-label col-sm-4 text-left " style="padding-left:0px">Dias</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <div class="form-group">
+                                                                <label class="control-label col-sm-4">Licencia por Maternidad</label>
+                                                                <div class="col-sm-3">
+                                                                    <input type="number" id="txtmaternidad" class="_enty_licencias allow-int form-control text-success font-bold text-center" data-required="true" data-min="1" data-max="254" data-id="maternidad">
+                                                                </div>
+                                                                <label class="control-label col-sm-4 text-left " style="padding-left:0px">Dias</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <div class="form-group">
+                                                                <label class="control-label col-sm-4">Licencia por Maternidad Especial</label>
+                                                                <div class="col-sm-3">
+                                                                    <input type="number" id="txtmaternidadespecial" class="_enty_licencias allow-int form-control text-success font-bold text-center" data-required="true" data-min="1" data-max="254" data-id="maternidad_especial">
+                                                                </div>
+                                                                <label class="control-label col-sm-4 text-left " style="padding-left:0px">Dias</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <div class="form-group">
+                                                                <label class="control-label col-sm-4">Licencia por Fallecimiento en Lima</label>
+                                                                <div class="col-sm-3">
+                                                                    <input type="number" id="txtfallecimientolima" class="_enty_licencias allow-int form-control text-success font-bold text-center" data-required="true" data-min="1" data-max="254" data-id="fallecimiento_lima">
+                                                                </div>
+                                                                <label class="control-label col-sm-4 text-left " style="padding-left:0px">Dias</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <div class="form-group">
+                                                                <label class="control-label col-sm-4">Licencia por Fallecimiento en Provincia</label>
+                                                                <div class="col-sm-3">
+                                                                    <input type="number" id="txtfallecimientoprovincia" class="_enty_licencias allow-int form-control text-success font-bold text-center" data-required="true" data-min="1" data-max="254" data-id="fallecimiento_provincia">
+                                                                </div>
+                                                                <label class="control-label col-sm-4 text-left " style="padding-left:0px">Dias</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <div class="form-group">
+                                                                <label class="control-label col-sm-4">Licencia por Estado Grave</label>
+                                                                <div class="col-sm-3">
+                                                                    <input type="number" id="txtestadograve" class="_enty_licencias allow-int form-control text-success font-bold text-center" data-required="true" data-min="1" data-max="254" data-id="estadograve">
+                                                                </div>
+                                                                <label class="control-label col-sm-4 text-left " style="padding-left:0px">Dias</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <div class="form-group">
+                                                                <div id="divBotones" class="col-sm-12 text-left">
+                                                                    <button type="button" id="btnSaveConfigLice" class="btn btn-sm btn-success">
+                                                                        <span class="fa fa-save"></span>
+                                                                        Guardar
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="tab-cumpleanios" class="tab-pane">
+                            <div class="ibox">
+                                <div class="ibox-content">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="ibox">
+                                                <h4>Políticas y Condiciones Generales para Cumpleaños:</h4>
+                                                <div class="ibox-content">
+                                                    <div class="form-horizontal row">
+                                                        <div class="col-sm-12">
+                                                            <div class="form-group">
+                                                                <label class="control-label col-sm-4">Mínimo de días para solicitar</label>
+                                                                <div class="col-sm-3">
+                                                                    <input type="number" id="txtdiasminimo" class="_enty_cumpleanios allow-int form-control text-success font-bold text-center" data-required="true" data-min="1" data-max="254" data-id="dias_minimo">
+                                                                </div>
+                                                                <label class="control-label col-sm-4 text-left " style="padding-left:0px">Dias</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <div class="form-group">
+                                                                <label class="control-label col-sm-4">Máximo de días para solicitar</label>
+                                                                <div class="col-sm-3">
+                                                                    <input type="number" id="txtdiasmaximo" class="_enty_cumpleanios allow-int form-control text-success font-bold text-center" data-required="true" data-min="1" data-max="254" data-id="dias_maximo">
+                                                                </div>
+                                                                <label class="control-label col-sm-4 text-left " style="padding-left:0px">Dias</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <div class="form-group">
+                                                                <div id="divBotones" class="col-sm-12 text-left">
+                                                                    <button type="button" id="btnSaveConfigCumple" class="btn btn-sm btn-success">
+                                                                        <span class="fa fa-save"></span>
+                                                                        Guardar
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="tab-feriados" class="tab-pane">
+                            <div class="ibox">
+                                <div class="ibox-content">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="ibox">
+                                                <h4>Agregar/Eliminar Feriados:</h4>
+                                                <div class="ibox-content">
+                                                    <div class="form-horizontal row">
+                                                        <div class="form-group">
+                                                            <div class="col-sm-12">
+                                                                <div class="form-group">
+                                                                    <div id="divBotones" class="col-sm-12 text-left">
+                                                                        <button type="button" id="btnAddFeriado" class="btn btn-sm btn-success">
+                                                                            <span class="fa fa-plus"></span>
+                                                                            Nuevo
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-12">
+                                                                <input type="text" placeholder="Buscar Feriado" class="input form-control" id="txtBuscarFeriado">
+                                                            </div>
+                                                            <div id="div_tbl_feriado" class="table-responsive col-sm-12"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="tab-visualizacion" class="tab-pane">
+                            <div class="ibox">
+                                <div class="ibox-content">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="tabs-container">
+                                                <ul class="nav nav-tabs" role="tablist">
+                                                    <li class="active">
+                                                        <a class="nav-link" data-toggle="tab" href="#tab-usuarios">Usuarios</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="nav-link" data-toggle="tab" href="#tab-reportes">Reportes</a>
+                                                    </li>
+                                                </ul>
+                                                <div class="tab-content">
+                                                    <div role="tabpanel" id="tab-usuarios" class="tab-pane active">
+                                                        <div class="">
+                                                            <div class="col-xs-12" style="margin-bottom:10px!important"></div>
+                                                            <div class="form-horizontal col-xs-12">
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="form-group">
+                                                                            <div id="divBotones" class="col-sm-12 text-left">
+                                                                                <button type="button" id="btnAddUsuario" class="btn btn-sm btn-success" data-toggle="modal" data-target="#modal_usuario">
+                                                                                    <span class="fa fa-plus"></span>
+                                                                                    Nuevo
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-12">
+                                                                        <input type="text" placeholder="Buscar Usuario" class="input form-control" id="txtBuscarUsuario">
+                                                                    </div>
+                                                                    <div id="div_tbl_usuario" class="table-responsive col-sm-12"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div role="tabpanel" id="tab-reportes" class="tab-pane">
+                                                        <div class="">
+                                                            <div class="col-xs-12" style="margin-bottom:10px!important"></div>
+                                                            <div class="form-horizontal col-xs-12">
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="form-group">
+                                                                            <div id="divBotones" class="col-sm-12 text-left">
+                                                                                <button type="button" id="btnAddUsuarioReportes" class="btn btn-sm btn-success" data-toggle="modal" data-target="#modal_usuarioreportes">
+                                                                                    <span class="fa fa-plus"></span>
+                                                                                    Nuevo
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-12">
+                                                                        <input type="text" placeholder="Buscar Usuario" class="input form-control" id="txtBuscarUsuarioReportes">
+                                                                    </div>
+                                                                    <div id="div_tbl_usuario_reportes" class="table-responsive col-sm-12"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Feriado -->
+        <div class="modal fade classferiado" id="modal_feriado" role="dialog" aria-labelledby="modal_feriado" data-dismiss="modal" aria-hidden="true" data-backdrop="static">
+            <div class="modal-dialog " id="modal_dialogferiado">
+                <div class="modal-content">
+                    <div class="modal-header bg-success">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modal_titleferiado">Guardar Feriado</h4>
+                    </div>
+                    <div class="modal-body wrapper wrapper-content gray-bg">
+                        <div id="modal_bodyferiado">
+                            <div class="ibox white-bg">
+                                <div class="ibox-title">
+                                    <div class="form-horizontal">
+                                        <div id="divBotones" class="text-right">
+                                            <button type="button" class="btn btn-info" id="btnSaveModal">
+                                                <span class="fa fa-save"></span>
+                                                Guardar
+                                            </button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                <span class="fa fa-ban"></span>
+                                                Cancelar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ibox-content">
+                                    <div class="form-horizontal row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <div class="col-sm-12">
+                                                    <label class="control-label">Descripción:</label>
+                                                    <input id="txtDescripcionModal" type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <div class="col-sm-12">
+                                                    <label class="control-label">Fecha:</label>
+                                                    <div class="input-group date date-es">
+                                                        <input id="txtFechaModal" type="text" class="form-control" placeholder="__/__/____" readonly>
+                                                        <div class="input-group-addon">
+                                                            <span class="fa fa-calendar"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Usuario -->
+        <div class="modal fade" id="modal_usuario" role="dialog" aria-labelledby="modal_usuario" data-dismiss="modal" aria-hidden="true" data-backdrop="static">
+            <div class="modal-dialog " id="modal_dialogusuario">
+                <div class="modal-content">
+                    <div class="modal-header bg-success">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modal_titleusuario">Añadir Usuario</h4>
+                    </div>
+                    <div class="modal-body wrapper wrapper-content gray-bg">
+                        <div id="modal_bodyusuario">
+                            <div class="ibox white-bg">
+                                <div class="ibox-title">
+                                    <div class="form-horizontal">
+                                        <div id="divBotones" class="text-right">
+                                            <button type="button" class="btn btn-info" id="btnSaveModalUsuario">
+                                                <span class="fa fa-save"></span>
+                                                Guardar
+                                            </button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                <span class="fa fa-ban"></span>
+                                                Cancelar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ibox-content">
+                                    <div class="form-horizontal row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <div class="col-sm-12">
+                                                    <label class="control-label">Nuevo Usuario:</label>
+                                                    <div class="input-group">
+                                                        <select id="cboUsuarioModal" class="form-control"></select>
+                                                        <div class="input-group-addon">
+                                                            <span class="fa fa-user"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Usuario -->
+        <div class="modal fade" id="modal_usuarioreportes" role="dialog" aria-labelledby="modal_usuarioreportes" data-dismiss="modal" aria-hidden="true" data-backdrop="static">
+            <div class="modal-dialog " id="modal_dialogusuarioreportes">
+                <div class="modal-content">
+                    <div class="modal-header bg-success">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modal_titleusuarioreportes">Añadir Usuario</h4>
+                    </div>
+                    <div class="modal-body wrapper wrapper-content gray-bg">
+                        <div id="modal_bodyusuarioreportes">
+                            <div class="ibox white-bg">
+                                <div class="ibox-title">
+                                    <div class="form-horizontal">
+                                        <div id="divBotones" class="text-right">
+                                            <button type="button" class="btn btn-info" id="btnSaveModalUsuarioReportes">
+                                                <span class="fa fa-save"></span>
+                                                Guardar
+                                            </button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                <span class="fa fa-ban"></span>
+                                                Cancelar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ibox-content">
+                                    <div class="form-horizontal row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <div class="col-sm-12">
+                                                    <label class="control-label">Nuevo Usuario:</label>
+                                                    <div class="input-group">
+                                                        <select id="cboUsuarioModalReportes" class="form-control"></select>
+                                                        <div class="input-group-addon">
+                                                            <span class="fa fa-user"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1212 @@
+﻿<div id="panelEncabezado_RequerimientoDetalleDDP">
+    <div class="hide">
+        <input type="text" id="sampledetails_txtpar" value="DATA-PARAMETRO" />
+        <input type="text" id="rutaFileServerEstilo" value="@ViewBag.RutaFileServer" />
+    </div>
+    <div class="form-horizontal row">
+        <div class="col-sm-12 m-b">
+            <div class="float-left">
+                <ul class="nav nav-tabs" role="tablist" style="border-bottom: 0">
+                    <li class="bg-primary active">
+                        <a id="tabGeneral" data-toggle="tab" href="#tab-general" aria-expanded="true"><i class="fa fa-database"></i> GENERAL</a>
+                    </li>
+                    <li>
+                        <a id="tabDetalle" data-toggle="tab" href="#tab-detalle" aria-expanded="false"><i class="fa fa-info"></i> DETALLE</a>
+                    </li>
+                    <li>
+                        <a id="tabCorreos" data-toggle="tab" href="#tab-correos" aria-expanded="false">
+                            <i class="fa fa-envelope"></i> NUEVO
+                            CORREO
+                        </a>
+                    </li>
+                    <li>
+                        <a id="tabSeguimiento" data-toggle="tab" href="#tab-seguimiento" aria-expanded="false">
+                            <i class="fa fa-list-ol"></i>
+                            SEGUIMIENTO
+                        </a>
+                    </li>
+                    <li>
+                        <a id="tabComentarios" data-toggle="tab" href="#tab-comentarios" aria-expanded="false">
+                            <i class="fa fa-comments"></i>
+                            COMENTARIOS
+                        </a>
+                    </li>
+                    <li>
+                        <a id="tabCalificaciones" data-toggle="tab" href="#tab-calificaciones" aria-expanded="false">
+                            <i class="fa fa-star"></i>
+                            CALIFICACIONES
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div id="divBotones" class="text-right">
+                <button type="button" class="btn btn-primary" id="btnGuardarReq">
+                    <span class="fa fa-save"></span>
+                    Guardar
+                </button>
+            </div>
+            <hr />
+        </div>
+    </div>
+    <div class="form-horizontal row" id="scroll_ddp">
+        <div>
+            <div id="informacion" class="tab-content">
+                <div id="tab-general" role="tabpanel" class="tab-pane active">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label col-sm-4">
+                                ¿Es una
+                                REORDEN?:
+                            </label>
+                            <div class="col-sm-8">
+                                <div>
+                                    <select class="form-control _enty_grabar" id="cboReorden" data-id="EsReorden">
+                                        <option value="1" class="text-center">
+                                            SI
+                                        </option>
+                                        <option value="0" class="text-center">
+                                            NO
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Estado del
+                                Requerimiento:
+                            </label>
+                            <div class="col-sm-4">
+                                <div>
+                                    <input type="text" id="lblEstado" class="form-control text-center _enty_grabar" disabled value="" data-id="Status">
+                                </div>
+                            </div>
+                            <label class="control-label col-sm-2">Temporada:</label>
+                            <div class="col-sm-4">
+                                <div>
+                                    <input type="text" id="lblTemporada" class="form-control text-center" disabled value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Cod.WTS:</label>
+                            <div class="col-sm-4">
+                                <div>
+                                    <input type="text" id="lblCodWTS" class="form-control text-center _enty_grabar" disabled value="" data-id="IdEstilo">
+                                </div>
+                            </div>
+                            <label class="control-label col-sm-2">División:</label>
+                            <div class="col-sm-4">
+                                <div>
+                                    <input type="text" id="lblDivision" class="form-control text-center" disabled value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Cliente:</label>
+                            <div class="col-sm-4">
+                                <div>
+                                    <input type="text" id="lblCliente" class="form-control text-center" disabled value="">
+                                </div>
+                            </div>
+                            <label class="control-label col-sm-2">
+                                Estilo del
+                                Cliente:
+                            </label>
+                            <div class="col-sm-4">
+                                <div>
+                                    <input type="text" id="lblEstilo" class="form-control text-center" disabled value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Marca:</label>
+                            <div class="col-sm-4">
+                                <div>
+                                    <input type="text" id="lblMarca" class="form-control text-center" disabled value="">
+                                </div>
+                            </div>
+                            <label class="control-label col-sm-2">Muestra:</label>
+                            <div class="col-sm-4">
+                                <div>
+                                    <input type="text" id="lblMuestra" class="form-control text-center" disabled value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Grupo
+                                Comercial:
+                            </label>
+                            <div class="col-sm-4">
+                                <div>
+                                    <input type="text" id="lblEquipo" class="form-control text-center" disabled value="">
+                                </div>
+                            </div>
+                            <label class="control-label col-sm-2">Versión:</label>
+                            <div class="col-sm-4">
+                                <div>
+                                    <input type="text" id="lblVersion" class="form-control text-center" disabled value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Tipo
+                                Proveedor:
+                            </label>
+                            <div class="col-sm-4">
+                                <div>
+                                    <input type="text" id="lblTipoFabrica" class="form-control text-center" disabled value="">
+                                </div>
+                            </div>
+                            <label class="control-label col-sm-2">
+                                Estado de
+                                Actividad:
+                            </label>
+                            <div class="col-sm-4">
+                                <div>
+                                    <input type="text" id="lblEstadoReqDDP" class="form-control text-center" disabled value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Proveedor:</label>
+                            <div class="col-sm-4">
+                                <div>
+                                    <input type="text" id="lblFabrica" class="form-control text-center" disabled value="">
+                                </div>
+                            </div>
+                            <label class="control-label col-sm-2">Actividad:</label>
+                            <div class="col-sm-4">
+                                <div>
+                                    <input type="text" id="lblActividad" class="form-control text-center" disabled value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label col-sm-4">
+                                Categoría
+                                de Tela:
+                            </label>
+                            <div class="col-sm-8">
+                                <div>
+                                    <input type="text" id="lblCategoria" class="form-control text-center" disabled value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4">
+                                Descripción
+                                Tela:
+                            </label>
+                            <div class="col-sm-8">
+                                <div>
+                                    <div id="div_nombretela" style="height: 100px;" class="form-control" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4">
+                                Composición
+                                Tela:
+                            </label>
+                            <div class="col-sm-8">
+                                <div>
+                                    <div id="div_contenidotela" style="height: 100px;" class="form-control" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" id="div_grupo_fechateladisponible">
+                            <label class="control-label col-sm-4">
+                                Fecha Tela
+                                disponible:
+                            </label>
+                            <div class="col-sm-8">
+                                <!--
+    <div>
+        <input type="text" id="lblFechaTelaDisponible" class="form-control text-center" disabled value="">
+    </div>
+    -->
+                                <!--
+    <div class='input-group date cls_grupo_fechateladisponible'>
+        <input type="text" id="txtfechateladisponible" class="form-control _fechateladisponible _enty_grabar" data-min="1" data-max="254" data-id="FechaTelaDisponible"
+               data-date-format="dd/mm/yyyy" data-type="date" style="height:auto!important" data-mask="99/99/9999">
+        <span class='input-group-addon disabled'> <i class='fa fa-calendar'> </i> </span>
+    </div>
+    -->
+
+                                <div class='input-group date cls_grupo_fechateladisponible'>
+                                    <input id="txtfechateladisponible" type='text' class='form-control _fechateladisponible _enty_grabar' data-date-format="dd/mm/yyyy" data-id="FechaTelaDisponible" data-type="date" data-level="true" data-min="10" data-max="10">
+                                    <div class="input-group-addon">
+                                        <span class="fa fa-calendar"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6" style="margin-top:15px">
+                        <div class="form-group">
+                            <div class="col-sm-3">
+                                <div>
+                                    <label title="Cargar archivo de imagen" for="inputImageDetalle" class="btn btn-primary m-b-sm">
+                                        <input type="file" accept="image/*" id="inputImageDetalle" style="display:none">
+                                        <span class="fa fa-upload"></span> Upload File
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="text-center">
+                                    <img src="" alt="" id="imageDetalle" class="text-center col-xs-10 col-sm-10 border-left-right border-bottom border-top" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab-detalle" class="tab-pane">
+                    <div class="col-sm-12">
+                        <label class="font-bold" style="font-size: 14pt;">
+                            <i class="fa fa-file" aria-hidden="true"></i> Muestras
+                        </label>
+                        <div class="table-responsive iboxlistamuestras "id="divdetallemuestras">
+                            <table id="tabdetalle_tblmuestras" class="table table-bordered table-hover ">
+                                <thead id="tblmuestras_thead">
+                                </thead>
+                                <tbody id="tblmuestras_tbody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-9">
+                        <label class="font-bold" style="font-size: 14pt;">
+                            <i class="fa fa-calendar"></i>
+                            Programación
+                        </label>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <button class="btn btn-primary pull-right hide" id="btnActualizarDespachoHide">
+                            <i class="fa fa-refresh"></i> Actualizar Despacho View
+                        </button> 
+                        <button class="btn btn-success pull-right" id="btnActualizarDespacho">
+                            <i class="fa fa-refresh"></i> Actualizar Despacho
+                        </button>
+                    </div>
+                    <div class="col-sm-12 m-t-sm">
+                        <div class="table-responsive iboxlistaprogramacion">
+                            <table id="tabdetalle_tblprogramacion" class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th class="text-center">Color</th>
+                                        <th class="text-center">Talla</th>
+                                        <th class="text-center">Destino</th>
+                                        <th class="text-center" style="width: 11%">
+                                            Q.
+                                            Requerida de muestras
+                                        </th>
+                                        <th class="text-center" style="width: 11%">
+                                            Q.
+                                            Requerida de contramuestras
+                                        </th>
+                                        <th class="text-center">Fecha Cliente</th>
+                                        <th class="text-center">Fecha Fábrica</th>
+                                        <th class="text-center">In DC</th>
+                                        <th class="text-center" style="width: 11%">
+                                            Q.
+                                            Despachada de muestras
+                                        </th>
+                                        <th class="text-center" style="width: 11%">
+                                            Q.
+                                            Despachada de contramuestras
+                                        </th>
+                                        <th class="text-center" style="width: 15%">
+                                            Fecha de
+                                            Despacho
+                                        </th>
+                                        <th class="text-center" style="width: 1%"></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tblprogramacion_tbody"><tr><td colspan="12" class="text-center">No se encontraron resultados</td></tr></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-9">
+                        <label class="font-bold" style="font-size: 14pt;">
+                            <i class="fa fa-paperclip"></i>
+                            Adjuntos
+                        </label>
+                        <label class="font-bold">
+                            Tamaño max del archivo 17MB
+                        </label>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <label title="Upload image file" for="inputFileSampleDetails" class="btn btn-warning pull-right">
+                            <input type="file" name="file" id="inputFileSampleDetails" class="hide">
+                            <i class="fa fa-upload"></i>
+                            Cargar archivos
+                        </label>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 m-t-sm iboxlistaarchivos">
+                        <div class="table-responsive">
+                            <table id="tabdetalle_tblarchivos" class="table table-bordered table-hover ">
+                                <thead>
+                                    <tr>
+                                        <th class="col-sm-1"></th>
+                                        <th class="text-center col-sm-3">Archivo</th>
+                                        <th class="text-center col-sm-3">Usuario</th>
+                                        <th class="text-center col-sm-2">Tipo</th>
+                                        <th class="text-center col-sm-1">Muestra</th>
+                                        <th class="text-center col-sm-1">Version</th>
+                                        <th class="text-center col-sm-1">Fecha Carga</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tblarchivos_tbodydetalle">
+                                    <tr>
+                                        <td colspan="7" class="text-center"> No se encontraron resultados</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab-correos" class="tab-pane">
+                    <div class="col-sm-12">
+                        <label class="font-bold" style="font-size: 14pt; width: 100%">
+                            Nuevo
+                            Correo
+                        </label>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Para:</label>
+                            <div class="col-sm-10">
+                                <div>
+                                    <select id="cboCorreos" class="form-control cls_limpiar_correo" multiple="multiple" data-type-input="combomultiple">
+                                        <option value="ovasquez@wts.com.pe">
+                                            Oscar Vasquez("ovasquez@wts.com.pe")
+                                        </option>
+                                        <option value="ecalderon@wts.com.pe">
+                                            Eduardo Calderon("ecalderon@wts.com.pe")
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">CC:</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="txtcorreo_copia" class="form-control cls_validarCorreo cls_limpiar_correo" value="" data-label="Con Copia" data-type-input="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">CCO:</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="txtcorreo_copiaoculta" class="form-control cls_validarCorreo cls_limpiar_correo" value="" data-label="Copia Oculta" data-type-input="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Tipo:</label>
+                            <div class="col-sm-10">
+                                <div>
+                                    <select id="tabcomentario_cboTipo" class="form-control cls_limpiar_correo" tabindex="1" data-type-input="combo">
+                                        <!--
+                                        <option value="-1">
+                                            seleccione
+                                        </option>
+                                        <option value="1">Call Out</option>
+                                        <option value="2">Fábrica</option>
+                                        <option value="3">WTS</option>
+                                            -->
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Muestra:</label>
+                            <div class="col-sm-10">
+                                <div>
+                                    <select id="tabcomentario_cboMuestra" class="form-control cls_limpiar_correo" tabindex="1" data-type-input="combo">
+                                        <!--
+                                        <option value="-1">
+                                            seleccione
+                                        </option>
+                                        <option>Prenda Inspiración</option>
+                                        <option>Proto Sample</option>
+                                        <option>Fit Sample</option>
+                                        <option>Sale Sample</option>
+                                        <option>PP Sample</option>
+                                        <option>Top Sample</option>
+                                            -->
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="mail-box email-scroll cls_limpiar_correo" id="div_contenido_cuerpo_correo" data-type-input="html">
+                            <div class="mail-text h-150">
+                                <div class="summernote">
+                                    @*<h3>Hello!</h3>
+                                    Email Test!!!!!!!!!!!!*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs 12 col-sm-12" style="margin-bottom:15px;">
+                        <div class="text-left col-xs-9 col-sm-9">
+                            <!-- BOTON AGREGAR NUEVO ARCHIVO PARA CORREO-->
+                            <label title="Upload image file" for="file_archivo_correo_ddp" class="btn btn-warning">
+                                <input type="file" name="file" id="file_archivo_correo_ddp" class="hide">
+                                <i class="fa fa-upload"></i>
+                                <span class="hidden-xs">Nuevos archivos</span>
+                            </label>
+                            <button id="btnArchivosExistentes" title="Upload image file" class="btn btn-info">
+                                <i class="fa fa-upload"></i>
+                                <span class="hidden-xs">
+                                    Archivos
+                                    existentes
+                                </span>
+                            </button>
+                        </div>
+                        <div class="text-right col-xs-3 col-sm-3">
+                            <button class="btn btn-success" id="btn_enviar_correo_ddp">
+                                <i class="fa fa-send"></i><span class="hidden-xs">
+                                    Enviar
+                                    Correo
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12" style="margin-top:5px;">
+                        <div class="col-sm-12">
+                            <label class="font-bold" style="font-size: 14pt;">
+                                <i class="fa fa-paperclip"></i>
+                                Adjuntos
+                            </label>
+                            <label class="font-bold">
+                                Tamaño max del archivo 17MB
+                            </label>
+                            <div class="table-responsive">
+                                <table id="tabcorreos_tblarchivos" class="table table-bordered table-hover ">
+                                    <thead>
+                                        <tr>
+                                            <th class="col-sm-1"></th>
+                                            <th class="col-sm-3 text-center">Archivo</th>
+                                            <th class="col-sm-3 text-center">
+                                                Usuario
+                                            </th>
+                                            <th class="col-sm-2 text-center">
+                                                Tipo
+                                            </th>
+                                            <th class="col-sm-2 text-center">
+                                                Muestra
+                                            </th>
+                                            <th class="col-sm-1 text-center">
+                                                Fecha Carga
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tabcorreos_tblarchivos_tbody" class="cls_limpiar_correo" data-type-input="table">
+                                        <!--
+                <tr id="trAdjuntos_1">
+                    <td style="width: 10%">
+                        <div class="text-center">
+                            <button class="btn btn-danger btn-xs" onclick="appRequerimientosDDPIndex.fn_tabcorreos_eliminar_archivo('trAdjuntos_1');" style="cursor:pointer!important"><i class="fa fa-trash"></i></button>
+                            <button class="btn btn-default btn-xs" onclick="appRequerimientosDDPIndex.fn_tabcorreos_descargar_archivo('trAdjuntos_1');" style="cursor:pointer!important"><i class="fa fa-download"></i></button>
+                        </div>
+                    </td>
+                    <td style='text-align:center!important' class="text-center">
+                        tech
+                        pack.pdf
+                    </td>
+                    <td style='text-align:center!important' class="text-center">
+                        ov -
+                        DDP
+                    </td>
+                    <td style='text-align:center!important' class="text-center">
+                        Prototipo
+                    </td>
+                    <td style='text-align:center!important' class="text-center">
+                        Call
+                        Out
+                    </td>
+                    <td style='text-align:center!important' class="text-center">
+                        08/09/2019 14:30
+                    </td>
+                </tr>
+                -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab-seguimiento" class="tab-pane">
+                    <div class="col-sm-12">
+                        <label class="font-bold" style="font-size: 14pt; width: 100%">
+                            Consolidado
+                        </label>
+                        <hr>
+                        <div class="table-responsive">
+                            <table id="tabseguimiento_tblconsolidado" class="table table-condensed table-bordered table-hover ">
+                                <thead>
+                                    <tr>
+                                        <th style='text-align:center!important' class="text-center">
+                                            Tipo
+                                        </th>
+                                        <th style='text-align:center!important' class="text-center">
+                                            Muestra
+                                        </th>
+                                        <th style='text-align:center!important' class="text-center">
+                                            Fecha
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tblconsolidado_tbody">
+                                    <tr id="trConsolidado_1">
+                                        <td style='text-align:center!important' class="text-center">
+                                            Call Out
+                                        </td>
+                                        <td style='text-align:center!important' class="text-center">
+                                            Fit
+                                            Sample
+                                        </td>
+                                        <td style='text-align:center!important' class="text-center">
+                                            28/09/2019
+                                        </td>
+                                    </tr>
+                                    <tr id="trConsolidado_2">
+                                        <td style='text-align:center!important' class="text-center">
+                                            Fábrica
+                                        </td>
+                                        <td style='text-align:center!important' class="text-center">
+                                            PP
+                                            Sample
+                                        </td>
+                                        <td style='text-align:center!important' class="text-center">
+                                            07/10/2019
+                                        </td>
+                                    </tr>
+                                    <tr id="trConsolidado_3">
+                                        <td style='text-align:center!important' class="text-center">WTS</td>
+                                        <td style='text-align:center!important' class="text-center">
+                                            Fit
+                                            Sample
+                                        </td>
+                                        <td style='text-align:center!important' class="text-center">
+                                            16/10/2019
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="chat-view">
+                            <div class="">
+                                <small class="pull-right text-muted">
+                                    Último
+                                    correo: Lunes, Enero 26 2015 -
+                                    18:39:23
+                                </small>
+                                <label class="font-bold" style="font-size: 14pt;">
+                                    Comunicación
+                                </label>
+                                <hr>
+                            </div>
+                            <div class="">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <div class="feed-activity-list" style="overflow: hidden; width: 97%; height: 400px;">
+                                            <div class="feed-element">
+                                                <div class="media-body">
+                                                    <small class="float-right">
+                                                        5m
+                                                        atras
+                                                    </small>
+                                                    <strong>
+                                                        Oscar
+                                                        Vasquez
+                                                    </strong>
+                                                    Envio un nuevo
+                                                    correo.
+                                                    <br>
+                                                    <strong>Asunto</strong>:
+                                                    New Fabric
+                                                    Development <br>
+                                                    <small class="text-muted">
+                                                        Hoy
+                                                        5:60 pm -
+                                                        12.06.2014
+                                                    </small>
+                                                    <div class="actions">
+                                                        <a href="" class="btn btn-xs btn-white">
+                                                            <i class="fa fa-mail-reply"></i>
+                                                            Responder
+                                                        </a>
+                                                        <a href="" class="btn btn-xs btn-white">
+                                                            <i class="fa fa-mail-forward"></i>
+                                                            Reenviar
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="feed-element">
+                                                <div class="media-body">
+                                                    <small class="float-right">
+                                                        5m
+                                                        atras
+                                                    </small>
+                                                    <strong>
+                                                        Oscar
+                                                        Vasquez
+                                                    </strong>
+                                                    Envio un nuevo
+                                                    correo.
+                                                    <br>
+                                                    <strong>Asunto</strong>:
+                                                    New Fabric
+                                                    Development <br>
+                                                    <small class="text-muted">
+                                                        Hoy
+                                                        5:60 pm -
+                                                        12.06.2014
+                                                    </small>
+                                                    <div class="actions">
+                                                        <a href="" class="btn btn-xs btn-white">
+                                                            <i class="fa fa-mail-reply"></i>
+                                                            Responder
+                                                        </a>
+                                                        <a href="" class="btn btn-xs btn-white">
+                                                            <i class="fa fa-mail-forward"></i>
+                                                            Reenviar
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="feed-element">
+                                                <div class="media-body">
+                                                    <small class="float-right">
+                                                        5m
+                                                        atras
+                                                    </small>
+                                                    <strong>
+                                                        Oscar
+                                                        Vasquez
+                                                    </strong>
+                                                    Envio un nuevo
+                                                    correo.
+                                                    <br>
+                                                    <strong>Asunto</strong>:
+                                                    New Fabric
+                                                    Development <br>
+                                                    <small class="text-muted">
+                                                        Hoy
+                                                        5:60 pm -
+                                                        12.06.2014
+                                                    </small>
+                                                    <div class="actions">
+                                                        <a href="" class="btn btn-xs btn-white">
+                                                            <i class="fa fa-mail-reply"></i>
+                                                            Responder
+                                                        </a>
+                                                        <a href="" class="btn btn-xs btn-white">
+                                                            <i class="fa fa-mail-forward"></i>
+                                                            Reenviar
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="feed-element">
+                                                <div class="media-body">
+                                                    <small class="float-right">
+                                                        5m
+                                                        atras
+                                                    </small>
+                                                    <strong>
+                                                        Oscar
+                                                        Vasquez
+                                                    </strong>
+                                                    Envio un nuevo
+                                                    correo.
+                                                    <br>
+                                                    <strong>Asunto</strong>:
+                                                    New Fabric
+                                                    Development <br>
+                                                    <small class="text-muted">
+                                                        Hoy
+                                                        5:60 pm -
+                                                        12.06.2014
+                                                    </small>
+                                                    <div class="actions">
+                                                        <a href="" class="btn btn-xs btn-white">
+                                                            <i class="fa fa-mail-reply"></i>
+                                                            Responder
+                                                        </a>
+                                                        <a href="" class="btn btn-xs btn-white">
+                                                            <i class="fa fa-mail-forward"></i>
+                                                            Reenviar
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="feed-element">
+                                                <div class="media-body">
+                                                    <small class="float-right">
+                                                        5m
+                                                        atras
+                                                    </small>
+                                                    <strong>
+                                                        Oscar
+                                                        Vasquez
+                                                    </strong>
+                                                    Envio un nuevo
+                                                    correo.
+                                                    <br>
+                                                    <strong>Asunto</strong>:
+                                                    New Fabric
+                                                    Development <br>
+                                                    <small class="text-muted">
+                                                        Hoy
+                                                        5:60 pm -
+                                                        12.06.2014
+                                                    </small>
+                                                    <div class="actions">
+                                                        <a href="" class="btn btn-xs btn-white">
+                                                            <i class="fa fa-mail-reply"></i>
+                                                            Responder
+                                                        </a>
+                                                        <a href="" class="btn btn-xs btn-white">
+                                                            <i class="fa fa-mail-forward"></i>
+                                                            Reenviar
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="feed-element">
+                                                <div class="media-body">
+                                                    <small class="float-right">
+                                                        5m
+                                                        atras
+                                                    </small>
+                                                    <strong>
+                                                        Oscar
+                                                        Vasquez
+                                                    </strong>
+                                                    Envio un nuevo
+                                                    correo.
+                                                    <br>
+                                                    <strong>Asunto</strong>:
+                                                    New Fabric
+                                                    Development <br>
+                                                    <small class="text-muted">
+                                                        Hoy
+                                                        5:60 pm -
+                                                        12.06.2014
+                                                    </small>
+                                                    <div class="actions">
+                                                        <a href="" class="btn btn-xs btn-white">
+                                                            <i class="fa fa-mail-reply"></i>
+                                                            Responder
+                                                        </a>
+                                                        <a href="" class="btn btn-xs btn-white">
+                                                            <i class="fa fa-mail-forward"></i>
+                                                            Reenviar
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="feed-element">
+                                                <div class="media-body">
+                                                    <small class="float-right">
+                                                        5m
+                                                        atras
+                                                    </small>
+                                                    <strong>
+                                                        Oscar
+                                                        Vasquez
+                                                    </strong>
+                                                    Envio un nuevo
+                                                    correo.
+                                                    <br>
+                                                    <strong>Asunto</strong>:
+                                                    New Fabric
+                                                    Development <br>
+                                                    <small class="text-muted">
+                                                        Hoy
+                                                        5:60 pm -
+                                                        12.06.2014
+                                                    </small>
+                                                    <div class="actions">
+                                                        <a href="" class="btn btn-xs btn-white">
+                                                            <i class="fa fa-mail-reply"></i>
+                                                            Responder
+                                                        </a>
+                                                        <a href="" class="btn btn-xs btn-white">
+                                                            <i class="fa fa-mail-forward"></i>
+                                                            Reenviar
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="feed-element">
+                                                <div class="media-body">
+                                                    <small class="float-right">
+                                                        5m
+                                                        atras
+                                                    </small>
+                                                    <strong>
+                                                        Oscar
+                                                        Vasquez
+                                                    </strong>
+                                                    Envio un nuevo
+                                                    correo.
+                                                    <br>
+                                                    <strong>Asunto</strong>:
+                                                    New Fabric
+                                                    Development <br>
+                                                    <small class="text-muted">
+                                                        Hoy
+                                                        5:60 pm -
+                                                        12.06.2014
+                                                    </small>
+                                                    <div class="actions">
+                                                        <a href="" class="btn btn-xs btn-white">
+                                                            <i class="fa fa-mail-reply"></i>
+                                                            Responder
+                                                        </a>
+                                                        <a href="" class="btn btn-xs btn-white">
+                                                            <i class="fa fa-mail-forward"></i>
+                                                            Reenviar
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div class="chat-discussion">
+                                            <div class="chat-message left">
+                                                <img class="message-avatar" src="~/Content/img/a1.jpg" alt="">
+                                                <div class="message">
+                                                    <a class="message-author" href="#">
+                                                        Michael Smith
+                                                    </a>
+                                                    <span class="message-date">
+                                                        Mon Jan 26 2015
+                                                        - 18:39:23
+                                                    </span>
+                                                    <span class="message-content">
+                                                        Lorem ipsum
+                                                        dolor sit amet,
+                                                        consectetuer
+                                                        adipiscing elit,
+                                                        sed diam nonummy
+                                                        nibh euismod
+                                                        tincidunt ut
+                                                        laoreet dolore
+                                                        magna aliquam
+                                                        erat volutpat.
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="chat-message right">
+                                                <img class="message-avatar" src="~/Content/img/a4.jpg" alt="">
+                                                <div class="message">
+                                                    <a class="message-author" href="#">
+                                                        Karl
+                                                        Jordan
+                                                    </a>
+                                                    <span class="message-date">
+                                                        Fri Jan 25 2015
+                                                        - 11:12:36
+                                                    </span>
+                                                    <span class="message-content">
+                                                        Many desktop
+                                                        publishing
+                                                        packages and web
+                                                        page editors now
+                                                        use Lorem Ipsum
+                                                        as their default
+                                                        model text, and
+                                                        a search for
+                                                        'lorem ipsum'
+                                                        will uncover.
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="chat-message right">
+                                                <img class="message-avatar" src="~/Content/img/a2.jpg" alt="">
+                                                <div class="message">
+                                                    <a class="message-author" href="#">
+                                                        Michael Smith
+                                                    </a>
+                                                    <span class="message-date">
+                                                        Fri Jan 25 2015
+                                                        - 11:12:36
+                                                    </span>
+                                                    <span class="message-content">
+                                                        There are many
+                                                        variations of
+                                                        passages of
+                                                        Lorem Ipsum
+                                                        available, but
+                                                        the majority
+                                                        have suffered
+                                                        alteration.
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="chat-message left">
+                                                <img class="message-avatar" src="~/Content/img/a5.jpg" alt="">
+                                                <div class="message">
+                                                    <a class="message-author" href="#">
+                                                        Alice
+                                                        Jordan
+                                                    </a>
+                                                    <span class="message-date">
+                                                        Fri Jan 25 2015
+                                                        - 11:12:36
+                                                    </span>
+                                                    <span class="message-content">
+                                                        All the Lorem
+                                                        Ipsum generators
+                                                        on the Internet
+                                                        tend to repeat
+                                                        predefined
+                                                        chunks as
+                                                        necessary,
+                                                        making this the
+                                                        first true
+                                                        generator on the
+                                                        Internet.
+                                                        It uses a
+                                                        dictionary of
+                                                        over 200 Latin
+                                                        words.
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="chat-message right">
+                                                <img class="message-avatar" src="~/Content/img/a6.jpg" alt="">
+                                                <div class="message">
+                                                    <a class="message-author" href="#">
+                                                        Mark
+                                                        Smith
+                                                    </a>
+                                                    <span class="message-date">
+                                                        Fri Jan 25 2015
+                                                        - 11:12:36
+                                                    </span>
+                                                    <span class="message-content">
+                                                        All the Lorem
+                                                        Ipsum generators
+                                                        on the Internet
+                                                        tend to repeat
+                                                        predefined
+                                                        chunks as
+                                                        necessary,
+                                                        making this the
+                                                        first true
+                                                        generator on the
+                                                        Internet.
+                                                        It uses a
+                                                        dictionary of
+                                                        over 200 Latin
+                                                        words.
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab-comentarios" class="tab-pane">
+                    <div class="col-sm-12">
+                        <label class="font-bold" style="font-size: 14pt; width: 100%">
+                            Comentarios
+                        </label>
+                        <div class="table-responsive">
+                            <table id="tabcomentario_tblcomentario" class="table table-condensed table-bordered table-hover ">
+                                <thead>
+                                    <tr>
+                                        <th style='text-align:center!important' class="text-center">
+                                            Muestra
+                                        </th>
+                                        <th style='text-align:center!important' class="text-center">
+                                            Estado
+                                        </th>
+                                        <th style='text-align:center!important' class="text-center">
+                                            Fecha
+                                            Actualización
+                                        </th>
+                                        <th style='text-align:center!important' class="text-center">
+                                            Versión
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tblcomentario_tbody">                                   
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="chat-view iboxcomentarioschatview">
+                           <span class="col-xs-12 text-center spnchat-view" style="height:50px!important;">Seleccione una muestra</span> 
+                        </div>
+                    </div>
+                    <div class="col-sm-12 cargarcomentario hide">
+                        <div class="input-group">
+                            <input type="hidden" id="hdnIdRequerimientoComentario" value="" />
+                            <input id="txtTabComentario_Comentario" type="text" class="form-control">
+                            <span class="input-group-btn">
+                                <button id="btnCargarComentario" type="button" class="btn btn-primary">
+                                    Cargar
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab-calificaciones" class="tab-pane">
+                    <div class="col-sm-12">
+                        <label class="font-bold" style="font-size: 14pt; width: 100%">
+                            Calificaciones
+                        </label>
+                        <hr>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-horizontal">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <div>
+                                                <label class="col-sm-12 row">
+                                                    Calificación
+                                                    de
+                                                    Fábrica:
+                                                </label>
+                                                <small>
+                                                    donde 1 es muy
+                                                    malo y 5 muy
+                                                    bueno
+                                                </small>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <div class="radio radio-danger">
+                                                    <input type="radio" name="rdcalificacion" id="radioCal1" value="1" />
+                                                    <label for="radioCal1">
+                                                        1
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <div class="radio radio-info">
+                                                    <input type="radio" name="rdcalificacion" id="radioCal2" value="2" />
+                                                    <label for="radioCal2">
+                                                        2
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <div class="radio radio-primary">
+                                                    <input type="radio" name="rdcalificacion" id="radioCal3" value="3" />
+                                                    <label for="radioCal3">
+                                                        3
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <div class="radio radio-warning">
+                                                    <input type="radio" name="rdcalificacion" id="radioCal4" value="4" />
+                                                    <label for="radioCal4">
+                                                        4
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <div class="radio  radio-success">
+                                                    <input type="radio" name="rdcalificacion" id="radioCal5" value="5" />
+                                                    <label for="radioCal5">
+                                                        5
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <hr>
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <div>
+                                                <label class="col-sm-12 row">
+                                                    Nivel
+                                                    de
+                                                    dificultad:
+                                                </label>
+                                                <small>
+                                                    donde 1 es muy
+                                                    sencillo y 5 muy
+                                                    complicado
+                                                </small>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <div class="radio radio-success">
+                                                    <input type="radio" name="rdnivel" id="radio1" value="1" />
+                                                    <label for="radio1">1</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <div class="radio radio-warning">
+                                                    <input type="radio" name="rdnivel" id="radio2" value="2" />
+                                                    <label for="radio2">2</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <div class="radio radio-primary">
+                                                    <input type="radio" name="rdnivel" id="radio3" value="3" />
+                                                    <label for="radio3">3</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <div class="radio radio-info">
+                                                    <input type="radio" name="rdnivel" id="radio4" value="4" />
+                                                    <label for="radio4">4</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <div class="radio radio-danger">
+                                                    <input type="radio" name="rdnivel" id="radio5" value="5" />
+                                                    <label for="radio5">5</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

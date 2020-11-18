@@ -1,0 +1,93 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Search Fabric</h2>
+            </div>
+            <div class="col-sm-6 text-right">
+                <button type="button" class="btn btn-primary dim" id="btnNewStyle">
+                    <span class="fa fa-file-o"></span>
+                    New
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="hide">
+            <input type="text" id="txtpar" data-par="DATA-PARAMETRO" value="" />
+        </div>
+        <div class="form-horizontal">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="form-horizontal" style="float:left;">
+                        
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <div class="col-sm-4">
+                                    <label class="control-label col-sm-4">Type</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control col-sm-8" id="cboTipo">
+                                            @*<option value="">Select one</option>*@
+                                            <option value="1">Fabric Project</option>
+                                            <option value="2">Fabric Code</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="divCliente" class="col-sm-4">
+                                    <label class="control-label col-sm-4">Customer</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" id="cboCliente">
+                                            <option value="">All</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="divCodigo" class="col-sm-4">
+                                    <label class="control-label col-sm-4">Code</label>
+                                    <div class="col-sm-8">
+                                        <input type="text"  onkeyup="Mayus(this)"  class="form-control" id="txtCode" />
+                                    </div>
+                                </div>
+                            </div>                         
+                        </div>
+                       
+                        <div id="divFamilia" class="col-sm-12">
+                            <div class="form-group">
+
+                                <div class="col-sm-4">
+                                    <label class="control-label col-sm-4">Family</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" id="cboFamilia">
+                                            <option value="0">Select one</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label class="control-label col-sm-4">Fabric</label>
+                                    <div class="col-sm-8">
+                                      <input class="form-control" onkeyup="Mayus(this)"  id="txtFabric" type="text" />
+                                    </div>
+                                </div>
+                                                           
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer text-right">
+                    <button type="button" class="btn btn-success" id="btnSearch">
+                        <span class="fa fa-search"></span>
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="ibox float-e-margins">
+            <div class="ibox-title hide">
+                <h5>Details</h5>
+            </div>
+            <div id="divContentTBL" class="ibox-content" style="position:relative; width:100%;">
+
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="hfTipo" value=""/>

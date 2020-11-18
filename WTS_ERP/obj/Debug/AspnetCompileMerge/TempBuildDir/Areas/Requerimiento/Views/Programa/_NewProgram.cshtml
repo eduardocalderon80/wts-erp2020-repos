@@ -1,0 +1,173 @@
+﻿<div id="panelEncabezado_NewProgram">
+    <div class="hide">
+        <input type="text" id="modal_txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="form-horizontal row">
+        <div class="col-sm-12 text-right m-b">
+            <button type="button" class="btn btn-default" id="btnModalClose" data-dismiss="modal">
+                <span class="fa fa-ban"></span>
+                Close
+            </button>
+            <button type="button" class="btn btn-primary" id="btnModalCreate"><span class="fa fa-save"></span> Create</button>
+            <hr class="modal_hr">
+        </div>
+    </div>
+    <div class="form-horizontal row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <div class="has-float-label">
+                        <input type="text" class="form-control" id="txtModalDate" placeholder="Creation Date" disabled="">
+                        <label for="txtModalDate">Creation Date</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 no-display">
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <div class="has-float-label">
+                        <input type="text" class="form-control" id="txtModalUser" placeholder="Creator User" disabled="">
+                        <label for="txtModalUser">Creator User</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <div class="has-float-label">
+                        <input type="text" class="form-control _enty_modal" id="txtModalName" placeholder="Program Name" data-required="true" data-min="1" data-max="254" data-id="Nombre">
+                        <label for="txtModalName">Program Name</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <div class="has-float-label">
+                        <select class="form-control _enty_modal" id="cboModalClient" data-required="true" data-min="1" data-max="254" data-id="IdCliente"></select>
+                        <label for="cboModalClient">Client</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="form-group">
+                <div class="col-sm-12 div_principal">
+                    <div class="input-group">
+                        <div class="has-float-label">
+                            <select class="form-control _enty_modal" id="cboModalBrand" data-id="IdClienteMarca"></select>
+                            <label for="cboModalBrand">Brand</label>
+                        </div>
+                        <div class="input-group-btn">
+                            <button type="button" id="btnMarca" class="btn btn-primary btnNewOther">
+                                <span class="fa fa-plus"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 div_secundario hide">
+                    <div class="input-group">
+                        <div class="has-float-label">
+                            <input class="form-control _enty_modal" id="txtModalBrand" placeholder="Brand"  data-required="true" data-min="1" data-max="254" data-id="Marca">
+                            <label for="txtModalBrand">Brand</label>
+                        </div>
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-danger btnCloseOther">
+                                <span class="fa fa-reply-all"></span>
+                            </button>
+                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="form-group">
+                <div class="col-sm-12 div_principal">
+                    <div class="input-group">
+                        <div class="has-float-label">
+                            <select class="form-control _enty_modal" id="cboModalSeason" data-required="true" data-min="1" data-max="254" data-id="IdClienteTemporada"></select>
+                            <label for="cboModalSeason">Season</label>
+                        </div>
+                        <div class="has-float-label">
+                            <input type="text" class="form-control _enty_modal text-uppercase" id="cboModalSeasonCode" placeholder="Season Code" data-required="true" data-min="1" data-max="254" data-id="CodigoTemporada" maxlength="15">
+                            <label for="cboModalSeasonCode">Season Code</label>
+                        </div>
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-primary btnNewOther">
+                                <span class="fa fa-plus"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 div_secundario hide">
+                    <div class="input-group">
+                        <div class="has-float-label" style="width: 180px;">
+                            <select class="form-control" id="cboModalSeasonNew"></select>
+                            <label for="cboModalSeasonNew">Season</label>
+                        </div>
+                        <div class="has-float-label">
+                            <select class="form-control" id="cboModalYearNew"></select>
+                            <label for="cboModalYearNew">Year</label>
+                        </div>
+                        <div class="has-float-label">
+                            <input class="form-control text-uppercase" id="cboModalSeasonCodeNew" placeholder="Season Code" maxlength="15">
+                            <label for="cboModalSeasonCodeNew">Season Code</label>
+                        </div>
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-danger btnCloseOther">
+                                <span class="fa fa-close"></span>
+                            </button>
+                            <button type="button" class="btn btn-success" onclick="app_NewProgram.fn_seasonsave(this)">
+                                <span class="fa fa-save"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="form-group">
+                <div class="col-sm-12 div_principal">
+                    <div class="input-group">
+                        <div class="has-float-label">
+                            <select class="form-control _enty_modal" id="cboModalDivision"data-id="IdClienteDivision"></select>
+                            <label for="cboModalDivision">Division</label>
+                        </div>
+                        <div class="input-group-btn">
+                            <button type="button" id="btnDivision" class="btn btn-primary btnNewOther">
+                                <span class="fa fa-plus"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 div_secundario hide">
+                    <div class="input-group">
+                        <div class="has-float-label">
+                            <input class="form-control _enty_modal" id="txtModalDivision" placeholder="Division"  data-required="true" data-min="1" data-max="254" data-id="Division">
+                            <label for="txtModalDivision">Division</label>
+                        </div>
+                        <div class="input-group-btn">
+                            <button type="button" id="btncloseDivision" class="btn btn-danger btnCloseOther">
+                                <span class="fa fa-reply-all"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 no-display">
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <div class="has-float-label">
+                        <select class="form-control _enty_modal" id="cboModalStatus" data-required="false" data-min="1" data-max="254" data-id="IdCatalogo_IdEstado"></select>
+                        <label for="cboModalStatus">Program Status</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

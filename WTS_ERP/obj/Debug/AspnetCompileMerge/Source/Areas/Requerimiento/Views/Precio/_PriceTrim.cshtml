@@ -1,0 +1,43 @@
+﻿<div id="panelEncabezado_PriceTrim">
+    <div class="hide">
+        <input type="text" id="pricetrim_txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="form-horizontal row">
+        <div class="col-sm-12 m-b">
+            <div class="text-right">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <span class="fa fa-reply-all"></span>
+                    Return
+                </button>
+                <button type="button" class="btn btn-success" id="btnPriceTrimSave">
+                    <span class="fa fa-save"></span>
+                    Save
+                </button>
+                <button type="button" class="btn btn-primary" id="btnPriceTrimExport">
+                    <span class="fa fa-file-excel-o"></span>
+                    Export
+                </button>
+            </div>
+            <hr />
+        </div>
+    </div>
+    <div class="form-horizontal row">
+        <div class="col-sm-12" style="overflow: auto;">
+            <table class="table table-hover table-bordered table-vertical-center" id="tbl_prices_trim" style="width: 1200px;">
+                <thead>
+                    <tr>
+                        <th>Suplier Name</th>
+                        <th>Trim Type</th>
+                        <th>Trim Code</th>
+                        <th width="20%">Trim Description</th>
+                        <th>LeadTime</th>
+                        <th>Cost $</th>
+                        <th>Unity</th>
+                        <th width="20%">Comments</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody_tbl_prices_trim"></tbody>
+            </table>
+        </div>
+    </div>
+</div>

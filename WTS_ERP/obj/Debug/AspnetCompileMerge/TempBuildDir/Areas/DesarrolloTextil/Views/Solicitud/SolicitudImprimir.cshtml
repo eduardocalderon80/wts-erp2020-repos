@@ -1,0 +1,339 @@
+﻿@{
+    string _parametro = ViewBag.parametro;
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Textile Analysis</title>
+    <style>
+        @@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif !important;
+            font-weight: 400;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        img, object {
+            max-height: 100%;
+            max-width: 100%;
+        }
+        img {
+            border: 0 none;
+            height: auto;
+            max-width: 100%;
+            vertical-align: middle;
+        }
+        .div-tabla {
+            width: 100%;
+            display: table;
+            border: 2px solid #666666;
+        }
+        div-tabla-sinborde {
+            width: 100%;
+            display: table;
+            border-spacing: 5px;
+        }
+        .div-tabla-fila {
+            display: table-row;
+            width: auto;
+            clear: both;
+        }
+        .div-table-col-izq {
+            float: left;
+            display: table-column;
+            width: 350px;
+            height: 100%;
+            text-align: right;
+        }
+        .div-table-col-der {
+            float: left; /*fix for  buggy browsers*/
+            display: table-column;
+            width: 420px;
+            height: auto;
+        }
+        .div-table-col {
+            float: left; /*fix for  buggy browsers*/
+            display: table-column;
+            width: 790px;
+            height: 15px;
+            background-color: #3C8DBC !important;
+        }
+        .border {
+            border: 2px solid #666666;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        .presentacion table {
+            border-collapse: collapse;
+        }
+        .presentacion table, .presentacion th, .presentacion td {
+            border: 1px solid black;
+        }
+        .hide {
+            display: none;
+        }
+    </style>
+    <script src="~/Scripts/js/jquery-2.1.1.js"></script>
+    <script src="~/Scripts/kendo/2015.3.930/kendo.all.min.js"></script>
+    <!--<script src="~/Scripts/jquery-barcode.min.js"></script>-->
+</head>
+<body>
+    <div id="divsolicitudimprimir">
+        @Html.Hidden("urlBase", Url.Content("~/"))
+        <div>
+            <div style="display:none">
+                <input type="text" id="hf_parametro" value="@_parametro" />
+            </div>
+            <div class="div-tabla-sinborde">
+                <div class="div-tabla-fila">
+                    <div class="div-table-col">
+                    </div>
+                </div>
+                <div class="div-tabla-fila" style="height:40px;">
+                    <div class="div-table-col-izq" align="right">
+                        <img src="~/content/img/logos/WTSLogo2.png" height="140" width="140" />
+                    </div>
+                    <div class="div-table-col-der" align="center" style="text-align:center;vertical-align:middle;font-size:30px;font-weight:bold; padding-top:15px;">
+                        ANÁLISIS TEXTIL
+                    </div>
+                </div>
+                <div class="div-tabla-fila">
+                    <div class="div-table-col">
+                    </div>
+                </div>
+            </div>
+            <table id="tabla_solicitudimprimir" cellpadding="2" cellspacing="0" class="presentacion" width="790" style="font-size: 12px;">
+                <tbody id="tbl_body_solicitudimprimir">
+                    <tr>
+                        <td width="380" align="right">
+                            CÓDIGO DE REQUERIMIENTO:
+                        </td>
+                        <td width="400" align="center" id="td_codigoreq" class="cls_sol_codigoreq"></td>
+                    </tr>
+                    <tr>
+                        <td width="380" align="right">
+                            NÚMERO DE SOLICITUD:
+                        </td>
+                        <td width="400" align="center" class="cls_sol_numerosolicitud"></td>
+                    </tr>
+                    <tr>
+                        <td align="right" valign="top" width="380">
+                            DESCRIPCION DE REQUERIMIENTO:
+                        </td>
+                        <td align="center" width="400" class="cls_sol_dessolicitud"></td>
+                    </tr>
+                    <tr>
+                        <td align="right" valign="top" width="380">
+                            FECHA:
+                        </td>
+                        <td align="center" width="400" class="cls_sol_fechasolicitud"></td>
+                    </tr>
+                    <tr>
+                        <td align="right" valign="top" width="380">
+                            SOLICITADO POR:
+                        </td>
+                        <td align="center" width="400" class="cls_sol_solicitadosolicitud"></td>
+                    </tr>
+                    <tr>
+                        <td align="right" valign="top" width="380">
+                            ORIGEN DE LA MUESTRA:
+                        </td>
+                        <td align="center" width="400" class="cls_sol_origensolicitud"></td>
+                    </tr>
+
+                    <tr>
+                        <td align="right" valign="top" width="380">
+                            MOTIVO DE LA SOLICITUD:
+                        </td>
+                        <td align="center" width="400" class="cls_sol_motivosolicitud"></td>
+                    </tr>
+                    <tr>
+                        <td align="right" valign="top" width="380">
+                            CLIENTE:
+                        </td>
+                        <td align="center" width="400" class="cls_sol_clientesolicitud"></td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="top" width="380" style="border-left: none; border-right: none;">
+                            <strong>DATOS DE LA MUESTRA FÍSICA</strong>
+                        </td>
+                        <td align="center" width="400" style="border-right: none; border-left: none;" class="cls_sol_muestrasolicitud"></td>
+                    </tr>
+
+                    <tr>
+                        <td align="right" valign="top" width="380">
+                            CODIGO DE TELA WTS:
+                        </td>
+                        <td align="center" width="400" class="cls_sol_codigotelasolicitud"></td>
+                    </tr>
+
+                    <tr>
+                        <td align="right" valign="top" width="380">
+                            ESTRUCTURA:
+                        </td>
+                        <td align="center" width="400" class="cls_sol_estructurasolicitud"></td>
+                    </tr>
+                    <tr>
+                        <td style="border-right: none;"></td>
+                        <td style="border-left: none;">
+                            *Entregar muestra física no menor a 15cm x 20 cm
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" valign="top" width="380">
+                            TÍTULO(S):
+                        </td>
+                        <td align="center" width="400" class="cls_sol_titulosolicitud"></td>
+                    </tr>
+                    <tr>
+                        <td align="right" valign="top" width="380">
+                            % DE CONTENIDO DE FIBRA:
+                        </td>
+                        <td align="center" width="400">
+
+                            <div id="divSolicitudDetalleComposicionImprimir">
+                                <table class="table table-bordered" style="width:100%; font-size:12px;">
+                                    <thead>
+                                        <tr style="font-weight:bold;">
+                                            <th class="text-center" style="width: 50px;">Materia Prima</th>
+                                            <th class="text-center" style="width: 50px;">%</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbody_solicitudatx_contenido"></tbody>
+                                </table>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" valign="top" width="380">
+                            DENSIDAD(gr/m2):
+                        </td>
+                        <td align="center" width="400" class="cls_sol_densidadsolicitud"></td>
+                    </tr>
+                    <tr>
+                        <td align="right" valign="top" width="380">
+                            ¿LAVADO?:
+                        </td>
+                        <td align="center" width="400" class="cls_sol_lavadosolicitud"></td>
+                    </tr>
+                    <tr>
+                        <td width="380" align="right">
+                            COLOR:
+                        </td>
+                        <td width="400" align="center" class="cls_sol_colorsolicitud"></td>
+                    </tr>
+                    <tr>
+                        <td width="380" align="right">
+                            NOMBRE DEL PROVEEDOR:
+                        </td>
+                        <td width="400" align="center" class="cls_sol_nombreproveedor"></td>
+                    </tr>
+                    <tr>
+                        <td width="380" align="right">CÓDIGO DE TELA DEL PROVEEDOR:</td>
+                        <td width="400" align="center" class="cls_sol_codigotelaproveedorsolicitud"> </td>
+                    </tr>
+                    <tr>
+                        <td width="380" align="right">PARTIDA:</td>
+                        <td width="400" align="center" class="cls_sol_partidasolicitud"> </td>
+                    </tr>
+                    <tr>
+                        <td align="right" valign="top" width="380">
+                            ¿LA MUESTRA ESTÁ SIENDO EVALUADA EN LABORATORIO?:
+                        </td>
+                        <td align="center" width="400" class="cls_sol_evaluacionsolicitud"></td>
+                    </tr>
+                    @*<tr>
+            <td style="border-right: none;"></td>
+            <td style="border-left: none;"></td>
+        </tr>*@
+                    <tr>
+                        <td align="right" valign="top">
+                            CODIGO DEL REPORTE DE ANÁLISIS TEXTIL EXISTENTE:
+                        </td>
+                        <td align="center" width="400" class="cls_sol_codigoreporteexistentesolicitud"></td>
+                    </tr>
+                    <tr>
+                        <td align="right" valign="top">
+                            ARCHIVO DE LA FICHA TECNICA DEL PROVEEDOR:
+                        </td>
+                        <td align="center" width="400" class="cls_sol_nombrearchivosolicitud"></td>
+                    </tr>
+                    <!--DATOS PARA COMPARAR ATX-->
+                    <tr class="cls_motivo_compararatx hide">
+                        <td align="left" valign="top" width="380" style="border-left:none; border-right:none;">
+                            <strong>DATOS DE LA TELA ESTÁNDAR</strong>
+                        </td>
+                        <td align="center" width="400" style="border-left: none; border-right: none;"></td>
+                    </tr>
+                    <tr class="cls_motivo_compararatx hide">
+                        <td align="right" valign="top" width="380">
+                            CÓDIGO DEL REPORTE DE ANÁLISIS TEXTIL DEL ESTÁNDAR:
+                        </td>
+                        <td align="center" width="400" class="cls_sol_codigoreporteestandarsolicitud"></td>
+                    </tr>
+                    <!--<tr class="cls_motivo_compararatx hide">
+                        <td align="right" valign="top" width="380">
+                            NÚMERO DE SOLICITUD DEL ANÁLISIS TEXTIL DEL ESTÁNDAR:
+                        </td>
+                        <td align="center" width="400" class="cls_sol_numerosolicitudestandar"></td>
+                    </tr>-->
+                                    <!--CRITERIO DE APROBACION DEL ATX-->
+                                    <!--OCULTAR POR EL MOMENTO POR EL ATX SIN SDT; SE AGREGO DISPLAY NONE-->
+                                    <!--
+                    <tr class="cls_motivo_compararatx hide" style="display:none;">
+                        <td align="left" valign="top" width="380" style="border-left:none; border-right:none;">
+                            <strong>CRITERIO DE APROBACION DEL ATX</strong>
+                        </td>
+                        <td align="justify" width="400" style="border-left:none; border-right: none;"></td>
+                    </tr>
+                    -->
+                    <!--OCULTAR POR EL MOMENTO POR EL ATX SIN SDT; SE AGREGO DISPLAY NONE-->
+                    <!--
+                    <tr class="cls_motivo_compararatx hide" style="display:none;">
+                        <td colspan="2">
+                            <table class="table table-bordered" style="width:100%; font-size:12px;">
+                                <thead>
+                                    <tr style="font-weight:bold;">
+                                        <th class="text-center" style="width: 30%;">Criterio</th>
+                                        <th class="text-center" style="width: 70%;">Descripcion</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody_solicitudatx_CriterioAprobacion"></tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    -->
+                    <tr>
+                        <td align="left" valign="top" width="380" style="border-left:none; border-right:none;">
+                            <strong>COMENTARIO</strong>
+                        </td>
+                        <td align="justify" width="400" style="border-left:none; border-right: none;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="justify" style="height:30px; min-height:10px;" class="cls_sol_comentariosolicitud"></td>
+                    </tr>
+
+                    <tr>
+                        <!--width="350"-->
+                        <td colspan="2" align="center">
+                            <div id="divcodigobarra" style="width:200px; height:90px;"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="div-tabla-sinborde">
+                <div class="div-tabla-fila">
+                    <div class="div-table-col">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/Home/Util.js"></script>
+    <script src="~/Scripts/DesarrolloTextil/Solicitud/solicitudimprimir.js"></script>
+</body>
+</html>

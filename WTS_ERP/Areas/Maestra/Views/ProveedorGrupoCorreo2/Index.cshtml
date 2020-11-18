@@ -1,0 +1,105 @@
+﻿<!-- :actual -->
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="ibox float-e-margins">
+
+        <div class="row" style="vertical-align: middle;">
+            <div class="col-sm-6" id="divtituloprincipal">
+                <h2>Mail group provider 2</h2>
+            </div>
+            <div class="col-sm-6 text-right">
+                <button id="btnSave_ProveedorGrupoCorreo2" type="button" class="btn btn-primary dim" style="margin-top: 4px;">
+                    <span class="fa fa-floppy-o "></span>
+                    Save
+                </button>
+
+            </div>
+        </div>
+    </div>
+    <div class="hide">
+        <input type="text" id="txtpar_proveedorgrupocorreo2" value="DATA-PARAMETRO" />
+    </div>
+</div>
+
+<div class="wrapper wrapper-content gray-bg animated fadeInRight" id="div_contenido_proveedorgrupocorreo2" style="overflow-y: auto;">
+    <!--Form-->
+    <div class="ibox float-e-margins" id="panelEncabezado">
+        <div class="ibox-title">
+            <h5 class="text-navy bold"></h5>
+        </div>
+        <div class="ibox-content">
+            <div class="panel-body">
+                <div class="form-horizontal">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Provider</label>
+                            <div class="col-sm-4">
+                                <select class="form-control _enty" id="cbo_proveedor_grupocorreo2" data-min="1" data-max="20" data-required="true" data-id="idproveedor"></select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Business group</label>
+                            <div class="col-sm-4">
+                                <select class="form-control _enty" id="cbo_grupocomercial_grupocorreo2" data-min="1" data-max="20" data-required="false" data-id="idgrupocomercial"></select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Customer</label>
+                            <div class="col-sm-4">
+                                <select class="form-control _enty" id="cbo_cliente_grupocorreo2" data-min="1" data-max="20" data-required="false" data-id="idcliente"></select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Group name</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control _enty" list="datlist_nombregrupo_grupocorreo2" id="id_datlist_nombregrupo_grupocorreo2">
+                                <datalist id="datlist_nombregrupo_grupocorreo2"></datalist>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox float-e-margins" id="div_detalle_correo">
+        <div class="ibox-title">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h4>Mails</h4>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <button class="btn btn-sm btn-success" type="button" id="_btn_add_correo">
+                        Add
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <table class="table table-bordered" id="tblproveedorgrupocorreo2">
+                    <thead>
+                        <tr>
+                            <th class="text-center col-sm-1">
+
+                            </th>
+                            <th class="text-center col-sm-1">
+                                Name
+                            </th>
+                            <th class="text-center col-sm-1">
+                                Mail to
+                            </th>
+                            <th class="text-center col-sm-3">
+                                Mail copy
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="_tbodyGridProveedoGrupoCorreo2"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+

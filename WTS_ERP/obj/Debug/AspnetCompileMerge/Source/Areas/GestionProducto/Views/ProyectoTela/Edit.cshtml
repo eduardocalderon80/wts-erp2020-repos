@@ -1,0 +1,550 @@
+﻿
+<style>
+    img, object {
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    img {
+        border: 0 none;
+        height: auto;
+        max-width: 100%;
+        vertical-align: middle;
+    }
+
+    a {
+        cursor: pointer;
+    }
+
+    .img-polaroid {
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        padding: 4px;
+        width: 200px;
+        height: 180px;
+    }
+
+    .img-fondo {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background-color: #EEEEEE;
+    }
+
+    textarea {
+        resize: none;
+    }
+</style>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row" style="vertical-align: middle;">
+            <div class="col-sm-6" id="divtituloprincipal">
+                <h2>Fabric</h2>
+            </div>
+            <div class="col-sm-6 text-right">
+                <button type="button" class="btn btn-primary dim" id="btnSave">Save</button>
+                <button type="button" class="btn btn-primary dim" id="btnnFabricCode">Fabric Code</button>
+                <button type="button" class="btn btn-danger dim" id="btnCancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel-body">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                    <h4>Header</h4>
+                            </div>
+            <div class="ibox-content">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="cboCliente">* Client:</label>
+                            <div class="col-sm-8">
+                                <input id="txtCliente" class="form-control" readonly />
+                                <select id="cboCliente" class="form-control" data-initial=""><option value="">Select one</option></select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        <label class="control-label col-sm-2" for="cboSeason">* Season:</label>
+                            <div class="col-sm-8">
+                                <select id="cboSeason" class="form-control" data-initial=""><option value="0">Select one</option></select>
+                            </div>
+                        </div>
+                    <div id="divCodigo" class="form-group">
+                        <label class="control-label col-sm-2" for="txtCode">Code:</label>
+                        <div class="col-sm-8">
+                            <input id="txtCode" class="form-control" readonly />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                    <h4>Detail</h4>
+            </div>
+            <div class="ibox-content">
+                <div id="divFabric1" class="form-horizontal divFabric" data-divProcess="divFabricProcess1" data-type="">
+                    <div class="form-group">
+                        <label class="lblSupplierReq control-label col-sm-2">Supplier:</label>
+                        <div class="col-sm-8">
+                            <div id="div_cboProveedor">
+                                <select id="cboFabricSupplier" class="cboFabricSupplier form-control" data-initial=""><option value="">Select One</option></select>
+                            </div>
+                            
+                            <input type="text" class="form-control" id="txtProveedor" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="lblConstructionReq control-label col-sm-2">Construction:</label>
+                        <div class="col-sm-8">
+                            <textarea id="txtConstruction" onkeyup="Mayus(this)"  class="form-control FabricConstruction" rows="2" cols="8" data-initial=""></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="lblYarnReq control-label col-sm-2">Yarn:</label>
+                        <div class="col-sm-8">
+                            <input id="txtYarn" onkeyup="Mayus(this)"  class="form-control FabricYarn" data-initial="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="lblContentReq control-label col-sm-2">Content:</label>
+                        <div class="col-sm-8">
+                            <input id="txtContent" onkeyup="Mayus(this)"  class="form-control FabricContent" data-initial="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="lblWeightReq control-label col-sm-2">Weight:</label>
+                        <div class="col-sm-5">
+                            <input id="txtWeight" data-initial="" class="form-control Fabricweight" value="0" type="text" onblur="ValidarNumero(this);" onkeypress="return DigitimosDecimales(event, this)" />
+                        </div>
+                        <div class="col-sm-3">
+                            <select id="cboLavado" data-initial="" class="form-control FabricLavado"><option>AW</option><option>BW</option></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Status:</label>
+                        <div class="col-sm-8">
+                            <select id="cboStatus" data-initial="" class="form-control FabricStatus">
+                                <option value="P">Pending</option>
+                                <option value="A">Approved</option>
+                                <option value="R">Rejected</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Comments:</label>
+                        <div class="col-sm-8">
+                            <input id="txtComents" onkeyup="Mayus(this)" data-initial="" class="form-control FabricComent" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12" id="div_principal_proceso">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4>Process</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-horizontal">
+                               
+                                <div class="row">
+                                   <div class="col-sm-6">
+                                       <div class="form-group">
+                                           <label class="control-label col-sm-2">Dyeing Process</label>
+                                           <div class="col-sm-10">
+                                               <select class="form-control" id="cboDyeProcess"></select>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group" id="div_grupocomboproceso">
+                                            <label class="control-label col-sm-2">Aditional Fabric Process</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control" id="cbo_proceso_add"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-1">
+                                                <button type="button" class="btn btn-sm btn-primary" id="btn_addproceso">
+                                                    <span class="fa fa-plus-square"></span>
+                                                    Add
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                             
+                            </div>
+                            <div class="row">
+                            <div class="col-sm-12">
+                                    <table class="table table-bordered" id="tblprocesos" data-estadomodificado="0">
+                                        <thead>
+                                            <tr>
+                                                <th class="col-sm-1"></th>
+                                                <th class="col-sm-5 text-center">Process</th>
+                                                <th class="col-sm-6 text-center">Comment</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbody_process"></tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h3 class="col-sm-3 font-bold">Color</h3>
+                        <div class="col-sm-3 hide">
+                            <button type="button" class="btn btn-sm btn-warning" id="btnReporteResumenLabdip">
+                                <span class="fa fa-print"></span>
+                                Print
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 text-right">                        
+                        <button type="button" class="btn btn-sm btn-info" id="btn_addlabdip">
+                            <span class="fa fa-plus-square"></span>
+                            Add
+                        </button>
+                        <button type="button" class="btn btn-primary btn-sm" id="btnsavelabdip">
+                            <span class="fa fa-save"></span>
+                            Save
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div style="max-height: 400px; overflow-y:auto;">
+                    <table id="tblLabDip" class="table table-hover table-bordered">
+                        <thead>
+                            <tr class="text-center">
+                                <td style="width:2%"></td>
+                                <td class="hide"></td>
+                                <th style="width:20%">Color (*)</th>
+                                <th style="width:14%">Standard</th>
+                                <th style="width:10%">Type (*)</th>
+                                <th style="width:10%">Approval By (*)</th>
+                                <th  style="width:30%">Dyeing House (*)</th>
+                                <th class="hide">Process</th>
+                                <th style="width:10%">Season (*)</th>
+                                <th style="width:2%">Status</th>
+                                <th style="width:2%"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody_labdip"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal inmodal in" id="mdStatus" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 17px;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h5 class="modal-title">LabDip Status</h5>
+            </div>
+            <div id="modalstatus" class="modal-body">
+
+                <div class="col-sm-6">
+                    <div class="ibox">
+                        <div class="ibox-content" style="border: none">
+                            <div class="form-horizontal row">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Color:</label>                                   
+                                    <div class="col-sm-9">
+                                        <input id="txtColor" type="text" class="form-control" readonly />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-horizontal row">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Status:</label>
+                                    <div class="col-sm-9">
+                                        <select id="cboStatusLabDip" class="form-control"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-horizontal row">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Date:</label>
+                                    <div class="col-sm-9">
+                                        <div id='dtLabDipStatus' class='input-group date'>
+                                            <span class='input-group-addon'><i class='fa fa-calendar'></i></span>
+                                            <input type='text' class='form-control'>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-horizontal row">
+                                <div class="form-group">
+                                    <div class="col-sm-12 control-label text-right">
+                                        <button type="button" class="btn btn-outline btn-primary" id="btnSave" onclick="AgregarLabdipStatus();">
+                                            <span class="fa fa-plus"></span>
+                                       </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="ibox">
+                        <div class="ibox-content" style="border: none">
+                            <div class="form-horizontal">
+                                <div id="_iddivApproval" class="_divApproval hide">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label input-sm m-b-xs">Alternative</label>
+                                        <div class="col-sm-9">
+                                            <input id="txtAlternativa" type="text" onkeyup="Mayus(this)" class="form-control _enty input-sm m-b-xs" data-required="true">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label input-sm m-b-xs">Dyeing House Code</label>
+                                        <div class="col-sm-9">
+                                            <input id="txtDyeingCode" type="text" class="form-control _enty input-sm m-b-xs" onkeyup="Mayus(this)" data-required="true">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label input-sm m-b-xs">Comment</label>
+                                        <div class="col-sm-9">
+                                            <input id="txtComment" type="text" class="form-control _enty input-sm m-b-xs" onkeyup="Mayus(this)" data-required="true">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label input-sm m-b-xs">Solidez a la luz</label>
+                                        <div class="col-sm-9">
+                                            <input id="txtsolidezluz" type="text" class="form-control _enty input-sm m-b-xs" onkeypress="return DigitimosDecimales(event, this)" data-type="decimal" maxlength="3" data-required="true">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label input-sm m-b-xs">Solidez al Frote Humedo</label>
+                                        <div class="col-sm-9">
+                                            <input id="txtsolidezfrotehumedo" type="text" class="form-control _enty input-sm m-b-xs" onkeypress="return DigitimosDecimales(event, this)" data-type="decimal" maxlength="3" data-required="true">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">                                        
+                                            <label class="col-sm-3 control-label input-sm m-b-xs">Solidez al Frote Seco</label>                                       
+                                        <div class="col-sm-9">
+                                            <input id="txtsolidezfroteseco" type="text" class="form-control _enty input-sm m-b-xs" onkeypress="return DigitimosDecimales(event, this)" data-type="decimal" maxlength="3" data-required="true">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+                <table id="tblLabdipStatus" class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Alternativa</th>
+                            <th>Dyeing House Code</th>
+                            <th>Comment</th>
+                            <th>S. Luz</th>
+                            <th>S.F. Humedo</th>
+                            <th>S.F. Seco</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" id="btnCloseFabricCode" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<div class="modal inmodal in" id="mdStatus" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 17px;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h5 class="modal-title">LabDip Status</h5>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <div class="form-group" style="padding-right:20px;">
+                        <div class="col-sm-3 control-label">
+                            <label>Color:</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input id="txtColor" type="text" class="form-control" readonly />
+                        </div>
+                    </div>
+                    <div class="form-group" style="padding-right:20px;">
+                        <div class="col-sm-3 control-label">
+                            <label>Status:</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <select id="cboStatusLabDip" class="form-control"></select>
+                        </div>
+                    </div>
+                    <div class="form-group" style="padding-right:20px;">
+                        <div class="col-sm-3 control-label">
+                            <label>Date:</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <div id='dtLabDipStatus' class='input-group date' style='width:150px;'>
+                                <span class='input-group-addon'><i class='fa fa-calendar'></i></span>
+                                <input type='text' class='form-control'>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="_iddivApproval"  class="_divApproval hide">
+                        <div class="form-group">
+                            <div class="col-sm-3 control-label">
+                                <label>Alternative (*)</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text" onkeyup="Mayus(this)"  class="form-control" id="txtAlternativa" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-3 control-label">
+                                <label>Dyeing House Code (*)</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" onkeyup="Mayus(this)"  id="txtDyeingCode" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-3 control-label">
+                                <label>Comment (*)</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" onkeyup="Mayus(this)"  id="txtComment" />
+                            </div>
+                        </div>
+                       
+                        <div class="form-group">
+                            <div class="col-sm-3 control-label">
+                                <label>Solidez a la luz(*)</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" onkeyup="Mayus(this)" id="txtDyeingCode" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-3 control-label">
+                                <label>Solidez al Frote Humedo(*)</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" onkeyup="Mayus(this)" id="txtDyeingCode" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-3 control-label">
+                                <label>Solidez al Frote Sexo(*)</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" onkeyup="Mayus(this)" id="txtDyeingCode" />
+                            </div>
+                        </div>
+
+                    </div>
+                     
+                    <div class="form-group" style="padding-right:20px;">
+                        <div class="col-sm-3 control-label">
+                            <button type="button" class="btn btn-primary" id="btnSave" onclick="AgregarLabdipStatus();">Add</button>
+                        </div>
+                        <div class="col-sm-4">
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <table id="tblLabdipStatus" class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Alternativa</th>
+                            <th>Dyeing House Code</th>
+                            <th>Comment</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" id="btnCloseFabricCode" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>*@
+
+
+
+<div class="modal inmodal in" id="mdFabricCode" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 17px;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h5 class="modal-title">Fabric Code</h5>
+            </div>
+            <div class="modal-body">
+                <div class="form-inline">
+                    <div class="form-group" style="padding-right:20px;">
+                        <label style="padding-right:5px;">Family:</label>
+                        <select id="cboFamilia" class="form-control" style="width:150px"><option value="">Select</option></select>
+                    </div>
+                    <div class="form-group" style="padding-right:20px;">
+                        <label style="padding-right:5px;">Code::</label>
+                        <input type="text" id="txtCodigoTela" class="form-control" />
+                    </div>
+                    <div class="form-group" style="padding-right:20px;">
+                        <button type="button" class="btn btn-primary" id="btnSearchTela">Search</button>
+                    </div>
+                </div>
+                <br />
+                <div id="divTela" style="max-height:400px;">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" id="btnCloseFabricCode" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="hide">
+    <select id="cboProceso"></select>
+    <select id="cboTipo"></select>
+    <select id="cboAprobacion"></select>
+    <select id="cboDyeingHouse"></select>
+    <input type="hidden" id="hfLabdipCont" value="0" />
+    <input type="hidden" id="hfLabdipStatuspCont" value="0" />
+    <input type="hidden" id="hfLabdipCurrent" value="0" />
+    <input type="hidden" id="hfLabdipStatuspCurrent" value="0" />
+    <input type="hidden" id="hfIdProyectoTela" value="0" />
+    <input type="hidden" id="hfIdTela" value="0" />
+    <input type="text" id="txtpar" value="DATA-PARAMETRO" />
+    <input type="hidden" id="hfLabdipRef" value="new"/>
+    <input type="hidden" id="hfTipo" value="" />
+</div>

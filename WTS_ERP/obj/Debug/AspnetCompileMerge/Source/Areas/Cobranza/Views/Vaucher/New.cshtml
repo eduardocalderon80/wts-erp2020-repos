@@ -1,0 +1,157 @@
+﻿<style type="text/css">
+
+    #panelEncabezado_Vaucher .ibox {
+        clear: both;
+        margin-bottom: 5px !important;
+        margin-top: 0;
+        padding: 0;
+    }
+
+    #panelEncabezado_Vaucher .ibox-content {
+        color: inherit;
+        padding: 5px 20px 5px 10px !important;
+        border-color: #e7eaec;
+        border-image: none;
+        border-style: solid solid none;
+        border-width: 1px 0;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 30% 10% 60%;
+        grid-gap: 10px;
+     
+    }
+</style>
+
+<div class="row wrapper-content gray-bg animated" id="panelEncabezado_Vaucher">
+
+    <div class="ibox">
+        <div class="hide">
+            <input type="text" id="txtpar_new" value="DATA-PARAMETRO" />
+            <input type="text" id="hf_idVaucher" value="0" class="_enty_grabar" data-required="true" data-min="1" data-max="20" data-id="hf_idVaucher" />
+        </div>
+
+        <div class="ibox-title">
+            <div class="form-horizontal row ">
+                <div class="col-sm-6">
+                    <h3 id="_title" class="text-navy bold">New</h3>
+                </div>
+                <div id="divBotonesprimarios" class="col-sm-6 text-right">
+                                   
+                    <button id="btnreturn" type="button" class="btn btn-default">
+                        <span class="fa fa-reply-all"></span>
+                        Return
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="tabledetails" class="ibox-content">
+            <div id="divBuscador" class="form-group">
+                <div class="form-horizontal row">
+                    <div class="col-sm-1">
+                        <label class="control-label">Client</label>
+                    </div>
+                    <div class="col-sm-3" id="divcboCliente">
+                        <select id="cboCliente" class="form-control" data-required="true" data-min="1" data-max="500" data-id="idcliente"></select>
+                    </div>
+                    <div class="col-sm-1">
+                        <label class="control-label">Date</label>
+                    </div>
+                    <div class="col-sm-3">
+                        <div id="divfechahasta" class='input-group date'>
+                            <input id="txtfechahasta" type='text' class='form-control _enty' data-type="date" data-min="10" data-max="10" data-level="true" data-id="fechacese">
+                            <div id="divcalendariohasta" class="input-group-addon">
+                                <span class="fa fa-calendar"></span>
+                            </div>
+                        </div>
+                        @*<select id="cboFecha" class="form-control" data-required="true" data-min="1" data-max="500" data-id="idfecha"></select>*@
+                    </div>
+                    <div class="col-sm-2">
+                        <button id="btnBuscarFactura" type="button" class="btn btn-primary">
+                            <span class="fa fa-search"></span>
+                            Add 
+                        </button>
+
+                    </div>
+
+                    <div class="col-sm-3">
+                    </div>
+                </div>
+            </div>
+            <div id="divBuscadorEdit" class="form-group" style="display:none">
+                <div class="form-horizontal row">
+                    <div class="col-sm-1">
+                        <label class="control-label">Client</label>
+                    </div>
+                    <div class="col-sm-3" id="divcboCliente">
+                        <input type="text" id="txtCliente" disabled name="status" value="" class="form-control">
+                    </div>
+                    <div class="col-sm-1">
+                        <label class="control-label">Date</label>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" id="txtFecha" disabled name="status" value="" class="form-control">
+                    </div>
+                    <div class="col-sm-2">
+                        <button id="btnBuscarFactura1" type="button" class="btn btn-primary">
+                            <span class="fa fa-search"></span>
+                            Add
+                        </button>
+
+                    </div>
+
+                    <div class="col-sm-3">
+                    </div>
+
+                </div><br/>
+                <div class="form-horizontal row">
+                    <div class="col-sm-1">
+                        <label class="control-label">Total Doc.</label>
+                    </div>
+                    <div class="col-sm-3" id="divtxtDocTotal">
+                        <input type="text" id="txtDocTotal" disabled name="status" value="" class="form-control">                    
+                    </div>
+                    <div class="col-sm-1">
+                        <label class="control-label">Amount Total</label>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" id="txtMontoTotal" disabled name="status" value="" class="form-control">
+                    </div>
+                    <div class="col-sm-2">                        
+                    </div>
+                    <div class="col-sm-3">
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="ibox-content" id="div_contenidoBol">
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div class="col-sm-12 table-responsive" id="divTablaDetalle">
+                        <table id="tblVaucher" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="text-center" style="width:5%;"></th>
+                                    @*<th class="text-center" style="width:15%;">Client</th>*@
+                                    <th class="text-center" style="width:20%;">Invoice</th>
+                                    <th class="text-center" style="width:15%;">Credit</th>
+                                    <th class="text-center" style="width:15%;">Date</th>
+                                    <th class="text-center" style="width:15%;">Amount</th>
+                                    <th class="text-center" style="width:30%;">Commentary</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_Vaucher"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

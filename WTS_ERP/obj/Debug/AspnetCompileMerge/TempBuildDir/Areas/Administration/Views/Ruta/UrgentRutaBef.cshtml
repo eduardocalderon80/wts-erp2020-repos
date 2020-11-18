@@ -1,0 +1,213 @@
+﻿<div class="row wrapper border-bottom white-bg page-heading">
+    <div id="content_header">
+        <div class="col-lg-8">
+            <h2>Emergency Mobility</h2>           
+        </div>
+
+        <div class="col-lg-4" style="text-align:right;padding:20px">
+            <button type="button" class="btn btn-success" id="btnReturn">
+                <span class="fa fa-backward"></span>
+                Go Query
+            </button>
+            <button class="btn btn-primary " type="button" onclick="validInsert()">
+                <i class="fa fa-save"></i>&nbsp;&nbsp;
+                <span class="bold">Save</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="wrapper wrapper-content gray-bg animated fadeInRight">
+    <div class="ibox" id="formulario">
+        <div class="ibox-title">
+            <h5>
+                <span class="text-success"><b>Emergency Mobility</b></span>
+            </h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-horizontal">
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Ship by:</label>
+                            <div class="col-sm-9">
+                                <select id="shipby" class="shipby form-control" name="shipby" style="width:100%">
+                                    <option|></option|>
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <!-- parte2 :2 -->
+
+                        <div class="form-group hide">
+                            <label class="col-sm-3 control-label">Ship by:</label>
+                            <div class="col-sm-9">
+                                <div id="txtEnvia" style="font-weight:bold" class="text-success"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Type Mobility:</label>
+                            <div class="col-sm-9">
+                                <select class="select2_TypeMobility form-control" name="movilidad" id="selectMobilidad" style="width:100%">
+                                    <option></option>
+
+                                    <option value="1">Ruta A</option>
+                                    <option value="2">Ruta B</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Date:</label>
+                            <div class="col-sm-9">
+                                <div id="dtFecha" class='input-group date'>
+                                    <span class='input-group-addon'><i class='fa fa-calendar'></i></span>
+                                    <input type='text' id="txtFecha" class='form-control'>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Service:</label>
+                            <div class="col-sm-9">
+                                <div id="txtTipoServicio"></div>
+                                <div id="cboServicio">
+                                    <select id="select2_TypeService" class="select2_TypeService form-control" @*onchange="selectTipo()"*@ name="servicio" style="width:100%">
+                                        <option|></option|>
+
+                                        <option value="1" selected>Morning</option>
+                                        <option value="2">Afternoon</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Client:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="cliente" id="idcliente" onkeyup="aMayusculas(this)">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Contact:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="contacto" id="txtContacto" onkeyup="aMayusculas(this)">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Reason:</label>
+                            <div class="col-sm-9">
+                                <textarea class="form-control message-input" name="motivo" placeholder="Enter reason text" id="txtMotivo" onkeyup="aMayusculas(this)"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Observations:</label>
+                            <div class="col-sm-9">
+                                <textarea class="form-control message-input" name="observacion" placeholder="Enter observations text" id="txtObservacion" onkeyup="aMayusculas(this)"></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+
+                    <div class="form-horizontal">
+                        <!-- :3 -->
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Approved by:</label>
+                            <div class="col-sm-6">
+                                <select id="aprueba" class="aprueba form-control" name="aprueba" style="width:100%">
+                                    <option|></option|>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group hide">
+                            <label class="col-sm-3 control-label">Approved by:</label>
+                            <div class="col-sm-9">
+                                <div id="txtAprueba" style="font-weight:bold" class="text-success"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Destination:</label>
+                            <div class="col-sm-6">
+                                <div>
+                                    <div id="selectDestino">
+                                        <select class="select2_Destination form-control" name="destino" id="cboDestino" style="width:100%"></select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div id="txtDestino">
+                                        <input type="text" class="form-control" name="destino" id="txtInputDestino">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="i-checks">
+                                    <div class="i-checks">
+                                        <label class="">
+                                            <div class="icheckbox_square-green" style="position: relative;">
+                                                <input type="checkbox" style="position: absolute; opacity: 0;" id="chkOthers">
+                                                <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                            </div>
+                                            <i></i>Others
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Date Time:</label>
+                            <div class="col-sm-6">
+                                <div class="input-group clockpicker" data-autoclose="true">
+                                    <input type="text" class="form-control" value="08:30" name="hora" id="txtHora">
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-clock-o"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="i-checks" id="ichkSinMovil">
+                                    <div class="i-checks">
+                                        <label class="">
+                                            <div class="icheckbox_square-green" style="position: relative;">
+                                                <input type="checkbox" style="position: absolute; opacity: 0;" id="chkSinMovil">
+                                                <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;"></ins>
+                                            </div>
+                                            <i></i>Need Mobility
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Costo:</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="txtCosto" value="0" onkeypress="return DigitimosDecimales(event,this)" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modales">
+        <div id="modalEmergency"></div>
+    </div>
+
+</div>
+<div class="hide">
+    <input type="text" id="txtpar" value='DATA-PARAMETRO' />
+</div>

@@ -1,0 +1,157 @@
+﻿<div class="ibox" id="panelEncabezado_trims_new">
+    <div class="ibox-title">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 id="_title" class="text-navy bold">New Trim</h3>
+            </div>
+            <div class="col-sm-6 text-right">
+                <button id="_btn_save_new_trims" class="btn btn-primary">
+                    <span class="fa fa-save"></span>
+                    Save
+                </button>
+                <button class="btn btn-default" id="btnretornar_newtrim">
+                    <span class="fa fa-reply-all"></span>
+                    Return
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ibox-content wrapper wrapper-content gray-bg" style="overflow-y: auto; max-height: 850px;" id="div_cuerpoprincipal_newtrim">
+        <div class="hide">
+            <input type="text" id="txtpar_index_trims_new" value="DATA-PARAMETRO" />
+            <input type="text" id="hf_idtrim" value="" class="_enty" data-required="false" data-min="1" data-max="20" data-id="idtrim"  />
+        </div>
+
+        <div class="ibox" id="div_trim_cabecera">
+            <div class="ibox-content">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Client</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control _enty" id="cbo_cliente_new_trim" data-required="true" data-min="1" data-max="20" data-id="idcliente">
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Division</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control _enty" id="cbo_clientedivision_new_trim" data-required="false" data-min="1" data-max="20" data-id="idclientedivision">
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group clsgrupodescripcion_trim">
+                                <label class="control-label col-sm-2">*Description</label>
+                                <div class="col-sm-10">
+                                    <textarea class="form-control _enty" id="txta_descripcion_trim" onkeyup="Mayus(this)" rows="2" data-required="true" data-min="1" data-max="8000" data-id="descripcion"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Code</label>
+                                <div class="col-sm-10">
+                                    <textarea class="form-control _enty" id="txta_codigo_trim" onkeyup="Mayus(this)" rows="2" data-required="false" data-min="1" data-max="300" data-id="codigo"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Placement</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" onkeyup="Mayus(this)" id="txt_placement_trim" data-required="false" data-min="1" data-max="300" data-id="placement" />
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Supplier</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control _enty" onkeyup="Mayus(this)" id="txt_proveedor_trim" data-required="false" data-min="1" data-max="300" data-id="proveedor" />
+                                </div>
+                            </div>    
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Type provider</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control _enty" id="cbo_tipoproveedor" data-required="false" data-min="1" data-max="20" data-id="tipoproveedor" >
+                                        <option value=" ">Select</option>
+                                        <option value="Local">Local</option>
+                                        <option value="Importado">Importado</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Status</label>
+                                <div class="col-sm-10">
+                                    <select id="cbo_Status_Trim" class="form-control _enty" data-required="false" data-min="1" data-max="20" data-id="status"></select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Incoterm</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" onkeyup="Mayus(this)" id="txt_incoterm_trim" data-required="false" data-min="1" data-max="300" data-id="incoterm" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Comment</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control _enty" onkeyup="Mayus(this)" id="txt_comentario_trim" data-required="false" data-min="1" data-max="300" data-id="comment" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Cost</label>
+                                <div class="col-sm-3">
+                                    <input id="txt_costo_trim" onkeypress="return DigitimosDecimales(event,this)" value="0" onblur="ValidarNumero(this);" class="form-control _enty" data-required="false" data-min="1" data-max="20" data-id="costo" data-type="dec" />
+                                </div>
+                                <div class="col-sm-4">
+                                    <select id="cbo_unidadmedida_trim" class="form-control _enty" data-required="false" data-min="1" data-max="20" data-id="costouom"></select>
+                                </div>
+                                <div class="col-sm-3">
+                                    <select class="form-control _enty" id="cbo_moneda_trim" data-required="false" data-min="1" data-max="20" data-id="costomoneda">
+                                        <option value="1">Sol</option>
+                                        <option value="2">Dolar</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ibox" id="div_trim_color">
+            <div class="ibox-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h5 class="text-navy bold">Color</h5>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <button class="btn btn-info" id="btn_add_color_trim">
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="row">
+                    <div id="div_tbl_trim_color" style="max-height: 400px; overflow-y: auto;">
+                        <table class="table table-bordered" id="tbl_trim_color">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Color</th>
+                                    <th>Status</th>
+                                    <th>Comment</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_trim_color"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

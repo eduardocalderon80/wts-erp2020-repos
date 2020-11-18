@@ -1,0 +1,170 @@
+﻿<style>
+    /* Fix Select2 en insipnia & boostrap 3 */
+    .CustomSizeSelect2 {
+        height: 34px !important;
+    }
+
+        .CustomSizeSelect2 span:nth-child(1) {
+            line-height: 32px !important;
+        }
+
+        .CustomSizeSelect2 span:nth-child(2) {
+            top: 3px !important;
+        }
+
+    /* Fix select2 en modal boostrap 3 (no olvidar borrar el tabindex) */
+    .select2-container.select2-container--default.select2-container--open {
+        z-index: 2050 !important;
+    }
+
+    /* Modal Size */
+    .modal-lg-870 {
+        width: 870px;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+        -webkit-appearance: none;
+        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
+
+    input[type=number] {
+        -moz-appearance: textfield; /* Firefox */
+    }
+</style>
+
+<div class="row wrapper white-bg page-heading">
+    <div id="content_header" class="ibox float-e-margins">
+        <div id="divtituloprincipal" class="col-sm-6">
+            <h2 class="font-bold">Añadir Guia Temporal</h2>
+        </div>
+    </div>
+</div>
+
+<div class="row wrapper-content gray-bg animated" id="panelEncabezadoGuia">
+    <div id="content_form" class="ibox">
+        <div class="ibox-title">
+            <div class="form-horizontal row ">
+                <div class="col-sm-6">
+                    <h3 id="_title" class="text-navy bold">Ver guias agregadas</h3>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <button id="btnAdd" type="button" class="btn btn-primary">
+                        <span class="fa fa-plus"></span>
+                        Añadir Guia
+                    </button>
+                    <button id="btnReturn" type="button" class="btn btn-default">
+                        <span class="fa fa-reply-all"></span>
+                        Return
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="tabledetails" class="ibox-content">
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div class="col-sm-4">
+                        <label class="control-label">N° Guia</label>
+                        <input type="text" id="txtNumeroGuia" class="form-control">
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="control-label">Desde :</label>
+                        <div class="input-group date">
+                            <input id="txtFechaDesde" type="text" class="form-control">
+                            <div class="input-group-addon">
+                                <span class="fa fa-calendar"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="control-label">Hasta :</label>
+                        <div class="input-group date">
+                            <input id="txtFechaHasta" type="text" class="form-control">
+                            <div class="input-group-addon">
+                                <span class="fa fa-calendar"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div id="divBotonesSecundarios" class="col-sm-12  text-left">
+                        <button type="button" title="Search" class="btn btn-outline btn-info" id="btnSearch">
+                            <span class="fa fa-search"></span>
+                            Mostrar Todos
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-horizontal row">
+                    <div id="divGuiaCourier" class="col-sm-12"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="AgregarSubRes" role="dialog">
+    <div class="modal-dialog modal-lg-870">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" id="btnCancelarSubRes"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Registrar Guia Temporal</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-4">N° Guia</label>
+                                <div class="col-sm-8">
+                                    <input type="number" id="txtNroGuia" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-4">Sub Responsable</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="cboSubResponsable" style="width:100%"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <button type="button" class="btn btn-sm btn-primary" id="btnAgregarSubRes">
+                                    <span class="fa fa-plus-square"></span>
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="col-sm-1"></th>
+                                    <th class="col-sm-11 text-center">Nombre</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbodySubResponsable"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" data-dismiss="modal" id="btnDismissModal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="btnGrabarSubRes">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>

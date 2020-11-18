@@ -1,0 +1,227 @@
+
+//1=> array  => map, filter
+
+//2=>  map de map
+
+//3=> reduce
+
+function c(texto){
+    console.log(texto)
+}
+
+// const aEmpleados = [{nombre:'samuel arone',area:'tic',edad:25},
+//     { nombre: 'marquito', area: 'tic', edad:21 },
+//     { nombre: 'aquiles cacho', area: 'tic', edad:23 },
+//     { nombre: 'junior el mallqui', area: 'tic', edad:18 },
+//     { nombre: 'karolina', area: 'comercial', edad:17 }];
+
+// //ejemplo de suma de valores
+// const sumaValores = [1, 2, 3, 4].reduce((total, item) => total + item);
+// console.log(sumaValores);
+// //=> Respuesta = 10
+
+// //devuelve la suma de todas las edades
+// const totalEdadEmpleados = aEmpleados.map(x=>x.edad)
+//                             .reduce((acumulador,edad)=>acumulador+edad)
+
+// console.log(totalEdadEmpleados)
+// //=> Respuesta = 104
+// // nota: solo trabaja con Array de valores
+
+
+// //devolver los nombre concatenados usando "reduce", separado por coma
+// const concatenadoDeNombres = 
+// aEmpleados.map(x => x.nombre)
+// .reduce((acum,nombre)=>acum+','+nombre);
+
+// c(concatenadoDeNombres);
+
+
+
+// //set
+// // => acepta un valor unico
+// const aValores = [1,2,3,1,1,2,4];
+// const setValoresUnico =   new Set(aValores);
+// const aValoresUnico = Array.from(setValoresUnico);
+
+// c(setValoresUnico);
+// c(aValoresUnico);
+
+// //set con sintaxis corta
+// const aVloresUnicoCorta = Array.from(new Set(aValores));
+// c(aVloresUnicoCorta);
+
+
+// // agrupar por objetos
+// const aEmpleados2 = [{ nombre: 'samuel arone', area: 'tic', edad: 25 },
+//     { nombre: 'samuel arone', area: 'tic', edad: 15 },
+//     { nombre: 'samuel arone', area: 'tic', edad: 26 },
+//     { nombre: 'junior el mallqui', area: 'tic', edad: 18 },
+//     { nombre: 'karolina', area: 'comercial', edad: 17 }];
+
+
+// const r =   [...new Set(aEmpleados2.map(x=>JSON.stringify(x)))]
+//             .map(x=>JSON.parse(x))
+// c(r)
+
+//some
+// => devuelve un Boleano [true,false]
+// => q hace, q realiza => evalua la condición si es true, realiza un corte de array
+
+// preguntar si existe un empleado con edad 25
+// const existeEmpleado25 = aEmpleados2.some(x=>{
+//             console.log(x.edad)
+//                return  x.edad===25
+//             }
+    
+//     );
+
+// c(existeEmpleado25);
+
+// Arrows
+
+function fun(){
+    var nombre="samuel";
+    var that = this;
+
+    var imprimirNombre = function(){
+            function hola(){
+                console.log(nombre)
+            }
+            hola()
+    }
+
+    imprimirNombre();
+
+
+    var imprimirNombreArrow = ()=>{
+        var hola= ()=> console.log(nombre);
+        hola();
+    }
+
+}
+
+
+// Plantillas
+const nombre = 'Samuel';
+const apellido = 'Arone'
+const nombreCompleto = `${nombre} ${apellido}`;
+
+c(nombreCompleto);
+
+
+// funcion q devuelva una tabla generica => map y plantilllas
+const aEmpleados3 = [{ nombre: 'samuel arone', area: 'tic', edad: 25 },
+{ nombre: 'samuel arone', area:'tic', edad: 15 },
+{ nombre: 'samuel arone', area: 'tic', edad: 26 },
+{ nombre: 'junior el mallqui', area: 'tic', edad: 18 }, { nombre: 'karolina', area: 'comercial', edad: 17 }];
+
+/*
+1: obtener los nombre del key del objeto
+2: construyo el thead de los valores del key
+3: construyo el tbody de todos los valores
+4: concateno el thead, tbody => table
+*/
+
+
+// const aKeys = Object.keys(aEmpleados3[0]);
+// const thead = (arr)=>{
+//     return `<thead>
+//             <tr>
+//                 ${arr.map(x=>{
+//                     return `<th>${x}</th>`
+//                 }).join('')}
+//             </tr>
+//         </thead>`;
+// }
+
+
+// const tbody = (arr,akeys)=>{
+//     return `<tbody>
+//            ${arr.map(x=>{
+//                return `<tr>
+//                     ${akeys.map((y)=>{
+//                         return `<td>${x[y]}</td>`;
+//                     }).join('') }
+//                </tr>`
+//            }).join('')}
+//     </tbody>`
+// }
+
+// const table = `<table>${thead(aKeys)}${tbody(aEmpleados3, aKeys)}</table>`;  
+// c(table)
+
+
+function _setField(afield_name, afield_value) {
+    let x = 0, q_field = afield_name.length, item = '', obj = {};
+    for (x = 0; x < q_field; x++) { obj[afield_name[x]] = afield_value[x]; }
+    x = null; q_field = null;
+    return obj;
+}
+
+//proveedor
+//id,nombre,direccion 1ra fila
+//sql: 2da: 1¬'tsc'¬'chincha'^2¬'tpm'¬'sta anita'^
+
+function _isEmpty(campo) { return (campo === null || typeof campo === 'undefined' || campo.toString().trim().length === 0); }
+
+function CSVtoJSON(data, delimitadorCampo, delimitadorFila) {
+    let ajson = [], adata = [], item = [], x = 0, numregisro = 0, acampos_name = [], acampos_value = [];
+    delimitadorCampo = !_isEmpty(delimitadorCampo) ? delimitadorCampo : '¬',
+        delimitadorFila = !_isEmpty(delimitadorFila) ? delimitadorFila : '^';
+
+    if (!_isEmpty(data)) {
+        if (!_isEmpty(delimitadorFila) && !_isEmpty(delimitadorCampo)) {
+            adata = data.split(delimitadorFila); numregisro = adata.length;
+            acampos_name = adata[0].split(delimitadorCampo);// :1ra fila [nombre¬apellido¬edad¬]
+            for (x = 1; x < numregisro; x++) {
+                acampos_value = adata[x].split(delimitadorCampo);
+                ajson[x - 1] = _setField(acampos_name, acampos_value);
+            }
+        }
+    }
+    adata = null; item = null; x = null; numregisro = null; acampos_name = null; acampos_value = null;
+    return ajson;
+}
+
+
+
+
+const cadenaCSV = `nombre;descripcion
+samuel,Arone Gutierrez;Tic,M,41435877,25
+junior,Mallqui Aguillar;Tic,M,1112232,23
+eduardo,Calderon Chujutay;Comercial,M,1122322,28`;
+
+
+// demo devolver Array de objeto
+// [{nombre:'',apellido:'',edad:'',area:'',dni:''}]
+
+// forma Tradicional
+const b= cadenaCSV.split('\n').join('^');
+const arr=  CSVtoJSON(b,';','^');
+
+// const d = arr.map(x=>{
+//     const aNombre= x.nombre.split(',');
+//     const aDescripcion = x.descripcion.split(',');
+//     return ({nombre:aNombre[0],
+//              apellido:aNombre[1],
+//               edad:aDescripcion[3],
+//               area:aDescripcion[0],
+//               dni:aDescripcion[2]
+//             })
+// })
+
+// con destructuración
+const d = arr.map(x => {
+    const [nombre,apellido] = x.nombre.split(',');
+    const [area,,dni,edad] = x.descripcion.split(',');
+    return ({
+        nombre: nombre,
+        apellido: apellido,
+        edad: edad,
+        area: area,
+        dni: dni
+    })
+})
+
+c(d);

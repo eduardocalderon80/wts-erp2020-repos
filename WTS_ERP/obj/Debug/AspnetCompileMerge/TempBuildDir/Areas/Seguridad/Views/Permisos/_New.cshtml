@@ -1,0 +1,70 @@
+﻿<div id="panelEncabezado_NewPermission">
+    <div class="hide">
+        <input type="text" id="newpermission_txtpar" value="DATA-PARAMETRO" />
+    </div>
+    <div class="form-horizontal row">
+        <div class="col-sm-12 text-right m-b">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+                <span class="fa fa-ban"></span>
+                Close
+            </button>
+            <button type="button" class="btn btn-primary" id="btnNewPermisoCreate"><span class="fa fa-save"></span> Create</button>
+            <hr class="modal_hr">
+        </div>
+    </div>
+    <div class="form-horizontal row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <div class="col-sm-2" style="padding-right: 0;">
+                    <div class="form-control no-padding-sides" style="border: 0;">
+                        <input class="i-check-user" type="radio" name="tipousuario_checkbox" data-id="0">
+                        <label style="font-size: 12px;">Rol</label>
+                    </div>
+                </div>
+                <div class="col-sm-2" style="padding-right: 0;">
+                    <div class="form-control no-padding-sides" style="border: 0;">
+                        <input class="i-check-user" type="radio" name="tipousuario_checkbox" data-id="1">
+                        <label style="font-size: 12px;">Person</label>
+                    </div>
+                </div>
+                <div class="col-sm-8" id="div_checkbox_usuario"></div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <div class="has-float-label">
+                        <select class="form-control _enty_modal" id="cboModalFuncion" data-required="true" data-min="1" data-max="254" data-id="IdFuncion"></select>
+                        <label class="select2-label" for="cboModalFuncion">Window/Method</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="form-group" id="div_checkbox_permiso"></div>
+        </div>
+        <div class="col-sm-12">
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <div class="has-float-label">
+                        <input type="text" class="form-control _enty_modal" id="txtDescription" placeholder="Description" data-required="true" data-min="1" data-max="254" data-id="Description">
+                        <label for="txtDescription">Description</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <div class="has-float-label">
+                        <select class="form-control _enty_modal" id="cboModalTipo" data-required="true" data-min="1" data-max="254" data-id="CodCatalogo_Tipo"></select>
+                        <label class="select2-label" for="cboModalTipo">Type</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="form-group" id="div_group"></div>
+        </div>
+    </div>
+</div>

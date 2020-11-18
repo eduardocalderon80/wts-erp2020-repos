@@ -1,0 +1,59 @@
+﻿<style>
+    .modal-open {
+        overflow: auto;
+        padding-right: 0 !important;
+    }
+</style>
+<div class="hide">
+    <input type="text" id="txtpar" value='DATA-PARAMETRO' />
+</div>
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-8">
+        <h2>Recibir Partida</h2>
+        <ol class="breadcrumb">
+            <li><span id="spnPageStatus">Updating</span></li>
+        </ol>
+    </div>
+    <div class="col-lg-4" style="text-align:right;padding:20px">
+        <button type="button" class="btn btn-success" id="btnReturn" onclick="RetonarConsulta();">
+            <span class="fa fa-backward"></span>
+            Return
+        </button>
+        <button type="button" class="btn btn-primary" id="btnSave">
+            <span class="fa fa-save"></span>
+            Save
+        </button>
+    </div>
+</div>
+<div class="wrapper wrapper-content gray-bg animated fadeInRight">
+    <div class="ibox" id="divContentBarCode">
+        <div class="ibox-title">
+            <h5>Recibir</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="col-lg-4">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Reporte Tecnico</label>
+                                <div class="col-lg-10">
+                                    <div class="input-group m-b">
+                                        <input id="txtBarcode" type="text" class="form-control">
+                                        <span id="spnBuscarPO" class="input-group-addon" onclick="RecibirPartida();" style="cursor:pointer"><i class="fa fa-plus"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <table class='table table-bordered'>
+                        <thead><tr><td>Id</td><td>Reporte Tecnico</td><td>Fabrica</td><td>Cliente</td><td>Status</td><td>FechaRecibido</td></thead>
+                        <tbody id="tbodyPartida"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

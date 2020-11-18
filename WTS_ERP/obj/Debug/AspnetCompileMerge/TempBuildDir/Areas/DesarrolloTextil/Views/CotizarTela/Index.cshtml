@@ -1,0 +1,236 @@
+﻿<style>
+    /*.no-sort::after {
+        display: none !important;
+    }
+
+    .no-sort {
+        pointer-events: none !important;
+        cursor: default !important;
+    }
+
+    thead input {
+        width: 100%;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }*/
+
+    .dataTables_paginate {
+        margin-top: 15px;
+        position: absolute;
+        text-align: center;
+    }
+
+    .details-control {
+        text-align: center;
+        cursor: pointer;
+    }
+
+    button.dim {
+        margin-right: 0px;
+        margin-bottom: 12px !important;
+    }
+
+    .pt-15 {
+        padding-top: 15px !important;
+    }
+
+    .align-middle {
+        vertical-align: middle !important;
+    }
+
+</style>
+<div class="ibox" id="panelEncabezado_index_IC">
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div id="content_header">
+            <div class="col-lg-6">
+                <h2 id="_title" class="text-navy bold">Cotizador de Telas</h2>
+                <ol class="breadcrumb">
+                    <li></li>
+                </ol>
+            </div>
+            <div class="col-lg-6" style="text-align:right;padding:20px">
+                <button type="button" class="btn btn-warning" id="btnSolicitudCotizacion">
+                    <span class="fa fa-plus-circle"> </span>
+                    Crear Solicitud de Cotizacion
+                </button>
+                <button type="button" class="btn btn-success" id="btnCrearOrdenCotizacion" style="display: none;">
+                    <span class="fa fa-file-text-o"> </span>
+                    Crear Orden de Cotizacion
+                </button>
+                <button type="button" class="btn btn-primary" id="btnReporteExcel" style="display: none;">
+                    <span class="fa fa-file-excel-o"> </span>
+                    Exportar Reporte en Excel
+                </button>
+                <button type="button" class="btn btn-info" id="btnSearch">
+                    <span class="fa fa-search"> </span>
+                    Buscar
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content gray-bg animated fadeInRight">
+        <div class="ibox" id="formList">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="tabs-container">
+                        <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+                            <li class="bg-primary active">
+                                <a id="tabSolicitud" data-toggle="tab" href="#tab-solicitud" aria-expanded="true"><label class="control-label" style="cursor: pointer;">Solicitud de Cotizacion</label></a>
+                            </li>
+                            <li>
+                                <a id="tabCotizacion" data-toggle="tab" href="#tab-cotizacion" aria-expanded="false"><label class="control-label" style="cursor: pointer;">Orden de Cotizacion</label></a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="tab-solicitud" class="tab-pane active">
+                                <div class="ibox" style="margin-bottom: 0;">
+                                    <div class="ibox-content" style="border: none; padding-bottom: 0;">
+                                        <div class="row">
+                                            <div class="form-horizontal row">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-2">Fecha Inicio</label>
+                                                        <div class="col-sm-10">
+                                                            <div class="input-group date date-es">
+                                                                <span class="input-group-addon"> <i class="fa fa-calendar"> </i> </span>
+                                                                <input type="text" id="txtFechaInicioSolicitud" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-2">Fecha Fin</label>
+                                                        <div class="col-sm-10">
+                                                            <div class="input-group date date-es">
+                                                                <span class="input-group-addon"> <i class="fa fa-calendar"> </i> </span>
+                                                                <input type="text" id="txtFechaFinSolicitud" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-horizontal row" style="display: none">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-2">Estado</label>
+                                                        <div class="col-sm-10">
+                                                            <select id="cboEstadoSolicitud" class="form-control">
+                                                                <option value="0">Activo</option>
+                                                                <option value="1">Eliminado</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tab-cotizacion" class="tab-pane">
+                                <div class="ibox" style="margin-bottom: 0;">
+                                    <div class="ibox-content" style="border: none; padding-bottom: 0;">
+                                        <div class="row">
+                                            <div class="form-horizontal row">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-2">Fecha Inicio</label>
+                                                        <div class="col-sm-10">
+                                                            <div class="input-group date date-es">
+                                                                <span class="input-group-addon"> <i class="fa fa-calendar"> </i> </span>
+                                                                <input type="text" id="txtFI" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-2">Fecha Fin</label>
+                                                        <div class="col-sm-10">
+                                                            <div class="input-group date date-es">
+                                                                <span class="input-group-addon"> <i class="fa fa-calendar"> </i> </span>
+                                                                <input type="text" id="txtFF" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-horizontal row">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-2">Estado</label>
+                                                        <div class="col-sm-10">
+                                                            <select id="cboEstado" class="form-control">
+                                                                <option value="">Todos</option>
+                                                                <option value="0">En Proceso</option>
+                                                                <option value="1">Finalizado</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="divSolicitud" class="ibox float-e-margins">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div id="div_tbl_solicitud">
+                                @*<table id="tbl-tree" class="table table-bordered" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Item 1</th>
+                                            <th>Item 2</th>
+                                            <th>Item 3</th>
+                                            <th>Item 4</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr data-child-value="hidden 1">
+                                            <td class="details-control">
+                                                <i class="fa fa-plus-square" aria-hidden="true"></i>
+                                            </td>
+                                            <td>data 1a</td>
+                                            <td>data 1b</td>
+                                            <td>data 1c</td>
+                                            <td>data 1d</td>
+                                        </tr>
+                                        <tr data-child-value="hidden 2">
+                                            <td class="details-control">
+                                                <i class="fa fa-plus-square" aria-hidden="true"></i>
+                                            </td>
+                                            <td>data 2a</td>
+                                            <td>data 2b</td>
+                                            <td>data 2c</td>
+                                            <td>data 2d</td>
+                                        </tr>
+                                    </tbody>
+                                </table>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="divCotizacion" class="ibox float-e-margins" style="display: none;">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div id="div_tbl_orden"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,263 @@
+﻿<style>
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #676a6c;
+        }
+
+    /*._ul_menu_estados_bandeja {
+        display: none;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }*/
+
+    ._menu_user_estado ul li ul {
+        display: none;
+    }
+
+    ._submenu_estados {
+        list-style: none;
+    }
+
+    .dataTables_paginate {
+        margin-top: 15px;
+        position: absolute;
+        text-align: center;
+    }
+</style>
+<div id="div_padre_index_solicitudatx_1">
+    <div class="row wrapper border-bottom white-bg page-heading" id="div_padre_index_solicitudatx">
+        <div class="hide" id="div_solicitudatx"></div>
+        <div class="col-lg-12">
+            <div class="col-lg-10">
+                <h2 class="text-navy bold">Request</h2>
+            </div>
+
+            <div class="col-lg-2">
+                <div class="title-action _menu_user_estado" id="divbotonera_encabezado">
+                    <div style="display:inline;">
+                        <button type="button" class="dropdown-toggle btn btn-white" data-toggle="dropdown" aria-expanded="false">
+                            <span class="fa fa-wrench"></span>
+                        </button>
+                        <ul id="submenuestado" class="dropdown-menu dropdown-user">
+                            <!--dropdown-menu dropdown-user--><!--2DA OPCION: dropdown-menu _ul_menu_estados_bandeja-->
+                            <li class="_submenu">
+                                <!--pendiente_solicitar: S, C, CR-->
+                                <a href="javascript:void(0)" data-estado="pendiente_solicitar" class="_cls_item_submenu_estados">
+                                    <i class="fa fa-circle text-success"></i>
+                                    Pendientes de Solicitar
+                                </a>
+                            </li>
+                            <li class="_submenu">
+                                <!--pendiente_solicitar: PAP,PAR,PAS,PO,POR,EN,PR, PRR-->
+                                <a href="javascript:void(0)" data-estado="pendiente_finalizar" class="_cls_item_submenu_estados">
+                                    <i class="fa fa-circle text-warning"></i>
+                                    Pendientes de Finalizar
+                                </a>
+                            </li>
+                            <!--solicitud_por_aprobar: PAP,PAR-->
+                            <!--
+                            <li class="_submenu">
+                                <a href="javascript:void(0)" data-estado="solicitud_por_aprobar" class="_cls_item_submenu_estados">Por Aprobar</a>
+                            </li>
+                            -->
+                            <!--solicitud_con_rechazo: CR-->
+                            <!--
+                            <li class="_submenu">
+                                <a href="javascript:void(0)" data-estado="solicitud_con_rechazo" class="_cls_item_submenu_estados">Solicitud Rechazada</a>
+                            </li>
+                            -->
+                            <!--finalizado: PAS-->
+                            <!--
+                            <li class="_submenu">
+                                <a href="javascript:void(0)" data-estado="solicitud_por_asignar" class="_cls_item_submenu_estados">Por Asignar</a>
+                            </li>
+                            -->
+                            <!--POR OPERAR=En cola: PO, POR-->
+                            <!--
+                            <li class="_submenu">
+                                <a href="javascript:void(0)" data-estado="atx_por_operar" class="_cls_item_submenu_estados">Por Operar</a>
+                            </li>
+                            -->
+                            <!--En proceso: EN-->
+                            <!--
+                            <li class="_submenu">
+                                <a href="javascript:void(0)" data-estado="atx_en_proceso" class="_cls_item_submenu_estados">En proceso</a>
+                            </li>
+                            -->
+                            <!--Por revisar: PR, PRR-->
+                            <!--
+                            <li class="_submenu">
+                                <a href="javascript:void(0)" data-estado="atx_por_revisar" class="_cls_item_submenu_estados">Por revisar</a>
+                            </li>
+                            -->
+                            <!--Finalizados: F-->
+                            <li class="_submenu">
+                                <a href="javascript:void(0)" data-estado="finalizado" class="_cls_item_submenu_estados">
+                                    <i class="fa fa-circle text-primary"></i>
+                                    Finalizados
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="div_filtro_bandeja_solicitudatx" class="col-sm-2">
+                <span class="input-group">
+                    <input type="text" class="form-control" value="" id="txtfiltrobandeja_solicitudatx" />
+                    <span class="input-group-addon bg-primary" id="span_filtrobandeja_solicitudatx" style="cursor:pointer;" title="Search">
+                        <span class="fa fa-search"></span>
+                    </span>
+                    <span class="input-group-addon bg-default" id="span_refresh_solicitudatxindex" style="cursor:pointer;" title="Refresh">
+                        <span class="fa fa-refresh"></span>
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="fh-breadcrumb" style="max-height:850px !important;" id="divcontenedor_breadcrum">
+        <div class="fh-column" style="width:350px;max-height:850px !important; overflow-y: auto !important;" id="divmenu_breadcrum">
+            <div class="full-height-scroll">
+                <ul class="list-group elements-list" id="_menu">
+                    <li class="list-group-item _item" data-id="1">
+                        <a data-toggle="tab" href="#tab-1">
+                            <small class="pull-right text-muted"> 16.02.2015</small>
+                            <strong>Customer-Code</strong>
+                            <div class="small m-t-xs">
+                                <p>
+                                    Family - Fabric Code
+                                </p>
+                                <p class="m-b-none">
+                                    <i class="fa fa-map-marker"></i>
+                                    Type of departure
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="full-height" style="max-height: 850px !important; overflow-y: auto !important" id="divdetalle_breadcrum">
+            <div class="full-height-scroll white-bg border-left">
+                <div class="element-detail-box">
+                    <div class="tab-content">
+                        <div class="hide">
+                            <input type="text" id="txtpar_solicitudatx_index" value="DATA-PARAMETRO" />
+                            <input type="text" id="hf_estadoactualbusqueda_index" value="" />
+                            <input type="text" id="hf_idsolicitudatx_index" />
+                            <input type="text" id="hf_idanalisistextilsolicitud_index" value="" />
+                            <input type="text" id="hf_idatx_index" value="" />
+                            <input type="text" id="hf_idusuario" value="" />
+                            <input type="text" id="hf_idmotivosolicitud" value="" />
+                            <input type="text" id="hf_idtipomuestra" value="" /> <!--ID ORIGEN DE LA MUESTRA-->
+                            <input type="text" id="hf_idservicio" value="" /> <!--9 = atx; 12 = colgador-->
+                            <input type="text" id="hf_idcolgadorsolicitud_index" value=""/>
+                            <input type="text" id="hf_idusuario_solicitante" value=""/>
+                        </div>
+                        <div id="tab-1" class="tab-pane">
+                            <div class="pull-right">
+                                <div class="tooltip-demo" id="divbotonera"></div>
+                            </div>
+                            <div class="small text-muted" id="divtitulo_1"></div>
+                            <div class="small text-muted" id="divtitulo_2"></div>
+                            <h1 id="titulo_2"></h1>
+                            <div class="m-t">
+                                <div class="row">
+                                    <div class="col-sm-4" id="div_subtitulo_1"></div>
+                                </div>
+                            </div>
+                            <div class="m-t" id="div_contenido_cuerpo_solicitud">
+                                <!--m-t-lg TODO ESTO ES UNA PLANTILLA ORIGINAL; AHORA SERA DINAMIC-->
+                                <!-- :row -->
+                                <!--
+                                <div class="row">
+                                    <div class="col-sm-4 text-left" id="divpartida_row1">
+                                    </div>
+                                    <div class="col-sm-4 text-left" id="divpartida_row1_2">
+                                    </div>
+                                    <div class="col-sm-4 text-left" id="divpartida_row1_3">
+                                    </div>
+                                </div>
+                                -->
+                                <!-- :row DATOS DE LA TELA -->
+                                @*<div class="row">
+                                        <div class="col-sm-6" id="div_padre_datostela">
+                                            <div class="col-sm-12 table-responsive m-t" id="div_titulo_tela">
+                                                <h4 class="text-navy"><strong id="titulo_tela_strong">FABRIC</strong></h4>
+                                                <hr class="hr-primary hr-line-dashed">
+                                            </div>
+                                            <div class="col-sm-12" id="div_data_tela">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="col-sm-12 text-left" id="divpartida_row3">
+                                            </div>
+                                        </div>
+                                    </div>*@
+
+                                <!-- COTIZACION -->
+                                <!--
+                                <div class="table-responsive m-t" id="div_tbl_cotizacion">
+                                    <h4 class="text-navy"><strong>COTIZACIONES</strong></h4>
+                                    <hr class="hr-primary hr-line-dashed">
+                                    <div id="tbl_cotizacion"></div>
+                                    <br />
+                                </div>
+                                -->
+                                <!-- DATOS DEL ESTILO-->
+                                <!--
+                                <div class="table-responsive m-t" id="div_tbl_detalle">
+                                    <h4 class="text-navy"><strong id="titulo_tbl_strong">COMPOSICIÓN</strong></h4>
+                                    <hr class="hr-primary hr-line-dashed">
+                                    <table class="table invoice-table" id="tabla_composicion_detalle"></table>
+                                    <br />
+                                </div>
+                                -->
+                                <!-- Rechazo Solicitud-->
+                                <!--
+                                <div class="table-responsive m-t" id="div_tbl_rechazo">
+                                    <h4 class="text-navy"><strong id="titulo_tbl_rechazo_strong">COMENTARIOS DE APROBACION</strong></h4>
+                                    <hr class="hr-primary hr-line-dashed">
+                                    <table class="table invoice-table" id="tabla_rechazo"></table>
+                                    <br />
+                                </div>
+                                -->
+                                <!-- ATX-->
+                                <!--
+                                <div class="table-responsive m-t" id="div_tblatx">
+                                    <h4 class="text-navy"><strong id="titulo_tbl_atx_strong">ATX</strong></h4>
+                                    <hr class="hr-primary hr-line-dashed">
+                                    <table class="table invoice-table" id="tabla_atx"></table>
+                                    <br />
+                                </div>
+                                -->
+                                <!-- Rechazo Entregable-->
+                                <!--
+                                <div class="table-responsive m-t" id="div_tbl_comentarioentregable">
+                                    <h4 class="text-navy"><strong id="titulo_tbl_entregable_strong">COMENTARIOS DE ENTREGABLE</strong></h4>
+                                    <hr class="hr-primary hr-line-dashed">
+                                    <table class="table invoice-table" id="tabla_comentarioentregable"></table>
+                                    <br />
+                                </div>
+                                -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,110 @@
+﻿
+<style type="text/css">
+    .row-selected {
+        background-color: #1ab394 !important;
+    }
+
+    th {
+        padding: 8px;
+        border: 1px solid #e7e7e7;
+        text-align: center;
+        background: #206590 !important;
+        color: white;
+    }
+
+    td {
+        padding: 5px;
+        border-bottom: 1px solid #e7e7e7;
+        padding-left: 20px;
+    }
+</style>
+
+
+
+<div id="pnl_equipo_index">
+
+    <div id="pnl_equipo_index_header" class="row wrapper white-bg page-heading">
+        <div class="ibox">
+            <div class="col-sm-6">
+                <h2 class="font-bold">Equipos</h2>
+            </div>
+            <div class="col-sm-6 text-right">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="pnl_equipo_index_body" class="row wrapper-content gray-bg animated">
+
+        <div id="content_form" class="ibox">
+
+            <div class="ibox-title">
+                <div class="form-horizontal row ">
+                    <div class="col-sm-6">
+                        <h3 class="bold text-success">Listado</h3>
+                    </div>
+                    <div id="div_botones_principal" class="col-sm-6 text-right">
+                        <button id="btn_nuevo" title="Nuevo" type="button" class="btn btn-outline btn-success">
+                            <span class="fa fa-plus"></span>
+                            Nuevo
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ibox-content">
+
+                <div class="form-horizontal row">
+                    <div class="col-sm-8">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <input id="txt_equipo" type="text" class="form-control input-sm m-b-xs" data-id="area">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Estado:</label>
+                            <div class="col-sm-9">
+                                <select id="cbo_estado" class="form-control _select2 _enty" data-id="iddistrito" style="width:100%"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-horizontal row">
+                    <div id="div_botones_secundarios" class="col-sm-4 text-left">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <button id="btn_editar" title="Editar" type="button" class="btn btn-outline btn-success">
+                                    <span class="fa fa-edit"></span>
+                                </button>
+                                @*<button id="btn_eliminar" title="Eliminar" type="button" class="btn btn-outline btn-danger">
+                                        <span class="fa fa-trash-o"></span>
+                                    </button>*@
+                                @*<button id="btn_visualizar" title="Visualizar" type="button" class="btn btn-outline btn-info">
+                                        <span class="fa fa-eye"></span>
+                                    </button>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-horizontal row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div id="div_tabla_equipo" class="col-sm-12">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

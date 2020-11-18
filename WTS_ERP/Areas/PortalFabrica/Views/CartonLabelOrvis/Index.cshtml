@@ -1,0 +1,59 @@
+﻿
+<div class="row wrapper white-bg page-heading">
+    <div id="content_header" class="ibox float-e-margins">
+        <div class="col-sm-6">
+            <h2 class="font-bold">Sticker Orvis</h2>
+        </div>
+        <div class="col-sm-6 text-right position_right" style="vertical-align: middle;margin-top:15px;">
+            <button id="btnNew" type="button" class="btn btn-default">
+                <span class="fa fa-plus"></span>
+                Nuevo
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="hide">
+    <input type="text" id="txtpar" value="DATA-PARAMETRO" />
+</div>
+
+<div class="row wrapper-content gray-bg animated">
+
+    <div id="content_form" class="ibox">
+        <div class="ibox-title">
+            <div class="form-horizontal row ">
+                <div class="col-sm-6">
+                    <h3 id="_title" class="text-navy bold">Lista Sticker</h3>
+                </div>
+            </div>
+        </div>
+        <div id="tabledetails" class="ibox-content">
+
+            <div class="table-responsive">
+                <input type="text" class="form-control input-sm m-b-xs" id="filter" placeholder="Search in table">
+                <table class="footable table table-stripped table-bordered " data-page-size="10" data-filter=#filter id="tblcartonlabel">
+                    <thead>
+                        <tr>
+                            <th class='col-sm-1 text-center' data-sort-ignore="true"></th>
+                            <th class='col-sm-1 text-center' data-sort-ignore="true">Sticker</th>
+                            <th class='col-sm-1 text-center' data-sort-ignore="true"># Registro</th>
+                            <th class='col-sm-1 text-center' data-sort-ignore="true">PO</th>
+                            <th class='col-sm-1 text-center' data-sort-ignore="true">Usuario</th>
+                            <th class='col-sm-1 text-center' data-sort-ignore="true">Fecha</th>                            
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="7">
+                                <ul class="pagination pull-right"></ul>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</div>

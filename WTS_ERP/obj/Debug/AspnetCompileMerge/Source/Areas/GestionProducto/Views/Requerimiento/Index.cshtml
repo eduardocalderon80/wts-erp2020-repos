@@ -1,0 +1,119 @@
+﻿
+<div class="row wrapper white-bg page-heading" style="padding-bottom:10px;">
+    <div class="ibox float-e-margins">
+        <div class="col-sm-6">
+            <h2 class="font-bold">Search Requirement</h2>
+        </div>
+        <div class="col-sm-6 text-right" style="vertical-align: middle;margin-top:15px;">
+            <button type="button" class="btn btn-default dim" id="btnNewRequerimiento">
+                <span class="fa fa-file-o"></span>
+                New
+            </button>
+            <button type="button" class="btn btn-info dim" id="btnSendMail">
+                <span class="fa fa-envelope"></span>
+                Send Mail
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="hide">
+    <input type="text" id="txtpar" data-par="DATA-PARAMETRO" value="" />
+    <input type="text" id="txtperfil" value="@ViewBag.perfil" />
+</div>
+
+<div class="row wrapper-content gray-bg animated">
+    <div class="ibox" style="padding-bottom:10px;margin-bottom:5px">
+        <div class="ibox-content" style="padding-bottom:10px;margin-bottom:5px">
+            <div class="form-horizontal">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" title="Solo se muestran los clientes que tienen req">Customer</label>
+                        <div class="col-sm-10">
+                            <select class="cboCliente form-control" id="cboCliente">
+                                <option value="">All</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Status</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="cboEstado">
+                                <option value="">All</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Style</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" onkeyup="Mayus(this)" id="txt_codigoestilo" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" title="Se muestran los tipos de muestra de acuerdo al cliente">Sample Type</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="cboTipoMuestra">
+                                <option value="">All</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" title="Se muestran las temporadas de acuerdo al cliente">Season</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="cboClienteTemporada">
+                                <option value="">All</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Factory</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="cboProveedor">
+                                <option value="">All</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group text-right">
+                    <button type="button" class="btn btn-success" id="btnSearch">
+                        <span class="fa fa-search"></span>
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="ibox float-e-margins">
+        <div class="ibox-title hide">
+            <h5>Details</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="" style="position:relative; width:100%;overflow-x:auto; overflow-y: auto; max-height: 600px; min-height:0px;">
+                <table class="table table-bordered table-hover" id="tbl_requerimiento_index">
+                    <thead>
+                        <tr>
+                            <th class="text-center" style="width:5%;"># Req</th>
+                            <th class="text-center" style="width:10%;">Style</th>
+                            <th class="text-center" style="width:5%;">Version</th>
+                            <th class="text-center" style="width:20%;">Fabric</th>
+                            <th class="text-center" style="width:10%;">Customer</th>
+                            <th class="text-center" style="width:10%;">Factory</th>
+                            <th class="text-center" style="width:10%;">Season</th>
+                            <th class="text-center" style="width:10%;">Status</th>
+                            <th class="text-center" style="width:10%;">Sample Type</th>
+                            <th class="text-center" style="width:5%;"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody_requerimiento_index" style="font-size:11px;"></tbody>
+                </table>
+            </div>
+            <div class="text-center" id="foot_paginacion">
+
+            </div>
+        </div>
+    </div>
+</div>   

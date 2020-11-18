@@ -1,0 +1,82 @@
+﻿<div class="panel panel-default" id="despacho_header">
+    <div class="panel-heading">
+        <div class="text-right">
+            <button type="button" class="btn btn-primary" id="_btn_aceptarnewversion">
+                <span class="fa fa-check"></span>
+                Accept
+            </button>
+            <button type="button" class="btn btn-default" id="_btn_cancelarnewversion" data-dismiss="modal">
+                <span class="fa fa-ban"></span>
+                Cancel
+            </button>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+
+            <div class="col-sm-12">
+
+                <div class="form-group">
+                    <div class="radio i-checks text-center">
+                        <div class="col-sm-6"><input type="radio" name="option" class="" id="rbCS" value="0" onclick="MostrarLeyenda(this)" /><label>Copy Style</label></div>
+                        <div class="col-sm-6"><input type="radio" name="option" class="" id="rbNS" value="1" onclick="MostrarLeyenda(this)" checked /><label>New Version</label></div>
+                    </div>
+
+                    <div class="text-center hide" id="divLblRBCS">
+                        <label class="control-label" style="color:red;">Permite copiar la info de un estilo para otra prenda simplificando el ingreso de datos</label>
+                    </div>
+                    
+                    <div class="text-center" id="divLblRBNS">
+                        <label class="control-label" style="color:red;">Cuando se necesita crear una nueva versión del estilo creado sin cambiar el codigo. Ejm: versión listada y sólida </label>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <div id="_div_Season">
+                        <label class="control-label col-sm-2">Season:</label>
+                        <div class="col-sm-5">
+                            <select class="form-control _enty" id="cboTemporadaversion" data-min="1" data-max="100" data-required="true" data-id="IdClienteTemporadaversion">
+                                <option value="">Select</option>
+                            </select>
+                            <span class="hide text-danger" id="_span_error_Seasonversion">Select Season</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div id="_div_Division">
+                        <label class="control-label col-sm-2">Division:</label>
+                        <div class="col-sm-5">
+                            <select id="cboDivisionversion" class="form-control _enty" data-min="1" data-max="100" data-required="true" data-id="IdClienteDivisionversion"></select>
+                        </div>
+                        <span class="hide text-danger" id="_span_error_Divisionversion">Select Division</span>
+                    </div>
+                </div>
+                   
+                <div class="form-group">
+                    <div id="_div_Calloutversion">
+                        <label class="control-label col-sm-2">Callout:</label>
+                        <div class="col-sm-5">
+                            <textarea class="form-control" onkeyup="Mayus(this)"  id="txtCalloutversion"></textarea>
+                        </div>
+                        <span class="hide text-danger" id="_span_error_Calloutversion">Register Callout</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div id="_div_NewVersionCopy">
+                        <label class="control-label col-sm-2">Style:</label>
+                        <div class="col-sm-5">
+                            <input class="form-control" onkeyup="Mayus(this)"  id="txtNewVersionCode"/>
+                        </div>
+                        <span class="hide text-danger" id="_span_error_NewVersionCode">Ingresa el codigo</span>
+                    </div>
+                </div>
+                   
+            </div>             
+        </div>
+    </div>
+    
+</div>
+
+ 

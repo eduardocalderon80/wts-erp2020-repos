@@ -1,0 +1,299 @@
+﻿<div class="row wrapper white-bg page-heading">
+    <div id="content_header" class="ibox float-e-margins">
+        <div id="divtituloprincipal" class="col-sm-6">
+            <h2 class="font-bold">Help Desk</h2>
+        </div>
+    </div>
+</div>
+
+<div class="hide">
+    <input type="text" id="txtpar" value="DATA-PARAMETRO" />
+    <input type="hidden" id="hf_IdSolicitud" data-id="IdPersonal" data-default="0" value="0" />
+    <input type="hidden" id="hf_IdPersonal" data-id="IdPersonal" data-default="0" value="0" />
+</div>
+
+
+<div class="row wrapper-content gray-bg animated">
+
+    <div class="ibox">
+        <div class="ibox-title">
+            <div class="form-horizontal row ">
+                <div id="divTitulo" class="col-sm-6"><h3 id="_title" class="text-navy bold">Configuración</h3></div>
+                <div id="divBotones" class="col-sm-6 text-right">
+                   
+                </div>
+            </div>
+        </div>
+        <div class="ibox-content">
+            <div class="tabs-container">
+                <ul class="nav nav-tabs">
+                    <li class="active bg-primary">
+                        <a id="tabCategoria" data-toggle="tab" href="#tab-categoria" aria-expanded="true"><label class="control-label">Categoria</label></a>                        
+                    </li>
+                    <li class="">
+                        <a id="tabAprobador" data-toggle="tab" href="#tab-aprobador" aria-expanded="false"><label class="control-label">Aprobador</label></a>
+                    </li>
+                </ul>
+                <div id="informacion" class="tab-content">
+                    <div id="tab-categoria" class="tab-pane active">
+                        <div id="loco" class="ibox">                          
+                            <div class="ibox-content">
+                                <div class="row ">
+                                    <div class="col-sm-6">
+                                        <div class="ibox"> 
+                                            <label class="form-control bg-success">Listado</label>                                                                               
+                                            <div class="ibox-content">
+                                                <div id="rowfileuser" class="form-horizontal row">                                                        
+                                                    <div class="form-group">  
+                                                        <div class="col-sm-9">                                                                                                                      
+                                                            <input type="text" class="form-control m-b-xs" id="filter" placeholder="Buscar en tabla">                                                                                                                    
+                                                        </div>  
+                                                        <div class="col-sm-3">
+                                                            <select id="cboEstado" class="form-control _enty" name="IdEquipoTIC" data-id="IdEquipoTIC" data-required="true">
+                                                                <option value='0'>Activo</option>
+                                                                <option value='1'>Inactivo</option>
+                                                            </select>
+                                                        </div>                                                      
+                                                        <div class="table-responsive col-sm-12">
+                                                            <table id="tblcategoria" class="footable table table-stripped table-bordered" data-page-size="10" data-filter=#filter>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class="col-sm-2" data-sort-ignore='true'>Código</th>
+                                                                        <th class="col-sm-4" data-sort-ignore='true'>Categoria</th>
+                                                                        <th class="col-sm-2" data-sort-ignore='true'>Equipo TIC</th>
+                                                                        <th class="col-sm-2" data-sort-ignore='true'>Tipo Solicitud</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody></tbody>
+                                                                <tfoot>
+                                                                    <tr>
+                                                                        <td colspan="8"><ul class="pagination pull-right"></ul></td>
+                                                                    </tr>
+                                                                </tfoot>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="ibox">                                            
+                                                <label class="form-control bg-success">Detalle</label>                                           
+                                            <div class="ibox-content">
+                                                <input type="hidden" id="hf_IdCategoria" data-id="IdCategoria" data-default="0" value="0" />
+                                                <div class="form-horizontal row">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-3">Categoria:</label>
+                                                        <div class="col-sm-9">
+                                                            <input id="txtCategoria" type="text" class="form-control font-bold _enty" name="Categoria" data-id="Categoria" data-min="1" data-max="100" data-required="true">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="rowSistema" class="form-horizontal row">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-3">Equipo TIC:</label>
+                                                        <div class="col-sm-9">
+                                                            <select id="cboEquipoTIC" class="form-control _enty" name="equipotic" data-id="IdEquipoTIC" data-default="0"></select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="rowModulo" class="form-horizontal row">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-3">Tipo Solicitud:</label>
+                                                        <div class="col-sm-9">
+                                                            <select id="cboTipoSolicitud" class="form-control _enty" name="tiposolicitud" data-id="IdTipoSolicitud" data-default="0"></select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="rowModulo" class="form-horizontal row">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-3">Aprobación:</label>
+                                                        <div class="col-sm-9">
+                                                            <div  class='i-checks _clsDivAprobacion'>
+                                                                <div id="divAprobacion" class='icheckbox_square-green' style='position: relative;'>
+                                                                    <label>
+                                                                        @*<input type='checkbox' class='i-checks _clschkAprobacion' style='position: absolute; opacity: 0;' id='IdBotonFuncionVentana' data-IdBotonFuncionVentana='${x.IdBotonFuncionVentana}' value='${x.IdBotonFuncionVentana}'>*@
+                                                                        <input type='checkbox' class='i-checks _clschkAprobacion' style='position: absolute; opacity: 0;' id='IdAprobacion'>
+                                                                        <ins class='iCheck-helper' style='position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(28, 132, 198); border: 0px; opacity: 0;'></ins>
+
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-horizontal row">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-3">Descripción:</label>
+                                                        <div class="col-sm-9">
+                                                            <textarea id="txtDescripcion" class="form-control _enty" name="Descripcion" rows="6" style="resize:none" placeholder="Ingresar la descripción" data-id="Descripcion" data-min="1" data-max="5000" data-required="true" maxlength="5000"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-horizontal row">
+                                                    <div class="form-group">
+                                                        <div id="divBotones" class="col-sm-12 text-right">
+                                                            <button id='btnNuevo' title='Nuevo' type='button' class='btn btn-outline btn-success hide'>
+                                                                <span class="fa fa-plus"></span>                                                               
+                                                            </button>
+                                                            <button id='btnEditar' title='Editar' type='button' class='btn btn-outline btn-warning hide'>
+                                                                <span class="fa fa-edit"></span>                                                                
+                                                            </button>
+                                                            <button id='btnGuardar' title='Guardar' type='button' class='btn btn-outline btn-primary hide' >
+                                                                <span class="fa fa-save"></span>                                                              
+                                                            </button>  
+                                                            <button id='btnRetonar' title='Retornar' type='button' class='btn btn-outline btn-default hide'>
+                                                                <span class="fa fa-reply-all"></span>                                                                
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>                   
+                    <div id="tab-aprobador" class="tab-pane">
+                        <div class="ibox">
+                            <div class="ibox-content">
+                                <div class="row ">
+                                    <div class="col-sm-6">
+                                        <div class="ibox">
+                                            <label class="form-control bg-success">Listado</label>
+                                            <div class="ibox-content">
+                                                <div id="rowfileuser" class="form-horizontal row">
+                                                    <div class="form-group">
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control m-b-xs" id="filteraprobador" placeholder="Buscar en tabla">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <select id="cboEstadoAprobador" class="form-control _enty" name="IdEquipoTIC" data-id="IdEquipoTIC" data-required="true">
+                                                                <option value='0'>Activo</option>
+                                                                <option value='1'>Inactivo</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="table-responsive col-sm-12">
+                                                            <table id="tblaprobador" class="footable table table-stripped table-bordered" data-page-size="10" data-filter=#filteraprobador>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class="col-sm-2" data-sort-ignore='true'>Codigo</th>
+                                                                        <th class="col-sm-4" data-sort-ignore='true'>Nombre</th>
+                                                                        <th class="col-sm-2" data-sort-ignore='true'>Correo</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody></tbody>
+                                                                <tfoot>
+                                                                    <tr>
+                                                                        <td colspan="4"><ul class="pagination pull-right"></ul></td>
+                                                                    </tr>
+                                                                </tfoot>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="ibox">
+                                            <label class="form-control bg-success">Detalle</label>
+                                            <div class="ibox-content">
+                                                <input type="hidden" id="hf_IdAprobador" data-id="IdAprobador" data-default="0" value="0" />
+                                                <input type="hidden" id="hf_IdPersonal" data-id="IdPersonal" data-default="0" value="0" />
+                                                <div class="form-horizontal row">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-3">Nombre:</label>
+                                                        <div class="col-sm-9">
+                                                            <select id="cboPersonal" class="form-control _enty" name="Personal" data-id="IdPersonal" data-min="1" data-required="true"></select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="rowModulo" class="form-horizontal row">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-3">Correo:</label>
+                                                        <div class="col-sm-9">
+                                                            <input id="txtCorreo" type="text" class="form-control font-bold _enty" name="Correo" data-id="Correo" data-min="1" data-required="true">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-horizontal row">
+                                                    <div class="form-group">
+                                                        <div id="divBotones" class="col-sm-12 text-right">
+                                                            <button id='btnNuevoAprobador' title='Nuevo' type='button' class='btn btn-outline btn-success hide'>
+                                                                <span class="fa fa-plus"></span>
+                                                            </button>
+                                                            <button id='btnEditarAprobador' title='Editar' type='button' class='btn btn-outline btn-warning hide'>
+                                                                <span class="fa fa-edit"></span>
+                                                            </button>
+                                                            <button id='btnGuardarAprobador' title='Guardar' type='button' class='btn btn-outline btn-primary hide'>
+                                                                <span class="fa fa-save"></span>
+                                                            </button>
+                                                            <button id='btnRetonarAprobador' title='Retornar' type='button' class='btn btn-outline btn-default hide'>
+                                                                <span class="fa fa-reply-all"></span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="tablaarea" class="form-horizontal row">
+                                                    <div class="form-group">
+                                                        <div class="col-sm-12">
+                                                            <input type="text" class="form-control m-b-xs" id="filterarea" placeholder="Buscar Área">
+                                                        </div>
+                                                        <div class="table-responsive col-sm-12">
+                                                            <table id="tblarea" class="footable table table-bordered table-hover" data-page-size="10" data-filter=#filterarea>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class="col-sm-2" data-sort-ignore='true'></th>
+                                                                        <th class="col-sm-11" data-sort-ignore='true'>Área</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody></tbody>
+                                                                <tfoot>
+                                                                    <tr>
+                                                                        <td colspan="8"><ul class="pagination pull-right"></ul></td>
+                                                                    </tr>
+                                                                </tfoot>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-horizontal row">
+                                                    <div class="form-group">
+                                                        <div class="col-sm-12">
+                                                            <input type="text" class="form-control m-b-xs" id="filtermodulo" placeholder="Buscar Módulo">
+                                                        </div>
+                                                        <div class="table-responsive col-sm-12">
+                                                            <table id="tblmodulo" class="footable table table-bordered table-hover" data-page-size="10" data-filter=#filtermodulo>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class="col-sm-2" data-sort-ignore='true'></th>
+                                                                        <th class="col-sm-4" data-sort-ignore='true'>Sistema</th>
+                                                                        <th class="col-sm-6" data-sort-ignore='true'>Módulo</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody></tbody>
+                                                                <tfoot>
+                                                                    <tr>
+                                                                        <td colspan="8"><ul class="pagination pull-right"></ul></td>
+                                                                    </tr>
+                                                                </tfoot>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

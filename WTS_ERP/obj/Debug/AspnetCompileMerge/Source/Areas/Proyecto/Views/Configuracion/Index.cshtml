@@ -1,0 +1,162 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Project Configuration</h2>
+            </div>
+            <div class="col-sm-6 text-right hide">
+                <button type="button" class="btn btn-primary dim" id="">
+                    <span class="fa fa-file-o"></span>
+                    Save
+                </button>           
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+
+        <div class="form-horizontal">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">
+                                    Code
+                                </label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="txtCodigo" value="" />
+                                </div>
+
+                                <button type="button" class="btn btn-success dim" id="btnSearch">Search  <span class="fa fa-search"></span></button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>               
+            </div>
+        </div>
+
+        <div class="ibox float-e-margins" id="divDatos">
+
+            <div class="hide">
+                <input type="text" id="txtIdProyecto" value="" class="_enty _data" data-id="txtIdProyecto" data-type="text" data-required="true" />              
+            </div>
+
+            <div class="form-horizontal">
+                <div class="ibox-title">
+                    <div class="col-sm-6">
+                        <h4>Details</h4>
+                    </div>
+                    <div class="col-sm-6 text-right">
+
+                    </div>
+                </div>
+
+                <div class="ibox-content">
+                    <div class="col-sm-12" id="div_GeneralInfo">
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-1">Description:</label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control _data" disabled="disabled" id="txtDescription" data-id="txtDescription" data-type="text"></textarea>
+                            </div>                            
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-1">Client</label>
+                            <div class="col-sm-5">
+                                <input type="text" id="txtCliente" disabled="disabled" class="form-control _data" data-id="txtCliente" data-type="text" />
+                            </div>
+
+                            <label class="control-label col-sm-1">Team</label>
+                            <div class="col-sm-5">
+                                <input type="text" id="txtTeam" disabled="disabled" class="form-control _data" data-id="txtTeam" data-type="text" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-1">Budget</label>
+                            <div class="col-sm-5">
+                                <input type="text" id="txtBudget" disabled="disabled" class="form-control _data" data-id="txtBudget" data-type="text" />
+                            </div>
+
+                            <label class="control-label col-sm-1">Status</label>
+                            <div class="col-sm-5">
+                                <input type="text" id="txtStatus" disabled="disabled" class="form-control _data" data-id="txtStatus" data-type="text" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-1">Shared Team:</label>
+                            <div class="col-sm-5">
+                                <input type="text" id="txtTeamShared" disabled="disabled" class="form-control _data" data-id="txtTeamShared" data-type="text" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ibox float-e-margins" id="divStatus">
+            <div class="form-horizontal">
+                <div class="ibox-title">
+                    <div class="col-sm-6">
+                        <h4>Change Status</h4>
+                    </div>
+
+                    <div class="col-sm-6 text-right">
+                        <button type="button" class="btn btn-primary dim" id="btnSaveStatus">
+                            <span class="fa fa-file-o"></span>
+                            Save Status
+                        </button>
+                    </div>
+ 
+                </div>
+
+                <div class="ibox-content">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label class="control-label col-sm-1">Status:</label>
+                            <div class="col-sm-3">
+                                <select class="form-control cboStatus _enty" id="cboStatus" data-id="IdEstado" data-type="combo" data-required="true" data-min="1" data-max="100"></select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-1">Comment:</label>
+                            <div class="col-sm-5">
+                                <textarea class="form-control txtComment _enty" id="txtComment" data-id="Comentario" data-type="text" data-required="true" data-min="1" data-max="100"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ibox float-e-margins" id="divShared">
+            <div class="form-horizontal">
+                <div class="ibox-title">
+                    <div class="col-sm-6">
+                        <h4>Shared Team</h4>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <button type="button" class="btn btn-primary dim" id="btnSaveTeam">
+                            <span class="fa fa-file-o"></span>
+                            Save Team
+                        </button>
+                    </div>
+                </div>
+
+                <div class="ibox-content">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label class="control-label col-sm-1">Team:</label>
+                            <div class="col-sm-5">
+                                <select class="form-control cboStatus _enty" id="cboTeam" data-id="IdGrupoPersonal" data-type="combo" data-required="true" data-min="1" data-max="100"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>      

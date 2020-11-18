@@ -1,0 +1,39 @@
+﻿<div class="ibox float-e-margins" id="panelEncabezado_buscarpo">
+    <div class="ibox-title">
+        <div class="ibox-tools">
+            <button id="_btnAceptar_po" href="javascript:void(0)" class="btn btn-primary">
+                <span class="fa fa-check-circle"></span>
+                Accept
+            </button>
+            <button id="_btnCancelar_po" href="javascript:void(0)" class="btn btn-default" data-dismiss="modal"> 
+                Cancel
+            </button>
+        </div>
+    </div>
+    @*ibox-content wrapper wrapper-content gray-bg*@
+    <div class="" style="overflow-y: auto; max-height: 850px;">
+        <div class="ibox float-e-margins">
+            <div class="ibox-content">
+                <div class="row">
+                    <div id="div_tbl_buscarpo" style="max-height:400px; overflow-y:auto;">
+                        <table class="table table-bordered table-hover" id="_tbl_buscar_po">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Client po code</th>
+                                    <th>Estyle</th>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <th><input type="text" placeholder="Search po code" id="_txtfiltercodigopocliente" class="form-control _clsfilter" data-field="codigopocliente" /></th>
+                                    <th><input type="text" placeholder="Search style code" id="_txtfiltercodigoestilo" class="form-control _clsfilter" data-field="codigoestilo" /></th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_buscar_po"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
